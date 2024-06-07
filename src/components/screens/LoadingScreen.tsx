@@ -3,7 +3,7 @@ import { Dimensions, Image } from "react-native";
 import LComponent from "../../core/LComponent";
 
 
-class LoadingScreen extends Component<any,any> {
+class LoadingScreen extends Component<any, any> {
 
     constructor({ props, children = null }) {
         super(props);
@@ -21,8 +21,8 @@ class LoadingScreen extends Component<any,any> {
 
                 <Image
                     style={{
-                        position: 'absolute',
-                        width: Dimensions.get('window').width, height: Dimensions.get('window').height,
+                        position: 'absolute', top: -12,
+                        width: Dimensions.get('screen').width, height: Dimensions.get('screen').height,
                         resizeMode: "cover",
                     }}
                     source={require('../../../assets/splash.png')}
@@ -39,7 +39,8 @@ class LoadingScreen extends Component<any,any> {
                 >
                     <Image
                         style={{
-                            width: Dimensions.get('window').width, height: Dimensions.get('window').height,
+                            position: 'absolute', top: -12,
+                            width: Dimensions.get('screen').width, height: Dimensions.get('screen').height,
                             resizeMode: "cover",
                         }}
                         source={require('../../../assets/welcome.png')}

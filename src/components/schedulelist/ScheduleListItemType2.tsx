@@ -13,7 +13,7 @@ const ScheduleListItemType2 = ({ item }) => {
       <Text allowFontScaling={false} id='textSessionMainTitle' style={{
         position: 'absolute',
         top: 7, left: 90,
-        width: Dimensions.get('window').width-90-30,
+        width: Dimensions.get('screen').width-90-30,
         fontFamily: 'Antonio-Regular',
         // backgroundColor: 'indigo',
         textAlign: 'left',

@@ -46,7 +46,7 @@ const ScheduleHappeningNow = ({ initialItem }) => {
           position: 'absolute',
           top: 0,
           left: 30,
-          height: 15,
+          height: 17,
           fontFamily: 'Cabin-Regular',
           letterSpacing: 2.0,
           fontSize: 14,
@@ -60,7 +60,7 @@ const ScheduleHappeningNow = ({ initialItem }) => {
         position: 'absolute',
         backgroundColor: '#FBB03A',
         left: 30, top: 30,
-        width: Dimensions.get('window').width - (2 * 30), height: 130,
+        width: Dimensions.get('screen').width - (2 * 30), height: 130,
         opacity: 0.8
       }}>
       </View>
@@ -68,7 +68,7 @@ const ScheduleHappeningNow = ({ initialItem }) => {
       <Text allowFontScaling={false} id='textTime' style={{
         position: 'absolute',
         top: 42, left: -10,
-        width: 80, height: 16,
+        width: 80, height: 17,
         fontFamily: 'Antonio-Regular',
         // backgroundColor: 'skyblue',
         textAlign: 'right',
@@ -84,7 +84,7 @@ const ScheduleHappeningNow = ({ initialItem }) => {
         style={{
           position: 'absolute', resizeMode: 'contain', opacity: 0.15,
           left: 30, top: 30,
-          width: (Dimensions.get('window').width - 2 * 30),
+          width: (Dimensions.get('screen').width - 2 * 30),
           height: 130,
         }}
       />
@@ -93,7 +93,7 @@ const ScheduleHappeningNow = ({ initialItem }) => {
           // backgroundColor: '#dd5163', opacity: 0.2,
           top: 30,
           left: 30,
-          height: 50, width: Dimensions.get('window').width - 60,
+          height: 50, width: Dimensions.get('screen').width - 60,
         }}>
 
 
@@ -103,8 +103,8 @@ const ScheduleHappeningNow = ({ initialItem }) => {
             style={{
               position: 'absolute',
               top: activeItem.itemType != "type2" ? 10 : 5,
-              left: (Dimensions.get('window').width) / 2 - 120,
-              width: Dimensions.get('window').width - 90 - 30,
+              left: (Dimensions.get('screen').width) / 2 - 120,
+              width: Dimensions.get('screen').width - 90 - 30,
               fontFamily: activeItem.itemType != "type2" ? 'ArtBrush' : 'Antonio-Regular',
               // backgroundColor: 'indigo',
               textAlign: 'left',
@@ -119,7 +119,7 @@ const ScheduleHappeningNow = ({ initialItem }) => {
           <Text allowFontScaling={false} id='textLocation' style={{
             position: 'absolute',
             top: (activeItem.sessionMainTitle && (activeItem.sessionMainTitle as string).length>20) ? 59:35, 
-            left: (Dimensions.get('window').width) / 2 - 120,
+            left: (Dimensions.get('screen').width) / 2 - 120,
             width: 220, height: 50,
             fontFamily: 'Cabin-Regular',
             letterSpacing: 2.0,
@@ -141,7 +141,7 @@ const ScheduleHappeningNow = ({ initialItem }) => {
         // source={require('../../../assets/button-info.png')}
         style={{
           position: 'absolute',
-          top: (110), left: (Dimensions.get('window').width) / 2 - 90,
+          top: (110), left: (Dimensions.get('screen').width) / 2 - 90,
           height: 35, width: 190
         }}
         text={"GO TO FESTIVAL PLANNER"}

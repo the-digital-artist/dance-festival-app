@@ -27,7 +27,7 @@ class ArtistListScreen extends Component {
                         position: 'absolute',
                         backgroundColor: '#EF4260',
                         left: 0, top: 0,
-                        width: Dimensions.get('window').width,
+                        width: Dimensions.get('screen').width,
                         height: 90,
                         opacity: 1
                     }}
@@ -39,8 +39,8 @@ class ArtistListScreen extends Component {
                             position: 'absolute',
                             backgroundColor: '#1c1919',
                             left: 0, top: 90,
-                            width: Dimensions.get('window').width,
-                            height: Dimensions.get('window').height - 100,
+                            width: Dimensions.get('screen').width,
+                            height: Dimensions.get('screen').height - 100,
                             opacity: 1
                         }}
                         data={DataModel.dataArtistsList}

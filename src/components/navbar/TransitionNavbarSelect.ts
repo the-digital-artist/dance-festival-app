@@ -14,12 +14,12 @@ const TransitionNavbarSelect = (index) => {
         //animate navbar
         let iconSize = 60;
         let itemDistance = 85
-        let startX = (Dimensions.get('window').width / 2 - ((4 - 1) * itemDistance) / 2) - iconSize / 2
+        let startX = (Dimensions.get('screen').width / 2 - ((4 - 1) * itemDistance) / 2) - iconSize / 2
     
         TweenManager.tween().to("navBarHighlight", 134, { alpha: 0.5, x: (index * itemDistance + startX) });
 
         //animate incoming screen
-        let targetX = index > oldIdx ? Dimensions.get('window').width : -Dimensions.get('window').width;
+        let targetX = index > oldIdx ? Dimensions.get('screen').width : -Dimensions.get('screen').width;
 
 
         let screenNameIn = LauncherController.getInstance().navBarData[index].associatedScreenName

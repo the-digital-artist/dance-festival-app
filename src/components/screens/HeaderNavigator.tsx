@@ -11,7 +11,7 @@ const HeaderNavigator = (props) => {
         backgroundColor: '#EF4260',
         top:-60,
         left:-16,
-        width:  Dimensions.get('window').width,
+        width:  Dimensions.get('screen').width,
         height: 100,
         opacity: 0.5
       }}
@@ -21,8 +21,8 @@ const HeaderNavigator = (props) => {
           style={{
             backgroundColor: 'skyblue',
             top: 0, left: 0, position: 'absolute',
-            width: Dimensions.get('window').width,
-            height: (Dimensions.get('window').width * (300 / 1290)),
+            width: Dimensions.get('screen').width,
+            height: (Dimensions.get('screen').width * (300 / 1290)),
             resizeMode: "contain",
             opacity: 0.3
           }}
@@ -31,7 +31,7 @@ const HeaderNavigator = (props) => {
         <Text allowFontScaling={false} id='textArtistPages' style={{
           // position: 'absolute',
           top: 43, left: 30,
-          width: Dimensions.get('window').width - 40, height: 100,
+          width: Dimensions.get('screen').width - 40, height: 100,
           fontFamily: 'Antonio-Regular',
           // backgroundColor: 'indigo',
           textAlign: 'left',

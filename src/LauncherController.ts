@@ -179,7 +179,7 @@ class LauncherController extends OperatorStates {
             await Font.loadAsync(this.customFonts);
             console.log("LauncherController - Fonts loaded.");
             await this.prepareDataModel();
-            console.log('Launcher initialization done. ' + this.appTutorialCompleted);
+            console.log('Launcher initialization done. Tutorial completed: ' + this.appTutorialCompleted);
 
         } catch (e) {
             console.warn(e);

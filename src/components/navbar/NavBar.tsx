@@ -1,6 +1,6 @@
 import { BlurView } from 'expo-blur';
 import React, { Fragment } from "react";
-import { Dimensions, Image } from "react-native";
+import { Dimensions, Image, View } from "react-native";
 import TransitionNavbarSelect from "./TransitionNavbarSelect";
 import ButtonSmall from "../ButtonSmall";
 
@@ -10,26 +10,25 @@ const NavBar = (props) => {
 
     let iconSize = 60;
     let itemDistance = 85
-    let startX = (Dimensions.get('window').width / 2 - ((navBarData.length - 1) * itemDistance) / 2) - iconSize / 2
+    let startX = (Dimensions.get('screen').width / 2 - ((navBarData.length - 1) * itemDistance) / 2) - iconSize / 2
 
     return (
         <>
-            <BlurView
-                intensity={50}
+            <View
                 style={{
-                    // backgroundColor: 'skyblue',
+                    backgroundColor: '#232323',
                     bottom: 0, left: 0, position: 'absolute',
-                    width: Dimensions.get('window').width,
-                    height: 92,
-                    opacity: 1
+                    width: Dimensions.get('screen').width,
+                    height: 95,
+                    opacity: 0.1
                 }} />
             <Image
                 style={{
-                    backgroundColor: 'skyblue',
+                    // backgroundColor: 'skyblue',
                     bottom: 0, left: 0, position: 'absolute',
-                    width: Dimensions.get('window').width,
-                    height: (Dimensions.get('window').width * (300 / 1290)),
-                    resizeMode: "contain",
+                    width: Dimensions.get('screen').width,
+                    height: (Dimensions.get('screen').width * (300 / 1290)),
+                    resizeMode: "cover",
                     opacity: 0.4
                 }}
                 source={require('../../../assets/navbar/navbar_bg.png')}
@@ -71,7 +70,7 @@ const NavBar = (props) => {
                     width: iconSize, height: 5,
                     color: '#fdfaf6',
                 }}
-                bottomOffsetY={(Dimensions.get('window').width * (300 / 1290)-2)}
+                bottomOffsetY={(Dimensions.get('screen').width * (300 / 1290))-5}
                 startX={startX}
                 itemDistance={itemDistance}
                  />

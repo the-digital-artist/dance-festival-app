@@ -11,7 +11,7 @@ const TransitionTabbarSelect = (itemData, index, animCurrentIndex) => {
         let oldIdx = LauncherController.getInstance().tabBarIndex;
         if (index == oldIdx) return;
 
-        let targetX = index > oldIdx ? Dimensions.get('window').width : -Dimensions.get('window').width;
+        let targetX = index > oldIdx ? Dimensions.get('screen').width : -Dimensions.get('screen').width;
 
         let screenNameIn = LauncherController.getInstance().tabBarData[index].associatedScreenName
         TweenManager.tween().to(screenNameIn, 200, { x: 0 });

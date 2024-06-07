@@ -17,7 +17,7 @@ class FocusFragment extends PureComponent {
         let offsetY = 105;
 
         const item:any = LauncherController.getInstance().context.focusedItemData;
-        const centerPieceWidth = Dimensions.get('window').width - (5 + 45 + 35 + 35 + 5)
+        const centerPieceWidth = Dimensions.get('screen').width - (5 + 45 + 35 + 35 + 5)
         const artistData = DataModel.dataArtists[item.artistOne];
         LauncherController.getInstance().context.focusedItemComponent = this;
         const verticalOffsetTitleLength = item.lineCount != undefined ? (item.lineCount * 19) : 19;
@@ -35,7 +35,7 @@ class FocusFragment extends PureComponent {
 
                     <View style={{
                         top: 70,
-                        left: (Dimensions.get('window').width - centerPieceWidth) / 2 + 5
+                        left: (Dimensions.get('screen').width - centerPieceWidth) / 2 + 5
                     }}>
 
                         <LComponent
@@ -293,7 +293,7 @@ class FocusFragment extends PureComponent {
                         {/* <Text allowFontScaling={false} id='textSessionArtistNameFocus' style={{
                         position: 'absolute',
                         top: (390),
-                        left: (Dimensions.get('window').width - centerPieceWidth) / 2 + 5,
+                        left: (Dimensions.get('screen').width - centerPieceWidth) / 2 + 5,
                         height: 22, width: 300,
                         fontFamily: 'Cabin-Regular',
                         letterSpacing: 2.0,

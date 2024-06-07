@@ -17,15 +17,13 @@ class HomeScreen extends Component<any, any> {
     }
 
     render() {
-        const screenHeaderHeight = (Dimensions.get('window').width * (350 / 1290))-5
-        const navBarHeight = (Dimensions.get('window').width * (300 / 1290));
+        const screenHeaderHeight = (Dimensions.get('screen').width * (350 / 1290))-5
+        const navBarHeight = (Dimensions.get('screen').width * (300 / 1290));
 
+        let contentSpace = Dimensions.get("screen").height>800?Dimensions.get("screen").height-screenHeaderHeight-navBarHeight:100;
+        let distanceTiles = Dimensions.get("screen").height>800?contentSpace/3 -30:190;
 
-
-        let contentSpace = Dimensions.get("window").height>800?Dimensions.get("window").height-screenHeaderHeight-navBarHeight:100;
-        let distanceTiles = Dimensions.get("window").height>800?contentSpace/3 -30:190;
-
-        // console.log("ScreenHeight: "+Dimensions.get("window").height+" Content Space: "+contentSpace)
+        console.log("ScreenHeight: "+Dimensions.get("screen").height+" Content Space: "+contentSpace)
 
 
         return (
@@ -40,7 +38,7 @@ class HomeScreen extends Component<any, any> {
                         style={{
                             // backgroundColor: 'skyblue',
                             top: 0, left: 0, position: 'absolute',
-                            width: Dimensions.get('window').width, height: Dimensions.get('window').height,
+                            width: Dimensions.get('screen').width, height: Dimensions.get('screen').height,
                             resizeMode: "cover",
                             opacity: 1
                         }}
@@ -50,13 +48,13 @@ class HomeScreen extends Component<any, any> {
                     <Image
                         source={require('../../../assets/logo-white.png')}
                         style={{
-                            position: 'absolute', resizeMode: 'contain', opacity: (Dimensions.get("window").height<800?0.1:0.8),
+                            position: 'absolute', resizeMode: 'contain', opacity: (Dimensions.get("screen").height<800?0.1:0.8),
                             left: 80, 
-                            top: (Dimensions.get("window").height<800?
-                             (Dimensions.get("window").height/2- (Dimensions.get('window').width - (2 * 80) * (815 / 1313))/2):
-                             contentSpace/3-(Dimensions.get('window').width - (2 * 80) * (815 / 1313))/2),
-                            width: Dimensions.get('window').width - (2 * 80),
-                            height: Dimensions.get('window').width - (2 * 80) * 815 / 1313,
+                            top: (Dimensions.get("screen").height<800?
+                             (Dimensions.get("screen").height/2- (Dimensions.get('screen').width - (2 * 80) * (815 / 1313))/2):
+                             contentSpace/3-(Dimensions.get('screen').width - (2 * 80) * (815 / 1313))/2),
+                            width: Dimensions.get('screen').width - (2 * 80),
+                            height: Dimensions.get('screen').width - (2 * 80) * 815 / 1313,
                         }}
                     />
 
@@ -75,17 +73,17 @@ class HomeScreen extends Component<any, any> {
                     <ScrollView style={{
                         position: 'absolute',
                         top: screenHeaderHeight, left: 0,
-                        width: Dimensions.get("window").width,
-                        height: Dimensions.get("window").height-(screenHeaderHeight),
+                        width: Dimensions.get("screen").width,
+                        height: Dimensions.get("screen").height-(screenHeaderHeight),
                         // backgroundColor: 'red'
                     }
                     }>
 
                         <View
                             style={[{
-                                position: 'absolute',
                                 top: contentSpace/3,
-                                width: Dimensions.get("window").width,
+                                width: Dimensions.get("screen").width,
+                                height: (contentSpace),
                                 left: 0,
                                 // backgroundColor: 'skyblue',
                             }]}>
@@ -97,7 +95,7 @@ class HomeScreen extends Component<any, any> {
                                 position: 'absolute',
                                 top: distanceTiles,
                                 left: 30,
-                                height: 15,
+                                height: 17,
                                 fontFamily: 'Cabin-Regular',
                                 letterSpacing: 2.0,
                                 fontSize: 14,
@@ -113,7 +111,7 @@ class HomeScreen extends Component<any, any> {
                                 backgroundColor: '#9f509f',
                                 left: 30, 
                                 top: distanceTiles+30,
-                                width: Dimensions.get('window').width - (2 * 30), height: 130,
+                                width: Dimensions.get('screen').width - (2 * 30), height: 130,
                                 opacity: 0.8
                             }}>
                             </View>
@@ -124,7 +122,7 @@ class HomeScreen extends Component<any, any> {
                                     position: 'absolute', resizeMode: 'contain', opacity: 1.0,
                                     left: 30, 
                                     top: distanceTiles+30,
-                                    width: (Dimensions.get('window').width - 2 * 30),
+                                    width: (Dimensions.get('screen').width - 2 * 30),
                                     height: 130,
                                 }}
                             />
@@ -135,7 +133,7 @@ class HomeScreen extends Component<any, any> {
                                 position: 'absolute',
                                 top: distanceTiles+50,
                                 left: 30,
-                                width: Dimensions.get('window').width - (2 * 30),
+                                width: Dimensions.get('screen').width - (2 * 30),
                                 fontFamily: 'ArtBrush',
                                 // backgroundColor: 'indigo',
                                 textAlign: 'center',
@@ -151,7 +149,7 @@ class HomeScreen extends Component<any, any> {
             position: 'absolute',
             top: 250,
             left: 30,
-            width:Dimensions.get('window').width - (2 * 30),
+            width:Dimensions.get('screen').width - (2 * 30),
             fontFamily: '',
             // backgroundColor: 'indigo',
             textAlign: 'center',
@@ -170,7 +168,7 @@ class HomeScreen extends Component<any, any> {
                                 name={("BtnTicketPage")}
                                 style={{
                                     position: 'absolute',
-                                    top: (distanceTiles+95), left: (Dimensions.get('window').width) / 2 - 90,
+                                    top: (distanceTiles+95), left: (Dimensions.get('screen').width) / 2 - 90,
                                     height: 35, width: 190
                                 }}
                                 text={"GO TO TICKET WEBPAGE"}

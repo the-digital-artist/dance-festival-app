@@ -8,7 +8,7 @@ const   ScreenHeader = (props) => {
       <View style={{
         position: 'absolute',
         backgroundColor: '#d5d5d5',
-        width: Dimensions.get('window').width,
+        width: Dimensions.get('screen').width,
         height: itemHeight,
         opacity: 0.1
       }}
@@ -17,8 +17,8 @@ const   ScreenHeader = (props) => {
         style={{
           // backgroundColor: 'skyblue',
           top: 0, left: 0, position: 'absolute',
-          width: Dimensions.get('window').width,
-          height: (Dimensions.get('window').width * (350 / 1290)),
+          width: Dimensions.get('screen').width,
+          height: (Dimensions.get('screen').width * (350 / 1290)),
           resizeMode: "contain",
           opacity: 0.1
         }}
@@ -26,7 +26,7 @@ const   ScreenHeader = (props) => {
       />
       <Text allowFontScaling={false} id='textHeader' style={{
         top: 55, left: 30,
-        width: Dimensions.get('window').width - 40, height: 32,
+        width: Dimensions.get('screen').width - 40, height: 32,
         fontFamily: 'Antonio-Regular',
         // backgroundColor: 'skyblue',
         letterSpacing: 1.5,

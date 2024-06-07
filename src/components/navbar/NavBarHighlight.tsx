@@ -9,10 +9,11 @@ const NavBarHighlight = (props) => {
                 style={{
                     backgroundColor: '#EFEFEF',
                     width: props.style.width,
-                    height: 4
+                    height: 4,
+                    bottom:props.bottomOffsetY
                 }}
                 visualProperties={{
-                    alpha: 1.0, x: props.startX, y: (Dimensions.get("window").height-props.bottomOffsetY)
+                    alpha: 1.0, x: props.startX
                 }}
             />
         </>

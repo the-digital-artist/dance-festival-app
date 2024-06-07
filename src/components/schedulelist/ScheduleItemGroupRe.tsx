@@ -8,7 +8,7 @@ import ScheduleListItemType1 from "./ScheduleListItemType1";
 const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
     const paddingLeftAndRight = 5;
 
-    const tileWidth = Dimensions.get('window').width - (2 * paddingLeftAndRight + 45 + 35 + 35)
+    const tileWidth = Dimensions.get('screen').width - (2 * paddingLeftAndRight + 45 + 35 + 35)
     const tileDistance = tileWidth + 10;
     const tileHeight = rowHeight != undefined ? rowHeight : 100;
 
@@ -147,7 +147,7 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
                     position: 'absolute',
                     // backgroundColor: 'skyblue',
                     left: 0, top: 70,
-                    height: 90, width: Dimensions.get("window").width - 2 * paddingLeftAndRight,
+                    height: 90, width: Dimensions.get("screen").width - 2 * paddingLeftAndRight,
                     opacity: 1
                 }]}>
 
@@ -165,7 +165,7 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
                                     groupIndex={i}
                                     groupIndexUpdateFunction={changeSelectedIndex}
                                     paddingLeftAndRight={paddingLeftAndRight}
-                                    tileOffsetLeft={((Dimensions.get('window').width - tileWidth) / 2)}
+                                    tileOffsetLeft={((Dimensions.get('screen').width - tileWidth) / 2)}
                                     tileOffsetTop={-36}
                                     dynamicVisualProperties0={animValues[i]}
                                     dynamicVisualProperties1={animValuesAlpha[i]}

@@ -24,7 +24,7 @@ class ArtistDetailsScreen extends PureComponent {
                     style={{
                         backgroundColor: '#EF4260',
                         top: 0, left: 0, position: 'absolute',
-                        width: Dimensions.get('window').width, height: Dimensions.get('window').height,
+                        width: Dimensions.get('screen').width, height: Dimensions.get('screen').height,
                         opacity: 1
                     }}
                 >
@@ -32,7 +32,7 @@ class ArtistDetailsScreen extends PureComponent {
                         style={{
                             backgroundColor: '#e65f76',
                             top: 0, left: 20, position: 'absolute',
-                            width: Dimensions.get('window').width - 40, height: Dimensions.get('window').height,
+                            width: Dimensions.get('screen').width - 40, height: Dimensions.get('screen').height,
                             opacity: 1
                         }}>
 
@@ -42,7 +42,7 @@ class ArtistDetailsScreen extends PureComponent {
                             style={{
                                 backgroundColor: '#ec556f',
                                 top: 0, left: 5,
-                                width: Dimensions.get('window').width - 50, height: 1.2 * Dimensions.get('window').height,
+                                width: Dimensions.get('screen').width - 50, height: 1.2 * Dimensions.get('screen').height,
                                 opacity: 1
                             }}>
                             <Text allowFontScaling={false} id='textLabelArtist' style={{
@@ -62,7 +62,7 @@ class ArtistDetailsScreen extends PureComponent {
                             <Text allowFontScaling={false} id='artistBioFocus' style={{
                                 position: 'absolute',
                                 top: (200), left: 30,
-                                width: Dimensions.get('window').width - 70 - 25, height: 1.2 * Dimensions.get('window').height,
+                                width: Dimensions.get('screen').width - 70 - 25, height: 1.2 * Dimensions.get('screen').height,
                                 fontFamily: 'Arcon-Regular',
                                 letterSpacing: 1,
                                 textAlign: 'justify',
@@ -102,7 +102,7 @@ class ArtistDetailsScreen extends PureComponent {
                         style={{
                             // backgroundColor: 'skyblue',
                             top: 0, left: 0, position: 'absolute',
-                            width: Dimensions.get('window').width, height: Dimensions.get('window').height,
+                            width: Dimensions.get('screen').width, height: Dimensions.get('screen').height,
                             resizeMode: "contain",
                             opacity: 1
                         }}
@@ -117,7 +117,7 @@ class ArtistDetailsScreen extends PureComponent {
                         position: 'absolute',
                         top: 30,
                         left: 0,
-                        width: Dimensions.get('window').width, height: 60,
+                        width: Dimensions.get('screen').width, height: 60,
                         // backgroundColor: 'indigo',
                     }}
                     onPress={() => { TransitionScreenL3toL2() }}

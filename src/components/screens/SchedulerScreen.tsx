@@ -1,5 +1,5 @@
 import React, { PureComponent, createRef } from "react";
-import { Dimensions } from "react-native";
+import { Dimensions, View } from "react-native";
 import Animated from 'react-native-reanimated';
 import DataModel from "../../DataModel";
 import LauncherController from "../../LauncherController";
@@ -32,6 +32,7 @@ class SchedulerScreen extends PureComponent {
 
         return (
             <>
+
                 <LComponent
                     name='sessionScreenContainer'
                     style={{
@@ -42,11 +43,13 @@ class SchedulerScreen extends PureComponent {
                         alpha: 1.0, x: 'windowWidth', y: 0, z: 0, w: "windowWidth", h: "windowHeight"
                     }}
                 >
+    
+
                     {
                         DataModel.dataScheduleListsByDay.map((list, i) => {
                             return (
                                 <LComponent
-                                    key={"scheduleList" + i} 
+                                    key={"scheduleList" + i}
                                     name={'scheduleList' + i}
                                     style={{
                                         position: 'absolute',
@@ -54,9 +57,9 @@ class SchedulerScreen extends PureComponent {
                                     }}
                                     visualProperties={{
                                         alpha: 1,
-                                        x: i * Dimensions.get('window').width, y: offsetY, z: 0,
-                                        w: Dimensions.get('window').width - offsetX, 
-                                        h:  Dimensions.get('window').height - offsetY, 
+                                        x: i * Dimensions.get('screen').width, y: offsetY, z: 0,
+                                        w: Dimensions.get('screen').width - offsetX,
+                                        h: Dimensions.get('screen').height - offsetY,
                                     }}
                                 >
                                     {/* <GestureDetector gesture={Gesture.Native()}> */}
@@ -68,8 +71,8 @@ class SchedulerScreen extends PureComponent {
                                             position: 'absolute',
                                             backgroundColor: '#FBB03A',
                                             left: 0, top: 20,
-                                            width: Dimensions.get('window').width - offsetX,
-                                            height: Dimensions.get('window').height - offsetY-10, 
+                                            width: Dimensions.get('screen').width - offsetX,
+                                            height: Dimensions.get('screen').height - offsetY - 10,
                                             opacity: 1
                                         }}
                                         data={list.data}
@@ -84,6 +87,14 @@ class SchedulerScreen extends PureComponent {
 
                     <TabBar ></TabBar>
                     <ScreenHeader text="FESTIVAL PROGRAM" color='#FBB03A' />
+                    <View
+                        style={{
+                            backgroundColor: '#9F509F',
+                            bottom: (Dimensions.get('screen').width * (300 / 1290))/2-1, left: 0, position: 'absolute',
+                            width: Dimensions.get('screen').width,
+                            height: (Dimensions.get('screen').width * (300 / 1290)),
+                            opacity: 0.9
+                        }} />
                 </LComponent>
 
             </>

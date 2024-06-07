@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import ArtistListScreen from "./ArtistListScreen";
 import LComponent from "../../core/LComponent";
-import { Dimensions } from "react-native";
+import { Dimensions, View } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ArtistDetailsScreen from "./ArtistDetailsScreen";
 import { NavigationContainer } from '@react-navigation/native';
@@ -20,7 +20,7 @@ class ArtistMainScreen extends PureComponent {
     render() {
 
         const stack = createNativeStackNavigator();
-        const headerOptions:any = {
+        const headerOptions: any = {
             // headerTitle: (props) => <HeaderNavigator {...props} />
             // title: 'ARTIST PAGES',
             headerBackVisible: true,
@@ -28,11 +28,14 @@ class ArtistMainScreen extends PureComponent {
             headerTransparent: true,
             headerStyle: {
                 backgroundColor: '#EF4260',
-            },
-            headerTintColor: '#fff',
-            headerTitleStyle: {
                 fontFamily: "Antonio-Regular",
                 fontWeight: 'bold',
+                fontSize: 26,
+            },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: {
+                fontFamily: "Antonio-Regular",
+                fontWeight: 'normal',
                 fontSize: 26,
             },
         }
@@ -44,24 +47,32 @@ class ArtistMainScreen extends PureComponent {
                     style={{
                         position: 'absolute',
                         backgroundColor: '#dd5163',
-                        width: Dimensions.get('window').width,
-                        height: Dimensions.get('window').height,
+                        width: Dimensions.get('screen').width,
+                        height: Dimensions.get('screen').height,
                     }}
                     visualProperties={{
                         alpha: 0,
-                        x: Dimensions.get('window').width, y: 0, z: 0
+                        x: Dimensions.get('screen').width, y: 0, z: 0
                     }}
                 >
+
                     <NavigationContainer>
                         <stack.Navigator>
                             <stack.Screen name="ARTIST PAGES" component={ArtistListScreen}
                                 options={headerOptions}
                             />
                             <stack.Screen name="ARTIST DETAILS" component={ArtistDetailsScreen}
-                            options={headerOptions} />
+                                options={headerOptions} />
                         </stack.Navigator>
                     </NavigationContainer>
-
+                    <View
+                        style={{
+                            backgroundColor: '#EF4260',
+                            bottom: (Dimensions.get('screen').width * (300 / 1290)) / 2 - 1, left: 0, position: 'absolute',
+                            width: Dimensions.get('screen').width,
+                            height: (Dimensions.get('screen').width * (300 / 1290)),
+                            opacity: 0.8
+                        }} />
                 </LComponent>
 
             </>

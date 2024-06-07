@@ -3,7 +3,7 @@ import ButtonSmall from '../ButtonSmall';
 import TransitionArtistNavigateDown from '../../transitions/TransitionArtistNavigateDown';
 
 const ArtistListItemRenderer = ({ item, index }) => {
-  const centerPieceWidth = Dimensions.get('window').width - (5 + 45 + 35 + 35 + 5)
+  const centerPieceWidth = Dimensions.get('screen').width - (5 + 45 + 35 + 35 + 5)
   const paddingLeftAndRight = 5;
   let itemHeight = 130;
 
@@ -13,8 +13,8 @@ const ArtistListItemRenderer = ({ item, index }) => {
                     style={{
                         // backgroundColor: 'skyblue',
                         top: 5, left: 0, position: 'absolute',
-                        width: Dimensions.get('window').width,
-                        height: (Dimensions.get('window').width * (300 / 1290)),
+                        width: Dimensions.get('screen').width,
+                        height: (Dimensions.get('screen').width * (300 / 1290)),
                         resizeMode: "contain",
                         opacity: 0.1
                     }}
@@ -24,7 +24,7 @@ const ArtistListItemRenderer = ({ item, index }) => {
         style={{
           backgroundColor: 'transparent',
           left: paddingLeftAndRight,
-          height: itemHeight, width: Dimensions.get('window').width - 2 * paddingLeftAndRight,
+          height: itemHeight, width: Dimensions.get('screen').width - 2 * paddingLeftAndRight,
           borderTopColor: '#edc36a',
           borderTopWidth: 0,
           borderBottomColor: 'black',
@@ -42,8 +42,8 @@ const ArtistListItemRenderer = ({ item, index }) => {
 
           <Text allowFontScaling={false} id='textArtistName' style={{
             position: 'absolute',
-            top: 35, left: 140,
-            width: 290, height: 16,
+            top: 30, left: 140,
+            width: 290, height: 19,
             fontFamily: 'Cabin-Regular',
             letterSpacing: 2.0,
             // backgroundColor: 'indigo',
@@ -76,7 +76,7 @@ const ArtistListItemRenderer = ({ item, index }) => {
                 textAlignVertical: 'center',
                 letterSpacing: 2.0,
                 color: '#FFFFFF',
-                fontSize: 8,
+                fontSize: 8.5,
               }}
               visualProperties={{ alpha: 1 }}
               onSelect={() => { TransitionArtistNavigateDown(item) }}

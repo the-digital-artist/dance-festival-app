@@ -11,7 +11,7 @@ const ScheduleListItem = ({ item, index }) => {
   if (item == undefined || item == null) return null;
   if (item.itemType == "type1" && item.flag == true) return null;
 
-  const centerPieceWidth = Dimensions.get('window').width - (5 + 45 + 35 + 35 + 5)
+  const centerPieceWidth = Dimensions.get('screen').width - (5 + 45 + 35 + 35 + 5)
   const paddingLeftAndRight = 5;
 
   let itemHeight = 110;
@@ -48,7 +48,7 @@ const ScheduleListItem = ({ item, index }) => {
         style={{
           // backgroundColor: '#FBB03A',
           left: paddingLeftAndRight,
-          height: itemHeight, width: Dimensions.get('window').width - 2 * paddingLeftAndRight,
+          height: itemHeight, width: Dimensions.get('screen').width - 2 * paddingLeftAndRight,
           borderTopColor: '#edc36a',
           borderTopWidth: 0,
           borderBottomColor: 'white',
@@ -62,7 +62,7 @@ const ScheduleListItem = ({ item, index }) => {
               source={require('../../../assets/sessionitem-frame.png')}
               style={{
                 position: 'absolute', resizeMode: 'contain', opacity: 0.2,
-                left: 0, top: 74, width: Dimensions.get('window').width, height: itemHeight - 88,
+                left: 0, top: 74, width: Dimensions.get('screen').width, height: itemHeight - 88,
               }}
             />
           </>

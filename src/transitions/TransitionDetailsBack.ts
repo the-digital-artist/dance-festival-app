@@ -4,7 +4,7 @@ import LauncherController from "../LauncherController";
 
 const TransitionDetailsBack = () => {
         console.log("TransitionDetailsBack");
-        let targetX = Dimensions.get('window').width;
+        let targetX = Dimensions.get('screen').width;
 
         let context = LauncherController.getInstance().context;
 
@@ -26,8 +26,8 @@ const TransitionDetailsBack = () => {
         let targetHeight =  (context.focusedItemData.rowHeight-30);
         let targetPosY = 20
       
-        let targetWidth = Dimensions.get("window").width;
-        let currentWidth =Dimensions.get('window').width - (5 + 45 + 35 + 35 + 5)
+        let targetWidth = Dimensions.get("screen").width;
+        let currentWidth =Dimensions.get('screen').width - (5 + 45 + 35 + 35 + 5)
        
         TweenManager.tween().to("ScheduleItemFrame1_focus", 236, { y: targetPosY,  h: targetHeight,  delay: 0  }); 
       

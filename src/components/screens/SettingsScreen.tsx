@@ -32,7 +32,7 @@ class SettingsScreen extends PureComponent {
         ]
         let iconSize = 35;
         let itemDistance = 60
-        let startX = (Dimensions.get('window').width / 2 - ((socialBarData.length - 1) * itemDistance) / 2) - iconSize / 2
+        let startX = (Dimensions.get('screen').width / 2 - ((socialBarData.length - 1) * itemDistance) / 2) - iconSize / 2
 
         return (
             <LComponent
@@ -40,19 +40,19 @@ class SettingsScreen extends PureComponent {
                 style={{
                     position: 'absolute',
                     backgroundColor: '#232323',
-                    width: Dimensions.get('window').width,
-                    height: Dimensions.get('window').height,
+                    width: Dimensions.get('screen').width,
+                    height: Dimensions.get('screen').height,
                 }}
                 visualProperties={{
                     alpha: 0,
-                    x: Dimensions.get('window').width, y: 0, z: 0
+                    x: Dimensions.get('screen').width, y: 0, z: 0
                 }}
             >
                 <Image
                     style={{
                         // backgroundColor: 'skyblue',
                         top: 0, left: 0, position: 'absolute',
-                        width: Dimensions.get('window').width, height: Dimensions.get('window').height,
+                        width: Dimensions.get('screen').width, height: Dimensions.get('screen').height,
                         resizeMode: "cover",
                         opacity: 1
                     }}
@@ -63,7 +63,7 @@ class SettingsScreen extends PureComponent {
                     source={require('../../../assets/logo-full.png')}
                     style={{
                         position: 'absolute', resizeMode: 'contain', opacity: 1.0,
-                        left: (Dimensions.get('window').width - 150) / 2, top: 100,
+                        left: (Dimensions.get('screen').width - 150) / 2, top: 100,
                         width: 150,
                         height: 150 * 800 / 768,
                     }}
@@ -80,7 +80,7 @@ class SettingsScreen extends PureComponent {
                     position: 'absolute',
                     backgroundColor: '#1c1919',
                     left: 0, top: 290,
-                    width: Dimensions.get('window').width - 0,
+                    width: Dimensions.get('screen').width - 0,
                     height: (SettingsScreen.settingsItemRendererHeight * SettingsScreen.settingsListData.length + 2 * 5),
                     opacity: 0.4,
                 }}
@@ -92,7 +92,7 @@ class SettingsScreen extends PureComponent {
                         position: 'absolute',
                         // backgroundColor: '#1c1919',
                         left: 0, top: 295,
-                        width: Dimensions.get('window').width - 0,
+                        width: Dimensions.get('screen').width - 0,
                         height: (SettingsScreen.settingsItemRendererHeight * SettingsScreen.settingsListData.length),
                         opacity: 1,
                     }}
@@ -108,7 +108,7 @@ class SettingsScreen extends PureComponent {
                     top: 350,
                     left: 0,
                     height: 15,
-                    width: Dimensions.get('window').width,
+                    width: Dimensions.get('screen').width,
                     fontFamily: 'Cabin-Regular',
                     letterSpacing: 2.0,
                     fontSize: 12,
@@ -142,7 +142,7 @@ class SettingsScreen extends PureComponent {
                                 fontStyle={{
                                     // backgroundColor: 'skyblue',
                                     left: -8,
-                                    top: 40, width: iconSize + 16,
+                                    top: 40, width: iconSize + 18,
                                     fontFamily: 'Arcon-Regular',
                                     textAlign: 'center',
                                     letterSpacing: 1.0,
@@ -161,7 +161,7 @@ class SettingsScreen extends PureComponent {
                             top: 200,
                             left: 45,
                             height: 80,
-                            width: Dimensions.get('window').width-(45*2),
+                            width: Dimensions.get('screen').width-(45*2),
                             fontFamily: 'Cabin-Regular',
                             letterSpacing: 2.0,
                             fontSize: 10,
@@ -177,7 +177,7 @@ class SettingsScreen extends PureComponent {
                             style={{
                                 position: 'absolute',
                                 top: (280), left: 45,
-                                height: 35, width: Dimensions.get('window').width - (2 * 15)
+                                height: 35, width: Dimensions.get('screen').width - (2 * 15)
                             }}
                             text={"ENABLE PUSH NOTIFICATIONS"}
                             bgBoxVisible={true}

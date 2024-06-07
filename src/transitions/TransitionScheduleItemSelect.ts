@@ -47,8 +47,8 @@ const TransitionScheduleItemSelect = (item) => {
   let currentPosY = 20
   let targetPosY = currentPosY + (deltaExpandHeight) / 2 //anchorpoint top
 
-  let targetWidth = Dimensions.get("window").width;
-  let currentWidth = Dimensions.get('window').width - (5 + 45 + 35 + 35 + 5)
+  let targetWidth = Dimensions.get("screen").width;
+  let currentWidth = Dimensions.get('screen').width - (5 + 45 + 35 + 35 + 5)
   let currentPosX = 80
   let targetPosX = currentPosY + (deltaExpandHeight) / 2 //anchorpoint top
 

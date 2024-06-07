@@ -26,8 +26,8 @@ class LImage extends Component<any,any> {
             for (let key in this.props.visualProperties) {
                 // console.log("LImage " + this.props.name + " - visualProperties.................................." + key)
                 let initialValue = this.props.visualProperties[key]
-                if(initialValue=="windowWidth") initialValue = Dimensions.get('window').width;
-                if(initialValue=="windowHeight") initialValue = Dimensions.get('window').height;
+                if(initialValue=="windowWidth") initialValue = Dimensions.get('screen').width;
+                if(initialValue=="windowHeight") initialValue = Dimensions.get('screen').height;
 
                 this.propertyValuesInit[key] = initialValue;
 

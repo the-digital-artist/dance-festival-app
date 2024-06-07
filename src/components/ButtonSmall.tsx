@@ -8,7 +8,7 @@ const ButtonSmall = (props) => {
     if (!(props.visualProperties as Object).hasOwnProperty('alpha')) props.visualProperties['alpha'] = 1;
 
     let fontSize = (props.fontStyle!= undefined)  && (props.fontStyle.fontSize != undefined) ? props.fontStyle.fontSize : 8;
-    let textCenterPosY = (props.style.height - (fontSize + 2)) / 2
+    let textCenterPosY = (props.style.height - (fontSize + 4)) / 2
 
     return (
         <>

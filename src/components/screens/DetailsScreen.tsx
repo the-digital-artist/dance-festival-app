@@ -28,8 +28,8 @@ class DetailsScreen extends Component<any,any> {
                     style={{
                         position: 'absolute',
                         backgroundColor: '#aa6eaa',
-                        width: Dimensions.get('window').width,
-                        height: Dimensions.get('window').height,
+                        width: Dimensions.get('screen').width,
+                        height: Dimensions.get('screen').height,
                     }}
                     visualProperties={{
                         alpha: 0,
@@ -40,7 +40,7 @@ class DetailsScreen extends Component<any,any> {
                         style={{
                             // backgroundColor: 'skyblue',
                             top: 0, left: 0, position: 'absolute',
-                            width: Dimensions.get('window').width, height: Dimensions.get('window').height,
+                            width: Dimensions.get('screen').width, height: Dimensions.get('screen').height,
                             resizeMode: "cover",
                             opacity: 1
                         }}
@@ -76,7 +76,7 @@ class DetailsScreen extends Component<any,any> {
                             position: 'absolute',
                             top: 500,
                             left: 0,
-                            width: Dimensions.get('window').width, height: 60,
+                            width: Dimensions.get('screen').width, height: 60,
                             backgroundColor: 'indigo',
                         }}
                         onPress={() => { TransitionDetailsBack() }}

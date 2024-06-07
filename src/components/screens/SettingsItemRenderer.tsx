@@ -4,7 +4,7 @@ import ButtonSmall from '../ButtonSmall';
 import SettingsScreen from './SettingsScreen';
 
 const SettingsItemRenderer = ({ item, index }) => {
-  const centerPieceWidth = Dimensions.get('window').width - (5 + 45 + 35 + 35 + 5)
+  const centerPieceWidth = Dimensions.get('screen').width - (5 + 45 + 35 + 35 + 5)
   const paddingLeftAndRight = 25;
 
   return (
@@ -13,7 +13,7 @@ const SettingsItemRenderer = ({ item, index }) => {
         style={{
           // backgroundColor: 'skyblue',
           top: 0, left: 0, position: 'absolute',
-          width: Dimensions.get('window').width,
+          width: Dimensions.get('screen').width,
           height: SettingsScreen.settingsItemRendererHeight,
           resizeMode: "repeat",
           opacity: 0.02
@@ -25,7 +25,7 @@ const SettingsItemRenderer = ({ item, index }) => {
           backgroundColor: 'transparent',
           left: paddingLeftAndRight,
           height: SettingsScreen.settingsItemRendererHeight,
-          width: Dimensions.get('window').width - 2 * paddingLeftAndRight,
+          width: Dimensions.get('screen').width - 2 * paddingLeftAndRight,
           borderTopColor: '#edc36a',
           borderTopWidth: 0,
           borderBottomColor: 'black',
@@ -49,16 +49,16 @@ const SettingsItemRenderer = ({ item, index }) => {
               position: 'absolute',
               left: paddingLeftAndRight,
               top: 10,
-              height: 30, width: Dimensions.get('window').width - (2 * 30),
+              height: 30, width: Dimensions.get('screen').width - (2 * 30),
             }}
             text={(item.title as string).toLocaleUpperCase()}
             bgBoxVisible={true}
             bgBoxStyle={{
               // backgroundColor: '#EF4260',
-              height: 30, width: Dimensions.get('window').width - (2 * 30)
+              height: 30, width: Dimensions.get('screen').width - (2 * 30)
             }}
             fontStyle={{
-              width: Dimensions.get('window').width - (2 * 30),
+              width: Dimensions.get('screen').width - (2 * 30),
               fontFamily: 'Cabin-Regular',
               textAlign: 'left',
               textAlignVertical: 'center',

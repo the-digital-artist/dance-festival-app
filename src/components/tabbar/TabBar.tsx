@@ -18,7 +18,7 @@ const TabBar = (props) => {
     let itemHeight = 43;
     let itemHeightSelectedOffset = 10;
     let itemSpread = 140
-    let startX = (Dimensions.get('window').width / 2 - ((tabBarData.length - 1) * itemSpread) / 2) - itemWidth / 2
+    let startX = (Dimensions.get('screen').width / 2 - ((tabBarData.length - 1) * itemSpread) / 2) - itemWidth / 2
 
     const currentIndex = useSharedValue(0);
     const selectedIndex = useSharedValue(0);
@@ -45,7 +45,7 @@ const TabBar = (props) => {
                 pointerEvents: 'none',
                 backgroundColor: '#f3c67a',
                 top: 100 + itemHeightSelectedOffset, left: 0, position: 'absolute',
-                width: Dimensions.get('window').width,
+                width: Dimensions.get('screen').width,
                 height: itemHeight - itemHeightSelectedOffset,
                 //  borderTopColor: 'white',
                 //  borderTopWidth: StyleSheet.hairlineWidth,
@@ -53,8 +53,8 @@ const TabBar = (props) => {
             }}>
                 {/* <Image
                     style={{
-                        width: Dimensions.get('window').width,
-                        height: (Dimensions.get('window').width * (300 / 1290)),
+                        width: Dimensions.get('screen').width,
+                        height: (Dimensions.get('screen').width * (300 / 1290)),
                         resizeMode: "contain",
                         opacity: 0.2    
                     }}
