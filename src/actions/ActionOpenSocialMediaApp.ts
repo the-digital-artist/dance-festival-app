@@ -1,18 +1,18 @@
 import * as Linking from 'expo-linking';
 
-const ActionOpenSocialMediaApp = (provider) => {
+const ActionOpenSocialMediaApp = (provider, account) => {
         console.log("ActionOpenSocialMediaApp");
 
 
         if (provider == 'Instagram') {
-                let account = 'queer_afro_latin_dance_fest';
+                // let account = 'queer_afro_latin_dance_fest';
                 let appUrl = 'instagram://user?username=' + account
 
                 // Linking.openURL(appUrl);
                 Linking.canOpenURL(appUrl).then(supported => {
                         console.log("instagram opening supported: " + supported);
                         if (!supported) {
-                                Linking.openURL("https://www.instagram.com/queer_afro_latin_dance_fest");
+                                Linking.openURL("https://www.instagram.com/"+account);
                                 return false;
                         };
                         Linking.openURL(appUrl);
@@ -23,7 +23,7 @@ const ActionOpenSocialMediaApp = (provider) => {
         }
 
         if (provider == 'Facebook') {
-                let account = '761248704084273';
+                // let account = '761248704084273';
                 let appUrl = 'fb://profile/' + account
 
                 // console.log(JSON.stringify(appUrl, null, 2));
@@ -31,7 +31,7 @@ const ActionOpenSocialMediaApp = (provider) => {
                 Linking.canOpenURL(appUrl).then(supported => {
                         console.log("facebook opening supported: " + supported);
                         if (!supported) {
-                                Linking.openURL("https://www.facebook.com/Queerafrolatindancefestival");
+                                Linking.openURL("https://www.facebook.com/"+account);
                                 return false;
                         };
                         Linking.openURL(appUrl);
@@ -42,7 +42,7 @@ const ActionOpenSocialMediaApp = (provider) => {
         }
 
         if (provider == 'Youtube') {
-                let account = 'UCUOPjCArvYfJ7bEvNkJYsRQ';
+                // let account = 'UCUOPjCArvYfJ7bEvNkJYsRQ';
                 let appUrl = 'vnd.youtube://channel/' + account
 
                 // console.log(JSON.stringify(appUrl, null, 2));
@@ -50,7 +50,7 @@ const ActionOpenSocialMediaApp = (provider) => {
                 Linking.canOpenURL(appUrl).then(supported => {
                         console.log("youtube opening supported: " + supported);
                         if (!supported) {
-                                Linking.openURL("https://www.youtube.com/channel/UCUOPjCArvYfJ7bEvNkJYsRQ");
+                                Linking.openURL("https://www.youtube.com/channel/"+account);
                                 return false;
                         };
                         Linking.openURL(appUrl);
@@ -62,11 +62,11 @@ const ActionOpenSocialMediaApp = (provider) => {
 
 
         if (provider == 'Web') {
-                let url = 'https://queerafrolatindancefestival.com/'
-                Linking.canOpenURL(url).then(supported => {
+                // let account = 'https://queerafrolatindancefestival.com/'
+                Linking.canOpenURL(account).then(supported => {
                         console.log("supported" + supported);
                         if (!supported) return;
-                        Linking.openURL(url);
+                        Linking.openURL(account);
                 }).catch(err => {
                         console.error(err);
                 });

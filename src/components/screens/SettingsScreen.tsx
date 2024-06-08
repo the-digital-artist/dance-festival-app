@@ -25,12 +25,12 @@ class SettingsScreen extends PureComponent {
     render() {
 
         let socialBarData = [
-            { id: 0, itemText: "Instagram", associatedScreenName: "", imgSrc: require('../../../assets/icon-social-insta.png') },
-            { id: 1, itemText: "Youtube", associatedScreenName: "", imgSrc: require('../../../assets/icon-social-youtube.png') },
-            { id: 3, itemText: "Facebook", associatedScreenName: "", imgSrc: require('../../../assets/icon-social-facebook.png') },
-            { id: 4, itemText: "Web", associatedScreenName: "", imgSrc: require('../../../assets/icon-social-web.png') }
-
+            { id: 0, itemText: "Instagram", account: "queer_afro_latin_dance_fest", imgSrc: require('../../../assets/icon-social-insta.png') },
+            { id: 1, itemText: "Youtube", account: "UCUOPjCArvYfJ7bEvNkJYsRQ", imgSrc: require('../../../assets/icon-social-youtube.png') },
+            { id: 3, itemText: "Facebook", account: "761248704084273", imgSrc: require('../../../assets/icon-social-facebook.png') },
+            { id: 4, itemText: "Web", account: "https://queerafrolatindancefestival.com", imgSrc: require('../../../assets/icon-social-web.png') }
         ]
+
         let iconSize = 35;
         let itemDistance = 60
         let startX = (Dimensions.get('screen').width / 2 - ((socialBarData.length - 1) * itemDistance) / 2) - iconSize / 2
@@ -137,7 +137,7 @@ class SettingsScreen extends PureComponent {
                                     opacity: 1.0
                                 }}
                                 visualProperties={{ alpha: 1, x: 0, y: 0, z: 0 }}
-                                onSelect={() => { ActionOpenSocialMediaApp(itemData.itemText) }}
+                                onSelect={() => { ActionOpenSocialMediaApp(itemData.itemText, itemData.account) }}
                                 source={itemData.imgSrc}
                                 text={(itemData.itemText as string).toLocaleUpperCase()}
                                 fontStyle={{
