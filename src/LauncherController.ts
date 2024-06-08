@@ -7,6 +7,7 @@ import DataModel from './DataModel';
 import { createRef } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import ActionUpdateHappeningNow from './actions/ActionUpdateHappeningNow';
+import ActionUpdateDataModelWithRemote from './actions/ActionUpdateDataModel';
 
 
 class LauncherController extends OperatorStates {
@@ -47,7 +48,7 @@ class LauncherController extends OperatorStates {
 
             stackNavigator: null,
             artistFocusItem: {
-                name: 'Susana Arenas',
+                fullName: 'Susana Arenas',
                 portrait: "_0023_SUSANA-ARENAS.png",
                 imgSrc: null,
                 shortBio: ``,
@@ -61,7 +62,7 @@ class LauncherController extends OperatorStates {
                 groupTitle: '',
                 groupSubtitle: '',
                 room: 'Relax and Plan Ahead with The Festival Planner',
-                time:  '00:00'
+                time: '00:00'
             }],
             happeningNowTimeUpdateFunction: null,
             happeningNowItemUpdateFunction: null,
@@ -69,6 +70,10 @@ class LauncherController extends OperatorStates {
             currentDateString: "06.06.24",
             currentDayIndex: -1,
 
+            //components dependent on data model
+            dataModelUpdateState: 0,
+            dataDependentComponentSchedulerScreen: null,
+            dataDependentComponentArtistScreen: null,
         };
 
     flow =
@@ -178,8 +183,15 @@ class LauncherController extends OperatorStates {
         try {
             await Font.loadAsync(this.customFonts);
             console.log("LauncherController - Fonts loaded.");
+            await this.getLocallyStoredDataModel();
+            await this.getRemoteDataModel();
+            console.log('LauncherController - Model Update complete.');
             await this.prepareDataModel();
-            console.log('Launcher initialization done. Tutorial completed: ' + this.appTutorialCompleted);
+            console.log('LauncherController initialization done. Tutorial completed: ' + this.appTutorialCompleted);
+
+            ActionUpdateHappeningNow();
+            const checkHappeningNowFunction = setInterval(() => { ActionUpdateHappeningNow(); }, 10000);
+            const checkForModelUpdate = setInterval(() => { ActionUpdateDataModelWithRemote(); }, DataModel.modelRemoteUpdateInterval);
 
         } catch (e) {
             console.warn(e);
@@ -187,58 +199,124 @@ class LauncherController extends OperatorStates {
 
     }
 
-    async prepareDataModel() {
 
+    async getLocallyStoredDataModel() {
+        try {
+            const value = await AsyncStorage.getItem('qaldfDataModel');
+            if (value == null) { //never used local storage - first time load
+                const modelAsString = JSON.stringify({
+                    modelVersion: DataModel.modelVersion,
+                    dataArtists: DataModel.dataArtists,
+                    dataScheduleRaw: DataModel.dataScheduleRaw
+                });
+                AsyncStorage.setItem('qaldfDataModel', modelAsString);
+                return;
+            }
+            if (value !== null) {
+                const locallyStoredModel = JSON.parse(value);
+                if (locallyStoredModel.modelVersion <= DataModel.modelVersion) return;
+
+                DataModel.dataArtists = locallyStoredModel.dataArtists
+                DataModel.dataScheduleRaw = locallyStoredModel.dataScheduleRaw
+                DataModel.modelVersion = locallyStoredModel.modelVersion
+
+                AsyncStorage.setItem('qaldfDataModel', value);
+                return;
+            }
+        } catch (e) {
+            console.error(e)
+        }
+    };
+
+    async getRemoteDataModel() {
+
+        try {
+            const fetchController = new AbortController()
+            setTimeout(() => { fetchController.abort() }, 1500)
+
+            const response = await fetch(DataModel.modelRemoteGetModelUrl, { signal: fetchController.signal });
+            if (!response.ok) return;
+
+            const remoteModel = await response.json();
+            // console.log(":::::getRemoteDataModel -- remoteModel: "+JSON.stringify(response,null,2))
+
+            if (remoteModel.modelVersion > DataModel.modelVersion) {
+                console.log(":::::getRemoteDataModel -- modelVersion is greater than Local - updating in-memory model");
+                DataModel.modelVersion = remoteModel.modelVersion
+                DataModel.dataArtists = remoteModel.dataArtists;
+                DataModel.dataScheduleRaw = remoteModel.dataScheduleRaw;
+                AsyncStorage.setItem('qaldfDataModel', JSON.stringify({
+                    modelVersion: DataModel.modelVersion,
+                    dataArtists: DataModel.dataArtists,
+                    dataScheduleRaw: DataModel.dataScheduleRaw
+                }));
+            }
+
+        } catch (error) {
+            if (error.message == "Aborted") {
+                console.log(":::::getRemoteDataModel -- Internet too slow - aborting request")
+                return;
+            }
+            // console.error(error);
+        }
+    }
+
+    async prepareDataModel() {
+        console.log("::::::::Preparing Data Model - Model Version: " + DataModel.modelVersion);
         //artist data reformatting
         //1) add static references to the imgSrc field of the artist data item
 
         //load images
+        try {
+            if(DataModel.dataArtists['Ace Fusion'] != undefined) DataModel.dataArtists['Ace Fusion'].imgSrc = require('../assets/portraits/_0013_ACE-FUSION.png');
+            if(DataModel.dataArtists['Adrián Nitti'] != undefined) DataModel.dataArtists['Adrián Nitti'].imgSrc = require('../assets/portraits/_0014_ADRIÁN.png');
+            if(DataModel.dataArtists['Alex & Desiree'] != undefined) DataModel.dataArtists['Alex & Desiree'].imgSrc = require('../assets/portraits/_0022_ALEX__DESIREE.png');
+            if(DataModel.dataArtists['Alicia Langlais'] != undefined) DataModel.dataArtists['Alicia Langlais'].imgSrc = require('../assets/portraits/_0020_ALICIA-LANGLAIS.png');
+            if(DataModel.dataArtists['Amoura Teese'] != undefined) DataModel.dataArtists['Amoura Teese'].imgSrc = require('../assets/portraits/_0021_AMOURA-TEESE.png');
+            if(DataModel.dataArtists['Andrew Noel'] != undefined) DataModel.dataArtists['Andrew Noel'].imgSrc = require('../assets/portraits/_0018_ANDREW-NOEL.png');
+            if(DataModel.dataArtists['Angelica Medina'] != undefined) DataModel.dataArtists['Angelica Medina'].imgSrc = require('../assets/portraits/_0006_ANGELICA-MEDINA.png');
+            if(DataModel.dataArtists['Angie & Audrey'] != undefined) DataModel.dataArtists['Angie & Audrey'].imgSrc = require('../assets/portraits/_0010_ANGIE__AUDREY.png');
+            if(DataModel.dataArtists['Bex'] != undefined) DataModel.dataArtists['Bex'].imgSrc = require('../assets/portraits/_0014_ADRIÁN.png');
+            if(DataModel.dataArtists['Bryon & Sammantha'] != undefined) DataModel.dataArtists['Bryon & Sammantha'].imgSrc = require('../assets/portraits/_0001_BRYON__SAMMANTHA.png');
+            if(DataModel.dataArtists['Eleanee & Baudillo'] != undefined) DataModel.dataArtists['Eleanee & Baudillo'].imgSrc = require('../assets/portraits/_0016_ELEANEE__BAUDILLO.png');
+            if(DataModel.dataArtists['Elena Rovito'] != undefined) DataModel.dataArtists['Elena Rovito'].imgSrc = require('../assets/portraits/_0012_ELENA-ROVITO.png');
+            if(DataModel.dataArtists['Franklin Liranzo'] != undefined) DataModel.dataArtists['Franklin Liranzo'].imgSrc = require('../assets/portraits/_0009_FRANKLIN-LIRANZO.png');
+            if(DataModel.dataArtists['Gabriele Di Marzo'] != undefined) DataModel.dataArtists['Gabriele Di Marzo'].imgSrc = require('../assets/portraits/_0008_GABRIELE-DI-MARZO.png');
+            if(DataModel.dataArtists['Jahaira Fajardo'] != undefined) DataModel.dataArtists['Jahaira Fajardo'].imgSrc = require('../assets/portraits/_0011_JAHAIRA.png');
+            if(DataModel.dataArtists['Jason Rodriguez'] != undefined) DataModel.dataArtists['Jason Rodriguez'].imgSrc = require('../assets/portraits/_0026_JASON-RODRIGUEZ.png');
+            if(DataModel.dataArtists['Jayven Colon'] != undefined) DataModel.dataArtists['Jayven Colon'].imgSrc = require('../assets/portraits/_0007_JAYVEN-COLON.png');
+            if(DataModel.dataArtists['Jeremy Meza'] != undefined) DataModel.dataArtists['Jeremy Meza'].imgSrc = require('../assets/portraits/_0033_JEREMY-MEZA.png');
+            if(DataModel.dataArtists['Jessica Marie'] != undefined) DataModel.dataArtists['Jessica Marie'].imgSrc = require('../assets/portraits/_0035_JESSICA-MARIE.png');
+            if(DataModel.dataArtists['Jhesus Aponte'] != undefined) DataModel.dataArtists['Jhesus Aponte'].imgSrc = require('../assets/portraits/_0019_JHESUS-APONTE.png');
+            if(DataModel.dataArtists['Joel Gomez'] != undefined) DataModel.dataArtists['Joel Gomez'].imgSrc = require('../assets/portraits/_0017_JOEL-GOMEZ.png');
+            if(DataModel.dataArtists['John & Liz'] != undefined) DataModel.dataArtists['John & Liz'].imgSrc = require('../assets/portraits/_0036_JOHN-AND-LIZ.png');
+            if(DataModel.dataArtists['Karel & Bruno'] != undefined) DataModel.dataArtists['Karel & Bruno'].imgSrc = require('../assets/portraits/_0034_KAREL__BRUNO.png');
+            if(DataModel.dataArtists['Karel Flores'] != undefined) DataModel.dataArtists['Karel Flores'].imgSrc = require('../assets/portraits/_0034_KAREL__BRUNO.png');
+            if(DataModel.dataArtists['Kathy Reyes'] != undefined) DataModel.dataArtists['Kathy Reyes'].imgSrc = require('../assets/portraits/_0037_KATHY-REYES.png');
+            if(DataModel.dataArtists['Katlyn Rodriguez'] != undefined) DataModel.dataArtists['Katlyn Rodriguez'].imgSrc = require('../assets/portraits/_0032_KATLYN-RODRIGUEZ.png');
+            if(DataModel.dataArtists['Kyla Hallumus'] != undefined) DataModel.dataArtists['Kyla Hallumus'].imgSrc = require('../assets/portraits/_0005_KYLA-HALLUMUS.png');
+            if(DataModel.dataArtists['Latisha Hardy'] != undefined) DataModel.dataArtists['Latisha Hardy'].imgSrc = require('../assets/portraits/_0004_LATISHA-HARDY.png');
+            if(DataModel.dataArtists['Lilly Rose'] != undefined) DataModel.dataArtists['Lilly Rose'].imgSrc = require('../assets/portraits/_0003_LILLY-ROSE.png');
+            if(DataModel.dataArtists['Luis Aguilar'] != undefined) DataModel.dataArtists['Luis Aguilar'].imgSrc = require('../assets/portraits/_0039_LUIS-AGUILAR.png');
+            if(DataModel.dataArtists['Lyrik Cruz'] != undefined) DataModel.dataArtists['Lyrik Cruz'].imgSrc = require('../assets/portraits/_0002_LYRIK-CRUZ.png');
+            if(DataModel.dataArtists['Mariah & Andrea'] != undefined) DataModel.dataArtists['Mariah & Andrea'].imgSrc = require('../assets/portraits/_0038_MARIAH__ANDREA.png');
+            if(DataModel.dataArtists['Mireille Ruiz'] != undefined) DataModel.dataArtists['Mireille Ruiz'].imgSrc = require('../assets/portraits/_0031_MIREILLE-RUIZ.png');
+            if(DataModel.dataArtists['Monique Manzo'] != undefined) DataModel.dataArtists['Monique Manzo'].imgSrc = require('../assets/portraits/_0000_MONIQUE-MANZO.png');
+            if(DataModel.dataArtists['Ngoc Huynh'] != undefined) DataModel.dataArtists['Ngoc Huynh'].imgSrc = require('../assets/portraits/_0030_NGOC.png');
+            if(DataModel.dataArtists['Oscar & Tiffany'] != undefined) DataModel.dataArtists['Oscar & Tiffany'].imgSrc = require('../assets/portraits/_0029_OSCAR__TIFFANY.png');
+            if(DataModel.dataArtists['Rafa Gonzalez'] != undefined) DataModel.dataArtists['Rafa Gonzalez'].imgSrc = require('../assets/portraits/_0028_RAFA-GONZALEZ.png');
+            if(DataModel.dataArtists['Sabrih Joy'] != undefined) DataModel.dataArtists['Sabrih Joy'].imgSrc = require('../assets/portraits/_0027_SABRIH-JOY.png');
+            if(DataModel.dataArtists['Serena Spears'] != undefined) DataModel.dataArtists['Serena Spears'].imgSrc = require('../assets/portraits/_0015_SERENA-SPEARS.png');
+            if(DataModel.dataArtists['Sir Joq'] != undefined) DataModel.dataArtists['Sir Joq'].imgSrc = require('../assets/portraits/_0025_SIR-JOQ.png');
+            if(DataModel.dataArtists['Susana Arenas'] != undefined) DataModel.dataArtists['Susana Arenas'].imgSrc = require('../assets/portraits/_0023_SUSANA-ARENAS.png');
+            if(DataModel.dataArtists['Tom Ogunribido'] != undefined) DataModel.dataArtists['Tom Ogunribido'].imgSrc = require('../assets/portraits/_0024_TOM-OGUNRIBIDO.png');
+     
+        } catch (error) {
+            console.log('Could not assign an image for a particular artist')
+        }
 
 
-        DataModel.dataArtists['Ace Fusion'].imgSrc = require('../assets/portraits/_0013_ACE-FUSION.png');
-        DataModel.dataArtists['Adrián Nitti'].imgSrc = require('../assets/portraits/_0014_ADRIÁN.png');
-        DataModel.dataArtists['Alex & Desiree'].imgSrc = require('../assets/portraits/_0022_ALEX__DESIREE.png');
-        DataModel.dataArtists['Alicia Langlais'].imgSrc = require('../assets/portraits/_0020_ALICIA-LANGLAIS.png');
-        DataModel.dataArtists['Amoura Teese'].imgSrc = require('../assets/portraits/_0021_AMOURA-TEESE.png');
-        DataModel.dataArtists['Andrew Noel'].imgSrc = require('../assets/portraits/_0018_ANDREW-NOEL.png');
-        DataModel.dataArtists['Angelica Medina'].imgSrc = require('../assets/portraits/_0006_ANGELICA-MEDINA.png');
-        DataModel.dataArtists['Angie & Audrey'].imgSrc = require('../assets/portraits/_0010_ANGIE__AUDREY.png');
-        DataModel.dataArtists['Bex'].imgSrc = require('../assets/portraits/_0014_ADRIÁN.png');
-        DataModel.dataArtists['Bryon & Sammantha'].imgSrc = require('../assets/portraits/_0001_BRYON__SAMMANTHA.png');
-        DataModel.dataArtists['Eleanee & Baudillo'].imgSrc = require('../assets/portraits/_0016_ELEANEE__BAUDILLO.png');
-        DataModel.dataArtists['Elena Rovito'].imgSrc = require('../assets/portraits/_0012_ELENA-ROVITO.png');
-        DataModel.dataArtists['Franklin Liranzo'].imgSrc = require('../assets/portraits/_0009_FRANKLIN-LIRANZO.png');
-        DataModel.dataArtists['Gabriele Di Marzo'].imgSrc = require('../assets/portraits/_0008_GABRIELE-DI-MARZO.png');
-        DataModel.dataArtists['Jahaira Fajardo'].imgSrc = require('../assets/portraits/_0011_JAHAIRA.png');
-        DataModel.dataArtists['Jason Rodriguez'].imgSrc = require('../assets/portraits/_0026_JASON-RODRIGUEZ.png');
-        DataModel.dataArtists['Jayven Colon'].imgSrc = require('../assets/portraits/_0007_JAYVEN-COLON.png');
-        DataModel.dataArtists['Jeremy Meza'].imgSrc = require('../assets/portraits/_0033_JEREMY-MEZA.png');
-        DataModel.dataArtists['Jessica Marie'].imgSrc = require('../assets/portraits/_0035_JESSICA-MARIE.png');
-        DataModel.dataArtists['Jhesus Aponte'].imgSrc = require('../assets/portraits/_0019_JHESUS-APONTE.png');
-        DataModel.dataArtists['Joel Gomez'].imgSrc = require('../assets/portraits/_0017_JOEL-GOMEZ.png');
-        DataModel.dataArtists['John & Liz'].imgSrc = require('../assets/portraits/_0036_JOHN-AND-LIZ.png');
-        DataModel.dataArtists['Karel & Bruno'].imgSrc = require('../assets/portraits/_0034_KAREL__BRUNO.png');
-        DataModel.dataArtists['Karel Flores'].imgSrc = require('../assets/portraits/_0034_KAREL__BRUNO.png');
-        DataModel.dataArtists['Kathy Reyes'].imgSrc = require('../assets/portraits/_0037_KATHY-REYES.png');
-        DataModel.dataArtists['Katlyn Rodriguez'].imgSrc = require('../assets/portraits/_0032_KATLYN-RODRIGUEZ.png');
-        DataModel.dataArtists['Kyla Hallumus'].imgSrc = require('../assets/portraits/_0005_KYLA-HALLUMUS.png');
-        DataModel.dataArtists['Latisha Hardy'].imgSrc = require('../assets/portraits/_0004_LATISHA-HARDY.png');
-        DataModel.dataArtists['Lilly Rose'].imgSrc = require('../assets/portraits/_0003_LILLY-ROSE.png');
-        DataModel.dataArtists['Luis Aguilar'].imgSrc = require('../assets/portraits/_0039_LUIS-AGUILAR.png');
-        DataModel.dataArtists['Lyrik Cruz'].imgSrc = require('../assets/portraits/_0002_LYRIK-CRUZ.png');
-        DataModel.dataArtists['Mariah & Andrea'].imgSrc = require('../assets/portraits/_0038_MARIAH__ANDREA.png');
-        DataModel.dataArtists['Mireille Ruiz'].imgSrc = require('../assets/portraits/_0031_MIREILLE-RUIZ.png');
-        DataModel.dataArtists['Monique Manzo'].imgSrc = require('../assets/portraits/_0000_MONIQUE-MANZO.png');
-        DataModel.dataArtists['Ngoc Huynh'].imgSrc = require('../assets/portraits/_0030_NGOC.png');
-        DataModel.dataArtists['Oscar & Tiffany'].imgSrc = require('../assets/portraits/_0029_OSCAR__TIFFANY.png');
-        DataModel.dataArtists['Rafa Gonzalez'].imgSrc = require('../assets/portraits/_0028_RAFA-GONZALEZ.png');
-        DataModel.dataArtists['Sabrih Joy'].imgSrc = require('../assets/portraits/_0027_SABRIH-JOY.png');
-        DataModel.dataArtists['Serena Spears'].imgSrc = require('../assets/portraits/_0015_SERENA-SPEARS.png');
-        DataModel.dataArtists['Sir Joq'].imgSrc = require('../assets/portraits/_0025_SIR-JOQ.png');
-        DataModel.dataArtists['Susana Arenas'].imgSrc = require('../assets/portraits/_0023_SUSANA-ARENAS.png');
-        DataModel.dataArtists['Tom Ogunribido'].imgSrc = require('../assets/portraits/_0024_TOM-OGUNRIBIDO.png');
-
-
+        // console.log("::::::::Preparing Data Model - End Assigning Images");
 
         //2) shorten the biography
         const upperLimit = 200;
@@ -258,21 +336,22 @@ class LauncherController extends OperatorStates {
 
         //add sessions to each artist
         for (let key in DataModel.dataArtists) {
-            DataModel.dataArtists[key]['name'] = key;
+            DataModel.dataArtists[key]['key'] = key;
             DataModel.dataArtists[key]['sessionIds'] = [];
 
-            for (let i = 0; i < DataModel.dataRaw.length; i++) {
-                if (DataModel.dataRaw[i].artistName == key)
-                    DataModel.dataArtists[key]['sessionIds'].push(DataModel.dataRaw[i].id)
+            for (let i = 0; i < DataModel.dataScheduleRaw.length; i++) {
+                if (DataModel.dataScheduleRaw[i].artistName == key)
+                    DataModel.dataArtists[key]['sessionIds'].push(DataModel.dataScheduleRaw[i].id)
             }
         }
 
         //store in array and add name field
+        DataModel.dataArtistsList = [];
         for (let key in DataModel.dataArtists) {
             DataModel.dataArtistsList.push(DataModel.dataArtists[key]);
         }
 
-
+        // console.log("::::::::Preparing Data Model - ArtistList Length: " + DataModel.dataArtistsList.length);
 
         //schedule data reformating 
         //1) structure by day 
@@ -288,8 +367,8 @@ class LauncherController extends OperatorStates {
         let dataItemOldGroup = null;
         let dataItemNewGroup = null;
         let sectionListData = null;
-        for (let i = 0; i < DataModel.dataRaw.length; i++) {
-            dataItem = DataModel.dataRaw[i];
+        for (let i = 0; i < DataModel.dataScheduleRaw.length; i++) {
+            dataItem = DataModel.dataScheduleRaw[i];
 
             //1) structure by date
 
@@ -314,9 +393,9 @@ class LauncherController extends OperatorStates {
             dataItemOldGroup = dataItem['group']
             dataItemNewGroup = [];
             for (let j = 0; j < dataItemOldGroup.length; j++) {
-                for (let k = 0; k < DataModel.dataRaw.length; k++) {
-                    if (dataItemOldGroup[j] == DataModel.dataRaw[k].id) {
-                        dataItemNewGroup.push({ id: dataItemOldGroup[j], obj: DataModel.dataRaw[k] });
+                for (let k = 0; k < DataModel.dataScheduleRaw.length; k++) {
+                    if (dataItemOldGroup[j] == DataModel.dataScheduleRaw[k].id) {
+                        dataItemNewGroup.push({ id: dataItemOldGroup[j], obj: DataModel.dataScheduleRaw[k] });
                         break;
                     }
                 }
@@ -342,11 +421,6 @@ class LauncherController extends OperatorStates {
             //add the data item to the specific section list (usually ordered by day)
             sectionListData.data.push(dataItem);
         }
-
-        //WHATS HAPPENING NOW
-        ActionUpdateHappeningNow();
-        const checkHappeningNowFunction = setInterval(() => { ActionUpdateHappeningNow(); }, 10000);
-        
     }
 
     stateChange(oldState, newState): void {
