@@ -1,4 +1,4 @@
-import { Component, ReactNode, createRef } from 'react';
+import { PureComponent, ReactNode, createRef } from 'react';
 import { Image, Pressable, Text } from 'react-native';
 import Animated from 'react-native-reanimated';
 import DataModel from '../../DataModel';
@@ -10,7 +10,7 @@ import ButtonSmall from '../ButtonSmall';
 import ScheduleItemToggle from './ScheduleItemToggle';
 
 
-class ScheduleListItemType6 extends Component<any, any> {
+class ScheduleListItemType6 extends PureComponent<any, any> {
   toggleButtonReference: any = createRef();
 
   constructor(props) {

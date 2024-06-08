@@ -1,11 +1,10 @@
 
-import React, { Component } from 'react';
-import LTouchableOpacity from '../../core/LTouchableOpacity';
+import React, { PureComponent } from 'react';
 import { Image } from 'react-native';
-import LauncherController from '../../LauncherController';
+import LTouchableOpacity from '../../core/LTouchableOpacity';
 
 
-class ScheduleItemToggle extends Component<any, any> {
+class ScheduleItemToggle extends PureComponent<any, any> {
 
     onImg = null;
     offImg = null;

@@ -1,8 +1,8 @@
-import { Component, ReactNode } from "react";
+import { PureComponent } from "react";
+import { Animated, Dimensions } from "react-native";
 import TweenManager from "./LTweenManager";
-import { Animated, Dimensions, Image } from "react-native";
 
-class LImage extends Component<any,any> {
+class LImage extends PureComponent<any,any> {
     _firstRun = true;
     _viewRef = null;
     _processedStyle = null;
@@ -81,9 +81,7 @@ class LImage extends Component<any,any> {
 
     }
     componentWillUnmount() {
-       for (const key in this.propertyValues) {
-            const e = this.propertyValues[key];
-       }
+      
     }
 
     updateState(newStateName) {

@@ -1,7 +1,7 @@
 
-import React, { Component, PropsWithChildren } from 'react';
+import React, { PropsWithChildren, PureComponent } from 'react';
 
-class StateDependentComponent extends Component<any,any> {
+class StateDependentComponent extends PureComponent<any,any> {
     _controllerReference = null;
 
     constructor(props:PropsWithChildren) {

@@ -1,9 +1,9 @@
-import { Component } from "react";
+import { PureComponent } from "react";
 import { Pressable } from "react-native";
 import LComponent from "./LComponent";
 import TweenManager from "./LTweenManager";
 
-class LTouchableOpacity extends Component<any, any> {
+class LTouchableOpacity extends PureComponent<any, any> {
   componentName = null;
 
   constructor(props) {
