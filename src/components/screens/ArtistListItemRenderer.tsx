@@ -7,6 +7,8 @@ const ArtistListItemRenderer = ({ item, index }) => {
   const paddingLeftAndRight = 5;
   let itemHeight = 130;
 
+  // console.log(JSON.stringify(item, null, 2))
+
   return (
     <>
       {/* <Image
@@ -50,12 +52,12 @@ const ArtistListItemRenderer = ({ item, index }) => {
             textAlign: 'left',
             color: '#dd5163',
             fontSize: 14,
-          }}>{(item.name as string).toLocaleUpperCase()}
+          }}>{(item.fullName as string).toLocaleUpperCase()}
           </Text>
 
-          {item.name != '' &&
+          {item.fullName != '' &&
             <ButtonSmall
-              name={("focusItemArtistButton")}
+              name={("focusItemArtistButton"+index)}
               source={null}
               style={{
                 position: 'absolute',
