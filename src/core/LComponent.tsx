@@ -2,7 +2,7 @@ import { PureComponent } from "react";
 import { Animated, Dimensions } from "react-native";
 import TweenManager from "./LTweenManager";
 
-class LComponent extends PureComponent<any,any> {
+class LComponent extends PureComponent<any, any> {
     _firstRun = true;
     _viewRef = null;
     _processedStyle = null;
@@ -10,7 +10,9 @@ class LComponent extends PureComponent<any,any> {
     propertyValues = {};
     propertyValuesInit = {};
 
-    globalPerspectiveValue = 850;       
+    globalPerspectiveValue = 850;
+
+    componentName = null;
 
     constructor(props) {
         super(props);
@@ -26,8 +28,8 @@ class LComponent extends PureComponent<any,any> {
             for (let key in this.props.visualProperties) {
                 // console.log("LComponent " + this.props.name + " - visualProperties.................................." + key)
                 let initialValue = this.props.visualProperties[key]
-                if(initialValue=="windowWidth") initialValue = Dimensions.get('screen').width;
-                if(initialValue=="windowHeight") initialValue = Dimensions.get('screen').height;
+                if (initialValue == "windowWidth") initialValue = Dimensions.get('screen').width;
+                if (initialValue == "windowHeight") initialValue = Dimensions.get('screen').height;
 
                 this.propertyValuesInit[key] = initialValue;
 
@@ -57,20 +59,23 @@ class LComponent extends PureComponent<any,any> {
                 } else if (key == 'scaleX' || key == 'scaleY') {
                     dynamicValue = new Animated.Value((initialValue));
                     this.props.style['transform'].push({ [key]: dynamicValue });
-                } 
+                }
 
                 this.propertyValuesInit[key] = initialValue;
                 this.propertyValues[key] = dynamicValue;
             }
+
+            this.componentName = this.props.name == undefined ? "component" + Math.floor(Math.random() * 100000000) : this.props.name;
+            // console.log("LComponent first render ************************** " + this.componentName);
+            TweenManager.getInstance().register({ 'name': this.componentName, 'objRef': this })
             this._firstRun = false;
             this._processedStyle = this.props.style;
         }
-        
-        let componentName = this.props.name == undefined?"component"+Math.floor(Math.random()*100000000):this.props.name;
-        TweenManager.getInstance().register({ 'name': componentName, 'objRef': this })
+
+
 
         return (
-            <Animated.View style={[this._processedStyle, {position: 'absolute'}]}>
+            <Animated.View style={[this._processedStyle, { position: 'absolute' }]}>
                 {this.props.children}
             </Animated.View>
         );
@@ -78,13 +83,30 @@ class LComponent extends PureComponent<any,any> {
     }
 
     componentDidMount() {
-        // console.log("componentdidmount LComponent **************************" + this.props.name)
+        // console.log("LComponent componentdidmount  **************************" + this.props.name)
 
     }
     componentWillUnmount() {
-       for (const key in this.propertyValues) {
-            const e = this.propertyValues[key];
-       }
+        // console.log("LComponent componentWillUnmount ************************** componentName: " + this.componentName)
+        TweenManager.getInstance().deregister({ 'name': this.componentName, 'objRef': this })
+
+        // let property: keyof typeof this.propertyValues;
+        let dynamicValue: Animated.Value = null;
+        for (const key in this.propertyValues) {
+            if (this.propertyValues[key] instanceof Animated.Value) {
+                dynamicValue = this.propertyValues[key];
+                dynamicValue.stopAnimation();
+                dynamicValue.removeAllListeners();
+                // console.log("LComponent componentWillUnmount ************************** deleting key of dynamic value: " + key)
+            }
+            delete this.propertyValues[key]
+        }
+
+        this._firstRun = true;
+        this._processedStyle = null;
+
+        this.propertyValues = {};
+        this.propertyValuesInit = {};
     }
 
     updateState(newStateName) {
