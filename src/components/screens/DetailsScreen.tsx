@@ -1,13 +1,12 @@
-import React, { Component } from "react";
-import { Dimensions, Image, Pressable, Text } from "react-native";
+import React, { PureComponent } from "react";
+import { Dimensions, Pressable } from "react-native";
+import DataModel from "../../DataModel";
+import LauncherController from "../../LauncherController";
 import LComponent from "../../core/LComponent";
 import TransitionDetailsBack from "../../transitions/TransitionDetailsBack";
-import LauncherController from "../../LauncherController";
-import ButtonSmall from "../ButtonSmall";
-import DataModel from "../../DataModel";
 
 
-class DetailsScreen extends Component<any,any> {
+class DetailsScreen extends PureComponent<any,any> {
 
     constructor(props) {
         super(props);
