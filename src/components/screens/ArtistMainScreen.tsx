@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import ArtistListScreen from "./ArtistListScreen";
 import LComponent from "../../core/LComponent";
-import { Dimensions, View } from "react-native";
+import { Dimensions, Platform, View } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ArtistDetailsScreen from "./ArtistDetailsScreen";
 import { NavigationContainer } from '@react-navigation/native';
@@ -14,7 +14,6 @@ class ArtistMainScreen extends PureComponent {
 
     constructor(props) {
         super(props);
-
     }
 
     render() {
@@ -65,21 +64,23 @@ class ArtistMainScreen extends PureComponent {
                                 options={headerOptions} />
                         </stack.Navigator>
                     </NavigationContainer>
-                    <View
-                        style={{
-                            backgroundColor: '#EF4260',
-                            bottom: (Dimensions.get('screen').width * (300 / 1290)) / 2 - 1, left: 0, position: 'absolute',
-                            width: Dimensions.get('screen').width,
-                            height: (Dimensions.get('screen').width * (300 / 1290)),
-                            opacity: 0.8
-                        }} />
+                    
+                    {(Platform.OS == 'android') &&
+                        <View
+                            style={{
+                                backgroundColor: '#EF4260',
+                                bottom: (Dimensions.get('screen').width * (300 / 1290)) / 2 - 1, left: 0, position: 'absolute',
+                                width: Dimensions.get('screen').width,
+                                height: (Dimensions.get('screen').width * (300 / 1290)),
+                                opacity: 0.8
+                            }} />
+                    }
                 </LComponent>
 
             </>
         );
     }
-    componentDidMount(): void {
-    }
+    componentDidMount(): void {}
 }
 
 export default ArtistMainScreen;
