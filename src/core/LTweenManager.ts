@@ -34,12 +34,10 @@ class TweenManager {
         }
     }
 
-    deRegisterComponent() {
-        // useEffect(() => {
-        //   return () => {
-        //     cancelAnimation(ref.current);
-        //   };
-        // }, []);
+    deregister(objMap) {
+        // console.log("TweenManager - deregistering Object: " + objMap.name);
+        if (this.objectReferences[objMap.name] == undefined) return;
+        delete this.objectReferences[objMap.name]
     }
 
 
@@ -56,6 +54,10 @@ class TweenManager {
 
         // console.log("TweenManager - starting Tween for object ");
         return this.triggerTween(tween, properties['onComplete']);
+    }
+
+    set(name, properties = {}) {
+        this.to(name, 0, properties)
     }
 
     triggerTween(tween, onComplete = undefined) {
