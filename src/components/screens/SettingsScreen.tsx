@@ -5,7 +5,8 @@ import LComponent from "../../core/LComponent";
 import SettingsItemRenderer from "./SettingsItemRenderer";
 import ButtonSmall from "../ButtonSmall";
 import ActionOpenSocialMediaApp from "../../actions/ActionOpenSocialMediaApp";
-
+import DataModel from "../../DataModel";
+import * as Application from 'expo-application';
 
 class SettingsScreen extends PureComponent {
 
@@ -153,6 +154,22 @@ class SettingsScreen extends PureComponent {
                         </Fragment>
                     );
                 })}
+
+                <Text allowFontScaling={false} id='version' style={[{
+                    position: 'absolute',
+                    top: (290+230),
+                    left: 45,
+                    height: 80,
+                    width: Dimensions.get('screen').width - (45 * 2),
+                    fontFamily: 'Cabin-Regular',
+                    letterSpacing: 2.0,
+                    fontSize: 5,
+                    color: '#5c5c5c',
+                    // backgroundColor: 'skyblue',
+                    textAlign: 'center',
+                }]}>
+                   {"BUILD VERSION: "+Application.nativeBuildVersion + " - MODEL VERSION: "+DataModel.modelVersion}
+                </Text>
 
 
                 {/* 
