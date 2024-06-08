@@ -1,6 +1,6 @@
 import { BlurView } from 'expo-blur';
 import React, { Fragment } from "react";
-import { Dimensions, Image, View } from "react-native";
+import { Dimensions, Image, Platform, View } from "react-native";
 import TransitionNavbarSelect from "./TransitionNavbarSelect";
 import ButtonSmall from "../ButtonSmall";
 
@@ -14,14 +14,19 @@ const NavBar = (props) => {
 
     return (
         <>
-            <View
-                style={{
-                    backgroundColor: '#232323',
-                    bottom: 0, left: 0, position: 'absolute',
-                    width: Dimensions.get('screen').width,
-                    height: 95,
-                    opacity: 0.1
-                }} />
+            {Platform.OS == "ios" &&
+                <BlurView
+                    intensity={50}
+                    style={{
+                        // backgroundColor: 'skyblue',
+                        // backgroundColor: '#232323',
+                        bottom: 0, left: 0, position: 'absolute',
+                        width: Dimensions.get('window').width,
+                        height: 95,
+                        opacity: 1
+                    }} />
+            }
+
             <Image
                 style={{
                     // backgroundColor: 'skyblue',
@@ -70,10 +75,10 @@ const NavBar = (props) => {
                     width: iconSize, height: 5,
                     color: '#fdfaf6',
                 }}
-                bottomOffsetY={(Dimensions.get('screen').width * (300 / 1290))-5}
+                bottomOffsetY={(Dimensions.get('screen').width * (300 / 1290)) - 5}
                 startX={startX}
                 itemDistance={itemDistance}
-                 />
+            />
         </>
 
 
