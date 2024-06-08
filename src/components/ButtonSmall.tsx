@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Text } from "react-native";
+import { Image, Platform, Text } from "react-native";
 import LTouchableOpacity from "../core/LTouchableOpacity";
 import Animated from "react-native-reanimated";
 
@@ -8,7 +8,7 @@ const ButtonSmall = (props) => {
     if (!(props.visualProperties as Object).hasOwnProperty('alpha')) props.visualProperties['alpha'] = 1;
 
     let fontSize = (props.fontStyle!= undefined)  && (props.fontStyle.fontSize != undefined) ? props.fontStyle.fontSize : 8;
-    let textCenterPosY = (props.style.height - (fontSize + 4)) / 2
+    let textCenterPosY = (props.style.height - (fontSize + (Platform.OS == "ios"?2:4))) / 2
 
     return (
         <>
