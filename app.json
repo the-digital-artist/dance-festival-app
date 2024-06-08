@@ -2,7 +2,7 @@
   "expo": {
     "name": "QALDF",
     "slug": "queer-afro-latin-dance-festival-app",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -14,7 +14,7 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.thedigitalartist.queerafrolatindancefestival",
-      "buildNumber": "47",
+      "buildNumber": "51",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "LSApplicationQueriesSchemes": [
@@ -30,7 +30,7 @@
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.thedigitalartist.queerafrolatindancefestival",
-      "versionCode": 15
+      "versionCode": 18
     },
     "web": {
       "favicon": "./assets/favicon.png"
