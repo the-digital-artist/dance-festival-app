@@ -1,10 +1,12 @@
-import React, { PureComponent } from "react";
+import React, { Fragment, PureComponent } from "react";
 import { Dimensions, Image, Pressable, Text, View } from "react-native";
 import LComponent from "../../core/LComponent";
 import TransitionScreenL3toL2 from "../../transitions/TransitionScreenL3toL2";
 import LauncherController from "../../LauncherController";
 import { ScrollView } from "react-native-gesture-handler";
 import { BlurView } from "expo-blur";
+import ButtonSmall from "../ButtonSmall";
+import ActionOpenSocialMediaApp from "../../actions/ActionOpenSocialMediaApp";
 
 
 class ArtistDetailsScreen extends PureComponent {
@@ -17,6 +19,17 @@ class ArtistDetailsScreen extends PureComponent {
 
         let offsetX = 0;
         let offsetY = 50;
+
+        let socialBarData = [
+            { id: 0, provider: "Instagram", account: item.insta, imgSrc: require('../../../assets/icon-social-insta-black.png') },
+            // { id: 1, provider: "Youtube", account: "", imgSrc: require('../../../assets/icon-social-youtube.png') },
+            // { id: 2, provider: "Facebook", account: "", imgSrc: require('../../../assets/icon-social-facebook.png') },
+            // { id: 3, provider: "Web", account: "", imgSrc: require('../../../assets/icon-social-web.png') }
+        ]
+        let iconSize = 25;
+        let itemDistance = 40
+        let startX = Dimensions.get('screen').width-(20+5+30+30)-((socialBarData.length - 1) * itemDistance + iconSize / 2);
+        // let startX = ((((socialBarData.length - 1) * itemDistance) / 2) - iconSize / 2 - 40)
 
         return (
             <>
@@ -32,7 +45,7 @@ class ArtistDetailsScreen extends PureComponent {
                         style={{
                             backgroundColor: '#ec556f',
                             top: 0, left: 20, position: 'absolute',
-                            width: Dimensions.get('screen').width - 40, 
+                            width: Dimensions.get('screen').width - 40,
                             height: Dimensions.get('screen').height,
                             opacity: 1
                         }}>
@@ -45,7 +58,7 @@ class ArtistDetailsScreen extends PureComponent {
                                 backgroundColor: '#ec556f',
                                 top: 0, left: 5,
                                 width: Dimensions.get('screen').width - 50,
-                                height: (item.bio as string).length/1100*1.2 * Dimensions.get('screen').height,
+                                height: (item.bio as string).length / 1100 * 1.2 * Dimensions.get('screen').height,
                                 opacity: 1
                             }}>
                             <Text allowFontScaling={false} id='textLabelArtist' style={{
@@ -66,7 +79,7 @@ class ArtistDetailsScreen extends PureComponent {
                                 position: 'absolute',
                                 top: (200), left: 30,
                                 width: Dimensions.get('screen').width - 70 - 25,
-                                height: (item.bio as string).length/1100*1.2 * Dimensions.get('screen').height,
+                                height: (item.bio as string).length / 1100 * 1.2 * Dimensions.get('screen').height,
                                 fontFamily: 'Arcon-Regular',
                                 letterSpacing: 1,
                                 textAlign: 'justify',
@@ -77,6 +90,28 @@ class ArtistDetailsScreen extends PureComponent {
                                 {item ? (item.bio as string) : ""}
                             </Text>
                         </View>
+
+                        {item.insta != '' && socialBarData.map((itemData, i) => {
+                            return (
+                                <Fragment key={'socalBarFrag' + i}>
+
+                                    <ButtonSmall
+                                        name={'socialBarItem' + i}
+                                        style={{
+                                            // backgroundColor: 'skyblue',
+                                            position: 'absolute',
+                                            top: 130, left: (startX + (i * itemDistance)),
+                                            width: iconSize, height: iconSize,
+                                            opacity: 1.0
+                                        }}
+                                        visualProperties={{ alpha: 0.7, x: 0, y: 0, z: 0 }}
+                                        onSelect={() => { ActionOpenSocialMediaApp(itemData.provider, itemData.account) }}
+                                        source={itemData.imgSrc}
+                                        text={''}
+                                    />
+                                </Fragment>
+                            );
+                        })}
 
                     </ScrollView>
 
@@ -115,7 +150,7 @@ class ArtistDetailsScreen extends PureComponent {
 
 
 
-
+                {/* 
                 <Pressable id='buttonBack'
                     style={{
                         position: 'absolute',
@@ -125,7 +160,7 @@ class ArtistDetailsScreen extends PureComponent {
                         // backgroundColor: 'indigo',
                     }}
                     onPress={() => { TransitionScreenL3toL2() }}
-                />
+                /> */}
             </>
         );
     }
