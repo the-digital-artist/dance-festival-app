@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, PureComponent } from "react";
 import { Dimensions, Image, ScrollView, Text, View } from "react-native";
 import LauncherController from "../../LauncherController";
 import ActionOpenBrowserWithURL from "../../actions/ActionOpenBrowserWithURL";
@@ -9,7 +9,7 @@ import ScheduleHappeningNow from "../schedulelist/ScheduleHappeningNow";
 import ScreenHeader from "./ScreenHeader";
 
 
-class HomeScreen extends Component<any, any> {
+class HomeScreen extends PureComponent<any, any> {
 
     constructor(props) {
         super(props);
@@ -23,7 +23,7 @@ class HomeScreen extends Component<any, any> {
         let contentSpace = Dimensions.get("screen").height>800?Dimensions.get("screen").height-screenHeaderHeight-navBarHeight:100;
         let distanceTiles = Dimensions.get("screen").height>800?contentSpace/3 -30:190;
 
-        console.log("ScreenHeight: "+Dimensions.get("screen").height+" Content Space: "+contentSpace)
+        // console.log("ScreenHeight: "+Dimensions.get("screen").height+" Content Space: "+contentSpace)
 
 
         return (
