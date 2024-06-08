@@ -52,7 +52,9 @@ class LauncherController extends OperatorStates {
                 portrait: "_0023_SUSANA-ARENAS.png",
                 imgSrc: null,
                 shortBio: ``,
-                bio: `Susana Arenas Pedroso is `
+                bio: `Susana Arenas Pedroso is `,
+                facebook: 	``, 
+                insta: 	''
             },
 
             //happeningNow
