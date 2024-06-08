@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { Dimensions, Image } from "react-native";
+import React, { PureComponent } from "react";
+import { Dimensions, Image, Platform } from "react-native";
 import LComponent from "../../core/LComponent";
 
 
-class LoadingScreen extends Component<any, any> {
+class LoadingScreen extends PureComponent<any, any> {
 
     constructor({ props, children = null }) {
         super(props);
@@ -21,7 +21,7 @@ class LoadingScreen extends Component<any, any> {
 
                 <Image
                     style={{
-                        position: 'absolute', top: -12,
+                        position: 'absolute', top:  Platform.OS == "ios"?0:-12,
                         width: Dimensions.get('screen').width, height: Dimensions.get('screen').height,
                         resizeMode: "cover",
                     }}
@@ -39,7 +39,7 @@ class LoadingScreen extends Component<any, any> {
                 >
                     <Image
                         style={{
-                            position: 'absolute', top: -12,
+                            position: 'absolute', top: Platform.OS == "ios"?0:-12,
                             width: Dimensions.get('screen').width, height: Dimensions.get('screen').height,
                             resizeMode: "cover",
                         }}
