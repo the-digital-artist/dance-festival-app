@@ -1,27 +1,24 @@
-import React, { Component, ReactNode } from "react";
+import React, { PureComponent, ReactNode } from "react";
 
 import * as SplashScreen from 'expo-splash-screen';
 import LauncherController from "./LauncherController";
 
-import { Dimensions, Image, SafeAreaView, View } from "react-native";
+import { View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import ActionUpdatesCheckAndPerform from "./actions/ActionUpdatesCheckAndPerform";
 import NavBar from "./components/navbar/NavBar";
 import NavBarHighlight from "./components/navbar/NavBarHighlight";
-import ArtistListScreen from "./components/screens/ArtistListScreen";
+import ArtistMainScreen from "./components/screens/ArtistMainScreen";
 import DetailsScreen from "./components/screens/DetailsScreen";
-import FocusFragment from "./components/screens/FocusFragment";
 import HomeScreen from "./components/screens/HomeScreen";
+import LoadingScreen from "./components/screens/LoadingScreen";
 import SchedulerScreen from "./components/screens/SchedulerScreen";
+import SettingsScreen from "./components/screens/SettingsScreen";
+import UpdateOverlayFragement from "./components/screens/UpdateOverlayFragement";
 import Eventl from "./core/LEventl";
 import StateDependentComponent from "./core/LStateDependentComponent";
-import ArtistMainScreen from "./components/screens/ArtistMainScreen";
-import LoadingScreen from "./components/screens/LoadingScreen";
-import SettingsScreen from "./components/screens/SettingsScreen";
-import ScreenHeader from "./components/screens/ScreenHeader";
 
 
-class Launcher extends Component<any,any> {
+class Launcher extends PureComponent<any, any> {
     controller: LauncherController = null;
 
     state = {
@@ -56,7 +53,9 @@ class Launcher extends Component<any,any> {
                                 <SettingsScreen />
 
                                 <NavBar highlightRenderer={NavBarHighlight} data={LauncherController.getInstance().navBarData} />
-                              {/* <ScreenHeader text="" color='#FFFFFF' /> */}
+                                {/* <ScreenHeader text="" color='#FFFFFF' /> */}
+
+                                <UpdateOverlayFragement />
                             </StateDependentComponent>
 
 
@@ -67,7 +66,7 @@ class Launcher extends Component<any,any> {
                         : null}
                 </View>
             </GestureHandlerRootView>
-          
+
         );
     }
 
@@ -84,7 +83,6 @@ class Launcher extends Component<any,any> {
         this.setState({ appIsInitialized: true, currentState: newStateName });
         // console.log("update newState______" + JSON.stringify(newStateName, null, 2))
     }
-    public shouldComponentUpdate() { return true; }
     public componentWillUnmount() { }
 }
 
