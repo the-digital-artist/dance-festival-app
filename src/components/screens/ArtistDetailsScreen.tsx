@@ -30,9 +30,10 @@ class ArtistDetailsScreen extends PureComponent {
                 >
                     <ScrollView
                         style={{
-                            backgroundColor: '#e65f76',
+                            backgroundColor: '#ec556f',
                             top: 0, left: 20, position: 'absolute',
-                            width: Dimensions.get('screen').width - 40, height: Dimensions.get('screen').height,
+                            width: Dimensions.get('screen').width - 40, 
+                            height: Dimensions.get('screen').height,
                             opacity: 1
                         }}>
 
@@ -40,9 +41,11 @@ class ArtistDetailsScreen extends PureComponent {
 
                         <View
                             style={{
+
                                 backgroundColor: '#ec556f',
                                 top: 0, left: 5,
-                                width: Dimensions.get('screen').width - 50, height: 1.2 * Dimensions.get('screen').height,
+                                width: Dimensions.get('screen').width - 50,
+                                height: (item.bio as string).length/1100*1.2 * Dimensions.get('screen').height,
                                 opacity: 1
                             }}>
                             <Text allowFontScaling={false} id='textLabelArtist' style={{
@@ -57,16 +60,17 @@ class ArtistDetailsScreen extends PureComponent {
                                 color: '#232323',
                                 fontSize: 16,
                             }}>
-                                {(item.name as string).toLocaleUpperCase()}
+                                {(item.fullName as string).toLocaleUpperCase()}
                             </Text>
                             <Text allowFontScaling={false} id='artistBioFocus' style={{
                                 position: 'absolute',
                                 top: (200), left: 30,
-                                width: Dimensions.get('screen').width - 70 - 25, height: 1.2 * Dimensions.get('screen').height,
+                                width: Dimensions.get('screen').width - 70 - 25,
+                                height: (item.bio as string).length/1100*1.2 * Dimensions.get('screen').height,
                                 fontFamily: 'Arcon-Regular',
                                 letterSpacing: 1,
                                 textAlign: 'justify',
-
+                                // backgroundColor: 'indigo',
                                 color: '#232323',
                                 fontSize: 15,
                             }}>
@@ -75,12 +79,12 @@ class ArtistDetailsScreen extends PureComponent {
                         </View>
 
                     </ScrollView>
-    
+
 
 
 
                 </View>
-                
+
                 {/* <BlurView
                 
                         intensity={10}
@@ -91,13 +95,13 @@ class ArtistDetailsScreen extends PureComponent {
 
                      
                     </BlurView> */}
-                    <Image
-                            source={item.imgSrc}
-                            style={{
-                                position: 'absolute', resizeMode: 'cover', opacity: 0.7,
-                                right: -40, bottom: 0, width: 300, height: 300,
-                            }}
-                        />
+                <Image
+                    source={item.imgSrc}
+                    style={{
+                        position: 'absolute', resizeMode: 'cover', opacity: 0.7,
+                        right: -40, bottom: 0, width: 300, height: 300,
+                    }}
+                />
                 {/* <Image
                         style={{
                             // backgroundColor: 'skyblue',
