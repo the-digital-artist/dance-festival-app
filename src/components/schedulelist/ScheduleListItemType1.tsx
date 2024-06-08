@@ -1,5 +1,5 @@
-import { Component, ReactNode, createRef } from 'react';
-import { Image, Pressable } from 'react-native';
+import { PureComponent, ReactNode, createRef } from 'react';
+import { Image, View } from 'react-native';
 import Animated from 'react-native-reanimated';
 import DataModel from '../../DataModel';
 import ActionItemFavToggleStateUpdate from '../../actions/ActionItemFavToggleStateUpdate';
@@ -10,7 +10,7 @@ import ButtonSmall from '../ButtonSmall';
 import ScheduleItemToggle from './ScheduleItemToggle';
 
 
-class ScheduleListItemType1 extends Component<any, any> {
+class ScheduleListItemType1 extends PureComponent<any, any> {
   // ({ item, orientation, rowHeight, group, groupIndex, groupIndexUpdateFunction })
 
   toggleButtonReference: any = createRef();
@@ -36,14 +36,18 @@ class ScheduleListItemType1 extends Component<any, any> {
     let item = this.state.dataItem;
     if (item.itemType != 'type1') return;
 
+    let isNightPartyItem = false;
+    if (item.artistOne == '') isNightPartyItem = true;
+
     const itemHeight = item.rowHeight != undefined ? item.rowHeight : 100;
+    const roomBoxOffsetY = !isNightPartyItem?20:25;
     const artistData = DataModel.dataArtists[item.artistOne];
     const verticalOffsetTitleLength = item.lineCount != undefined ? (item.lineCount * 19) : 19;
 
-    const imageWidthArtistImage = this.props.tileWidth*(160/305);
-    const imageOffsetYArtistImage = ((305-this.props.tileWidth)/(305-250))*10
-    const fontSizeMainTitle = this.props.tileWidth*(17/305);
-    const fontSizeArtistName = this.props.tileWidth*(13/305);
+    const imageWidthArtistImage = this.props.tileWidth * (160 / 305);
+    const imageOffsetYArtistImage = ((305 - this.props.tileWidth) / (305 - 245)) * 10
+    const fontSizeMainTitle = this.props.tileWidth * (17 / 305);
+    const fontSizeArtistName = !isNightPartyItem?this.props.tileWidth * (13 / 305):this.props.tileWidth * (12 / 305);
 
     // console.log("ScheduleListItemType1 tileLength " + this.props.tileWidth + " artistImageWidth: "+ imageWidthArtistImage);
 
@@ -54,43 +58,62 @@ class ScheduleListItemType1 extends Component<any, any> {
           left: this.props.tileOffsetLeft, top: this.props.tileOffsetTop,
           height: itemHeight, width: this.props.tileWidth,
           opacity: 1,
+          // backgroundColor:'red',
         }, this.props.dynamicVisualProperties0]}
       >
-        <LComponent
-          name={"ScheduleItemFrame1_" + item.id}
+
+        <View
+          //  name={"ScheduleItemFrame1_" + item.id}
           style={{
+            position: 'absolute',
             backgroundColor: '#ffffff',
             borderColor: '#9F509F',
             borderLeftWidth: 3,
             borderRightWidth: 3,
             borderTopWidth: 0,
-            borderBottomWidth: 3
+            borderBottomWidth: 3,
+            opacity: 0.68,
+            left: 0,
+            top: roomBoxOffsetY,
+            height: (itemHeight - 30),
+            width: this.props.tileWidth
           }}
-          visualProperties={{ alpha: 0.68, x: 0, y: 20, h: (itemHeight - 30), w: this.props.tileWidth }}
         />
 
-        <LComponent
-          name={"ScheduleItemFrame2_" + item.id}
+
+
+        <View
+          // name={"ScheduleItemFrame2_" + item.id}
           style={{
+            position: 'absolute',
             backgroundColor: 'transparent',
             borderColor: '#9F509F',
             borderLeftWidth: 3,
             borderRightWidth: 3,
             borderTopWidth: 20,
-            borderBottomWidth: 0
+            borderBottomWidth: 0,
+            opacity: 1,
+            left: 0,
+            top: roomBoxOffsetY,
+            height: (itemHeight - 30),
+            width: this.props.tileWidth
           }}
-          visualProperties={{ alpha: 1, x: 0, y: 20, h: (itemHeight - 30), w: this.props.tileWidth }}
         />
 
 
 
 
-        <LComponent
-          name={"ScheduleItemBoundary_" + item.id}
+        <View
+          // name={"ScheduleItemBoundary_" + item.id}
           style={{
-            // backgroundColor: 'skyblue'
+            position: 'absolute',
+            left: 0,
+            top: roomBoxOffsetY,
+            height: (itemHeight - 30),
+            width: this.props.tileWidth,
+            opacity: 1,
+            // backgroundColor:'skyblue',
           }}
-          visualProperties={{ alpha: 1, x: 0, y: 20, h: (itemHeight - 30), w: this.props.tileWidth }}
         >
 
           <Image
@@ -98,7 +121,7 @@ class ScheduleListItemType1 extends Component<any, any> {
             style={{
               // backgroundColor: 'greenyellow',
               position: 'absolute',
-              left: 3, top: 20,
+              left: 3, top: roomBoxOffsetY,
               opacity: 0.1,
               width: this.props.tileWidth - 6, height: itemHeight - 50 - 3,
               resizeMode: 'contain'
@@ -129,15 +152,15 @@ class ScheduleListItemType1 extends Component<any, any> {
           }, this.props.dynamicVisualProperties2]}>
             {(item.room as string).toLocaleUpperCase()}
           </Animated.Text>
-          
+
           <Animated.Image
             source={artistData ? artistData.imgSrc : null}
             style={[{
               // backgroundColor: 'greenyellow',
               position: 'absolute',
-              top: -2+imageOffsetYArtistImage,
+              top: -2 + imageOffsetYArtistImage,
               right: (item.orientation == 'right' ? -25 : undefined),
-              left: (item.orientation == 'left' ? -25 : undefined),
+              left: (item.orientation == 'left' ? -20 : undefined),
               width: imageWidthArtistImage, height: imageWidthArtistImage,
               resizeMode: 'cover'
             }, this.props.dynamicVisualProperties1]}
@@ -170,7 +193,8 @@ class ScheduleListItemType1 extends Component<any, any> {
               top: (26 + verticalOffsetTitleLength),
               right: (item.orientation == 'right' ? undefined : (4 + 35)),
               left: (item.orientation == 'left' ? undefined : (4 + 35)),
-              height: 22, width: 300,
+              height: (itemHeight - 30-(26 + verticalOffsetTitleLength)-10), 
+              width: this.props.tileWidth-35-4-10,
               fontFamily: 'Cabin-Regular',
               letterSpacing: 2.0,
               // backgroundColor: 'indigo',
@@ -182,7 +206,7 @@ class ScheduleListItemType1 extends Component<any, any> {
             </Animated.Text >
 
 
-            <Pressable id='buttonCenter'
+            {/* <Pressable id='buttonCenter'
               style={{
                 position: 'absolute',
                 top: 30,
@@ -192,7 +216,7 @@ class ScheduleListItemType1 extends Component<any, any> {
               onPress={() => {
                 // TransitionScreenL1toL2() 
               }}
-            />
+            /> */}
 
 
             <ScheduleItemToggle
@@ -207,12 +231,14 @@ class ScheduleListItemType1 extends Component<any, any> {
                 width: 35, height: 35,
               }}
               initialCheckedState={this.state.dataItem.favoriteState}
-              onSelect={(newState) => { ActionItemFavToggleStateUpdate(this, newState) }}
+              onSelect={(newState) => { 
+                ActionItemFavToggleStateUpdate(this, newState) 
+              }}
               sourceOn={require('../../../assets/button-fav-on.png')}
               sourceOff={require('../../../assets/button-fav-off.png')}
             />
 
-            {(item.id != 'focus' && item.artistOne!='')  &&
+            {(item.id != 'focus' && !isNightPartyItem) &&
 
               <ButtonSmall
                 name={("artistButton")}
@@ -241,7 +267,7 @@ class ScheduleListItemType1 extends Component<any, any> {
                 }}
                 visualProperties={{ alpha: 1 }}
                 onSelect={() => {
-                  if(artistData==undefined) return;
+                  if (artistData == undefined) return;
                   TransitionLinkToArtistPage(artistData)
                 }}
               />
@@ -278,7 +304,7 @@ class ScheduleListItemType1 extends Component<any, any> {
 
           </Animated.View>
 
-        </LComponent>
+        </View>
         {/* <GestureDetector gesture={this.props.tileTapGestureHandler}>
           <Animated.View
             style={[
