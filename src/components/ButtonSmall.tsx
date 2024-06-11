@@ -35,12 +35,12 @@ const ButtonSmall = (props) => {
 
                 {props.source && (
                     <Image
-                        style={{
+                        style={[{
                             top: 0, left: 0, position: 'absolute',
                             width: props.style.width, height: props.style.height,
                             resizeMode: "contain",
                             opacity: 1
-                        }}
+                        }, props.imageStyle]}
                         source={props.source}
                     />)
                 }
