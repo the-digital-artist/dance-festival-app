@@ -1,13 +1,12 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Font from 'expo-font';
+import DataModel from './DataModel';
+import ActionUpdateDataModelWithRemote from './actions/ActionUpdateDataModel';
+import ActionUpdateHappeningNow from './components/happeningnowtile/ActionUpdateHappeningNow';
 import OperatorStates from './core/LOperatorStates';
 import TransitionScreenL1toL2 from './transitions/TransitionScreenL1toL2';
 import TransitionScreenL2toL3 from './transitions/TransitionScreenL2toL3';
 import TransitionScreenSplashToLoading from './transitions/TransitionScreenSplashToLoading';
-import DataModel from './DataModel';
-import { createRef } from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import ActionUpdateHappeningNow from './actions/ActionUpdateHappeningNow';
-import ActionUpdateDataModelWithRemote from './actions/ActionUpdateDataModel';
 
 
 class LauncherController extends OperatorStates {
@@ -58,14 +57,31 @@ class LauncherController extends OperatorStates {
             },
 
             //happeningNow
-            happeningNowItem: [{
+            happeningNowItems: [],
+            happeningNowItemNoSession: {
                 sessionMainTitle: 'Currently No Session',
+                shortMainTitle: 'Currently No Session',
                 itemType: 'type0',
                 groupTitle: '',
                 groupSubtitle: '',
-                room: 'Relax and Plan Ahead with The Festival Planner',
+                room: 'Relax and Plan Ahead \nwith The Festival Planner',
+                startTime: '2024-01-01T0:00', 
+                endTime: '2024-06-17T05:00', 
                 time: '00:00'
-            }],
+            },
+
+            happeningNowEndFestival: {
+                sessionMainTitle: 'See You in 2025! 🌈',
+                shortMainTitle: 'See You in 2025! 🌈',
+                itemType: 'type0',
+                groupTitle: '',
+                groupSubtitle: '',
+                room: 'The 6th Queer Afro-Latin Dance \nFestival has concluded.',
+                startTime: '2024-06-17T05:00', 
+                endTime: '2030-12-31T23:59', 
+                time: '00:00'
+            },
+
             happeningNowTimeUpdateFunction: null,
             happeningNowItemUpdateFunction: null,
             currentTimeString: "00:00",
@@ -187,14 +203,15 @@ class LauncherController extends OperatorStates {
             console.log("LauncherController - Fonts loaded.");
             await this.getLocallyStoredDataModel();
             await this.getRemoteDataModel();
-            console.log('LauncherController - Model Update complete.');
+            console.log('LauncherController - Model local/remote checks w/ potential update completed.');
             await this.prepareDataModel();
             console.log('LauncherController initialization done. Tutorial completed: ' + this.appTutorialCompleted);
 
-            ActionUpdateHappeningNow();
-            const checkHappeningNowFunction = setInterval(() => { ActionUpdateHappeningNow(); }, 10000);
             const checkForModelUpdate = setInterval(() => { ActionUpdateDataModelWithRemote(); }, DataModel.modelRemoteUpdateInterval);
 
+            // ActionUpdateHappeningNow();
+            const checkHappeningNowFunction = setInterval(() => { ActionUpdateHappeningNow(); }, DataModel.happeningNowUpdateInterval);
+         
         } catch (e) {
             console.warn(e);
         } finally { }
@@ -204,6 +221,8 @@ class LauncherController extends OperatorStates {
 
     async getLocallyStoredDataModel() {
         try {
+            console.log('LauncherController - checking local models...');
+
             const value = await AsyncStorage.getItem('qaldfDataModel');
             if (value == null) { //never used local storage - first time load
                 const modelAsString = JSON.stringify({
@@ -211,6 +230,7 @@ class LauncherController extends OperatorStates {
                     dataArtists: DataModel.dataArtists,
                     dataScheduleRaw: DataModel.dataScheduleRaw
                 });
+                console.log('LauncherController  - using initial model: '+ DataModel.modelVersion);
                 AsyncStorage.setItem('qaldfDataModel', modelAsString);
                 return;
             }
@@ -221,8 +241,7 @@ class LauncherController extends OperatorStates {
                 DataModel.dataArtists = locallyStoredModel.dataArtists
                 DataModel.dataScheduleRaw = locallyStoredModel.dataScheduleRaw
                 DataModel.modelVersion = locallyStoredModel.modelVersion
-
-                AsyncStorage.setItem('qaldfDataModel', value);
+                console.log('LauncherController - using locally stored model: '+ DataModel.modelVersion);
                 return;
             }
         } catch (e) {
@@ -233,6 +252,7 @@ class LauncherController extends OperatorStates {
     async getRemoteDataModel() {
 
         try {
+            console.log('LauncherController - checking remote models...');
             const fetchController = new AbortController()
             setTimeout(() => { fetchController.abort() }, 1500)
 
@@ -240,13 +260,15 @@ class LauncherController extends OperatorStates {
             if (!response.ok) return;
 
             const remoteModel = await response.json();
-            // console.log(":::::getRemoteDataModel -- remoteModel: "+JSON.stringify(response,null,2))
+            console.log('LauncherController - remote model with version: '+ remoteModel.modelVersion,);
 
             if (remoteModel.modelVersion > DataModel.modelVersion) {
-                console.log(":::::getRemoteDataModel -- modelVersion is greater than Local - updating in-memory model");
                 DataModel.modelVersion = remoteModel.modelVersion
                 DataModel.dataArtists = remoteModel.dataArtists;
                 DataModel.dataScheduleRaw = remoteModel.dataScheduleRaw;
+
+                console.log('LauncherController - using remote model and storing locally.'+ remoteModel.modelVersion,);
+
                 AsyncStorage.setItem('qaldfDataModel', JSON.stringify({
                     modelVersion: DataModel.modelVersion,
                     dataArtists: DataModel.dataArtists,
@@ -256,7 +278,7 @@ class LauncherController extends OperatorStates {
 
         } catch (error) {
             if (error.message == "Aborted") {
-                console.log(":::::getRemoteDataModel -- Internet too slow - aborting request")
+                console.log('LauncherController - Internet too slow to get remote model.');
                 return;
             }
             // console.error(error);
@@ -264,7 +286,7 @@ class LauncherController extends OperatorStates {
     }
 
     async prepareDataModel() {
-        console.log("::::::::Preparing Data Model - Model Version: " + DataModel.modelVersion);
+        console.log("LauncherController - processing data model...");
         //artist data reformatting
         //1) add static references to the imgSrc field of the artist data item
 
