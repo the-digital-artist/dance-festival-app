@@ -7,7 +7,7 @@ class DataModel {
     static modelRemoteVersionCheckUrl = 'https://2y3ndtoxei.execute-api.us-west-1.amazonaws.com/default/qaldfModelVersion';
     static modelRemoteUpdateInterval = 55000;
 
-    static happeningNowUpdateInterval = 30000;
+    static happeningNowUpdateInterval = 10000;
 
     static modelVersion = 1014;
     static dataArtists = {
