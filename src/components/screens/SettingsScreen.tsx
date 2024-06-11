@@ -16,8 +16,8 @@ class SettingsScreen extends PureComponent {
     static settingsItemRendererHeight = 50;
     static settingsListData = [
         { title: "Download Full Schedule as PDF", action: ActionMoreDownloadPdf },
-        { title: "Contact QALDF Organizers", action: ActionMoreContactFestival},
-        { title: `Contact App Creator`, action: ActionMoreContactAppDev },
+        // { title: "Contact QALDF Organizers", action: ActionMoreContactFestival},
+        // { title: `Contact App Creator`, action: ActionMoreContactAppDev },
         // { title: "About App" }
     ]
 
@@ -109,7 +109,7 @@ class SettingsScreen extends PureComponent {
 
                 <Text allowFontScaling={false} id='textList1' style={[{
                     position: 'absolute',
-                    top: 500,
+                    top: 400,
                     left: 0,
                     height: 15,
                     width: Dimensions.get('screen').width,
@@ -135,7 +135,7 @@ class SettingsScreen extends PureComponent {
                                 style={{
                                     // backgroundColor: 'skyblue',
                                     position: 'absolute',
-                                    top: 520, left: (startX + (i * itemDistance)),
+                                    top: 420, left: (startX + (i * itemDistance)),
                                     width: iconSize, height: iconSize,
                                     opacity: 1.0
                                 }}
@@ -160,7 +160,7 @@ class SettingsScreen extends PureComponent {
 
                 <Text allowFontScaling={false} id='version' style={[{
                     position: 'absolute',
-                    top: (290+165),
+                    top: (290+65),
                     left: 45,
                     height: 80,
                     width: Dimensions.get('screen').width - (45 * 2),
