@@ -7,15 +7,18 @@ import ButtonSmall from "../ButtonSmall";
 import ActionOpenSocialMediaApp from "../../actions/ActionOpenSocialMediaApp";
 import DataModel from "../../DataModel";
 import * as Application from 'expo-application';
+import ActionMoreDownloadPdf from "../../actions/ActionMoreDownloadPdf";
+import ActionMoreContactAppDev from "../../actions/ActionMoreContactAppDev";
+import ActionMoreContactFestival from "../../actions/ActionMoreContactFestival";
 
 class SettingsScreen extends PureComponent {
 
     static settingsItemRendererHeight = 50;
     static settingsListData = [
-        { title: "Settings" },
-        { title: "Contact Festival Organizers" },
-        { title: "App Technical Support" },
-        { title: "About App" }
+        { title: "Download Full Schedule as PDF", action: ActionMoreDownloadPdf },
+        { title: "Contact QALDF Organizers", action: ActionMoreContactFestival},
+        { title: `Contact App Creator`, action: ActionMoreContactAppDev },
+        // { title: "About App" }
     ]
 
     constructor(props) {
@@ -88,7 +91,7 @@ class SettingsScreen extends PureComponent {
                 />
 
 
-                {/* <FlatList
+                <FlatList
                     style={{
                         position: 'absolute',
                         // backgroundColor: '#1c1919',
@@ -100,13 +103,13 @@ class SettingsScreen extends PureComponent {
                     // contentContainerStyle={{borderRadius: 6, overflow: 'hidden'}}
                     data={SettingsScreen.settingsListData}
                     renderItem={SettingsItemRenderer}
-                /> */}
+                />
 
 
 
                 <Text allowFontScaling={false} id='textList1' style={[{
                     position: 'absolute',
-                    top: 350,
+                    top: 500,
                     left: 0,
                     height: 15,
                     width: Dimensions.get('screen').width,
@@ -132,7 +135,7 @@ class SettingsScreen extends PureComponent {
                                 style={{
                                     // backgroundColor: 'skyblue',
                                     position: 'absolute',
-                                    top: 380, left: (startX + (i * itemDistance)),
+                                    top: 520, left: (startX + (i * itemDistance)),
                                     width: iconSize, height: iconSize,
                                     opacity: 1.0
                                 }}
@@ -157,13 +160,14 @@ class SettingsScreen extends PureComponent {
 
                 <Text allowFontScaling={false} id='version' style={[{
                     position: 'absolute',
-                    top: (290+230),
+                    top: (290+165),
                     left: 45,
                     height: 80,
                     width: Dimensions.get('screen').width - (45 * 2),
                     fontFamily: 'Cabin-Regular',
                     letterSpacing: 2.0,
                     fontSize: 5,
+                    opacity:0.5,
                     color: '#5c5c5c',
                     // backgroundColor: 'skyblue',
                     textAlign: 'center',

@@ -43,7 +43,7 @@ const SettingsItemRenderer = ({ item, index }) => {
 
 
           <ButtonSmall
-            name={("focusItemArtistButton")}
+            name={("moreScreenListItemAction"+index)}
             source={null}
             style={{
               position: 'absolute',
@@ -67,7 +67,7 @@ const SettingsItemRenderer = ({ item, index }) => {
               fontSize: 12,
             }}
             visualProperties={{ alpha: 1 }}
-            onSelect={() => { }}
+            onSelect={() => { item.action()}}
           />
         </>
 
