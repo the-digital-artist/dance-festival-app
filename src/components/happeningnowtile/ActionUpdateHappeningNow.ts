@@ -5,11 +5,11 @@ const dateFormater = new Intl.DateTimeFormat('de-DE', { day: '2-digit', month: '
 const timeFormater = new Intl.DateTimeFormat(['de-DE'], { hour: '2-digit', minute: '2-digit' })
 
 //DEBUG BEGIN
-let debugCurrentTime = new Date(Date.now());
-debugCurrentTime.setDate(14);
-debugCurrentTime.setMonth(5) //zero based
-debugCurrentTime.setFullYear(2024)
-debugCurrentTime.setHours(6, 0);
+// let debugCurrentTime = new Date(Date.now());
+// debugCurrentTime.setDate(14);
+// debugCurrentTime.setMonth(5) //zero based
+// debugCurrentTime.setFullYear(2024)
+// debugCurrentTime.setHours(6, 0);
 //DEBUG END
 
 const ActionUpdateHappeningNow = () => {
@@ -19,9 +19,9 @@ const ActionUpdateHappeningNow = () => {
 
 
     //DEBUG BEGIN
-    debugCurrentTime.setUTCMilliseconds(debugCurrentTime.getUTCMilliseconds() + (60 * 30000)) //31min
-    console.log("DEBUG TIME: " + debugCurrentTime.toLocaleString())
-    currentTime = debugCurrentTime;
+    // debugCurrentTime.setUTCMilliseconds(debugCurrentTime.getUTCMilliseconds() + (60 * 30000)) //31min
+    // console.log("DEBUG TIME: " + debugCurrentTime.toLocaleString())
+    // currentTime = debugCurrentTime;
     //DEBUG END
 
     context.currentTimeString = timeFormater.format(currentTime);
