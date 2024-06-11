@@ -1,27 +1,45 @@
-import React, { Component, PureComponent } from "react";
+import React, { PureComponent } from "react";
 import { Dimensions, Image, ScrollView, Text, View } from "react-native";
 import LauncherController from "../../LauncherController";
 import ActionOpenBrowserWithURL from "../../actions/ActionOpenBrowserWithURL";
 import LComponent from "../../core/LComponent";
-import TransitionLinkToSchedule from "../../transitions/TransitionLinkToSchedule";
 import ButtonSmall from "../ButtonSmall";
-import ScheduleHappeningNow from "../schedulelist/ScheduleHappeningNow";
+import HappeningNowTile from "../happeningnowtile/HappeningNowTile";
 import ScreenHeader from "./ScreenHeader";
+import EarlyPassesTile from "./EarlyPassesTile";
+import ActionUpdateHappeningNow from "../happeningnowtile/ActionUpdateHappeningNow";
 
 
 class HomeScreen extends PureComponent<any, any> {
+    scrollViewRef = null;
 
     constructor(props) {
         super(props);
-        this.state = {currentTimeStr: "00:00" };
+        this.state = { 
+            activeItems: [LauncherController.getInstance().context.happeningNowItemNoSession],
+            scrollPosY: 0,
+        };
     }
 
     render() {
-        const screenHeaderHeight = (Dimensions.get('screen').width * (350 / 1290))-5
+        // console.log('rendering HomeScreen');
+        const screenHeaderHeight = (Dimensions.get('screen').width * (350 / 1290)) - 5
         const navBarHeight = (Dimensions.get('screen').width * (300 / 1290));
 
-        let contentSpace = Dimensions.get("screen").height>800?Dimensions.get("screen").height-screenHeaderHeight-navBarHeight:100;
-        let distanceTiles = Dimensions.get("screen").height>800?contentSpace/3 -30:190;
+        let contentSpace = Dimensions.get("screen").height > 800 ? Dimensions.get("screen").height - screenHeaderHeight - navBarHeight : 100;
+        let distanceTiles = Dimensions.get("screen").height > 800 ? contentSpace / 3 - 30 : 190;
+
+        const context = LauncherController.getInstance().context;
+        //happeningNowOffset
+        context.happeningNowItemUpdateFunction = () => {
+            if (context.happeningNowItems.length == 0)
+                this.setState({ activeItems: [LauncherController.getInstance().context.happeningNowItemNoSession],  scrollPosY: this.state.scrollPosY  })
+            else
+                this.setState({ activeItems: context.happeningNowItems,  scrollPosY: this.state.scrollPosY });
+        };
+        const happeningNowTileItemHeight = 50;
+        const happeningNowTileHeight = (this.state.activeItems.length - 1) * (happeningNowTileItemHeight);
+        const happeningNowTotalDistance = 130+happeningNowTileHeight+50;
 
         // console.log("ScreenHeight: "+Dimensions.get("screen").height+" Content Space: "+contentSpace)
 
@@ -33,6 +51,7 @@ class HomeScreen extends PureComponent<any, any> {
                     style={{ position: 'absolute' }}
                     visualProperties={{ alpha: 1.0, x: 0, y: 0, z: 0, w: "windowWidth", h: "windowHeight" }}
                 >
+                  
 
                     <Image
                         style={{
@@ -44,15 +63,24 @@ class HomeScreen extends PureComponent<any, any> {
                         }}
                         source={require('../../../assets/screen-home-bg.png')}
                     />
-
+        {/* <Image
+                    source={require('../../../assets/logo-full.png')}
+                    style={{
+                        position: 'absolute', resizeMode: 'contain', opacity: 1.0,
+                        left: (Dimensions.get('screen').width -200) / 2, top: 100,
+                        width: Dimensions.get('screen').width - (2 * 80),
+                        height: Dimensions.get('screen').width - (2 * 80) * 800 / 768,
+                    }}
+                /> */}
                     <Image
                         source={require('../../../assets/logo-white.png')}
                         style={{
-                            position: 'absolute', resizeMode: 'contain', opacity: (Dimensions.get("screen").height<800?0.1:0.8),
-                            left: 80, 
-                            top: (Dimensions.get("screen").height<800?
-                             (Dimensions.get("screen").height/2- (Dimensions.get('screen').width - (2 * 80) * (815 / 1313))/2):
-                             contentSpace/3-(Dimensions.get('screen').width - (2 * 80) * (815 / 1313))/2),
+                            position: 'absolute', resizeMode: 'contain', 
+                            opacity: (Dimensions.get("screen").height < 800 ? 0.1 : 0.8-(0.7*Math.min(1,Math.max(0,this.state.scrollPosY/20)))),
+                            left: 80,
+                            top: (Dimensions.get("screen").height < 800 ?
+                                (Dimensions.get("screen").height / 2 - (Dimensions.get('screen').width - (2 * 80) * (815 / 1313)) / 2) :
+                                contentSpace / 3 - (Dimensions.get('screen').width - (2 * 80) * (815 / 1313)) / 2),
                             width: Dimensions.get('screen').width - (2 * 80),
                             height: Dimensions.get('screen').width - (2 * 80) * 815 / 1313,
                         }}
@@ -74,135 +102,37 @@ class HomeScreen extends PureComponent<any, any> {
                         position: 'absolute',
                         top: screenHeaderHeight, left: 0,
                         width: Dimensions.get("screen").width,
-                        height: Dimensions.get("screen").height-(screenHeaderHeight),
+                        height: Dimensions.get("screen").height - (screenHeaderHeight),
                         // backgroundColor: 'red'
-                    }
-                    }>
+                    }}
+                    onScroll={(e)=>{ 
+                        console.log( e.nativeEvent.contentOffset.y);
+                        this.setState({activeItems: this.state.activeItems, scrollPosY: e.nativeEvent.contentOffset.y})
+                    }} 
+                    >
 
                         <View
                             style={[{
-                                top: contentSpace/3,
+                                top: contentSpace / 3,
                                 width: Dimensions.get("screen").width,
-                                height: (contentSpace),
+                                height: (contentSpace/3+happeningNowTotalDistance+200+navBarHeight+30),
                                 left: 0,
                                 // backgroundColor: 'skyblue',
                             }]}>
-                       
-                                <ScheduleHappeningNow initialItem={LauncherController.getInstance().context.happeningNowItem[0]} />
-                  
 
-                            <Text allowFontScaling={false} id='textLocation' style={[{
-                                position: 'absolute',
-                                top: distanceTiles,
-                                left: 30,
-                                height: 17,
-                                fontFamily: 'Cabin-Regular',
-                                letterSpacing: 2.0,
-                                fontSize: 14,
-                                color: '#4b262a',
-                                // backgroundColor: 'skyblue',
-                                textAlign: 'center',
-                            }]}>
-                                GRAB YOUR 2025 TICKET
-                            </Text>
-
-                            <View style={{
-                                position: 'absolute',
-                                backgroundColor: '#9f509f',
-                                left: 30, 
-                                top: distanceTiles+30,
-                                width: Dimensions.get('screen').width - (2 * 30), height: 130,
-                                opacity: 0.8
-                            }}>
-                            </View>
-
-                            <Image
-                                source={require('../../../assets/home-happening-banner.png')}
-                                style={{
-                                    position: 'absolute', resizeMode: 'contain', opacity: 1.0,
-                                    left: 30, 
-                                    top: distanceTiles+30,
-                                    width: (Dimensions.get('screen').width - 2 * 30),
-                                    height: 130,
-                                }}
-                            />
-
-
-
-                            <Text allowFontScaling={false} id='textSessionMainTitle' style={{
-                                position: 'absolute',
-                                top: distanceTiles+50,
-                                left: 30,
-                                width: Dimensions.get('screen').width - (2 * 30),
-                                fontFamily: 'ArtBrush',
-                                // backgroundColor: 'indigo',
-                                textAlign: 'center',
-                                color: '#FFFFFF',
-                                fontSize: 25,
-                                opacity: 0.9
-                            }}>
-                                2025 Early Bird Passes
-                            </Text>
-
-
-                            {/* <Text allowFontScaling={false} id='textSessionMainTitle' style={{
-            position: 'absolute',
-            top: 250,
-            left: 30,
-            width:Dimensions.get('screen').width - (2 * 30),
-            fontFamily: '',
-            // backgroundColor: 'indigo',
-            textAlign: 'center',
-            color: '#FFFFFF',
-            fontSize: 25,
-            opacity: 0.9
-          }}>
-                     - First 50 Tickets - only 159
-- Next 100 179
-                  
-          </Text> */}
-
-
-
-                            <ButtonSmall
-                                name={("BtnTicketPage")}
-                                style={{
-                                    position: 'absolute',
-                                    top: (distanceTiles+95), left: (Dimensions.get('screen').width) / 2 - 90,
-                                    height: 35, width: 190
-                                }}
-                                text={"GO TO TICKET WEBPAGE"}
-                                bgBoxVisible={true}
-                                bgBoxStyle={{
-                                    backgroundColor: '#dd5163',
-                                    height: 35, width: 190,
-                                }}
-                                fontStyle={{
-                                    fontFamily: 'Cabin-Regular',
-                                    textAlign: 'center',
-                                    textAlignVertical: 'center',
-                                    letterSpacing: 2.0,
-                                    color: '#FFFFFF',
-                                    fontSize: 10,
-                                    width: 190,
-                                }}
-                                visualProperties={{ alpha: 1 }}
-                                onSelect={() => { ActionOpenBrowserWithURL() }}
-                            />
-
-
+                            <HappeningNowTile activeItems={ this.state.activeItems} tileHeight={happeningNowTileHeight}/>
+                            <EarlyPassesTile offsetY={Math.max(distanceTiles, happeningNowTotalDistance)} />
                         </View>
-
-
                     </ScrollView>
-
-
                 </LComponent>
 
 
             </>
 
         );
+    }
+    componentDidMount(): void {
+        ActionUpdateHappeningNow();
     }
 }
 
