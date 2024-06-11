@@ -10,6 +10,7 @@ const ScheduleListItem = ({ item, index }) => {
 
   if (item == undefined || item == null) return null;
   if (item.itemType == "type1" && item.flag == true) return null;
+  if (item.flagIncludeInNow == true) return null;
 
   const centerPieceWidth = Dimensions.get('screen').width - (5 + 45 + 35 + 35 + 5)
   const paddingLeftAndRight = 5;
@@ -19,7 +20,7 @@ const ScheduleListItem = ({ item, index }) => {
   if (group.length == 0) group = [{ id: item.id, obj: item }]
 
   if (item.itemType == 'type1')
-    itemHeight = (item.sessionMainTitle as string).length > 25 ? 180 : 180;
+    itemHeight = (item.sessionMainTitle as string).length > 25 ? 190 : 190;
   else if (item.itemType == 'type2')
     itemHeight = (item.room == "" ? 50 : 65);
   else if (item.itemType == 'type3') {
@@ -28,7 +29,7 @@ const ScheduleListItem = ({ item, index }) => {
     if((item.artistName as string).length > 20) itemHeight+=30;
   }
   else if (item.itemType == 'type4')
-    itemHeight = 160;
+    itemHeight = (item.sessionMainTitle as string).length > 20 ? 164 : 138;
   else if (item.itemType == 'type5')
     itemHeight = 200;
 

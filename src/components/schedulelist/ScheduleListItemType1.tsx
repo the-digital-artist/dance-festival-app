@@ -1,5 +1,5 @@
 import { PureComponent, ReactNode, createRef } from 'react';
-import { Image, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
 import Animated from 'react-native-reanimated';
 import DataModel from '../../DataModel';
 import ActionItemFavToggleStateUpdate from '../../actions/ActionItemFavToggleStateUpdate';
@@ -39,15 +39,24 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     let isNightPartyItem = false;
     if (item.artistOne == '') isNightPartyItem = true;
 
+    const levelData = [
+      { src: require('../../../assets/schedule-levelicon-1.png'), text: "BEGINNER", textWidth: 52 },
+      { src: require('../../../assets/schedule-levelicon-2.png'), text: "INTERMEDIATE", textWidth: 72},
+      { src: require('../../../assets/schedule-levelicon-3.png'), text: "ADVANCED", textWidth: 54 }
+    ]
+    const levelId = item.level != undefined ? item.level: -1;
+    const levelImageSize = 6;
+
+
     const itemHeight = item.rowHeight != undefined ? item.rowHeight : 100;
-    const roomBoxOffsetY = !isNightPartyItem?20:25;
+    const roomBoxOffsetY = !isNightPartyItem ? 20 : 25;
     const artistData = DataModel.dataArtists[item.artistOne];
     const verticalOffsetTitleLength = item.lineCount != undefined ? (item.lineCount * 19) : 19;
 
     const imageWidthArtistImage = this.props.tileWidth * (160 / 305);
     const imageOffsetYArtistImage = ((305 - this.props.tileWidth) / (305 - 245)) * 10
     const fontSizeMainTitle = this.props.tileWidth * (17 / 305);
-    const fontSizeArtistName = !isNightPartyItem?this.props.tileWidth * (13 / 305):this.props.tileWidth * (12 / 305);
+    const fontSizeArtistName = !isNightPartyItem ? this.props.tileWidth * (13 / 305) : this.props.tileWidth * (12 / 305);
 
     // console.log("ScheduleListItemType1 tileLength " + this.props.tileWidth + " artistImageWidth: "+ imageWidthArtistImage);
 
@@ -158,7 +167,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
             style={[{
               // backgroundColor: 'greenyellow',
               position: 'absolute',
-              top: -2 + imageOffsetYArtistImage,
+              top: 2 + imageOffsetYArtistImage,
               right: (item.orientation == 'right' ? -25 : undefined),
               left: (item.orientation == 'left' ? -20 : undefined),
               width: imageWidthArtistImage, height: imageWidthArtistImage,
@@ -188,13 +197,13 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
             </Animated.Text>
 
 
-            <Animated.Text allowFontScaling={false} id='textSessionArtistName' style={{
+            <Text allowFontScaling={false} id='textSessionArtistName' style={{
               position: 'absolute',
-              top: (26 + verticalOffsetTitleLength),
+              top: (37 + verticalOffsetTitleLength),
               right: (item.orientation == 'right' ? undefined : (4 + 35)),
               left: (item.orientation == 'left' ? undefined : (4 + 35)),
-              height: (itemHeight - 30-(26 + verticalOffsetTitleLength)-10), 
-              width: this.props.tileWidth-35-4-10,
+              height: (itemHeight - 30 - (26 + verticalOffsetTitleLength) - 10),
+              width: this.props.tileWidth - 35 - 4 - 10,
               fontFamily: 'Cabin-Regular',
               letterSpacing: 2.0,
               // backgroundColor: 'indigo',
@@ -203,21 +212,44 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               fontSize: (fontSizeArtistName),
             }}>
               {item.artistName ? (item.artistName as string).toLocaleUpperCase() : ""}
-            </Animated.Text >
+            </Text >
 
-
-            {/* <Pressable id='buttonCenter'
+{levelData[levelId]!= undefined  &&
+<>
+            <Image
+              source={levelData[levelId].src}
               style={{
+                // backgroundColor: 'greenyellow',
                 position: 'absolute',
-                top: 30,
-                left: 80,
-                width: 270, height: 60,
-              }}
-              onPress={() => {
-                // TransitionScreenL1toL2() 
-              }}
-            /> */}
+                top: (27 + verticalOffsetTitleLength),
+                right: (item.orientation == 'right' ? undefined : ( levelData[levelId].textWidth+ 35)),
+                left: (item.orientation == 'left' ? undefined : ( levelData[levelId].textWidth + 35)),
+                width: levelImageSize, 
+                height: levelImageSize,
+                resizeMode: 'cover'
+              }}>
+            </Image>
 
+            <Text allowFontScaling={false} id='textSessionLevel' style={{
+              position: 'absolute',
+              top: (26 + verticalOffsetTitleLength -1),
+              right: (item.orientation == 'right' ? undefined : (4 + 35)),
+              left: (item.orientation == 'left' ? undefined : (4 + 35)),
+              // height: levelImageSize,
+              width: (100 - 15),
+              fontFamily: 'Cabin-Regular',
+              letterSpacing: 1.2,
+              // opacity: 0.5,
+              // backgroundColor: 'indigo',
+              textAlign: (item.orientation == 'right' ? 'left' : 'right'),
+              color: '#232323',
+              fontSize: 7.5,
+            }}>
+              {levelData[levelId].text}
+            </Text >
+            </>
+
+            }
 
             <ScheduleItemToggle
               ref={(r) => { this.toggleButtonReference = r }}
@@ -227,12 +259,12 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                 position: 'absolute',
                 right: (item.orientation == 'left' ? 3 : undefined),
                 left: (item.orientation == 'right' ? (3) : undefined),
-                top: (27),
+                top: (20),
                 width: 35, height: 35,
               }}
               initialCheckedState={this.state.dataItem.favoriteState}
-              onSelect={(newState) => { 
-                ActionItemFavToggleStateUpdate(this, newState) 
+              onSelect={(newState) => {
+                ActionItemFavToggleStateUpdate(this, newState)
               }}
               sourceOn={require('../../../assets/button-fav-on.png')}
               sourceOff={require('../../../assets/button-fav-off.png')}
@@ -247,7 +279,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                   position: 'absolute',
                   right: (item.orientation == 'right' ? undefined : (4 + 33)),
                   left: (item.orientation == 'left' ? undefined : (4 + 33)),
-                  top: (46 + verticalOffsetTitleLength),
+                  top: (57 + verticalOffsetTitleLength),
                   height: 23, width: 100,
                 }}
                 text={"ARTIST DETAILS"}
