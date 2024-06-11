@@ -45,7 +45,7 @@ const ActionUpdateDataModelWithRemote = async () => {
         (c.dataDependentComponentSchedulerScreen as SchedulerScreen).startModelUpdate();
 
         // console.log(":::::ActionUpdateDataModel -- after SchedulerScreen).startModelUpdate");
-        console.log(":::::ActionUpdateDataModel -- updating in-memory model with remote model: "+remoteModel.modelVersio);
+        console.log(":::::ActionUpdateDataModel -- updating in-memory model with remote model: "+remoteModel.modelVersion);
 
         //now update in memory model
         DataModel.modelVersion = remoteModel.modelVersion
@@ -60,7 +60,7 @@ const ActionUpdateDataModelWithRemote = async () => {
         (c.dataDependentComponentSchedulerScreen as SchedulerScreen).finishModelUpdate();
 
         //store the list into phone storage
-        console.log(":::::ActionUpdateDataModel -- latest model asynchroneously stored local: "+remoteModel.modelVersio);
+        console.log(":::::ActionUpdateDataModel -- latest model asynchroneously stored local: "+remoteModel.modelVersion);
 
         AsyncStorage.setItem('qaldfDataModel', JSON.stringify({
             modelVersion: DataModel.modelVersion,
