@@ -81,7 +81,10 @@ const EarlyPassesTile = (props) => {
                                     height: 130,
                                 }}
                                 bgBoxVisible={false}
-                                source={require('../../../assets/hometile-earlybird-button.png')}
+                                defaultSource={require('../../../assets/hometile-earlybird-button.png')}
+                                source={{
+                                    uri: 'https://the-artist.digital/qaldf/hometile-earlybird-button.png',
+                                  }}
                                 imageStylestyle={{
                                     position: 'absolute', resizeMode: 'contain', opacity: 1.0,
                                 }}
