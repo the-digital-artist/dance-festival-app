@@ -114,7 +114,7 @@ class SchedulerScreen extends PureComponent {
                                 bottom: (Dimensions.get('screen').width * (300 / 1290)) / 2 - 1, left: 0, position: 'absolute',
                                 width: Dimensions.get('screen').width,
                                 height: (Dimensions.get('screen').width * (300 / 1290)),
-                                opacity: 0
+                                opacity: 0.8
                             }} />
                     }
                 </LComponent>
