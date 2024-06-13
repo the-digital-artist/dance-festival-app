@@ -124,6 +124,17 @@ class HomeScreen extends PureComponent<any, any> {
                             <EarlyPassesTile offsetY={Math.max(distanceTiles, happeningNowTotalDistance)} />
                         </View>
                     </ScrollView>
+
+                    {(Platform.OS == 'android') &&
+                        <View
+                            style={{
+                                backgroundColor: '#9F509F',
+                                bottom: (Dimensions.get('screen').width * (300 / 1290)) / 2 - 1, left: 0, position: 'absolute',
+                                width: Dimensions.get('screen').width,
+                                height: (Dimensions.get('screen').width * (300 / 1290)),
+                                opacity: 0.8
+                            }} />
+                    }
                 </LComponent>
 
 
