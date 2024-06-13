@@ -1,5 +1,5 @@
 import React, { Fragment, PureComponent } from "react";
-import { Dimensions, Image, Pressable, Text, View } from "react-native";
+import { Dimensions, Image, Platform, Pressable, Text, View } from "react-native";
 import LComponent from "../../core/LComponent";
 import TransitionScreenL3toL2 from "../../transitions/TransitionScreenL3toL2";
 import LauncherController from "../../LauncherController";
@@ -17,8 +17,10 @@ class ArtistDetailsScreen extends PureComponent {
     render() {
         const item = LauncherController.getInstance().context.artistFocusItem
 
-        let offsetX = 0;
-        let offsetY = 50;
+        const scrollViewContent =
+            Platform.OS == 'ios' ?
+                (item.bio as string).length / 1100 * 1.2 * Dimensions.get('screen').height :
+                (item.bio as string).length / 1100 * 1.5 * Dimensions.get('screen').height;
 
         let socialBarData = [
             { id: 0, provider: "Instagram", account: item.insta, imgSrc: require('../../../assets/icon-social-insta-black.png') },
@@ -28,7 +30,7 @@ class ArtistDetailsScreen extends PureComponent {
         ]
         let iconSize = 25;
         let itemDistance = 40
-        let startX = Dimensions.get('screen').width-(20+5+30+30)-((socialBarData.length - 1) * itemDistance + iconSize / 2);
+        let startX = Dimensions.get('screen').width - (20 + 5 + 30 + 30) - ((socialBarData.length - 1) * itemDistance + iconSize / 2);
         // let startX = ((((socialBarData.length - 1) * itemDistance) / 2) - iconSize / 2 - 40)
 
         return (
@@ -58,7 +60,7 @@ class ArtistDetailsScreen extends PureComponent {
                                 backgroundColor: '#ec556f',
                                 top: 0, left: 5,
                                 width: Dimensions.get('screen').width - 50,
-                                height: (item.bio as string).length / 1100 * 1.2 * Dimensions.get('screen').height,
+                                height: scrollViewContent,
                                 opacity: 1
                             }}>
                             <Text allowFontScaling={false} id='textLabelArtist' style={{

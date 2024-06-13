@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { Dimensions, Image, ScrollView, Text, View } from "react-native";
+import { Dimensions, Image, Platform, ScrollView, Text, View } from "react-native";
 import LauncherController from "../../LauncherController";
 import ActionOpenBrowserWithURL from "../../actions/ActionOpenBrowserWithURL";
 import LComponent from "../../core/LComponent";
@@ -106,7 +106,7 @@ class HomeScreen extends PureComponent<any, any> {
                         // backgroundColor: 'red'
                     }}
                     onScroll={(e)=>{ 
-                        console.log( e.nativeEvent.contentOffset.y);
+                        // console.log( e.nativeEvent.contentOffset.y);
                         this.setState({activeItems: this.state.activeItems, scrollPosY: e.nativeEvent.contentOffset.y})
                     }} 
                     >
@@ -115,7 +115,7 @@ class HomeScreen extends PureComponent<any, any> {
                             style={[{
                                 top: contentSpace / 3,
                                 width: Dimensions.get("screen").width,
-                                height: (contentSpace/3+happeningNowTotalDistance+200+navBarHeight+30),
+                                height: (contentSpace/3+happeningNowTotalDistance+200+navBarHeight+(Platform.OS == "ios"?30:230)),
                                 left: 0,
                                 // backgroundColor: 'skyblue',
                             }]}>
