@@ -30,7 +30,7 @@
         "backgroundColor": "#000000"
       },
       "package": "com.thedigitalartist.queerafrolatindancefestival",
-      "versionCode": 24
+      "versionCode": 25
     },
     "web": {
       "favicon": "./assets/favicon.png"
