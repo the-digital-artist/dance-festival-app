@@ -90,6 +90,7 @@ const EarlyPassesTile = (props) => {
                                 }}
                                 visualProperties={{ alpha: 1 }}
                                 onSelect={() => { ActionOpenBrowserWithURL() }}
+                                onError={(nativeEvent) => {console.log()}}
                             />
 
                   
