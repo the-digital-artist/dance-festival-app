@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "QALDF",
-    "slug": "queer-afro-latin-dance-festival-app",
+    "name": "CALDAC App",
+    "slug": "colorado-afro-latin-dance-arts-convention",
     "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,8 +13,8 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.thedigitalartist.queerafrolatindancefestival",
-      "buildNumber": "72",
+      "bundleIdentifier": "com.thedigitalartist.caldac",
+      "buildNumber": "3",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "LSApplicationQueriesSchemes": [
@@ -29,7 +29,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#000000"
       },
-      "package": "com.thedigitalartist.queerafrolatindancefestival",
+      "package": "com.thedigitalartist.caldac",
       "versionCode": 25
     },
     "web": {
@@ -37,7 +37,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "f182da48-a300-4931-a271-e4c708ce1d5c"
+        "projectId": "0a76eaa2-03a3-488d-b0d5-e1f4ffd9c4b2"
       }
     },
     "owner": "the.digital.artist"

@@ -1,5 +1,5 @@
 {
-  "name": "qaldf",
+  "name": "caldac",
   "version": "1.0.1",
   "main": "expo/AppEntry.js",
   "scripts": {
@@ -13,10 +13,10 @@
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/native-stack": "^6.9.26",
     "@types/react": "~18.2.79",
-    "expo": "~51.0.11",
+    "expo": "~51.0.14",
     "expo-application": "~5.9.1",
     "expo-blur": "~13.0.2",
-    "expo-dev-client": "~4.0.15",
+    "expo-dev-client": "~4.0.18",
     "expo-linking": "~6.3.1",
     "expo-splash-screen": "~0.27.5",
     "expo-status-bar": "~1.12.1",
