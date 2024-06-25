@@ -13,7 +13,7 @@ const NavBarHighlight = (props) => {
                     bottom:props.bottomOffsetY
                 }}
                 visualProperties={{
-                    alpha: 1.0, x: props.startX
+                    alpha: 0.0, x: props.startX
                 }}
             />
         </>
