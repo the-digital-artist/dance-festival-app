@@ -1,8 +1,8 @@
 {
   "expo": {
     "name": "CALDAC App",
-    "slug": "colorado-afro-latin-dance-arts-convention",
-    "version": "1.0.2",
+    "slug": "colorado-afro-latin-festival-app",
+    "version": "0.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -13,8 +13,8 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.thedigitalartist.caldac",
-      "buildNumber": "3",
+      "bundleIdentifier": "com.thedigitalartist.caldac.festivalapp",
+      "buildNumber": "1",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "LSApplicationQueriesSchemes": [
@@ -29,15 +29,15 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#000000"
       },
-      "package": "com.thedigitalartist.caldac",
-      "versionCode": 25
+      "package": "com.thedigitalartist.caldac.festivalapp",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "0a76eaa2-03a3-488d-b0d5-e1f4ffd9c4b2"
+        "projectId": "66eef67d-c5b7-4262-b95f-4e862c5dea37"
       }
     },
     "owner": "the.digital.artist"
