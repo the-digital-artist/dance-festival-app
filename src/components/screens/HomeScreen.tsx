@@ -76,7 +76,7 @@ class HomeScreen extends PureComponent<any, any> {
                         source={require('../../../assets/logo-white.png')}
                         style={{
                             position: 'absolute', resizeMode: 'contain', 
-                            opacity: (Dimensions.get("screen").height < 800 ? 0.1 : 0.8-(0.7*Math.min(1,Math.max(0,this.state.scrollPosY/20)))),
+                            opacity: (Dimensions.get("screen").height < 800 ? 0.1 : 1.0-(0.7*Math.min(1,Math.max(0,this.state.scrollPosY/20)))),
                             left: 80,
                             top: (Dimensions.get("screen").height < 800 ?
                                 (Dimensions.get("screen").height / 2 - (Dimensions.get('screen').width - (2 * 80) * (815 / 1313)) / 2) :
@@ -86,7 +86,7 @@ class HomeScreen extends PureComponent<any, any> {
                         }}
                     />
 
-                    <ScreenHeader text="WELCOME MY FRIEND" color='#FFFFFF' />
+                    {/* <ScreenHeader text="WELCOME MY FRIEND" color='#FFFFFF' /> */}
                     {/* <Image
                         source={require('../../../assets/logo-white.png')}
                         style={{
@@ -120,8 +120,8 @@ class HomeScreen extends PureComponent<any, any> {
                                 // backgroundColor: 'skyblue',
                             }]}>
 
-                            <HappeningNowTile activeItems={ this.state.activeItems} tileHeight={happeningNowTileHeight}/>
-                            <EarlyPassesTile offsetY={Math.max(distanceTiles, happeningNowTotalDistance)} />
+                            {/* <HappeningNowTile activeItems={ this.state.activeItems} tileHeight={happeningNowTileHeight}/> */}
+                            {/* <EarlyPassesTile offsetY={Math.max(distanceTiles, happeningNowTotalDistance)} /> */}
                         </View>
                     </ScrollView>
 
