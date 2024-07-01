@@ -8,8 +8,8 @@ const NavBar = (props) => {
     let navBarData = props.data
     let HighlightRendererComponent = props.highlightRenderer;
 
-    let iconSize = 60;
-    let itemDistance = 85
+    let iconSize = 65;
+    let itemDistance = 90
     let startX = (Dimensions.get('screen').width / 2 - ((navBarData.length - 1) * itemDistance) / 2) - iconSize / 2
 
     return (
@@ -54,16 +54,16 @@ const NavBar = (props) => {
                             }}
                             visualProperties={{ alpha: 1, x: 0, y: 0, z: 0 }}
                             onSelect={() => { TransitionNavbarSelect(i) }}
-                            source={itemData.imgSrc}
+                            // source={itemData.imgSrc}
                             text={(itemData.itemText as string).toLocaleUpperCase()}
                             fontStyle={{
                                 // backgroundColor: 'skyblue',
-                                top: 45, width: iconSize,
+                                top: 20, width: iconSize,
                                 fontFamily: 'Arcon-Regular',
                                 textAlign: 'center',
                                 letterSpacing: 1.7,
-                                color: '#000000',
-                                fontSize: 9,
+                                color: '#f8f6d3',
+                                fontSize: 10,
                             }}
                         />
                     </Fragment>

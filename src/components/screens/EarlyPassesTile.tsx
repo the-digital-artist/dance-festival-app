@@ -60,7 +60,7 @@ const EarlyPassesTile = (props) => {
                                 top: props.offsetY + 50,
                                 left: 30,
                                 width: Dimensions.get('screen').width - (2 * 30),
-                                fontFamily: 'ArtBrush',
+                                fontFamily: 'LuckiestGuy-Regular',
                                 // backgroundColor: 'indigo',
                                 textAlign: 'center',
                                 color: '#FFFFFF',

@@ -32,7 +32,7 @@ const HeaderNavigator = (props) => {
           // position: 'absolute',
           top: 43, left: 30,
           width: Dimensions.get('screen').width - 40, height: 100,
-          fontFamily: 'Antonio-Regular',
+          fontFamily: 'RobotoCondensed-Medium',
           // backgroundColor: 'indigo',
           textAlign: 'left',
           color:'#000000',

@@ -14,10 +14,10 @@ const TabBar = (props) => {
     // ]
 
 
-    let itemWidth = 125;
+    let itemWidth = 100;
     let itemHeight = 43;
     let itemHeightSelectedOffset = 10;
-    let itemSpread = 140
+    let itemSpread = 110
     let startX = (Dimensions.get('screen').width / 2 - ((tabBarData.length - 1) * itemSpread) / 2) - itemWidth / 2
 
     const currentIndex = useSharedValue(0);
@@ -43,7 +43,7 @@ const TabBar = (props) => {
 
             <View style={{
                 pointerEvents: 'none',
-                backgroundColor: '#f3c67a',
+                backgroundColor: '#d0c8b8',
                 top: 100 + itemHeightSelectedOffset, left: 0, position: 'absolute',
                 width: Dimensions.get('screen').width,
                 height: itemHeight - itemHeightSelectedOffset,
@@ -79,7 +79,7 @@ const TabBar = (props) => {
                             dynamicVisualPropertiesText={animValuesText[i]}
                             bgBoxVisible={true}
                             bgBoxStyle={{
-                                backgroundColor: '#FBB03A',
+                                backgroundColor: '#f8f6d3',
                                 position: 'absolute',
                                 width: itemWidth, height: itemHeight,
                             }}

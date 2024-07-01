@@ -16,7 +16,7 @@ const ScheduleListItemType3 = ({ item }) => {
         position: 'absolute',
         top: 15, left: 2,
         width: 70, height: 15,
-        fontFamily: 'Antonio-Regular',
+        fontFamily: 'RobotoCondensed-Medium',
         // backgroundColor: 'skyblue',
         textAlign: 'right',
         color: '#58503e',
@@ -29,10 +29,10 @@ const ScheduleListItemType3 = ({ item }) => {
         position: 'absolute',
         top: 10, left: 90,
         width: Dimensions.get('screen').width-90-30,
-        fontFamily: 'ArtBrush',
+        fontFamily: 'LuckiestGuy-Regular',
         // backgroundColor: 'indigo',
         textAlign: 'left',
-        color: '#9F509F',
+        color: '#312816',
         fontSize: 25,
       }}>
         {item.sessionMainTitle ? (item.sessionMainTitle as string) : ""}
@@ -47,7 +47,7 @@ const ScheduleListItemType3 = ({ item }) => {
         letterSpacing: 2.0,
         // backgroundColor: 'indigo',
         textAlign: 'left',
-        color: '#58503e',
+        color: '#312816',
         fontSize: 12,
       }}>
         {item.room ? (item.room as string).toLocaleUpperCase() : ""}
@@ -61,7 +61,7 @@ const ScheduleListItemType3 = ({ item }) => {
         letterSpacing: 1.5,
         // backgroundColor: 'indigo',
         textAlign: 'left',
-        color: '#58503e',
+        color: '#312816',
         fontSize: 12,
       }}>
         {item.artistName ? (item.artistName as string).toLocaleUpperCase() : ""}

@@ -168,9 +168,10 @@ class LauncherController extends OperatorStates {
     tabBarIndex = 0
     tabBarData =
         [
-            { id: 0, itemText: "Friday", associatedScreenName: "scheduleList0", imgSrc: null },
-            { id: 1, itemText: "Saturday", associatedScreenName: "scheduleList1", imgSrc: null },
-            { id: 2, itemText: "Sunday", associatedScreenName: "scheduleList2", imgSrc: null }
+            { id: 0, itemText: "Thursday", associatedScreenName: "scheduleList0", imgSrc: null },
+            { id: 1, itemText: "Friday", associatedScreenName: "scheduleList1", imgSrc: null },
+            { id: 2, itemText: "Saturday", associatedScreenName: "scheduleList2", imgSrc: null },
+            { id: 3, itemText: "Sunday", associatedScreenName: "scheduleList3", imgSrc: null }
         ]
 
 
@@ -185,12 +186,14 @@ class LauncherController extends OperatorStates {
         ]
 
     customFonts = {
-        'Ambassador_Update-Regular': require('../assets/fonts/Ambassador_Update-Regular.ttf'),
         'Antonio-Regular': require('../assets/fonts/Antonio-Regular.ttf'),
         'Arcon-Regular': require('../assets/fonts/Arcon-Regular.otf'),
         'Arcon-Rounded-Regular': require('../assets/fonts/Arcon-Regular.otf'),
-        'ArtBrush': require('../assets/fonts/Artbrush.ttf'),
+        'LuckiestGuy-Regular': require('../assets/fonts/LuckiestGuy-Regular.ttf'),
         'Cabin-Regular': require('../assets/fonts/Cabin-Regular.ttf'),
+        'RobotoCondensed-Regular': require('../assets/fonts/RobotoCondensed-Regular.ttf'),
+        'RobotoCondensed-Medium': require('../assets/fonts/RobotoCondensed-Medium.ttf'),
+       
     };
 
     constructor() {

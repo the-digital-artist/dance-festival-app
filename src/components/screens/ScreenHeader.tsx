@@ -27,7 +27,7 @@ const   ScreenHeader = (props) => {
       <Text allowFontScaling={false} id='textHeader' style={{
         top: 55, left: 30,
         width: Dimensions.get('screen').width - 40, height: 32,
-        fontFamily: 'Antonio-Regular',
+        fontFamily: 'RobotoCondensed-Medium',
         // backgroundColor: 'skyblue',
         letterSpacing: 1.5,
         textAlign: 'left',

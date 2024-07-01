@@ -45,7 +45,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
       { src: require('../../../assets/schedule-levelicon-3.png'), text: "ADVANCED", textWidth: 54 }
     ]
     const levelId = item.level != undefined ? item.level: -1;
-    const levelImageSize = 6;
+    const levelImageSize = 10;
 
 
     const itemHeight = item.rowHeight != undefined ? item.rowHeight : 100;
@@ -56,7 +56,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     const imageWidthArtistImage = this.props.tileWidth * (160 / 305);
     const imageOffsetYArtistImage = ((305 - this.props.tileWidth) / (305 - 245)) * 10
     const fontSizeMainTitle = this.props.tileWidth * (17 / 305);
-    const fontSizeArtistName = !isNightPartyItem ? this.props.tileWidth * (13 / 305) : this.props.tileWidth * (12 / 305);
+    const fontSizeArtistName = !isNightPartyItem ? this.props.tileWidth * (14 / 305) : this.props.tileWidth * (13 / 305);
 
     // console.log("ScheduleListItemType1 tileLength " + this.props.tileWidth + " artistImageWidth: "+ imageWidthArtistImage);
 
@@ -75,13 +75,13 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
           //  name={"ScheduleItemFrame1_" + item.id}
           style={{
             position: 'absolute',
-            backgroundColor: '#ffffff',
+            backgroundColor: '#76777d',
             borderColor: '#9F509F',
-            borderLeftWidth: 3,
-            borderRightWidth: 3,
+            // borderLeftWidth: 3,
+            // borderRightWidth: 3,
             borderTopWidth: 0,
-            borderBottomWidth: 3,
-            opacity: 0.68,
+            // borderBottomWidth: 3,
+            opacity: 1.0,
             left: 0,
             top: roomBoxOffsetY,
             height: (itemHeight - 30),
@@ -96,9 +96,9 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
           style={{
             position: 'absolute',
             backgroundColor: 'transparent',
-            borderColor: '#9F509F',
-            borderLeftWidth: 3,
-            borderRightWidth: 3,
+            borderColor: '#8e8b89',
+            // borderLeftWidth: 3,
+            // borderRightWidth: 3,
             borderTopWidth: 20,
             borderBottomWidth: 0,
             opacity: 1,
@@ -125,39 +125,40 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
           }}
         >
 
-          <Image
+          {/* <Image
             source={require('../../../assets/sessionitem-frame.png')}
             style={{
               // backgroundColor: 'greenyellow',
               position: 'absolute',
               left: 3, top: roomBoxOffsetY,
-              opacity: 0.1,
+              opacity: 0.0,
               width: this.props.tileWidth - 6, height: itemHeight - 50 - 3,
               resizeMode: 'contain'
             }}
-          />
+          /> */}
 
           <LComponent
             name={"ScheduleItemHighlight" + item.id}
             style={{
-              backgroundColor: '#EF4260',
+              backgroundColor: '#313442',
             }}
-            visualProperties={{ alpha: 0, x: 3, y: 20, h: (itemHeight - 30 - 20 - 3), w: this.props.tileWidth - 6 }}
+            visualProperties={{ alpha: 0, x: 3, y: 0, h: (itemHeight - 30 - 3), w: this.props.tileWidth - 6 }}
           />
 
           <Animated.Text allowFontScaling={false} id='textLocation' style={[{
             position: 'absolute',
-            top: 1,
+            top: 2,
             left: (this.props.tileWidth - 60) / 2,
             // right: (item.orientation == 'right' ? undefined : 10),
             // left: (item.orientation == 'left' ? undefined : 10),
             height: 15,
             width: 60,
-            fontFamily: 'Antonio-Regular',
+            fontFamily: 'RobotoCondensed-Medium',
             // backgroundColor: 'skyblue',
             textAlign: 'center',
             color: '#FFFFFF',
             fontSize: 12,
+            letterSpacing: 1.2
           }, this.props.dynamicVisualProperties2]}>
             {(item.room as string).toLocaleUpperCase()}
           </Animated.Text>
@@ -186,11 +187,11 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               top: 26,
               right: (item.orientation == 'right' ? undefined : (4 + 35)),
               left: (item.orientation == 'left' ? undefined : (4 + 35)),
-              width: 170,
-              fontFamily: 'ArtBrush',
+              width: 200,
+              fontFamily: 'LuckiestGuy-Regular',
               // backgroundColor: 'indigo',
               textAlign: (item.orientation == 'right' ? 'left' : 'right'),
-              color: '#58503e',
+              color: '#f2aa3e',
               fontSize: (fontSizeMainTitle),
             }}>
               {item.sessionMainTitle}
@@ -199,16 +200,16 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
 
             <Text allowFontScaling={false} id='textSessionArtistName' style={{
               position: 'absolute',
-              top: (37 + verticalOffsetTitleLength),
+              top: (40 + verticalOffsetTitleLength),
               right: (item.orientation == 'right' ? undefined : (4 + 35)),
               left: (item.orientation == 'left' ? undefined : (4 + 35)),
               height: (itemHeight - 30 - (26 + verticalOffsetTitleLength) - 10),
               width: this.props.tileWidth - 35 - 4 - 10,
-              fontFamily: 'Cabin-Regular',
+              fontFamily: 'RobotoCondensed-Medium',
               letterSpacing: 2.0,
               // backgroundColor: 'indigo',
               textAlign: (item.orientation == 'right' ? 'left' : 'right'),
-              color: '#58503e',
+              color: '#f8f6d3',
               fontSize: (fontSizeArtistName),
             }}>
               {item.artistName ? (item.artistName as string).toLocaleUpperCase() : ""}
@@ -221,10 +222,10 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               style={{
                 // backgroundColor: 'greenyellow',
                 position: 'absolute',
-                top: (27 + verticalOffsetTitleLength),
-                right: (item.orientation == 'right' ? undefined : ( levelData[levelId].textWidth+ 35)),
-                left: (item.orientation == 'left' ? undefined : ( levelData[levelId].textWidth + 35)),
-                width: levelImageSize, 
+                top: (25 + verticalOffsetTitleLength),
+                right: (item.orientation == 'right' ? undefined : ( levelData[levelId].textWidth+ 40)),
+                left: (item.orientation == 'left' ? undefined : ( levelData[levelId].textWidth + 40)),
+                width: levelImageSize * 105/33, 
                 height: levelImageSize,
                 resizeMode: 'cover'
               }}>
@@ -237,13 +238,13 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               left: (item.orientation == 'left' ? undefined : (4 + 35)),
               // height: levelImageSize,
               width: (100 - 15),
-              fontFamily: 'Cabin-Regular',
+              fontFamily: 'RobotoCondensed-Medium',
               letterSpacing: 1.2,
               // opacity: 0.5,
               // backgroundColor: 'indigo',
               textAlign: (item.orientation == 'right' ? 'left' : 'right'),
-              color: '#232323',
-              fontSize: 7.5,
+              color: '#e5e4cf',
+              fontSize: 9,
             }}>
               {levelData[levelId].text}
             </Text >
@@ -290,7 +291,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                 }}
                 fontStyle={{
                   width: 100,
-                  fontFamily: 'Cabin-Regular',
+                  fontFamily: 'RobotoCondensed-Regular',
                   textAlign: 'center',
                   textAlignVertical: 'center',
                   letterSpacing: 2.0,
@@ -322,7 +323,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                   height: 35, width: 100
                 }}
                 fontStyle={{
-                  fontFamily: 'Cabin-Regular',
+                  fontFamily: 'RobotoCondensed-Regular',
                   textAlign: 'center',
                   textAlignVertical: 'center',
                   letterSpacing: 2.0,

@@ -14,10 +14,10 @@ const ScheduleListItemType2 = ({ item }) => {
         position: 'absolute',
         top: 7, left: 90,
         width: Dimensions.get('screen').width-90-30,
-        fontFamily: 'Antonio-Regular',
+        fontFamily: 'RobotoCondensed-Medium',
         // backgroundColor: 'indigo',
         textAlign: 'left',
-        color: '#58503e',
+        color: '#000000',
         fontSize: 22,
       }}>
         {item.sessionMainTitle ? (item.sessionMainTitle as string).toLocaleUpperCase() : ""}
@@ -32,7 +32,7 @@ const ScheduleListItemType2 = ({ item }) => {
         letterSpacing: 2.0,
         // backgroundColor: 'indigo',
         textAlign: 'left',
-        color: '#58503e',
+        color: '#000000',
         fontSize: 12,
       }}>
         {item.room ? (item.room as string).toLocaleUpperCase() : ""}
