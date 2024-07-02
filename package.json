@@ -1,6 +1,6 @@
 {
-  "name": "caldac",
-  "version": "0.0.9",
+  "name": "wellbeing",
+  "version": "0.0.1",
   "main": "expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
