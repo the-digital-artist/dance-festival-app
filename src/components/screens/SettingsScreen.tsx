@@ -15,7 +15,7 @@ class SettingsScreen extends PureComponent {
 
     static settingsItemRendererHeight = 50;
     static settingsListData = [
-        { title: "Download Full Schedule as PDF", action: ActionMoreDownloadPdf },
+        // { title: "Download Full Schedule as PDF", action: ActionMoreDownloadPdf },
         // { title: "Contact QALDF Organizers", action: ActionMoreContactFestival},
         // { title: `Contact App Creator`, action: ActionMoreContactAppDev },
         // { title: "About App" }
@@ -28,10 +28,9 @@ class SettingsScreen extends PureComponent {
     render() {
 
         let socialBarData = [
-            { id: 0, itemText: "Instagram", account: "queer_afro_latin_dance_fest", imgSrc: require('../../../assets/icon-social-insta.png') },
-            { id: 1, itemText: "Youtube", account: "UCUOPjCArvYfJ7bEvNkJYsRQ", imgSrc: require('../../../assets/icon-social-youtube.png') },
-            { id: 3, itemText: "Facebook", account: "761248704084273", imgSrc: require('../../../assets/icon-social-facebook.png') },
-            { id: 4, itemText: "Web", account: "https://queerafrolatindancefestival.com", imgSrc: require('../../../assets/icon-social-web.png') }
+            { id: 0, itemText: "Instagram", account: "patifestival_berlin", imgSrc: require('../../../assets/icon-social-insta.png') },
+            { id: 3, itemText: "Facebook", account: "171550106045951", imgSrc: require('../../../assets/icon-social-facebook.png') },
+            { id: 4, itemText: "Web", account: "https://patifestival.com", imgSrc: require('../../../assets/icon-social-web.png') }
         ]
 
         let iconSize = 35;
@@ -63,7 +62,7 @@ class SettingsScreen extends PureComponent {
                     source={require('../../../assets/screen-settings-bg.png')}
                 />
 
-                <Image
+                {/* <Image
                     source={require('../../../assets/logo-full.png')}
                     style={{
                         position: 'absolute', resizeMode: 'contain', opacity: 1.0,
@@ -71,7 +70,7 @@ class SettingsScreen extends PureComponent {
                         width: 150,
                         height: 150 * 800 / 768,
                     }}
-                />
+                /> */}
 
 
                 {/* <ScreenHeader text="SETTINGS" color='#eeecdf' /> */}
@@ -80,7 +79,7 @@ class SettingsScreen extends PureComponent {
 
                 {/* FIRST LIST with Settings and Contact Items */}
 
-                <View style={{
+                {/* <View style={{
                     position: 'absolute',
                     backgroundColor: '#1c1919',
                     left: 0, top: 290,
@@ -88,10 +87,10 @@ class SettingsScreen extends PureComponent {
                     height: (SettingsScreen.settingsItemRendererHeight * SettingsScreen.settingsListData.length + 2 * 5),
                     opacity: 0.4,
                 }}
-                />
+                /> */}
 
 
-                <FlatList
+                {/* <FlatList
                     style={{
                         position: 'absolute',
                         // backgroundColor: '#1c1919',
@@ -103,13 +102,13 @@ class SettingsScreen extends PureComponent {
                     // contentContainerStyle={{borderRadius: 6, overflow: 'hidden'}}
                     data={SettingsScreen.settingsListData}
                     renderItem={SettingsItemRenderer}
-                />
+                /> */}
 
 
 
                 <Text allowFontScaling={false} id='textList1' style={[{
                     position: 'absolute',
-                    top: 400,
+                    top: 390,
                     left: 0,
                     height: 15,
                     width: Dimensions.get('screen').width,

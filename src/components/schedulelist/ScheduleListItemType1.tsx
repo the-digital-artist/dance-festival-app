@@ -280,25 +280,25 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                 source={null}
                 style={{
                   position: 'absolute',
-                  right: (item.orientation == 'right' ? undefined : (4 + 32)),
-                  left: (item.orientation == 'left' ? undefined : (4 + 32)),
+                  right: (item.orientation == 'right' ? undefined : (4 + 29)),
+                  left: (item.orientation == 'left' ? undefined : (4 + 29)),
                   top: (63 + verticalOffsetTitleLength),
-                  height: 23, width: 100,
+                  height: 23, width: 120,
                 }}
                 text={"ARTIST DETAILS"}
                 bgBoxVisible={true}
                 bgBoxStyle={{
                   backgroundColor: '#36373a',
-                  height: 23, width: 100
+                  height: 23, width: 120
                 }}
                 fontStyle={{
-                  width: 100,
+                  width: 120,
                   fontFamily: 'RobotoCondensed-Regular',
                   textAlign: 'center',
                   textAlignVertical: 'center',
                   letterSpacing: 2.0,
-                  color: '#FFFFFF',
-                  fontSize: 8.5,
+                  color: '#f2a33a',
+                  fontSize: 10,
                 }}
                 visualProperties={{ alpha: 1 }}
                 onSelect={() => {

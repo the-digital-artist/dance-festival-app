@@ -295,27 +295,28 @@ class LauncherController extends OperatorStates {
 
         //load images
         try {
-            if(DataModel.dataArtists['DJ Yala'] != undefined) DataModel.dataArtists['DJ Yala'].imgSrc = require('../assets/portraits/01_DJ_Yala.png');
-            if(DataModel.dataArtists['DJ Paulazo'] != undefined) DataModel.dataArtists['DJ Paulazo'].imgSrc = require('../assets/portraits/02_DJ_Paulazo.png');
-            if(DataModel.dataArtists['DJ Goodfoot'] != undefined) DataModel.dataArtists['DJ Goodfoot'].imgSrc = require('../assets/portraits/03_DJ_Goodfoot.png');
-            if(DataModel.dataArtists['DJ Puma'] != undefined) DataModel.dataArtists['DJ Puma'].imgSrc = require('../assets/portraits/04_El_Puma_DJ.png');
             if(DataModel.dataArtists['Alafia Ire'] != undefined) DataModel.dataArtists['Alafia Ire'].imgSrc = require('../assets/portraits/05_Alafia_Con_Ire.png');
-            if(DataModel.dataArtists['Helen '] != undefined) DataModel.dataArtists['Helen '].imgSrc = require('../assets/portraits/06_Helen.png');
-            if(DataModel.dataArtists['Tanja '] != undefined) DataModel.dataArtists['Tanja '].imgSrc = require('../assets/portraits/07_Tanja.png');
             if(DataModel.dataArtists['Alexander Carbo'] != undefined) DataModel.dataArtists['Alexander Carbo'].imgSrc = require('../assets/portraits/08_Alexander_Carbo.png');
-            if(DataModel.dataArtists['Lynet Rubio'] != undefined) DataModel.dataArtists['Lynet Rubio'].imgSrc = require('../assets/portraits/09_Lynet_Rivero_Rubio.png');
-            if(DataModel.dataArtists['Angela Jauregui'] != undefined) DataModel.dataArtists['Angela Jauregui'].imgSrc = require('../assets/portraits/10_Angela_de_la_Caridad_Jauregui.png');
-            if(DataModel.dataArtists['Silvio Perez'] != undefined) DataModel.dataArtists['Silvio Perez'].imgSrc = require('../assets/portraits/11_Silvio_Leroy_Perez.png');
-            if(DataModel.dataArtists['Ruggiero Palombella'] != undefined) DataModel.dataArtists['Ruggiero Palombella'].imgSrc = require('../assets/portraits/12_Ruggiero_Palombella.png');
             if(DataModel.dataArtists['Alexandra Toledo'] != undefined) DataModel.dataArtists['Alexandra Toledo'].imgSrc = require('../assets/portraits/13_Alexandra_Toledo.png');
-            if(DataModel.dataArtists['Kimberly Wirt'] != undefined) DataModel.dataArtists['Kimberly Wirt'].imgSrc = require('../assets/portraits/14_Kimberly_Wirt.png');
-            if(DataModel.dataArtists['Wendy Solanch'] != undefined) DataModel.dataArtists['Wendy Solanch'].imgSrc = require('../assets/portraits/15_Wendy_Solanch.png');
-            if(DataModel.dataArtists['Timo Lingnau'] != undefined) DataModel.dataArtists['Timo Lingnau'].imgSrc = require('../assets/portraits/16_Timo_Lingnau.png');
-            if(DataModel.dataArtists['Lucas Flemming'] != undefined) DataModel.dataArtists['Lucas Flemming'].imgSrc = require('../assets/portraits/17_Lucas_Flemming.png');
+            if(DataModel.dataArtists['Angela Jauregui'] != undefined) DataModel.dataArtists['Angela Jauregui'].imgSrc = require('../assets/portraits/10_Angela_de_la_Caridad_Jauregui.png');
+            if(DataModel.dataArtists['DJ Goodfoot'] != undefined) DataModel.dataArtists['DJ Goodfoot'].imgSrc = require('../assets/portraits/03_DJ_Goodfoot.png');
+            if(DataModel.dataArtists['DJ Paulazo'] != undefined) DataModel.dataArtists['DJ Paulazo'].imgSrc = require('../assets/portraits/02_DJ_Paulazo.png');
+            if(DataModel.dataArtists['DJ Puma'] != undefined) DataModel.dataArtists['DJ Puma'].imgSrc = require('../assets/portraits/04_El_Puma_DJ.png');
+            if(DataModel.dataArtists['DJ Yala'] != undefined) DataModel.dataArtists['DJ Yala'].imgSrc = require('../assets/portraits/01_DJ_Yala.png');
+            if(DataModel.dataArtists['Helen'] != undefined) DataModel.dataArtists['Helen'].imgSrc = require('../assets/portraits/06_Helen.png');
             if(DataModel.dataArtists['Ido Flaishon'] != undefined) DataModel.dataArtists['Ido Flaishon'].imgSrc = require('../assets/portraits/18_Ido_Flaishon.png');
-            if(DataModel.dataArtists['Sassan Alivaliollahi'] != undefined) DataModel.dataArtists['Sassan Alivaliollahi'].imgSrc = require('../assets/portraits/19_Sassan_Alivaliollahi.png');
-            if(DataModel.dataArtists['Leonardo Moya'] != undefined) DataModel.dataArtists['Leonardo Moya'].imgSrc = require('../assets/portraits/20_Leonardo_Martinez_Moya.png');
             if(DataModel.dataArtists['Jonas Reichert'] != undefined) DataModel.dataArtists['Jonas Reichert'].imgSrc = require('../assets/portraits/21_Jonas_Reichert.png');
+            if(DataModel.dataArtists['Kimberly Wirt'] != undefined) DataModel.dataArtists['Kimberly Wirt'].imgSrc = require('../assets/portraits/14_Kimberly_Wirt.png');
+            if(DataModel.dataArtists['Leonardo Moya'] != undefined) DataModel.dataArtists['Leonardo Moya'].imgSrc = require('../assets/portraits/20_Leonardo_Martinez_Moya.png');
+            if(DataModel.dataArtists['Lucas Flemming'] != undefined) DataModel.dataArtists['Lucas Flemming'].imgSrc = require('../assets/portraits/17_Lucas_Flemming.png');
+            if(DataModel.dataArtists['Lynet Rubio'] != undefined) DataModel.dataArtists['Lynet Rubio'].imgSrc = require('../assets/portraits/09_Lynet_Rivero_Rubio.png');
+            if(DataModel.dataArtists['Ruggiero Palombella'] != undefined) DataModel.dataArtists['Ruggiero Palombella'].imgSrc = require('../assets/portraits/12_Ruggiero_Palombella.png');
+            if(DataModel.dataArtists['Sassan Alivaliollahi'] != undefined) DataModel.dataArtists['Sassan Alivaliollahi'].imgSrc = require('../assets/portraits/19_Sassan_Alivaliollahi.png');
+            if(DataModel.dataArtists['Silvio Perez'] != undefined) DataModel.dataArtists['Silvio Perez'].imgSrc = require('../assets/portraits/11_Silvio_Leroy_Perez.png');
+            if(DataModel.dataArtists['Tanja'] != undefined) DataModel.dataArtists['Tanja'].imgSrc = require('../assets/portraits/07_Tanja.png');
+            if(DataModel.dataArtists['Timo Lingnau'] != undefined) DataModel.dataArtists['Timo Lingnau'].imgSrc = require('../assets/portraits/16_Timo_Lingnau.png');
+            if(DataModel.dataArtists['Wendy Solanch'] != undefined) DataModel.dataArtists['Wendy Solanch'].imgSrc = require('../assets/portraits/15_Wendy_Solanch.png');
+        
         } catch (error) {
             console.log('Could not assign an image for a particular artist')
         }

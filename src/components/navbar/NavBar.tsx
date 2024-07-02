@@ -8,8 +8,8 @@ const NavBar = (props) => {
     let navBarData = props.data
     let HighlightRendererComponent = props.highlightRenderer;
 
-    let iconSize = 65;
-    let itemDistance = 90
+    let iconSize = 76;
+    let itemDistance = 95
     let startX = (Dimensions.get('screen').width / 2 - ((navBarData.length - 1) * itemDistance) / 2) - iconSize / 2
 
     return (
@@ -62,8 +62,8 @@ const NavBar = (props) => {
                                 fontFamily: 'Arcon-Regular',
                                 textAlign: 'center',
                                 letterSpacing: 1.7,
-                                color: '#f8f6d3',
-                                fontSize: 10,
+                                color: '#f4f3ea',
+                                fontSize: 11,
                             }}
                         />
                     </Fragment>

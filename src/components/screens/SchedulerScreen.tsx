@@ -106,7 +106,7 @@ class SchedulerScreen extends PureComponent {
 
 
                     <TabBar ></TabBar>
-                    <ScreenHeader text={"FESTIVAL PROGRAM"} color='#FBB03A' />
+                    <ScreenHeader text={"FESTIVAL PROGRAM"} color='#f8f6d3' />
                     {(Platform.OS == 'android') &&
                         <View
                             style={{
