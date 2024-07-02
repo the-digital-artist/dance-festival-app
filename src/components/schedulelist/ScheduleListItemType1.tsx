@@ -31,7 +31,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
 
 
   render(): ReactNode {
-    console.log("ScheduleListItemType1 Render Function Called: " + this.state.dataItem.id);
+    // console.log("ScheduleListItemType1 Render Function Called: " + this.state.dataItem.id);
 
     let item = this.state.dataItem;
     if (item.itemType != 'type1') return;
@@ -51,7 +51,6 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     const itemHeight = item.rowHeight != undefined ? item.rowHeight : 100;
     const roomBoxOffsetY = !isNightPartyItem ? 20 : 25;
     const artistData = DataModel.dataArtists[item.artistOne];
-    console.log(" -- "+JSON.stringify(artistData));
     const verticalOffsetTitleLength = item.lineCount != undefined ? (item.lineCount * 19) : 19;
 
     const imageWidthArtistImage = this.props.tileWidth/(2.0) * (160 / 305);

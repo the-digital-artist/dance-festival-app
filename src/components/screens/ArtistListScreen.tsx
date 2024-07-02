@@ -27,7 +27,15 @@ class ArtistListScreen extends PureComponent {
     render() {
         // console.log("___________ArtistListScreen render ")
         // console.log("___________ArtistListScreen render - state dataModel: "+JSON.stringify(this.state.dataModel, null, 2)); 
-     
+        //add one empty artist item into the list for presentation reasons
+        if(this.state.dataModelList[this.state.dataModelList.length-1].key !="NONE") {
+            this.state.dataModelList.push(
+                { 
+                    "fullName": "", "insta": "", "bio": "",  "facebook": "", "portrait": "", "imgSrc": -1,"shortBio": "",
+                    "key": "NONE", "index": this.state.dataModelList.length, "sessionIds": []
+                }
+            );
+        }
         return (
             <>
 
@@ -35,7 +43,7 @@ class ArtistListScreen extends PureComponent {
                 <View
                     style={{
                         position: 'absolute',
-                        backgroundColor: '#EF4260',
+                        backgroundColor: '#64615f',
                         left: 0, top: 0,
                         width: Dimensions.get('screen').width,
                         height: 90,
@@ -45,11 +53,11 @@ class ArtistListScreen extends PureComponent {
 
                 {this.state.modelUpdateState == 2 &&
                     <FlatList
-                        ref={(list) => { this.artistListRef = list}}
+                        ref={(list) => { this.artistListRef = list }}
                         style={{
                             position: 'absolute',
-                            backgroundColor: '#1c1919',
-                            left: 0, top: 90,
+                            backgroundColor: '#1b1919',
+                            left: 0, top: 95,
                             width: Dimensions.get('screen').width,
                             height: Dimensions.get('screen').height - 100,
                             opacity: 1
@@ -58,7 +66,7 @@ class ArtistListScreen extends PureComponent {
                         renderItem={ArtistListItemRenderer}
                         keyExtractor={item => item.fullName}
                     />
-                } 
+                }
                 {this.state.modelUpdateState == 0 &&
 
                     <View style={{
@@ -79,13 +87,13 @@ class ArtistListScreen extends PureComponent {
     }
 
 
-    startModelUpdate() { 
+    startModelUpdate() {
         // console.log("___________ArtistListScreen setting state 1"); 
-        this.setState({ modelUpdateState: 1, dataModelList: null }) 
+        this.setState({ modelUpdateState: 1, dataModelList: null })
     }
-    finishModelUpdate() { 
+    finishModelUpdate() {
         // console.log("___________ArtistListScreen finishModelUpdate -  update (state 2)"); 
-        this.setState({ modelUpdateState: 2, dataModelList: DataModel.dataArtistsList }) 
+        this.setState({ modelUpdateState: 2, dataModelList: DataModel.dataArtistsList })
     }
 }
 

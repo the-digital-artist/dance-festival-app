@@ -37,7 +37,7 @@ class ArtistDetailsScreen extends PureComponent {
             <>
                 <View
                     style={{
-                        backgroundColor: '#EF4260',
+                        backgroundColor: '#f2a33a',
                         top: 0, left: 0, position: 'absolute',
                         width: Dimensions.get('screen').width, height: Dimensions.get('screen').height,
                         opacity: 1
@@ -45,7 +45,7 @@ class ArtistDetailsScreen extends PureComponent {
                 >
                     <ScrollView
                         style={{
-                            backgroundColor: '#ec556f',
+                            backgroundColor: '#eeac55',
                             top: 0, left: 20, position: 'absolute',
                             width: Dimensions.get('screen').width - 40,
                             height: Dimensions.get('screen').height,
@@ -57,7 +57,7 @@ class ArtistDetailsScreen extends PureComponent {
                         <View
                             style={{
 
-                                backgroundColor: '#ec556f',
+                                backgroundColor: '#eeac55',
                                 top: 0, left: 5,
                                 width: Dimensions.get('screen').width - 50,
                                 height: scrollViewContent,
@@ -72,7 +72,7 @@ class ArtistDetailsScreen extends PureComponent {
                                 fontFamily: 'Arcon-Regular',
                                 textAlign: 'center',
                                 letterSpacing: 1.7,
-                                color: '#232323',
+                                color: '#48423b',
                                 fontSize: 16,
                             }}>
                                 {(item.fullName as string).toLocaleUpperCase()}
@@ -135,7 +135,7 @@ class ArtistDetailsScreen extends PureComponent {
                 <Image
                     source={item.imgSrc}
                     style={{
-                        position: 'absolute', resizeMode: 'cover', opacity: 0.7,
+                        position: 'absolute', resizeMode: 'cover', opacity: 0.9,
                         right: -40, bottom: 0, width: 300, height: 300,
                     }}
                 />

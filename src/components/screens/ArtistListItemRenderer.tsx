@@ -5,7 +5,10 @@ import TransitionArtistNavigateDown from '../../transitions/TransitionArtistNavi
 const ArtistListItemRenderer = ({ item, index }) => {
   const centerPieceWidth = Dimensions.get('screen').width - (5 + 45 + 35 + 35 + 5)
   const paddingLeftAndRight = 5;
-  let itemHeight = 130;
+  const itemHeight = 130;
+
+  const imageSize = 100;
+  const imageOffsetY = (itemHeight-imageSize)/2
 
   // console.log(JSON.stringify(item, null, 2))
 
@@ -38,7 +41,7 @@ const ArtistListItemRenderer = ({ item, index }) => {
             source={item.imgSrc}
             style={{
               position: 'absolute', resizeMode: 'cover', opacity: 1.0,
-              left: 0, top: 0, width: 130, height: 130,
+              left: 0, top: imageOffsetY, width: imageSize, height: imageSize,
             }}
           />
 
@@ -50,7 +53,7 @@ const ArtistListItemRenderer = ({ item, index }) => {
             letterSpacing: 2.0,
             // backgroundColor: 'indigo',
             textAlign: 'left',
-            color: '#dd5163',
+            color: '#e7ad54',
             fontSize: 14,
           }}>{(item.fullName as string).toLocaleUpperCase()}
           </Text>
@@ -63,32 +66,29 @@ const ArtistListItemRenderer = ({ item, index }) => {
                 position: 'absolute',
                 left: 140,
                 top: 60,
-                height: 26, width: 100,
+                height: 26, width: 120,
               }}
               text={"ARTIST DETAILS"}
               bgBoxVisible={true}
               bgBoxStyle={{
-                backgroundColor: '#EF4260',
-                height: 26, width: 100
+                backgroundColor: '#f2a33a',
+                height: 26, width: 120
               }}
               fontStyle={{
-                width: 100,
+                width: 120,
                 fontFamily: 'Cabin-Regular',
                 textAlign: 'center',
                 textAlignVertical: 'center',
                 letterSpacing: 2.0,
-                color: '#FFFFFF',
-                fontSize: 8.5,
+                color: '#36373a',
+                fontSize: 10,
               }}
               visualProperties={{ alpha: 1 }}
               onSelect={() => { TransitionArtistNavigateDown(item) }}
             />
           }
         </>
-
       </View>
-
-
     </>
   );
 }

@@ -26,14 +26,14 @@ class ArtistMainScreen extends PureComponent {
             headerBackTitleVisible: false,
             headerTransparent: true,
             headerStyle: {
-                backgroundColor: '#EF4260',
-                fontFamily: "Antonio-Regular",
+                backgroundColor: '#3f414d',
+                fontFamily: "RobotoCondensed-Regular",
                 fontWeight: 'bold',
                 fontSize: 26,
             },
             headerTintColor: '#ffffff',
             headerTitleStyle: {
-                fontFamily: "Antonio-Regular",
+                fontFamily: "RobotoCondensed-Regular",
                 fontWeight: 'normal',
                 fontSize: 26,
             },
@@ -45,7 +45,7 @@ class ArtistMainScreen extends PureComponent {
                     name='artistsListScreenContainer'
                     style={{
                         position: 'absolute',
-                        backgroundColor: '#dd5163',
+                        backgroundColor: '#000000',
                         width: Dimensions.get('screen').width,
                         height: Dimensions.get('screen').height,
                     }}
