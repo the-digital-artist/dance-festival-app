@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "PATI",
+    "name": "Pa'Ti Festival Berlin",
     "slug": "pati-festival-berlin",
     "version": "0.0.1",
     "orientation": "portrait",
@@ -13,8 +13,8 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.thedigitalartist.patifestival",
-      "buildNumber": "1",
+      "bundleIdentifier": "com.thedigitalartist.patiberlin",
+      "buildNumber": "4",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "LSApplicationQueriesSchemes": [
@@ -29,7 +29,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#000000"
       },
-      "package": "com.thedigitalartist.patifestival",
+      "package": "com.thedigitalartist.patiberlin",
       "versionCode": 0
     },
     "web": {
@@ -37,7 +37,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "ce0e8ae1-69de-4b53-bebe-6fc823762c24"
+        "projectId": "da5d6a70-3783-4f6a-b8b7-1a4bbed8869b"
       }
     },
     "owner": "the.digital.artist"
