@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "CALDAC",
-    "slug": "colorado-afro-latin-festival-app",
-    "version": "0.0.9",
+    "name": "SF Well-Being Fair",
+    "slug": "well-being-fair-san-francisco",
+    "version": "0.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
@@ -13,8 +13,8 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.thedigitalartist.caldac.festivalapp",
-      "buildNumber": "25",
+      "bundleIdentifier": "com.thedigitalartist.wellbeing",
+      "buildNumber": "4",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "LSApplicationQueriesSchemes": [
@@ -30,12 +30,12 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#000000"
       },
-      "package": "com.thedigitalartist.caldac.festivalapp",
-      "versionCode": 4
+      "package": "com.thedigitalartist.wellbeing",
+      "versionCode": 0
     },
     "extra": {
       "eas": {
-        "projectId": "66eef67d-c5b7-4262-b95f-4e862c5dea37"
+        "projectId": "491d2ea7-fa97-40ea-85b5-f7d569e63cae"
       }
     },
     "owner": "the.digital.artist",
@@ -43,7 +43,8 @@
       "policy": "appVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/66eef67d-c5b7-4262-b95f-4e862c5dea37"
+      "url": ""
     }
+
   }
 }
