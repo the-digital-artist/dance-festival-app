@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "PATI",
-    "slug": "pati-festival-berlin",
+    "name": "SF Well-Being Fair",
+    "slug": "well-being-fair-san-francisco",
     "version": "0.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,8 +13,8 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.thedigitalartist.patifestival",
-      "buildNumber": "1",
+      "bundleIdentifier": "com.thedigitalartist.wellbeing",
+      "buildNumber": "4",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "LSApplicationQueriesSchemes": [
@@ -29,7 +29,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#000000"
       },
-      "package": "com.thedigitalartist.patifestival",
+      "package": "com.thedigitalartist.wellbeing",
       "versionCode": 0
     },
     "web": {
@@ -37,7 +37,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "ce0e8ae1-69de-4b53-bebe-6fc823762c24"
+        "projectId": "491d2ea7-fa97-40ea-85b5-f7d569e63cae"
       }
     },
     "owner": "the.digital.artist"

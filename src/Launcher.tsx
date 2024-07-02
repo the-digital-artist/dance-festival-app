@@ -46,13 +46,13 @@ class Launcher extends PureComponent<any, any> {
 
                             <StateDependentComponent states={['loading', 'main']} controller={this.controller}>
                                 {/* <DetailsScreen /> */}
-                                <SchedulerScreen />
+                                {/* <SchedulerScreen /> */}
                                 {/* <FocusFragment/> */}
                                 <HomeScreen />
-                                <ArtistMainScreen />
-                                <SettingsScreen />
+                                {/* <ArtistMainScreen /> */}
+                                {/* <SettingsScreen /> */}
 
-                                <NavBar highlightRenderer={NavBarHighlight} data={LauncherController.getInstance().navBarData} />
+                                {/* <NavBar highlightRenderer={NavBarHighlight} data={LauncherController.getInstance().navBarData} /> */}
                                 {/* <ScreenHeader text="" color='#FFFFFF' /> */}
 
                                 {/* <UpdateOverlayFragement /> */}
