@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "QALDF",
-    "slug": "queer-afro-latin-dance-festival-app",
-    "version": "1.0.2",
+    "name": "PATI",
+    "slug": "pati-festival-berlin",
+    "version": "0.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -13,8 +13,8 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.thedigitalartist.queerafrolatindancefestival",
-      "buildNumber": "72",
+      "bundleIdentifier": "com.thedigitalartist.patifestival",
+      "buildNumber": "1",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "LSApplicationQueriesSchemes": [
@@ -29,15 +29,15 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#000000"
       },
-      "package": "com.thedigitalartist.queerafrolatindancefestival",
-      "versionCode": 25
+      "package": "com.thedigitalartist.patifestival",
+      "versionCode": 0
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "f182da48-a300-4931-a271-e4c708ce1d5c"
+        "projectId": "ce0e8ae1-69de-4b53-bebe-6fc823762c24"
       }
     },
     "owner": "the.digital.artist"
