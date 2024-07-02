@@ -91,7 +91,8 @@ const TabBar = (props) => {
                                 letterSpacing: 1.7,
                                 color: '#222222',
                                 fontSize: 11,
-                                opacity: 1.0
+                                opacity: 1.0, 
+                                top: 17
                             }}
                         />
 

@@ -31,7 +31,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
 
 
   render(): ReactNode {
-    // console.log("ScheduleListItemType1 Render Function Called: " + this.state.dataItem.id);
+    console.log("ScheduleListItemType1 Render Function Called: " + this.state.dataItem.id);
 
     let item = this.state.dataItem;
     if (item.itemType != 'type1') return;
@@ -51,10 +51,13 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     const itemHeight = item.rowHeight != undefined ? item.rowHeight : 100;
     const roomBoxOffsetY = !isNightPartyItem ? 20 : 25;
     const artistData = DataModel.dataArtists[item.artistOne];
+    console.log(" -- "+JSON.stringify(artistData));
     const verticalOffsetTitleLength = item.lineCount != undefined ? (item.lineCount * 19) : 19;
 
-    const imageWidthArtistImage = this.props.tileWidth * (160 / 305);
-    const imageOffsetYArtistImage = ((305 - this.props.tileWidth) / (305 - 245)) * 10
+    const imageWidthArtistImage = this.props.tileWidth/(2.0) * (160 / 305);
+    const imageOffsetYArtistImage = 30+((305 - this.props.tileWidth) / (305 - 245)) * 10
+    const imageOffsetXRArtistImage = 10;
+    const imageOffsetXLArtistImage = 10;
     const fontSizeMainTitle = this.props.tileWidth * (17 / 305);
     const fontSizeArtistName = !isNightPartyItem ? this.props.tileWidth * (14 / 305) : this.props.tileWidth * (13 / 305);
 
@@ -167,10 +170,10 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
             source={artistData ? artistData.imgSrc : null}
             style={[{
               // backgroundColor: 'greenyellow',
-              position: 'absolute',
+              position: 'absolute', 
               top: 2 + imageOffsetYArtistImage,
-              right: (item.orientation == 'right' ? -25 : undefined),
-              left: (item.orientation == 'left' ? -20 : undefined),
+              right: (item.orientation == 'right' ? imageOffsetXRArtistImage : undefined),
+              left: (item.orientation == 'left' ? imageOffsetXLArtistImage : undefined),
               width: imageWidthArtistImage, height: imageWidthArtistImage,
               resizeMode: 'cover'
             }, this.props.dynamicVisualProperties1]}
@@ -187,7 +190,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               top: 26,
               right: (item.orientation == 'right' ? undefined : (4 + 35)),
               left: (item.orientation == 'left' ? undefined : (4 + 35)),
-              width: 200,
+              width: 210,
               fontFamily: 'LuckiestGuy-Regular',
               // backgroundColor: 'indigo',
               textAlign: (item.orientation == 'right' ? 'left' : 'right'),
@@ -278,15 +281,15 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                 source={null}
                 style={{
                   position: 'absolute',
-                  right: (item.orientation == 'right' ? undefined : (4 + 33)),
-                  left: (item.orientation == 'left' ? undefined : (4 + 33)),
-                  top: (57 + verticalOffsetTitleLength),
+                  right: (item.orientation == 'right' ? undefined : (4 + 32)),
+                  left: (item.orientation == 'left' ? undefined : (4 + 32)),
+                  top: (63 + verticalOffsetTitleLength),
                   height: 23, width: 100,
                 }}
                 text={"ARTIST DETAILS"}
                 bgBoxVisible={true}
                 bgBoxStyle={{
-                  backgroundColor: '#EF4260',
+                  backgroundColor: '#36373a',
                   height: 23, width: 100
                 }}
                 fontStyle={{
@@ -296,7 +299,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                   textAlignVertical: 'center',
                   letterSpacing: 2.0,
                   color: '#FFFFFF',
-                  fontSize: 8,
+                  fontSize: 8.5,
                 }}
                 visualProperties={{ alpha: 1 }}
                 onSelect={() => {
