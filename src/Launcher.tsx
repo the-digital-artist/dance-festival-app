@@ -60,7 +60,7 @@ class Launcher extends PureComponent<any, any> {
 
 
                             <StateDependentComponent states={['splash', 'loading']} controller={this.controller}>
-                                <LoadingScreen />
+                                {/* <LoadingScreen /> */}
                             </StateDependentComponent>
                         </>
                         : null}

@@ -69,7 +69,7 @@ class SchedulerScreen extends PureComponent {
                                     name={'scheduleList' + i}
                                     style={{
                                         position: 'absolute',
-                                        backgroundColor: '#FBB03A',
+                                        backgroundColor: '#25649a',
                                     }}
                                     visualProperties={{
                                         alpha: 1 - Math.max(Math.min(1, i - selectedDayIndex), 0) / 2,
@@ -85,7 +85,7 @@ class SchedulerScreen extends PureComponent {
                                         ref={(list) => this.flatListRef[i] = list}
                                         style={{
                                             position: 'absolute',
-                                            backgroundColor: '#FBB03A',
+                                            backgroundColor: '#25649a',
                                             left: 0, top: 20,
                                             width: Dimensions.get('screen').width - offsetX,
                                             height: Dimensions.get('screen').height - offsetY - 10,
@@ -106,7 +106,7 @@ class SchedulerScreen extends PureComponent {
 
 
                     <TabBar ></TabBar>
-                    <ScreenHeader text={"FESTIVAL PROGRAM"} color='#FBB03A' />
+                    <ScreenHeader text={"FESTIVAL PROGRAM"} color='#605178' />
                     {(Platform.OS == 'android') &&
                         <View
                             style={{
