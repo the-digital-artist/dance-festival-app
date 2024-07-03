@@ -52,8 +52,8 @@ class LauncherController extends OperatorStates {
                 imgSrc: null,
                 shortBio: ``,
                 bio: `Susana Arenas Pedroso is `,
-                facebook: 	``, 
-                insta: 	''
+                facebook: ``, 
+                insta: ''
             },
 
             //happeningNow
@@ -185,11 +185,11 @@ class LauncherController extends OperatorStates {
         ]
 
     customFonts = {
-        'Ambassador_Update-Regular': require('../assets/fonts/Ambassador_Update-Regular.ttf'),
+        'DINNeuzeitGroteskStd-Light': require('../assets/fonts/DINNeuzeitGroteskStdLight.otf'),
+        'DINCondensed-Bold': require('../assets/fonts/DINNeuzeitGroteskStdBdCond.otf'),
         'Antonio-Regular': require('../assets/fonts/Antonio-Regular.ttf'),
         'Arcon-Regular': require('../assets/fonts/Arcon-Regular.otf'),
         'Arcon-Rounded-Regular': require('../assets/fonts/Arcon-Regular.otf'),
-        'ArtBrush': require('../assets/fonts/Artbrush.ttf'),
         'Cabin-Regular': require('../assets/fonts/Cabin-Regular.ttf'),
     };
 
@@ -292,7 +292,24 @@ class LauncherController extends OperatorStates {
 
         //load images
         try {
-            if(DataModel.dataArtists['Eder And Milton'] != undefined) DataModel.dataArtists['Eder And Milton'].imgSrc = require('../assets/portraits/_0000_eder_-_milton.png');
+            if(DataModel.dataArtists['Adolfo & Tania'] != undefined) DataModel.dataArtists['Adolfo & Tania'].imgSrc = require('../assets/portraits/0017_adolfo_-_tania.png');
+            if(DataModel.dataArtists['Adrian Tenorio'] != undefined) DataModel.dataArtists['Adrian Tenorio'].imgSrc = require('../assets/portraits/0016_adrian_tenorio.png');
+            if(DataModel.dataArtists['Alex & Desiree'] != undefined) DataModel.dataArtists['Alex & Desiree'].imgSrc = require('../assets/portraits/0015_alex_-_desiree.png');
+            if(DataModel.dataArtists['Benny & Ashley'] != undefined) DataModel.dataArtists['Benny & Ashley'].imgSrc = require('../assets/portraits/0014_benny_-_ashley.png');
+            if(DataModel.dataArtists['Bianca Chapman'] != undefined) DataModel.dataArtists['Bianca Chapman'].imgSrc = require('../assets/portraits/0013_bianca_chapman.png');
+            if(DataModel.dataArtists['Carine & Rafael'] != undefined) DataModel.dataArtists['Carine & Rafael'].imgSrc = require('../assets/portraits/0018_carine_-_rafael.png');
+            if(DataModel.dataArtists['Carlos & Susan'] != undefined) DataModel.dataArtists['Carlos & Susan'].imgSrc = require('../assets/portraits/0002_carlos_-_susan.png');
+            if(DataModel.dataArtists['Casino Stars'] != undefined) DataModel.dataArtists['Casino Stars'].imgSrc = require('../assets/portraits/0012_casino_stars.png');
+            if(DataModel.dataArtists['Chelsey Owen'] != undefined) DataModel.dataArtists['Chelsey Owen'].imgSrc = require('../assets/portraits/0011_chelsey_owen.png');
+            if(DataModel.dataArtists['Chris & Alexus'] != undefined) DataModel.dataArtists['Chris & Alexus'].imgSrc = require('../assets/portraits/0010_chris_-_alexus.png');
+            if(DataModel.dataArtists['Clifton Stennet'] != undefined) DataModel.dataArtists['Clifton Stennet'].imgSrc = require('../assets/portraits/0009_clifton_stennet.png');
+            if(DataModel.dataArtists['Danny Saksita'] != undefined) DataModel.dataArtists['Danny Saksita'].imgSrc = require('../assets/portraits/0006_danny_saksita.png');
+            if(DataModel.dataArtists['Diane Page'] != undefined) DataModel.dataArtists['Diane Page'].imgSrc = require('../assets/portraits/0004_diane_page.png');
+            if(DataModel.dataArtists['Eder & Milton'] != undefined) DataModel.dataArtists['Eder & Milton'].imgSrc = require('../assets/portraits/0003_eder_-_milton.png');
+            if(DataModel.dataArtists['J Square'] != undefined) DataModel.dataArtists['J Square'].imgSrc = require('../assets/portraits/0000_j_square.png');
+            if(DataModel.dataArtists['Jorge & Indira'] != undefined) DataModel.dataArtists['Jorge & Indira'].imgSrc = require('../assets/portraits/0008_jorge_-_indira.png');
+            if(DataModel.dataArtists['Karen & Ricardo'] != undefined) DataModel.dataArtists['Karen & Ricardo'].imgSrc = require('../assets/portraits/0005_karen_-_ricardo.png');
+            if(DataModel.dataArtists['Raul & Delia'] != undefined) DataModel.dataArtists['Raul & Delia'].imgSrc = require('../assets/portraits/0001_raul_-_delia.png');   
         } catch (error) {
             console.log('Could not assign an image for a particular artist')
         }
