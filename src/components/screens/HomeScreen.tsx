@@ -72,7 +72,7 @@ class HomeScreen extends PureComponent<any, any> {
                         height: Dimensions.get('screen').width - (2 * 80) * 800 / 768,
                     }}
                 /> */}
-                    <Image
+                    {/* <Image
                         source={require('../../../assets/logo-white.png')}
                         style={{
                             position: 'absolute', resizeMode: 'contain', 
@@ -84,7 +84,7 @@ class HomeScreen extends PureComponent<any, any> {
                             width: Dimensions.get('screen').width - (2 * 80),
                             height: Dimensions.get('screen').width - (2 * 80) * 815 / 1313,
                         }}
-                    />
+                    /> */}
 
                     {/* <ScreenHeader text="WELCOME MY FRIEND" color='#FFFFFF' /> */}
                     {/* <Image

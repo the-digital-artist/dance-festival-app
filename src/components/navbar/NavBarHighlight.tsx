@@ -7,7 +7,7 @@ const NavBarHighlight = (props) => {
             <LComponent
                 name="navBarHighlight"
                 style={{
-                    backgroundColor: '#EFEFEF',
+                    backgroundColor: '#010101',
                     width: props.style.width,
                     height: 4,
                     bottom:props.bottomOffsetY

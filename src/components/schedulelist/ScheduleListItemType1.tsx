@@ -188,7 +188,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               top: 30,
               right: (item.orientation == 'right' ? undefined : (4 + 35)),
               left: (item.orientation == 'left' ? undefined : (4 + 35)),
-              width: 170,
+              width: 190,
               fontFamily: 'DINCondensed-Bold',
               // backgroundColor: 'indigo',
               textAlign: (item.orientation == 'right' ? 'left' : 'right'),
@@ -259,10 +259,10 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               style={{
                 // backgroundColor: 'indigo',
                 position: 'absolute',
-                right: (item.orientation == 'left' ? 3 : undefined),
-                left: (item.orientation == 'right' ? (3) : undefined),
-                top: (20),
-                width: 35, height: 35,
+                right: (item.orientation == 'left' ? 7 : undefined),
+                left: (item.orientation == 'right' ? (7) : undefined),
+                top: (28),
+                width: 25, height: 25,
               }}
               initialCheckedState={this.state.dataItem.favoriteState}
               onSelect={(newState) => {
@@ -302,7 +302,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                 visualProperties={{ alpha: 1 }}
                 onSelect={() => {
                   if (artistData == undefined) return;
-                  TransitionLinkToArtistPage(artistData)
+                  // TransitionLinkToArtistPage(artistData)
                 }}
               />
             }

@@ -75,7 +75,7 @@ const NavBar = (props) => {
                     width: iconSize, height: 5,
                     color: '#efeee3',
                 }}
-                bottomOffsetY={(Dimensions.get('screen').width * (300 / 1290)) - 10}
+                bottomOffsetY={(Dimensions.get('screen').width * (300 / 1290)) - 8}
                 startX={startX}
                 itemDistance={itemDistance}
             />

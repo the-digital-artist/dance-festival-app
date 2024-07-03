@@ -96,7 +96,9 @@ const ArtistListItemRenderer = ({ item, index }) => {
                 top: 6
               }}
               visualProperties={{ alpha: 1 }}
-              onSelect={() => { TransitionArtistNavigateDown(item) }}
+              onSelect={() => { 
+                // TransitionArtistNavigateDown(item) 
+              }}
             />
           }
         </>

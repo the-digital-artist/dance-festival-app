@@ -52,7 +52,7 @@ class SettingsScreen extends PureComponent {
                     x: Dimensions.get('screen').width, y: 0, z: 0
                 }}
             >
-                <Image
+                {/* <Image
                     style={{
                         // backgroundColor: 'skyblue',
                         top: 0, left: 0, position: 'absolute',
@@ -71,7 +71,7 @@ class SettingsScreen extends PureComponent {
                         width: 150,
                         height: 150 * 800 / 768,
                     }}
-                />
+                /> */}
 
 
                 {/* <ScreenHeader text="SETTINGS" color='#eeecdf' /> */}
@@ -80,7 +80,7 @@ class SettingsScreen extends PureComponent {
 
                 {/* FIRST LIST with Settings and Contact Items */}
 
-                <View style={{
+                {/* <View style={{
                     position: 'absolute',
                     backgroundColor: '#1c1919',
                     left: 0, top: 290,
@@ -103,10 +103,10 @@ class SettingsScreen extends PureComponent {
                     // contentContainerStyle={{borderRadius: 6, overflow: 'hidden'}}
                     data={SettingsScreen.settingsListData}
                     renderItem={SettingsItemRenderer}
-                />
+                /> */}
 
 
-
+{/* 
                 <Text allowFontScaling={false} id='textList1' style={[{
                     position: 'absolute',
                     top: 400,
@@ -121,12 +121,12 @@ class SettingsScreen extends PureComponent {
                     textAlign: 'center',
                 }]}>
                     {"FOLLOW US ALONG"}
-                </Text>
+                </Text> */}
 
 
 
 
-                {socialBarData.map((itemData, i) => {
+                {/* {socialBarData.map((itemData, i) => {
                     return (
                         <Fragment key={'socalBarFrag' + i}>
 
@@ -156,24 +156,24 @@ class SettingsScreen extends PureComponent {
                             />
                         </Fragment>
                     );
-                })}
+                })} */}
 
-                <Text allowFontScaling={false} id='version' style={[{
+                {/* <Text allowFontScaling={false} id='version' style={[{
                     position: 'absolute',
-                    top: (290+65),
+                    top: (490+65),
                     left: 45,
                     height: 80,
                     width: Dimensions.get('screen').width - (45 * 2),
                     fontFamily: 'Cabin-Regular',
                     letterSpacing: 2.0,
-                    fontSize: 5,
+                    fontSize: 9,
                     opacity:0.5,
                     color: '#5c5c5c',
                     // backgroundColor: 'skyblue',
                     textAlign: 'center',
                 }]}>
                    {"BUILD VERSION: "+Application.nativeBuildVersion + " - MODEL VERSION: "+DataModel.modelVersion}
-                </Text>
+                </Text> */}
 
 
                 {/* 

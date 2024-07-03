@@ -18,14 +18,14 @@ const   ScreenHeader = (props) => {
           // backgroundColor: 'skyblue',
           top: 0, left: 0, position: 'absolute',
           width: Dimensions.get('screen').width,
-          height: (Dimensions.get('screen').width * (520 / 1290)),
+          height: (Dimensions.get('screen').width * (460 / 1290)),
           resizeMode: "contain",
           opacity: 1.0
         }}
         source={props.imgSrc}
       />
-      <Text allowFontScaling={false} id='textHeader' style={{
-        top: 70, left: 30,
+      <Text allowFontScaling={false} id='textHeader' style={[{
+        top: 80, left: 30,
         width: Dimensions.get('screen').width - 40, height: 32,
         fontFamily: 'DINNeuzeitGroteskStd-Light',
         // backgroundColor: 'skyblue',
@@ -34,7 +34,7 @@ const   ScreenHeader = (props) => {
         color: props.color,
         fontSize: 20,
         opacity: 0.7
-      }}>
+      },props.textStyle]}>
         {props.text}
       </Text>
 

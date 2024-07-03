@@ -59,7 +59,8 @@ class SchedulerScreen extends PureComponent {
                     }}
                 >
                   <ScreenHeader 
-                    text={"FESTIVAL PROGRAM"} 
+                    text={"WORKSHOP SCHEDULE"} 
+                    textStyle={{top: 65}}
                     color='#FFFFFF' 
                     imgSrc={require('../../../assets/header-schedule-bg.png')}/>
 

@@ -64,7 +64,7 @@ class ArtistListScreen extends PureComponent {
                         style={{
                             position: 'absolute',
                             backgroundColor: 'transparent',
-                            left: 0, top: 110,
+                            left: 0, top: 135,
                             width: Dimensions.get('screen').width,
                             height: Dimensions.get('screen').height - 100,
                             opacity: 1
