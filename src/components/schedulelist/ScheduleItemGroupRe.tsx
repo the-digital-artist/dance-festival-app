@@ -146,7 +146,7 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
                     style={[{
                     position: 'absolute',
                     // backgroundColor: 'skyblue',
-                    left: 0, top: 70,
+                    left: 0, top: 45,
                     height: 90, width: Dimensions.get("screen").width - 2 * paddingLeftAndRight,
                     opacity: 1
                 }]}>

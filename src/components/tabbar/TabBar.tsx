@@ -4,6 +4,7 @@ import LauncherController from "../../LauncherController";
 import TransitionTabbarSelect from "./TransitionTabbarSelect";
 import ButtonSmall from "../ButtonSmall";
 import { useAnimatedStyle, useDerivedValue, useSharedValue } from "react-native-reanimated";
+import { opacity } from "react-native-reanimated/lib/typescript/reanimated2/Colors";
 
 const TabBar = (props) => {
     let tabBarData = LauncherController.getInstance().tabBarData;
@@ -43,13 +44,13 @@ const TabBar = (props) => {
 
             <View style={{
                 pointerEvents: 'none',
-                backgroundColor: '#f3c67a',
+                backgroundColor: '#8cb5d8',
                 top: 100 + itemHeightSelectedOffset, left: 0, position: 'absolute',
                 width: Dimensions.get('screen').width,
                 height: itemHeight - itemHeightSelectedOffset,
                 //  borderTopColor: 'white',
                 //  borderTopWidth: StyleSheet.hairlineWidth,
-                opacity: 1.0
+                opacity: 0.55
             }}>
                 {/* <Image
                     style={{
@@ -79,19 +80,22 @@ const TabBar = (props) => {
                             dynamicVisualPropertiesText={animValuesText[i]}
                             bgBoxVisible={true}
                             bgBoxStyle={{
-                                backgroundColor: '#FBB03A',
+                                backgroundColor: '#25649a',
                                 position: 'absolute',
                                 width: itemWidth, height: itemHeight,
                             }}
-                            onSelect={() => { TransitionTabbarSelect(itemData, i, currentIndex) }}
+                            onSelect={() => { 
+                                //TransitionTabbarSelect(itemData, i, currentIndex)
+                             } }
                             source={itemData.imgSrc}
                             text={(itemData.itemText as string).toLocaleUpperCase()}
                             fontStyle={{
                                 fontFamily: 'Arcon-Regular',
                                 letterSpacing: 1.7,
-                                color: '#222222',
-                                fontSize: 11,
-                                opacity: 1.0
+                                color: '#FFFFFF',
+                                fontSize: 12,
+                                opacity: 1.0,
+                                top:19
                             }}
                         />
 

@@ -41,10 +41,11 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
 
     const levelData = [
       { src: require('../../../assets/schedule-levelicon-1.png'), text: "BEGINNER", textWidth: 52 },
-      { src: require('../../../assets/schedule-levelicon-2.png'), text: "INTERMEDIATE", textWidth: 72},
+      { src: require('../../../assets/schedule-levelicon-2.png'), text: "INTERMEDIATE", textWidth: 72 },
       { src: require('../../../assets/schedule-levelicon-3.png'), text: "ADVANCED", textWidth: 54 }
     ]
-    const levelId = item.level != undefined ? item.level: -1;
+    const levelId = 0//item.level != undefined ? item.level: -1;
+
     const levelImageSize = 6;
 
 
@@ -53,9 +54,9 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     const artistData = DataModel.dataArtists[item.artistOne];
     const verticalOffsetTitleLength = item.lineCount != undefined ? (item.lineCount * 19) : 19;
 
-    const imageWidthArtistImage = this.props.tileWidth * (160 / 305);
-    const imageOffsetYArtistImage = ((305 - this.props.tileWidth) / (305 - 245)) * 10
-    const fontSizeMainTitle = this.props.tileWidth * (17 / 305);
+    const imageWidthArtistImage = this.props.tileWidth * (120 / 305);
+    const imageOffsetYArtistImage = 0 + ((305 - this.props.tileWidth) / (305 - 245)) * 10
+    const fontSizeMainTitle = this.props.tileWidth * (19 / 305);
     const fontSizeArtistName = !isNightPartyItem ? this.props.tileWidth * (13 / 305) : this.props.tileWidth * (12 / 305);
 
     // console.log("ScheduleListItemType1 tileLength " + this.props.tileWidth + " artistImageWidth: "+ imageWidthArtistImage);
@@ -75,13 +76,13 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
           //  name={"ScheduleItemFrame1_" + item.id}
           style={{
             position: 'absolute',
-            backgroundColor: '#ffffff',
+            backgroundColor: '#517d97',
             borderColor: '#9F509F',
-            borderLeftWidth: 3,
-            borderRightWidth: 3,
+            // borderLeftWidth: 3,
+            // borderRightWidth: 3,
             borderTopWidth: 0,
-            borderBottomWidth: 3,
-            opacity: 0.68,
+            // borderBottomWidth: 3,
+            opacity: 0.9,
             left: 0,
             top: roomBoxOffsetY,
             height: (itemHeight - 30),
@@ -96,9 +97,9 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
           style={{
             position: 'absolute',
             backgroundColor: 'transparent',
-            borderColor: '#9F509F',
-            borderLeftWidth: 3,
-            borderRightWidth: 3,
+            borderColor: '#5e8099',
+            // borderLeftWidth: 3,
+            // borderRightWidth: 3,
             borderTopWidth: 20,
             borderBottomWidth: 0,
             opacity: 1,
@@ -126,13 +127,14 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
         >
 
           <Image
-            source={require('../../../assets/sessionitem-frame.png')}
+            source={require('../../../assets/schedulelistitem-bg-overlay.png')}
             style={{
               // backgroundColor: 'greenyellow',
               position: 'absolute',
-              left: 3, top: roomBoxOffsetY,
-              opacity: 0.1,
-              width: this.props.tileWidth - 6, height: itemHeight - 50 - 3,
+              left: 0, top: roomBoxOffsetY,
+              opacity: 0.5,
+              width: this.props.tileWidth,
+              height: itemHeight - 50,
               resizeMode: 'contain'
             }}
           />
@@ -147,13 +149,13 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
 
           <Animated.Text allowFontScaling={false} id='textLocation' style={[{
             position: 'absolute',
-            top: 1,
+            top: 5,
             left: (this.props.tileWidth - 60) / 2,
             // right: (item.orientation == 'right' ? undefined : 10),
             // left: (item.orientation == 'left' ? undefined : 10),
             height: 15,
             width: 60,
-            fontFamily: 'Antonio-Regular',
+            fontFamily: 'DINNeuzeitGroteskStd-Light',
             // backgroundColor: 'skyblue',
             textAlign: 'center',
             color: '#FFFFFF',
@@ -183,23 +185,23 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
 
             <Animated.Text allowFontScaling={false} id='textSessionMainTitle' style={{
               position: 'absolute',
-              top: 26,
+              top: 30,
               right: (item.orientation == 'right' ? undefined : (4 + 35)),
               left: (item.orientation == 'left' ? undefined : (4 + 35)),
               width: 170,
-              fontFamily: 'ArtBrush',
+              fontFamily: 'DINCondensed-Bold',
               // backgroundColor: 'indigo',
               textAlign: (item.orientation == 'right' ? 'left' : 'right'),
-              color: '#58503e',
+              color: '#fefefe',
               fontSize: (fontSizeMainTitle),
             }}>
-              {item.sessionMainTitle}
+              {(item.sessionMainTitle as string).toLocaleUpperCase()}
             </Animated.Text>
 
 
             <Text allowFontScaling={false} id='textSessionArtistName' style={{
               position: 'absolute',
-              top: (37 + verticalOffsetTitleLength),
+              top: (47 + verticalOffsetTitleLength),
               right: (item.orientation == 'right' ? undefined : (4 + 35)),
               left: (item.orientation == 'left' ? undefined : (4 + 35)),
               height: (itemHeight - 30 - (26 + verticalOffsetTitleLength) - 10),
@@ -208,46 +210,46 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               letterSpacing: 2.0,
               // backgroundColor: 'indigo',
               textAlign: (item.orientation == 'right' ? 'left' : 'right'),
-              color: '#58503e',
+              color: '#e4a35e',
               fontSize: (fontSizeArtistName),
             }}>
               {item.artistName ? (item.artistName as string).toLocaleUpperCase() : ""}
             </Text >
 
-{levelData[levelId]!= undefined  &&
-<>
-            <Image
-              source={levelData[levelId].src}
-              style={{
-                // backgroundColor: 'greenyellow',
-                position: 'absolute',
-                top: (27 + verticalOffsetTitleLength),
-                right: (item.orientation == 'right' ? undefined : ( levelData[levelId].textWidth+ 35)),
-                left: (item.orientation == 'left' ? undefined : ( levelData[levelId].textWidth + 35)),
-                width: levelImageSize, 
-                height: levelImageSize,
-                resizeMode: 'cover'
-              }}>
-            </Image>
+            {levelData[levelId] != undefined &&
+              <>
+                <Image
+                  source={levelData[levelId].src}
+                  style={{
+                    // backgroundColor: 'greenyellow',
+                    position: 'absolute',
+                    top: (36 + verticalOffsetTitleLength),
+                    right: (item.orientation == 'right' ? undefined : (levelData[levelId].textWidth + 40)),
+                    left: (item.orientation == 'left' ? undefined : (levelData[levelId].textWidth + 40)),
+                    width: levelImageSize,
+                    height: levelImageSize,
+                    resizeMode: 'cover'
+                  }}>
+                </Image>
 
-            <Text allowFontScaling={false} id='textSessionLevel' style={{
-              position: 'absolute',
-              top: (26 + verticalOffsetTitleLength -1),
-              right: (item.orientation == 'right' ? undefined : (4 + 35)),
-              left: (item.orientation == 'left' ? undefined : (4 + 35)),
-              // height: levelImageSize,
-              width: (100 - 15),
-              fontFamily: 'Cabin-Regular',
-              letterSpacing: 1.2,
-              // opacity: 0.5,
-              // backgroundColor: 'indigo',
-              textAlign: (item.orientation == 'right' ? 'left' : 'right'),
-              color: '#232323',
-              fontSize: 7.5,
-            }}>
-              {levelData[levelId].text}
-            </Text >
-            </>
+                <Text allowFontScaling={false} id='textSessionLevel' style={{
+                  position: 'absolute',
+                  top: (35 + verticalOffsetTitleLength - 1),
+                  right: (item.orientation == 'right' ? undefined : (4 + 35)),
+                  left: (item.orientation == 'left' ? undefined : (4 + 35)),
+                  // height: levelImageSize,
+                  width: (100 - 15),
+                  fontFamily: 'Cabin-Regular',
+                  letterSpacing: 1.2,
+                  // opacity: 0.5,
+                  // backgroundColor: 'indigo',
+                  textAlign: (item.orientation == 'right' ? 'left' : 'right'),
+                  color: '#232323',
+                  fontSize: 8.5,
+                }}>
+                  {levelData[levelId].text}
+                </Text >
+              </>
 
             }
 
@@ -279,23 +281,23 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                   position: 'absolute',
                   right: (item.orientation == 'right' ? undefined : (4 + 33)),
                   left: (item.orientation == 'left' ? undefined : (4 + 33)),
-                  top: (57 + verticalOffsetTitleLength),
-                  height: 23, width: 100,
+                  top: (67 + verticalOffsetTitleLength),
+                  height: 23, width: 120,
                 }}
                 text={"ARTIST DETAILS"}
                 bgBoxVisible={true}
                 bgBoxStyle={{
-                  backgroundColor: '#EF4260',
-                  height: 23, width: 100
+                  backgroundColor: '#322f2c',
+                  height: 23, width: 120
                 }}
                 fontStyle={{
-                  width: 100,
+                  width: 120,
                   fontFamily: 'Cabin-Regular',
                   textAlign: 'center',
                   textAlignVertical: 'center',
                   letterSpacing: 2.0,
                   color: '#FFFFFF',
-                  fontSize: 8,
+                  fontSize: 9,
                 }}
                 visualProperties={{ alpha: 1 }}
                 onSelect={() => {

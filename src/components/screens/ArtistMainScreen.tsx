@@ -27,13 +27,13 @@ class ArtistMainScreen extends PureComponent {
             headerTransparent: true,
             headerStyle: {
                 backgroundColor: '#EF4260',
-                fontFamily: "Antonio-Regular",
+                fontFamily: "DINNeuzeitGroteskStd-Light",
                 fontWeight: 'bold',
                 fontSize: 26,
             },
             headerTintColor: '#ffffff',
             headerTitleStyle: {
-                fontFamily: "Antonio-Regular",
+                fontFamily: "DINNeuzeitGroteskStd-Light",
                 fontWeight: 'normal',
                 fontSize: 26,
             },
@@ -55,7 +55,8 @@ class ArtistMainScreen extends PureComponent {
                     }}
                 >
 
-                    <NavigationContainer>
+<ArtistListScreen />
+                    {/* <NavigationContainer>
                         <stack.Navigator>
                             <stack.Screen name="ARTIST PAGES" component={ArtistListScreen}
                                 options={headerOptions}
@@ -63,7 +64,7 @@ class ArtistMainScreen extends PureComponent {
                             <stack.Screen name="ARTIST DETAILS" component={ArtistDetailsScreen}
                                 options={headerOptions} />
                         </stack.Navigator>
-                    </NavigationContainer>
+                    </NavigationContainer> */}
                     
                     {(Platform.OS == 'android') &&
                         <View

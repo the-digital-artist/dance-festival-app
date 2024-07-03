@@ -50,7 +50,7 @@ const ButtonSmall = (props) => {
                             // backgroundColor: 'skyblue',
                             top: textCenterPosY, left: 0, position: 'absolute',
                             width: 100,
-                            fontFamily: 'Antonio-Regular',
+                            fontFamily: 'DINNeuzeitGroteskStd-Light',
                             textDecorationLine: props.textDecorationLine,
                             textAlign: 'center',
                             textAlignVertical: 'center',

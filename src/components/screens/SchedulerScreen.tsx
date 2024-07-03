@@ -37,7 +37,7 @@ class SchedulerScreen extends PureComponent {
         }
 
         let offsetX = 0;
-        let offsetY = 132;
+        let offsetY = 141;
 
         // let focusItem = LauncherController.getInstance().context.focusedItemData;
         // const artistData = DataModel.dataArtists[focusItem.artistOne];
@@ -52,12 +52,16 @@ class SchedulerScreen extends PureComponent {
                     name='sessionScreenContainer'
                     style={{
                         position: 'absolute',
-                        backgroundColor: '#fbc46c',
+                        backgroundColor: '#25649a',
                     }}
                     visualProperties={{
                         alpha: 1.0, x: 'windowWidth', y: 0, z: 0, w: "windowWidth", h: "windowHeight"
                     }}
                 >
+                  <ScreenHeader 
+                    text={"FESTIVAL PROGRAM"} 
+                    color='#FFFFFF' 
+                    imgSrc={require('../../../assets/header-schedule-bg.png')}/>
 
 
 
@@ -106,11 +110,10 @@ class SchedulerScreen extends PureComponent {
 
 
                     <TabBar ></TabBar>
-                    <ScreenHeader text={"FESTIVAL PROGRAM"} color='#605178' />
                     {(Platform.OS == 'android') &&
                         <View
                             style={{
-                                backgroundColor: '#FBB03A',
+                                backgroundColor: '#c7b49c',
                                 bottom: (Dimensions.get('screen').width * (300 / 1290)) / 2 - 1, left: 0, position: 'absolute',
                                 width: Dimensions.get('screen').width,
                                 height: (Dimensions.get('screen').width * (300 / 1290)),

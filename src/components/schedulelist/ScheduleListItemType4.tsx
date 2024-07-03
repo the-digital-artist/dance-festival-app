@@ -41,7 +41,7 @@ const ScheduleListItemType4 = ({ item }) => {
         position: 'absolute',
         top: 32, left: 90,
         width: Dimensions.get('screen').width-90-30,
-        fontFamily: 'ArtBrush',
+        fontFamily: 'DINCondensed-Bold',
         // backgroundColor: 'indigo',
         textAlign: 'left',
         color: '#EF4260',

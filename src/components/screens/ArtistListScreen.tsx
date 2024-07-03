@@ -31,7 +31,17 @@ class ArtistListScreen extends PureComponent {
         return (
             <>
 
-
+  <Image
+        style={{
+          // backgroundColor: 'skyblue',
+          top: 0, left: 0, position: 'absolute',
+          width: Dimensions.get('screen').width,
+          height: Dimensions.get('screen').height,
+          resizeMode: "cover",
+          opacity: 1.0
+        }}
+        source={require('../../../assets/screen-artists-bg.png')}
+      />
                 <View
                     style={{
                         position: 'absolute',
@@ -43,13 +53,18 @@ class ArtistListScreen extends PureComponent {
                     }}
                 />
 
+<ScreenHeader 
+                    text={"ARTISTS"} 
+                    color='#FFFFFF' 
+                    imgSrc={require('../../../assets/header-artists-bg.png')}/>
+
                 {this.state.modelUpdateState == 2 &&
                     <FlatList
                         ref={(list) => { this.artistListRef = list}}
                         style={{
                             position: 'absolute',
-                            backgroundColor: '#1c1919',
-                            left: 0, top: 90,
+                            backgroundColor: 'transparent',
+                            left: 0, top: 110,
                             width: Dimensions.get('screen').width,
                             height: Dimensions.get('screen').height - 100,
                             opacity: 1

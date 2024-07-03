@@ -22,8 +22,10 @@ const ArtistListItemRenderer = ({ item, index }) => {
                     }}
                     source={require('../../../assets/tabbar/tabbar_bg.png')}
                 /> */}
+
       <View
         style={{
+          // position: 'absolute',
           backgroundColor: 'transparent',
           left: paddingLeftAndRight,
           height: itemHeight, width: Dimensions.get('screen').width - 2 * paddingLeftAndRight,
@@ -34,11 +36,23 @@ const ArtistListItemRenderer = ({ item, index }) => {
         }}>
 
         <>
+              <View
+        style={{
+          position: 'absolute',
+          backgroundColor: '#1a202e',
+          left: -paddingLeftAndRight,
+          height: itemHeight, width: Dimensions.get('screen').width,
+          // borderTopColor: '#edc36a',
+          borderTopWidth: 0,
+          // borderBottomColor: 'black',
+          // borderBottomWidth: StyleSheet.hairlineWidth,
+          opacity: 0.63
+        }}></View>
           <Image
             source={item.imgSrc}
             style={{
               position: 'absolute', resizeMode: 'cover', opacity: 1.0,
-              left: 0, top: 0, width: 130, height: 130,
+              left: 0, top: 15, width: 100, height: 100,
             }}
           />
 
@@ -50,35 +64,36 @@ const ArtistListItemRenderer = ({ item, index }) => {
             letterSpacing: 2.0,
             // backgroundColor: 'indigo',
             textAlign: 'left',
-            color: '#dd5163',
+            color: '#eda253',
             fontSize: 14,
           }}>{(item.fullName as string).toLocaleUpperCase()}
           </Text>
 
           {item.fullName != '' &&
             <ButtonSmall
-              name={("focusItemArtistButton"+index)}
+              name={("focusItemArtistButton" + index)}
               source={null}
               style={{
                 position: 'absolute',
                 left: 140,
                 top: 60,
-                height: 26, width: 100,
+                height: 26, width: 120,
               }}
               text={"ARTIST DETAILS"}
               bgBoxVisible={true}
               bgBoxStyle={{
-                backgroundColor: '#EF4260',
-                height: 26, width: 100
+                backgroundColor: '#d6c8cb',
+                height: 23, width: 120
               }}
               fontStyle={{
-                width: 100,
+                width: 120,
                 fontFamily: 'Cabin-Regular',
                 textAlign: 'center',
                 textAlignVertical: 'center',
                 letterSpacing: 2.0,
-                color: '#FFFFFF',
-                fontSize: 8.5,
+                color: '#010101',
+                fontSize: 9,
+                top: 6
               }}
               visualProperties={{ alpha: 1 }}
               onSelect={() => { TransitionArtistNavigateDown(item) }}

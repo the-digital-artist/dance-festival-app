@@ -57,7 +57,7 @@ const ScheduleListItem = ({ item, index }) => {
         }}>
 
 
-        {item.itemType == "type1" ?
+        {/* {item.itemType == "type1" ?
           <>
             <Image
               source={require('../../../assets/sessionitem-frame.png')}
@@ -67,7 +67,7 @@ const ScheduleListItem = ({ item, index }) => {
               }}
             />
           </>
-          : null}
+          : null} */}
 
         {item.itemType == "type1" ? <ScheduleItemGroupRe
           mainItem={item}
@@ -85,27 +85,26 @@ const ScheduleListItem = ({ item, index }) => {
               top: 8,
               left: 90,
               width: 300,
-              fontFamily: 'ArtBrush',
-              // backgroundColor: 'indigo',
+              fontFamily: 'Cabin-Regular',
+              letterSpacing: 1.0,
               textAlign: 'left',
-              color: '#9F509F',
-              fontSize: 25,
+              color: '#90a0b9',
+              fontSize: 12,
             }}>
-              {item.groupTitle}
+              {("Browse Sessions In Different Rooms" as string).toLocaleUpperCase()}
             </Text>
 
-            <Text allowFontScaling={false} id='textGroupSubTitle' style={{
+            {/* <Text allowFontScaling={false} id='textGroupSubTitle' style={{
               position: 'absolute',
               top: 35, left: 90,
               width: 290, height: 16,
               fontFamily: 'Cabin-Regular',
               letterSpacing: 2.0,
-              // backgroundColor: 'indigo',
               textAlign: 'left',
-              color: '#58503e',
+              color: '#fefefe',
               fontSize: 12,
-            }}>{(item.groupSubtitle as string).toLocaleUpperCase()}
-            </Text>
+            }}>{"Browse Rooms:"}
+            </Text> */}
           </>
           : null}
       </View>
@@ -114,11 +113,11 @@ const ScheduleListItem = ({ item, index }) => {
         position: 'absolute',
         top: 10, left: 6,
         width: 70, height: 15,
-        fontFamily: 'Antonio-Regular',
+        fontFamily: 'DINNeuzeitGroteskStd-Light',
         // backgroundColor: 'skyblue',
         textAlign: 'right',
-        color: '#58503e',
-        fontSize: 11,
+        color: '#ede8e3',
+        fontSize: 12,
       }}>
         {item.time}
       </Text>

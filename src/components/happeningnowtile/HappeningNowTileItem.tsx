@@ -77,7 +77,7 @@ const HappeningNowTileItem = ({ item }) => {
           left: (80 + 5 +10),
           width: Dimensions.get('screen').width-60-(80 + 5 +10+10), 
           height: 28,
-          fontFamily: item.itemType != "type2" ? 'ArtBrush' : 'Antonio-Regular',
+          fontFamily: item.itemType != "type2" ? 'DINCondensed-Bold' : 'DINNeuzeitGroteskStd-Light',
           // backgroundColor: 'skyblue',
           textAlign: 'left',
           textAlignVertical: 'bottom',

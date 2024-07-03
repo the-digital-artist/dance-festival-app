@@ -16,7 +16,7 @@ const TransitionNavbarSelect = (index) => {
         let itemDistance = 85
         let startX = (Dimensions.get('screen').width / 2 - ((4 - 1) * itemDistance) / 2) - iconSize / 2
     
-        TweenManager.tween().to("navBarHighlight", 134, { alpha: 0.5, x: (index * itemDistance + startX) });
+        TweenManager.tween().to("navBarHighlight", 134, { alpha: 1.0, x: (index * itemDistance + startX) });
 
         //animate incoming screen
         let targetX = index > oldIdx ? Dimensions.get('screen').width : -Dimensions.get('screen').width;
