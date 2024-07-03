@@ -297,7 +297,7 @@ class LauncherController extends OperatorStates {
             if(DataModel.dataArtists['Alex & Desiree'] != undefined) DataModel.dataArtists['Alex & Desiree'].imgSrc = require('../assets/portraits/0015_alex_-_desiree.png');
             if(DataModel.dataArtists['Benny & Ashley'] != undefined) DataModel.dataArtists['Benny & Ashley'].imgSrc = require('../assets/portraits/0014_benny_-_ashley.png');
             if(DataModel.dataArtists['Bianca Chapman'] != undefined) DataModel.dataArtists['Bianca Chapman'].imgSrc = require('../assets/portraits/0013_bianca_chapman.png');
-            if(DataModel.dataArtists['Carine & Rafael'] != undefined) DataModel.dataArtists['Carine & Rafael'].imgSrc = require('../assets/portraits/0018_carine_-_rafael.png');
+            if(DataModel.dataArtists['Rafael & Carine'] != undefined) DataModel.dataArtists['Rafael & Carine'].imgSrc = require('../assets/portraits/0018_carine_-_rafael.png');
             if(DataModel.dataArtists['Carlos & Susan'] != undefined) DataModel.dataArtists['Carlos & Susan'].imgSrc = require('../assets/portraits/0002_carlos_-_susan.png');
             if(DataModel.dataArtists['Casino Stars'] != undefined) DataModel.dataArtists['Casino Stars'].imgSrc = require('../assets/portraits/0012_casino_stars.png');
             if(DataModel.dataArtists['Chelsey Owen'] != undefined) DataModel.dataArtists['Chelsey Owen'].imgSrc = require('../assets/portraits/0011_chelsey_owen.png');
@@ -310,6 +310,8 @@ class LauncherController extends OperatorStates {
             if(DataModel.dataArtists['Jorge & Indira'] != undefined) DataModel.dataArtists['Jorge & Indira'].imgSrc = require('../assets/portraits/0008_jorge_-_indira.png');
             if(DataModel.dataArtists['Karen & Ricardo'] != undefined) DataModel.dataArtists['Karen & Ricardo'].imgSrc = require('../assets/portraits/0005_karen_-_ricardo.png');
             if(DataModel.dataArtists['Raul & Delia'] != undefined) DataModel.dataArtists['Raul & Delia'].imgSrc = require('../assets/portraits/0001_raul_-_delia.png');   
+            if(DataModel.dataArtists['Latisha Hardy'] != undefined) DataModel.dataArtists['Latisha Hardy'].imgSrc = require('../assets/portraits/0021_latisha_hardy.png');   
+     
         } catch (error) {
             console.log('Could not assign an image for a particular artist')
         }
