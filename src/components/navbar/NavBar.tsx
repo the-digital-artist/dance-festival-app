@@ -14,7 +14,7 @@ const NavBar = (props) => {
 
     return (
         <>
-            {/* {Platform.OS == "ios" &&
+            {Platform.OS == "ios" &&
                 <BlurView
                     intensity={50}
                     style={{
@@ -25,7 +25,7 @@ const NavBar = (props) => {
                         height: 95,
                         opacity: 1
                     }} />
-            } */}
+            }
 
             <Image
                 style={{
@@ -34,7 +34,7 @@ const NavBar = (props) => {
                     width: Dimensions.get('screen').width,
                     height: (Dimensions.get('screen').width * (300 / 1290)),
                     resizeMode: "cover",
-                    opacity: 1.0
+                    opacity: 0.7
                 }}
                 source={require('../../../assets/navbar/navbar_bg.png')}
             />
