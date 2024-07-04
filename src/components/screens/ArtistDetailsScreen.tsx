@@ -35,94 +35,95 @@ class ArtistDetailsScreen extends PureComponent {
 
         return (
             <>
-                <View
-                    style={{
-                        backgroundColor: '#EF4260',
-                        top: 0, left: 0, position: 'absolute',
-                        width: Dimensions.get('screen').width, height: Dimensions.get('screen').height,
-                        opacity: 1
-                    }}
-                >
-                    <ScrollView
+          
+                    <View
                         style={{
-                            backgroundColor: '#ec556f',
-                            top: 0, left: 20, position: 'absolute',
-                            width: Dimensions.get('screen').width - 40,
-                            height: Dimensions.get('screen').height,
+                            backgroundColor: '#EF4260',
+                            top: 0, left: 0, position: 'absolute',
+                            width: Dimensions.get('screen').width, height: Dimensions.get('screen').height,
                             opacity: 1
-                        }}>
-
-
-
-                        <View
+                        }}
+                    >
+                        <ScrollView
                             style={{
-
                                 backgroundColor: '#ec556f',
-                                top: 0, left: 5,
-                                width: Dimensions.get('screen').width - 50,
-                                height: scrollViewContent,
+                                top: 0, left: 20, position: 'absolute',
+                                width: Dimensions.get('screen').width - 40,
+                                height: Dimensions.get('screen').height,
                                 opacity: 1
                             }}>
-                            <Text allowFontScaling={false} id='textLabelArtist' style={{
-                                position: 'absolute',
-                                top: 160,
-                                left: 30,
-                                height: 20,
-                                // backgroundColor: 'indigo'
-                                fontFamily: 'Arcon-Regular',
-                                textAlign: 'center',
-                                letterSpacing: 1.7,
-                                color: '#232323',
-                                fontSize: 16,
-                            }}>
-                                {(item.fullName as string).toLocaleUpperCase()}
-                            </Text>
-                            <Text allowFontScaling={false} id='artistBioFocus' style={{
-                                position: 'absolute',
-                                top: (200), left: 30,
-                                width: Dimensions.get('screen').width - 70 - 25,
-                                height: (item.bio as string).length / 1100 * 1.2 * Dimensions.get('screen').height,
-                                fontFamily: 'Arcon-Regular',
-                                letterSpacing: 1,
-                                textAlign: 'justify',
-                                // backgroundColor: 'indigo',
-                                color: '#232323',
-                                fontSize: 15,
-                            }}>
-                                {item ? (item.bio as string) : ""}
-                            </Text>
-                        </View>
-
-                        {item.insta != '' && socialBarData.map((itemData, i) => {
-                            return (
-                                <Fragment key={'socalBarFrag' + i}>
-
-                                    <ButtonSmall
-                                        name={'socialBarItem' + i}
-                                        style={{
-                                            // backgroundColor: 'skyblue',
-                                            position: 'absolute',
-                                            top: 130, left: (startX + (i * itemDistance)),
-                                            width: iconSize, height: iconSize,
-                                            opacity: 1.0
-                                        }}
-                                        visualProperties={{ alpha: 0.7, x: 0, y: 0, z: 0 }}
-                                        onSelect={() => { ActionOpenSocialMediaApp(itemData.provider, itemData.account) }}
-                                        source={itemData.imgSrc}
-                                        text={''}
-                                    />
-                                </Fragment>
-                            );
-                        })}
-
-                    </ScrollView>
 
 
 
+                            <View
+                                style={{
 
-                </View>
+                                    backgroundColor: '#ec556f',
+                                    top: 0, left: 5,
+                                    width: Dimensions.get('screen').width - 50,
+                                    height: scrollViewContent,
+                                    opacity: 1
+                                }}>
+                                <Text allowFontScaling={false} id='textLabelArtist' style={{
+                                    position: 'absolute',
+                                    top: 160,
+                                    left: 30,
+                                    height: 20,
+                                    // backgroundColor: 'indigo'
+                                    fontFamily: 'Arcon-Regular',
+                                    textAlign: 'center',
+                                    letterSpacing: 1.7,
+                                    color: '#232323',
+                                    fontSize: 16,
+                                }}>
+                                    {(item.fullName as string).toLocaleUpperCase()}
+                                </Text>
+                                <Text allowFontScaling={false} id='artistBioFocus' style={{
+                                    position: 'absolute',
+                                    top: (200), left: 30,
+                                    width: Dimensions.get('screen').width - 70 - 25,
+                                    height: (item.bio as string).length / 1100 * 1.2 * Dimensions.get('screen').height,
+                                    fontFamily: 'Arcon-Regular',
+                                    letterSpacing: 1,
+                                    textAlign: 'justify',
+                                    // backgroundColor: 'indigo',
+                                    color: '#232323',
+                                    fontSize: 15,
+                                }}>
+                                    {item ? (item.bio as string) : ""}
+                                </Text>
+                            </View>
 
-                {/* <BlurView
+                            {item.insta != '' && socialBarData.map((itemData, i) => {
+                                return (
+                                    <Fragment key={'socalBarFrag' + i}>
+
+                                        <ButtonSmall
+                                            name={'socialBarItem' + i}
+                                            style={{
+                                                // backgroundColor: 'skyblue',
+                                                position: 'absolute',
+                                                top: 130, left: (startX + (i * itemDistance)),
+                                                width: iconSize, height: iconSize,
+                                                opacity: 1.0
+                                            }}
+                                            visualProperties={{ alpha: 0.7, x: 0, y: 0, z: 0 }}
+                                            onSelect={() => { ActionOpenSocialMediaApp(itemData.provider, itemData.account) }}
+                                            source={itemData.imgSrc}
+                                            text={''}
+                                        />
+                                    </Fragment>
+                                );
+                            })}
+
+                        </ScrollView>
+
+
+
+
+                    </View>
+
+                    {/* <BlurView
                 
                         intensity={10}
                         style={{
@@ -132,14 +133,14 @@ class ArtistDetailsScreen extends PureComponent {
 
                      
                     </BlurView> */}
-                <Image
-                    source={item.imgSrc}
-                    style={{
-                        position: 'absolute', resizeMode: 'cover', opacity: 0.7,
-                        right: -40, bottom: 0, width: 300, height: 300,
-                    }}
-                />
-                {/* <Image
+                    <Image
+                        source={item.imgSrc}
+                        style={{
+                            position: 'absolute', resizeMode: 'cover', opacity: 0.7,
+                            right: -40, bottom: 0, width: 300, height: 300,
+                        }}
+                    />
+                    {/* <Image
                         style={{
                             // backgroundColor: 'skyblue',
                             top: 0, left: 0, position: 'absolute',
@@ -152,7 +153,7 @@ class ArtistDetailsScreen extends PureComponent {
 
 
 
-                {/* 
+                    {/* 
                 <Pressable id='buttonBack'
                     style={{
                         position: 'absolute',
