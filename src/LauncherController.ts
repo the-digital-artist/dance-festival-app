@@ -180,14 +180,13 @@ class LauncherController extends OperatorStates {
         [
             { id: 0, itemText: "Home", associatedScreenName: "homeScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_home.png') },
             { id: 1, itemText: "Schedule", associatedScreenName: "sessionScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_planner.png') },
-            { id: 3, itemText: "Artists", associatedScreenName: "artistsListScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_artists.png') },
+            { id: 3, itemText: "Artists", associatedScreenName: "artistsMainScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_artists.png') },
             { id: 4, itemText: "More", associatedScreenName: "settingsScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_settings.png') }
         ]
 
     customFonts = {
         'DINNeuzeitGroteskStd-Light': require('../assets/fonts/DINNeuzeitGroteskStdLight.otf'),
         'DINCondensed-Bold': require('../assets/fonts/DINNeuzeitGroteskStdBdCond.otf'),
-        'Antonio-Regular': require('../assets/fonts/Antonio-Regular.ttf'),
         'Arcon-Regular': require('../assets/fonts/Arcon-Regular.otf'),
         'Arcon-Rounded-Regular': require('../assets/fonts/Arcon-Regular.otf'),
         'Cabin-Regular': require('../assets/fonts/Cabin-Regular.ttf'),
@@ -202,7 +201,7 @@ class LauncherController extends OperatorStates {
             await Font.loadAsync(this.customFonts);
             console.log("LauncherController - Fonts loaded.");
             await this.getLocallyStoredDataModel();
-            await this.getRemoteDataModel();
+            // await this.getRemoteDataModel();
             console.log('LauncherController - Model local/remote checks w/ potential update completed.');
             await this.prepareDataModel();
             console.log('LauncherController initialization done. Tutorial completed: ' + this.appTutorialCompleted);
@@ -237,6 +236,7 @@ class LauncherController extends OperatorStates {
             if (value !== null) {
                 const locallyStoredModel = JSON.parse(value);
                 if (locallyStoredModel.modelVersion <= DataModel.modelVersion) return;
+                return;
 
                 DataModel.dataArtists = locallyStoredModel.dataArtists
                 DataModel.dataScheduleRaw = locallyStoredModel.dataScheduleRaw
