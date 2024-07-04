@@ -52,7 +52,7 @@ class LauncherController extends OperatorStates {
                 imgSrc: null,
                 shortBio: ``,
                 bio: `Susana Arenas Pedroso is `,
-                facebook: ``, 
+                facebook: ``,
                 insta: ''
             },
 
@@ -65,8 +65,8 @@ class LauncherController extends OperatorStates {
                 groupTitle: '',
                 groupSubtitle: '',
                 room: 'Relax and Plan Ahead \nwith The Festival Planner',
-                startTime: '2024-01-01T0:00', 
-                endTime: '2024-06-17T05:00', 
+                startTime: '2024-01-01T0:00',
+                endTime: '2024-06-17T05:00',
                 time: '00:00'
             },
 
@@ -77,8 +77,8 @@ class LauncherController extends OperatorStates {
                 groupTitle: '',
                 groupSubtitle: '',
                 room: 'The 6th Queer Afro-Latin Dance \nFestival has concluded.',
-                startTime: '2024-06-17T05:00', 
-                endTime: '2030-12-31T23:59', 
+                startTime: '2024-06-17T05:00',
+                endTime: '2030-12-31T23:59',
                 time: '00:00'
             },
 
@@ -168,10 +168,10 @@ class LauncherController extends OperatorStates {
     tabBarIndex = 0
     tabBarData =
         [
-            { id: 0, itemText: "Thursday", associatedScreenName: "scheduleList0", imgSrc: null },
-            { id: 1, itemText: "Friday", associatedScreenName: "scheduleList1", imgSrc: null },
-            { id: 2, itemText: "Saturday", associatedScreenName: "scheduleList2", imgSrc: null },
-            { id: 3, itemText: "Sunday", associatedScreenName: "scheduleList3", imgSrc: null }
+            // { id: 0, itemText: "Thursday", associatedScreenName: "scheduleList0", imgSrc: null },
+            // { id: 1, itemText: "Friday", associatedScreenName: "scheduleList1", imgSrc: null },
+            { id: 2, itemText: "Saturday", associatedScreenName: "scheduleList0", imgSrc: null },
+            { id: 3, itemText: "Sunday", associatedScreenName: "scheduleList1", imgSrc: null }
         ]
 
 
@@ -181,8 +181,15 @@ class LauncherController extends OperatorStates {
         [
             { id: 0, itemText: "Home", associatedScreenName: "homeScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_home.png') },
             { id: 1, itemText: "Schedule", associatedScreenName: "sessionScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_planner.png') },
-            { id: 3, itemText: "Artists", associatedScreenName: "artistsListScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_artists.png') },
+            { id: 3, itemText: "Artists", associatedScreenName: "artistsMainScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_artists.png') },
             { id: 4, itemText: "More", associatedScreenName: "settingsScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_settings.png') }
+        ]
+
+    artistStackIndex = 0
+    artistStackData =
+        [
+            { id: 0, itemText: "Artists & DJs", associatedScreenName: "artistsSelectionScreenContainer", imgSrc: null, screenComponentRef: null },
+            { id: 1, itemText: "Artist Details", associatedScreenName: "artistsDetailsScreenContainer", imgSrc: null, screenComponentRef: null },
         ]
 
     customFonts = {
@@ -193,7 +200,7 @@ class LauncherController extends OperatorStates {
         'Cabin-Regular': require('../assets/fonts/Cabin-Regular.ttf'),
         'RobotoCondensed-Regular': require('../assets/fonts/RobotoCondensed-Regular.ttf'),
         'RobotoCondensed-Medium': require('../assets/fonts/RobotoCondensed-Medium.ttf'),
-       
+
     };
 
     constructor() {
@@ -214,7 +221,7 @@ class LauncherController extends OperatorStates {
 
             // ActionUpdateHappeningNow();
             const checkHappeningNowFunction = setInterval(() => { ActionUpdateHappeningNow(); }, DataModel.happeningNowUpdateInterval);
-         
+
         } catch (e) {
             console.warn(e);
         } finally { }
@@ -233,7 +240,7 @@ class LauncherController extends OperatorStates {
                     dataArtists: DataModel.dataArtists,
                     dataScheduleRaw: DataModel.dataScheduleRaw
                 });
-                console.log('LauncherController  - using initial model: '+ DataModel.modelVersion);
+                console.log('LauncherController  - using initial model: ' + DataModel.modelVersion);
                 AsyncStorage.setItem('qaldfDataModel', modelAsString);
                 return;
             }
@@ -244,7 +251,7 @@ class LauncherController extends OperatorStates {
                 DataModel.dataArtists = locallyStoredModel.dataArtists
                 DataModel.dataScheduleRaw = locallyStoredModel.dataScheduleRaw
                 DataModel.modelVersion = locallyStoredModel.modelVersion
-                console.log('LauncherController - using locally stored model: '+ DataModel.modelVersion);
+                console.log('LauncherController - using locally stored model: ' + DataModel.modelVersion);
                 return;
             }
         } catch (e) {
@@ -263,14 +270,14 @@ class LauncherController extends OperatorStates {
             if (!response.ok) return;
 
             const remoteModel = await response.json();
-            console.log('LauncherController - remote model with version: '+ remoteModel.modelVersion,);
+            console.log('LauncherController - remote model with version: ' + remoteModel.modelVersion,);
 
             if (remoteModel.modelVersion > DataModel.modelVersion) {
                 DataModel.modelVersion = remoteModel.modelVersion
                 DataModel.dataArtists = remoteModel.dataArtists;
                 DataModel.dataScheduleRaw = remoteModel.dataScheduleRaw;
 
-                console.log('LauncherController - using remote model and storing locally.'+ remoteModel.modelVersion,);
+                console.log('LauncherController - using remote model and storing locally.' + remoteModel.modelVersion,);
 
                 AsyncStorage.setItem('qaldfDataModel', JSON.stringify({
                     modelVersion: DataModel.modelVersion,
@@ -295,28 +302,28 @@ class LauncherController extends OperatorStates {
 
         //load images
         try {
-            if(DataModel.dataArtists['Alafia Ire'] != undefined) DataModel.dataArtists['Alafia Ire'].imgSrc = require('../assets/portraits/05_Alafia_Con_Ire.png');
-            if(DataModel.dataArtists['Alexander Carbo'] != undefined) DataModel.dataArtists['Alexander Carbo'].imgSrc = require('../assets/portraits/08_Alexander_Carbo.png');
-            if(DataModel.dataArtists['Alexandra Toledo'] != undefined) DataModel.dataArtists['Alexandra Toledo'].imgSrc = require('../assets/portraits/13_Alexandra_Toledo.png');
-            if(DataModel.dataArtists['Angela Jauregui'] != undefined) DataModel.dataArtists['Angela Jauregui'].imgSrc = require('../assets/portraits/10_Angela_de_la_Caridad_Jauregui.png');
-            if(DataModel.dataArtists['DJ Goodfoot'] != undefined) DataModel.dataArtists['DJ Goodfoot'].imgSrc = require('../assets/portraits/03_DJ_Goodfoot.png');
-            if(DataModel.dataArtists['DJ Paulazo'] != undefined) DataModel.dataArtists['DJ Paulazo'].imgSrc = require('../assets/portraits/02_DJ_Paulazo.png');
-            if(DataModel.dataArtists['DJ Puma'] != undefined) DataModel.dataArtists['DJ Puma'].imgSrc = require('../assets/portraits/04_El_Puma_DJ.png');
-            if(DataModel.dataArtists['DJ Yala'] != undefined) DataModel.dataArtists['DJ Yala'].imgSrc = require('../assets/portraits/01_DJ_Yala.png');
-            if(DataModel.dataArtists['Helen'] != undefined) DataModel.dataArtists['Helen'].imgSrc = require('../assets/portraits/06_Helen.png');
-            if(DataModel.dataArtists['Ido Flaishon'] != undefined) DataModel.dataArtists['Ido Flaishon'].imgSrc = require('../assets/portraits/18_Ido_Flaishon.png');
-            if(DataModel.dataArtists['Jonas Reichert'] != undefined) DataModel.dataArtists['Jonas Reichert'].imgSrc = require('../assets/portraits/21_Jonas_Reichert.png');
-            if(DataModel.dataArtists['Kimberly Wirt'] != undefined) DataModel.dataArtists['Kimberly Wirt'].imgSrc = require('../assets/portraits/14_Kimberly_Wirt.png');
-            if(DataModel.dataArtists['Leonardo Moya'] != undefined) DataModel.dataArtists['Leonardo Moya'].imgSrc = require('../assets/portraits/20_Leonardo_Martinez_Moya.png');
-            if(DataModel.dataArtists['Lucas Flemming'] != undefined) DataModel.dataArtists['Lucas Flemming'].imgSrc = require('../assets/portraits/17_Lucas_Flemming.png');
-            if(DataModel.dataArtists['Lynet Rubio'] != undefined) DataModel.dataArtists['Lynet Rubio'].imgSrc = require('../assets/portraits/09_Lynet_Rivero_Rubio.png');
-            if(DataModel.dataArtists['Ruggiero Palombella'] != undefined) DataModel.dataArtists['Ruggiero Palombella'].imgSrc = require('../assets/portraits/12_Ruggiero_Palombella.png');
-            if(DataModel.dataArtists['Sassan Alivaliollahi'] != undefined) DataModel.dataArtists['Sassan Alivaliollahi'].imgSrc = require('../assets/portraits/19_Sassan_Alivaliollahi.png');
-            if(DataModel.dataArtists['Silvio Perez'] != undefined) DataModel.dataArtists['Silvio Perez'].imgSrc = require('../assets/portraits/11_Silvio_Leroy_Perez.png');
-            if(DataModel.dataArtists['Tanja'] != undefined) DataModel.dataArtists['Tanja'].imgSrc = require('../assets/portraits/07_Tanja.png');
-            if(DataModel.dataArtists['Timo Lingnau'] != undefined) DataModel.dataArtists['Timo Lingnau'].imgSrc = require('../assets/portraits/16_Timo_Lingnau.png');
-            if(DataModel.dataArtists['Wendy Solanch'] != undefined) DataModel.dataArtists['Wendy Solanch'].imgSrc = require('../assets/portraits/15_Wendy_Solanch.png');
-        
+            if (DataModel.dataArtists['Alafia Ire'] != undefined) DataModel.dataArtists['Alafia Ire'].imgSrc = require('../assets/portraits/05_Alafia_Con_Ire.png');
+            if (DataModel.dataArtists['Alexander Carbo'] != undefined) DataModel.dataArtists['Alexander Carbo'].imgSrc = require('../assets/portraits/08_Alexander_Carbo.png');
+            if (DataModel.dataArtists['Alexandra Toledo'] != undefined) DataModel.dataArtists['Alexandra Toledo'].imgSrc = require('../assets/portraits/13_Alexandra_Toledo.png');
+            if (DataModel.dataArtists['Angela Jauregui'] != undefined) DataModel.dataArtists['Angela Jauregui'].imgSrc = require('../assets/portraits/10_Angela_de_la_Caridad_Jauregui.png');
+            if (DataModel.dataArtists['DJ Goodfoot'] != undefined) DataModel.dataArtists['DJ Goodfoot'].imgSrc = require('../assets/portraits/03_DJ_Goodfoot.png');
+            if (DataModel.dataArtists['DJ Paulazo'] != undefined) DataModel.dataArtists['DJ Paulazo'].imgSrc = require('../assets/portraits/02_DJ_Paulazo.png');
+            if (DataModel.dataArtists['DJ Puma'] != undefined) DataModel.dataArtists['DJ Puma'].imgSrc = require('../assets/portraits/04_El_Puma_DJ.png');
+            if (DataModel.dataArtists['DJ Yala'] != undefined) DataModel.dataArtists['DJ Yala'].imgSrc = require('../assets/portraits/01_DJ_Yala.png');
+            if (DataModel.dataArtists['Helen'] != undefined) DataModel.dataArtists['Helen'].imgSrc = require('../assets/portraits/06_Helen.png');
+            if (DataModel.dataArtists['Ido Flaishon'] != undefined) DataModel.dataArtists['Ido Flaishon'].imgSrc = require('../assets/portraits/18_Ido_Flaishon.png');
+            if (DataModel.dataArtists['Jonas Reichert'] != undefined) DataModel.dataArtists['Jonas Reichert'].imgSrc = require('../assets/portraits/21_Jonas_Reichert.png');
+            if (DataModel.dataArtists['Kimberly Wirt'] != undefined) DataModel.dataArtists['Kimberly Wirt'].imgSrc = require('../assets/portraits/14_Kimberly_Wirt.png');
+            if (DataModel.dataArtists['Leonardo Moya'] != undefined) DataModel.dataArtists['Leonardo Moya'].imgSrc = require('../assets/portraits/20_Leonardo_Martinez_Moya.png');
+            if (DataModel.dataArtists['Lucas Flemming'] != undefined) DataModel.dataArtists['Lucas Flemming'].imgSrc = require('../assets/portraits/17_Lucas_Flemming.png');
+            if (DataModel.dataArtists['Lynet Rubio'] != undefined) DataModel.dataArtists['Lynet Rubio'].imgSrc = require('../assets/portraits/09_Lynet_Rivero_Rubio.png');
+            if (DataModel.dataArtists['Ruggiero Palombella'] != undefined) DataModel.dataArtists['Ruggiero Palombella'].imgSrc = require('../assets/portraits/12_Ruggiero_Palombella.png');
+            if (DataModel.dataArtists['Sassan Alivaliollahi'] != undefined) DataModel.dataArtists['Sassan Alivaliollahi'].imgSrc = require('../assets/portraits/19_Sassan_Alivaliollahi.png');
+            if (DataModel.dataArtists['Silvio Perez'] != undefined) DataModel.dataArtists['Silvio Perez'].imgSrc = require('../assets/portraits/11_Silvio_Leroy_Perez.png');
+            if (DataModel.dataArtists['Tanja'] != undefined) DataModel.dataArtists['Tanja'].imgSrc = require('../assets/portraits/07_Tanja.png');
+            if (DataModel.dataArtists['Timo Lingnau'] != undefined) DataModel.dataArtists['Timo Lingnau'].imgSrc = require('../assets/portraits/16_Timo_Lingnau.png');
+            if (DataModel.dataArtists['Wendy Solanch'] != undefined) DataModel.dataArtists['Wendy Solanch'].imgSrc = require('../assets/portraits/15_Wendy_Solanch.png');
+
         } catch (error) {
             console.log('Could not assign an image for a particular artist')
         }
@@ -402,7 +409,7 @@ class LauncherController extends OperatorStates {
                 for (let k = 0; k < DataModel.dataScheduleRaw.length; k++) {
                     if (dataItemOldGroup[j] == DataModel.dataScheduleRaw[k].id) {
                         dataItemNewGroup.push({ id: dataItemOldGroup[j], obj: DataModel.dataScheduleRaw[k] });
-                        DataModel.dataScheduleRaw[k].flag = (j==0)?false:true;
+                        DataModel.dataScheduleRaw[k].flag = (j == 0) ? false : true;
                         break;
                     }
                 }
@@ -427,7 +434,7 @@ class LauncherController extends OperatorStates {
 
             //add the data item to the specific section list (usually ordered by day)
             sectionListData.data.push(dataItem);
-            console.log('adding '+dataItem.id)
+            console.log('adding ' + dataItem.id)
 
         }
     }
