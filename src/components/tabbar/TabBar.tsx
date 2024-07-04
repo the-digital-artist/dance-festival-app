@@ -14,10 +14,10 @@ const TabBar = (props) => {
     // ]
 
 
-    let itemWidth = 100;
+    let itemWidth = 110;
     let itemHeight = 43;
     let itemHeightSelectedOffset = 10;
-    let itemSpread = 110
+    let itemSpread = 100
     let startX = (Dimensions.get('screen').width / 2 - ((tabBarData.length - 1) * itemSpread) / 2) - itemWidth / 2
 
     const currentIndex = useSharedValue(0);
@@ -89,6 +89,7 @@ const TabBar = (props) => {
                             fontStyle={{
                                 fontFamily: 'Arcon-Regular',
                                 letterSpacing: 1.7,
+                                textAlign:'center',
                                 color: '#222222',
                                 fontSize: 11,
                                 opacity: 1.0, 
