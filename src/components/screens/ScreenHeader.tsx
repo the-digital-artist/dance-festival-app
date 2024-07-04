@@ -1,6 +1,6 @@
 import { Dimensions, Image, SafeAreaView, Text, View } from 'react-native';
 
-const   ScreenHeader = (props) => {
+const ScreenHeader = (props) => {
   let itemHeight = 100;
 
   return (
@@ -24,16 +24,17 @@ const   ScreenHeader = (props) => {
         }}
         source={require('../../../assets/tabbar/tabbar_bg.png')}
       />
-      <Text allowFontScaling={false} id='textHeader' style={{
-        top: 55, left: 30,
-        width: Dimensions.get('screen').width - 40, height: 32,
-        fontFamily: 'RobotoCondensed-Medium',
-        // backgroundColor: 'skyblue',
-        letterSpacing: 1.5,
-        textAlign: 'left',
-        color: props.color,
-        fontSize: 26,
-      }}>
+      <Text allowFontScaling={false} id='textHeader'
+        style={[{
+          top: 55, left: 30,
+          width: Dimensions.get('screen').width - 40, height: 32,
+          fontFamily: 'RobotoCondensed-Medium',
+          // backgroundColor: 'skyblue',
+          letterSpacing: 1.5,
+          textAlign: 'left',
+          color: props.color,
+          fontSize: 26,
+        }, props.textStyle]}>
         {props.text}
       </Text>
 
