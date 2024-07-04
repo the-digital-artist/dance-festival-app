@@ -3,6 +3,7 @@ import LauncherController from "../LauncherController";
 import TransitionNavbarSelect from "../components/navbar/TransitionNavbarSelect";
 import TweenManager from "../core/LTweenManager";
 import TransitionArtistNavigateDown from "./TransitionArtistNavigateDown";
+import NavBar from "../components/navbar/NavBar";
 
 const TransitionLinkToArtistPage = (artistData) => {
         console.log("TransitionLinkToArtistPage");
@@ -13,7 +14,7 @@ const TransitionLinkToArtistPage = (artistData) => {
         let context = LauncherController.getInstance().context;
 
         LauncherController.getInstance().context.artistFocusItem = artistData;
-        LauncherController.getInstance().context.stackNavigator.navigate("ARTIST PAGES")
+        // TransitionArtistNavigateDown(artistData, 0);
 
         TransitionNavbarSelect(2);
 
@@ -25,7 +26,7 @@ const TransitionLinkToArtistPage = (artistData) => {
                 alpha: 1, delay: 500, onComplete:
                         (ok) => {
 
-                                LauncherController.getInstance().context.stackNavigator.navigate("ARTIST DETAILS")
+                                // TransitionArtistNavigateDown(LauncherController.getInstance().context.artistFocusItem, 1);
                         }
         });
 

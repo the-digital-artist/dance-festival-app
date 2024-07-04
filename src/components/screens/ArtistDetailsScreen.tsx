@@ -7,6 +7,8 @@ import { ScrollView } from "react-native-gesture-handler";
 import { BlurView } from "expo-blur";
 import ButtonSmall from "../ButtonSmall";
 import ActionOpenSocialMediaApp from "../../actions/ActionOpenSocialMediaApp";
+import ScreenHeader from "./ScreenHeader";
+import TransitionArtistNavigateDown from "../../transitions/TransitionArtistNavigateDown";
 
 
 class ArtistDetailsScreen extends PureComponent {
@@ -16,6 +18,9 @@ class ArtistDetailsScreen extends PureComponent {
 
     render() {
         const item = LauncherController.getInstance().context.artistFocusItem
+
+        console.log("Setting Reference")
+        LauncherController.getInstance().artistStackData[1].screenComponentRef = this;
 
         const scrollViewContent =
             Platform.OS == 'ios' ?
@@ -139,30 +144,36 @@ class ArtistDetailsScreen extends PureComponent {
                         right: -40, bottom: 0, width: 300, height: 300,
                     }}
                 />
-                {/* <Image
-                        style={{
-                            // backgroundColor: 'skyblue',
-                            top: 0, left: 0, position: 'absolute',
-                            width: Dimensions.get('screen').width, height: Dimensions.get('screen').height,
-                            resizeMode: "contain",
-                            opacity: 1
-                        }}
-                        source={require('.,/../../assets/screen-mockup-artistscreen.png')}
-                    /> */}
-
-
-
-                {/* 
-                <Pressable id='buttonBack'
-                    style={{
-                        position: 'absolute',
-                        top: 30,
-                        left: 0,
-                        width: Dimensions.get('screen').width, height: 60,
-                        // backgroundColor: 'indigo',
-                    }}
-                    onPress={() => { TransitionScreenL3toL2() }}
-                /> */}
+                <ScreenHeader 
+                    text={"ARTIST DETAILS"} 
+                    color='#f8f6d3'
+                    textStyle={{left: 50}}
+                />
+                
+                <ButtonSmall
+                            name={'backButtonArtistDetails'}
+                            style={{
+                                // backgroundColor: 'skyblue',
+                                position: 'absolute',
+                                top: 50, left: 0,
+                                width: 40, height: 40,
+                                opacity: 0.9
+                            }}
+                            visualProperties={{ alpha: 1, x: 0, y: 0, z: 0 }}
+                            onSelect={() => { TransitionArtistNavigateDown(LauncherController.getInstance().context.artistFocusItem,0) }}
+                            text={'BACK'}
+                            fontStyle={{
+                                width:40,
+                                top:42,
+                                fontFamily: 'Arcon-Regular',
+                                textAlign: 'center',
+                                letterSpacing: 1.7,
+                                color: '#f8f6d3',
+                                fontSize: 7,
+                              
+                            }}
+                            source={require('../../../assets/stack-backicon.png')}
+                        />
             </>
         );
     }

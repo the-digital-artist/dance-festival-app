@@ -84,7 +84,7 @@ const ArtistListItemRenderer = ({ item, index }) => {
                 fontSize: 10,
               }}
               visualProperties={{ alpha: 1 }}
-              onSelect={() => { TransitionArtistNavigateDown(item) }}
+              onSelect={() => { TransitionArtistNavigateDown(item, 1) }}
             />
           }
         </>
