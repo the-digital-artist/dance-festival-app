@@ -9,9 +9,10 @@ import ButtonSmall from "../ButtonSmall";
 class NavBar extends PureComponent<any,any> {
     navBarData = [];
 
-    static navBarIconSize = 76;
-    static navBarItemDistance = 95
+    static navBarIconSize = 90;
+    static navBarItemDistance = 100
     static navBarStartX = 0;
+    static navBarHeight = (Dimensions.get('screen').width * (300 / 1290))
     
 
     constructor(props) {
@@ -46,7 +47,7 @@ class NavBar extends PureComponent<any,any> {
                         // backgroundColor: 'skyblue',
                         bottom: 0, left: 0, position: 'absolute',
                         width: Dimensions.get('screen').width,
-                        height: (Dimensions.get('screen').width * (300 / 1290)),
+                        height: NavBar.navBarHeight,
                         resizeMode: "cover",
                         opacity: 1.0
                     }}
@@ -62,12 +63,15 @@ class NavBar extends PureComponent<any,any> {
                                 style={{
                                     // backgroundColor: 'skyblue',
                                     position: 'absolute',
-                                    bottom: 42, left: (NavBar.navBarStartX + (i * NavBar.navBarItemDistance)),
+                                    bottom: 42, 
+                                    left: (NavBar.navBarStartX + (i * NavBar.navBarItemDistance)),
                                     width:  NavBar.navBarIconSize, height: 40,
                                     opacity: 0.9
                                 }}
                                 visualProperties={{ alpha: 1, x: 0, y: 0, z: 0 }}
-                                onSelect={() => { TransitionNavbarSelect(i) }}
+                                onSelect={() => { 
+                                    TransitionNavbarSelect(i)
+                                 }}
                                 // source={itemData.imgSrc}
                                 text={(itemData.itemText as string).toLocaleUpperCase()}
                                 fontStyle={{
@@ -89,7 +93,7 @@ class NavBar extends PureComponent<any,any> {
                         width:  NavBar.navBarIconSize, height: 5,
                         color: '#fdfaf6',
                     }}
-                    bottomOffsetY={(Dimensions.get('screen').width * (300 / 1290)) - 5}
+                    bottomOffsetY={NavBar.navBarHeight - 5}
                     startX={NavBar.navBarStartX}
                     itemDistance={NavBar.navBarItemDistance}
                 />
