@@ -24,14 +24,14 @@ const ButtonSmall = (props) => {
 
 
 
-                {/* {(true) && ( */}
+                {(props.bgBoxVisible ==true) && 
 
                     <Animated.View
                         style={[
                             props.dynamicVisualPropertiesHightlight, props.bgBoxStyle
                         ]}
                     />
-                {/* ) */}
+                }
 
                 {props.source && (
                     <Image
