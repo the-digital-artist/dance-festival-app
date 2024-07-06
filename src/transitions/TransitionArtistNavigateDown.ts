@@ -14,6 +14,7 @@ const TransitionArtistNavigateDown = (item, levelIndex) => {
         const stackData = LauncherController.getInstance().artistStackData;
         const oldIndex =  LauncherController.getInstance().artistStackIndex;
         const newIndex = levelIndex;
+        if(newIndex == oldIndex) return;
 
         (stackData[1].screenComponentRef as PureComponent).forceUpdate();
 

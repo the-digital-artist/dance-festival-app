@@ -1,14 +1,13 @@
 import React, { Fragment, PureComponent } from "react";
-import { Dimensions, Image, Platform, Pressable, Text, View } from "react-native";
-import LComponent from "../../core/LComponent";
-import TransitionScreenL3toL2 from "../../transitions/TransitionScreenL3toL2";
-import LauncherController from "../../LauncherController";
+import { BackHandler, Dimensions, Image, Platform, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { BlurView } from "expo-blur";
-import ButtonSmall from "../ButtonSmall";
+import LauncherController from "../../LauncherController";
 import ActionOpenSocialMediaApp from "../../actions/ActionOpenSocialMediaApp";
-import ScreenHeader from "./ScreenHeader";
 import TransitionArtistNavigateDown from "../../transitions/TransitionArtistNavigateDown";
+import ButtonSmall from "../ButtonSmall";
+import TransitionNavbarSelect from "../navbar/TransitionNavbarSelect";
+import ScreenHeader from "./ScreenHeader";
+import ActionArtistDetailsOnBack from "../../actions/ActionArtistDetailsOnBack";
 
 
 class ArtistDetailsScreen extends PureComponent {
@@ -17,7 +16,11 @@ class ArtistDetailsScreen extends PureComponent {
     }
 
     render() {
+        const context =  LauncherController.getInstance().context
         const item = LauncherController.getInstance().context.artistFocusItem
+
+
+        BackHandler.addEventListener('hardwareBackPress',() => { ActionArtistDetailsOnBack(); return true; })
 
         console.log("Setting Reference")
         LauncherController.getInstance().artistStackData[1].screenComponentRef = this;
@@ -112,7 +115,10 @@ class ArtistDetailsScreen extends PureComponent {
                                             opacity: 1.0
                                         }}
                                         visualProperties={{ alpha: 0.7, x: 0, y: 0, z: 0 }}
-                                        onSelect={() => { ActionOpenSocialMediaApp(itemData.provider, itemData.account) }}
+                                        onSelect={() => { 
+                                            context.navigationHistory.push({out:"ArtistDetailsScreen", transition: "ActionOpenSocialMediaApp"});
+                                            ActionOpenSocialMediaApp(itemData.provider, itemData.account)
+                                         }}
                                         source={itemData.imgSrc}
                                         text={''}
                                     />
@@ -160,18 +166,18 @@ class ArtistDetailsScreen extends PureComponent {
                                 opacity: 0.9
                             }}
                             visualProperties={{ alpha: 1, x: 0, y: 0, z: 0 }}
-                            onSelect={() => { TransitionArtistNavigateDown(LauncherController.getInstance().context.artistFocusItem,0) }}
-                            text={'BACK'}
-                            fontStyle={{
-                                width:40,
-                                top:42,
-                                fontFamily: 'Arcon-Regular',
-                                textAlign: 'center',
-                                letterSpacing: 1.7,
-                                color: '#f8f6d3',
-                                fontSize: 7,
+                            onSelect={() => { ActionArtistDetailsOnBack(); }}
+                            // text={'BACK'}
+                            // fontStyle={{
+                            //     width:40,
+                            //     top:42,
+                            //     fontFamily: 'Arcon-Regular',
+                            //     textAlign: 'center',
+                            //     letterSpacing: 1.7,
+                            //     color: '#f8f6d3',
+                            //     fontSize: 7,
                               
-                            }}
+                            // }}
                             source={require('../../../assets/stack-backicon.png')}
                         />
             </>

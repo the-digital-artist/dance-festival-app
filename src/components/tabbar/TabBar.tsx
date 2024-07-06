@@ -14,10 +14,10 @@ const TabBar = (props) => {
     // ]
 
 
-    let itemWidth = 110;
+    let itemWidth = Dimensions.get('screen').width / 2-20;
+    let itemSpread = Dimensions.get('screen').width / 2-30
     let itemHeight = 43;
     let itemHeightSelectedOffset = 10;
-    let itemSpread = 100
     let startX = (Dimensions.get('screen').width / 2 - ((tabBarData.length - 1) * itemSpread) / 2) - itemWidth / 2
 
     const currentIndex = useSharedValue(0);

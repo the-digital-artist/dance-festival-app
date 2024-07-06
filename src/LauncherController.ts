@@ -17,6 +17,8 @@ class LauncherController extends OperatorStates {
             sessionListCount: 0,
             sessionListReference: null,
 
+            navigationHistory: [{out:"HomeScreen", transition: "initial"}],
+
             artistListReference: null,
 
             focusedItemData: {
@@ -180,7 +182,7 @@ class LauncherController extends OperatorStates {
     navBarData =
         [
             { id: 0, itemText: "Home", associatedScreenName: "homeScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_home.png') },
-            { id: 1, itemText: "Schedule", associatedScreenName: "sessionScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_planner.png') },
+            { id: 1, itemText: "Workshops", associatedScreenName: "sessionScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_planner.png') },
             { id: 3, itemText: "Artists", associatedScreenName: "artistsMainScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_artists.png') },
             { id: 4, itemText: "More", associatedScreenName: "settingsScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_settings.png') }
         ]

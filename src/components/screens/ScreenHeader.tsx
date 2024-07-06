@@ -20,7 +20,7 @@ const ScreenHeader = (props) => {
           width: Dimensions.get('screen').width,
           height: (Dimensions.get('screen').width * (350 / 1290)),
           resizeMode: "contain",
-          opacity: 0.1
+          opacity: 0.0
         }}
         source={require('../../../assets/tabbar/tabbar_bg.png')}
       />
@@ -28,12 +28,12 @@ const ScreenHeader = (props) => {
         style={[{
           top: 55, left: 30,
           width: Dimensions.get('screen').width - 40, height: 32,
-          fontFamily: 'RobotoCondensed-Medium',
+          fontFamily: 'LuckiestGuy-Regular',
           // backgroundColor: 'skyblue',
-          letterSpacing: 1.5,
+          letterSpacing: 2.4,
           textAlign: 'left',
           color: props.color,
-          fontSize: 26,
+          fontSize: 23,
         }, props.textStyle]}>
         {props.text}
       </Text>

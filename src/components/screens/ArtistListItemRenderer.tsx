@@ -1,6 +1,7 @@
 import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 import ButtonSmall from '../ButtonSmall';
 import TransitionArtistNavigateDown from '../../transitions/TransitionArtistNavigateDown';
+import LauncherController from '../../LauncherController';
 
 const ArtistListItemRenderer = ({ item, index }) => {
   const centerPieceWidth = Dimensions.get('screen').width - (5 + 45 + 35 + 35 + 5)
@@ -84,7 +85,10 @@ const ArtistListItemRenderer = ({ item, index }) => {
                 fontSize: 10,
               }}
               visualProperties={{ alpha: 1 }}
-              onSelect={() => { TransitionArtistNavigateDown(item, 1) }}
+              onSelect={() => { 
+                LauncherController.getInstance().context.navigationHistory.push({out:'ArtistListScreen', transition:'TransitionArtistNavigateDown' })
+                TransitionArtistNavigateDown(item, 1) 
+              }}
             />
           }
         </>

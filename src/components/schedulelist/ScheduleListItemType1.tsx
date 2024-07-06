@@ -8,6 +8,7 @@ import TransitionLinkToArtistPage from '../../transitions/TransitionLinkToArtist
 import TransitionScheduleItemFavSelect from '../../transitions/TransitionScheduleItemFavSelect';
 import ButtonSmall from '../ButtonSmall';
 import ScheduleItemToggle from './ScheduleItemToggle';
+import LauncherController from '../../LauncherController';
 
 
 class ScheduleListItemType1 extends PureComponent<any, any> {
@@ -49,7 +50,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     const artistData2 = item.artistTwo ? DataModel.dataArtists[item.artistTwo] : null;
 
     const itemHeight = item.rowHeight != undefined ? item.rowHeight : 100;
-    const roomBoxOffsetY =  20 
+    const roomBoxOffsetY = 20
     const verticalOffsetTitleLength = item.lineCount != undefined ? (item.lineCount * 19) : 19;
 
     const imageWidthArtistImagex1 = this.props.tileWidth / (2.0) * (160 / 305);
@@ -59,7 +60,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     const imageOffsetXRArtistImage = 10;
     const imageOffsetXLArtistImage = 10;
     const fontSizeMainTitle = this.props.tileWidth * (17 / 305);
-    const fontSizeArtistName = this.props.tileWidth * (14 / 305) 
+    const fontSizeArtistName = this.props.tileWidth * (14 / 305)
 
     // console.log("ScheduleListItemType1 tileLength " + this.props.tileWidth + " artistImageWidth: "+ imageWidthArtistImage);
 
@@ -143,7 +144,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
           <LComponent
             name={"ScheduleItemHighlight" + item.id}
             style={{
-              backgroundColor: '#313442',
+              backgroundColor: '#615a83',
             }}
             visualProperties={{ alpha: 0, x: 3, y: 0, h: (itemHeight - 30 - 3), w: this.props.tileWidth - 6 }}
           />
@@ -181,7 +182,8 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                   left: (item.orientation == 'left' ? (imageWidthArtistImagex2 + imageOffsetXLArtistImage - 10) : undefined),
                   width: imageWidthArtistImagex2,
                   height: imageWidthArtistImagex2,
-                  resizeMode: 'cover'
+                  resizeMode: 'cover',
+                  opacity:0.9,
                 }, this.props.dynamicVisualProperties1]}
               />
             }
@@ -194,7 +196,8 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                 left: (item.orientation == 'left' ? imageOffsetXLArtistImage : undefined),
                 width: (artistData2 ? imageWidthArtistImagex2 : imageWidthArtistImagex1),
                 height: (artistData2 ? imageWidthArtistImagex2 : imageWidthArtistImagex1),
-                resizeMode: 'cover'
+                resizeMode: 'cover',
+                opacity:0.9,
               }, this.props.dynamicVisualProperties1]}
             />
 
@@ -221,8 +224,8 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               top: (40 + verticalOffsetTitleLength),
               right: (item.orientation == 'right' ? undefined : (4 + 35)),
               left: (item.orientation == 'left' ? undefined : (4 + 35)),
-              height: fontSizeArtistName*2.5,
-              width: this.props.tileWidth - 35 - 4 - 10-imageWidthArtistImagex1,
+              height: fontSizeArtistName * 2.5,
+              width: this.props.tileWidth - 35 - 4 - 10 - imageWidthArtistImagex1,
               fontFamily: 'RobotoCondensed-Medium',
               letterSpacing: 1.2,
               // backgroundColor: 'indigo',
@@ -232,6 +235,25 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
             }}>
               {item.artistName ? (item.artistName as string).toLocaleUpperCase() : ""}
             </Text >
+
+
+            {item.levelSpecial1 != undefined && item.levelSpecial1 == '1' && levelData[levelId] != undefined &&
+              <Image
+                source={require('../../../assets/scheduler-levelicon-specialdrums.png')}
+                style={{
+                  // backgroundColor: 'greenyellow',
+                  position: 'absolute',
+                  top: (40 + verticalOffsetTitleLength),
+                  right: (item.orientation == 'right' ? undefined : (levelData[levelId].textWidth + 40)),
+                  left: (item.orientation == 'left' ? undefined : (levelData[levelId].textWidth + 40)),
+                  width: levelImageSize * 1.4,
+                  height: levelImageSize * 1.4,
+                  resizeMode: 'cover'
+                }}>
+              </Image>
+            }
+
+
 
             {levelData[levelId] != undefined &&
               <>
@@ -319,6 +341,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                 visualProperties={{ alpha: 1 }}
                 onSelect={() => {
                   if (artistData1 == undefined) return;
+                  LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage" });
                   TransitionLinkToArtistPage(artistData1)
                 }}
               />
