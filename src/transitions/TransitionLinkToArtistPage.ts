@@ -14,7 +14,6 @@ const TransitionLinkToArtistPage = (artistData) => {
         let context = LauncherController.getInstance().context;
 
         LauncherController.getInstance().context.artistFocusItem = artistData;
-        // TransitionArtistNavigateDown(artistData, 0);
 
         TransitionNavbarSelect(2);
 
@@ -22,11 +21,12 @@ const TransitionLinkToArtistPage = (artistData) => {
                 { animated: true, index: artistData.index, viewOffset: 0, viewPosition: 0 }
         );
 
+        TransitionArtistNavigateDown(artistData, 0); 
         TweenManager.tween().to("settingsScreenContainer", 0, {
-                alpha: 1, delay: 500, onComplete:
+                alpha: 1, delay: 600, onComplete:
                         (ok) => {
 
-                                // TransitionArtistNavigateDown(LauncherController.getInstance().context.artistFocusItem, 1);
+                                TransitionArtistNavigateDown(LauncherController.getInstance().context.artistFocusItem, 1);
                         }
         });
 
