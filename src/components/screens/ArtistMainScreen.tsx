@@ -2,9 +2,7 @@ import React, { PureComponent } from "react";
 import ArtistListScreen from "./ArtistListScreen";
 import LComponent from "../../core/LComponent";
 import { Dimensions, Platform, View } from "react-native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ArtistDetailsScreen from "./ArtistDetailsScreen";
-import { NavigationContainer } from '@react-navigation/native';
 import LauncherController from "../../LauncherController";
 import ScreenHeader from "./ScreenHeader";
 import HeaderNavigator from "./HeaderNavigator";
@@ -18,26 +16,26 @@ class ArtistMainScreen extends PureComponent {
 
     render() {
 
-        const stack = createNativeStackNavigator();
-        const headerOptions: any = {
-            // headerTitle: (props) => <HeaderNavigator {...props} />
-            // title: 'ARTIST PAGES',
-            headerBackVisible: true,
-            headerBackTitleVisible: false,
-            headerTransparent: true,
-            headerStyle: {
-                backgroundColor: '#3f414d',
-                fontFamily: "RobotoCondensed-Regular",
-                fontWeight: 'bold',
-                fontSize: 26,
-            },
-            headerTintColor: '#ffffff',
-            headerTitleStyle: {
-                fontFamily: "RobotoCondensed-Regular",
-                fontWeight: 'normal',
-                fontSize: 26,
-            },
-        }
+        // const stack = createNativeStackNavigator();
+        // const headerOptions: any = {
+        //     // headerTitle: (props) => <HeaderNavigator {...props} />
+        //     // title: 'ARTIST PAGES',
+        //     headerBackVisible: true,
+        //     headerBackTitleVisible: false,
+        //     headerTransparent: true,
+        //     headerStyle: {
+        //         backgroundColor: '#3f414d',
+        //         fontFamily: "RobotoCondensed-Regular",
+        //         fontWeight: 'bold',
+        //         fontSize: 26,
+        //     },
+        //     headerTintColor: '#ffffff',
+        //     headerTitleStyle: {
+        //         fontFamily: "RobotoCondensed-Regular",
+        //         fontWeight: 'normal',
+        //         fontSize: 26,
+        //     },
+        // }
 
         return (
             <>
