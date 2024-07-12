@@ -10,13 +10,16 @@ import * as Application from 'expo-application';
 import ActionMoreDownloadPdf from "../../actions/ActionMoreDownloadPdf";
 import ActionMoreContactAppDev from "../../actions/ActionMoreContactAppDev";
 import ActionMoreContactFestival from "../../actions/ActionMoreContactFestival";
+import NavBar from "../navbar/NavBar";
+import ActionMoreNewsletterSignup from "../../actions/ActionMoreNewsletterSignup";
 
 class SettingsScreen extends PureComponent {
 
     static settingsItemRendererHeight = 50;
     static settingsListData = [
-        // { title: "Download Full Schedule as PDF", action: ActionMoreDownloadPdf },
-        // { title: "Contact QALDF Organizers", action: ActionMoreContactFestival},
+        { title: "Get Your Pa'Ti Ticket", action: ActionMoreDownloadPdf },
+        { title: "Contact Festival Organizers", action: ActionMoreContactFestival},
+        { title: "Sign-up for our Newsletter", action: ActionMoreNewsletterSignup},
         // { title: `Contact App Creator`, action: ActionMoreContactAppDev },
         // { title: "About App" }
     ]
@@ -37,6 +40,7 @@ class SettingsScreen extends PureComponent {
         let itemDistance = 60
         let startX = (Dimensions.get('screen').width / 2 - ((socialBarData.length - 1) * itemDistance) / 2) - iconSize / 2
 
+        const socialBarOffsetY = 500;
         return (
             <LComponent
                 name='settingsScreenContainer'
@@ -79,7 +83,7 @@ class SettingsScreen extends PureComponent {
 
                 {/* FIRST LIST with Settings and Contact Items */}
 
-                {/* <View style={{
+                <View style={{
                     position: 'absolute',
                     backgroundColor: '#1c1919',
                     left: 0, top: 290,
@@ -87,10 +91,10 @@ class SettingsScreen extends PureComponent {
                     height: (SettingsScreen.settingsItemRendererHeight * SettingsScreen.settingsListData.length + 2 * 5),
                     opacity: 0.4,
                 }}
-                /> */}
+                />
 
 
-                {/* <FlatList
+                <FlatList
                     style={{
                         position: 'absolute',
                         // backgroundColor: '#1c1919',
@@ -102,13 +106,13 @@ class SettingsScreen extends PureComponent {
                     // contentContainerStyle={{borderRadius: 6, overflow: 'hidden'}}
                     data={SettingsScreen.settingsListData}
                     renderItem={SettingsItemRenderer}
-                /> */}
+                />
 
 
 
                 <Text allowFontScaling={false} id='textList1' style={[{
                     position: 'absolute',
-                    top: 390,
+                    top: socialBarOffsetY,
                     left: 0,
                     height: 15,
                     width: Dimensions.get('screen').width,
@@ -134,7 +138,7 @@ class SettingsScreen extends PureComponent {
                                 style={{
                                     // backgroundColor: 'skyblue',
                                     position: 'absolute',
-                                    top: 420, left: (startX + (i * itemDistance)),
+                                    top: socialBarOffsetY+30, left: (startX + (i * itemDistance)),
                                     width: iconSize, height: iconSize,
                                     opacity: 1.0
                                 }}
@@ -159,7 +163,7 @@ class SettingsScreen extends PureComponent {
 
                 <Text allowFontScaling={false} id='version' style={[{
                     position: 'absolute',
-                    top: (290+65),
+                    bottom: (NavBar.navBarHeight+20),
                     left: 45,
                     height: 80,
                     width: Dimensions.get('screen').width - (45 * 2),

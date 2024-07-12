@@ -2,12 +2,10 @@ import React, { Fragment, PureComponent } from "react";
 import { BackHandler, Dimensions, Image, Platform, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import LauncherController from "../../LauncherController";
-import ActionOpenSocialMediaApp from "../../actions/ActionOpenSocialMediaApp";
-import TransitionArtistNavigateDown from "../../transitions/TransitionArtistNavigateDown";
-import ButtonSmall from "../ButtonSmall";
-import TransitionNavbarSelect from "../navbar/TransitionNavbarSelect";
-import ScreenHeader from "./ScreenHeader";
 import ActionArtistDetailsOnBack from "../../actions/ActionArtistDetailsOnBack";
+import ActionOpenSocialMediaApp from "../../actions/ActionOpenSocialMediaApp";
+import ButtonSmall from "../ButtonSmall";
+import ScreenHeader from "./ScreenHeader";
 
 
 class ArtistDetailsScreen extends PureComponent {
@@ -22,12 +20,12 @@ class ArtistDetailsScreen extends PureComponent {
 
         BackHandler.addEventListener('hardwareBackPress',() => { ActionArtistDetailsOnBack(); return true; })
 
-        console.log("Setting Reference")
+        // console.log("Setting Reference")
         LauncherController.getInstance().artistStackData[1].screenComponentRef = this;
 
         const scrollViewContent =
             Platform.OS == 'ios' ?
-                (item.bio as string).length / 1100 * 1.2 * Dimensions.get('screen').height :
+                (item.bio as string).length / 1100 * 1.3 * Dimensions.get('screen').height :
                 (item.bio as string).length / 1100 * 1.5 * Dimensions.get('screen').height;
 
         let socialBarData = [
@@ -81,7 +79,7 @@ class ArtistDetailsScreen extends PureComponent {
                                 textAlign: 'center',
                                 letterSpacing: 1.7,
                                 color: '#48423b',
-                                fontSize: 16,
+                                fontSize: 17,
                             }}>
                                 {(item.fullName as string).toLocaleUpperCase()}
                             </Text>

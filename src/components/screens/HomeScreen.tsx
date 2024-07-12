@@ -8,46 +8,15 @@ import NavBar from "../navbar/NavBar";
 import ScreenHeader from "./ScreenHeader";
 import TransitionLinkToSchedule from "../../transitions/TransitionLinkToSchedule";
 import { BlurView } from "expo-blur";
+import DataModel from "../../DataModel";
+import ActionOpenMaps from "../../actions/ActionOpenMaps";
+import { opacity } from "react-native-reanimated/lib/typescript/reanimated2/Colors";
 
 
 class HomeScreen extends PureComponent<any, any> {
     scrollViewRef = null;
     itemHeight = Dimensions.get('screen').width * 0.75 * (556 / 980);
     itemSpacingY = 10;
-
-    dataStyles = {
-        'type3': { note: 'bootcamp', imgSrc: require('../../../assets/tile-fullprogram-itembg4.png'), imgSrcLocation: require('../../../assets/tile-fullprogram-locationicon.png'), color1: '#312816', color2: '#f8f6d3', color3: '#010101' },
-        'type1': { note: 'workshops', imgSrc: require('../../../assets/tile-fullprogram-itembg1.png'), imgSrcLocation: require('../../../assets/tile-fullprogram-locationicon.png'), color1: '#312816', color2: '#312816', color3: '#f8f6d3' },
-        'type2': { note: 'city', imgSrc: require('../../../assets/tile-fullprogram-itembg3.png'), imgSrcLocation: require('../../../assets/tile-fullprogram-locationicon.png'), color1: '#f8f6d3', color2: '#312816', color3: '#FFFFFF' },
-        'type4': { note: 'party', imgSrc: require('../../../assets/tile-fullprogram-itembg2.png'), imgSrcLocation: require('../../../assets/tile-fullprogram-locationicon.png'), color1: '#f8f6d3', color2: '#f2aa3e', color3: '#FFFFFF' },
-    }
-    dataLocation = {
-        'altemuenze': { imgSrc: require('../../../assets/location-icons/location-alte-muenze.png'), locationName: `Alte Münze` },
-        'bebop': { imgSrc: require('../../../assets/location-icons/location-bebop.png'), locationName: `Bebop` },
-        'belushis': { imgSrc: require('../../../assets/location-icons/location-belushis.png'), locationName: `Belushi's Mitte`, },
-        'berlindanceinstitute': { imgSrc: require('../../../assets/location-icons/location-berlin-dance-institute.png'), locationName: `Berlin Dance Institute` },
-        'soda': { imgSrc: require('../../../assets/location-icons/location-soda.png'), locationName: `Soda Club` },
-        'unknown': { imgSrc: require('../../../assets/location-icons/location-unknown.png'), locationName: `Location to be announced` },
-
-    }
-    dataModel = [
-        // { id: 0, type: 'type5', title: 'EMPTY', dateText: "", timeText: "", location: '', locationAdress: '', tickets: [], startTime: '', endTime: '', description: "" },
-        { id: 2, type: 'type4', title: 'PREPARTY', dateText: "Thu, 18.07.24", timeText: "20:15 - 01:00", location: 'soda', locationAdress: 'Schönhauser Allee 36, 10435 Berlin', tickets: ['Berlin Experience Ticket', "All-Inclusive Pass,"], startTime: '', endTime: '', description: "Join us for a social dance extravaganza across 5 dancefloors featuring Salsa Cubana, Mambo, Bachata, Zouk, and Kizomba." },
-        { id: 3, type: 'type2', title: 'CITY TOUR', dateText: "Fri, 19.07.24", timeText: "13:15 - 15:30", location: 'unknown', tickets: ['Berlin Experience Ticket', "All-Inclusive Pass,"], startTime: '', endTime: '', description: "Two-hour city tour through Berlin's historic city center. Dance some Ruedas at iconic landmarks and immerse yourself in the city's rich history and culture. Our experienced filmmaker will capture these joyous moments, filming you as you dance in front of Berlin's most famous sights, creating lasting memories and stunning footage." },
-        { id: 4, type: 'type4', title: 'ROOFTOP SOCIAL', dateText: "Fri, 19.07.24", timeText: "15:30 - 20:00", location: `belushis`, locationAdress: 'Ziegelstraße 28, 10117 Berlin', tickets: ['Berlin Experience Ticket', "All-Inclusive Pass,"], startTime: '', endTime: '', description: "Lively Dance-Social on a breathtaking rooftop in the city center. Enjoy the spectacular summer evening sky, savor ice-cold drinks and dance the afternoon away in a beautiful, relaxed atmosphere." },
-        { id: 5, type: 'type3', title: 'Beginner Bootcamp', dateText: "Fri, 19.07.24", timeText: "18:00 - 20:30", location: 'bebop', locationAdress: 'Pfuelstraße 5, 10997 Berlin', tickets: ['Berlin Experience Ticket', "All-Inclusive Pass,"], startTime: '', endTime: '', description: "Lively Dance-Social on a breathtaking rooftop in the city center. Enjoy the spectacular summer evening sky, savor ice-cold drinks and dance the afternoon away in a beautiful, relaxed atmosphere." },
-        { id: 6, type: 'type4', title: 'Welcome Party', dateText: "Fri, 19.07.24", timeText: "21:00 - 03:00", location: 'bebop', locationAdress: 'Pfuelstraße 5, 10997 Berlin', tickets: ['Berlin Experience Ticket', "All-Inclusive Pass,"], startTime: '', endTime: '', description: "Official Festival Party\n  21:00 - 22:00: Preparty Workshop\n  22:00 - 03:00: Party" },
-        { id: 7, type: 'type1', title: 'Workshops', dateText: "Sat, 20.07.24", timeText: "11:00 - 18:00", location: 'berlindanceinstitute', locationAdress: 'Egelingzeile 6, 12103 Berlin', tickets: ['Berlin Experience Ticket', "All-Inclusive Pass,"], startTime: '', endTime: '', description: "50+ workshops spanning five rooms over two days" },
-        { id: 8, type: 'type4', title: 'Gala Party', dateText: "Sat, 20.07.24", timeText: "21:00 - 04:00", location: 'altemuenze', locationAdress: 'Molkenmarkt 2, 10179 Berlin', tickets: ['Berlin Experience Ticket', "All-Inclusive Pass,"], startTime: '', endTime: '', description: " 21:00 - 22:00: Preparty Workshop\n 22:00 - 04:00: Gala Party\n 23:00: Orishas Show & Rumba Abierta" },
-        { id: 9, type: 'type1', title: 'Workshops', dateText: "Sun, 21.07.24", timeText: "11:00 - 18:00", location: 'berlindanceinstitute', locationAdress: 'Egelingzeile 6, 12103 Berlin', tickets: ['Berlin Experience Ticket', "All-Inclusive Pass,"], startTime: '', endTime: '', description: "50+ workshops spanning five rooms over two days" },
-        { id: 10, type: 'type4', title: 'Goodbye Party', dateText: "Sun, 21.07.24", timeText: "20:15 - 01:00", location: 'soda', locationAdress: 'Schönhauser Allee 36, 10435 Berlin', tickets: ['Berlin Experience Ticket', "All-Inclusive Pass,"], startTime: '', endTime: '', description: "Special:  23:00: Show" },
-        { id: 11, type: 'type5', title: 'EMPTY', dateText: "", timeText: "", location: '', locationAdress: '', tickets: [], startTime: '', endTime: '', description: "" },
-        { id: 12, type: 'type5', title: 'EMPTY', dateText: "", timeText: "", location: '', locationAdress: '', tickets: [], startTime: '', endTime: '', description: "" },
-
-    ]
-
-
-
 
     constructor(props) {
         super(props);
@@ -76,7 +45,6 @@ class HomeScreen extends PureComponent<any, any> {
         const happeningNowTileItemHeight = 50;
         const happeningNowTileHeight = (this.state.activeItems.length - 1) * (happeningNowTileItemHeight);
         const happeningNowTotalDistance = 130 + happeningNowTileHeight + 50;
-
         // console.log("ScreenHeight: "+Dimensions.get("screen").height+" Content Space: "+contentSpace)
 
 
@@ -87,8 +55,6 @@ class HomeScreen extends PureComponent<any, any> {
                     style={{ position: 'absolute' }}
                     visualProperties={{ alpha: 1.0, x: 0, y: 0, z: 0, w: "windowWidth", h: "windowHeight" }}
                 >
-
-
                     <Image
                         style={{
                             // backgroundColor: 'skyblue',
@@ -99,15 +65,6 @@ class HomeScreen extends PureComponent<any, any> {
                         }}
                         source={require('../../../assets/screen-home-bg.png')}
                     />
-                    {/* <Image
-                    source={require('../../../assets/logo-full.png')}
-                    style={{
-                        position: 'absolute', resizeMode: 'contain', opacity: 1.0,
-                        left: (Dimensions.get('screen').width -200) / 2, top: 100,
-                        width: Dimensions.get('screen').width - (2 * 80),
-                        height: Dimensions.get('screen').width - (2 * 80) * 800 / 768,
-                    }}
-                /> */}
                     <Image
                         source={require('../../../assets/logo-white.png')}
                         style={{
@@ -135,14 +92,12 @@ class HomeScreen extends PureComponent<any, any> {
                         }}
                     >
 
-
-
                         <View
                             style={{
                                 top: 240 + this.itemSpacingY,
                                 // backgroundColor:'red',
                                 width: Dimensions.get("screen").width,
-                                height: this.itemHeight * this.dataModel.length,
+                                height: this.itemHeight * DataModel.dataModelProgram.length,
                             }}>
                             {Platform.OS == "ios" && <BlurView
                                 intensity={17}
@@ -153,7 +108,7 @@ class HomeScreen extends PureComponent<any, any> {
                                     left: 0,
                                     top: 5,
                                     width: Dimensions.get("screen").width,
-                                    height: this.itemHeight * this.dataModel.length-5,
+                                    height: this.itemHeight * DataModel.dataModelProgram.length - 5,
 
                                 }} />
                             }
@@ -173,7 +128,7 @@ class HomeScreen extends PureComponent<any, any> {
                             </Text>
 
 
-                            {this.dataModel.map((itemData, i) => {
+                            {DataModel.dataModelProgram.map((itemData, i) => {
                                 return (
                                     <View
                                         key={itemData.id + i + ""}
@@ -189,7 +144,7 @@ class HomeScreen extends PureComponent<any, any> {
                                         {itemData.type != 'type5' &&
                                             <>
                                                 <Image
-                                                    source={this.dataStyles[itemData.type].imgSrc}
+                                                    source={DataModel.dataStyles[itemData.type].imgSrc}
                                                     style={{
                                                         position: 'absolute',
                                                         resizeMode: 'cover',
@@ -201,11 +156,11 @@ class HomeScreen extends PureComponent<any, any> {
                                                     }}
                                                 />
                                                 <Image
-                                                    source={this.dataStyles[itemData.type].imgSrc}
+                                                    source={DataModel.dataStyles[itemData.type].imgSrc}
                                                     style={{
                                                         position: 'absolute',
                                                         resizeMode: 'cover',
-                                                        opacity: 0.2,
+                                                        opacity: 0.1,
                                                         top: 0,
                                                         left: Dimensions.get("screen").width * 0.75 - 20,
                                                         width: Dimensions.get("screen").width * 0.25 + 20,
@@ -221,7 +176,7 @@ class HomeScreen extends PureComponent<any, any> {
                                                     fontFamily: 'LuckiestGuy-Regular',
                                                     letterSpacing: 2.0,
                                                     fontSize: 20,
-                                                    color: (this.dataStyles[itemData.type].color1),
+                                                    color: (DataModel.dataStyles[itemData.type].color1),
                                                     // backgroundColor: 'skyblue',
                                                     textAlign: 'left',
                                                 }]}>
@@ -238,7 +193,7 @@ class HomeScreen extends PureComponent<any, any> {
                                                     fontFamily: 'RobotoCondensed-Medium',
                                                     letterSpacing: 0.5,
                                                     fontSize: 13,
-                                                    color: (this.dataStyles[itemData.type].color2),
+                                                    color: (DataModel.dataStyles[itemData.type].color2),
                                                     // backgroundColor: 'blue',
                                                     textAlign: 'left',
 
@@ -248,15 +203,15 @@ class HomeScreen extends PureComponent<any, any> {
                                                 <Text allowFontScaling={false} id='textDateTime' style={[{
                                                     position: 'absolute',
                                                     top: 20,
-                                                    right: 7,
+                                                    right: 15,
                                                     width: Dimensions.get("screen").width * 0.25 - 15,
-                                                    height: this.itemHeight,
+                                                    height: 38,
                                                     fontFamily: 'RobotoCondensed-Medium',
                                                     // letterSpacing: 1.0,
                                                     fontSize: 14,
                                                     color: '#fdface',
                                                     // backgroundColor: 'indigo',
-                                                    textAlign: 'right',
+                                                    textAlign: 'center',
 
                                                 }]}>
                                                     {itemData.dateText + "\n" + itemData.timeText}
@@ -271,7 +226,7 @@ class HomeScreen extends PureComponent<any, any> {
                                                     letterSpacing: 0.5,
                                                     
                                                     fontSize: 12,
-                                                    color: (this.dataStyles[itemData.type].color3),
+                                                    color: (DataModel.dataStyles[itemData.type].color3),
                                                     opacity: 1.0,
                                                     // backgroundColor: 'black',
                                                     textAlign: 'left',
@@ -281,72 +236,106 @@ class HomeScreen extends PureComponent<any, any> {
                                                 </Text> */}
                                                 <ButtonSmall
                                                     name={("homeTileLocationButton" + i)}
-                                                    source={(this.dataStyles[itemData.type].imgSrcLocation)}
+                                                    source={DataModel.dataLocation[itemData.location].imgSrc}
                                                     style={{
                                                         position: 'absolute',
-                                                        left: 20,
-                                                        bottom: 22,
-                                                        height: 22, width: 22,
+                                                        // backgroundColor: 'red',
+                                                        top: 60,
+                                                        left:  Dimensions.get("screen").width * 0.75-10,
+                                                        width: Dimensions.get("screen").width * 0.25,
+                                                        height: 40,
                                                     }}
                                                     bgBoxVisible={false}
                                                     bgBoxStyle={{
-                                                        backgroundColor: (this.dataStyles[itemData.type].color1),
-                                                        height: 22, width: 22
+                                                        backgroundColor: (DataModel.dataStyles[itemData.type].color2),
+                                                        height: 30, width: 200
                                                     }}
-                                                    text={this.dataLocation[itemData.location].locationName}
+                                                    text={DataModel.dataLocation[itemData.location].locationName}
                                                     fontStyle={{
-                                                        left: 20,
-                                                        width: 200,
-                                                        textAlign: 'left',
+                                                        width: Dimensions.get("screen").width * 0.25, 
+                                                        height: 45,
+                                                        top: 40, 
+                                                        left:0,
+                                                        textAlign: 'center',
                                                         fontFamily: 'RobotoCondensed-Medium',
-                                                        letterSpacing: 0.5,
-                                                        fontSize: 12,
-                                                        color: (this.dataStyles[itemData.type].color3),
+                                                        letterSpacing: 0,
+                                                        // backgroundColor: 'skyblue',
+                                                        fontSize: 11,
+                                                        textAlignVertical: 'center',
+                                                        color: '#fdface',
                                                     }}
                                                     visualProperties={{ alpha: 1 }}
-                                                    onSelect={() => {
-                                                        // LauncherController.getInstance().context.navigationHistory.push({out:'ArtistListScreen', transition:'TransitionArtistNavigateDown' })
-                                                        // TransitionArtistNavigateDown(item, 1) 
-                                                    }}
+                                                    onSelect={() => { if(itemData.location!='unknown') ActionOpenMaps(DataModel.dataLocation[itemData.location].mapObj) }}
                                                 />
 
-                                                <Image
-                                                    source={this.dataLocation[itemData.location].imgSrc}
+                                               { itemData.location!='unknown' &&
+                                                <ButtonSmall
+                                                    name={("homeTileLocationButton2" + i)}
+                                                    // source={DataModel.dataLocation[itemData.location].imgSrc}
                                                     style={{
                                                         position: 'absolute',
-                                                        resizeMode: 'cover',
-                                                        opacity: 0.3,
+                                                        top: (DataModel.dataLocation[itemData.location].locationName.length>25?147:130),
+                                                        right: 15,
+                                                        width: 90,
+                                                        height: 22,
+                                                    }}
+                                                    text={"OPEN MAPS"}
+                                                    bgBoxVisible={true}
+                                                    bgBoxStyle={{
+                                                      backgroundColor: '#121212',
+                                                      height: 22, width: 90,
+                                                      opacity:0.5
+                                                    }}
+                                                    fontStyle={{
+                                                        height: 22, width: 90,
+                                                      fontFamily: 'Cabin-Regular',
+                                                      textAlign: 'center',
+                                                      textAlignVertical: 'center',
+                                                      letterSpacing: 2.0,
+                                                      color: '#fdface',
+                                                      fontSize: 9,
+                                                    }}
+                                                    visualProperties={{ alpha: 1 }}
+                                                    onSelect={() => { ActionOpenMaps(DataModel.dataLocation[itemData.location].mapObj) }}
+                                                />
+                                            }
+
+                                                {/* <Image
+                                                    source={DataModel.dataLocation[itemData.location].imgSrc}
+                                                    style={{
+                                                        position: 'absolute',
+                                                        resizeMode: 'contain',
+                                                        opacity: 0.7,
                                                         bottom: 30,
                                                         right: 15,
                                                         width: 70,
-                                                        height: 20,
+                                                        height: 34,
                                                     }}
-                                                />
+                                                /> */}
 
                                                 {itemData.type == 'type1' &&
                                                     <ButtonSmall
                                                         name={("homeTileButtonToWorkshop" + i)}
-                                                        source={null}
+                                                        source={require('../../../assets/tile-fullprogram-workshopplanner.png')}
                                                         style={{
                                                             position: 'absolute',
                                                             left: 30,
-                                                            top: 90,
-                                                            height: 26, width: 200,
+                                                            top: 100,
+                                                            height: 26, width: 26,
                                                         }}
-                                                        text={"GO TO WORKSHOP PLANNER"}
+                                                        text={"Go To Workshop Planner"}
                                                         bgBoxVisible={true}
                                                         bgBoxStyle={{
-                                                            backgroundColor: (this.dataStyles[itemData.type].color3),
-                                                            height: 26, width: 200
+                                                            backgroundColor: (DataModel.dataStyles[itemData.type].color2),
+                                                            height: 30, width: 200
                                                         }}
                                                         fontStyle={{
                                                             width: 200,
-                                                            fontFamily: 'Cabin-Regular',
-                                                            textAlign: 'center',
+                                                            fontFamily: 'RobotoCondensed-Medium',
+                                                            letterSpacing: 0.5,
+                                                            fontSize: 14,
                                                             textAlignVertical: 'center',
-                                                            letterSpacing: 2.0,
-                                                            color: (this.dataStyles[itemData.type].color2),
-                                                            fontSize: 10,
+                                                            color: (DataModel.dataStyles[itemData.type].color3),
                                                         }}
                                                         visualProperties={{ alpha: 1 }}
                                                         onSelect={() => {
@@ -363,22 +352,6 @@ class HomeScreen extends PureComponent<any, any> {
                         </View>
 
 
-
-
-
-                        {/* <OverallProgramTile /> */}
-                        {/* <ScreenHeader text="WELCOME MY FRIEND" color='#FFFFFF' /> */}
-                        {/* <Image
-                        source={require('../../../assets/logo-white.png')}
-                        style={{
-                            position: 'absolute', resizeMode: 'contain', opacity: 1,
-                            right: 30, top: 45,
-                            width: 80,
-                            height: 80 * 815 / 1313,
-                        }}
-                    /> */}
-
-
                     </ScrollView>
 
                     {(Platform.OS == 'android') &&
@@ -392,10 +365,7 @@ class HomeScreen extends PureComponent<any, any> {
                             }} />
                     }
                 </LComponent>
-
-
             </>
-
         );
     }
     componentDidMount(): void {

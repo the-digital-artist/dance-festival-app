@@ -20,12 +20,17 @@ const TransitionNavbarSelect = (index) => {
 
 
         let screenNameIn = LauncherController.getInstance().navBarData[index].associatedScreenName
-        TweenManager.tween().to(screenNameIn, 200, { x: 0 });
+        TweenManager.tween().to(screenNameIn, 0, { y: 0, 
+                onComplete: (ok) => { TweenManager.tween().to(screenNameIn, 200, { x: 0 })} 
+               
+        });
         TweenManager.tween().to(screenNameIn, 284, { alpha: 1, z: 0, delay: 137 });
 
         let screenNameOut = LauncherController.getInstance().navBarData[oldIdx].associatedScreenName
         TweenManager.tween().to(screenNameOut, 134, { alpha: 0.5, z: 0 });
-        TweenManager.tween().to(screenNameOut, 200, { x: -targetX, initValue: 100 });
+        TweenManager.tween().to(screenNameOut, 200, { x: -targetX, initValue: 100, 
+                onComplete: (ok) => { TweenManager.tween().to(screenNameOut, 0, { y: Dimensions.get('screen').height });} 
+        });
 
         LauncherController.getInstance().navBarIndex = index;
 }

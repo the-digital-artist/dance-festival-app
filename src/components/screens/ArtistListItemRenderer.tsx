@@ -2,6 +2,8 @@ import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 import ButtonSmall from '../ButtonSmall';
 import TransitionArtistNavigateDown from '../../transitions/TransitionArtistNavigateDown';
 import LauncherController from '../../LauncherController';
+import LTouchableOpacity from '../../core/LTouchableOpacity';
+import ActionArtistListOnDetailsBtn from '../../actions/ActionArtistListOnDetailsBtn';
 
 const ArtistListItemRenderer = ({ item, index }) => {
   const centerPieceWidth = Dimensions.get('screen').width - (5 + 45 + 35 + 35 + 5)
@@ -11,22 +13,13 @@ const ArtistListItemRenderer = ({ item, index }) => {
   const imageSize = 100;
   const imageOffsetY = (itemHeight-imageSize)/2
 
-  // console.log(JSON.stringify(item, null, 2))
 
   return (
     <>
-      {/* <Image
-                    style={{
-                        // backgroundColor: 'skyblue',
-                        top: 5, left: 0, position: 'absolute',
-                        width: Dimensions.get('screen').width,
-                        height: (Dimensions.get('screen').width * (300 / 1290)),
-                        resizeMode: "contain",
-                        opacity: 0.1
-                    }}
-                    source={require('../../../assets/tabbar/tabbar_bg.png')}
-                /> */}
-      <View
+
+           
+      <LTouchableOpacity
+        name={("ArtistListItemRenderer"+index)}
         style={{
           backgroundColor: 'transparent',
           left: paddingLeftAndRight,
@@ -35,7 +28,9 @@ const ArtistListItemRenderer = ({ item, index }) => {
           borderTopWidth: 0,
           borderBottomColor: 'black',
           borderBottomWidth: StyleSheet.hairlineWidth,
-        }}>
+        }}
+        onPress={() => { ActionArtistListOnDetailsBtn(item)}}
+        >
 
         <>
           <Image
@@ -85,14 +80,11 @@ const ArtistListItemRenderer = ({ item, index }) => {
                 fontSize: 10,
               }}
               visualProperties={{ alpha: 1 }}
-              onSelect={() => { 
-                LauncherController.getInstance().context.navigationHistory.push({out:'ArtistListScreen', transition:'TransitionArtistNavigateDown' })
-                TransitionArtistNavigateDown(item, 1) 
-              }}
+              onSelect={() => { ActionArtistListOnDetailsBtn(item) }}
             />
           }
         </>
-      </View>
+      </LTouchableOpacity>
     </>
   );
 }

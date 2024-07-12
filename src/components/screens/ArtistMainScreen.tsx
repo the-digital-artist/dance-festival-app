@@ -1,11 +1,8 @@
 import React, { PureComponent } from "react";
-import ArtistListScreen from "./ArtistListScreen";
-import LComponent from "../../core/LComponent";
 import { Dimensions, Platform, View } from "react-native";
+import LComponent from "../../core/LComponent";
 import ArtistDetailsScreen from "./ArtistDetailsScreen";
-import LauncherController from "../../LauncherController";
-import ScreenHeader from "./ScreenHeader";
-import HeaderNavigator from "./HeaderNavigator";
+import ArtistListScreen from "./ArtistListScreen";
 
 
 class ArtistMainScreen extends PureComponent {
@@ -15,27 +12,6 @@ class ArtistMainScreen extends PureComponent {
     }
 
     render() {
-
-        // const stack = createNativeStackNavigator();
-        // const headerOptions: any = {
-        //     // headerTitle: (props) => <HeaderNavigator {...props} />
-        //     // title: 'ARTIST PAGES',
-        //     headerBackVisible: true,
-        //     headerBackTitleVisible: false,
-        //     headerTransparent: true,
-        //     headerStyle: {
-        //         backgroundColor: '#3f414d',
-        //         fontFamily: "RobotoCondensed-Regular",
-        //         fontWeight: 'bold',
-        //         fontSize: 26,
-        //     },
-        //     headerTintColor: '#ffffff',
-        //     headerTitleStyle: {
-        //         fontFamily: "RobotoCondensed-Regular",
-        //         fontWeight: 'normal',
-        //         fontSize: 26,
-        //     },
-        // }
 
         return (
             <>
@@ -83,15 +59,6 @@ class ArtistMainScreen extends PureComponent {
                     >
                         <ArtistDetailsScreen />
                     </LComponent>
-                    {/* <NavigationContainer>
-                        <stack.Navigator>
-                            <stack.Screen name="ARTIST PAGES" component={ArtistListScreen}
-                                options={headerOptions}
-                            />
-                            <stack.Screen name="ARTIST DETAILS" component={ArtistDetailsScreen}
-                                options={headerOptions} />
-                        </stack.Navigator>
-                    </NavigationContainer> */}
 
                     {(Platform.OS == 'android') &&
                         <View

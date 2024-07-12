@@ -6,7 +6,7 @@ import ButtonSmall from "../ButtonSmall";
 import ScheduleListItemType1 from "./ScheduleListItemType1";
 
 const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
-    console.log('ScheduleItemGroupRe render')
+    // console.log('ScheduleItemGroupRe render')
     const paddingLeftAndRight = 5;
 
     const tileWidth = Dimensions.get('screen').width - (2 * paddingLeftAndRight + 45 + 35 + 35)

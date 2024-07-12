@@ -52,6 +52,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     const itemHeight = item.rowHeight != undefined ? item.rowHeight : 100;
     const roomBoxOffsetY = 20
     const verticalOffsetTitleLength = item.lineCount != undefined ? (item.lineCount * 19) : 19;
+    const verticalOffsetLevel = (item.levelSpecial != undefined && item.levelSpecial == '1') ? 20 : 0
 
     const imageWidthArtistImagex1 = this.props.tileWidth / (2.0) * (160 / 305);
     const imageWidthArtistImagex2 = imageWidthArtistImagex1 * 0.7;
@@ -183,7 +184,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                   width: imageWidthArtistImagex2,
                   height: imageWidthArtistImagex2,
                   resizeMode: 'cover',
-                  opacity:0.9,
+                  opacity: 0.9,
                 }, this.props.dynamicVisualProperties1]}
               />
             }
@@ -197,7 +198,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                 width: (artistData2 ? imageWidthArtistImagex2 : imageWidthArtistImagex1),
                 height: (artistData2 ? imageWidthArtistImagex2 : imageWidthArtistImagex1),
                 resizeMode: 'cover',
-                opacity:0.9,
+                opacity: 0.9,
               }, this.props.dynamicVisualProperties1]}
             />
 
@@ -221,7 +222,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
 
             <Text allowFontScaling={false} id='textSessionArtistName' style={{
               position: 'absolute',
-              top: (40 + verticalOffsetTitleLength),
+              top: (40 + verticalOffsetTitleLength + verticalOffsetLevel),
               right: (item.orientation == 'right' ? undefined : (4 + 35)),
               left: (item.orientation == 'left' ? undefined : (4 + 35)),
               height: fontSizeArtistName * 2.5,
@@ -237,21 +238,6 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
             </Text >
 
 
-            {item.levelSpecial1 != undefined && item.levelSpecial1 == '1' && levelData[levelId] != undefined &&
-              <Image
-                source={require('../../../assets/scheduler-levelicon-specialdrums.png')}
-                style={{
-                  // backgroundColor: 'greenyellow',
-                  position: 'absolute',
-                  top: (40 + verticalOffsetTitleLength),
-                  right: (item.orientation == 'right' ? undefined : (levelData[levelId].textWidth + 40)),
-                  left: (item.orientation == 'left' ? undefined : (levelData[levelId].textWidth + 40)),
-                  width: levelImageSize * 1.4,
-                  height: levelImageSize * 1.4,
-                  resizeMode: 'cover'
-                }}>
-              </Image>
-            }
 
 
 
@@ -273,7 +259,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
 
                 <Text allowFontScaling={false} id='textSessionLevel' style={{
                   position: 'absolute',
-                  top: (26 + verticalOffsetTitleLength - 1),
+                  top: (25 + verticalOffsetTitleLength),
                   right: (item.orientation == 'right' ? undefined : (4 + 35)),
                   left: (item.orientation == 'left' ? undefined : (4 + 35)),
                   // height: levelImageSize,
@@ -287,6 +273,42 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                   fontSize: 9,
                 }}>
                   {levelData[levelId].text}
+                </Text >
+              </>
+            }
+
+            {item.levelSpecial != undefined && item.levelSpecial == '1' && levelData[levelId] != undefined &&
+              <>
+                <Image
+                  source={require('../../../assets/scheduler-levelicon-specialdrums.png')}
+                  style={{
+                    // backgroundColor: 'greenyellow',
+                    position: 'absolute',
+                    top: (40 + verticalOffsetTitleLength),
+                    right: (item.orientation == 'right' ? undefined : (levelData[levelId].textWidth + 47)),
+                    left: (item.orientation == 'left' ? undefined : (levelData[levelId].textWidth + 47)),
+                    width: levelImageSize * 1.4,
+                    height: levelImageSize * 1.4,
+                    resizeMode: 'cover'
+                  }}>
+                </Image>
+
+                <Text allowFontScaling={false} id='textSessionLevel' style={{
+                  position: 'absolute',
+                  top: (40 + verticalOffsetTitleLength),
+                  right: (item.orientation == 'right' ? undefined : (4 + 35)),
+                  left: (item.orientation == 'left' ? undefined : (4 + 35)),
+                  // height: levelImageSize,
+                  width: (100 - 15),
+                  fontFamily: 'RobotoCondensed-Medium',
+                  letterSpacing: 1.2,
+                  // opacity: 0.5,
+                  // backgroundColor: 'indigo',
+                  textAlign: (item.orientation == 'right' ? 'left' : 'right'),
+                  color: '#e5e4cf',
+                  fontSize: 9,
+                }}>
+                  {'PERCUSSION'}
                 </Text >
               </>
 
@@ -320,7 +342,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                   position: 'absolute',
                   right: (item.orientation == 'right' ? undefined : (4 + 29)),
                   left: (item.orientation == 'left' ? undefined : (4 + 29)),
-                  top: (63 + verticalOffsetTitleLength),
+                  top: (63 + verticalOffsetTitleLength + verticalOffsetLevel),
                   height: 23, width: 120,
                 }}
                 text={"ARTIST DETAILS"}

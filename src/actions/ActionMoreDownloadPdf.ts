@@ -5,7 +5,7 @@ const ActionMoreDownloadPdf = () => {
     console.log('ActionMoreDownloadPdf');
 
 
-        let account = 'https://static.showit.co/file/SkE0cIrgRSarRh-dTHeM1Q/154908/qalfd_2024-schedule_digital_download.pdf'
+        let account = 'https://patifestival.com/tickets/'
         Linking.canOpenURL(account).then(supported => {
                 console.log("supported" + supported);
                 if (!supported) return;

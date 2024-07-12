@@ -1,12 +1,12 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Font from 'expo-font';
 import DataModel from './DataModel';
-import ActionUpdateDataModelWithRemote from './actions/ActionUpdateDataModel';
 import ActionUpdateHappeningNow from './components/happeningnowtile/ActionUpdateHappeningNow';
 import OperatorStates from './core/LOperatorStates';
 import TransitionScreenL1toL2 from './transitions/TransitionScreenL1toL2';
 import TransitionScreenL2toL3 from './transitions/TransitionScreenL2toL3';
 import TransitionScreenSplashToLoading from './transitions/TransitionScreenSplashToLoading';
+import ActionUpdateDataModelWithRemote from './actions/ActionUpdateDataModel';
 
 
 class LauncherController extends OperatorStates {
@@ -17,7 +17,7 @@ class LauncherController extends OperatorStates {
             sessionListCount: 0,
             sessionListReference: null,
 
-            navigationHistory: [{out:"HomeScreen", transition: "initial"}],
+            navigationHistory: [{ out: "HomeScreen", transition: "initial" }],
 
             artistListReference: null,
 
@@ -181,7 +181,7 @@ class LauncherController extends OperatorStates {
     navBarIndex = 0
     navBarData =
         [
-            { id: 0, itemText: "Home", associatedScreenName: "homeScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_home.png') },
+            { id: 0, itemText: "Program", associatedScreenName: "homeScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_home.png') },
             { id: 1, itemText: "Workshops", associatedScreenName: "sessionScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_planner.png') },
             { id: 3, itemText: "Artists", associatedScreenName: "artistsMainScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_artists.png') },
             { id: 4, itemText: "More", associatedScreenName: "settingsScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_settings.png') }
@@ -214,12 +214,12 @@ class LauncherController extends OperatorStates {
             await Font.loadAsync(this.customFonts);
             console.log("LauncherController - Fonts loaded.");
             await this.getLocallyStoredDataModel();
-            // await this.getRemoteDataModel();
+            await this.getRemoteDataModel();
             console.log('LauncherController - Model local/remote checks w/ potential update completed.');
             await this.prepareDataModel();
             console.log('LauncherController initialization done. Tutorial completed: ' + this.appTutorialCompleted);
 
-            // const checkForModelUpdate = setInterval(() => { ActionUpdateDataModelWithRemote(); }, DataModel.modelRemoteUpdateInterval);
+            const checkForModelUpdate = setInterval(() => { ActionUpdateDataModelWithRemote(); }, DataModel.modelRemoteUpdateInterval);
 
             // ActionUpdateHappeningNow();
             const checkHappeningNowFunction = setInterval(() => { ActionUpdateHappeningNow(); }, DataModel.happeningNowUpdateInterval);
@@ -235,7 +235,7 @@ class LauncherController extends OperatorStates {
         try {
             console.log('LauncherController - checking local models...');
 
-            const value = await AsyncStorage.getItem('qaldfDataModel');
+            const value = await AsyncStorage.getItem('dataModel');
             if (value == null) { //never used local storage - first time load
                 const modelAsString = JSON.stringify({
                     modelVersion: DataModel.modelVersion,
@@ -243,7 +243,7 @@ class LauncherController extends OperatorStates {
                     dataScheduleRaw: DataModel.dataScheduleRaw
                 });
                 console.log('LauncherController  - using initial model: ' + DataModel.modelVersion);
-                AsyncStorage.setItem('qaldfDataModel', modelAsString);
+                AsyncStorage.setItem('dataModel', modelAsString);
                 return;
             }
             if (value !== null) {
@@ -281,7 +281,7 @@ class LauncherController extends OperatorStates {
 
                 console.log('LauncherController - using remote model and storing locally.' + remoteModel.modelVersion,);
 
-                AsyncStorage.setItem('qaldfDataModel', JSON.stringify({
+                AsyncStorage.setItem('dataModel', JSON.stringify({
                     modelVersion: DataModel.modelVersion,
                     dataArtists: DataModel.dataArtists,
                     dataScheduleRaw: DataModel.dataScheduleRaw
@@ -329,6 +329,30 @@ class LauncherController extends OperatorStates {
         } catch (error) {
             console.log('Could not assign an image for a particular artist')
         }
+
+        try {
+            if (DataModel.dataStyles['type1'] != undefined) DataModel.dataStyles['type1'].imgSrc = require('../assets/tile-fullprogram-itembg1.png');
+            if (DataModel.dataStyles['type2'] != undefined) DataModel.dataStyles['type2'].imgSrc = require('../assets/tile-fullprogram-itembg2.png');
+            if (DataModel.dataStyles['type3'] != undefined) DataModel.dataStyles['type3'].imgSrc = require('../assets/tile-fullprogram-itembg3.png');
+            if (DataModel.dataStyles['type4'] != undefined) DataModel.dataStyles['type4'].imgSrc = require('../assets/tile-fullprogram-itembg4.png');
+
+        } catch (error) {
+            console.log('Could not assign an image for a particularhomepage bg')
+        }
+
+
+        try {
+            if (DataModel.dataLocation['altemuenze'] != undefined) DataModel.dataLocation['altemuenze'].imgSrc = require('../assets/location-icons/location-alte-muenze.png')
+            if (DataModel.dataLocation['bebop'] != undefined) DataModel.dataLocation['bebop'].imgSrc = require('../assets/location-icons/location-bebop.png')
+            if (DataModel.dataLocation['belushis'] != undefined) DataModel.dataLocation['belushis'].imgSrc = require('../assets/location-icons/location-belushis.png')
+            if (DataModel.dataLocation['berlindanceinstitute'] != undefined) DataModel.dataLocation['berlindanceinstitute'].imgSrc = require('../assets/location-icons/location-berlin-dance-institute.png')
+            if (DataModel.dataLocation['soda'] != undefined) DataModel.dataLocation['soda'].imgSrc = require('../assets/location-icons/location-soda.png')
+            if (DataModel.dataLocation['unknown'] != undefined) DataModel.dataLocation['unknown'].imgSrc = require('../assets/location-icons/location-unknown.png')
+            if (DataModel.dataLocation['citytour'] != undefined) DataModel.dataLocation['citytour'].imgSrc = require('../assets/location-icons/location-citytour.png')
+        } catch (error) {
+            console.log('Could not assign an image for a particularhomepage bg')
+        }
+
 
 
         // console.log("::::::::Preparing Data Model - End Assigning Images");
@@ -436,7 +460,7 @@ class LauncherController extends OperatorStates {
 
             //add the data item to the specific section list (usually ordered by day)
             sectionListData.data.push(dataItem);
-            console.log('adding ' + dataItem.id)
+            // console.log('adding ' + dataItem.id)
 
         }
     }

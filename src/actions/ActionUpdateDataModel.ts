@@ -62,7 +62,7 @@ const ActionUpdateDataModelWithRemote = async () => {
         //store the list into phone storage
         console.log(":::::ActionUpdateDataModel -- latest model asynchroneously stored local: "+remoteModel.modelVersion);
 
-        AsyncStorage.setItem('qaldfDataModel', JSON.stringify({
+        AsyncStorage.setItem('dataModel', JSON.stringify({
             modelVersion: DataModel.modelVersion,
             dataArtists: DataModel.dataArtists,
             dataScheduleRaw: DataModel.dataScheduleRaw

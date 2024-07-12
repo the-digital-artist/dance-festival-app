@@ -8,7 +8,6 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import NavBar from "./components/navbar/NavBar";
 import NavBarHighlight from "./components/navbar/NavBarHighlight";
 import ArtistMainScreen from "./components/screens/ArtistMainScreen";
-import DetailsScreen from "./components/screens/DetailsScreen";
 import HomeScreen from "./components/screens/HomeScreen";
 import LoadingScreen from "./components/screens/LoadingScreen";
 import SchedulerScreen from "./components/screens/SchedulerScreen";
@@ -45,17 +44,14 @@ class Launcher extends PureComponent<any, any> {
                         <>
 
                             <StateDependentComponent states={['loading', 'main']} controller={this.controller}>
-                                {/* <DetailsScreen /> */}
                                 <SchedulerScreen />
-                                {/* <FocusFragment/> */}
                                 <HomeScreen />
                                 <ArtistMainScreen />
                                 <SettingsScreen />
 
                                 <NavBar highlightRenderer={NavBarHighlight} data={LauncherController.getInstance().navBarData} />
-                                {/* <ScreenHeader text="" color='#FFFFFF' /> */}
 
-                                {/* <UpdateOverlayFragement /> */}
+                                <UpdateOverlayFragement />
                             </StateDependentComponent>
 
 

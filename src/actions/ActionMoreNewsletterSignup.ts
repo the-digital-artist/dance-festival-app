@@ -1,10 +1,10 @@
 import { Linking } from "react-native";
 
 
-const ActionMoreContactFestival = () => {
-    console.log('ActionMoreContactFestival');
+const ActionMoreNewsletterSignup = () => {
+    console.log('ActionMoreNewsletterSignup');
 
-        let account = 'https://patifestival.com/contact/'
+        let account = 'https://patifestival.com/newsletter'
         Linking.canOpenURL(account).then(supported => {
                 console.log("supported" + supported);
                 if (!supported) return;
@@ -29,4 +29,4 @@ const ActionMoreContactFestival = () => {
 //   saveFile(result.uri, filename, result.headers["Content-Type"]);
 // }
 
-export default ActionMoreContactFestival;
+export default ActionMoreNewsletterSignup;

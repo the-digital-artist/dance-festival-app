@@ -25,8 +25,8 @@ class ArtistListScreen extends PureComponent {
     }
 
     render() {
-        // console.log("___________ArtistListScreen render ")
-        // console.log("___________ArtistListScreen render - state dataModel: "+JSON.stringify(this.state.dataModel, null, 2)); 
+        console.log("___________ArtistListScreen render ")
+        console.log("___________ArtistListScreen render - state dataModel: "+JSON.stringify(this.state.dataModelList, null, 2)); 
         //add one empty artist item into the list for presentation reasons
         if (this.state.dataModelList[this.state.dataModelList.length - 1].key != "NONE") {
             this.state.dataModelList.push(
@@ -93,11 +93,11 @@ class ArtistListScreen extends PureComponent {
 
 
     startModelUpdate() {
-        // console.log("___________ArtistListScreen setting state 1"); 
+        console.log("___________ArtistListScreen setting state 1"); 
         this.setState({ modelUpdateState: 1, dataModelList: null })
     }
     finishModelUpdate() {
-        // console.log("___________ArtistListScreen finishModelUpdate -  update (state 2)"); 
+        console.log("___________ArtistListScreen finishModelUpdate -  update (state 2)"); 
         this.setState({ modelUpdateState: 2, dataModelList: DataModel.dataArtistsList })
     }
 }
