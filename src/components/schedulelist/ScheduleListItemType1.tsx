@@ -1,5 +1,5 @@
 import { PureComponent, ReactNode, createRef } from 'react';
-import { Image, Text, View } from 'react-native';
+import { Image, Platform, Text, View } from 'react-native';
 import Animated from 'react-native-reanimated';
 import DataModel from '../../DataModel';
 import ActionItemFavToggleStateUpdate from '../../actions/ActionItemFavToggleStateUpdate';
@@ -421,6 +421,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                   height: 23, width: 120
                 }}
                 fontStyle={{
+                  top: ((Platform.OS == 'android'))?-2:0,
                   width: 120,
                   color: '#f2a33a',
                   fontFamily: 'Cabin-Regular',

@@ -1,5 +1,5 @@
 import React from "react";
-import { Dimensions, Image, Text, View } from "react-native";
+import { Dimensions, Image, Platform, Text, View } from "react-native";
 import DataModel from "../../DataModel";
 import ButtonSmall from "../ButtonSmall";
 import TransitionLinkToSchedule from "../../transitions/TransitionLinkToSchedule";
@@ -81,10 +81,10 @@ const HomeScreenProgramItem = ({ itemData, i }) => {
                             top: offsetYBiggerPart + 26,
                             left: offsetXBiggerPart + 30,
                             width: widthBiggerPart - 70,
-                            height: 30,
+                            height: 23,
                             fontFamily: 'LuckiestGuy-Regular',
                             letterSpacing: 2.0,
-                            fontSize: 20,
+                            fontSize: ((Platform.OS == 'android'))?19:20,
                             color: (DataModel.dataStyles[itemData.type].color1),
                             // backgroundColor: 'skyblue',
                             textAlign: 'left',
@@ -130,8 +130,9 @@ const HomeScreenProgramItem = ({ itemData, i }) => {
                                 height: 30, width: 200
                             }}
                             fontStyle={{
+                                top:((Platform.OS == 'android'))?-3:0,
                                 left:10,
-                                height: 22,
+                                height: 30,
                                 width: 200,
                                 fontFamily: 'Cabin-Regular',
                                 textAlign: 'center',
@@ -202,8 +203,8 @@ const HomeScreenProgramItem = ({ itemData, i }) => {
                         text={DataModel.dataLocation[itemData.location].locationName}
                         fontStyle={{
                             width: widthSmallerPart - 2 * offsetXSmallerPart,
-                            height: 45,
-                            top: 40,
+                            height: 40,
+                            top: ((Platform.OS == 'android'))?33:40,
                             left: 0,
                             textAlign: 'center',
                             fontFamily: 'RobotoCondensed-Medium',
@@ -231,12 +232,14 @@ const HomeScreenProgramItem = ({ itemData, i }) => {
                             text={"OPEN MAPS"}
                             bgBoxVisible={true}
                             bgBoxStyle={{
+                                top: ((Platform.OS == 'android'))?3:0,
                                 backgroundColor: '#121212',
                                 height: 22,
                                 width: widthSmallerPart - 4 * offsetXSmallerPart,
                                 opacity: 0.5
                             }}
                             fontStyle={{
+                                top: ((Platform.OS == 'android'))?1:0,
                                 height: 22,
                                 width: widthSmallerPart - 4 * offsetXSmallerPart,
                                 fontFamily: 'Cabin-Regular',
