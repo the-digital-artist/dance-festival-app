@@ -7,7 +7,7 @@ import NavBar from "../components/navbar/NavBar";
 
 const TransitionLinkToArtistPage = (artistData) => {
         console.log("TransitionLinkToArtistPage");
-        console.log(JSON.stringify(artistData, null, 2));
+        // console.log(JSON.stringify(artistData, null, 2));
         if(artistData==undefined) return;
 
         let controller = LauncherController.getInstance()

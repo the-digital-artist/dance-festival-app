@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
 import { Dimensions } from "react-native";
-import { Gesture, GestureDetector } from "react-native-gesture-handler";
+import { Gesture, GestureDetector, NativeGesture } from "react-native-gesture-handler";
 import Animated, { Easing, useAnimatedStyle, useDerivedValue, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';
 import ButtonSmall from "../ButtonSmall";
 import ScheduleListItemType1 from "./ScheduleListItemType1";
+import SchedulerScreen from "../screens/SchedulerScreen";
+import LauncherController from "../../LauncherController";
 
 const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
     // console.log('ScheduleItemGroupRe render')
@@ -72,7 +74,22 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
     }
 
 
+
+    // const outerNativeListGesture:NativeGesture = ((LauncherController.getInstance().context.dataDependentComponentSchedulerScreen as SchedulerScreen).nativeGesture as NativeGesture)
+    // outerNativeListGesture
+    //     .onBegin((e) => {
+    //         console.log("nativeGesture start");
+    //     })
+    //     .onFinalize((e) => {
+    //         console.log("nativeGesture start");
+    //     });
+
+   
+
     const gestureObj = Gesture.Pan()
+        .blocksExternalGesture(mainItem['refNativeGesture'])
+        .minDistance(30)
+        .failOffsetY(10)
         .onBegin((event) => {
             // console.log("pan start");
             pressed.value = true;

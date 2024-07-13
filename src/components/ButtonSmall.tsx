@@ -17,6 +17,7 @@ const ButtonSmall = (props) => {
                 name={props.name}
                 style={[
                     props.style
+                    
                 ]}
                 visualProperties={props.visualProperties}
                 onPress={props.onSelect}

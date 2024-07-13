@@ -1,23 +1,22 @@
+import * as Application from 'expo-application';
 import React, { Fragment, PureComponent } from "react";
 import { Dimensions, Image, Text, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
-import LComponent from "../../core/LComponent";
-import SettingsItemRenderer from "./SettingsItemRenderer";
-import ButtonSmall from "../ButtonSmall";
-import ActionOpenSocialMediaApp from "../../actions/ActionOpenSocialMediaApp";
 import DataModel from "../../DataModel";
-import * as Application from 'expo-application';
-import ActionMoreDownloadPdf from "../../actions/ActionMoreDownloadPdf";
-import ActionMoreContactAppDev from "../../actions/ActionMoreContactAppDev";
 import ActionMoreContactFestival from "../../actions/ActionMoreContactFestival";
-import NavBar from "../navbar/NavBar";
+import ActionMoreDownloadPdf from "../../actions/ActionMoreDownloadPdf";
 import ActionMoreNewsletterSignup from "../../actions/ActionMoreNewsletterSignup";
+import ActionOpenSocialMediaApp from "../../actions/ActionOpenSocialMediaApp";
+import LComponent from "../../core/LComponent";
+import ButtonSmall from "../ButtonSmall";
+import NavBar from "../navbar/NavBar";
+import SettingsItemRenderer from "./SettingsItemRenderer";
 
 class SettingsScreen extends PureComponent {
 
     static settingsItemRendererHeight = 50;
     static settingsListData = [
-        { title: "Get Your Pa'Ti Ticket", action: ActionMoreDownloadPdf },
+        { title: "Get Your Ticket", action: ActionMoreDownloadPdf },
         { title: "Contact Festival Organizers", action: ActionMoreContactFestival},
         { title: "Sign-up for our Newsletter", action: ActionMoreNewsletterSignup},
         // { title: `Contact App Creator`, action: ActionMoreContactAppDev },
@@ -26,6 +25,10 @@ class SettingsScreen extends PureComponent {
 
     constructor(props) {
         super(props);
+
+        let currentTime = Date.now();
+        let borderChangeTitleTime =  Date.parse(DataModel.dataTicketSales.earlyBirdStartTimeString);        //YYYY-MM-DDTHH:mm:ss.sssZ
+        SettingsScreen.settingsListData[0].title =   ((currentTime<borderChangeTitleTime)?"Get Your Last-Minute Ticket":"Get Your Special Early-Bird Ticket")
     }
 
     render() {

@@ -5,6 +5,7 @@ import LComponent from "../../core/LComponent";
 import ArtistListItemRenderer from "./ArtistListItemRenderer";
 import ScreenHeader from "./ScreenHeader";
 import LauncherController from "../../LauncherController";
+import ScreenHomeButton from "./ScreenHomeButton";
 
 
 class ArtistListScreen extends PureComponent {
@@ -21,14 +22,15 @@ class ArtistListScreen extends PureComponent {
         LauncherController.getInstance().context.dataDependentComponentArtistScreen = this;
 
         this.state.modelUpdateState = 2;
-        this.state.dataModelList = DataModel.dataArtistsList;
+        this.state.dataModelList = DataModel.dyn_dataArtistsList;
     }
 
     render() {
-        console.log("___________ArtistListScreen render ")
-        console.log("___________ArtistListScreen render - state dataModel: "+JSON.stringify(this.state.dataModelList, null, 2)); 
+        // console.log("___________ArtistListScreen render ")
+        // console.log("___________ArtistListScreen render - state dataModel: "+JSON.stringify(this.state.dataModelList, null, 2)); 
         //add one empty artist item into the list for presentation reasons
-        if (this.state.dataModelList[this.state.dataModelList.length - 1].key != "NONE") {
+        if (this.state.dataModelList!=null && this.state.dataModelList!=undefined &&
+            this.state.dataModelList[this.state.dataModelList.length - 1].key != "NONE") {
             this.state.dataModelList.push(
                 {
                     "fullName": "", "insta": "", "bio": "", "facebook": "", "portrait": "", "imgSrc": -1, "shortBio": "",
@@ -69,6 +71,8 @@ class ArtistListScreen extends PureComponent {
                 }
 
                 <ScreenHeader text={"ARTISTS & DJs"} color='#f8f6d3' />
+                <ScreenHomeButton />
+
 
 
                 {this.state.modelUpdateState == 0 &&
@@ -98,7 +102,7 @@ class ArtistListScreen extends PureComponent {
     }
     finishModelUpdate() {
         console.log("___________ArtistListScreen finishModelUpdate -  update (state 2)"); 
-        this.setState({ modelUpdateState: 2, dataModelList: DataModel.dataArtistsList })
+        this.setState({ modelUpdateState: 2, dataModelList: DataModel.dyn_dataArtistsList })
     }
 }
 

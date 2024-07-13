@@ -16,6 +16,7 @@ class LTouchableOpacity extends PureComponent<any, any> {
       <View style={
         // [
         this.props.style
+        // ,
         //  { backgroundColor: 'skyblue' }
         // ]
       }

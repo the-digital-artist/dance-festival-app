@@ -9,6 +9,8 @@ import TransitionScheduleItemFavSelect from '../../transitions/TransitionSchedul
 import ButtonSmall from '../ButtonSmall';
 import ScheduleItemToggle from './ScheduleItemToggle';
 import LauncherController from '../../LauncherController';
+import { GestureDetector } from 'react-native-gesture-handler';
+import { tapGestureHandlerProps } from 'react-native-gesture-handler/lib/typescript/handlers/TapGestureHandler';
 
 
 class ScheduleListItemType1 extends PureComponent<any, any> {
@@ -39,9 +41,9 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
 
 
     const levelData = [
-      { src: require('../../../assets/schedule-levelicon-1.png'), text: "BEGINNER", textWidth: 52 },
+      { src: require('../../../assets/schedule-levelicon-1.png'), text: "BEGINNER", textWidth: 54 },
       { src: require('../../../assets/schedule-levelicon-2.png'), text: "INTERMEDIATE", textWidth: 72 },
-      { src: require('../../../assets/schedule-levelicon-3.png'), text: "ADVANCED", textWidth: 54 }
+      { src: require('../../../assets/schedule-levelicon-3.png'), text: "ADVANCED", textWidth: 56 }
     ]
     const levelId = item.level != undefined ? item.level : -1;
     const levelImageSize = 10;
@@ -174,34 +176,64 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
             style={this.props.dynamicVisualProperties1}>
 
             {artistData2 != null &&
-              <Animated.Image
+
+              <ButtonSmall
+                name={("artistImageButton2" + item.id)}
                 source={artistData2 ? artistData2.imgSrc : null}
-                style={[{
+                style={{
                   position: 'absolute',
                   top: 2 + imageOffsetYArtistImage + (imageWidthArtistImagex1 - imageWidthArtistImagex2) / 2,
                   right: (item.orientation == 'right' ? (imageWidthArtistImagex2 + imageOffsetXRArtistImage - 10) : undefined),
                   left: (item.orientation == 'left' ? (imageWidthArtistImagex2 + imageOffsetXLArtistImage - 10) : undefined),
                   width: imageWidthArtistImagex2,
                   height: imageWidthArtistImagex2,
+
+                }}
+                imageStyle={[{
+                  position: 'absolute',
+                  right: undefined, left: undefined,
+                  width: imageWidthArtistImagex2,
+                  height: imageWidthArtistImagex2,
                   resizeMode: 'cover',
                   opacity: 0.9,
-                }, this.props.dynamicVisualProperties1]}
+                }]}
+                bgBoxVisible={false}
+                visualProperties={{ alpha: 1 }}
+                onSelect={() => {
+                  if (artistData1 == undefined) return;
+                  LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage" });
+                  TransitionLinkToArtistPage(artistData2)
+                }}
               />
             }
-            <Animated.Image
+
+            <ButtonSmall
+              name={("artistImageButton1" + item.id)}
               source={artistData1 ? artistData1.imgSrc : null}
-              style={[{
+              style={{
                 position: 'absolute',
                 top: 2 + (artistData2 ? imageOffsetYArtistImage + (imageWidthArtistImagex1 - imageWidthArtistImagex2) / 2 : imageOffsetYArtistImage),
                 right: (item.orientation == 'right' ? imageOffsetXRArtistImage : undefined),
                 left: (item.orientation == 'left' ? imageOffsetXLArtistImage : undefined),
                 width: (artistData2 ? imageWidthArtistImagex2 : imageWidthArtistImagex1),
                 height: (artistData2 ? imageWidthArtistImagex2 : imageWidthArtistImagex1),
+              }}
+              imageStyle={[{
+                position: 'absolute',
+                right: undefined, left: undefined,
+                width: (artistData2 ? imageWidthArtistImagex2 : imageWidthArtistImagex1),
+                height: (artistData2 ? imageWidthArtistImagex2 : imageWidthArtistImagex1),
                 resizeMode: 'cover',
                 opacity: 0.9,
-              }, this.props.dynamicVisualProperties1]}
+              }]}
+              bgBoxVisible={false}
+              visualProperties={{ alpha: 1 }}
+              onSelect={() => {
+                if (artistData1 == undefined) return;
+                LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage" });
+                TransitionLinkToArtistPage(artistData1)
+              }}
             />
-
 
 
             <Animated.Text allowFontScaling={false} id='textSessionMainTitle' style={{
@@ -314,6 +346,43 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
 
             }
 
+            {item.levelSpecial != undefined && item.levelSpecial == '3' &&
+              <>
+                <Image
+                  source={require('../../../assets/scheduler-levelicon-specialtheory.png')}
+                  style={{
+                    // backgroundColor: 'greenyellow',
+                    position: 'absolute',
+                    top: (25 + verticalOffsetTitleLength),
+                    right: (item.orientation == 'right' ? undefined : (35 + 47)),
+                    left: (item.orientation == 'left' ? undefined : (30 + 47)),
+                    width: levelImageSize * 1.4,
+                    height: levelImageSize * 1.4,
+                    resizeMode: 'cover'
+                  }}>
+                </Image>
+
+                <Text allowFontScaling={false} id='textSessionLevel' style={{
+                  position: 'absolute',
+                  top: (25 + verticalOffsetTitleLength),
+                  right: (item.orientation == 'right' ? undefined : (4 + 35)),
+                  left: (item.orientation == 'left' ? undefined : (4 + 35)),
+                  // height: levelImageSize,
+                  width: (100 - 15),
+                  fontFamily: 'RobotoCondensed-Medium',
+                  letterSpacing: 1.2,
+                  // opacity: 0.5,
+                  // backgroundColor: 'indigo',
+                  textAlign: (item.orientation == 'right' ? 'left' : 'right'),
+                  color: '#e5e4cf',
+                  fontSize: 9,
+                }}>
+                  {'THEORY'}
+                </Text >
+              </>
+
+            }
+
             <ScheduleItemToggle
               ref={(r) => { this.toggleButtonReference = r }}
               name={("ImageToggle" + item.id)}
@@ -353,12 +422,13 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                 }}
                 fontStyle={{
                   width: 120,
-                  fontFamily: 'RobotoCondensed-Regular',
+                  color: '#f2a33a',
+                  fontFamily: 'Cabin-Regular',
                   textAlign: 'center',
                   textAlignVertical: 'center',
                   letterSpacing: 2.0,
-                  color: '#f2a33a',
-                  fontSize: 10,
+                  height: 23,
+                  fontSize: 9,
                 }}
                 visualProperties={{ alpha: 1 }}
                 onSelect={() => {
@@ -369,76 +439,12 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               />
             }
 
-            {/* {item.id != 'focus' &&
 
-              <ButtonSmall
-                name={("InfoButton" + item.id)}
-                source={require('../../../assets/button-info.png')}
-                style={{
-                  position: 'absolute',
-                  right: (item.orientation == 'right' ? undefined : (4 + 24)),
-                  left: (item.orientation == 'left' ? undefined : (4 + 24)),
-                  top: (42 + verticalOffsetTitleLength),
-                  height: 35, width: (300 * 35 / 110),
-                }}
-                text={"VIEW DETAILS"}
-                bgBoxStyle={{
-                  height: 35, width: 100
-                }}
-                fontStyle={{
-                  fontFamily: 'RobotoCondensed-Regular',
-                  textAlign: 'center',
-                  textAlignVertical: 'center',
-                  letterSpacing: 2.0,
-                  color: '#FFFFFF',
-                  fontSize: 8,
-                }}
-                visualProperties={{ alpha: 1 }}
-                onSelect={() => { ActionSetFocusItem(item); TransitionScheduleItemSelect(item) }}
-              />
-            } */}
 
           </Animated.View>
 
         </View>
-        {/* <GestureDetector gesture={this.props.tileTapGestureHandler}>
-          <Animated.View
-            style={[
-              {width:centerPieceWidth, height:itemHeight - 30},
-             ]}
-          />
-          </GestureDetector> */}
 
-
-        {item.id != 'focus' && false &&
-          <>
-            {/* <ButtonSmall
-              name={"BtnScrollLeft" + item.id}
-              style={{
-                position: 'absolute',
-                left: (45 + 2), top: 70,
-                width: 32, height: 28,
-                opacity: (item.groupIndex > 0 ? 1 : 0.1)
-              }}
-              visualProperties={{ x: 0, y: 0, z: 0 }}
-              onSelect={() => { if (item.groupIndex > 0) item.groupIndexUpdateFunction(1) }}
-              source={require('../../../assets/button-prev.png')}
-            /> */}
-            {/* 
-            <ButtonSmall
-              name={"BtnScrollRight" + item.id}
-              style={{
-                position: 'absolute',
-                left: (45 + 35 + this.props.tileWidth + 2), top: 70,
-                width: 32, height: 28,
-                opacity: (item.groupIndex < (this.props.group.length - 1) ? 1 : 0.1)
-              }}
-              visualProperties={{ x: 0, y: 0, z: 0 }}
-              onSelect={() => { if (item.groupIndex < (this.props.group.length - 1)) item.groupIndexUpdateFunction(-1) }}
-              source={require('../../../assets/button-next.png')}
-            /> */}
-          </>
-        }
       </Animated.View>
     );
   }

@@ -21,7 +21,7 @@ const ActionUpdateDataModelWithRemote = async () => {
         if (!response1.ok) return;
 
         const version = await response1.json();
-        console.log(":::::ActionUpdateDataModel -- QueerFestivivalAPI - got version: " + version);
+        console.log("ActionUpdateDataModel -- API - got version: " + version);
 
 
         if (version <= DataModel.modelVersion) { return };
@@ -40,17 +40,21 @@ const ActionUpdateDataModelWithRemote = async () => {
         if (remoteModel.modelVersion <= DataModel.modelVersion) return;
         // console.log(":::::ActionUpdateDataModel -- modelVersion is greater than Local");
 
-       
+
         (c.dataDependentComponentArtistScreen as ArtistListScreen).startModelUpdate();
         (c.dataDependentComponentSchedulerScreen as SchedulerScreen).startModelUpdate();
 
         // console.log(":::::ActionUpdateDataModel -- after SchedulerScreen).startModelUpdate");
-        console.log(":::::ActionUpdateDataModel -- updating in-memory model with remote model: "+remoteModel.modelVersion);
+        console.log(":::::ActionUpdateDataModel -- updating in-memory model with remote model: " + remoteModel.modelVersion);
 
         //now update in memory model
-        DataModel.modelVersion = remoteModel.modelVersion
-        DataModel.dataArtists = remoteModel.dataArtists;
-        DataModel.dataScheduleRaw = remoteModel.dataScheduleRaw;
+        // now sync all the keys in the remote model to the local model
+        for (const key in remoteModel) {
+            if (Object.prototype.hasOwnProperty.call(DataModel, key)) {
+                console.log(":::::ActionUpdateDataModel - syncing local key with remote key: " + key);
+                DataModel[key] = remoteModel[key];
+            }
+        }
 
         console.log(":::::ActionUpdateDataModel -- process data model");
         await LauncherController.getInstance().prepareDataModel();
@@ -60,19 +64,22 @@ const ActionUpdateDataModelWithRemote = async () => {
         (c.dataDependentComponentSchedulerScreen as SchedulerScreen).finishModelUpdate();
 
         //store the list into phone storage
-        console.log(":::::ActionUpdateDataModel -- latest model asynchroneously stored local: "+remoteModel.modelVersion);
+        console.log(":::::ActionUpdateDataModel -- latest model asynchroneously stored local: " + remoteModel.modelVersion);
 
-        AsyncStorage.setItem('dataModel', JSON.stringify({
-            modelVersion: DataModel.modelVersion,
-            dataArtists: DataModel.dataArtists,
-            dataScheduleRaw: DataModel.dataScheduleRaw
-        }));
+        const localModelCopy = {};
+        for (const key in DataModel) {
+            if (key == '_instance' || key == 'instance' || key.indexOf('dyn_') == 0)
+                continue;
+            localModelCopy[key] = DataModel[key];
+        }
+        const modelAsString = JSON.stringify(localModelCopy);
+        AsyncStorage.setItem('dataModel', modelAsString);
 
         globalThis.gc(); //this feels strange but apparently necessary with fetch
         //https://github.com/facebook/hermes/issues/1147
         //https://github.com/facebook/react-native/issues/39441
 
-    
+
 
     } catch (error) {
         if (error.message == "Aborted") {

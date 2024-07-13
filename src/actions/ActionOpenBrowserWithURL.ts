@@ -1,10 +1,10 @@
 import { Linking } from "react-native";
 
 
-const ActionOpenBrowserWithURL = () => {
-        console.log("ActionOpenBrowserWithURL");
+const ActionOpenBrowserWithTicketURL = () => {
+        console.log("ActionOpenBrowserWithTicketURL");
 
-        let url = 'https://events.humanitix.com/7th-annual-queer-afro-latin-dance-festival'
+        let url = 'https://patifestival.com/tickets/'
         Linking.canOpenURL(url).then(supported => {
                 console.log("supported" + supported);
                 if (!supported) return;
@@ -15,4 +15,4 @@ const ActionOpenBrowserWithURL = () => {
 
 }
 
-export default ActionOpenBrowserWithURL;
+export default ActionOpenBrowserWithTicketURL;

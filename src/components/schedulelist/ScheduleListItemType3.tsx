@@ -34,6 +34,7 @@ const ScheduleListItemType3 = ({ item }) => {
         textAlign: 'left',
         color: '#312816',
         fontSize: 25,
+        opacity:0.7
       }}>
         {item.sessionMainTitle ? (item.sessionMainTitle as string) : ""}
       </Text>

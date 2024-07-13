@@ -6,6 +6,7 @@ import ActionArtistDetailsOnBack from "../../actions/ActionArtistDetailsOnBack";
 import ActionOpenSocialMediaApp from "../../actions/ActionOpenSocialMediaApp";
 import ButtonSmall from "../ButtonSmall";
 import ScreenHeader from "./ScreenHeader";
+import ScreenHomeButton from "./ScreenHomeButton";
 
 
 class ArtistDetailsScreen extends PureComponent {
@@ -14,19 +15,19 @@ class ArtistDetailsScreen extends PureComponent {
     }
 
     render() {
-        const context =  LauncherController.getInstance().context
+        const context = LauncherController.getInstance().context
         const item = LauncherController.getInstance().context.artistFocusItem
 
 
-        BackHandler.addEventListener('hardwareBackPress',() => { ActionArtistDetailsOnBack(); return true; })
+        BackHandler.addEventListener('hardwareBackPress', () => { ActionArtistDetailsOnBack(); return true; })
 
         // console.log("Setting Reference")
         LauncherController.getInstance().artistStackData[1].screenComponentRef = this;
 
         const scrollViewContent =
             Platform.OS == 'ios' ?
-                (item.bio as string).length / 1100 * 1.3 * Dimensions.get('screen').height :
-                (item.bio as string).length / 1100 * 1.5 * Dimensions.get('screen').height;
+                (item.bio as string).length / 1100 * 1.5 * Dimensions.get('screen').height :
+                (item.bio as string).length / 1100 * 1.7 * Dimensions.get('screen').height;
 
         let socialBarData = [
             { id: 0, provider: "Instagram", account: item.insta, imgSrc: require('../../../assets/icon-social-insta-black.png') },
@@ -113,10 +114,10 @@ class ArtistDetailsScreen extends PureComponent {
                                             opacity: 1.0
                                         }}
                                         visualProperties={{ alpha: 0.7, x: 0, y: 0, z: 0 }}
-                                        onSelect={() => { 
-                                            context.navigationHistory.push({out:"ArtistDetailsScreen", transition: "ActionOpenSocialMediaApp"});
+                                        onSelect={() => {
+                                            context.navigationHistory.push({ out: "ArtistDetailsScreen", transition: "ActionOpenSocialMediaApp" });
                                             ActionOpenSocialMediaApp(itemData.provider, itemData.account)
-                                         }}
+                                        }}
                                         source={itemData.imgSrc}
                                         text={''}
                                     />
@@ -148,36 +149,37 @@ class ArtistDetailsScreen extends PureComponent {
                         right: -40, bottom: 0, width: 300, height: 300,
                     }}
                 />
-                <ScreenHeader 
-                    text={"ARTIST DETAILS"} 
+                <ScreenHeader
+                    text={"ARTIST DETAILS"}
                     color='#f8f6d3'
-                    textStyle={{left: 50}}
+                    textStyle={{ left: 50 }}
                 />
-                
+                {/* <ScreenHomeButton /> */}
+
                 <ButtonSmall
-                            name={'backButtonArtistDetails'}
-                            style={{
-                                // backgroundColor: 'skyblue',
-                                position: 'absolute',
-                                top: 50, left: 0,
-                                width: 40, height: 40,
-                                opacity: 0.9
-                            }}
-                            visualProperties={{ alpha: 1, x: 0, y: 0, z: 0 }}
-                            onSelect={() => { ActionArtistDetailsOnBack(); }}
-                            // text={'BACK'}
-                            // fontStyle={{
-                            //     width:40,
-                            //     top:42,
-                            //     fontFamily: 'Arcon-Regular',
-                            //     textAlign: 'center',
-                            //     letterSpacing: 1.7,
-                            //     color: '#f8f6d3',
-                            //     fontSize: 7,
-                              
-                            // }}
-                            source={require('../../../assets/stack-backicon.png')}
-                        />
+                    name={'backButtonArtistDetails'}
+                    style={{
+                        // backgroundColor: 'skyblue',
+                        position: 'absolute',
+                        top: 50, left: 0,
+                        width: 40, height: 40,
+                        opacity: 0.9
+                    }}
+                    visualProperties={{ alpha: 1, x: 0, y: 0, z: 0 }}
+                    onSelect={() => { ActionArtistDetailsOnBack(); }}
+                    // text={'BACK'}
+                    // fontStyle={{
+                    //     width:40,
+                    //     top:42,
+                    //     fontFamily: 'Arcon-Regular',
+                    //     textAlign: 'center',
+                    //     letterSpacing: 1.7,
+                    //     color: '#f8f6d3',
+                    //     fontSize: 7,
+
+                    // }}
+                    source={require('../../../assets/stack-backicon.png')}
+                />
             </>
         );
     }
