@@ -1,25 +1,26 @@
 import React, { Fragment, PureComponent } from "react";
-import { BackHandler, Dimensions, Image, Platform, Text, View } from "react-native";
+import { Dimensions, Image, Platform, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import LauncherController from "../../LauncherController";
-import ActionArtistDetailsOnBack from "../../actions/ActionArtistDetailsOnBack";
 import ActionOpenSocialMediaApp from "../../actions/ActionOpenSocialMediaApp";
 import ButtonSmall from "../ButtonSmall";
 import ScreenHeader from "./ScreenHeader";
-import ScreenHomeButton from "./ScreenHomeButton";
+import ActionHistoryBackButton from "../../actions/ActionHistoryBackButton";
 
 
 class ArtistDetailsScreen extends PureComponent {
     constructor(props) {
         super(props);
+        this.state = {
+            scrollPosY: 0
+        };
     }
 
     render() {
         const context = LauncherController.getInstance().context
         const item = LauncherController.getInstance().context.artistFocusItem
 
-
-        BackHandler.addEventListener('hardwareBackPress', () => { ActionArtistDetailsOnBack(); return true; })
+        const logoScrollAlphaReductionDelta = 0.9
 
         // console.log("Setting Reference")
         LauncherController.getInstance().artistStackData[1].screenComponentRef = this;
@@ -57,9 +58,13 @@ class ArtistDetailsScreen extends PureComponent {
                             width: Dimensions.get('screen').width - 40,
                             height: Dimensions.get('screen').height,
                             opacity: 1
-                        }}>
-
-
+                        }}
+                        // onScroll={(e) => {
+                        //     // console.log('scrollViewContent'+scrollViewContent)
+                        //     // console.log('contentOffset'+e.nativeEvent.contentOffset.y)
+                        //     // this.setState({ scrollPosY: e.nativeEvent.contentOffset.y })
+                        // }}
+                    >
 
                         <View
                             style={{
@@ -105,7 +110,7 @@ class ArtistDetailsScreen extends PureComponent {
                                 <Fragment key={'socalBarFrag' + i}>
 
                                     <ButtonSmall
-                                        name={'socialBarItem' + i}
+                                        name={'instagramButtonItem' + i}
                                         style={{
                                             // backgroundColor: 'skyblue',
                                             position: 'absolute',
@@ -132,23 +137,27 @@ class ArtistDetailsScreen extends PureComponent {
 
                 </View>
 
-                {/* <BlurView
-                
-                        intensity={10}
-                        style={{
-                            position: 'absolute', opacity: 1.0,
-                            right: -80, bottom: -40, width: 300, height: 300,
-                        }}>
-
-                     
-                    </BlurView> */}
                 <Image
+                    // name={("ScheduleListArtistDetailsButton" + item.fullName)}
                     source={item.imgSrc}
                     style={{
-                        position: 'absolute', resizeMode: 'cover', opacity: 0.9,
-                        right: -40, bottom: 0, width: 300, height: 300,
+                        position: 'absolute',
+                        right: -40,
+                        bottom: ((Platform.OS == 'android') ? 70: 0),
+                        width: 300,
+                        height: 300,
+                        opacity: 0.9
+                      
                     }}
-                />
+                    // bgBoxVisible={false}
+                    // visualProperties={{ alpha: 0.7 }}
+                    // onSelect={() => {
+                        // context.navigationHistory.push({ out: "ArtistDetailsScreen", transition: "ActionOpenSocialMediaApp" });
+                        // ActionOpenSocialMediaApp("Instagram", item.insta)
+                    // }}
+                    />
+
+
                 <ScreenHeader
                     text={"ARTIST DETAILS"}
                     color='#f8f6d3'
@@ -166,7 +175,7 @@ class ArtistDetailsScreen extends PureComponent {
                         opacity: 0.9
                     }}
                     visualProperties={{ alpha: 1, x: 0, y: 0, z: 0 }}
-                    onSelect={() => { ActionArtistDetailsOnBack(); }}
+                    onSelect={() => { ActionHistoryBackButton(); }}
                     // text={'BACK'}
                     // fontStyle={{
                     //     width:40,
