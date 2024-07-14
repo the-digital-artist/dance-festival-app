@@ -405,7 +405,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
             {(item.id != 'focus') &&
 
               <ButtonSmall
-                name={("artistButton")}
+                name={("ScheduleListArtistDetailsButton"+item.id)}
                 source={null}
                 style={{
                   position: 'absolute',
@@ -421,7 +421,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                   height: 23, width: 120
                 }}
                 fontStyle={{
-                  top: ((Platform.OS == 'android'))?-2:0,
+                  top: ((Platform.OS == 'android'))?-2:5,
                   width: 120,
                   color: '#f2a33a',
                   fontFamily: 'Cabin-Regular',
