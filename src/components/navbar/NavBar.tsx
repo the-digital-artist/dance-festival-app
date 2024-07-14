@@ -6,14 +6,14 @@ import ButtonSmall from "../ButtonSmall";
 
 
 
-class NavBar extends PureComponent<any,any> {
+class NavBar extends PureComponent<any, any> {
     navBarData = [];
 
     static navBarIconSize = 90;
     static navBarItemDistance = 100
     static navBarStartX = 0;
     static navBarHeight = (Dimensions.get('screen').width * (300 / 1290))
-    
+
 
     constructor(props) {
         super(props)
@@ -29,18 +29,18 @@ class NavBar extends PureComponent<any,any> {
 
         return (
             <>
-                {/* {Platform.OS == "ios" &&
-                <BlurView
-                    intensity={50}
-                    style={{
-                        // backgroundColor: 'skyblue',
-                        // backgroundColor: '#232323',
-                        bottom: 0, left: 0, position: 'absolute',
-                        width: Dimensions.get('window').width,
-                        height: 95,
-                        opacity: 1
-                    }} />
-            } */}
+                {Platform.OS == "ios" &&
+                    <BlurView
+                        intensity={50}
+                        style={{
+                            // backgroundColor: 'skyblue',
+                            // backgroundColor: '#232323',
+                            bottom: 0, left: 0, position: 'absolute',
+                            width: Dimensions.get('screen').width,
+                            height: NavBar.navBarHeight,
+                            opacity: 1
+                        }} />
+                }
 
                 <Image
                     style={{
@@ -49,7 +49,7 @@ class NavBar extends PureComponent<any,any> {
                         width: Dimensions.get('screen').width,
                         height: NavBar.navBarHeight,
                         resizeMode: "cover",
-                        opacity: 1.0
+                        opacity: ((Platform.OS == "ios")?0.7:1.0)
                     }}
                     source={require('../../../assets/navbar/navbar_bg.png')}
                 />
@@ -63,20 +63,20 @@ class NavBar extends PureComponent<any,any> {
                                 style={{
                                     // backgroundColor: 'skyblue',
                                     position: 'absolute',
-                                    bottom: 42, 
+                                    bottom: 42,
                                     left: (NavBar.navBarStartX + (i * NavBar.navBarItemDistance)),
-                                    width:  NavBar.navBarIconSize, height: 40,
+                                    width: NavBar.navBarIconSize, height: 40,
                                     opacity: 0.9
                                 }}
                                 visualProperties={{ alpha: 1, x: 0, y: 0, z: 0 }}
-                                onSelect={() => { 
+                                onSelect={() => {
                                     TransitionNavbarSelect(i)
-                                 }}
+                                }}
                                 // source={itemData.imgSrc}
                                 text={(itemData.itemText as string).toLocaleUpperCase()}
                                 fontStyle={{
                                     // backgroundColor: 'skyblue',
-                                    top: 20, width:  NavBar.navBarIconSize,
+                                    top: 20, width: NavBar.navBarIconSize,
                                     fontFamily: 'Arcon-Regular',
                                     textAlign: 'center',
                                     letterSpacing: 1.7,
@@ -90,7 +90,7 @@ class NavBar extends PureComponent<any,any> {
                 <HighlightRendererComponent
                     style={{
                         position: 'absolute',
-                        width:  NavBar.navBarIconSize, height: 5,
+                        width: NavBar.navBarIconSize, height: 5,
                         color: '#fdfaf6',
                     }}
                     bottomOffsetY={NavBar.navBarHeight - 5}
