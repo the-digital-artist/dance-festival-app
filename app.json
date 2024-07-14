@@ -14,7 +14,7 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.thedigitalartist.patiberlin",
-      "buildNumber": "16",
+      "buildNumber": "17",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "LSApplicationQueriesSchemes": [
@@ -30,7 +30,7 @@
         "backgroundColor": "#000000"
       },
       "package": "com.thedigitalartist.patiberlin",
-      "versionCode": 11
+      "versionCode": 16
     },
     "web": {
       "favicon": "./assets/favicon.png"
