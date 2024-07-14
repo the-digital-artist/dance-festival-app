@@ -1,10 +1,9 @@
-import React, { Component, PureComponent } from "react";
-import { Dimensions, FlatList, Image, Text, View } from "react-native";
+import React, { PureComponent } from "react";
+import { Dimensions, FlatList, View } from "react-native";
 import DataModel from "../../DataModel";
-import LComponent from "../../core/LComponent";
+import LauncherController from "../../LauncherController";
 import ArtistListItemRenderer from "./ArtistListItemRenderer";
 import ScreenHeader from "./ScreenHeader";
-import LauncherController from "../../LauncherController";
 import ScreenHomeButton from "./ScreenHomeButton";
 
 

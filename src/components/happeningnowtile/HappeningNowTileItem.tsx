@@ -35,23 +35,6 @@ const HappeningNowTileItem = ({ item }) => {
           }}/> 
         }
 
-{   item.itemType != "type0" &&
-      <Text allowFontScaling={false} id='textTimeWhatsHappening' style={{
-        position: 'absolute',
-        top: 15, left: 5,
-        width: 80, height: 15,
-        fontFamily: 'Cabin-Regular',
-        opacity: 0.6,
-        // backgroundColor: 'skyblue',
-        textAlign: 'right',
-        letterSpacing:0.6,
-        color: '#232323',
-        fontSize: 9,
-      }}>
-        {item.time}
-      </Text>
-}
-
       <Text allowFontScaling={false} id='textLocation' style={{
         position: 'absolute',
         top: 14,

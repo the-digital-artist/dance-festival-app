@@ -1,9 +1,7 @@
-import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
-import ButtonSmall from '../ButtonSmall';
-import TransitionArtistNavigateDown from '../../transitions/TransitionArtistNavigateDown';
-import LauncherController from '../../LauncherController';
-import LTouchableOpacity from '../../core/LTouchableOpacity';
+import { Dimensions, Image, StyleSheet, Text } from 'react-native';
 import ActionArtistListOnDetailsBtn from '../../actions/ActionArtistListOnDetailsBtn';
+import LTouchableOpacity from '../../core/LTouchableOpacity';
+import ButtonSmall from '../ButtonSmall';
 
 const ArtistListItemRenderer = ({ item, index }) => {
   const centerPieceWidth = Dimensions.get('screen').width - (5 + 45 + 35 + 35 + 5)
