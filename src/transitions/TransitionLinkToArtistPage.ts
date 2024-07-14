@@ -15,7 +15,7 @@ const TransitionLinkToArtistPage = (artistData) => {
 
         LauncherController.getInstance().context.artistFocusItem = artistData;
 
-        TransitionNavbarSelect(2);
+        TransitionNavbarSelect(2, false);
 
         (context.artistListReference as FlatList).scrollToIndex(
                 { animated: true, index: artistData.index, viewOffset: 0, viewPosition: 0 }

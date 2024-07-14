@@ -3,10 +3,8 @@ import LauncherController from "../../LauncherController";
 import TweenManager from "../../core/LTweenManager";
 import NavBar from "./NavBar";
 
-const TransitionNavbarSelect = (index) => {
+const TransitionNavbarSelect = (index, storeHistory=true) => {
         console.log("TransitionNavbarSelect" + index);
-        // if(index != 0 && index != 2) return;
-
 
         let oldIdx = LauncherController.getInstance().navBarIndex;
         if (index == oldIdx) return;
@@ -33,6 +31,10 @@ const TransitionNavbarSelect = (index) => {
         });
 
         LauncherController.getInstance().navBarIndex = index;
+
+        if(storeHistory) LauncherController.getInstance().context.navigationHistory.push({out:screenNameOut, transition:'TransitionNavbarSelect' })
+
+
 }
 
 export default TransitionNavbarSelect;

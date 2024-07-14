@@ -7,6 +7,8 @@ import TransitionScreenL1toL2 from './transitions/TransitionScreenL1toL2';
 import TransitionScreenL2toL3 from './transitions/TransitionScreenL2toL3';
 import TransitionScreenSplashToLoading from './transitions/TransitionScreenSplashToLoading';
 import ActionUpdateDataModelWithRemote from './actions/ActionUpdateDataModel';
+import { BackHandler } from 'react-native';
+import ActionHistoryBackButton from './actions/ActionHistoryBackButton';
 
 
 class LauncherController extends OperatorStates {
@@ -220,6 +222,7 @@ class LauncherController extends OperatorStates {
 
             const checkForModelUpdate = setInterval(() => { ActionUpdateDataModelWithRemote(); }, DataModel.modelRemoteUpdateInterval);
 
+            BackHandler.addEventListener('hardwareBackPress', () => { ActionHistoryBackButton(); return true; })
             // ActionUpdateHappeningNow();
             // const checkHappeningNowFunction = setInterval(() => { ActionUpdateHappeningNow(); }, DataModel.happeningNowUpdateInterval);
 
