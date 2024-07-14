@@ -4,7 +4,6 @@ import { Dimensions, Image, Platform, ScrollView, Text, View } from "react-nativ
 import DataModel from "../../DataModel";
 import LauncherController from "../../LauncherController";
 import LComponent from "../../core/LComponent";
-import ActionUpdateHappeningNow from "../happeningnowtile/ActionUpdateHappeningNow";
 import NavBar from "../navbar/NavBar";
 import EarlyPassesTile from "./EarlyPassesTile";
 import HomeScreenProgramItem from "./HomeScreenProgramItem";
@@ -22,7 +21,7 @@ class HomeScreen extends PureComponent<any, any> {
     constructor(props) {
         super(props);
         this.state = {
-            activeItems: [LauncherController.getInstance().context.happeningNowItemNoSession],
+            activeItems: [],
             scrollPosY: 0,
         };
     }
@@ -48,6 +47,7 @@ class HomeScreen extends PureComponent<any, any> {
         const happeningNowTotalDistance = 130 + happeningNowTileHeight + 50;
         // console.log("ScreenHeight: "+Dimensions.get("screen").height+" Content Space: "+contentSpace)
 
+        const logoScrollAlphaReductionDelta = (Platform.OS == 'android')?0.92:0.45;
 
         return (
             <>
@@ -70,7 +70,7 @@ class HomeScreen extends PureComponent<any, any> {
                         source={require('../../../assets/logo-white.png')}
                         style={{
                             position: 'absolute', resizeMode: 'contain',
-                            opacity: (Dimensions.get("screen").height < 800 ? 0.1 : 1.0 - (0.45 * Math.min(1, Math.max(0, this.state.scrollPosY / 100)))),
+                            opacity: (Dimensions.get("screen").height < 800 ? 0.1 : 1.0 - (logoScrollAlphaReductionDelta * Math.min(1, Math.max(0, this.state.scrollPosY / 100)))),
                             left: 80,
                             // backgroundColor: 'red',
                             top: screenHeaderHeight + 15,
@@ -84,11 +84,12 @@ class HomeScreen extends PureComponent<any, any> {
                         position: 'absolute',
                         top: screenHeaderHeight, left: 0,
                         width: Dimensions.get("screen").width,
-                        height: Dimensions.get("screen").height - screenHeaderHeight - navBarHeight,
+                        height: ((Platform.OS == 'android')?
+                                    Dimensions.get("screen").height - screenHeaderHeight - navBarHeight:
+                                    Dimensions.get("screen").height - screenHeaderHeight),
                         // backgroundColor: 'red'
                     }}
                         onScroll={(e) => {
-                            // console.log(e.nativeEvent.contentOffset.y);
                             this.setState({ activeItems: this.state.activeItems, scrollPosY: e.nativeEvent.contentOffset.y })
                         }}
                     >
@@ -187,7 +188,7 @@ class HomeScreen extends PureComponent<any, any> {
                         </View>
                     </ScrollView>
 
-                    {(Platform.OS == 'android') &&
+                    {/* {(Platform.OS == 'android') &&
                         <View
                             style={{
                                 backgroundColor: '#7d7974',
@@ -196,13 +197,13 @@ class HomeScreen extends PureComponent<any, any> {
                                 height: (Dimensions.get('screen').width * (300 / 1290)),
                                 opacity: 0.8
                             }} />
-                    }
+                    } */}
                 </LComponent>
             </>
         );
     }
     componentDidMount(): void {
-        ActionUpdateHappeningNow();
+        // ActionUpdateHappeningNow();
     }
 }
 

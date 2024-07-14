@@ -101,10 +101,10 @@ const HomeScreenProgramItem = ({ itemData, i }) => {
                             top: offsetYBiggerPart + 52,
                             left: offsetXBiggerPart + 30,
                             width: widthBiggerPart - 70,
-                            height: itemHeight - 80 - 15,
+                            height: itemHeight - 80,
                             fontFamily: 'RobotoCondensed-Medium',
                             letterSpacing: 0.5,
-                            fontSize: 13,
+                            fontSize: 12,
                             color: (DataModel.dataStyles[itemData.type].color2),
                             // backgroundColor: 'blue',
                             textAlign: 'left',
@@ -130,7 +130,7 @@ const HomeScreenProgramItem = ({ itemData, i }) => {
                                 height: 30, width: 200
                             }}
                             fontStyle={{
-                                top:((Platform.OS == 'android'))?-3:0,
+                                top:((Platform.OS == 'android'))?-3:8,
                                 left:10,
                                 height: 30,
                                 width: 200,
@@ -239,7 +239,7 @@ const HomeScreenProgramItem = ({ itemData, i }) => {
                                 opacity: 0.5
                             }}
                             fontStyle={{
-                                top: ((Platform.OS == 'android'))?1:0,
+                                top: ((Platform.OS == 'android'))?1:5,
                                 height: 22,
                                 width: widthSmallerPart - 4 * offsetXSmallerPart,
                                 fontFamily: 'Cabin-Regular',
