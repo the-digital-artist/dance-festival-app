@@ -77,7 +77,7 @@ const EarlyPassesTile = (props) => {
                             </Text>
 
 
-                            <ButtonSmall
+                            {/* <ButtonSmall
                                 name={("BtnTicketBanner")}
                                 style={{
                                     position: 'absolute',
@@ -96,7 +96,7 @@ const EarlyPassesTile = (props) => {
                                 }}
                                 visualProperties={{ alpha: 1 }}
                                 onSelect={() => { ActionOpenBrowserWithURL() }}
-                            />
+                            /> */}
 
 
             <ButtonSmall

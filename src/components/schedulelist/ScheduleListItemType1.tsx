@@ -147,7 +147,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               height: itemHeight - 50,
               resizeMode: 'contain'
             }}
-          /> */}
+          /> 
 
           <LComponent
             name={"ScheduleItemHighlight" + item.id}
@@ -176,7 +176,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
           </Animated.Text>
 
           <Animated.Image
-            source={artistData ? artistData.imgSrc : null}
+            source={artistData1 ? artistData1.imgSrc : null}
             style={[{
               // backgroundColor: 'greenyellow',
               position: 'absolute',
@@ -363,16 +363,14 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                 fontStyle={{
                   width: 120,
                   top: ((Platform.OS == 'android'))?-2:5,
-                  width: 120,
                   color: '#f2a33a',
                   fontFamily: 'Cabin-Regular',
                   textAlign: 'center',
                   textAlignVertical: 'center',
                   letterSpacing: 2.0,
-                  color: '#FFFFFF',
+                  // color: '#FFFFFF',
                   fontSize: 9,
                   height: 23,
-                  fontSize: 9,
                 }}
                 visualProperties={{ alpha: 1 }}
                 onSelect={() => {
