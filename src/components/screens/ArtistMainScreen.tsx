@@ -3,6 +3,7 @@ import React, { PureComponent } from "react";
 import { Dimensions, Platform, View } from "react-native";
 import LComponent from "../../core/LComponent";
 import ArtistListScreen from "./ArtistListScreen";
+import ArtistDetailsScreen from "./ArtistDetailsScreen";
 
 class ArtistMainScreen extends PureComponent {
 
@@ -49,7 +50,36 @@ class ArtistMainScreen extends PureComponent {
                     }}
                 >
 
-                    <ArtistListScreen />
+                    <LComponent
+                        name='artistsSelectionScreenContainer'
+                        style={{
+                            position: 'absolute',
+                            backgroundColor: '#000000',
+                            width: Dimensions.get('screen').width,
+                            height: Dimensions.get('screen').height,
+                        }}
+                        visualProperties={{
+                            alpha: 1,
+                            x: 0, y: 0, z: 0
+                        }}
+                    >
+                        <ArtistListScreen />
+                    </LComponent>
+                    <LComponent
+                        name='artistsDetailsScreenContainer'
+                        style={{
+                            position: 'absolute',
+                            backgroundColor: '#dd5163',
+                            width: Dimensions.get('screen').width,
+                            height: Dimensions.get('screen').height,
+                        }}
+                        visualProperties={{
+                            alpha: 0,
+                            x: Dimensions.get('screen').width, y: 0, z: 0
+                        }}
+                    >
+                        <ArtistDetailsScreen />
+                    </LComponent>
                     {/* <NavigationContainer>
                         <stack.Navigator>
                             <stack.Screen name="ARTIST PAGES" component={ArtistListScreen}
