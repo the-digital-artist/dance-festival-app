@@ -1,43 +1,49 @@
+import * as Application from 'expo-application';
 import React, { Fragment, PureComponent } from "react";
 import { Dimensions, Image, Text, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
-import LComponent from "../../core/LComponent";
-import SettingsItemRenderer from "./SettingsItemRenderer";
-import ButtonSmall from "../ButtonSmall";
-import ActionOpenSocialMediaApp from "../../actions/ActionOpenSocialMediaApp";
 import DataModel from "../../DataModel";
-import * as Application from 'expo-application';
-import ActionMoreDownloadPdf from "../../actions/ActionMoreDownloadPdf";
-import ActionMoreContactAppDev from "../../actions/ActionMoreContactAppDev";
 import ActionMoreContactFestival from "../../actions/ActionMoreContactFestival";
+import ActionMoreDownloadPdf from "../../actions/ActionMoreDownloadPdf";
+import ActionMoreNewsletterSignup from "../../actions/ActionMoreNewsletterSignup";
+import ActionOpenSocialMediaApp from "../../actions/ActionOpenSocialMediaApp";
+import LComponent from "../../core/LComponent";
+import ButtonSmall from "../ButtonSmall";
+import NavBar from "../navbar/NavBar";
+import SettingsItemRenderer from "./SettingsItemRenderer";
 
 class SettingsScreen extends PureComponent {
 
     static settingsItemRendererHeight = 50;
     static settingsListData = [
-        { title: "Download Full Schedule as PDF", action: ActionMoreDownloadPdf },
-        // { title: "Contact QALDF Organizers", action: ActionMoreContactFestival},
+        { title: "Get Your Ticket", action: ActionMoreDownloadPdf },
+        { title: "Contact Festival Organizers", action: ActionMoreContactFestival},
+        { title: "Sign-up for our Newsletter", action: ActionMoreNewsletterSignup},
         // { title: `Contact App Creator`, action: ActionMoreContactAppDev },
         // { title: "About App" }
     ]
 
     constructor(props) {
         super(props);
+
+        let currentTime = Date.now();
+        let borderChangeTitleTime =  Date.parse(DataModel.dataTicketSales.earlyBirdStartTimeString);        //YYYY-MM-DDTHH:mm:ss.sssZ
+        SettingsScreen.settingsListData[0].title =   ((currentTime<borderChangeTitleTime)?"Get Your Last-Minute Ticket":"Get Your Special Early-Bird Ticket")
     }
 
     render() {
 
         let socialBarData = [
-            { id: 0, itemText: "Instagram", account: "queer_afro_latin_dance_fest", imgSrc: require('../../../assets/icon-social-insta.png') },
-            { id: 1, itemText: "Youtube", account: "UCUOPjCArvYfJ7bEvNkJYsRQ", imgSrc: require('../../../assets/icon-social-youtube.png') },
-            { id: 3, itemText: "Facebook", account: "761248704084273", imgSrc: require('../../../assets/icon-social-facebook.png') },
-            { id: 4, itemText: "Web", account: "https://queerafrolatindancefestival.com", imgSrc: require('../../../assets/icon-social-web.png') }
+            { id: 0, itemText: "Instagram", account: "patifestival_berlin", imgSrc: require('../../../assets/icon-social-insta.png') },
+            { id: 3, itemText: "Facebook", account: "171550106045951", imgSrc: require('../../../assets/icon-social-facebook.png') },
+            { id: 4, itemText: "Web", account: "https://patifestival.com", imgSrc: require('../../../assets/icon-social-web.png') }
         ]
 
         let iconSize = 35;
         let itemDistance = 60
         let startX = (Dimensions.get('screen').width / 2 - ((socialBarData.length - 1) * itemDistance) / 2) - iconSize / 2
 
+        const socialBarOffsetY = 500;
         return (
             <LComponent
                 name='settingsScreenContainer'
@@ -52,7 +58,7 @@ class SettingsScreen extends PureComponent {
                     x: Dimensions.get('screen').width, y: 0, z: 0
                 }}
             >
-                {/* <Image
+                <Image
                     style={{
                         // backgroundColor: 'skyblue',
                         top: 0, left: 0, position: 'absolute',
@@ -63,7 +69,7 @@ class SettingsScreen extends PureComponent {
                     source={require('../../../assets/screen-settings-bg.png')}
                 />
 
-                <Image
+                {/* <Image
                     source={require('../../../assets/logo-full.png')}
                     style={{
                         position: 'absolute', resizeMode: 'contain', opacity: 1.0,
@@ -80,7 +86,7 @@ class SettingsScreen extends PureComponent {
 
                 {/* FIRST LIST with Settings and Contact Items */}
 
-                {/* <View style={{
+                <View style={{
                     position: 'absolute',
                     backgroundColor: '#1c1919',
                     left: 0, top: 290,
@@ -103,13 +109,13 @@ class SettingsScreen extends PureComponent {
                     // contentContainerStyle={{borderRadius: 6, overflow: 'hidden'}}
                     data={SettingsScreen.settingsListData}
                     renderItem={SettingsItemRenderer}
-                /> */}
+                />
 
 
-{/* 
+
                 <Text allowFontScaling={false} id='textList1' style={[{
                     position: 'absolute',
-                    top: 400,
+                    top: socialBarOffsetY,
                     left: 0,
                     height: 15,
                     width: Dimensions.get('screen').width,
@@ -121,12 +127,12 @@ class SettingsScreen extends PureComponent {
                     textAlign: 'center',
                 }]}>
                     {"FOLLOW US ALONG"}
-                </Text> */}
+                </Text>
 
 
 
 
-                {/* {socialBarData.map((itemData, i) => {
+                {socialBarData.map((itemData, i) => {
                     return (
                         <Fragment key={'socalBarFrag' + i}>
 
@@ -135,7 +141,7 @@ class SettingsScreen extends PureComponent {
                                 style={{
                                     // backgroundColor: 'skyblue',
                                     position: 'absolute',
-                                    top: 420, left: (startX + (i * itemDistance)),
+                                    top: socialBarOffsetY+30, left: (startX + (i * itemDistance)),
                                     width: iconSize, height: iconSize,
                                     opacity: 1.0
                                 }}
@@ -156,24 +162,24 @@ class SettingsScreen extends PureComponent {
                             />
                         </Fragment>
                     );
-                })} */}
+                })}
 
-                {/* <Text allowFontScaling={false} id='version' style={[{
+                <Text allowFontScaling={false} id='version' style={[{
                     position: 'absolute',
-                    top: (490+65),
+                    bottom: (NavBar.navBarHeight+20),
                     left: 45,
                     height: 80,
                     width: Dimensions.get('screen').width - (45 * 2),
                     fontFamily: 'Cabin-Regular',
                     letterSpacing: 2.0,
-                    fontSize: 9,
+                    fontSize: 5,
                     opacity:0.5,
                     color: '#5c5c5c',
                     // backgroundColor: 'skyblue',
                     textAlign: 'center',
                 }]}>
                    {"BUILD VERSION: "+Application.nativeBuildVersion + " - MODEL VERSION: "+DataModel.modelVersion}
-                </Text> */}
+                </Text>
 
 
                 {/* 

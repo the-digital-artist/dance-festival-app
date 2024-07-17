@@ -7,6 +7,7 @@ import ScheduleListItemType4 from './ScheduleListItemType4';
 
 
 const ScheduleListItem = ({ item, index }) => {
+  // console.log('ScheduleListItem ' + item.id)
 
   if (item == undefined || item == null) return null;
   if (item.itemType == "type1" && item.flag == true) return null;
@@ -20,13 +21,13 @@ const ScheduleListItem = ({ item, index }) => {
   if (group.length == 0) group = [{ id: item.id, obj: item }]
 
   if (item.itemType == 'type1')
-    itemHeight = (item.sessionMainTitle as string).length > 25 ? 190 : 190;
+    itemHeight = (item.sessionMainTitle as string).length > 25 ? 200 : 200;
   else if (item.itemType == 'type2')
     itemHeight = (item.room == "" ? 50 : 65);
   else if (item.itemType == 'type3') {
-    itemHeight = 80
-    if((item.sessionMainTitle as string).length > 20) itemHeight+=30;
-    if((item.artistName as string).length > 20) itemHeight+=30;
+    itemHeight = 40
+    if ((item.sessionMainTitle as string).length > 20) itemHeight += 30;
+    if ((item.artistName as string).length > 20) itemHeight += 30;
   }
   else if (item.itemType == 'type4')
     itemHeight = (item.sessionMainTitle as string).length > 20 ? 164 : 138;
@@ -35,14 +36,19 @@ const ScheduleListItem = ({ item, index }) => {
 
   item['assignedListIndex'] = index;
 
-
   let orientation = 'left';
   if (item.itemType == 'type1') {
     orientation = (LauncherController.getInstance().context['sessionListCount']++) % 2 == 0 ? 'left' : 'right'
   }
 
+  const overwriteGroupTitles = true;
+  const groupMainTitle = overwriteGroupTitles ? ("Parallel Workshop Sessions" as string).toLocaleUpperCase() : (item.groupTitle)
+  const groupSubTitle = overwriteGroupTitles ? ("Swipe to Browse Rooms:" as string).toLocaleUpperCase() : (item.groupSubtitle as string).toLocaleUpperCase()
 
 
+  // const flatListRef = (LauncherController.getInstance().context.dataDependentComponentSchedulerScreen as SchedulerScreen).flatListRef[0];
+
+  // console.log('flatListRef is undefined ' + (flatListRef.current == undefined))
   return (
     <>
       <View
@@ -50,13 +56,14 @@ const ScheduleListItem = ({ item, index }) => {
           // backgroundColor: '#FBB03A',
           left: paddingLeftAndRight,
           height: itemHeight, width: Dimensions.get('screen').width - 2 * paddingLeftAndRight,
-          borderTopColor: '#edc36a',
+          borderTopColor: '#FFFFFF',
           borderTopWidth: 0,
           borderBottomColor: 'white',
           borderBottomWidth: StyleSheet.hairlineWidth,
         }}>
 
 
+        {/* {item.itemType == "type1" ?
         {/* {item.itemType == "type1" ?
           <>
             <Image
@@ -80,7 +87,7 @@ const ScheduleListItem = ({ item, index }) => {
 
         {item.itemType == "type1" && item.group.length>1?
           <>
-            <Text allowFontScaling={false} id='textGroupTitle' style={{
+            {index <= 1 && <Text allowFontScaling={false} id='textGroupTitle' style={{
               position: 'absolute',
               top: 8,
               left: 90,
@@ -93,18 +100,21 @@ const ScheduleListItem = ({ item, index }) => {
             }}>
               {("Browse Sessions In Different Rooms" as string).toLocaleUpperCase()}
             </Text>
+            }
 
-            {/* <Text allowFontScaling={false} id='textGroupSubTitle' style={{
+            <Text allowFontScaling={false} id='textGroupSubTitle' style={{
               position: 'absolute',
-              top: 35, left: 90,
+              top: index > 1 ? 8 : (8 + 12 + 3),
+              left: 90,
               width: 290, height: 16,
+              // backgroundColor: 'indigo',
               fontFamily: 'Cabin-Regular',
               letterSpacing: 2.0,
               textAlign: 'left',
               color: '#fefefe',
               fontSize: 12,
-            }}>{"Browse Rooms:"}
-            </Text> */}
+            }}>{groupSubTitle}
+            </Text>
           </>
           : null}
       </View>

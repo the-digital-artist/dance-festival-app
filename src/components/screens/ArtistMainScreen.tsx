@@ -9,7 +9,6 @@ import LauncherController from "../../LauncherController";
 import ScreenHeader from "./ScreenHeader";
 import HeaderNavigator from "./HeaderNavigator";
 
-
 class ArtistMainScreen extends PureComponent {
 
     constructor(props) {
@@ -55,37 +54,7 @@ class ArtistMainScreen extends PureComponent {
                     }}
                 >
 
-                    <LComponent
-                        name='artistsSelectionScreenContainer'
-                        style={{
-                            position: 'absolute',
-                            backgroundColor: '#000000',
-                            width: Dimensions.get('screen').width,
-                            height: Dimensions.get('screen').height,
-                        }}
-                        visualProperties={{
-                            alpha: 1,
-                            x: 0, y: 0, z: 0
-                        }}
-                    >
-                        <ArtistListScreen />
-                    </LComponent>
-                    <LComponent
-                        name='artistsDetailsScreenContainer'
-                        style={{
-                            position: 'absolute',
-                            backgroundColor: '#dd5163',
-                            width: Dimensions.get('screen').width,
-                            height: Dimensions.get('screen').height,
-                        }}
-                        visualProperties={{
-                            alpha: 0,
-                            x: Dimensions.get('screen').width, y: 0, z: 0
-                        }}
-                    >
-                        <ArtistDetailsScreen />
-                    </LComponent>
-                    {/* <NavigationContainer>
+                    <NavigationContainer>
                         <stack.Navigator>
                             <stack.Screen name="ARTIST PAGES" component={ArtistListScreen}
                                 options={headerOptions}
@@ -93,12 +62,12 @@ class ArtistMainScreen extends PureComponent {
                             <stack.Screen name="ARTIST DETAILS" component={ArtistDetailsScreen}
                                 options={headerOptions} />
                         </stack.Navigator>
-                    </NavigationContainer> */}
-
+                    </NavigationContainer>
+                    
                     {(Platform.OS == 'android') &&
                         <View
                             style={{
-                                backgroundColor: '#EF4260',
+                                backgroundColor: '#7d7974',
                                 bottom: (Dimensions.get('screen').width * (300 / 1290)) / 2 - 1, left: 0, position: 'absolute',
                                 width: Dimensions.get('screen').width,
                                 height: (Dimensions.get('screen').width * (300 / 1290)),

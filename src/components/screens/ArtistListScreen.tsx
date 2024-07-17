@@ -1,10 +1,10 @@
-import React, { Component, PureComponent } from "react";
+import React, { PureComponent } from "react";
 import { Dimensions, FlatList, Image, Text, View } from "react-native";
 import DataModel from "../../DataModel";
-import LComponent from "../../core/LComponent";
+import LauncherController from "../../LauncherController";
 import ArtistListItemRenderer from "./ArtistListItemRenderer";
 import ScreenHeader from "./ScreenHeader";
-import LauncherController from "../../LauncherController";
+import ScreenHomeButton from "./ScreenHomeButton";
 
 
 class ArtistListScreen extends PureComponent {
@@ -21,13 +21,22 @@ class ArtistListScreen extends PureComponent {
         LauncherController.getInstance().context.dataDependentComponentArtistScreen = this;
 
         this.state.modelUpdateState = 2;
-        this.state.dataModelList = DataModel.dataArtistsList;
+        this.state.dataModelList = DataModel.dyn_dataArtistsList;
     }
 
     render() {
         // console.log("___________ArtistListScreen render ")
-        // console.log("___________ArtistListScreen render - state dataModel: "+JSON.stringify(this.state.dataModel, null, 2)); 
-
+        // console.log("___________ArtistListScreen render - state dataModel: "+JSON.stringify(this.state.dataModelList, null, 2)); 
+        //add one empty artist item into the list for presentation reasons
+        if (this.state.dataModelList!=null && this.state.dataModelList!=undefined &&
+            this.state.dataModelList[this.state.dataModelList.length - 1].key != "NONE") {
+            this.state.dataModelList.push(
+                {
+                    "fullName": "", "insta": "", "bio": "", "facebook": "", "portrait": "", "imgSrc": -1, "shortBio": "",
+                    "key": "NONE", "index": this.state.dataModelList.length, "sessionIds": []
+                }
+            );
+        }
         return (
             <>
 
@@ -45,10 +54,10 @@ class ArtistListScreen extends PureComponent {
                 <View
                     style={{
                         position: 'absolute',
-                        backgroundColor: '#EF4260',
+                        backgroundColor: '#64615f',
                         left: 0, top: 0,
                         width: Dimensions.get('screen').width,
-                        height: 90,
+                        height: 105,
                         opacity: 1
                     }}
                 />
@@ -74,6 +83,12 @@ class ArtistListScreen extends PureComponent {
                         keyExtractor={item => item.fullName}
                     />
                 }
+
+                <ScreenHeader text={"ARTISTS & DJs"} color='#f8f6d3' />
+                <ScreenHomeButton />
+
+
+
                 {this.state.modelUpdateState == 0 &&
 
                     <View style={{
@@ -86,6 +101,7 @@ class ArtistListScreen extends PureComponent {
 
                 }
 
+
             </>
         );
     }
@@ -95,12 +111,12 @@ class ArtistListScreen extends PureComponent {
 
 
     startModelUpdate() {
-        // console.log("___________ArtistListScreen setting state 1"); 
+        console.log("___________ArtistListScreen setting state 1"); 
         this.setState({ modelUpdateState: 1, dataModelList: null })
     }
     finishModelUpdate() {
-        // console.log("___________ArtistListScreen finishModelUpdate -  update (state 2)"); 
-        this.setState({ modelUpdateState: 2, dataModelList: DataModel.dataArtistsList })
+        console.log("___________ArtistListScreen finishModelUpdate -  update (state 2)"); 
+        this.setState({ modelUpdateState: 2, dataModelList: DataModel.dyn_dataArtistsList })
     }
 }
 

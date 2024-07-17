@@ -1,32 +1,38 @@
-import { useState } from 'react';
-import { Dimensions, Image, Platform, Text, View } from 'react-native';
-import LauncherController from '../../LauncherController';
+import { Dimensions, Image, Text, View } from 'react-native';
+import ActionOpenBrowserWithTicketURL from '../../actions/ActionOpenBrowserWithURL';
 import ButtonSmall from '../ButtonSmall';
-import TransitionLinkToSchedule from '../../transitions/TransitionLinkToSchedule';
-import HappeningNowTileItem from '../happeningnowtile/HappeningNowTileItem';
-import { BlurView } from 'expo-blur';
-import ActionOpenBrowserWithURL from '../../actions/ActionOpenBrowserWithURL';
 
 
 const EarlyPassesTile = (props) => {
-  // console.log("Rendering EarlyPassesTile")
+    // console.log("Rendering EarlyPassesTile")
 
-  return (
-    <>
-        <Text allowFontScaling={false} id='textLocation' style={[{
-                                position: 'absolute',
-                                top: props.offsetY,
-                                left: 30,
-                                height: 17,
-                                fontFamily: 'Cabin-Regular',
-                                letterSpacing: 2.0,
-                                fontSize: 14,
-                                color: '#4b262a',
-                                // backgroundColor: 'skyblue',
-                                textAlign: 'center',
-                            }]}>
-                                GRAB YOUR TICKET FOR NEXT YEAR 2025
-                            </Text>
+    return (
+        <>
+            <View
+                style={{
+                    position: 'absolute',
+                    opacity: 0.2,
+                    top: 0,
+                    left: 0,
+                    width: Dimensions.get("screen").width,
+                    height: 140,
+                    backgroundColor: '#3e3b3a'
+                }}
+            ></View>
+            <Text allowFontScaling={false} id='textHeader'
+                style={{
+                    top: -25,
+                    left: 0,
+                    width: Dimensions.get('screen').width, height: 32,
+                    color: '#f8f6d3',
+                    fontFamily: 'Cabin-Regular',
+                    textAlign: 'center',
+                    textAlignVertical: 'center',
+                    letterSpacing: 2.0,
+                    fontSize: 12
+                }}>
+                {'EARLY BIRD PASSES'}
+            </Text>
 
 
 
@@ -92,37 +98,37 @@ const EarlyPassesTile = (props) => {
                                 onSelect={() => { ActionOpenBrowserWithURL() }}
                             />
 
-                  
-                            <ButtonSmall
-                                name={("BtnTicketPage")}
-                                style={{
-                                    position: 'absolute',
-                                    top: (props.offsetY + 150),
-                                    left: 60,
-                                    height: 35,
-                                    width: (Dimensions.get('screen').width - 2 * 60),
-                                }}
-                                text={"GO TO TICKET WEBPAGE"}
-                                bgBoxVisible={true}
-                                bgBoxStyle={{
-                                    backgroundColor: '#262730',
-                                    height: 35, 
-                                    width: (Dimensions.get('screen').width - 2 * 60),
-                                }}
-                                fontStyle={{
-                                    fontFamily: 'Cabin-Regular',
-                                    textAlign: 'center',
-                                    textAlignVertical: 'center',
-                                    letterSpacing: 2.0,
-                                    color: '#EFEFEF',
-                                    fontSize: 10,
-                                    width: (Dimensions.get('screen').width - 2 * 60),
-                                }}
-                                visualProperties={{ alpha: 1 }}
-                                onSelect={() => { ActionOpenBrowserWithURL() }}
-                            />
-    </>
-  );
+
+            <ButtonSmall
+                name={("BtnTicketPage")}
+                style={{
+                    position: 'absolute',
+                    top: (props.offsetY + 90),
+                    left: 60,
+                    height: 35,
+                    width: (Dimensions.get('screen').width - 2 * 60),
+                }}
+                text={"GO TO TICKET WEBPAGE"}
+                bgBoxVisible={true}
+                bgBoxStyle={{
+                    backgroundColor: '#232323',
+                    height: 35,
+                    width: (Dimensions.get('screen').width - 2 * 60),
+                }}
+                fontStyle={{
+                    fontFamily: 'Cabin-Regular',
+                    textAlign: 'center',
+                    textAlignVertical: 'center',
+                    letterSpacing: 2.0,
+                    color: '#fdface',
+                    fontSize: 10,
+                    width: (Dimensions.get('screen').width - 2 * 60),
+                }}
+                visualProperties={{ alpha: 1 }}
+                onSelect={() => { ActionOpenBrowserWithTicketURL() }}
+            />
+        </>
+    );
 }
 
 export default EarlyPassesTile;

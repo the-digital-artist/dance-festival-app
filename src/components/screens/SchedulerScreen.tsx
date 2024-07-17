@@ -1,5 +1,5 @@
 import React, { PureComponent, createRef } from "react";
-import { Dimensions, Platform, Text, View } from "react-native";
+import { Dimensions, FlatList, Platform, Text, View } from "react-native";
 import Animated from 'react-native-reanimated';
 import DataModel from "../../DataModel";
 import LauncherController from "../../LauncherController";
@@ -8,14 +8,16 @@ import TransitionDataModelUpdate from "../../transitions/TransitionDataModelUpda
 import ScheduleListItem from "../schedulelist/ScheduleListItem";
 import TabBar from "../tabbar/TabBar";
 import ScreenHeader from "./ScreenHeader";
+import { Gesture, GestureDetector, NativeViewGestureHandler } from "react-native-gesture-handler";
+import ScreenHomeButton from "./ScreenHomeButton";
 
 
 
 class SchedulerScreen extends PureComponent {
-    flatListRef: any[] = [];
+    scheduleListArray = [] //{flatListRef: reference, nativeGestureObj: native, data: dataModelList[0] }
+
     state = {
         selectedTabIndex: 0,
-
         modelUpdateState: 0, //0-not-initialized, 1-for updating, 2-ready
         dataModelList: null
     }
@@ -27,14 +29,20 @@ class SchedulerScreen extends PureComponent {
         LauncherController.getInstance().context.dataDependentComponentSchedulerScreen = this;
 
         this.state.modelUpdateState = 2;
-        this.state.dataModelList = DataModel.dataScheduleListsByDay;
+        this.state.dataModelList = DataModel.dyn_dataScheduleListsByDay;
     }
 
     render() {
         // console.log("___________SchedulerScreen render ")
-        for (let i = 0; i < 1; i++) {
-            this.flatListRef.push(createRef())
+        for (let i = 0; i < this.state.dataModelList.length; i++) {
+            this.scheduleListArray.push({flatListRef: createRef(), nativeGestureObj: Gesture.Native(), data: this.state.dataModelList[i].data })
+            for (let j = 0; j < this.state.dataModelList[i].data.length; j++) {
+                const item = this.state.dataModelList[i].data[j];
+                item['refNativeGesture'] =  this.scheduleListArray[i].nativeGestureObj;
+            }
         }
+
+
 
         let offsetX = 0;
         let offsetY = 141;
@@ -67,7 +75,9 @@ class SchedulerScreen extends PureComponent {
 
 
                     {this.state.modelUpdateState == 2 &&
-                        this.state.dataModelList.map((list, i) => {
+                        this.scheduleListArray.map((scheduleList, i) => {
+                            // console.log(" this.scheduleListArray.map((scheduleList, i) "+scheduleList.data.length);
+                            // list = {flatListRef: createRef(), nativeGestureObj: Gesture.Native(), data: this.state.dataModelList[i] }
                             return (
                                 <LComponent
                                     key={"scheduleList" + i}
@@ -83,24 +93,23 @@ class SchedulerScreen extends PureComponent {
                                         h: Dimensions.get('screen').height - offsetY,
                                     }}
                                 >
-                                    {/* <GestureDetector gesture={Gesture.Native()}> */}
 
-
-                                    <Animated.FlatList
-                                        ref={(list) => this.flatListRef[i] = list}
-                                        style={{
-                                            position: 'absolute',
-                                            backgroundColor: '#25649a',
-                                            left: 0, top: 20,
-                                            width: Dimensions.get('screen').width - offsetX,
-                                            height: Dimensions.get('screen').height - offsetY - 10,
-                                            opacity: 1
-                                        }}
-                                        data={list.data}
-                                        renderItem={ScheduleListItem}
-                                        keyExtractor={item => item.id}
-                                    />
-                                    {/* </GestureDetector> */}
+                                    <GestureDetector gesture={scheduleList.nativeGestureObj}>
+                                        <FlatList
+                                            ref={(list) => { scheduleList.flatListRef = list; }}
+                                            style={{
+                                                position: 'absolute',
+                                                backgroundColor: '#25649a',
+                                                left: 0, top: 20,
+                                                width: Dimensions.get('screen').width - offsetX,
+                                                height: Dimensions.get('screen').height - offsetY - 10,
+                                                opacity: 1
+                                            }}
+                                            data={scheduleList.data}
+                                            renderItem={ScheduleListItem}
+                                            keyExtractor={item => item.id}
+                                        />
+                                    </GestureDetector>
                                 </LComponent>
                             );
                         })
@@ -111,6 +120,10 @@ class SchedulerScreen extends PureComponent {
 
 
                     <TabBar ></TabBar>
+                    <ScreenHeader text={"WORKSHOP SCHEDULE"} color='#f8f6d3' />
+                    <ScreenHomeButton />
+
+
                     {(Platform.OS == 'android') &&
                         <View
                             style={{
@@ -127,7 +140,7 @@ class SchedulerScreen extends PureComponent {
     }
     componentDidMount(): void {
         // console.log("___________SchedulerScreen componentDidMount");
-        LauncherController.getInstance().context.sessionListReference = this.flatListRef;
+        // LauncherController.getInstance().context.sessionListReference = this.flatListRef;
     }
 
     startModelUpdate() {
@@ -137,7 +150,7 @@ class SchedulerScreen extends PureComponent {
     }
     finishModelUpdate() {
         // console.log("___________SchedulerScreen finishModelUpdate -  update (state 2)");
-        this.setState({ modelUpdateState: 2, dataModelList: DataModel.dataScheduleListsByDay })
+        this.setState({ modelUpdateState: 2, dataModelList: DataModel.dyn_dataScheduleListsByDay })
     }
 }
 

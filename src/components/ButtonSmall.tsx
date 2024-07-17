@@ -17,6 +17,7 @@ const ButtonSmall = (props) => {
                 name={props.name}
                 style={[
                     props.style
+                    
                 ]}
                 visualProperties={props.visualProperties}
                 onPress={props.onSelect}
@@ -24,14 +25,14 @@ const ButtonSmall = (props) => {
 
 
 
-                {/* {(true) && ( */}
+                {(props.bgBoxVisible ==true) && 
 
                     <Animated.View
                         style={[
                             props.dynamicVisualPropertiesHightlight, props.bgBoxStyle
                         ]}
                     />
-                {/* ) */}
+                }
 
                 {props.source && (
                     <Image
@@ -49,7 +50,7 @@ const ButtonSmall = (props) => {
                         style={[{
                             // backgroundColor: 'skyblue',
                             top: textCenterPosY, left: 0, position: 'absolute',
-                            width: 100,
+                            width: props.style.width,
                             fontFamily: 'DINNeuzeitGroteskStd-Light',
                             textDecorationLine: props.textDecorationLine,
                             textAlign: 'center',

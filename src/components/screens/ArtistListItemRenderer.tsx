@@ -1,29 +1,23 @@
 import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
+import ActionArtistListOnDetailsBtn from '../../actions/ActionArtistListOnDetailsBtn';
+import LTouchableOpacity from '../../core/LTouchableOpacity';
 import ButtonSmall from '../ButtonSmall';
-import TransitionArtistNavigateDown from '../../transitions/TransitionArtistNavigateDown';
 
 const ArtistListItemRenderer = ({ item, index }) => {
   const centerPieceWidth = Dimensions.get('screen').width - (5 + 45 + 35 + 35 + 5)
   const paddingLeftAndRight = 5;
-  let itemHeight = 130;
+  const itemHeight = 130;
 
-  // console.log(JSON.stringify(item, null, 2))
+  const imageSize = 100;
+  const imageOffsetY = (itemHeight-imageSize)/2
+
 
   return (
     <>
-      {/* <Image
-                    style={{
-                        // backgroundColor: 'skyblue',
-                        top: 5, left: 0, position: 'absolute',
-                        width: Dimensions.get('screen').width,
-                        height: (Dimensions.get('screen').width * (300 / 1290)),
-                        resizeMode: "contain",
-                        opacity: 0.1
-                    }}
-                    source={require('../../../assets/tabbar/tabbar_bg.png')}
-                /> */}
 
-      <View
+           
+      <LTouchableOpacity
+        name={("ArtistListItemRenderer"+index)}
         style={{
           // position: 'absolute',
           backgroundColor: 'transparent',
@@ -33,10 +27,13 @@ const ArtistListItemRenderer = ({ item, index }) => {
           borderTopWidth: 0,
           borderBottomColor: 'black',
           borderBottomWidth: StyleSheet.hairlineWidth,
-        }}>
+        }}
+        onPress={() => { ActionArtistListOnDetailsBtn(item)}}
+        >
 
-        <>
-              <View
+
+
+        <><View
         style={{
           position: 'absolute',
           backgroundColor: '#1a202e',
@@ -52,7 +49,7 @@ const ArtistListItemRenderer = ({ item, index }) => {
             source={item.imgSrc}
             style={{
               position: 'absolute', resizeMode: 'cover', opacity: 1.0,
-              left: 0, top: 15, width: 100, height: 100,
+              left: 0, top: imageOffsetY, width: imageSize, height: imageSize,
             }}
           />
 
@@ -96,16 +93,11 @@ const ArtistListItemRenderer = ({ item, index }) => {
                 top: 6
               }}
               visualProperties={{ alpha: 1 }}
-              onSelect={() => { 
-                TransitionArtistNavigateDown(item) 
-              }}
+              onSelect={() => { ActionArtistListOnDetailsBtn(item) }}
             />
           }
         </>
-
-      </View>
-
-
+      </LTouchableOpacity>
     </>
   );
 }

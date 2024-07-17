@@ -27,7 +27,7 @@ const ScheduleListItemType4 = ({ item }) => {
             letterSpacing: 1.2,
             opacity: 0.8,
             padding:2,
-            backgroundColor: '#ecc885',
+            backgroundColor: '#312816',
             textAlign: 'left',
             color: '#232323',
             fontSize: 11,

@@ -1,14 +1,13 @@
 import { useState } from 'react';
-import { Dimensions, Image, Platform, Text, View } from 'react-native';
+import { Dimensions, Image, Text, View } from 'react-native';
 import LauncherController from '../../LauncherController';
-import ButtonSmall from '../ButtonSmall';
 import TransitionLinkToSchedule from '../../transitions/TransitionLinkToSchedule';
-import HappeningNowTileItem from './HappeningNowTileItem';
-import { BlurView } from 'expo-blur';
+import ButtonSmall from '../ButtonSmall';
+import HomeScreenProgramItem from '../screens/HomeScreenProgramItem';
 
 
 const HappeningNowTile = (props) => {
-  // console.log("Rendering HappeningNowTile")
+  console.log("Rendering HappeningNowTile")
 
   const context = LauncherController.getInstance().context;
   const [currentTimeString, setCurrentTimeString] = useState(context.currentTimeString);
@@ -16,7 +15,6 @@ const HappeningNowTile = (props) => {
 
   return (
     <>
-
       <Text allowFontScaling={false} id='textHeadlineWhatsHappening'
         style={[{
           position: 'absolute',
@@ -88,7 +86,7 @@ const HappeningNowTile = (props) => {
               }}>
 
 
-              <HappeningNowTileItem item={props.activeItems.length >= 1 ? props.activeItems[i] : context.happeningNowItemNoSession} />
+              <HomeScreenProgramItem itemData={props.activeItems.length >= 1 ? props.activeItems[i] : context.happeningNowItemNoSession} i={0}/>
             </View>
 
           );

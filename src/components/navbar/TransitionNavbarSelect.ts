@@ -1,36 +1,40 @@
 import { Dimensions } from "react-native";
 import LauncherController from "../../LauncherController";
 import TweenManager from "../../core/LTweenManager";
+import NavBar from "./NavBar";
 
-const TransitionNavbarSelect = (index) => {
+const TransitionNavbarSelect = (index, storeHistory=true) => {
         console.log("TransitionNavbarSelect" + index);
-        // if(index != 0 && index != 2) return;
-
 
         let oldIdx = LauncherController.getInstance().navBarIndex;
         if (index == oldIdx) return;
 
 
         //animate navbar
-        let iconSize = 80;
-        let itemDistance = 90
-        let startX = (Dimensions.get('screen').width / 2 - ((4 - 1) * itemDistance) / 2) - iconSize / 2
-    
-        TweenManager.tween().to("navBarHighlight", 134, { alpha: 1.0, x: (index * itemDistance + startX) });
+        TweenManager.tween().to("navBarHighlight", 134, { alpha: 1.0, x: (index * NavBar.navBarItemDistance + NavBar.navBarStartX) });
 
         //animate incoming screen
         let targetX = index > oldIdx ? Dimensions.get('screen').width : -Dimensions.get('screen').width;
 
 
         let screenNameIn = LauncherController.getInstance().navBarData[index].associatedScreenName
-        TweenManager.tween().to(screenNameIn, 200, { x: 0 });
+        TweenManager.tween().to(screenNameIn, 0, { y: 0, 
+                onComplete: (ok) => { TweenManager.tween().to(screenNameIn, 200, { x: 0 })} 
+               
+        });
         TweenManager.tween().to(screenNameIn, 284, { alpha: 1, z: 0, delay: 137 });
 
         let screenNameOut = LauncherController.getInstance().navBarData[oldIdx].associatedScreenName
         TweenManager.tween().to(screenNameOut, 134, { alpha: 0.5, z: 0 });
-        TweenManager.tween().to(screenNameOut, 200, { x: -targetX, initValue: 100 });
+        TweenManager.tween().to(screenNameOut, 200, { x: -targetX, initValue: 100, 
+                onComplete: (ok) => { TweenManager.tween().to(screenNameOut, 0, { y: Dimensions.get('screen').height });} 
+        });
 
         LauncherController.getInstance().navBarIndex = index;
+
+        if(storeHistory) LauncherController.getInstance().context.navigationHistory.push({out:screenNameOut, transition:'TransitionNavbarSelect' })
+
+
 }
 
 export default TransitionNavbarSelect;

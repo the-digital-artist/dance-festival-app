@@ -1,26 +1,34 @@
 import React, { Fragment, PureComponent } from "react";
-import { Dimensions, Image, Platform, Pressable, Text, View } from "react-native";
-import LComponent from "../../core/LComponent";
-import TransitionScreenL3toL2 from "../../transitions/TransitionScreenL3toL2";
-import LauncherController from "../../LauncherController";
+import { Dimensions, Image, Platform, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { BlurView } from "expo-blur";
-import ButtonSmall from "../ButtonSmall";
+import LauncherController from "../../LauncherController";
 import ActionOpenSocialMediaApp from "../../actions/ActionOpenSocialMediaApp";
+import ButtonSmall from "../ButtonSmall";
+import ScreenHeader from "./ScreenHeader";
+import ActionHistoryBackButton from "../../actions/ActionHistoryBackButton";
 
 
 class ArtistDetailsScreen extends PureComponent {
     constructor(props) {
         super(props);
+        this.state = {
+            scrollPosY: 0
+        };
     }
 
     render() {
+        const context = LauncherController.getInstance().context
         const item = LauncherController.getInstance().context.artistFocusItem
+
+        const logoScrollAlphaReductionDelta = 0.9
+
+        // console.log("Setting Reference")
+        LauncherController.getInstance().artistStackData[1].screenComponentRef = this;
 
         const scrollViewContent =
             Platform.OS == 'ios' ?
-                (item.bio as string).length / 1100 * 1.2 * Dimensions.get('screen').height :
-                (item.bio as string).length / 1100 * 1.5 * Dimensions.get('screen').height;
+                (item.bio as string).length / 1100 * 1.5 * Dimensions.get('screen').height :
+                (item.bio as string).length / 1100 * 1.7 * Dimensions.get('screen').height;
 
         let socialBarData = [
             { id: 0, provider: "Instagram", account: item.insta, imgSrc: require('../../../assets/icon-social-insta-black.png') },
@@ -98,23 +106,26 @@ class ArtistDetailsScreen extends PureComponent {
                                 return (
                                     <Fragment key={'socalBarFrag' + i}>
 
-                                        <ButtonSmall
-                                            name={'socialBarItem' + i}
-                                            style={{
-                                                // backgroundColor: 'skyblue',
-                                                position: 'absolute',
-                                                top: 130, left: (startX + (i * itemDistance)),
-                                                width: iconSize, height: iconSize,
-                                                opacity: 1.0
-                                            }}
-                                            visualProperties={{ alpha: 0.7, x: 0, y: 0, z: 0 }}
-                                            onSelect={() => { ActionOpenSocialMediaApp(itemData.provider, itemData.account) }}
-                                            source={itemData.imgSrc}
-                                            text={''}
-                                        />
-                                    </Fragment>
-                                );
-                            })}
+                                    <ButtonSmall
+                                        name={'instagramButtonItem' + i}
+                                        style={{
+                                            // backgroundColor: 'skyblue',
+                                            position: 'absolute',
+                                            top: 130, left: (startX + (i * itemDistance)),
+                                            width: iconSize, height: iconSize,
+                                            opacity: 1.0
+                                        }}
+                                        visualProperties={{ alpha: 0.7, x: 0, y: 0, z: 0 }}
+                                        onSelect={() => {
+                                            context.navigationHistory.push({ out: "ArtistDetailsScreen", transition: "ActionOpenSocialMediaApp" });
+                                            ActionOpenSocialMediaApp(itemData.provider, itemData.account)
+                                        }}
+                                        source={itemData.imgSrc}
+                                        text={''}
+                                    />
+                                </Fragment>
+                            );
+                        })}
 
                         </ScrollView>
 
@@ -123,47 +134,58 @@ class ArtistDetailsScreen extends PureComponent {
 
                     </View>
 
-                    {/* <BlurView
-                
-                        intensity={10}
-                        style={{
-                            position: 'absolute', opacity: 1.0,
-                            right: -80, bottom: -40, width: 300, height: 300,
-                        }}>
-
-                     
-                    </BlurView> */}
-                    <Image
-                        source={item.imgSrc}
-                        style={{
-                            position: 'absolute', resizeMode: 'cover', opacity: 0.7,
-                            right: -40, bottom: 0, width: 300, height: 300,
-                        }}
-                    />
-                    {/* <Image
-                        style={{
-                            // backgroundColor: 'skyblue',
-                            top: 0, left: 0, position: 'absolute',
-                            width: Dimensions.get('screen').width, height: Dimensions.get('screen').height,
-                            resizeMode: "contain",
-                            opacity: 1
-                        }}
-                        source={require('.,/../../assets/screen-mockup-artistscreen.png')}
-                    /> */}
-
-
-
-                    {/* 
-                <Pressable id='buttonBack'
+                <Image
+                    // name={("ScheduleListArtistDetailsButton" + item.fullName)}
+                    source={item.imgSrc}
                     style={{
                         position: 'absolute',
-                        top: 30,
-                        left: 0,
-                        width: Dimensions.get('screen').width, height: 60,
-                        // backgroundColor: 'indigo',
+                        right: -40,
+                        bottom: ((Platform.OS == 'android') ? 70: 0),
+                        width: 300,
+                        height: 300,
+                        opacity: 0.9
+                      
                     }}
-                    onPress={() => { TransitionScreenL3toL2() }}
-                /> */}
+                    // bgBoxVisible={false}
+                    // visualProperties={{ alpha: 0.7 }}
+                    // onSelect={() => {
+                        // context.navigationHistory.push({ out: "ArtistDetailsScreen", transition: "ActionOpenSocialMediaApp" });
+                        // ActionOpenSocialMediaApp("Instagram", item.insta)
+                    // }}
+                    />
+
+
+                <ScreenHeader
+                    text={"ARTIST DETAILS"}
+                    color='#f8f6d3'
+                    textStyle={{ left: 50 }}
+                />
+                {/* <ScreenHomeButton /> */}
+
+                <ButtonSmall
+                    name={'backButtonArtistDetails'}
+                    style={{
+                        // backgroundColor: 'skyblue',
+                        position: 'absolute',
+                        top: 50, left: 0,
+                        width: 40, height: 40,
+                        opacity: 0.9
+                    }}
+                    visualProperties={{ alpha: 1, x: 0, y: 0, z: 0 }}
+                    onSelect={() => { ActionHistoryBackButton(); }}
+                    // text={'BACK'}
+                    // fontStyle={{
+                    //     width:40,
+                    //     top:42,
+                    //     fontFamily: 'Arcon-Regular',
+                    //     textAlign: 'center',
+                    //     letterSpacing: 1.7,
+                    //     color: '#f8f6d3',
+                    //     fontSize: 7,
+
+                    // }}
+                    source={require('../../../assets/stack-backicon.png')}
+                />
             </>
         );
     }

@@ -1,12 +1,14 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Font from 'expo-font';
 import DataModel from './DataModel';
-import ActionUpdateDataModelWithRemote from './actions/ActionUpdateDataModel';
 import ActionUpdateHappeningNow from './components/happeningnowtile/ActionUpdateHappeningNow';
 import OperatorStates from './core/LOperatorStates';
 import TransitionScreenL1toL2 from './transitions/TransitionScreenL1toL2';
 import TransitionScreenL2toL3 from './transitions/TransitionScreenL2toL3';
 import TransitionScreenSplashToLoading from './transitions/TransitionScreenSplashToLoading';
+import ActionUpdateDataModelWithRemote from './actions/ActionUpdateDataModel';
+import { BackHandler } from 'react-native';
+import ActionHistoryBackButton from './actions/ActionHistoryBackButton';
 
 
 class LauncherController extends OperatorStates {
@@ -15,7 +17,8 @@ class LauncherController extends OperatorStates {
         {
             state: "splash",
             sessionListCount: 0,
-            sessionListReference: null,
+
+            navigationHistory: [{ out: "HomeScreen", transition: "initial" }],
 
             artistListReference: null,
 
@@ -52,7 +55,7 @@ class LauncherController extends OperatorStates {
                 imgSrc: null,
                 shortBio: ``,
                 bio: `Susana Arenas Pedroso is `,
-                facebook: ``, 
+                facebook: ``,
                 insta: ''
             },
 
@@ -65,20 +68,20 @@ class LauncherController extends OperatorStates {
                 groupTitle: '',
                 groupSubtitle: '',
                 room: 'Relax and Plan Ahead \nwith The Festival Planner',
-                startTime: '2024-01-01T0:00', 
-                endTime: '2024-06-17T05:00', 
+                startTime: '2024-01-01T0:00',
+                endTime: '2024-06-17T05:00',
                 time: '00:00'
             },
 
             happeningNowEndFestival: {
-                sessionMainTitle: 'See You in 2025! 🌈',
-                shortMainTitle: 'See You in 2025! 🌈',
+                sessionMainTitle: 'See You in 2025!',
+                shortMainTitle: 'See You in 2025!',
                 itemType: 'type0',
                 groupTitle: '',
                 groupSubtitle: '',
-                room: 'The 6th Queer Afro-Latin Dance \nFestival has concluded.',
-                startTime: '2024-06-17T05:00', 
-                endTime: '2030-12-31T23:59', 
+                room: `This Pa'Ti Festival has concluded.`,
+                startTime: '2024-07-22T02:00',
+                endTime: '2030-12-31T23:59',
                 time: '00:00'
             },
 
@@ -185,12 +188,20 @@ class LauncherController extends OperatorStates {
             { id: 4, itemText: "More", associatedScreenName: "settingsScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_settings.png') }
         ]
 
+    artistStackIndex = 0
+    artistStackData =
+        [
+            { id: 0, itemText: "Artists & DJs", associatedScreenName: "artistsSelectionScreenContainer", imgSrc: null, screenComponentRef: null },
+            { id: 1, itemText: "Artist Details", associatedScreenName: "artistsDetailsScreenContainer", imgSrc: null, screenComponentRef: null },
+        ]
+
     customFonts = {
         'DINNeuzeitGroteskStd-Light': require('../assets/fonts/DINNeuzeitGroteskStdLight.otf'),
         'DINCondensed-Bold': require('../assets/fonts/DINNeuzeitGroteskStdBdCond.otf'),
         'Arcon-Regular': require('../assets/fonts/Arcon-Regular.otf'),
         'Arcon-Rounded-Regular': require('../assets/fonts/Arcon-Regular.otf'),
         'Cabin-Regular': require('../assets/fonts/Cabin-Regular.ttf'),
+
     };
 
     constructor() {
@@ -209,9 +220,10 @@ class LauncherController extends OperatorStates {
 
             const checkForModelUpdate = setInterval(() => { ActionUpdateDataModelWithRemote(); }, DataModel.modelRemoteUpdateInterval);
 
+            BackHandler.addEventListener('hardwareBackPress', () => { ActionHistoryBackButton(); return true; })
             // ActionUpdateHappeningNow();
-            const checkHappeningNowFunction = setInterval(() => { ActionUpdateHappeningNow(); }, DataModel.happeningNowUpdateInterval);
-         
+            // const checkHappeningNowFunction = setInterval(() => { ActionUpdateHappeningNow(); }, DataModel.happeningNowUpdateInterval);
+
         } catch (e) {
             console.warn(e);
         } finally { }
@@ -223,26 +235,31 @@ class LauncherController extends OperatorStates {
         try {
             console.log('LauncherController - checking local models...');
 
-            const value = await AsyncStorage.getItem('qaldfDataModel');
+            const value = await AsyncStorage.getItem('dataModel');
+            const localModelCopy = {};
             if (value == null) { //never used local storage - first time load
-                const modelAsString = JSON.stringify({
-                    modelVersion: DataModel.modelVersion,
-                    dataArtists: DataModel.dataArtists,
-                    dataScheduleRaw: DataModel.dataScheduleRaw
-                });
-                console.log('LauncherController  - using initial model: '+ DataModel.modelVersion);
-                AsyncStorage.setItem('qaldfDataModel', modelAsString);
+                for (const key in DataModel) {
+                    if (key=='_instance' || key=='instance' || key.indexOf('dyn_')==0) {
+                        console.log("LauncherController - fresh - skipping "+key)
+                        continue;
+                    }
+                    console.log("LauncherController - fresh - building "+key)
+                    localModelCopy[key] = DataModel[key];
+                }
+                const modelAsString = JSON.stringify(localModelCopy);
+                console.log('LauncherController  - using initial model: ' + DataModel.modelVersion);
+                AsyncStorage.setItem('dataModel', modelAsString);
                 return;
             }
             if (value !== null) {
                 const locallyStoredModel = JSON.parse(value);
                 if (locallyStoredModel.modelVersion <= DataModel.modelVersion) return;
-                return;
+                for (const key in locallyStoredModel) {
+                    console.log("LauncherController - retrieving local storage "+key)
+                    DataModel[key] = locallyStoredModel[key];
+                }
 
-                DataModel.dataArtists = locallyStoredModel.dataArtists
-                DataModel.dataScheduleRaw = locallyStoredModel.dataScheduleRaw
-                DataModel.modelVersion = locallyStoredModel.modelVersion
-                console.log('LauncherController - using locally stored model: '+ DataModel.modelVersion);
+                console.log('LauncherController - using locally stored model: ' + DataModel.modelVersion);
                 return;
             }
         } catch (e) {
@@ -261,22 +278,21 @@ class LauncherController extends OperatorStates {
             if (!response.ok) return;
 
             const remoteModel = await response.json();
-            console.log('LauncherController - remote model with version: '+ remoteModel.modelVersion,);
+            console.log('LauncherController - remote model with version: ' + remoteModel.modelVersion,);
 
-            if (remoteModel.modelVersion > DataModel.modelVersion) {
-                DataModel.modelVersion = remoteModel.modelVersion
-                DataModel.dataArtists = remoteModel.dataArtists;
-                DataModel.dataScheduleRaw = remoteModel.dataScheduleRaw;
+            if (remoteModel.modelVersion <= DataModel.modelVersion) return;
 
-                console.log('LauncherController - using remote model and storing locally.'+ remoteModel.modelVersion,);
-
-                AsyncStorage.setItem('qaldfDataModel', JSON.stringify({
-                    modelVersion: DataModel.modelVersion,
-                    dataArtists: DataModel.dataArtists,
-                    dataScheduleRaw: DataModel.dataScheduleRaw
-                }));
+          // now sync all the keys in the remote model to the local model
+            for (const key in remoteModel) {
+                if (Object.prototype.hasOwnProperty.call(DataModel, key)) {
+                    console.log("LauncherController - syncing local key with remote key: " + key);
+                    DataModel[key] = remoteModel[key];
+                }
             }
-
+            console.log('LauncherController - using remote model and storing locally.' + remoteModel.modelVersion,);
+            
+            AsyncStorage.setItem('dataModel', JSON.stringify({DataModel}));
+          
         } catch (error) {
             if (error.message == "Aborted") {
                 console.log('LauncherController - Internet too slow to get remote model.');
@@ -321,6 +337,28 @@ class LauncherController extends OperatorStates {
             console.log('Could not assign an image for a particular artist')
         }
 
+        try {
+            if (DataModel.dataStyles['type1'] != undefined) DataModel.dataStyles['type1'].imgSrc = require('../assets/tile-fullprogram-itembg1.png');
+            if (DataModel.dataStyles['type2'] != undefined) DataModel.dataStyles['type2'].imgSrc = require('../assets/tile-fullprogram-itembg2.png');
+            if (DataModel.dataStyles['type3'] != undefined) DataModel.dataStyles['type3'].imgSrc = require('../assets/tile-fullprogram-itembg3.png');
+            if (DataModel.dataStyles['type4'] != undefined) DataModel.dataStyles['type4'].imgSrc = require('../assets/tile-fullprogram-itembg4.png');
+
+        } catch (error) {
+            console.log('Could not assign an image for a particularhomepage bg')
+        }
+
+
+        try {
+            if (DataModel.dataLocation['altemuenze'] != undefined) DataModel.dataLocation['altemuenze'].imgSrc = require('../assets/location-icons/location-alte-muenze.png')
+            if (DataModel.dataLocation['bebop'] != undefined) DataModel.dataLocation['bebop'].imgSrc = require('../assets/location-icons/location-bebop.png')
+            if (DataModel.dataLocation['belushis'] != undefined) DataModel.dataLocation['belushis'].imgSrc = require('../assets/location-icons/location-belushis.png')
+            if (DataModel.dataLocation['berlindanceinstitute'] != undefined) DataModel.dataLocation['berlindanceinstitute'].imgSrc = require('../assets/location-icons/location-berlin-dance-institute.png')
+            if (DataModel.dataLocation['soda'] != undefined) DataModel.dataLocation['soda'].imgSrc = require('../assets/location-icons/location-soda.png')
+            if (DataModel.dataLocation['unknown'] != undefined) DataModel.dataLocation['unknown'].imgSrc = require('../assets/location-icons/location-unknown.png')
+            if (DataModel.dataLocation['citytour'] != undefined) DataModel.dataLocation['citytour'].imgSrc = require('../assets/location-icons/location-citytour.png')
+        } catch (error) {
+            console.log('Could not assign an image for a particularhomepage bg')
+        }
 
         // console.log("::::::::Preparing Data Model - End Assigning Images");
 
@@ -352,9 +390,9 @@ class LauncherController extends OperatorStates {
         }
 
         //store in array and add name field
-        DataModel.dataArtistsList = [];
+        DataModel.dyn_dataArtistsList = [];
         for (let key in DataModel.dataArtists) {
-            DataModel.dataArtistsList.push(DataModel.dataArtists[key]);
+            DataModel.dyn_dataArtistsList.push(DataModel.dataArtists[key]);
         }
 
         // console.log("::::::::Preparing Data Model - ArtistList Length: " + DataModel.dataArtistsList.length);
@@ -367,7 +405,7 @@ class LauncherController extends OperatorStates {
         //groups are sessions that happen in different rooms but at the same time
         //3) store fav value
 
-        DataModel.dataScheduleListsByDay = [];
+        DataModel.dyn_dataScheduleListsByDay = [];
 
         let dataItem = null;
         let dataItemOldGroup = null;
@@ -379,9 +417,9 @@ class LauncherController extends OperatorStates {
             //1) structure by date
 
             let found = false;
-            for (let j = 0; j < DataModel.dataScheduleListsByDay.length; j++) {
-                if (DataModel.dataScheduleListsByDay[j].title == dataItem.dateString) {
-                    sectionListData = DataModel.dataScheduleListsByDay[j]
+            for (let j = 0; j < DataModel.dyn_dataScheduleListsByDay.length; j++) {
+                if (DataModel.dyn_dataScheduleListsByDay[j].title == dataItem.dateString) {
+                    sectionListData = DataModel.dyn_dataScheduleListsByDay[j]
                     found = true;
                     break;
                 }
@@ -391,8 +429,8 @@ class LauncherController extends OperatorStates {
 
                 sectionListData = { title: dataItem.dateString, data: [] }
 
-                DataModel.dataScheduleListsByDay.push(sectionListData)
-                console.log("New Date Found - creating a new data list to hold the schedule for the following day: " + sectionListData.title);
+                DataModel.dyn_dataScheduleListsByDay.push(sectionListData)
+                console.log("LauncherController - processing raw schedule - new date found:" + sectionListData.title);
             }
 
             //2) reformat group element
@@ -402,7 +440,7 @@ class LauncherController extends OperatorStates {
                 for (let k = 0; k < DataModel.dataScheduleRaw.length; k++) {
                     if (dataItemOldGroup[j] == DataModel.dataScheduleRaw[k].id) {
                         dataItemNewGroup.push({ id: dataItemOldGroup[j], obj: DataModel.dataScheduleRaw[k] });
-                        DataModel.dataScheduleRaw[k].flag = (j==0)?false:true;
+                        DataModel.dataScheduleRaw[k].flag = (j == 0) ? false : true;
                         break;
                     }
                 }
@@ -427,9 +465,20 @@ class LauncherController extends OperatorStates {
 
             //add the data item to the specific section list (usually ordered by day)
             sectionListData.data.push(dataItem);
-            console.log('adding '+dataItem.id)
+            // console.log('adding ' + dataItem.id)
 
         }
+
+        DataModel.dyn_dataModelProgram = [];
+        for (let i = 0; i < DataModel.dataModelProgram.length; i++) {
+            // console.log(DataModel.dataModelProgram[i].startTime);
+            if(DataModel.dataModelProgram[i].endTime =='' || Date.parse(DataModel.dataModelProgram[i].endTime)>Date.now()) {
+                DataModel.dyn_dataModelProgram.push(DataModel.dataModelProgram[i])
+            }
+        }
+
+
+
     }
 
     stateChange(oldState, newState): void {

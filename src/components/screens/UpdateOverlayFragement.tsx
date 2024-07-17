@@ -16,10 +16,10 @@ class UpdateOverlayFragement extends PureComponent {
                     name='waitForUpdateCoverSchedule'
                     style={{
                         position: 'absolute',
-                        backgroundColor: '#9F509F',
+                        backgroundColor: '#fdface',
                     }}
                     visualProperties={{
-                        alpha: 0.5, x: "windowWidth", y: 0, z: 0, w: "windowWidth", h: "windowHeight"
+                        alpha: 0.5, x: "windowWidth", y: 0, z: 0,  w: "windowWidth", h: "windowHeight"
                     }}
                 >
                     <Text allowFontScaling={false} id='textInterruptionScheduleUpdate' style={[{
@@ -31,7 +31,7 @@ class UpdateOverlayFragement extends PureComponent {
                         fontFamily: 'Cabin-Regular',
                         letterSpacing: 2.0,
                         fontSize: 12,
-                        color: '#e9e3de',
+                        color: '#232323',
                         // backgroundColor: 'skyblue',
                         textAlign: 'center',
                     }]}>
