@@ -1,7 +1,5 @@
 
 class DataModel {
-	_instance = null;
-	static instance() { return (this._instance == null ? this._instance = new DataModel() : this._instance) };
 
 	static modelRemoteGetModelUrl = 'https://2y3ndtoxei.execute-api.us-west-1.amazonaws.com/default/caldacModelContent';
 	static modelRemoteVersionCheckUrl = 'https://2y3ndtoxei.execute-api.us-west-1.amazonaws.com/default/caldacModelVersion';
@@ -247,8 +245,37 @@ class DataModel {
 		{ "id": 30801, "itemType": "type1", "artistName": "Rafa", "sessionMainTitle": "HEELS CHALLENGE (5 OF 5)", "time": "16:00 - 17:00", "room": "CONF ROOM 4", "level": "-1", "group": [30801, 30802], "groupTitle": "Workshops", "groupSubtitle": "", "shortMainTitle": "", "dateString": "Sun, October 20, 2024", "startTime": "2024-10-20T16:00:00.000Z", "endTime": "2024-10-20T17:00:00.000Z", "place": "", "sessionSubtitle": "", "sessionDescription": "", "artistOne": "Rafa", "artistTwo": "", "artistLocation": "!", "flag": false, "flagIncludeInNow": false },
 		{ "id": 30802, "itemType": "type1", "artistName": "Alex & Desiree", "sessionMainTitle": "AnD BACHATA INSTRUCTOR (6 OF 6)", "time": "16:00 - 17:00", "room": "CONF ROOM 5", "level": "-1", "group": [30801, 30802], "groupTitle": "Workshops", "groupSubtitle": "", "shortMainTitle": "", "dateString": "Sun, October 20, 2024", "startTime": "2024-10-20T16:00:00.000Z", "endTime": "2024-10-20T17:00:00.000Z", "place": "", "sessionSubtitle": "", "sessionDescription": "", "artistOne": "Alex & Desiree", "artistTwo": "", "artistLocation": "!", "flag": false, "flagIncludeInNow": false }]
 
-	static dataArtistsList = null;
-	static dataScheduleListsByDay = null;
+
+	static dataStyles = {
+		// 'type1': { note: 'workshops', color1: '#312816', color2: '#312816', color3: '#f8f6d3', bgColor: '#bfa269' },
+		// 'type2': { note: 'city', color1: '#f8f6d3', color2: '#312816', color3: '#FFFFFF', bgColor: '#d7c8ac' },
+		// 'type3': { note: 'bootcamp', color1: '#312816', color2: '#f8f6d3', color3: '#010101', bgColor: '#fefac9' },
+		// 'type4': { note: 'party', color1: '#f8f6d3', color2: '#f2aa3e', color3: '#FFFFFF', bgColor: '#3e3b3a' },
+	}
+
+	static dataLocation = {
+		// 'altemuenze': { locationName: `Alte Münze`, mapObj: { lat: '52.5161353', lon: '13.4065007', q: `Alte+Münze` } },
+	}
+
+	static dataModelProgram = [
+		// { id: 10, type: 'type4', title: 'Goodbye Party', dateText: "Sun, 21.07.24", timeText: "20:15 - 01:00", location: 'soda', locationAdress: 'Schönhauser Allee 36, 10435 Berlin', tickets: ['Berlin Experience Ticket', "All-Inclusive Pass,"], startTime: '2024-07-21T20:15:00.000', endTime: '2024-07-22T01:00:00.000', description: "Special:  23:00: Show" },
+		// { id: 11, type: 'type5', title: 'EMPTY', dateText: "", timeText: "", location: '', locationAdress: '', tickets: [], startTime: '', endTime: '', description: "" },
+	]
+
+
+	static dataTicketSales = {
+		// earlyBirdStartTimeString: '2024-07-21T05:00:00.000'
+	}
+
+
+	//dynamic Model - this is formatted in LauncherController during initialize() based on dataRaw 
+	//and then used in the app
+	_instance = null;
+	static instance() { return (this._instance == null ? this._instance = new DataModel() : this._instance) };
+
+	static dyn_dataArtistsList = null;
+	static dyn_dataScheduleListsByDay = null;
+	static dyn_dataModelProgram = null;
 }
 
 export default DataModel;
