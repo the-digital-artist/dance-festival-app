@@ -35,10 +35,10 @@ class SchedulerScreen extends PureComponent {
     render() {
         // console.log("___________SchedulerScreen render ")
         for (let i = 0; i < this.state.dataModelList.length; i++) {
-            this.scheduleListArray.push({flatListRef: createRef(), nativeGestureObj: Gesture.Native(), data: this.state.dataModelList[i].data })
+            this.scheduleListArray.push({ flatListRef: createRef(), nativeGestureObj: Gesture.Native(), data: this.state.dataModelList[i].data })
             for (let j = 0; j < this.state.dataModelList[i].data.length; j++) {
                 const item = this.state.dataModelList[i].data[j];
-                item['refNativeGesture'] =  this.scheduleListArray[i].nativeGestureObj;
+                item['refNativeGesture'] = this.scheduleListArray[i].nativeGestureObj;
             }
         }
 
@@ -66,11 +66,11 @@ class SchedulerScreen extends PureComponent {
                         alpha: 1.0, x: 'windowWidth', y: 0, z: 0, w: "windowWidth", h: "windowHeight"
                     }}
                 >
-                  <ScreenHeader 
-                    text={"WORKSHOP SCHEDULE"} 
-                    textStyle={{top: 65}}
-                    color='#FFFFFF' 
-                    imgSrc={require('../../../assets/header-schedule-bg.png')}/>
+                    <ScreenHeader
+                        text={"WORKSHOP SCHEDULE"}
+                        textStyle={{ top: 65 }}
+                        color='#FFFFFF'
+                        imgSrc={require('../../../assets/header-schedule-bg.png')} />
 
 
 
@@ -119,9 +119,12 @@ class SchedulerScreen extends PureComponent {
 
 
 
-
+                    <ScreenHeader
+                        text={"WORKSHOP SCHEDULE"}
+                        textStyle={{ top: 65 }}
+                        color='#FFFFFF'
+                        imgSrc={require('../../../assets/header-schedule-bg.png')} />
                     <TabBar ></TabBar>
-                    <ScreenHeader text={"WORKSHOP SCHEDULE"} color='#121212' />
                     <ScreenHomeButton />
 
 
