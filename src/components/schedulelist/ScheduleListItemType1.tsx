@@ -54,8 +54,9 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     const artistData = DataModel.dataArtists[item.artistOne];
     const verticalOffsetTitleLength = item.lineCount != undefined ? (item.lineCount * 19) : 19;
 
-    const imageWidthArtistImage = this.props.tileWidth * (120 / 305);
-    const imageOffsetYArtistImage = 0 + ((305 - this.props.tileWidth) / (305 - 245)) * 10
+    const imageWidthArtistImage = this.props.tileWidth * (120 / 305)*0.9;
+    const imageOffsetYArtistImage = 13 + ((305 - this.props.tileWidth) / (305 - 245)) * 10
+    const imageOffsetXArtistImage = 19;
     const fontSizeMainTitle = this.props.tileWidth * (19 / 305);
     const fontSizeArtistName = !isNightPartyItem ? this.props.tileWidth * (13 / 305) : this.props.tileWidth * (12 / 305);
 
@@ -170,8 +171,8 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               // backgroundColor: 'greenyellow',
               position: 'absolute',
               top: 2 + imageOffsetYArtistImage,
-              right: (item.orientation == 'right' ? -25 : undefined),
-              left: (item.orientation == 'left' ? -20 : undefined),
+              right: (item.orientation == 'right' ? -imageOffsetXArtistImage : undefined),
+              left: (item.orientation == 'left' ? -imageOffsetXArtistImage : undefined),
               width: imageWidthArtistImage, height: imageWidthArtistImage,
               resizeMode: 'cover'
             }, this.props.dynamicVisualProperties1]}
