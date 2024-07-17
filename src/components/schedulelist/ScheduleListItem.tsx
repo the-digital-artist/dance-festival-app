@@ -78,7 +78,7 @@ const ScheduleListItem = ({ item, index }) => {
         {item.itemType == "type3" ? <ScheduleListItemType3 item={item} /> : null}
         {item.itemType == "type4" ? <ScheduleListItemType4 item={item} /> : null}
 
-        {item.itemType == "type1" ?
+        {item.itemType == "type1" && item.group.length>1?
           <>
             <Text allowFontScaling={false} id='textGroupTitle' style={{
               position: 'absolute',
