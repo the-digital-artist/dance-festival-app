@@ -119,15 +119,16 @@ class SchedulerScreen extends PureComponent {
 
 
 
+
                     <TabBar ></TabBar>
-                    <ScreenHeader text={"WORKSHOP SCHEDULE"} color='#f8f6d3' />
+                    <ScreenHeader text={"WORKSHOP SCHEDULE"} color='#121212' />
                     <ScreenHomeButton />
 
 
                     {(Platform.OS == 'android') &&
                         <View
                             style={{
-                                backgroundColor: '#c7b49c',
+                                backgroundColor: '#7d7974',
                                 bottom: (Dimensions.get('screen').width * (300 / 1290)) / 2 - 1, left: 0, position: 'absolute',
                                 width: Dimensions.get('screen').width,
                                 height: (Dimensions.get('screen').width * (300 / 1290)),

@@ -19,7 +19,7 @@ const ScreenHeader = (props) => {
         style={[{
           top: 60, left: 30,
           width: Dimensions.get('screen').width - 40, height: 32,
-          fontFamily: 'LuckiestGuy-Regular',
+          fontFamily: 'DINNeuzeitGroteskStd-Light',
           // backgroundColor: 'skyblue',
           letterSpacing: 2.4,
           textAlign: 'left',
