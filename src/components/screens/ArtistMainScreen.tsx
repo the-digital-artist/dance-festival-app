@@ -1,13 +1,8 @@
-import React, { PureComponent } from "react";
-import ArtistListScreen from "./ArtistListScreen";
-import LComponent from "../../core/LComponent";
-import { Dimensions, Platform, View } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import ArtistDetailsScreen from "./ArtistDetailsScreen";
-import { NavigationContainer } from '@react-navigation/native';
-import LauncherController from "../../LauncherController";
-import ScreenHeader from "./ScreenHeader";
-import HeaderNavigator from "./HeaderNavigator";
+import React, { PureComponent } from "react";
+import { Dimensions, Platform, View } from "react-native";
+import LComponent from "../../core/LComponent";
+import ArtistListScreen from "./ArtistListScreen";
 
 class ArtistMainScreen extends PureComponent {
 
@@ -54,7 +49,8 @@ class ArtistMainScreen extends PureComponent {
                     }}
                 >
 
-                    <NavigationContainer>
+                    <ArtistListScreen />
+                    {/* <NavigationContainer>
                         <stack.Navigator>
                             <stack.Screen name="ARTIST PAGES" component={ArtistListScreen}
                                 options={headerOptions}
@@ -62,8 +58,8 @@ class ArtistMainScreen extends PureComponent {
                             <stack.Screen name="ARTIST DETAILS" component={ArtistDetailsScreen}
                                 options={headerOptions} />
                         </stack.Navigator>
-                    </NavigationContainer>
-                    
+                    </NavigationContainer> */}
+
                     {(Platform.OS == 'android') &&
                         <View
                             style={{
