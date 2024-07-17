@@ -15,10 +15,10 @@ const TabBar = (props) => {
     // ]
 
 
-    let itemWidth = 125;
+    let itemWidth =  (Dimensions.get('screen').width/tabBarData.length);
     let itemHeight = 43;
     let itemHeightSelectedOffset = 10;
-    let itemSpread = 140
+    let itemSpread = (Dimensions.get('screen').width/tabBarData.length)
     let startX = (Dimensions.get('screen').width / 2 - ((tabBarData.length - 1) * itemSpread) / 2) - itemWidth / 2
 
     const currentIndex = useSharedValue(0);
@@ -85,7 +85,7 @@ const TabBar = (props) => {
                                 width: itemWidth, height: itemHeight,
                             }}
                             onSelect={() => { 
-                                //TransitionTabbarSelect(itemData, i, currentIndex)
+                                TransitionTabbarSelect(itemData, i, currentIndex)
                              } }
                             source={itemData.imgSrc}
                             text={(itemData.itemText as string).toLocaleUpperCase()}
