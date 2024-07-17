@@ -325,14 +325,19 @@ class LauncherController extends OperatorStates {
             if(DataModel.dataArtists['Eder & Milton'] != undefined) DataModel.dataArtists['Eder & Milton'].imgSrc = require('../assets/portraits/0003_eder_-_milton.png');
             if(DataModel.dataArtists['J Square'] != undefined) DataModel.dataArtists['J Square'].imgSrc = require('../assets/portraits/0000_j_square.png');
             if(DataModel.dataArtists['Jorge & Indira'] != undefined) DataModel.dataArtists['Jorge & Indira'].imgSrc = require('../assets/portraits/0008_jorge_-_indira.png');
-            if(DataModel.dataArtists['Karen & Ricardo'] != undefined) DataModel.dataArtists['Karen & Ricardo'].imgSrc = require('../assets/portraits/0005_karen_-_ricardo.png');
+            if(DataModel.dataArtists['Karen Y Ricardo'] != undefined) DataModel.dataArtists['Karen Y Ricardo'].imgSrc = require('../assets/portraits/0005_karen_-_ricardo.png');
             if(DataModel.dataArtists['Raul & Delia'] != undefined) DataModel.dataArtists['Raul & Delia'].imgSrc = require('../assets/portraits/0001_raul_-_delia.png');   
             if(DataModel.dataArtists['Latisha Hardy'] != undefined) DataModel.dataArtists['Latisha Hardy'].imgSrc = require('../assets/portraits/0021_latisha_hardy.png');
             if(DataModel.dataArtists['Carlos & Suzan'] != undefined) DataModel.dataArtists['Carlos & Suzan'].imgSrc = require('../assets/portraits/0022_carlos_-_suzan.png');   
             if(DataModel.dataArtists['Brandon & Michelle'] != undefined) DataModel.dataArtists['Brandon & Michelle'].imgSrc = require('../assets/portraits/0023_brandon_-_michelle.png');   
             if(DataModel.dataArtists['El Tiguere Y Bianca'] != undefined) DataModel.dataArtists['El Tiguere Y Bianca'].imgSrc = require('../assets/portraits/0024_el_tiguere_-_bianca.png');   
             if(DataModel.dataArtists['Ataca Y Alemana'] != undefined) DataModel.dataArtists['Ataca Y Alemana'].imgSrc = require('../assets/portraits/0025_ataca_-_alemana.png');   
-     
+            if(DataModel.dataArtists['Rafa Gonzalez'] != undefined) DataModel.dataArtists['Rafa Gonzalez'].imgSrc = require('../assets/portraits/0026_rafa.png');   
+            if(DataModel.dataArtists['Marisol Blanco'] != undefined) DataModel.dataArtists['Marisol Blanco'].imgSrc = require('../assets/portraits/0027_marisol_blanco.png');   
+            if(DataModel.dataArtists['Kingsmen'] != undefined) DataModel.dataArtists['Kingsmen'].imgSrc = require('../assets/portraits/0028_kingsmen.png');   
+            if(DataModel.dataArtists['Celeste Williamson'] != undefined) DataModel.dataArtists['Celeste Williamson'].imgSrc = require('../assets/portraits/0029_celeste_williamson.png');   
+            if(DataModel.dataArtists['Iroko'] != undefined) DataModel.dataArtists['Iroko'].imgSrc = require('../assets/portraits/0030_iroko.png');   
+       
         } catch (error) {
             console.log('Could not assign an image for a particular artist')
         }
@@ -468,6 +473,12 @@ class LauncherController extends OperatorStates {
             // console.log('adding ' + dataItem.id)
 
         }
+        //add empty item at the end of each day schedule
+        for (let j = 0; j < DataModel.dyn_dataScheduleListsByDay.length; j++) {
+            DataModel.dyn_dataScheduleListsByDay[j].data.push({ "id": j*10000, "itemType": "type5", group: [] })
+        }
+
+
 
         DataModel.dyn_dataModelProgram = [];
         for (let i = 0; i < DataModel.dataModelProgram.length; i++) {
