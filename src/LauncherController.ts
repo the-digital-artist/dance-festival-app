@@ -168,9 +168,10 @@ class LauncherController extends OperatorStates {
     tabBarIndex = 0
     tabBarData =
         [
-            { id: 0, itemText: "Friday", associatedScreenName: "scheduleList0", imgSrc: null },
-            { id: 1, itemText: "Saturday", associatedScreenName: "scheduleList1", imgSrc: null },
-            { id: 2, itemText: "Sunday", associatedScreenName: "scheduleList2", imgSrc: null }
+            { id: 0, itemText: "Thursday", associatedScreenName: "scheduleList0", imgSrc: null },
+            { id: 1, itemText: "Friday", associatedScreenName: "scheduleList1", imgSrc: null },
+            { id: 2, itemText: "Saturday", associatedScreenName: "scheduleList2", imgSrc: null },
+            { id: 3, itemText: "Sunday", associatedScreenName: "scheduleList3", imgSrc: null }
         ]
 
 
@@ -310,7 +311,11 @@ class LauncherController extends OperatorStates {
             if(DataModel.dataArtists['Jorge & Indira'] != undefined) DataModel.dataArtists['Jorge & Indira'].imgSrc = require('../assets/portraits/0008_jorge_-_indira.png');
             if(DataModel.dataArtists['Karen & Ricardo'] != undefined) DataModel.dataArtists['Karen & Ricardo'].imgSrc = require('../assets/portraits/0005_karen_-_ricardo.png');
             if(DataModel.dataArtists['Raul & Delia'] != undefined) DataModel.dataArtists['Raul & Delia'].imgSrc = require('../assets/portraits/0001_raul_-_delia.png');   
-            if(DataModel.dataArtists['Latisha Hardy'] != undefined) DataModel.dataArtists['Latisha Hardy'].imgSrc = require('../assets/portraits/0021_latisha_hardy.png');   
+            if(DataModel.dataArtists['Latisha Hardy'] != undefined) DataModel.dataArtists['Latisha Hardy'].imgSrc = require('../assets/portraits/0021_latisha_hardy.png');
+            if(DataModel.dataArtists['Carlos & Suzan'] != undefined) DataModel.dataArtists['Carlos & Suzan'].imgSrc = require('../assets/portraits/0022_carlos_-_suzan.png');   
+            if(DataModel.dataArtists['Brandon & Michelle'] != undefined) DataModel.dataArtists['Brandon & Michelle'].imgSrc = require('../assets/portraits/0023_brandon_-_michelle.png');   
+            if(DataModel.dataArtists['El Tiguere Y Bianca'] != undefined) DataModel.dataArtists['El Tiguere Y Bianca'].imgSrc = require('../assets/portraits/0024_el_tiguere_-_bianca.png');   
+            if(DataModel.dataArtists['Ataca Y Alemana'] != undefined) DataModel.dataArtists['Ataca Y Alemana'].imgSrc = require('../assets/portraits/0025_ataca_-_alemana.png');   
      
         } catch (error) {
             console.log('Could not assign an image for a particular artist')
