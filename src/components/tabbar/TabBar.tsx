@@ -17,7 +17,7 @@ const TabBar = (props) => {
 
     let itemWidth =  (Dimensions.get('screen').width/tabBarData.length);
     let itemHeight = 43;
-    let itemHeightSelectedOffset = 10;
+    let itemHeightSelectedOffset = 8;
     let itemSpread = (Dimensions.get('screen').width/tabBarData.length)
     let startX = (Dimensions.get('screen').width / 2 - ((tabBarData.length - 1) * itemSpread) / 2) - itemWidth / 2
 
@@ -45,7 +45,7 @@ const TabBar = (props) => {
             <View style={{
                 pointerEvents: 'none',
                 backgroundColor: '#8cb5d8',
-                top: 100 + itemHeightSelectedOffset, left: 0, position: 'absolute',
+                top: 112 + itemHeightSelectedOffset, left: 0, position: 'absolute',
                 width: Dimensions.get('screen').width,
                 height: itemHeight - itemHeightSelectedOffset,
                 //  borderTopColor: 'white',
@@ -70,7 +70,7 @@ const TabBar = (props) => {
                             name={'tabBarItem' + i}
                             style={{
                                 position: 'absolute',
-                                top: 100, left: (startX + (i * itemSpread)),
+                                top: 112, left: (startX + (i * itemSpread)),
                                 width: itemWidth, height: itemHeight,
                                 opacity: 1.0
 

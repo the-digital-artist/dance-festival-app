@@ -184,7 +184,7 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
                                     groupIndexUpdateFunction={changeSelectedIndex}
                                     paddingLeftAndRight={paddingLeftAndRight}
                                     tileOffsetLeft={((Dimensions.get('screen').width - tileWidth) / 2)}
-                                    tileOffsetTop={-46}
+                                    tileOffsetTop={-20}
                                     dynamicVisualProperties0={animValues[i]}
                                     dynamicVisualProperties1={animValuesAlpha[i]}
                                     dynamicVisualProperties2={animValuesDeltaX[i]}

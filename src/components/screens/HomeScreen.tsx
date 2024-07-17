@@ -78,7 +78,12 @@ class HomeScreen extends PureComponent<any, any> {
                             height: Dimensions.get('screen').width - (2 * 80) * 1313 / 815,
                         }}
                     />
-                    <ScreenHeader text={"WELCOME MY FRIEND"} color='#f8f6d3' />
+                    <ScreenHeader
+                        text={"WELCOME MY FRIEND"}
+                        textStyle={{ top: 65 }}
+                        color='#FFFFFF'
+                        imgSrc={require('../../../assets/header-home-bg.png')} />
+                        
 
                     <ScrollView style={{
                         position: 'absolute',

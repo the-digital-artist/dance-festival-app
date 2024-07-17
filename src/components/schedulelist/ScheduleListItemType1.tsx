@@ -56,14 +56,13 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     const verticalOffsetTitleLength = item.lineCount != undefined ? (item.lineCount * 19) : 19;
     const verticalOffsetLevel = (item.levelSpecial != undefined && item.levelSpecial == '1') ? 20 : 0
 
-    const imageWidthArtistImagex1 = this.props.tileWidth / (2.0) * (160 / 305);
+    const imageWidthArtistImagex1 = this.props.tileWidth / (1.3) * (160 / 305);
     const imageWidthArtistImagex2 = imageWidthArtistImagex1 * 0.7;
 
     const imageWidthArtistImage = this.props.tileWidth * (120 / 305)*0.9;
-    const imageOffsetYArtistImage = 13 + ((305 - this.props.tileWidth) / (305 - 245)) * 10
-    const imageOffsetXRArtistImage = 19;
-    const imageOffsetXLArtistImage = 19;
-    const imageOffsetXArtistImage = 19;
+    const imageOffsetYArtistImage = 10 + ((305 - this.props.tileWidth) / (305 - 245)) * 10
+    const imageOffsetXRArtistImage = -17;
+    const imageOffsetXLArtistImage = -17;
     const fontSizeMainTitle = this.props.tileWidth * (19 / 305);
     const fontSizeArtistName = this.props.tileWidth * (12 / 305)
 
@@ -154,7 +153,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
             style={{
               backgroundColor: '#615a83',
             }}
-            visualProperties={{ alpha: 0, x: 3, y: 0, h: (itemHeight - 30 - 3), w: this.props.tileWidth - 6 }}
+            visualProperties={{ alpha: 0, x: 0, y: 0, h: (itemHeight - 30), w: this.props.tileWidth}}
           />
 
           <Animated.Text allowFontScaling={false} id='textLocation' style={[{
@@ -164,18 +163,18 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
             // right: (item.orientation == 'right' ? undefined : 10),
             // left: (item.orientation == 'left' ? undefined : 10),
             height: 15,
-            width: 60,
+            width: 70,
             fontFamily: 'DINNeuzeitGroteskStd-Light',
             // backgroundColor: 'skyblue',
             textAlign: 'center',
             color: '#FFFFFF',
-            fontSize: 12,
-            letterSpacing: 1.2
+            fontSize: 11,
+            letterSpacing: 1.0
           }, this.props.dynamicVisualProperties2]}>
             {(item.room as string).toLocaleUpperCase()}
           </Animated.Text>
 
-          <Animated.Image
+          {/* <Animated.Image
             source={artistData1 ? artistData1.imgSrc : null}
             style={[{
               // backgroundColor: 'greenyellow',
@@ -186,7 +185,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               width: imageWidthArtistImage, height: imageWidthArtistImage,
               resizeMode: 'cover'
             }, this.props.dynamicVisualProperties1]}
-          />
+          /> */}
 
 
           <Animated.View
@@ -357,13 +356,13 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                 text={"ARTIST DETAILS"}
                 bgBoxVisible={true}
                 bgBoxStyle={{
-                  backgroundColor: '#322f2c',
+                  backgroundColor: '#1d1c24',
                   height: 23, width: 120
                 }}
                 fontStyle={{
                   width: 120,
                   top: ((Platform.OS == 'android'))?-2:5,
-                  color: '#f2a33a',
+                  color: '#FFFFFF',
                   fontFamily: 'Cabin-Regular',
                   textAlign: 'center',
                   textAlignVertical: 'center',
