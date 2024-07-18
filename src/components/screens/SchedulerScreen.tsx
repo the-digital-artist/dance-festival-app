@@ -34,15 +34,16 @@ class SchedulerScreen extends PureComponent {
 
     render() {
         // console.log("___________SchedulerScreen render ")
-        for (let i = 0; i < this.state.dataModelList.length; i++) {
-            this.scheduleListArray.push({flatListRef: createRef(), nativeGestureObj: Gesture.Native(), data: this.state.dataModelList[i].data })
-            for (let j = 0; j < this.state.dataModelList[i].data.length; j++) {
-                const item = this.state.dataModelList[i].data[j];
-                item['refNativeGesture'] =  this.scheduleListArray[i].nativeGestureObj;
+        if (this.state.modelUpdateState == 2 && this.state.dataModelList!=null) {
+            this.scheduleListArray = [];
+            for (let i = 0; i < this.state.dataModelList.length; i++) {
+                this.scheduleListArray.push({ flatListRef: createRef(), nativeGestureObj: Gesture.Native(), data: this.state.dataModelList[i].data })
+                for (let j = 0; j < this.state.dataModelList[i].data.length; j++) {
+                    const item = this.state.dataModelList[i].data[j];
+                    item['refNativeGesture'] = this.scheduleListArray[i].nativeGestureObj;
+                }
             }
         }
-
-
 
         let offsetX = 0;
         let offsetY = 132;
