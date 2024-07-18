@@ -1,15 +1,14 @@
 import React, { PureComponent, createRef } from "react";
-import { Dimensions, FlatList, Platform, Text, View } from "react-native";
-import Animated from 'react-native-reanimated';
+import { Dimensions, FlatList, Platform, TextInput, View } from "react-native";
+import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import DataModel from "../../DataModel";
 import LauncherController from "../../LauncherController";
 import LComponent from "../../core/LComponent";
 import TransitionDataModelUpdate from "../../transitions/TransitionDataModelUpdate";
 import ScheduleListItem from "../schedulelist/ScheduleListItem";
-import TabBar from "../tabbar/TabBar";
 import ScreenHeader from "./ScreenHeader";
-import { Gesture, GestureDetector, NativeViewGestureHandler } from "react-native-gesture-handler";
 import ScreenHomeButton from "./ScreenHomeButton";
+import TabBar from "../tabbar/TabBar";
 
 
 
@@ -33,7 +32,7 @@ class SchedulerScreen extends PureComponent {
     }
 
     render() {
-        // console.log("___________SchedulerScreen render ")
+        console.log("___________SchedulerScreen render ")
         for (let i = 0; i < this.state.dataModelList.length; i++) {
             this.scheduleListArray.push({ flatListRef: createRef(), nativeGestureObj: Gesture.Native(), data: this.state.dataModelList[i].data })
             for (let j = 0; j < this.state.dataModelList[i].data.length; j++) {
@@ -45,7 +44,7 @@ class SchedulerScreen extends PureComponent {
 
 
         let offsetX = 0;
-        let offsetY = 141;
+        let offsetY = 181;
 
         // let focusItem = LauncherController.getInstance().context.focusedItemData;
         // const artistData = DataModel.dataArtists[focusItem.artistOne];
@@ -88,7 +87,8 @@ class SchedulerScreen extends PureComponent {
                                     }}
                                     visualProperties={{
                                         alpha: 1 - Math.max(Math.min(1, i - selectedDayIndex), 0) / 2,
-                                        x: (i - selectedDayIndex) * Dimensions.get('screen').width, y: offsetY, z: 0,
+                                        x: (i - selectedDayIndex) * Dimensions.get('screen').width,
+                                        y: offsetY, z: 0,
                                         w: Dimensions.get('screen').width - offsetX,
                                         h: Dimensions.get('screen').height - offsetY,
                                     }}
@@ -124,9 +124,38 @@ class SchedulerScreen extends PureComponent {
                         textStyle={{ top: 65 }}
                         color='#FFFFFF'
                         imgSrc={require('../../../assets/header-schedule-bg.png')} />
-                    <TabBar ></TabBar>
+                    <TabBar offsetY={150} ></TabBar>
                     <ScreenHomeButton />
+                    <TextInput
+                        style={{
+                            top: 100,
+                            left: 25,
+                            height: 35,
+                            width: Dimensions.get('screen').width - 50,
+                            padding: 10,
+                            backgroundColor: '#1c1919',
+                            borderWidth: 1,
+                            borderColor: "#3f3b4a",
+                            color: '#FFFFFF',
+                            fontFamily: 'Cabin-Regular',
+                            textAlignVertical: 'center',
+                            letterSpacing: 2.0,
+                            fontSize: 12,
+                            opacity: 0.7
 
+                        }}
+                        clearButtonMode={'while-editing'}
+                        placeholder="SEARCH SESSSIONS"
+                        onChangeText={(searchText) => {
+                            console.log("TextInput Change" + searchText)
+                            // this.setState({
+                            //     searchTextInput: searchText,
+                            //     modelUpdateState: 2,
+                            //     dataModelList: DataModel.dyn_dataScheduleListsByDay
+                            // })
+                        }}
+                        defaultValue={""}
+                    />
 
                     {(Platform.OS == 'android') &&
                         <View

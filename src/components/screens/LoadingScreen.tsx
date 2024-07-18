@@ -18,7 +18,6 @@ class LoadingScreen extends PureComponent<any, any> {
                 style={{ position: 'absolute' }}
                 visualProperties={{ alpha: 1, x: 0, y: 0, z: 0, w: "windowWidth", h: "windowHeight" }}>
 
-
                 <Image
                     style={{
                         position: 'absolute', top:  Platform.OS == "ios"?0:-12,

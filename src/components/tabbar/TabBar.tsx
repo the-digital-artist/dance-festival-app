@@ -14,6 +14,7 @@ const TabBar = (props) => {
     //     { id: 2, itemText: "Sunday", associatedScreenName: "scheduleList2", imgSrc: null }
     // ]
 
+    let offsetY = props.offsetY==undefined?112:props.offsetY;
 
     let itemWidth =  (Dimensions.get('screen').width/tabBarData.length);
     let itemHeight = 43;
@@ -45,7 +46,7 @@ const TabBar = (props) => {
             <View style={{
                 pointerEvents: 'none',
                 backgroundColor: '#8cb5d8',
-                top: 112 + itemHeightSelectedOffset, left: 0, position: 'absolute',
+                top: offsetY + itemHeightSelectedOffset, left: 0, position: 'absolute',
                 width: Dimensions.get('screen').width,
                 height: itemHeight - itemHeightSelectedOffset,
                 //  borderTopColor: 'white',
@@ -70,7 +71,7 @@ const TabBar = (props) => {
                             name={'tabBarItem' + i}
                             style={{
                                 position: 'absolute',
-                                top: 112, left: (startX + (i * itemSpread)),
+                                top: offsetY, left: (startX + (i * itemSpread)),
                                 width: itemWidth, height: itemHeight,
                                 opacity: 1.0
 

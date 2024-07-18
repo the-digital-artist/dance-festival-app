@@ -9,15 +9,15 @@ const ArtistListItemRenderer = ({ item, index }) => {
   const itemHeight = 130;
 
   const imageSize = 100;
-  const imageOffsetY = (itemHeight-imageSize)/2
+  const imageOffsetY = (itemHeight - imageSize) / 2
 
 
   return (
     <>
 
-           
+
       <LTouchableOpacity
-        name={("ArtistListItemRenderer"+index)}
+        name={("ArtistListItemRenderer" + index)}
         style={{
           // position: 'absolute',
           backgroundColor: 'transparent',
@@ -28,23 +28,21 @@ const ArtistListItemRenderer = ({ item, index }) => {
           borderBottomColor: 'black',
           borderBottomWidth: StyleSheet.hairlineWidth,
         }}
-        onPress={() => { ActionArtistListOnDetailsBtn(item)}}
-        >
-
-
-
-        <><View
-        style={{
-          position: 'absolute',
-          backgroundColor: '#1a202e',
-          left: -paddingLeftAndRight,
-          height: itemHeight, width: Dimensions.get('screen').width,
-          // borderTopColor: '#edc36a',
-          borderTopWidth: 0,
-          // borderBottomColor: 'black',
-          // borderBottomWidth: StyleSheet.hairlineWidth,
-          opacity: 0.63
-        }}></View>
+        onPress={() => { ActionArtistListOnDetailsBtn(item) }}
+      >
+        <>
+          <View
+            style={{
+              position: 'absolute',
+              backgroundColor: '#1a202e',
+              left: -paddingLeftAndRight,
+              height: itemHeight, width: Dimensions.get('screen').width,
+              // borderTopColor: '#edc36a',
+              borderTopWidth: 0,
+              // borderBottomColor: 'black',
+              // borderBottomWidth: StyleSheet.hairlineWidth,
+              opacity: 0.56
+            }} />
           <Image
             source={item.imgSrc}
             style={{
