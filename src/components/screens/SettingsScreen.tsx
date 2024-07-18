@@ -4,7 +4,7 @@ import { Dimensions, Image, Text, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import DataModel from "../../DataModel";
 import ActionMoreContactFestival from "../../actions/ActionMoreContactFestival";
-import ActionMoreDownloadPdf from "../../actions/ActionMoreDownloadPdf";
+import ActionLinkEarlyBirdTickets from "../../actions/ActionLinkEarlyBirdTickets";
 import ActionMoreNewsletterSignup from "../../actions/ActionMoreNewsletterSignup";
 import ActionOpenSocialMediaApp from "../../actions/ActionOpenSocialMediaApp";
 import LComponent from "../../core/LComponent";
@@ -16,7 +16,7 @@ class SettingsScreen extends PureComponent {
 
     static settingsItemRendererHeight = 50;
     static settingsListData = [
-        { title: "Get Your Ticket", action: ActionMoreDownloadPdf },
+        { title: "Get Your Ticket", action: ActionLinkEarlyBirdTickets },
         { title: "Contact Festival Organizers", action: ActionMoreContactFestival},
         { title: "Sign-up for our Newsletter", action: ActionMoreNewsletterSignup},
         // { title: `Contact App Creator`, action: ActionMoreContactAppDev },
@@ -34,9 +34,10 @@ class SettingsScreen extends PureComponent {
     render() {
 
         let socialBarData = [
-            { id: 0, itemText: "Instagram", account: "patifestival_berlin", imgSrc: require('../../../assets/icon-social-insta.png') },
-            { id: 3, itemText: "Facebook", account: "171550106045951", imgSrc: require('../../../assets/icon-social-facebook.png') },
-            { id: 4, itemText: "Web", account: "https://patifestival.com", imgSrc: require('../../../assets/icon-social-web.png') }
+            { id: 0, itemText: "Instagram", account: "caldac_con", imgSrc: require('../../../assets/icon-social-insta.png') },
+            { id: 2, itemText: "Youtube", account: "UCxRKiakhperjgBCZxrrUlZw",  imgSrc: require('../../../assets/icon-social-youtube.png') },
+            { id: 3, itemText: "Facebook", account: "230103017070827",  imgSrc: require('../../../assets/icon-social-facebook.png') },
+            { id: 4, itemText: "Web", account: "https://www.caldacon.org", imgSrc: require('../../../assets/icon-social-web.png') }
         ]
 
         let iconSize = 35;
@@ -146,7 +147,9 @@ class SettingsScreen extends PureComponent {
                                     opacity: 1.0
                                 }}
                                 visualProperties={{ alpha: 1, x: 0, y: 0, z: 0 }}
-                                onSelect={() => { ActionOpenSocialMediaApp(itemData.itemText, itemData.account) }}
+                                onSelect={() => { 
+                                    ActionOpenSocialMediaApp(itemData.itemText, itemData.account) 
+                                }}
                                 source={itemData.imgSrc}
                                 text={(itemData.itemText as string).toLocaleUpperCase()}
                                 fontStyle={{
