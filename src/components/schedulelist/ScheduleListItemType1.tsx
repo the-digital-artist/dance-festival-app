@@ -154,17 +154,17 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
 
           <Animated.Text allowFontScaling={false} id='textLocation' style={[{
             position: 'absolute',
-            top: 2,
-            left: (this.props.tileWidth - 60) / 2,
+            top: 3,
+            left: (this.props.tileWidth - 75) / 2,
             // right: (item.orientation == 'right' ? undefined : 10),
             // left: (item.orientation == 'left' ? undefined : 10),
             height: 15,
-            width: 60,
+            width: 75,
             fontFamily: 'RobotoCondensed-Medium',
             // backgroundColor: 'skyblue',
             textAlign: 'center',
             color: '#FFFFFF',
-            fontSize: 12,
+            fontSize: 11,
             letterSpacing: 1.2
           }, this.props.dynamicVisualProperties2]}>
             {(item.room as string).toLocaleUpperCase()}
