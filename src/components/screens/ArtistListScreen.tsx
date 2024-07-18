@@ -51,7 +51,7 @@ class ArtistListScreen extends PureComponent {
                     }}
                     source={require('../../../assets/screen-artists-bg.png')}
                 />
-                <View
+                {/* <View
                     style={{
                         position: 'absolute',
                         backgroundColor: '#64615f',
@@ -60,12 +60,13 @@ class ArtistListScreen extends PureComponent {
                         height: 105,
                         opacity: 1
                     }}
-                />
+                /> */}
 
                 <ScreenHeader
-                    text={"ARTISTS"}
-                    color='#FFFFFF'
+                    text={"ARTISTS & DJs"}
+                    color='#f8f6d3'
                     imgSrc={require('../../../assets/header-artists-bg.png')} />
+                <ScreenHomeButton />
 
                 {this.state.modelUpdateState == 2 &&
                     <FlatList
@@ -84,8 +85,7 @@ class ArtistListScreen extends PureComponent {
                     />
                 }
 
-                <ScreenHeader text={"ARTISTS & DJs"} color='#f8f6d3' />
-                <ScreenHomeButton />
+            
 
 
 
