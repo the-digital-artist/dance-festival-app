@@ -1,7 +1,7 @@
 
 class DataModel {
-	static modelRemoteGetModelUrl = 'https://wqmw4icfr0.execute-api.eu-central-1.amazonaws.com/default/patiModelContent';
-	static modelRemoteVersionCheckUrl = 'https://wqmw4icfr0.execute-api.eu-central-1.amazonaws.com/default/patiModelVersion';
+	static modelRemoteGetModelUrl = 'https://wqmw4icfr0.execute-api.eu-central-1.amazonaws.com/default/patiStagingModelContent';
+	static modelRemoteVersionCheckUrl = 'https://wqmw4icfr0.execute-api.eu-central-1.amazonaws.com/default/patiStagingModelVersion';
 	static modelRemoteUpdateInterval = 55000;
 
 	static happeningNowUpdateInterval = 10000;
