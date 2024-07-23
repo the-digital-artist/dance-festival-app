@@ -51,12 +51,12 @@ class Launcher extends PureComponent<any, any> {
 
                                 <NavBar highlightRenderer={NavBarHighlight} data={LauncherController.getInstance().navBarData} />
 
-                                {/* <UpdateOverlayFragement /> */}
+                                <UpdateOverlayFragement />
                             </StateDependentComponent>
 
 
                             <StateDependentComponent states={['splash', 'loading']} controller={this.controller}>
-                                {/* <LoadingScreen /> */}
+                                <LoadingScreen />
                             </StateDependentComponent>
                         </>
                         : null}
