@@ -32,7 +32,7 @@ const ScheduleListItem = ({ item, index }) => {
   else if (item.itemType == 'type4')
     itemHeight = (item.sessionMainTitle as string).length > 20 ? 164 : 138;
   else if (item.itemType == 'type5')
-    itemHeight = 200;
+    itemHeight = 100;
 
   item['assignedListIndex'] = index;
 
@@ -58,8 +58,8 @@ const ScheduleListItem = ({ item, index }) => {
           height: itemHeight, width: Dimensions.get('screen').width - 2 * paddingLeftAndRight,
           borderTopColor: '#FFFFFF',
           borderTopWidth: 0,
-          borderBottomColor: 'white',
-          borderBottomWidth: StyleSheet.hairlineWidth,
+          borderBottomWidth: (item.itemType == "type5"?0:StyleSheet.hairlineWidth),
+          borderBottomColor: '#EFEFEF',
         }}>
 
 

@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "CALDAC App",
+    "name": "CALDAC",
     "slug": "colorado-afro-latin-festival-app",
     "version": "0.0.1",
     "orientation": "portrait",
@@ -14,7 +14,7 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.thedigitalartist.caldac.festivalapp",
-      "buildNumber": "3",
+      "buildNumber": "8",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "LSApplicationQueriesSchemes": [

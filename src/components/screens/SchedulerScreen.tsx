@@ -39,6 +39,7 @@ class SchedulerScreen extends PureComponent {
                 const item = this.state.dataModelList[i].data[j];
                 item['refNativeGesture'] = this.scheduleListArray[i].nativeGestureObj;
             }
+            this.scheduleListArray[i].data.push({ "id": 'emptyschedule'+i, "itemType": "type5", "artistName": "", "sessionMainTitle": "", "time": "", "room": "", "level": "-1", "group": [], "groupTitle": "", "groupSubtitle": "", "shortMainTitle": "", "dateString": "", "startTime": "", "endTime": "", "place": "", "sessionSubtitle": "", "sessionDescription": "", "artistOne": "", "artistTwo": "", "artistLocation": "!", "flag": false, "flagIncludeInNow": false })
         }
 
 
@@ -124,9 +125,9 @@ class SchedulerScreen extends PureComponent {
                         textStyle={{ top: 65 }}
                         color='#FFFFFF'
                         imgSrc={require('../../../assets/header-schedule-bg.png')} />
-                    <TabBar offsetY={150} ></TabBar>
+                    <TabBar offsetY={115} ></TabBar>
                     <ScreenHomeButton />
-                    <TextInput
+                    {/* <TextInput
                         style={{
                             top: 100,
                             left: 25,
@@ -155,7 +156,7 @@ class SchedulerScreen extends PureComponent {
                             // })
                         }}
                         defaultValue={""}
-                    />
+                    /> */}
 
                     {(Platform.OS == 'android') &&
                         <View
