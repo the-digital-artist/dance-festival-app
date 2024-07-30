@@ -51,7 +51,7 @@ const TabBar = (props) => {
                 height: itemHeight - itemHeightSelectedOffset,
                 //  borderTopColor: 'white',
                 //  borderTopWidth: StyleSheet.hairlineWidth,
-                opacity: 0.55
+                opacity: 0.23
             }}>
                 {/* <Image
                     style={{
@@ -82,6 +82,7 @@ const TabBar = (props) => {
                             bgBoxVisible={true}
                             bgBoxStyle={{
                                 backgroundColor: '#25649a',
+                                // opacity: 0.9,
                                 position: 'absolute',
                                 width: itemWidth, height: itemHeight,
                             }}

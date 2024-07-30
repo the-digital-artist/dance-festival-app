@@ -7,6 +7,8 @@ const TransitionTabbarSelect = (itemData, index, animCurrentIndex) => {
         console.log("TransitionTabbarSelect" + index);
         // if(index != 0 && index != 2) return;
 
+        let maxAlpha: 0.8;
+        let minAlpha: 0.4;
 
         let oldIdx = LauncherController.getInstance().tabBarIndex;
         if (index == oldIdx) return;
@@ -15,10 +17,10 @@ const TransitionTabbarSelect = (itemData, index, animCurrentIndex) => {
 
         let screenNameIn = LauncherController.getInstance().tabBarData[index].associatedScreenName
         TweenManager.tween().to(screenNameIn, 200, { x: 0 });
-        TweenManager.tween().to(screenNameIn, 284, { alpha: 1, z: 0, delay: 137 });
+        TweenManager.tween().to(screenNameIn, 284, { alpha: maxAlpha, z: 0, delay: 137 });
 
         let screenNameOut = LauncherController.getInstance().tabBarData[oldIdx].associatedScreenName
-        TweenManager.tween().to(screenNameOut, 134, { alpha: 0.5, z: 0 });
+        TweenManager.tween().to(screenNameOut, 134, { alpha: minAlpha, z: 0 });
         TweenManager.tween().to(screenNameOut, 200, { x: -targetX, initValue: 100 });
 
         LauncherController.getInstance().tabBarIndex = index;
