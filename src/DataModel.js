@@ -265,7 +265,7 @@ class DataModel {
 
 
 	static dataTicketSales = {
-		// earlyBirdStartTimeString: '2024-07-21T05:00:00.000'
+		earlyBirdStartTimeString: '2024-07-21T05:00:00.000'
 	}
 
 
