@@ -45,7 +45,8 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
       { src: require('../../../assets/schedule-levelicon-2.png'), text: "INTERMEDIATE", textWidth: 72 },
       { src: require('../../../assets/schedule-levelicon-3.png'), text: "ADVANCED", textWidth: 54 }
     ]
-    const levelId = item.level != undefined ? item.level : -1;
+    let levelId = item.level != undefined ? item.level : -1;
+    levelId = 0; //DEBUG always set a level
     const levelImageSize = 10;
     //get data of artists
     const artistData1 = DataModel.dataArtists[item.artistOne];
@@ -56,7 +57,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     const verticalOffsetTitleLength = item.lineCount != undefined ? (item.lineCount * 19) : 19;
     const verticalOffsetLevel = (item.levelSpecial != undefined && item.levelSpecial == '1') ? 20 : 0
 
-    const imageWidthArtistImagex1 = this.props.tileWidth / (1.3) * (160 / 305);
+    const imageWidthArtistImagex1 = this.props.tileWidth / (1.2) * (160 / 305);
     const imageWidthArtistImagex2 = imageWidthArtistImagex1 * 0.7;
 
     const imageWidthArtistImage = this.props.tileWidth * (120 / 305)*0.9;
@@ -141,10 +142,10 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               // backgroundColor: 'greenyellow',
               position: 'absolute',
               left: 0, top: roomBoxOffsetY,
-              opacity: 0.5,
+              opacity: 0.2,
               width: this.props.tileWidth,
               height: itemHeight - 50,
-              resizeMode: 'contain'
+              resizeMode: 'cover'
             }}
           /> 
 
@@ -257,7 +258,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               top: 30,
               right: (item.orientation == 'right' ? undefined : (4 + 35)),
               left: (item.orientation == 'left' ? undefined : (4 + 35)),
-              width: 190,
+              width: 150,
               fontFamily: 'DINCondensed-Bold',
               // backgroundColor: 'indigo',
               textAlign: (item.orientation == 'right' ? 'left' : 'right'),
@@ -274,7 +275,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               right: (item.orientation == 'right' ? undefined : (4 + 35)),
               left: (item.orientation == 'left' ? undefined : (4 + 35)),
               height: fontSizeArtistName * 2.5,
-              width: this.props.tileWidth - 35 - 4 - 10 - imageWidthArtistImagex1,
+              width: this.props.tileWidth - 35 - 4 - 10,
               fontFamily: 'RobotoCondensed-Medium',
               letterSpacing: 1.2,
               // backgroundColor: 'indigo',
