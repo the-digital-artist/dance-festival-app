@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import { Dimensions, Image, Platform } from "react-native";
 import LComponent from "../../core/LComponent";
+import LVideoPlayback from "../../core/LVideoPlayback";
 
 
 class LoadingScreen extends PureComponent<any, any> {
@@ -11,6 +12,7 @@ class LoadingScreen extends PureComponent<any, any> {
 
     render() {
         // console.log('render LoadingScreen');
+        let videoOffsetX = 0;
 
         return (
             <LComponent
@@ -43,6 +45,19 @@ class LoadingScreen extends PureComponent<any, any> {
                             resizeMode: "cover",
                         }}
                         source={require('../../../assets/welcome.png')}
+                    />
+                    <LVideoPlayback
+                        videoSrc={require('../../../assets/video/CALDAC Convention Promo Video.mp4')}
+                        style={{
+                            position: 'absolute',
+                            opacity: 0.5,
+                            width: (Dimensions.get('screen').width-2*videoOffsetX), 
+                            height:  (Dimensions.get('screen').width-2*videoOffsetX)*(1080/1920),
+                            top: 410,
+                            left:videoOffsetX,
+                        }}
+                        shouldPlay={true}
+                        
                     />
                 </LComponent>
             </LComponent>

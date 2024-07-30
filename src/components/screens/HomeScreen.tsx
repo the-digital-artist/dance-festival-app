@@ -8,6 +8,8 @@ import NavBar from "../navbar/NavBar";
 import EarlyPassesTile from "./EarlyPassesTile";
 import HomeScreenProgramItem from "./HomeScreenProgramItem";
 import ScreenHeader from "./ScreenHeader";
+import LVideoPlayback from "../../core/LVideoPlayback";
+import HappeningNowTile from "../happeningnowtile/HappeningNowTile";
 
 
 
@@ -27,6 +29,9 @@ class HomeScreen extends PureComponent<any, any> {
     }
 
     render() {
+        let activeItems = [
+            { "id": 30601, "itemType": "type1", "artistName": "Kingsmen", "sessionMainTitle": "Bachata Shines", "time": "14:00 - 15:00", "room": "AURORA 1", "level": "-1", "group": [30601, 30602, 30603, 30604, 30605, 30606, 30607, 30608], "groupTitle": "Workshops", "groupSubtitle": "", "shortMainTitle": "", "dateString": "Sun, October 20, 2024", "startTime": "2024-10-20T14:00:00.000Z", "endTime": "2024-10-20T15:00:00.000Z", "place": "", "sessionSubtitle": "", "sessionDescription": "", "artistOne": "Kingsmen", "artistTwo": "", "artistLocation": "NY", "flag": false, "flagIncludeInNow": false },
+        ]
         // console.log('HomeScreen Render');
         const screenHeaderHeight = (Dimensions.get('screen').width * (350 / 1290)) - 5
         const navBarHeight = NavBar.navBarHeight;
@@ -47,7 +52,7 @@ class HomeScreen extends PureComponent<any, any> {
         const happeningNowTotalDistance = 130 + happeningNowTileHeight + 50;
         // console.log("ScreenHeight: "+Dimensions.get("screen").height+" Content Space: "+contentSpace)
 
-        const logoScrollAlphaReductionDelta = (Platform.OS == 'android')?0.92:0.45;
+        const logoScrollAlphaReductionDelta = (Platform.OS == 'android') ? 0.92 : 0.45;
 
         return (
             <>
@@ -66,6 +71,26 @@ class HomeScreen extends PureComponent<any, any> {
                         }}
                         source={require('../../../assets/screen-home-bg.png')}
                     />
+
+                    <LComponent
+                        name='homeScreenVideoBgContainer'
+                        style={{ position: 'absolute' }}
+                        visualProperties={{ alpha: 1.0, x: 0, y: 0, z: 0, w: "windowWidth", h: "windowHeight" }}
+                    >
+                        <LVideoPlayback
+                            videoSrc={require('../../../assets/video/bgvideo_1.mp4')}
+                            style={{
+                                position: 'absolute',
+                                opacity: 0.3,
+                                width: (Dimensions.get('screen').width + 1200),
+                                height: (Dimensions.get('screen').width + 1200) * (1080 / 1920),
+                                top: 0,
+                                left: -600,
+                            }}
+                            shouldPlay={true}
+                        />
+                    </LComponent>
+
                     <Image
                         source={require('../../../assets/logo-white.png')}
                         style={{
@@ -83,15 +108,15 @@ class HomeScreen extends PureComponent<any, any> {
                         textStyle={{ top: 65 }}
                         color='#FFFFFF'
                         imgSrc={require('../../../assets/header-home-bg.png')} />
-                        
+
 
                     <ScrollView style={{
                         position: 'absolute',
                         top: screenHeaderHeight, left: 0,
                         width: Dimensions.get("screen").width,
-                        height: ((Platform.OS == 'android')?
-                                    Dimensions.get("screen").height - screenHeaderHeight - navBarHeight:
-                                    Dimensions.get("screen").height - screenHeaderHeight),
+                        height: ((Platform.OS == 'android') ?
+                            Dimensions.get("screen").height - screenHeaderHeight - navBarHeight :
+                            Dimensions.get("screen").height - screenHeaderHeight),
                         // backgroundColor: 'red'
                     }}
                         onScroll={(e) => {
@@ -120,6 +145,7 @@ class HomeScreen extends PureComponent<any, any> {
                                     }} />
                                 }
                                 <EarlyPassesTile offsetY={0} />
+                                {/* <HappeningNowTile offsetY={400} activeItems={activeItems} /> */}
                             </View>
 
                         }
@@ -151,46 +177,7 @@ class HomeScreen extends PureComponent<any, any> {
                             </View>
                         } */}
 
-                        <View
-                            style={{
-                                top: Dimensions.get("screen").height > 800 ? 240 + HomeScreen.homeProgramItemSpacingY : 40,
-                                // backgroundColor:'red',
-                                width: Dimensions.get("screen").width,
-                                height: (HomeScreen.homeProgramItemHeight + HomeScreen.homeProgramItemSpacingY) * DataModel.dataModelProgram.length,
-                            }}>
-                            {Platform.OS == "ios" && <BlurView
-                                intensity={17}
-                                style={{
-                                    // backgroundColor:'skyblue',
-                                    position: 'absolute',
-                                    opacity: 1.0,
-                                    left: 0,
-                                    top: 0,
-                                    width: Dimensions.get("screen").width,
-                                    height: (HomeScreen.homeProgramItemHeight + HomeScreen.homeProgramItemSpacingY) * DataModel.dataModelProgram.length - 5,
-
-                                }} />
-                            }
-                            <Text allowFontScaling={false} id='textHeader'
-                                style={{
-                                    top: -25,
-                                    left: 0,
-                                    width: Dimensions.get('screen').width, height: 32,
-                                    color: '#f8f6d3',
-                                    fontFamily: 'Cabin-Regular',
-                                    textAlign: 'center',
-                                    textAlignVertical: 'center',
-                                    letterSpacing: 2.0,
-                                    fontSize: 12
-                                }}>
-                                {'PROGRAM OVERVIEW'}
-                            </Text>
-
-
-                            {DataModel.dyn_dataModelProgram.map(
-                                (itemData, i) => HomeScreenProgramItem({ itemData, i })
-                            )}
-                        </View>
+                     
                     </ScrollView>
 
                     {/* {(Platform.OS == 'android') &&
@@ -203,6 +190,7 @@ class HomeScreen extends PureComponent<any, any> {
                                 opacity: 0.8
                             }} />
                     } */}
+
                 </LComponent>
             </>
         );

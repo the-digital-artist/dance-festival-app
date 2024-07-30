@@ -15,7 +15,7 @@ const EarlyPassesTile = (props) => {
                     top: 0,
                     left: 0,
                     width: Dimensions.get("screen").width,
-                    height: 140,
+                    height: 230,
                     backgroundColor: '#3e3b3a'
                 }}
             ></View>
@@ -31,19 +31,19 @@ const EarlyPassesTile = (props) => {
                     letterSpacing: 2.0,
                     fontSize: 12
                 }}>
-                {'EARLY BIRD PASSES'}
+                {'GET TICKETS'}
             </Text>
 
 
 
                             <View style={{
                                 position: 'absolute',
-                                backgroundColor: '#9f509f',
+                                backgroundColor: '#355a7d',
                                 left: 30,
                                 top: props.offsetY + 30,
                                 width: Dimensions.get('screen').width - (2 * 30), 
                                 height: 170,
-                                opacity: 0.8
+                                opacity: 0.5
                             }}>
                             </View>
 
@@ -51,7 +51,7 @@ const EarlyPassesTile = (props) => {
                                 source={require('../../../assets/home-happening-banner.png')}
                                 style={{
                                     position: 'absolute', 
-                                    resizeMode: 'cover', opacity: 0.4,
+                                    resizeMode: 'cover', opacity: 0.5,
                                     left: 30,
                                     top: props.offsetY + 30,
                                     width: (Dimensions.get('screen').width - 2 * 30),
@@ -68,42 +68,39 @@ const EarlyPassesTile = (props) => {
                                 width: Dimensions.get('screen').width - (2 * 30),
                                 fontFamily: 'DINCondensed-Bold',
                                 // backgroundColor: 'indigo',
+                                letterSpacing: 1.0,
                                 textAlign: 'center',
                                 color: '#FFFFFF',
                                 fontSize: 24,
                                 opacity: 0.9
                             }}>
-                                2025 Early Bird Passes
+                                {("2024 Early Bird Passes").toLocaleUpperCase()}
                             </Text>
 
+                            <Text allowFontScaling={false} id='textEarlyBird1' style={{
+                                position: 'absolute',
+                                top: props.offsetY + 90,
+                                left: 45,
+                                width: Dimensions.get('screen').width - (2 * 45),
+                                fontFamily: 'Cabin-Regular',
+                                // backgroundColor: 'indigo',
+                                textAlign: 'center',
+                                letterSpacing:1.3,
+                                color: '#FFFFFF',
+                                fontSize: 12,
+                                opacity: 0.9
+                            }}>
+                                {("Join us for Colorado’s Hottest Afro Latin Dance Event. Current sale will end August 31, 2024".toLocaleUpperCase())}
+                            </Text>
 
-                            {/* <ButtonSmall
-                                name={("BtnTicketBanner")}
-                                style={{
-                                    position: 'absolute',
-                                    left: 30,
-                                    top: props.offsetY + 50,
-                                    width: (Dimensions.get('screen').width - 2 * 30),
-                                    height: 130,
-                                }}
-                                bgBoxVisible={false}
-                                defaultSource={require('../../../assets/hometile-earlybird-button.png')}
-                                source={{
-                                    uri: 'https://the-artist.digital/qaldf/hometile-earlybird-button.png',
-                                  }}
-                                imageStylestyle={{
-                                    position: 'absolute', resizeMode: 'contain', opacity: 1.0,
-                                }}
-                                visualProperties={{ alpha: 1 }}
-                                onSelect={() => { ActionOpenBrowserWithURL() }}
-                            /> */}
+                            
 
 
             <ButtonSmall
                 name={("BtnTicketPage")}
                 style={{
                     position: 'absolute',
-                    top: (props.offsetY + 90),
+                    top: (props.offsetY + 150),
                     left: 60,
                     height: 35,
                     width: (Dimensions.get('screen').width - 2 * 60),
@@ -120,7 +117,7 @@ const EarlyPassesTile = (props) => {
                     textAlign: 'center',
                     textAlignVertical: 'center',
                     letterSpacing: 2.0,
-                    color: '#fdface',
+                    color: '#FFFFFF',
                     fontSize: 10,
                     width: (Dimensions.get('screen').width - 2 * 60),
                 }}
