@@ -1,14 +1,14 @@
 import React, { PureComponent, createRef } from "react";
-import { Dimensions, FlatList, Platform, TextInput, View } from "react-native";
+import { Dimensions, FlatList, Image, Platform, View } from "react-native";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import DataModel from "../../DataModel";
 import LauncherController from "../../LauncherController";
 import LComponent from "../../core/LComponent";
 import TransitionDataModelUpdate from "../../transitions/TransitionDataModelUpdate";
 import ScheduleListItem from "../schedulelist/ScheduleListItem";
+import TabBar from "../tabbar/TabBar";
 import ScreenHeader from "./ScreenHeader";
 import ScreenHomeButton from "./ScreenHomeButton";
-import TabBar from "../tabbar/TabBar";
 
 
 
@@ -39,13 +39,16 @@ class SchedulerScreen extends PureComponent {
                 const item = this.state.dataModelList[i].data[j];
                 item['refNativeGesture'] = this.scheduleListArray[i].nativeGestureObj;
             }
-            this.scheduleListArray[i].data.push({ "id": 'emptyschedule'+i, "itemType": "type5", "artistName": "", "sessionMainTitle": "", "time": "", "room": "", "level": "-1", "group": [], "groupTitle": "", "groupSubtitle": "", "shortMainTitle": "", "dateString": "", "startTime": "", "endTime": "", "place": "", "sessionSubtitle": "", "sessionDescription": "", "artistOne": "", "artistTwo": "", "artistLocation": "!", "flag": false, "flagIncludeInNow": false })
+            this.scheduleListArray[i].data.push({ "id": 'emptyschedule' + i, "itemType": "type5", "artistName": "", "sessionMainTitle": "", "time": "", "room": "", "level": "-1", "group": [], "groupTitle": "", "groupSubtitle": "", "shortMainTitle": "", "dateString": "", "startTime": "", "endTime": "", "place": "", "sessionSubtitle": "", "sessionDescription": "", "artistOne": "", "artistTwo": "", "artistLocation": "!", "flag": false, "flagIncludeInNow": false })
+            this.scheduleListArray[i].data.push({ "id": 'emptyschedule' + (i + 1), "itemType": "type5", "artistName": "", "sessionMainTitle": "", "time": "", "room": "", "level": "-1", "group": [], "groupTitle": "", "groupSubtitle": "", "shortMainTitle": "", "dateString": "", "startTime": "", "endTime": "", "place": "", "sessionSubtitle": "", "sessionDescription": "", "artistOne": "", "artistTwo": "", "artistLocation": "!", "flag": false, "flagIncludeInNow": false })
         }
 
 
 
         let offsetX = 0;
-        let offsetY = 181;
+        // let offsetY = 181;
+        let offsetY = 155;
+
 
         // let focusItem = LauncherController.getInstance().context.focusedItemData;
         // const artistData = DataModel.dataArtists[focusItem.artistOne];
@@ -60,19 +63,23 @@ class SchedulerScreen extends PureComponent {
                     name='sessionScreenContainer'
                     style={{
                         position: 'absolute',
-                        backgroundColor: '#25649a',
+                        backgroundColor: 'transparent',
                     }}
                     visualProperties={{
                         alpha: 1.0, x: 'windowWidth', y: 0, z: 0, w: "windowWidth", h: "windowHeight"
                     }}
                 >
-                    <ScreenHeader
-                        text={"WORKSHOP SCHEDULE"}
-                        textStyle={{ top: 65 }}
-                        color='#FFFFFF'
-                        imgSrc={require('../../../assets/header-schedule-bg.png')} />
-
-
+                    <Image
+                        style={{
+                            // backgroundColor: 'skyblue',
+                            top: 0, left: 0, position: 'absolute',
+                            width: Dimensions.get('screen').width,
+                            height: Dimensions.get('screen').height,
+                            resizeMode: "cover",
+                            opacity: 1.0
+                        }}
+                        source={require('../../../assets/screen-scheduler-bg.png')}
+                    />
 
                     {this.state.modelUpdateState == 2 &&
                         this.scheduleListArray.map((scheduleList, i) => {
@@ -84,7 +91,8 @@ class SchedulerScreen extends PureComponent {
                                     name={'scheduleList' + i}
                                     style={{
                                         position: 'absolute',
-                                        backgroundColor: '#25649a',
+                                        // backgroundColor: '#25649a',
+                                        opacity: 0.5
                                     }}
                                     visualProperties={{
                                         alpha: 1 - Math.max(Math.min(1, i - selectedDayIndex), 0) / 2,
@@ -94,13 +102,21 @@ class SchedulerScreen extends PureComponent {
                                         h: Dimensions.get('screen').height - offsetY,
                                     }}
                                 >
+                                    <View
+                                        style={{
+                                            width: Dimensions.get('screen').width - offsetX,
+                                            height: Dimensions.get('screen').height - offsetY,
+                                            backgroundColor: '#25649a',
+                                            opacity: 0.7
+                                        }}
+                                    />
 
                                     <GestureDetector gesture={scheduleList.nativeGestureObj}>
                                         <FlatList
                                             ref={(list) => { scheduleList.flatListRef = list; }}
                                             style={{
                                                 position: 'absolute',
-                                                backgroundColor: '#25649a',
+                                                // backgroundColor: '#25649a',
                                                 left: 0, top: 20,
                                                 width: Dimensions.get('screen').width - offsetX,
                                                 height: Dimensions.get('screen').height - offsetY - 10,
