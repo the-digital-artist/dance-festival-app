@@ -1,14 +1,12 @@
 import { BlurView } from "expo-blur";
 import React, { PureComponent } from "react";
-import { Dimensions, Image, Platform, ScrollView, Text, View } from "react-native";
+import { Dimensions, Platform, ScrollView, View } from "react-native";
 import DataModel from "../../DataModel";
 import LauncherController from "../../LauncherController";
 import LComponent from "../../core/LComponent";
 import NavBar from "../navbar/NavBar";
-import EarlyPassesTile from "./EarlyPassesTile";
-import HomeScreenProgramItem from "./HomeScreenProgramItem";
 import ScreenHeader from "./ScreenHeader";
-
+import ScreenHomeButton from "./ScreenHomeButton";
 
 
 class HomeScreen extends PureComponent<any, any> {
@@ -54,19 +52,13 @@ class HomeScreen extends PureComponent<any, any> {
                 <LComponent
                     name='homeScreenContainer'
                     style={{ position: 'absolute' }}
-                    visualProperties={{ alpha: 1.0, x: 0, y: 0, z: 0, w: "windowWidth", h: "windowHeight" }}
+                    visualProperties={{ alpha: 1.0, x: 0, y:0, z: 0, w: "windowWidth", h: "windowHeight" }}
                 >
-                    <Image
-                        style={{
-                            // backgroundColor: 'skyblue',
-                            top: 0, left: 0, position: 'absolute',
-                            width: Dimensions.get('screen').width, height: Dimensions.get('screen').height,
-                            resizeMode: "cover",
-                            opacity: 1
-                        }}
-                        source={require('../../../assets/screen-home-bg.png')}
-                    />
-                    <Image
+             
+             <ScreenHeader />
+             <ScreenHomeButton />
+
+                    {/* <Image
                         source={require('../../../assets/logo-white.png')}
                         style={{
                             position: 'absolute', resizeMode: 'contain',
@@ -77,8 +69,7 @@ class HomeScreen extends PureComponent<any, any> {
                             width: Dimensions.get('screen').width - (2 * 80),
                             height: Dimensions.get('screen').width - (2 * 80) * 1313 / 815,
                         }}
-                    />
-                    <ScreenHeader text={"WELCOME MY FRIEND"} color='#f8f6d3' />
+                    /> */}
 
                     <ScrollView style={{
                         position: 'absolute',
@@ -114,7 +105,7 @@ class HomeScreen extends PureComponent<any, any> {
 
                                     }} />
                                 }
-                                <EarlyPassesTile offsetY={0} />
+                                {/* <EarlyPassesTile offsetY={0} /> */}
                             </View>
 
                         }
@@ -146,7 +137,7 @@ class HomeScreen extends PureComponent<any, any> {
                             </View>
                         } */}
 
-                        <View
+                        {/* <View
                             style={{
                                 top: Dimensions.get("screen").height > 800 ? 240 + HomeScreen.homeProgramItemSpacingY : 40,
                                 // backgroundColor:'red',
@@ -185,7 +176,7 @@ class HomeScreen extends PureComponent<any, any> {
                             {DataModel.dyn_dataModelProgram.map(
                                 (itemData, i) => HomeScreenProgramItem({ itemData, i })
                             )}
-                        </View>
+                        </View> */}
                     </ScrollView>
 
                     {/* {(Platform.OS == 'android') &&

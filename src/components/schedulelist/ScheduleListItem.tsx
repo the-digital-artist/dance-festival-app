@@ -13,7 +13,6 @@ const ScheduleListItem = ({ item, index }) => {
   if (item.itemType == "type1" && item.flag == true) return null;
   if (item.flagIncludeInNow == true) return null;
 
-  const centerPieceWidth = Dimensions.get('screen').width - (5 + 45 + 35 + 35 + 5)
   const paddingLeftAndRight = 5;
 
   let itemHeight = 110;
@@ -37,9 +36,9 @@ const ScheduleListItem = ({ item, index }) => {
   item['assignedListIndex'] = index;
 
   let orientation = 'left';
-  if (item.itemType == 'type1') {
-    orientation = (LauncherController.getInstance().context['sessionListCount']++) % 2 == 0 ? 'left' : 'right'
-  }
+  // if (item.itemType == 'type1') {
+  //   orientation = (LauncherController.getInstance().context['sessionListCount']++) % 2 == 0 ? 'left' : 'right'
+  // }
 
   const overwriteGroupTitles = true;
   const groupMainTitle = overwriteGroupTitles ? ("Parallel Workshop Sessions" as string).toLocaleUpperCase() : (item.groupTitle)
@@ -54,7 +53,7 @@ const ScheduleListItem = ({ item, index }) => {
       <View
         style={{
           // backgroundColor: '#FBB03A',
-          left: paddingLeftAndRight,
+          left: 0,
           height: itemHeight, width: Dimensions.get('screen').width - 2 * paddingLeftAndRight,
           borderTopColor: '#FFFFFF',
           borderTopWidth: 0,
@@ -86,7 +85,7 @@ const ScheduleListItem = ({ item, index }) => {
 
         {item.itemType == "type1" ?
           <>
-            {index <= 1 && <Text allowFontScaling={false} id='textGroupTitle' style={{
+            {/* {index <= 1 && <Text allowFontScaling={false} id='textGroupTitle' style={{
               position: 'absolute',
               top: 8,
               left: 90,
@@ -99,9 +98,9 @@ const ScheduleListItem = ({ item, index }) => {
             }}>
               {groupMainTitle}
             </Text>
-            }
+            } */}
 
-            <Text allowFontScaling={false} id='textGroupSubTitle' style={{
+            {/* <Text allowFontScaling={false} id='textGroupSubTitle' style={{
               position: 'absolute',
               top: index > 1 ? 8 : (8 + 12 + 3),
               left: 90,
@@ -113,7 +112,7 @@ const ScheduleListItem = ({ item, index }) => {
               color: '#58503e',
               fontSize: 12,
             }}>{groupSubTitle}
-            </Text>
+            </Text> */}
           </>
           : null}
       </View>
@@ -121,12 +120,12 @@ const ScheduleListItem = ({ item, index }) => {
       <Text allowFontScaling={false} id='textTime' style={{
         position: 'absolute',
         top: 10, left: 6,
-        width: 70, height: 15,
+        width: Dimensions.get('screen').width, height: 15,
         fontFamily: 'RobotoCondensed-Medium',
         // backgroundColor: 'skyblue',
-        textAlign: 'right',
-        color: '#58503e',
-        fontSize: 11,
+        textAlign: 'center',
+        color: '#FFFFFF',
+        fontSize: 13,
       }}>
         {item.time}
       </Text>

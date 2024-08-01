@@ -11,8 +11,8 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
     // console.log('ScheduleItemGroupRe render')
     const paddingLeftAndRight = 5;
 
-    const tileWidth = Dimensions.get('screen').width - (2 * paddingLeftAndRight + 45 + 35 + 35)
-    const tileDistance = tileWidth + 10;
+    const tileWidth = Dimensions.get('screen').width/2
+    const tileDistance = tileWidth+1;
     const tileHeight = rowHeight != undefined ? rowHeight : 100;
 
     let selectedIndex = 0;
@@ -26,7 +26,7 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
     for (let i = 0; i < group.length; i++) {
         const dynamicValueX = useDerivedValue(() => { return ((i * tileDistance) - (currentIndex.value * tileDistance)) });
         const dynamicValueAlpha = useDerivedValue(() => {
-            let currentCenterAlpha = 1 - Math.max(0, Math.min(1, Math.abs(i - currentIndex.value)));//gives you 1 for the incoming item and 0 for all outgoing
+            let currentCenterAlpha = 1// 1 - Math.max(0, Math.min(1, Math.abs(i - currentIndex.value)));//gives you 1 for the incoming item and 0 for all outgoing
             return currentCenterAlpha; //scaling
         })
         const dynamicValueXRoom = useDerivedValue(() => {
@@ -176,14 +176,14 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
                                     key={'ScheduleListItemType1' + i}
                                     item={group[i].obj}
                                     assignedListIndex={mainItem['assignedListIndex']}
-                                    orientation={orientation}
+                                    orientation={(i%2==0?'left':'right')}
                                     tileWidth={tileWidth}
                                     rowHeight={tileHeight - 35}
                                     group={group}
                                     groupIndex={i}
                                     groupIndexUpdateFunction={changeSelectedIndex}
                                     paddingLeftAndRight={paddingLeftAndRight}
-                                    tileOffsetLeft={((Dimensions.get('screen').width - tileWidth) / 2)}
+                                    tileOffsetLeft={0}
                                     tileOffsetTop={-46}
                                     dynamicVisualProperties0={animValues[i]}
                                     dynamicVisualProperties1={animValuesAlpha[i]}

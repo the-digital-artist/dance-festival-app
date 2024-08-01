@@ -44,7 +44,7 @@ class ArtistListScreen extends PureComponent {
                 <View
                     style={{
                         position: 'absolute',
-                        backgroundColor: '#64615f',
+                        backgroundColor: '#000000',
                         left: 0, top: 0,
                         width: Dimensions.get('screen').width,
                         height: 105,
@@ -57,8 +57,8 @@ class ArtistListScreen extends PureComponent {
                         ref={(list) => { this.artistListRef = list }}
                         style={{
                             position: 'absolute',
-                            backgroundColor: '#1b1919',
-                            left: 0, top: 95,
+                            backgroundColor: '#111111',
+                            left: 0, top: 135,
                             width: Dimensions.get('screen').width,
                             height: Dimensions.get('screen').height - 100,
                             opacity: 1

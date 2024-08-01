@@ -13,10 +13,10 @@ const TabBar = (props) => {
     //     { id: 2, itemText: "Sunday", associatedScreenName: "scheduleList2", imgSrc: null }
     // ]
 
-
+    let offsetY = 130;
     let itemWidth = Dimensions.get('screen').width / 2-20;
     let itemSpread = Dimensions.get('screen').width / 2-30
-    let itemHeight = 43;
+    let itemHeight = 32;
     let itemHeightSelectedOffset = 10;
     let startX = (Dimensions.get('screen').width / 2 - ((tabBarData.length - 1) * itemSpread) / 2) - itemWidth / 2
 
@@ -43,13 +43,13 @@ const TabBar = (props) => {
 
             <View style={{
                 pointerEvents: 'none',
-                backgroundColor: '#d0c8b8',
-                top: 100 + itemHeightSelectedOffset, left: 0, position: 'absolute',
+                backgroundColor: '#FFFFFF',
+                top: offsetY + itemHeightSelectedOffset, left: 0, position: 'absolute',
                 width: Dimensions.get('screen').width,
                 height: itemHeight - itemHeightSelectedOffset,
                 //  borderTopColor: 'white',
                 //  borderTopWidth: StyleSheet.hairlineWidth,
-                opacity: 1.0
+                opacity: 0.1
             }}>
                 {/* <Image
                     style={{
@@ -69,7 +69,7 @@ const TabBar = (props) => {
                             name={'tabBarItem' + i}
                             style={{
                                 position: 'absolute',
-                                top: 100, left: (startX + (i * itemSpread)),
+                                top: offsetY, left: (startX + (i * itemSpread)),
                                 width: itemWidth, height: itemHeight,
                                 opacity: 1.0
 
@@ -79,9 +79,15 @@ const TabBar = (props) => {
                             dynamicVisualPropertiesText={animValuesText[i]}
                             bgBoxVisible={true}
                             bgBoxStyle={{
-                                backgroundColor: '#f8f6d3',
+                                backgroundColor: '#000000',
                                 position: 'absolute',
                                 width: itemWidth, height: itemHeight,
+                                // borderColor: '#f5c242',
+                                borderColor: '#ffffff',
+                                borderLeftWidth: 0,
+                                borderRightWidth: 0,
+                                borderTopWidth: 4,
+                                borderBottomWidth: 0,
                             }}
                             onSelect={() => { TransitionTabbarSelect(itemData, i, currentIndex) }}
                             source={itemData.imgSrc}
@@ -90,10 +96,10 @@ const TabBar = (props) => {
                                 fontFamily: 'Arcon-Regular',
                                 letterSpacing: 1.7,
                                 textAlign:'center',
-                                color: '#222222',
+                                color: '#FFFFFF',
                                 fontSize: 11,
                                 opacity: 1.0, 
-                                top: 17
+                                top: (30/2-11/2+4)
                             }}
                         />
 

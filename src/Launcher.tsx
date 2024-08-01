@@ -3,7 +3,7 @@ import React, { PureComponent, ReactNode } from "react";
 import * as SplashScreen from 'expo-splash-screen';
 import LauncherController from "./LauncherController";
 
-import { View } from "react-native";
+import { SafeAreaView, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import NavBar from "./components/navbar/NavBar";
 import NavBarHighlight from "./components/navbar/NavBarHighlight";
@@ -38,8 +38,9 @@ class Launcher extends PureComponent<any, any> {
 
     public render(): ReactNode {
         return (
+            
             <GestureHandlerRootView style={{ flex: 1 }}>
-                <View style={{ position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, backgroundColor: 'transparent' }}>
+                <SafeAreaView style={{ position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, backgroundColor: 'black' }}>
                     {this.state.appIsInitialized ?
                         <>
 
@@ -60,7 +61,7 @@ class Launcher extends PureComponent<any, any> {
                             </StateDependentComponent>
                         </>
                         : null}
-                </View>
+                </SafeAreaView>
             </GestureHandlerRootView>
 
         );

@@ -22,7 +22,9 @@ class LoadingScreen extends PureComponent<any, any> {
                 <Image
                     style={{
                         position: 'absolute', top:  Platform.OS == "ios"?0:-12,
-                        width: Dimensions.get('screen').width, height: Dimensions.get('screen').height,
+                        width: Dimensions.get('screen').width,
+                        height: Dimensions.get('screen').height,
+                        opacity: 0,
                         resizeMode: "cover",
                     }}
                     source={require('../../../assets/splash.png')}

@@ -22,7 +22,7 @@ const ArtistListItemRenderer = ({ item, index }) => {
           backgroundColor: 'transparent',
           left: paddingLeftAndRight,
           height: itemHeight, width: Dimensions.get('screen').width - 2 * paddingLeftAndRight,
-          borderTopColor: '#edc36a',
+          borderTopColor: '##FFFFFF',
           borderTopWidth: 0,
           borderBottomColor: 'black',
           borderBottomWidth: StyleSheet.hairlineWidth,

@@ -1,30 +1,40 @@
-import { Dimensions, Image, SafeAreaView, Text, View } from 'react-native';
+import Constants from 'expo-constants';
+import { Dimensions, Image, Text, View } from 'react-native';
+
+
 
 const ScreenHeader = (props) => {
   let itemHeight = 100;
+  const statusBarHeight = Constants.statusBarHeight;
 
   return (
     <>
-
       <View style={{
-        position: 'absolute',
-        backgroundColor: '#d5d5d5',
-        width: Dimensions.get('screen').width,
-        height: itemHeight,
-        opacity: 0.1
-      }}
-      ></View>
+        // backgroundColor: '#100505',
+        top: statusBarHeight,
 
+        width: Dimensions.get('window').width, height: 80
+      }}>
+
+        <View style={{
+          position: "absolute",
+          backgroundColor: '#ffbf11',
+          width: Dimensions.get('window').width, height: 10
+        }} />
+      </View>
       <Text allowFontScaling={false} id='textHeader'
         style={[{
-          top: 60, left: 30,
+          position: "absolute",
+          top: statusBarHeight+10+15,
+          left: 20,
           width: Dimensions.get('screen').width - 40, height: 32,
-          fontFamily: 'LuckiestGuy-Regular',
+          fontFamily: 'RamaGothicEW01-Regular',
           // backgroundColor: 'skyblue',
-          letterSpacing: 2.4,
+          color: '#ffbf11',
+          // color: '#ffffff',
+          fontSize: 24,
+          letterSpacing: 3,
           textAlign: 'left',
-          color: props.color,
-          fontSize: 23,
         }, props.textStyle]}>
         {props.text}
       </Text>
