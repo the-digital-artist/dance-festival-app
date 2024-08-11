@@ -49,23 +49,23 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     levelId = 0; //DEBUG always set a level
     const levelImageSize = 10;
     //get data of artists
-    const artistData1 = DataModel.dataArtists[item.artistOne];
-    const artistData2 = item.artistTwo ? DataModel.dataArtists[item.artistTwo] : null;
+    const artistData1 = DataModel.getInstance().static.dataArtists[item.artistOne];
+    const artistData2 = item.artistTwo ? DataModel.getInstance().static.dataArtists[item.artistTwo] : null;
 
     const itemHeight = item.rowHeight != undefined ? item.rowHeight : 100;
     const roomBoxOffsetY = 20
     const verticalOffsetTitleLength = item.lineCount != undefined ? (item.lineCount * 19) : 19;
     const verticalOffsetLevel = (item.levelSpecial != undefined && item.levelSpecial == '1') ? 20 : 0
 
-    const imageWidthArtistImagex1 = this.props.tileWidth / (1.2) * (160 / 305);
+    const imageWidthArtistImagex1 = this.props.tileWidth / (1.3) * (160 / 305);
     const imageWidthArtistImagex2 = imageWidthArtistImagex1 * 0.7;
 
     const imageWidthArtistImage = this.props.tileWidth * (120 / 305)*0.9;
     const imageOffsetYArtistImage = 10 + ((305 - this.props.tileWidth) / (305 - 245)) * 10
     const imageOffsetXRArtistImage = -17;
     const imageOffsetXLArtistImage = -17;
-    const fontSizeMainTitle = this.props.tileWidth * (19 / 305);
-    const fontSizeArtistName = this.props.tileWidth * (12 / 305)
+    const fontSizeMainTitle = this.props.tileWidth * (18 / 305);
+    const fontSizeArtistName = this.props.tileWidth * (13 / 305)
 
     // console.log("ScheduleListItemType1 tileLength " + this.props.tileWidth + " artistImageWidth: "+ imageWidthArtistImage);
 
@@ -258,12 +258,13 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               top: 30,
               right: (item.orientation == 'right' ? undefined : (4 + 35)),
               left: (item.orientation == 'left' ? undefined : (4 + 35)),
-              width: 150,
+              width: 190,
               fontFamily: 'DINCondensed-Bold',
               // backgroundColor: 'indigo',
               textAlign: (item.orientation == 'right' ? 'left' : 'right'),
               color: '#fefefe',
               fontSize: (fontSizeMainTitle),
+              opacity:1.0
             }}>
               {(item.sessionMainTitle as string).toLocaleUpperCase()}
             </Animated.Text>
@@ -274,8 +275,8 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               top: (47 + verticalOffsetTitleLength),
               right: (item.orientation == 'right' ? undefined : (4 + 35)),
               left: (item.orientation == 'left' ? undefined : (4 + 35)),
-              height: fontSizeArtistName * 2.5,
-              width: this.props.tileWidth - 35 - 4 - 10,
+              height: fontSizeArtistName +4,
+              width: 190,
               fontFamily: 'RobotoCondensed-Medium',
               letterSpacing: 1.2,
               // backgroundColor: 'indigo',

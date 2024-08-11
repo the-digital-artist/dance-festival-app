@@ -30,7 +30,7 @@ class LVideoPlayback extends PureComponent<any, any> {
                     shouldPlay={this.props.shouldPlay}
                     useNativeControls={false}
                     resizeMode={ResizeMode.COVER}
-                    isLooping={false}
+                    isLooping={true}
                     progressUpdateIntervalMillis={500}
                     rate={1}
                     onPlaybackStatusUpdate={(u) => { }}

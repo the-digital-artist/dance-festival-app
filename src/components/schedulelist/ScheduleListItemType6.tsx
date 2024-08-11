@@ -35,7 +35,7 @@ class ScheduleListItemType6 extends PureComponent<any, any> {
     if (item.itemType != 'type6') return;
 
     const itemHeight = item.rowHeight != undefined ? item.rowHeight : 100;
-    const artistData = DataModel.dataArtists[item.artistOne];
+    const artistData = DataModel.getInstance().static.dataArtists[item.artistOne];
     const verticalOffsetTitleLength = item.lineCount != undefined ? (item.lineCount * 19) : 19;
 
 

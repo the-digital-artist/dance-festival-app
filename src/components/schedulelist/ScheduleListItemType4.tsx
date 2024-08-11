@@ -124,7 +124,7 @@ const ScheduleListItemType4 = ({ item }) => {
           }}
           visualProperties={{ alpha: 1 }}
           onSelect={() => {
-            TransitionLinkToArtistPage(DataModel.dataArtists[item.artistOne])
+            TransitionLinkToArtistPage(DataModel.getInstance().static.dataArtists[item.artistOne])
           }}
         />
       }

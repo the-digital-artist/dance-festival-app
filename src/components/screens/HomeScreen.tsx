@@ -123,7 +123,7 @@ class HomeScreen extends PureComponent<any, any> {
                             this.setState({ activeItems: this.state.activeItems, scrollPosY: e.nativeEvent.contentOffset.y })
                         }}
                     >
-                        {(Date.now() > Date.parse(DataModel.dataTicketSales.earlyBirdStartTimeString)) &&
+                        { (Date.now() > Date.parse(DataModel.getInstance().static.dataTicketSales.earlyBirdStartTimeString)) &&
                             <View
                                 style={{
                                     top: Dimensions.get("screen").height > 800 ? 240 : 40,
@@ -140,7 +140,7 @@ class HomeScreen extends PureComponent<any, any> {
                                         left: 0,
                                         top: 0,
                                         width: Dimensions.get("screen").width,
-                                        height: (HomeScreen.homeProgramItemHeight + HomeScreen.homeProgramItemSpacingY) * DataModel.dataModelProgram.length - 5,
+                                        height: (HomeScreen.homeProgramItemHeight + HomeScreen.homeProgramItemSpacingY) * DataModel.getInstance().static.dataModelProgram.length - 5,
 
                                     }} />
                                 }
@@ -167,7 +167,7 @@ class HomeScreen extends PureComponent<any, any> {
                                         left: 0,
                                         top: 0,
                                         width: Dimensions.get("screen").width,
-                                        height: (HomeScreen.homeProgramItemHeight + HomeScreen.homeProgramItemSpacingY) * DataModel.dataModelProgram.length - 5,
+                                        height: (HomeScreen.homeProgramItemHeight + HomeScreen.homeProgramItemSpacingY) * DataModel.getInstance().static.dataModelProgram.length - 5,
 
                                     }} />
                                 }

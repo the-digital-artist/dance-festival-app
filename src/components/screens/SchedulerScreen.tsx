@@ -13,7 +13,7 @@ import ScreenHomeButton from "./ScreenHomeButton";
 
 
 class SchedulerScreen extends PureComponent {
-    scheduleListArray = [] //{flatListRef: reference, nativeGestureObj: native, data: dataModelList[0] }
+    // scheduleListArray = [] //{flatListRef: reference, nativeGestureObj: native, data: dataModelList[0] }
 
     state = {
         selectedTabIndex: 0,
@@ -28,19 +28,23 @@ class SchedulerScreen extends PureComponent {
         LauncherController.getInstance().context.dataDependentComponentSchedulerScreen = this;
 
         this.state.modelUpdateState = 2;
-        this.state.dataModelList = DataModel.dyn_dataScheduleListsByDay;
+        this.state.dataModelList = DataModel.getInstance().dyn_dataScheduleListsByDay;
     }
 
     render() {
         console.log("___________SchedulerScreen render ")
-        for (let i = 0; i < this.state.dataModelList.length; i++) {
-            this.scheduleListArray.push({ flatListRef: createRef(), nativeGestureObj: Gesture.Native(), data: this.state.dataModelList[i].data })
-            for (let j = 0; j < this.state.dataModelList[i].data.length; j++) {
-                const item = this.state.dataModelList[i].data[j];
-                item['refNativeGesture'] = this.scheduleListArray[i].nativeGestureObj;
+        let scheduleListArray = []
+        if (this.state.dataModelList != null && this.state.modelUpdateState == 2) {
+            //{flatListRef: reference, nativeGestureObj: native, data: dataModelList[0] }
+            for (let i = 0; i < this.state.dataModelList.length; i++) {
+                scheduleListArray.push({ flatListRef: createRef(), nativeGestureObj: Gesture.Native(), data: this.state.dataModelList[i].data })
+                for (let j = 0; j < this.state.dataModelList[i].data.length; j++) {
+                    const item = this.state.dataModelList[i].data[j];
+                    item['refNativeGesture'] = scheduleListArray[i].nativeGestureObj;
+                }
+                scheduleListArray[i].data.push({ "id": 'emptyschedule' + (Math.floor(Math.random()*100000)), "itemType": "type5", "artistName": "", "sessionMainTitle": "", "time": "", "room": "", "level": "-1", "group": [], "groupTitle": "", "groupSubtitle": "", "shortMainTitle": "", "dateString": "", "startTime": "", "endTime": "", "place": "", "sessionSubtitle": "", "sessionDescription": "", "artistOne": "", "artistTwo": "", "artistLocation": "!", "flag": false, "flagIncludeInNow": false })
+                scheduleListArray[i].data.push({ "id": 'emptyschedule' + (Math.floor(Math.random()*100000)), "itemType": "type5", "artistName": "", "sessionMainTitle": "", "time": "", "room": "", "level": "-1", "group": [], "groupTitle": "", "groupSubtitle": "", "shortMainTitle": "", "dateString": "", "startTime": "", "endTime": "", "place": "", "sessionSubtitle": "", "sessionDescription": "", "artistOne": "", "artistTwo": "", "artistLocation": "!", "flag": false, "flagIncludeInNow": false })
             }
-            this.scheduleListArray[i].data.push({ "id": 'emptyschedule' + i, "itemType": "type5", "artistName": "", "sessionMainTitle": "", "time": "", "room": "", "level": "-1", "group": [], "groupTitle": "", "groupSubtitle": "", "shortMainTitle": "", "dateString": "", "startTime": "", "endTime": "", "place": "", "sessionSubtitle": "", "sessionDescription": "", "artistOne": "", "artistTwo": "", "artistLocation": "!", "flag": false, "flagIncludeInNow": false })
-            this.scheduleListArray[i].data.push({ "id": 'emptyschedule' + (i + 1), "itemType": "type5", "artistName": "", "sessionMainTitle": "", "time": "", "room": "", "level": "-1", "group": [], "groupTitle": "", "groupSubtitle": "", "shortMainTitle": "", "dateString": "", "startTime": "", "endTime": "", "place": "", "sessionSubtitle": "", "sessionDescription": "", "artistOne": "", "artistTwo": "", "artistLocation": "!", "flag": false, "flagIncludeInNow": false })
         }
 
 
@@ -51,7 +55,7 @@ class SchedulerScreen extends PureComponent {
 
 
         // let focusItem = LauncherController.getInstance().context.focusedItemData;
-        // const artistData = DataModel.dataArtists[focusItem.artistOne];
+        // const artistData = DataModel.getInstance().static.dataArtists[focusItem.artistOne];
 
 
         const selectedDayIndex = LauncherController.getInstance().tabBarIndex
@@ -82,7 +86,7 @@ class SchedulerScreen extends PureComponent {
                     />
 
                     {this.state.modelUpdateState == 2 &&
-                        this.scheduleListArray.map((scheduleList, i) => {
+                        scheduleListArray.map((scheduleList, i) => {
                             // console.log(" this.scheduleListArray.map((scheduleList, i) "+scheduleList.data.length);
                             // list = {flatListRef: createRef(), nativeGestureObj: Gesture.Native(), data: this.state.dataModelList[i] }
                             return (
@@ -168,7 +172,7 @@ class SchedulerScreen extends PureComponent {
                             // this.setState({
                             //     searchTextInput: searchText,
                             //     modelUpdateState: 2,
-                            //     dataModelList: DataModel.dyn_dataScheduleListsByDay
+                            //     dataModelList: DataModel.getInstance().dyn_dataScheduleListsByDay
                             // })
                         }}
                         defaultValue={""}
@@ -200,7 +204,7 @@ class SchedulerScreen extends PureComponent {
     }
     finishModelUpdate() {
         // console.log("___________SchedulerScreen finishModelUpdate -  update (state 2)");
-        this.setState({ modelUpdateState: 2, dataModelList: DataModel.dyn_dataScheduleListsByDay })
+        this.setState({ modelUpdateState: 2, dataModelList: DataModel.getInstance().dyn_dataScheduleListsByDay })
     }
 }
 

@@ -18,7 +18,7 @@ class FocusFragment extends PureComponent {
 
         const item:any = LauncherController.getInstance().context.focusedItemData;
         const centerPieceWidth = Dimensions.get('screen').width - (5 + 45 + 35 + 35 + 5)
-        const artistData = DataModel.dataArtists[item.artistOne];
+        const artistData = DataModel.getInstance().static.dataArtists[item.artistOne];
         LauncherController.getInstance().context.focusedItemComponent = this;
         const verticalOffsetTitleLength = item.lineCount != undefined ? (item.lineCount * 19) : 19;
 

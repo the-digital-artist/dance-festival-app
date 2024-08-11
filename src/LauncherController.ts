@@ -209,6 +209,7 @@ class LauncherController extends OperatorStates {
     }
 
     async initialize() {
+        const dataModel = DataModel.getInstance().static;
         try {
             await Font.loadAsync(this.customFonts);
             console.log("LauncherController - Fonts loaded.");
@@ -218,11 +219,11 @@ class LauncherController extends OperatorStates {
             await this.prepareDataModel();
             console.log('LauncherController initialization done. Tutorial completed: ' + this.appTutorialCompleted);
 
-            const checkForModelUpdate = setInterval(() => { ActionUpdateDataModelWithRemote(); }, DataModel.modelRemoteUpdateInterval);
+            const checkForModelUpdate = setInterval(() => { ActionUpdateDataModelWithRemote(); }, dataModel.modelRemoteUpdateInterval);
 
             BackHandler.addEventListener('hardwareBackPress', () => { ActionHistoryBackButton(); return true; })
             // ActionUpdateHappeningNow();
-            // const checkHappeningNowFunction = setInterval(() => { ActionUpdateHappeningNow(); }, DataModel.happeningNowUpdateInterval);
+            // const checkHappeningNowFunction = setInterval(() => { ActionUpdateHappeningNow(); }, dataModel.happeningNowUpdateInterval);
 
         } catch (e) {
             console.warn(e);
@@ -232,34 +233,39 @@ class LauncherController extends OperatorStates {
 
 
     async getLocallyStoredDataModel() {
+        const dataModel = DataModel.getInstance().static;
+
         try {
             console.log('LauncherController - checking local models...');
 
             const value = await AsyncStorage.getItem('dataModel');
             const localModelCopy = {};
             if (value == null) { //never used local storage - first time load
-                for (const key in DataModel) {
-                    if (key=='_instance' || key=='instance' || key.indexOf('dyn_')==0) {
-                        console.log("LauncherController - fresh - skipping "+key)
-                        continue;
-                    }
-                    console.log("LauncherController - fresh - building "+key)
-                    localModelCopy[key] = DataModel[key];
-                }
-                const modelAsString = JSON.stringify(localModelCopy);
-                console.log('LauncherController  - using initial model: ' + DataModel.modelVersion);
+                const modelAsString = JSON.stringify(DataModel.getInstance().static);
+                console.log('LauncherController  - using initial model (and storing locally): ' + dataModel.modelVersion);
                 AsyncStorage.setItem('dataModel', modelAsString);
-                return;
+                // for (const key in dataModel) {
+                //     if (key=='_instance' || key=='instance' || key.indexOf('dyn_')==0) {
+                //         console.log("LauncherController - fresh - skipping "+key)
+                //         continue;
+                //     }
+                //     console.log("LauncherController - fresh - building "+key)
+                //     localModelCopy[key] = dataModel[key];
+                // }
+                // const modelAsString = JSON.stringify(localModelCopy);
+               return;
             }
             if (value !== null) {
                 const locallyStoredModel = JSON.parse(value);
-                if (locallyStoredModel.modelVersion <= DataModel.modelVersion) return;
-                for (const key in locallyStoredModel) {
-                    console.log("LauncherController - retrieving local storage "+key)
-                    DataModel[key] = locallyStoredModel[key];
-                }
+                if (locallyStoredModel.modelVersion <= dataModel.modelVersion) return;
 
-                console.log('LauncherController - using locally stored model: ' + DataModel.modelVersion);
+                DataModel.getInstance().static = locallyStoredModel;
+                // for (const key in locallyStoredModel) {
+                //     console.log("LauncherController - retrieving local storage "+key)
+                //     dataModel[key] = locallyStoredModel[key];
+                // }
+
+                console.log('LauncherController - using locally stored model: ' + dataModel.modelVersion);
                 return;
             }
         } catch (e) {
@@ -268,30 +274,31 @@ class LauncherController extends OperatorStates {
     };
 
     async getRemoteDataModel() {
+        const dataModel = DataModel.getInstance().static;
 
         try {
             console.log('LauncherController - checking remote models...');
             const fetchController = new AbortController()
             setTimeout(() => { fetchController.abort() }, 1500)
 
-            const response = await fetch(DataModel.modelRemoteGetModelUrl, { signal: fetchController.signal });
+            const response = await fetch(dataModel.modelRemoteGetModelUrl, { signal: fetchController.signal });
             if (!response.ok) return;
 
             const remoteModel = await response.json();
             console.log('LauncherController - remote model with version: ' + remoteModel.modelVersion,);
 
-            if (remoteModel.modelVersion <= DataModel.modelVersion) return;
+            if (remoteModel.modelVersion <= dataModel.modelVersion) return;
 
           // now sync all the keys in the remote model to the local model
             for (const key in remoteModel) {
-                if (Object.prototype.hasOwnProperty.call(DataModel, key)) {
+                if (Object.prototype.hasOwnProperty.call(dataModel, key)) {
                     console.log("LauncherController - syncing local key with remote key: " + key);
-                    DataModel[key] = remoteModel[key];
+                    dataModel[key] = remoteModel[key];
                 }
             }
             console.log('LauncherController - using remote model and storing locally.' + remoteModel.modelVersion,);
             
-            AsyncStorage.setItem('dataModel', JSON.stringify({DataModel}));
+            AsyncStorage.setItem('dataModel', JSON.stringify({dataModel}));
           
         } catch (error) {
             if (error.message == "Aborted") {
@@ -303,50 +310,52 @@ class LauncherController extends OperatorStates {
     }
 
     async prepareDataModel() {
+        const dataModel = DataModel.getInstance().static;
+
         console.log("LauncherController - processing data model...");
         //artist data reformatting
         //1) add static references to the imgSrc field of the artist data item
 
         //load images
         try {
-            if(DataModel.dataArtists['Adolfo & Tania'] != undefined) DataModel.dataArtists['Adolfo & Tania'].imgSrc = require('../assets/portraits/0017_adolfo_-_tania.png');
-            if(DataModel.dataArtists['Adrian Tenorio'] != undefined) DataModel.dataArtists['Adrian Tenorio'].imgSrc = require('../assets/portraits/0016_adrian_tenorio.png');
-            if(DataModel.dataArtists['Alex & Desiree'] != undefined) DataModel.dataArtists['Alex & Desiree'].imgSrc = require('../assets/portraits/0015_alex_-_desiree.png');
-            if(DataModel.dataArtists['Benny & Ashley'] != undefined) DataModel.dataArtists['Benny & Ashley'].imgSrc = require('../assets/portraits/0014_benny_-_ashley.png');
-            if(DataModel.dataArtists['Bianca Chapman'] != undefined) DataModel.dataArtists['Bianca Chapman'].imgSrc = require('../assets/portraits/0013_bianca_chapman.png');
-            if(DataModel.dataArtists['Rafael & Carine'] != undefined) DataModel.dataArtists['Rafael & Carine'].imgSrc = require('../assets/portraits/0018_carine_-_rafael.png');
-            if(DataModel.dataArtists['Carlos & Susan'] != undefined) DataModel.dataArtists['Carlos & Susan'].imgSrc = require('../assets/portraits/0002_carlos_-_susan.png');
-            if(DataModel.dataArtists['Casino Stars'] != undefined) DataModel.dataArtists['Casino Stars'].imgSrc = require('../assets/portraits/0012_casino_stars.png');
-            if(DataModel.dataArtists['Chelsey Owen'] != undefined) DataModel.dataArtists['Chelsey Owen'].imgSrc = require('../assets/portraits/0011_chelsey_owen.png');
-            if(DataModel.dataArtists['Chris & Alexus'] != undefined) DataModel.dataArtists['Chris & Alexus'].imgSrc = require('../assets/portraits/0010_chris_-_alexus.png');
-            if(DataModel.dataArtists['Clifton Stennet'] != undefined) DataModel.dataArtists['Clifton Stennet'].imgSrc = require('../assets/portraits/0009_clifton_stennet.png');
-            if(DataModel.dataArtists['Danny Saksita'] != undefined) DataModel.dataArtists['Danny Saksita'].imgSrc = require('../assets/portraits/0006_danny_saksita.png');
-            if(DataModel.dataArtists['Diane Page'] != undefined) DataModel.dataArtists['Diane Page'].imgSrc = require('../assets/portraits/0004_diane_page.png');
-            if(DataModel.dataArtists['Eder & Milton'] != undefined) DataModel.dataArtists['Eder & Milton'].imgSrc = require('../assets/portraits/0003_eder_-_milton.png');
-            if(DataModel.dataArtists['J Square'] != undefined) DataModel.dataArtists['J Square'].imgSrc = require('../assets/portraits/0000_j_square.png');
-            if(DataModel.dataArtists['Jorge & Indira'] != undefined) DataModel.dataArtists['Jorge & Indira'].imgSrc = require('../assets/portraits/0008_jorge_-_indira.png');
-            if(DataModel.dataArtists['Karen Y Ricardo'] != undefined) DataModel.dataArtists['Karen Y Ricardo'].imgSrc = require('../assets/portraits/0005_karen_-_ricardo.png');
-            if(DataModel.dataArtists['Raul & Delia'] != undefined) DataModel.dataArtists['Raul & Delia'].imgSrc = require('../assets/portraits/0001_raul_-_delia.png');   
-            if(DataModel.dataArtists['Latisha Hardy'] != undefined) DataModel.dataArtists['Latisha Hardy'].imgSrc = require('../assets/portraits/0021_latisha_hardy.png');
-            if(DataModel.dataArtists['Carlos & Suzan'] != undefined) DataModel.dataArtists['Carlos & Suzan'].imgSrc = require('../assets/portraits/0022_carlos_-_suzan.png');   
-            if(DataModel.dataArtists['Brandon & Michelle'] != undefined) DataModel.dataArtists['Brandon & Michelle'].imgSrc = require('../assets/portraits/0023_brandon_-_michelle.png');   
-            if(DataModel.dataArtists['El Tiguere Y Bianca'] != undefined) DataModel.dataArtists['El Tiguere Y Bianca'].imgSrc = require('../assets/portraits/0024_el_tiguere_-_bianca.png');   
-            if(DataModel.dataArtists['Ataca Y Alemana'] != undefined) DataModel.dataArtists['Ataca Y Alemana'].imgSrc = require('../assets/portraits/0025_ataca_-_alemana.png');   
-            if(DataModel.dataArtists['Rafa Gonzalez'] != undefined) DataModel.dataArtists['Rafa Gonzalez'].imgSrc = require('../assets/portraits/0026_rafa.png');   
-            if(DataModel.dataArtists['Marisol Blanco'] != undefined) DataModel.dataArtists['Marisol Blanco'].imgSrc = require('../assets/portraits/0027_marisol_blanco.png');   
-            if(DataModel.dataArtists['Kingsmen'] != undefined) DataModel.dataArtists['Kingsmen'].imgSrc = require('../assets/portraits/0028_kingsmen.png');   
-            if(DataModel.dataArtists['Celeste Williamson'] != undefined) DataModel.dataArtists['Celeste Williamson'].imgSrc = require('../assets/portraits/0029_celeste_williamson.png');   
-            if(DataModel.dataArtists['Iroko'] != undefined) DataModel.dataArtists['Iroko'].imgSrc = require('../assets/portraits/0030_iroko.png');   
+            if(dataModel.dataArtists['Adolfo & Tania'] != undefined) dataModel.dataArtists['Adolfo & Tania'].imgSrc = require('../assets/portraits/0017_adolfo_-_tania.png');
+            if(dataModel.dataArtists['Adrian Tenorio'] != undefined) dataModel.dataArtists['Adrian Tenorio'].imgSrc = require('../assets/portraits/0016_adrian_tenorio.png');
+            if(dataModel.dataArtists['Alex & Desiree'] != undefined) dataModel.dataArtists['Alex & Desiree'].imgSrc = require('../assets/portraits/0015_alex_-_desiree.png');
+            if(dataModel.dataArtists['Benny & Ashley'] != undefined) dataModel.dataArtists['Benny & Ashley'].imgSrc = require('../assets/portraits/0014_benny_-_ashley.png');
+            if(dataModel.dataArtists['Bianca Chapman'] != undefined) dataModel.dataArtists['Bianca Chapman'].imgSrc = require('../assets/portraits/0013_bianca_chapman.png');
+            if(dataModel.dataArtists['Rafael & Carine'] != undefined) dataModel.dataArtists['Rafael & Carine'].imgSrc = require('../assets/portraits/0018_carine_-_rafael.png');
+            if(dataModel.dataArtists['Carlos & Susan'] != undefined) dataModel.dataArtists['Carlos & Susan'].imgSrc = require('../assets/portraits/0002_carlos_-_susan.png');
+            if(dataModel.dataArtists['Casino Stars'] != undefined) dataModel.dataArtists['Casino Stars'].imgSrc = require('../assets/portraits/0012_casino_stars.png');
+            if(dataModel.dataArtists['Chelsey Owen'] != undefined) dataModel.dataArtists['Chelsey Owen'].imgSrc = require('../assets/portraits/0011_chelsey_owen.png');
+            if(dataModel.dataArtists['Chris & Alexus'] != undefined) dataModel.dataArtists['Chris & Alexus'].imgSrc = require('../assets/portraits/0010_chris_-_alexus.png');
+            if(dataModel.dataArtists['Clifton Stennet'] != undefined) dataModel.dataArtists['Clifton Stennet'].imgSrc = require('../assets/portraits/0009_clifton_stennet.png');
+            if(dataModel.dataArtists['Danny Saksita'] != undefined) dataModel.dataArtists['Danny Saksita'].imgSrc = require('../assets/portraits/0006_danny_saksita.png');
+            if(dataModel.dataArtists['Diane Page'] != undefined) dataModel.dataArtists['Diane Page'].imgSrc = require('../assets/portraits/0004_diane_page.png');
+            if(dataModel.dataArtists['Eder & Milton'] != undefined) dataModel.dataArtists['Eder & Milton'].imgSrc = require('../assets/portraits/0003_eder_-_milton.png');
+            if(dataModel.dataArtists['J Square'] != undefined) dataModel.dataArtists['J Square'].imgSrc = require('../assets/portraits/0000_j_square.png');
+            if(dataModel.dataArtists['Jorge & Indira'] != undefined) dataModel.dataArtists['Jorge & Indira'].imgSrc = require('../assets/portraits/0008_jorge_-_indira.png');
+            if(dataModel.dataArtists['Karen Y Ricardo'] != undefined) dataModel.dataArtists['Karen Y Ricardo'].imgSrc = require('../assets/portraits/0005_karen_-_ricardo.png');
+            if(dataModel.dataArtists['Raul & Delia'] != undefined) dataModel.dataArtists['Raul & Delia'].imgSrc = require('../assets/portraits/0001_raul_-_delia.png');   
+            if(dataModel.dataArtists['Latisha Hardy'] != undefined) dataModel.dataArtists['Latisha Hardy'].imgSrc = require('../assets/portraits/0021_latisha_hardy.png');
+            if(dataModel.dataArtists['Carlos & Suzan'] != undefined) dataModel.dataArtists['Carlos & Suzan'].imgSrc = require('../assets/portraits/0022_carlos_-_suzan.png');   
+            if(dataModel.dataArtists['Brandon & Michelle'] != undefined) dataModel.dataArtists['Brandon & Michelle'].imgSrc = require('../assets/portraits/0023_brandon_-_michelle.png');   
+            if(dataModel.dataArtists['El Tiguere Y Bianca'] != undefined) dataModel.dataArtists['El Tiguere Y Bianca'].imgSrc = require('../assets/portraits/0024_el_tiguere_-_bianca.png');   
+            if(dataModel.dataArtists['Ataca Y Alemana'] != undefined) dataModel.dataArtists['Ataca Y Alemana'].imgSrc = require('../assets/portraits/0025_ataca_-_alemana.png');   
+            if(dataModel.dataArtists['Rafa Gonzalez'] != undefined) dataModel.dataArtists['Rafa Gonzalez'].imgSrc = require('../assets/portraits/0026_rafa.png');   
+            if(dataModel.dataArtists['Marisol Blanco'] != undefined) dataModel.dataArtists['Marisol Blanco'].imgSrc = require('../assets/portraits/0027_marisol_blanco.png');   
+            if(dataModel.dataArtists['Kingsmen'] != undefined) dataModel.dataArtists['Kingsmen'].imgSrc = require('../assets/portraits/0028_kingsmen.png');   
+            if(dataModel.dataArtists['Celeste Williamson'] != undefined) dataModel.dataArtists['Celeste Williamson'].imgSrc = require('../assets/portraits/0029_celeste_williamson.png');   
+            if(dataModel.dataArtists['Iroko'] != undefined) dataModel.dataArtists['Iroko'].imgSrc = require('../assets/portraits/0030_iroko.png');   
        
         } catch (error) {
             console.log('Could not assign an image for a particular artist')
         }
 
         try {
-            if (DataModel.dataStyles['type1'] != undefined) DataModel.dataStyles['type1'].imgSrc = require('../assets/tile-fullprogram-itembg1.png');
-            if (DataModel.dataStyles['type2'] != undefined) DataModel.dataStyles['type2'].imgSrc = require('../assets/tile-fullprogram-itembg2.png');
-            if (DataModel.dataStyles['type3'] != undefined) DataModel.dataStyles['type3'].imgSrc = require('../assets/tile-fullprogram-itembg3.png');
-            if (DataModel.dataStyles['type4'] != undefined) DataModel.dataStyles['type4'].imgSrc = require('../assets/tile-fullprogram-itembg4.png');
+            if (dataModel.dataStyles['type1'] != undefined) dataModel.dataStyles['type1'].imgSrc = require('../assets/tile-fullprogram-itembg1.png');
+            if (dataModel.dataStyles['type2'] != undefined) dataModel.dataStyles['type2'].imgSrc = require('../assets/tile-fullprogram-itembg2.png');
+            if (dataModel.dataStyles['type3'] != undefined) dataModel.dataStyles['type3'].imgSrc = require('../assets/tile-fullprogram-itembg3.png');
+            if (dataModel.dataStyles['type4'] != undefined) dataModel.dataStyles['type4'].imgSrc = require('../assets/tile-fullprogram-itembg4.png');
 
         } catch (error) {
             console.log('Could not assign an image for a particularhomepage bg')
@@ -354,13 +363,13 @@ class LauncherController extends OperatorStates {
 
 
         try {
-            if (DataModel.dataLocation['altemuenze'] != undefined) DataModel.dataLocation['altemuenze'].imgSrc = require('../assets/location-icons/location-alte-muenze.png')
-            if (DataModel.dataLocation['bebop'] != undefined) DataModel.dataLocation['bebop'].imgSrc = require('../assets/location-icons/location-bebop.png')
-            if (DataModel.dataLocation['belushis'] != undefined) DataModel.dataLocation['belushis'].imgSrc = require('../assets/location-icons/location-belushis.png')
-            if (DataModel.dataLocation['berlindanceinstitute'] != undefined) DataModel.dataLocation['berlindanceinstitute'].imgSrc = require('../assets/location-icons/location-berlin-dance-institute.png')
-            if (DataModel.dataLocation['soda'] != undefined) DataModel.dataLocation['soda'].imgSrc = require('../assets/location-icons/location-soda.png')
-            if (DataModel.dataLocation['unknown'] != undefined) DataModel.dataLocation['unknown'].imgSrc = require('../assets/location-icons/location-unknown.png')
-            if (DataModel.dataLocation['citytour'] != undefined) DataModel.dataLocation['citytour'].imgSrc = require('../assets/location-icons/location-citytour.png')
+            if (dataModel.dataLocation['altemuenze'] != undefined) dataModel.dataLocation['altemuenze'].imgSrc = require('../assets/location-icons/location-alte-muenze.png')
+            if (dataModel.dataLocation['bebop'] != undefined) dataModel.dataLocation['bebop'].imgSrc = require('../assets/location-icons/location-bebop.png')
+            if (dataModel.dataLocation['belushis'] != undefined) dataModel.dataLocation['belushis'].imgSrc = require('../assets/location-icons/location-belushis.png')
+            if (dataModel.dataLocation['berlindanceinstitute'] != undefined) dataModel.dataLocation['berlindanceinstitute'].imgSrc = require('../assets/location-icons/location-berlin-dance-institute.png')
+            if (dataModel.dataLocation['soda'] != undefined) dataModel.dataLocation['soda'].imgSrc = require('../assets/location-icons/location-soda.png')
+            if (dataModel.dataLocation['unknown'] != undefined) dataModel.dataLocation['unknown'].imgSrc = require('../assets/location-icons/location-unknown.png')
+            if (dataModel.dataLocation['citytour'] != undefined) dataModel.dataLocation['citytour'].imgSrc = require('../assets/location-icons/location-citytour.png')
         } catch (error) {
             console.log('Could not assign an image for a particularhomepage bg')
         }
@@ -371,8 +380,8 @@ class LauncherController extends OperatorStates {
         const upperLimit = 200;
         const lowerLimit = 80;
         let index = 0;
-        for (const k in DataModel.dataArtists) {
-            const item = DataModel.dataArtists[k];
+        for (const k in dataModel.dataArtists) {
+            const item = dataModel.dataArtists[k];
             const lastFullStop = (item.bio as string).lastIndexOf(".", upperLimit)
 
             item.shortBio = lastFullStop > lowerLimit ? (item.bio as string).substring(0, lastFullStop) + " ..." : (item.bio as string).substring(0, upperLimit) + " ..."
@@ -384,23 +393,23 @@ class LauncherController extends OperatorStates {
         //3)
 
         //add sessions to each artist
-        for (let key in DataModel.dataArtists) {
-            DataModel.dataArtists[key]['key'] = key;
-            DataModel.dataArtists[key]['sessionIds'] = [];
+        for (let key in dataModel.dataArtists) {
+            dataModel.dataArtists[key]['key'] = key;
+            dataModel.dataArtists[key]['sessionIds'] = [];
 
-            for (let i = 0; i < DataModel.dataScheduleRaw.length; i++) {
-                if (DataModel.dataScheduleRaw[i].artistName == key)
-                    DataModel.dataArtists[key]['sessionIds'].push(DataModel.dataScheduleRaw[i].id)
+            for (let i = 0; i < dataModel.dataScheduleRaw.length; i++) {
+                if (dataModel.dataScheduleRaw[i].artistName == key)
+                    dataModel.dataArtists[key]['sessionIds'].push(dataModel.dataScheduleRaw[i].id)
             }
         }
 
         //store in array and add name field
-        DataModel.dyn_dataArtistsList = [];
-        for (let key in DataModel.dataArtists) {
-            DataModel.dyn_dataArtistsList.push(DataModel.dataArtists[key]);
+        DataModel.getInstance().dyn_dataArtistsList = [];
+        for (let key in dataModel.dataArtists) {
+            DataModel.getInstance().dyn_dataArtistsList.push(dataModel.dataArtists[key]);
         }
 
-        // console.log("::::::::Preparing Data Model - ArtistList Length: " + DataModel.dataArtistsList.length);
+        // console.log("::::::::Preparing Data Model - ArtistList Length: " + dataModel.dataArtistsList.length);
 
         //schedule data reformating 
         //1) structure by day 
@@ -410,21 +419,21 @@ class LauncherController extends OperatorStates {
         //groups are sessions that happen in different rooms but at the same time
         //3) store fav value
 
-        DataModel.dyn_dataScheduleListsByDay = [];
+        DataModel.getInstance().dyn_dataScheduleListsByDay = [];
 
         let dataItem = null;
         let dataItemOldGroup = null;
         let dataItemNewGroup = null;
         let sectionListData = null;
-        for (let i = 0; i < DataModel.dataScheduleRaw.length; i++) {
-            dataItem = DataModel.dataScheduleRaw[i];
+        for (let i = 0; i < dataModel.dataScheduleRaw.length; i++) {
+            dataItem = dataModel.dataScheduleRaw[i];
 
             //1) structure by date
 
             let found = false;
-            for (let j = 0; j < DataModel.dyn_dataScheduleListsByDay.length; j++) {
-                if (DataModel.dyn_dataScheduleListsByDay[j].title == dataItem.dateString) {
-                    sectionListData = DataModel.dyn_dataScheduleListsByDay[j]
+            for (let j = 0; j < DataModel.getInstance().dyn_dataScheduleListsByDay.length; j++) {
+                if (DataModel.getInstance().dyn_dataScheduleListsByDay[j].title == dataItem.dateString) {
+                    sectionListData = DataModel.getInstance().dyn_dataScheduleListsByDay[j]
                     found = true;
                     break;
                 }
@@ -434,7 +443,7 @@ class LauncherController extends OperatorStates {
 
                 sectionListData = { title: dataItem.dateString, data: [] }
 
-                DataModel.dyn_dataScheduleListsByDay.push(sectionListData)
+                DataModel.getInstance().dyn_dataScheduleListsByDay.push(sectionListData)
                 console.log("LauncherController - processing raw schedule - new date found:" + sectionListData.title);
             }
 
@@ -442,10 +451,10 @@ class LauncherController extends OperatorStates {
             dataItemOldGroup = dataItem['group']
             dataItemNewGroup = [];
             for (let j = 0; j < dataItemOldGroup.length; j++) {
-                for (let k = 0; k < DataModel.dataScheduleRaw.length; k++) {
-                    if (dataItemOldGroup[j] == DataModel.dataScheduleRaw[k].id) {
-                        dataItemNewGroup.push({ id: dataItemOldGroup[j], obj: DataModel.dataScheduleRaw[k] });
-                        DataModel.dataScheduleRaw[k].flag = (j == 0) ? false : true;
+                for (let k = 0; k < dataModel.dataScheduleRaw.length; k++) {
+                    if (dataItemOldGroup[j] == dataModel.dataScheduleRaw[k].id) {
+                        dataItemNewGroup.push({ id: dataItemOldGroup[j], obj: dataModel.dataScheduleRaw[k] });
+                        dataModel.dataScheduleRaw[k].flag = (j == 0) ? false : true;
                         break;
                     }
                 }
@@ -474,17 +483,17 @@ class LauncherController extends OperatorStates {
 
         }
         //add empty item at the end of each day schedule
-        for (let j = 0; j < DataModel.dyn_dataScheduleListsByDay.length; j++) {
-            DataModel.dyn_dataScheduleListsByDay[j].data.push({ "id": j*10000, "itemType": "type5", group: [] })
+        for (let j = 0; j < DataModel.getInstance().dyn_dataScheduleListsByDay.length; j++) {
+            DataModel.getInstance().dyn_dataScheduleListsByDay[j].data.push({ "id": j*10000, "itemType": "type5", group: [] })
         }
 
 
 
-        DataModel.dyn_dataModelProgram = [];
-        for (let i = 0; i < DataModel.dataModelProgram.length; i++) {
-            // console.log(DataModel.dataModelProgram[i].startTime);
-            if(DataModel.dataModelProgram[i].endTime =='' || Date.parse(DataModel.dataModelProgram[i].endTime)>Date.now()) {
-                DataModel.dyn_dataModelProgram.push(DataModel.dataModelProgram[i])
+        DataModel.getInstance().dyn_dataModelProgram = [];
+        for (let i = 0; i < dataModel.dataModelProgram.length; i++) {
+            // console.log(dataModel.dataModelProgram[i].startTime);
+            if(dataModel.dataModelProgram[i].endTime =='' || Date.parse(dataModel.dataModelProgram[i].endTime)>Date.now()) {
+                DataModel.getInstance().dyn_dataModelProgram.push(dataModel.dataModelProgram[i])
             }
         }
 

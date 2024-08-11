@@ -23,7 +23,7 @@ class ArtistListScreen extends PureComponent {
         LauncherController.getInstance().context.dataDependentComponentArtistScreen = this;
 
         this.state.modelUpdateState = 2;
-        this.state.dataModelList = DataModel.dyn_dataArtistsList;
+        this.state.dataModelList = DataModel.getInstance().dyn_dataArtistsList;
         this.state.searchTextInput = "";
 
 
@@ -43,16 +43,18 @@ class ArtistListScreen extends PureComponent {
         //     );
         // }
         //sort list
-        this.state.dataModelList.sort((a, b) => {
-            // console.log("___________compare: "+a.fullName+" "+b.fullName+" "+(a.fullName>b.fullName?1:(a.fullName<b.fullName?-1:0)))
-            // console.log("___________compare: imgSrc b: "+b.imgSrc);
-            let returnValue = 0;
-            if (a.imgSrc == undefined && b.imgSrc != undefined) returnValue = 1;
-            if (a.imgSrc != undefined && b.imgSrc == undefined) returnValue = -1;
-            if (a.imgSrc == undefined && b.imgSrc == undefined || a.imgSrc != undefined && b.imgSrc != undefined) returnValue = (a.fullName > b.fullName) ? 1 : -1
+        if (this.state.dataModelList!=null && this.state.modelUpdateState == 2) {
+            this.state.dataModelList.sort((a, b) => {
+                // console.log("___________compare: "+a.fullName+" "+b.fullName+" "+(a.fullName>b.fullName?1:(a.fullName<b.fullName?-1:0)))
+                // console.log("___________compare: imgSrc b: "+b.imgSrc);
+                let returnValue = 0;
+                if (a.imgSrc == undefined && b.imgSrc != undefined) returnValue = 1;
+                if (a.imgSrc != undefined && b.imgSrc == undefined) returnValue = -1;
+                if (a.imgSrc == undefined && b.imgSrc == undefined || a.imgSrc != undefined && b.imgSrc != undefined) returnValue = (a.fullName > b.fullName) ? 1 : -1
 
-            return returnValue;
-        });
+                return returnValue;
+            });
+        }
 
 
         return (
@@ -132,7 +134,7 @@ class ArtistListScreen extends PureComponent {
                         this.setState({
                             searchTextInput: searchText,
                             modelUpdateState: 2,
-                            dataModelList: DataModel.dyn_dataArtistsList.filter((item) => { return ((item.fullName as string).search(searchText) >= 0 ? true : false) })
+                            dataModelList: DataModel.getInstance().dyn_dataArtistsList.filter((item) => { return ((item.fullName as string).search(searchText) >= 0 ? true : false) })
                         })
                     }}
                     defaultValue={""}
@@ -167,7 +169,7 @@ class ArtistListScreen extends PureComponent {
     }
     finishModelUpdate() {
         // console.log("___________ArtistListScreen finishModelUpdate -  update (state 2)"); 
-        this.setState({ modelUpdateState: 2, dataModelList: DataModel.dyn_dataArtistsList })
+        this.setState({ modelUpdateState: 2, dataModelList: DataModel.getInstance().dyn_dataArtistsList })
     }
 }
 

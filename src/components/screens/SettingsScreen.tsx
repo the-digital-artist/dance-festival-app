@@ -27,8 +27,8 @@ class SettingsScreen extends PureComponent {
         super(props);
 
         let currentTime = Date.now();
-        let borderChangeTitleTime =  Date.parse(DataModel.dataTicketSales.earlyBirdStartTimeString);        //YYYY-MM-DDTHH:mm:ss.sssZ
-        SettingsScreen.settingsListData[0].title =   ((currentTime<borderChangeTitleTime)?"Get Your Last-Minute Ticket":"Get Your Special Early-Bird Ticket")
+        // let borderChangeTitleTime =  Date.parse(DataModel.dataTicketSales.earlyBirdStartTimeString);        //YYYY-MM-DDTHH:mm:ss.sssZ
+        // SettingsScreen.settingsListData[0].title =   ((currentTime<borderChangeTitleTime)?"Get Your Last-Minute Ticket":"Get Your Special Early-Bird Ticket")
     }
 
     render() {
@@ -181,7 +181,8 @@ class SettingsScreen extends PureComponent {
                     // backgroundColor: 'skyblue',
                     textAlign: 'center',
                 }]}>
-                   {"BUILD VERSION: "+Application.nativeBuildVersion + " - MODEL VERSION: "+DataModel.modelVersion}
+                   {"BUILD VERSION: "+Application.nativeBuildVersion + 
+                   " - MODEL VERSION: "+DataModel.getInstance().static.modelVersion}
                 </Text>
 
 

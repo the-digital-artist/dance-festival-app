@@ -15,7 +15,7 @@ const ProgramOverviewTile = (props) => {
                     top: Dimensions.get("screen").height > 800 ? 240 + HomeScreen.homeProgramItemSpacingY : 40,
                     // backgroundColor:'red',
                     width: Dimensions.get("screen").width,
-                    height: (HomeScreen.homeProgramItemHeight + HomeScreen.homeProgramItemSpacingY) * DataModel.dataModelProgram.length,
+                    height: (HomeScreen.homeProgramItemHeight + HomeScreen.homeProgramItemSpacingY) * DataModel.getInstance().static.dataModelProgram.length,
                 }}>
                 {Platform.OS == "ios" && <BlurView
                     intensity={17}
@@ -26,7 +26,7 @@ const ProgramOverviewTile = (props) => {
                         left: 0,
                         top: 0,
                         width: Dimensions.get("screen").width,
-                        height: (HomeScreen.homeProgramItemHeight + HomeScreen.homeProgramItemSpacingY) * DataModel.dataModelProgram.length - 5,
+                        height: (HomeScreen.homeProgramItemHeight + HomeScreen.homeProgramItemSpacingY) * DataModel.getInstance().static.dataModelProgram.length - 5,
 
                     }} />
                 }
@@ -46,7 +46,7 @@ const ProgramOverviewTile = (props) => {
                 </Text>
 
 
-                {DataModel.dyn_dataModelProgram.map(
+                {DataModel.getInstance().dyn_dataModelProgram.map(
                     (itemData, i) => HomeScreenProgramItem({ itemData, i })
                 )}
             </View>
