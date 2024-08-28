@@ -8,6 +8,30 @@ class DataModel {
 	dyn_dataArtistsList = null;
 	dyn_dataScheduleListsByDay = null;
 	dyn_dataModelProgram = null;
+	dyn_userManagement = { 
+		userDataIndexLoggedIn: -1,
+		userData: [
+			{
+				id: 0,
+				name: "1-Tom",
+				firstName: 'Tom',
+				role: "Organizer",
+				email: "fischer.philipp@gmail.com",
+				passwort: "caldacforever",
+				imgSrc: -1
+			},
+			{
+				id: "6-Philipp",
+				name: "Philipp",
+				firstName: 'Philipp',
+				appleAuthData: {},
+				email: "fischer.philipp@gmail.com",
+				passwort: "caldacforever",
+				imgSrc: -1
+			}
+		]
+	}
+
 
 	//static properties (may be updated by remote model version)
 	static = {
