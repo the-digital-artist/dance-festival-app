@@ -15,6 +15,7 @@ import SettingsScreen from "./components/screens/SettingsScreen";
 import UpdateOverlayFragement from "./components/screens/UpdateOverlayFragement";
 import Eventl from "./core/LEventl";
 import StateDependentComponent from "./core/LStateDependentComponent";
+import LoginScreen from "./components/screens/LoginScreen";
 
 
 class Launcher extends PureComponent<any, any> {
@@ -51,6 +52,7 @@ class Launcher extends PureComponent<any, any> {
 
                                 <NavBar highlightRenderer={NavBarHighlight} data={LauncherController.getInstance().navBarData} />
 
+                                {/* <LoginScreen/> */}
                                 <UpdateOverlayFragement />
                             </StateDependentComponent>
 
