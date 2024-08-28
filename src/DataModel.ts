@@ -37,7 +37,7 @@ class DataModel {
 	static = {
 		modelRemoteGetModelUrl: 'https://wa1koeb029.execute-api.eu-central-1.amazonaws.com/caldacModelContent',
 		modelRemoteVersionCheckUrl: 'https://wa1koeb029.execute-api.eu-central-1.amazonaws.com/caldacModelVersion',
-		modelRemoteUpdateInterval: 15000,
+		modelRemoteUpdateInterval: 55000,
 
 		happeningNowUpdateInterval: 30000,
 
