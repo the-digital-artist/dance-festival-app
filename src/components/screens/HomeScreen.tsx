@@ -10,6 +10,8 @@ import HomeScreenProgramItem from "./HomeScreenProgramItem";
 import ScreenHeader from "./ScreenHeader";
 import LVideoPlayback from "../../core/LVideoPlayback";
 import HappeningNowTile from "../happeningnowtile/HappeningNowTile";
+import LoginScreen from "./LoginScreen";
+import LoginTile from "./LoginTile";
 
 
 
@@ -144,7 +146,8 @@ class HomeScreen extends PureComponent<any, any> {
 
                                     }} />
                                 }
-                                <EarlyPassesTile offsetY={0} />
+                                <EarlyPassesTile offsetY={280} />
+                                <LoginTile offsetY={0}/>
                                 {/* <HappeningNowTile offsetY={400} activeItems={activeItems} /> */}
                             </View>
 
