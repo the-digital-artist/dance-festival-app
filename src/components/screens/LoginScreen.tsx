@@ -14,7 +14,7 @@ class LoginScreen extends LComponent {
             selectedUser: DataModel.getInstance().dyn_userManagement.userDataIndexLoggedIn,
             textInputName: "",
             textInputPassword: "",
-            secure:""
+            secure: ""
         };
     }
 
@@ -29,11 +29,11 @@ class LoginScreen extends LComponent {
                     backgroundColor: '#585d96',
                 }}
                 visualProperties={{
-                    alpha: 1.0, x: 0, y: 0, z: 0,  w: "windowWidth", h: "windowHeight"
+                    alpha: 1.0, x: 0, y: 0, z: 0, w: "windowWidth", h: "windowHeight"
                 }}>
-               
 
-               <Text id='Headline Small' style={[{
+
+                <Text id='Headline Small' style={[{
                     position: 'absolute',
                     top: 170,
                     left: 30,
@@ -56,11 +56,11 @@ class LoginScreen extends LComponent {
                     color: '#FFFFFF',
                     fontSize: 12,
                 }, this.props.textStyle]}>
-                   Colorado Afro-Latin Dance & Art Collective
+                    Colorado Afro-Latin Dance & Art Collective
                 </Text>
 
-            
-<Text id='Headline Small' style={[{
+
+                <Text id='Headline Small' style={[{
                     position: 'absolute',
                     top: 300,
                     left: 150,
@@ -71,7 +71,7 @@ class LoginScreen extends LComponent {
                     fontSize: 12,
                     width: Dimensions.get('screen').width - 150 - 60
                 }, this.props.textStyle]}>
-                   Please sign into your account. During the closed beta phase, just select yourself below (no password).
+                    Please sign into your account. During the closed beta phase, just select yourself below (no password).
                 </Text>
 
                 <Subheader
@@ -79,7 +79,7 @@ class LoginScreen extends LComponent {
                     x={30} y={263}
                 />
 
-<Image
+                <Image
                     style={{
                         top: 302, left: 40, position: 'absolute',
                         width: 60, height: 60,
@@ -102,7 +102,7 @@ class LoginScreen extends LComponent {
                 /> */}
 
 
-<ButtonSmall
+                <ButtonSmall
                     name='noAccountButton'
                     style={{
                         position: 'absolute',
@@ -119,8 +119,8 @@ class LoginScreen extends LComponent {
 
                 <TextInput
                     style={{
-                        top:400, left:30, position: 'absolute',
-                        height: 40, width: Dimensions.get('window').width-60,
+                        top: 400, left: 30, position: 'absolute',
+                        height: 40, width: Dimensions.get('window').width - 60,
                         margin: 0, padding: 10,
                         borderWidth: 1,
                         borderColor: '#292c2e',
@@ -130,22 +130,22 @@ class LoginScreen extends LComponent {
                         letterSpacing: 2.0,
                         color: '#ffffff', backgroundColor: '#1c1e21',
                         fontSize: 10,
-                        opacity:0.5
+                        opacity: 0.5
                     }}
                     placeholder="e-mail"
                     keyboardType="email-address"
                     keyboardAppearance="dark"
                     // autoFocus={true}
-                onChangeText={(e)=>{ 
-                    // DataModel.getInstance().dyn_userManagement.userDataEmailQuery = e.
-                }}
+                    onChangeText={(e) => {
+                        // DataModel.getInstance().dyn_userManagement.userDataEmailQuery = e.
+                    }}
                     value={this.state.textInputName}
                 />
 
                 <TextInput
                     style={{
-                        top:445, left:30, position: 'absolute',
-                        height: 40, width: Dimensions.get('window').width-60,
+                        top: 445, left: 30, position: 'absolute',
+                        height: 40, width: Dimensions.get('window').width - 60,
                         margin: 0, padding: 10,
                         borderWidth: 1,
                         borderColor: '#292c2e',
@@ -157,17 +157,17 @@ class LoginScreen extends LComponent {
                         color: '#ffffff',
                         backgroundColor: '#1c1e21',
                         fontSize: 10,
-                        opacity:0.5
+                        opacity: 0.5
                     }}
                     placeholder="password"
                     secureTextEntry={this.state.secure}
                     keyboardType="visible-password"
                     keyboardAppearance="dark"
-                // onChangeText={onChangeText}
+                    // onChangeText={onChangeText}
                     value={this.state.textInputPassword}
-                /> 
+                />
 
-<ButtonSmall
+                <ButtonSmall
                     name={("loginButton")}
                     // source={require('../../../assets/button-info.png')}
                     style={{
