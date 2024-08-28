@@ -47,13 +47,13 @@ class LoadingScreen extends PureComponent<any, any> {
                         source={require('../../../assets/welcome.png')}
                     />
                     <LVideoPlayback
-                        videoSrc={require('../../../assets/video/CALDAC Convention Promo Video.mp4')}
+                        videoSrc={require('../../../assets/video/loading_video.mp4')}
                         style={{
                             position: 'absolute',
                             opacity: 0.5,
                             width: (Dimensions.get('screen').width-2*videoOffsetX), 
                             height:  (Dimensions.get('screen').width-2*videoOffsetX)*(1080/1920),
-                            top: 410,
+                            top: Dimensions.get('screen').height-(Dimensions.get('screen').width-2*videoOffsetX)*(1080/1920)*2,
                             left:videoOffsetX,
                         }}
                         shouldPlay={true}
