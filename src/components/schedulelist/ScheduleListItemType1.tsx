@@ -165,12 +165,12 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
             // left: (item.orientation == 'left' ? undefined : 10),
             height: 15,
             width: 70,
-            fontFamily: 'DINNeuzeitGroteskStd-Light',
+            fontFamily: 'DINCondensed-Regular',
             // backgroundColor: 'skyblue',
             textAlign: 'center',
             color: '#FFFFFF',
-            fontSize: 11,
-            letterSpacing: 1.0
+            fontSize: 15,
+            letterSpacing: 0.0
           }, this.props.dynamicVisualProperties2]}>
             {(item.room as string).toLocaleUpperCase()}
           </Animated.Text>
