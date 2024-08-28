@@ -21,7 +21,7 @@ const EarlyPassesTile = (props) => {
             ></View>
             <Text allowFontScaling={false} id='textHeader'
                 style={{
-                    top: -25,
+                    top: props.offsetY,
                     left: 0,
                     width: Dimensions.get('screen').width, height: 32,
                     color: '#f8f6d3',
@@ -74,7 +74,7 @@ const EarlyPassesTile = (props) => {
                                 fontSize: 24,
                                 opacity: 0.9
                             }}>
-                                {("2024 Early Bird Passes").toLocaleUpperCase()}
+                                {("2024 Festival Passes").toLocaleUpperCase()}
                             </Text>
 
                             <Text allowFontScaling={false} id='textEarlyBird1' style={{
@@ -90,7 +90,7 @@ const EarlyPassesTile = (props) => {
                                 fontSize: 12,
                                 opacity: 0.9
                             }}>
-                                {("Join us for Colorado’s Hottest Afro Latin Dance Event. Current sale will end August 31, 2024".toLocaleUpperCase())}
+                                {("Join us for Colorado’s Hottest Afro Latin Dance Event. Current rates will go up soon.".toLocaleUpperCase())}
                             </Text>
 
                             
