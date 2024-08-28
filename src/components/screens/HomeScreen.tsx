@@ -146,8 +146,8 @@ class HomeScreen extends PureComponent<any, any> {
 
                                     }} />
                                 }
-                                <EarlyPassesTile offsetY={280} />
-                                <LoginTile offsetY={0}/>
+                                <EarlyPassesTile offsetY={0} />
+                                {/* <LoginTile offsetY={0}/> */}
                                 {/* <HappeningNowTile offsetY={400} activeItems={activeItems} /> */}
                             </View>
 
