@@ -221,6 +221,7 @@ class LauncherController extends OperatorStates {
             console.log('LauncherController initialization done. Tutorial completed: ' + this.appTutorialCompleted);
 
             const checkForModelUpdate = setInterval(() => { ActionUpdateDataModelWithRemote(); }, dataModel.modelRemoteUpdateInterval);
+            // ActionUpdateDataModelWithRemote();
 
             BackHandler.addEventListener('hardwareBackPress', () => { ActionHistoryBackButton(); return true; })
             // ActionUpdateHappeningNow();
@@ -259,7 +260,6 @@ class LauncherController extends OperatorStates {
             if (value !== null) {
                 const locallyStoredModel = JSON.parse(value);
                 if (locallyStoredModel.modelVersion <= dataModel.modelVersion) return;
-
                 DataModel.getInstance().static = locallyStoredModel;
                 // for (const key in locallyStoredModel) {
                 //     console.log("LauncherController - retrieving local storage "+key)
@@ -361,7 +361,7 @@ class LauncherController extends OperatorStates {
             imgList.push({ fileName: 'gio_-_gaby.png', imgSrc: require('../assets/portraits/gio_-_gaby.png') });
             imgList.push({ fileName: 'gustavo_-_ayane.png', imgSrc: require('../assets/portraits/gustavo_-_ayane.png') });
             imgList.push({ fileName: 'iroko.png', imgSrc: require('../assets/portraits/iroko.png') });
-            imgList.push({ fileName: 'j_square.png', imgSrc: require('../assets/portraits/j_square.png') });
+            imgList.push({ fileName: 'jsquared.png', imgSrc: require('../assets/portraits/jsquared.png') });
             imgList.push({ fileName: 'jahaira_-_angelica.png', imgSrc: require('../assets/portraits/jahaira_-_angelica.png') });
             imgList.push({ fileName: 'javier_rebollar.png', imgSrc: require('../assets/portraits/javier_rebollar.png') });
             imgList.push({ fileName: 'jenny_pham.png', imgSrc: require('../assets/portraits/jenny_pham.png') });
