@@ -197,6 +197,7 @@ class LauncherController extends OperatorStates {
 
     customFonts = {
         'DINNeuzeitGroteskStd-Light': require('../assets/fonts/DINNeuzeitGroteskStdLight.otf'),
+        'DINCondensed-Regular': require('../assets/fonts/DINNeuzeitGroteskStdBdCond.otf'),
         'DINCondensed-Bold': require('../assets/fonts/DINNeuzeitGroteskStdBdCond.otf'),
         'Arcon-Regular': require('../assets/fonts/Arcon-Regular.otf'),
         'Arcon-Rounded-Regular': require('../assets/fonts/Arcon-Regular.otf'),
@@ -253,7 +254,7 @@ class LauncherController extends OperatorStates {
                 //     localModelCopy[key] = dataModel[key];
                 // }
                 // const modelAsString = JSON.stringify(localModelCopy);
-               return;
+                return;
             }
             if (value !== null) {
                 const locallyStoredModel = JSON.parse(value);
@@ -289,7 +290,7 @@ class LauncherController extends OperatorStates {
 
             if (remoteModel.modelVersion <= dataModel.modelVersion) return;
 
-          // now sync all the keys in the remote model to the local model
+            // now sync all the keys in the remote model to the local model
             for (const key in remoteModel) {
                 if (Object.prototype.hasOwnProperty.call(dataModel, key)) {
                     console.log("LauncherController - syncing local key with remote key: " + key);
@@ -297,9 +298,9 @@ class LauncherController extends OperatorStates {
                 }
             }
             console.log('LauncherController - using remote model and storing locally.' + remoteModel.modelVersion,);
-            
-            AsyncStorage.setItem('dataModel', JSON.stringify({dataModel}));
-          
+
+            AsyncStorage.setItem('dataModel', JSON.stringify({ dataModel }));
+
         } catch (error) {
             if (error.message == "Aborted") {
                 console.log('LauncherController - Internet too slow to get remote model.');
@@ -316,39 +317,77 @@ class LauncherController extends OperatorStates {
         //artist data reformatting
         //1) add static references to the imgSrc field of the artist data item
 
+        const imgList = [];
         //load images
         try {
-            if(dataModel.dataArtists['Adolfo & Tania'] != undefined) dataModel.dataArtists['Adolfo & Tania'].imgSrc = require('../assets/portraits/0017_adolfo_-_tania.png');
-            if(dataModel.dataArtists['Adrian Tenorio'] != undefined) dataModel.dataArtists['Adrian Tenorio'].imgSrc = require('../assets/portraits/0016_adrian_tenorio.png');
-            if(dataModel.dataArtists['Alex & Desiree'] != undefined) dataModel.dataArtists['Alex & Desiree'].imgSrc = require('../assets/portraits/0015_alex_-_desiree.png');
-            if(dataModel.dataArtists['Benny & Ashley'] != undefined) dataModel.dataArtists['Benny & Ashley'].imgSrc = require('../assets/portraits/0014_benny_-_ashley.png');
-            if(dataModel.dataArtists['Bianca Chapman'] != undefined) dataModel.dataArtists['Bianca Chapman'].imgSrc = require('../assets/portraits/0013_bianca_chapman.png');
-            if(dataModel.dataArtists['Rafael & Carine'] != undefined) dataModel.dataArtists['Rafael & Carine'].imgSrc = require('../assets/portraits/0018_carine_-_rafael.png');
-            if(dataModel.dataArtists['Carlos & Susan'] != undefined) dataModel.dataArtists['Carlos & Susan'].imgSrc = require('../assets/portraits/0002_carlos_-_susan.png');
-            if(dataModel.dataArtists['Casino Stars'] != undefined) dataModel.dataArtists['Casino Stars'].imgSrc = require('../assets/portraits/0012_casino_stars.png');
-            if(dataModel.dataArtists['Chelsey Owen'] != undefined) dataModel.dataArtists['Chelsey Owen'].imgSrc = require('../assets/portraits/0011_chelsey_owen.png');
-            if(dataModel.dataArtists['Chris & Alexus'] != undefined) dataModel.dataArtists['Chris & Alexus'].imgSrc = require('../assets/portraits/0010_chris_-_alexus.png');
-            if(dataModel.dataArtists['Clifton Stennet'] != undefined) dataModel.dataArtists['Clifton Stennet'].imgSrc = require('../assets/portraits/0009_clifton_stennet.png');
-            if(dataModel.dataArtists['Danny Saksita'] != undefined) dataModel.dataArtists['Danny Saksita'].imgSrc = require('../assets/portraits/0006_danny_saksita.png');
-            if(dataModel.dataArtists['Diane Page'] != undefined) dataModel.dataArtists['Diane Page'].imgSrc = require('../assets/portraits/0004_diane_page.png');
-            if(dataModel.dataArtists['Eder & Milton'] != undefined) dataModel.dataArtists['Eder & Milton'].imgSrc = require('../assets/portraits/0003_eder_-_milton.png');
-            if(dataModel.dataArtists['J Square'] != undefined) dataModel.dataArtists['J Square'].imgSrc = require('../assets/portraits/0000_j_square.png');
-            if(dataModel.dataArtists['Jorge & Indira'] != undefined) dataModel.dataArtists['Jorge & Indira'].imgSrc = require('../assets/portraits/0008_jorge_-_indira.png');
-            if(dataModel.dataArtists['Karen Y Ricardo'] != undefined) dataModel.dataArtists['Karen Y Ricardo'].imgSrc = require('../assets/portraits/0005_karen_-_ricardo.png');
-            if(dataModel.dataArtists['Raul & Delia'] != undefined) dataModel.dataArtists['Raul & Delia'].imgSrc = require('../assets/portraits/0001_raul_-_delia.png');   
-            if(dataModel.dataArtists['Latisha Hardy'] != undefined) dataModel.dataArtists['Latisha Hardy'].imgSrc = require('../assets/portraits/0021_latisha_hardy.png');
-            if(dataModel.dataArtists['Carlos & Suzan'] != undefined) dataModel.dataArtists['Carlos & Suzan'].imgSrc = require('../assets/portraits/0022_carlos_-_suzan.png');   
-            if(dataModel.dataArtists['Brandon & Michelle'] != undefined) dataModel.dataArtists['Brandon & Michelle'].imgSrc = require('../assets/portraits/0023_brandon_-_michelle.png');   
-            if(dataModel.dataArtists['El Tiguere Y Bianca'] != undefined) dataModel.dataArtists['El Tiguere Y Bianca'].imgSrc = require('../assets/portraits/0024_el_tiguere_-_bianca.png');   
-            if(dataModel.dataArtists['Ataca Y Alemana'] != undefined) dataModel.dataArtists['Ataca Y Alemana'].imgSrc = require('../assets/portraits/0025_ataca_-_alemana.png');   
-            if(dataModel.dataArtists['Rafa Gonzalez'] != undefined) dataModel.dataArtists['Rafa Gonzalez'].imgSrc = require('../assets/portraits/0026_rafa.png');   
-            if(dataModel.dataArtists['Marisol Blanco'] != undefined) dataModel.dataArtists['Marisol Blanco'].imgSrc = require('../assets/portraits/0027_marisol_blanco.png');   
-            if(dataModel.dataArtists['Kingsmen'] != undefined) dataModel.dataArtists['Kingsmen'].imgSrc = require('../assets/portraits/0028_kingsmen.png');   
-            if(dataModel.dataArtists['Celeste Williamson'] != undefined) dataModel.dataArtists['Celeste Williamson'].imgSrc = require('../assets/portraits/0029_celeste_williamson.png');   
-            if(dataModel.dataArtists['Iroko'] != undefined) dataModel.dataArtists['Iroko'].imgSrc = require('../assets/portraits/0030_iroko.png');   
-       
+            imgList.push({ fileName: 'adolfo_-_tania.png', imgSrc: require('../assets/portraits/adolfo_-_tania.png') });
+            imgList.push({ fileName: 'adolfo_indacochea.png', imgSrc: require('../assets/portraits/adolfo_indacochea.png') });
+            imgList.push({ fileName: 'adrian_tenorio.png', imgSrc: require('../assets/portraits/adrian_tenorio.png') });
+            imgList.push({ fileName: 'alex_-_desiree.png', imgSrc: require('../assets/portraits/alex_-_desiree.png') });
+            imgList.push({ fileName: 'ataca_-_alemana.png', imgSrc: require('../assets/portraits/ataca_-_alemana.png') });
+            imgList.push({ fileName: 'benny_-_ashley.png', imgSrc: require('../assets/portraits/benny_-_ashley.png') });
+            imgList.push({ fileName: 'bianca_chapman.png', imgSrc: require('../assets/portraits/bianca_chapman.png') });
+            imgList.push({ fileName: 'brandon_-_michelle.png', imgSrc: require('../assets/portraits/brandon_-_michelle.png') });
+            imgList.push({ fileName: 'carine_-_rafael.png', imgSrc: require('../assets/portraits/carine_-_rafael.png') });
+            imgList.push({ fileName: 'carlos_-_susan.png', imgSrc: require('../assets/portraits/carlos_-_susan.png') });
+            imgList.push({ fileName: 'casino_stars.png', imgSrc: require('../assets/portraits/casino_stars.png') });
+            imgList.push({ fileName: 'celeste_williamson.png', imgSrc: require('../assets/portraits/celeste_williamson.png') });
+            imgList.push({ fileName: 'chelsey_owen.png', imgSrc: require('../assets/portraits/chelsey_owen.png') });
+            imgList.push({ fileName: 'chris_-_alexus.png', imgSrc: require('../assets/portraits/chris_-_alexus.png') });
+            imgList.push({ fileName: 'clifton_stennet.png', imgSrc: require('../assets/portraits/clifton_stennet.png') });
+            imgList.push({ fileName: 'daniel_agosto.png', imgSrc: require('../assets/portraits/daniel_agosto.png') });
+            imgList.push({ fileName: 'danny_salsita.png', imgSrc: require('../assets/portraits/danny_salsita.png') });
+            imgList.push({ fileName: 'dejon_-_clo.png', imgSrc: require('../assets/portraits/dejon_-_clo.png') });
+            imgList.push({ fileName: 'diane_page.png', imgSrc: require('../assets/portraits/diane_page.png') });
+            imgList.push({ fileName: 'eder_-_milton.png', imgSrc: require('../assets/portraits/eder_-_milton.png') });
+            imgList.push({ fileName: 'edwin_-_ahtoy.png', imgSrc: require('../assets/portraits/edwin_-_ahtoy.png') });
+            imgList.push({ fileName: 'el_tiguere_-_bianca.png', imgSrc: require('../assets/portraits/el_tiguere_-_bianca.png') });
+            imgList.push({ fileName: 'fuego_-_hielo.png', imgSrc: require('../assets/portraits/fuego_-_hielo.png') });
+            imgList.push({ fileName: 'gio_-_gaby.png', imgSrc: require('../assets/portraits/gio_-_gaby.png') });
+            imgList.push({ fileName: 'gustavo_-_ayane.png', imgSrc: require('../assets/portraits/gustavo_-_ayane.png') });
+            imgList.push({ fileName: 'iroko.png', imgSrc: require('../assets/portraits/iroko.png') });
+            imgList.push({ fileName: 'j_square.png', imgSrc: require('../assets/portraits/j_square.png') });
+            imgList.push({ fileName: 'jahaira_-_angelica.png', imgSrc: require('../assets/portraits/jahaira_-_angelica.png') });
+            imgList.push({ fileName: 'javier_rebollar.png', imgSrc: require('../assets/portraits/javier_rebollar.png') });
+            imgList.push({ fileName: 'jessica_quiles.png', imgSrc: require('../assets/portraits/jessica_quiles.png') });
+            imgList.push({ fileName: 'johan_-_alyssa.png', imgSrc: require('../assets/portraits/johan_-_alyssa.png') });
+            imgList.push({ fileName: 'jorge_-_indira.png', imgSrc: require('../assets/portraits/jorge_-_indira.png') });
+            imgList.push({ fileName: 'joseal.png', imgSrc: require('../assets/portraits/joseal.png') });
+            imgList.push({ fileName: 'karen_-_ricardo.png', imgSrc: require('../assets/portraits/karen_-_ricardo.png') });
+            imgList.push({ fileName: 'kate_rodriguez.png', imgSrc: require('../assets/portraits/kate_rodriguez.png') });
+            imgList.push({ fileName: 'kiki_elsilencio.png', imgSrc: require('../assets/portraits/kiki_elsilencio.png') });
+            imgList.push({ fileName: 'kingsmen.png', imgSrc: require('../assets/portraits/kingsmen.png') });
+            imgList.push({ fileName: 'latisha_hardy.png', imgSrc: require('../assets/portraits/latisha_hardy.png') });
+            imgList.push({ fileName: 'lawrence_-_jewel.png', imgSrc: require('../assets/portraits/lawrence_-_jewel.png') });
+            imgList.push({ fileName: 'luan_-_adriana.png', imgSrc: require('../assets/portraits/luan_-_adriana.png') });
+            imgList.push({ fileName: 'marc_-_rose-.png', imgSrc: require('../assets/portraits/marc_-_rose-.png') });
+            imgList.push({ fileName: 'marisol_blanco.png', imgSrc: require('../assets/portraits/marisol_blanco.png') });
+            imgList.push({ fileName: 'natasha_tia.png', imgSrc: require('../assets/portraits/natasha_tia.png') });
+            imgList.push({ fileName: 'rafa.png', imgSrc: require('../assets/portraits/rafa.png') });
+            imgList.push({ fileName: 'raul_-_delia.png', imgSrc: require('../assets/portraits/raul_-_delia.png') });
+            imgList.push({ fileName: 'rna.png', imgSrc: require('../assets/portraits/rna.png') });
+            imgList.push({ fileName: 'saulo_-_jasmin.png', imgSrc: require('../assets/portraits/saulo_-_jasmin.png') });
+            imgList.push({ fileName: 'sebastian_-_jocelyn.png', imgSrc: require('../assets/portraits/sebastian_-_jocelyn.png') });
+            imgList.push({ fileName: 'serena_spears.png', imgSrc: require('../assets/portraits/serena_spears.png') });
+            imgList.push({ fileName: 'watson_saintsulne.png', imgSrc: require('../assets/portraits/watson_saintsulne.png') });
         } catch (error) {
-            console.log('Could not assign an image for a particular artist')
+            console.log('Could not assign an image for a particular artist' + error)
+        }
+
+        for (const k in dataModel.dataArtists) {
+            const artistItem = dataModel.dataArtists[k];
+            console.log('Artist: ' +  k.toLowerCase().replace(' y ', ' & '))
+            for (let j = 0; j < imgList.length; j++) {
+                const namefile = imgList[j].fileName.replaceAll('_', ' ').replace('-', '&').replace('.png', '');
+                // console.log('          namefile ' + namerrfile)
+                const nameartist = k.toLowerCase().replace(' y ', ' & ');
+                
+                if (nameartist == namefile) {
+                    artistItem['imgSrc'] = imgList[j].imgSrc;
+                    console.log('          ' + ' -> ' + namefile)
+                    break;
+                }
+            }
         }
 
         try {
@@ -484,7 +523,7 @@ class LauncherController extends OperatorStates {
         }
         //add empty item at the end of each day schedule
         for (let j = 0; j < DataModel.getInstance().dyn_dataScheduleListsByDay.length; j++) {
-            DataModel.getInstance().dyn_dataScheduleListsByDay[j].data.push({ "id": j*10000, "itemType": "type5", group: [] })
+            DataModel.getInstance().dyn_dataScheduleListsByDay[j].data.push({ "id": j * 10000, "itemType": "type5", group: [] })
         }
 
 
@@ -492,7 +531,7 @@ class LauncherController extends OperatorStates {
         DataModel.getInstance().dyn_dataModelProgram = [];
         for (let i = 0; i < dataModel.dataModelProgram.length; i++) {
             // console.log(dataModel.dataModelProgram[i].startTime);
-            if(dataModel.dataModelProgram[i].endTime =='' || Date.parse(dataModel.dataModelProgram[i].endTime)>Date.now()) {
+            if (dataModel.dataModelProgram[i].endTime == '' || Date.parse(dataModel.dataModelProgram[i].endTime) > Date.now()) {
                 DataModel.getInstance().dyn_dataModelProgram.push(dataModel.dataModelProgram[i])
             }
         }
