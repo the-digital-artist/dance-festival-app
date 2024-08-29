@@ -1,7 +1,9 @@
+import { modelInitStaticOverwrite } from "./DataModelOverwrite";
 
 class DataModel {
 	static _instance = null;
 	static getInstance(): DataModel { return (DataModel._instance == null ? (DataModel._instance = new DataModel()) : DataModel._instance) }
+	constructor() { console.log('DataModel Creation - model version: '+modelInitStaticOverwrite.modelVersion); this.static = modelInitStaticOverwrite;}
 
 
 	//dynamic properties (get generated)
@@ -34,7 +36,7 @@ class DataModel {
 
 
 	//static properties (may be updated by remote model version)
-	static = {
+	static:any = {
 		modelRemoteGetModelUrl: 'https://wa1koeb029.execute-api.eu-central-1.amazonaws.com/caldacModelContent',
 		modelRemoteVersionCheckUrl: 'https://wa1koeb029.execute-api.eu-central-1.amazonaws.com/caldacModelVersion',
 		modelRemoteUpdateInterval: 55000,
