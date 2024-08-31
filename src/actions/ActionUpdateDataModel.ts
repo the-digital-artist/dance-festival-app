@@ -2,7 +2,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import DataModel from "../DataModel";
 import LauncherController from "../LauncherController";
 import ArtistListScreen from "../components/screens/ArtistListScreen";
-import SchedulerScreen from "../components/screens/SchedulerScreen";
+import SchedulerScreen from "../components/screens/SchedulerListScreen";
 
 
 const ActionUpdateDataModelWithRemote = async () => {
@@ -55,7 +55,7 @@ const ActionUpdateDataModelWithRemote = async () => {
 
         //finally store the new model into local storage so it can be retrieved on next app startup
         const modelAsString = JSON.stringify(DataModel.getInstance().static);
-        AsyncStorage.setItem('dataModel', modelAsString);
+        await AsyncStorage.setItem('dataModel', modelAsString);
 
         globalThis.gc(); //this feels strange but apparently necessary with fetch
         //https://github.com/facebook/hermes/issues/1147
