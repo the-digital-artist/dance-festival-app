@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
 import { Dimensions } from "react-native";
-import { Gesture, GestureDetector, NativeGesture } from "react-native-gesture-handler";
+import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import Animated, { Easing, useAnimatedStyle, useDerivedValue, useSharedValue, withSpring, withTiming } from 'react-native-reanimated';
 import ButtonSmall from "../ButtonSmall";
 import ScheduleListItemType1 from "./ScheduleListItemType1";
-import SchedulerScreen from "../screens/SchedulerScreen";
-import LauncherController from "../../LauncherController";
 
 const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
     // console.log('ScheduleItemGroupRe render')
@@ -74,7 +72,6 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
     }
 
 
-
     // const outerNativeListGesture:NativeGesture = ((LauncherController.getInstance().context.dataDependentComponentSchedulerScreen as SchedulerScreen).nativeGesture as NativeGesture)
     // outerNativeListGesture
     //     .onBegin((e) => {
@@ -84,7 +81,7 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
     //         console.log("nativeGesture start");
     //     });
 
-   
+
 
     const gestureObj = Gesture.Pan()
         .blocksExternalGesture(mainItem['refNativeGesture'])
@@ -139,8 +136,8 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
     }
 
 
-    useEffect(() => {     
-        offset.value = (group.length - 1)* -tileWidth;
+    useEffect(() => {
+        offset.value = (group.length - 1) * -tileWidth;
         offset.value = withTiming(0, { duration: 500, easing: Easing.inOut(Easing.quad) })
     });
 
@@ -159,15 +156,26 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
     return (
         <>
             <GestureDetector gesture={gestureObj}>
-                <Animated.View 
-                id="touchCaptureArea"
+
+                <Animated.View
+                    id="touchCaptureArea"
                     style={[{
-                    position: 'absolute',
-                    // backgroundColor: 'skyblue',
-                    left: 0, top: 45,
-                    height: 90, width: Dimensions.get("screen").width - 2 * paddingLeftAndRight,
-                    opacity: 1
-                }]}>
+                        position: 'absolute',
+                        // backgroundColor: 'skyblue',
+                        left: 0, top: 45,
+                        height: 90, width: Dimensions.get("screen").width - 2 * paddingLeftAndRight,
+                        opacity: 1
+                    }]}>
+                    {/* <View id='bg' style={{
+                        position: 'absolute',
+                        top: -45, left: 0,
+                        height: mainItem.itemHeight,
+                        width: Dimensions.get('screen').width - 10,
+                        opacity: 0.1,
+                        padding: 0,
+                        backgroundColor: '#e3dfbb',
+                    }}
+                    /> */}
 
                     {
                         group.map((item, i) => {
@@ -237,7 +245,7 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
                     name={"BtnScrollRight" + mainItem.id}
                     style={{
                         position: 'absolute',
-                        width: 32, height: 28 ,
+                        width: 32, height: 28,
                         opacity: 0.3
                     }}
                     visualProperties={{ x: 0, y: 0, z: 0 }}

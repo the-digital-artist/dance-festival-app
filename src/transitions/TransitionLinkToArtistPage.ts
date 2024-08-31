@@ -3,7 +3,6 @@ import LauncherController from "../LauncherController";
 import TransitionNavbarSelect from "../components/navbar/TransitionNavbarSelect";
 import TweenManager from "../core/LTweenManager";
 import TransitionArtistNavigateDown from "./TransitionArtistNavigateDown";
-import NavBar from "../components/navbar/NavBar";
 
 const TransitionLinkToArtistPage = (artistData) => {
         console.log("TransitionLinkToArtistPage");
@@ -29,25 +28,6 @@ const TransitionLinkToArtistPage = (artistData) => {
                                 TransitionArtistNavigateDown(LauncherController.getInstance().context.artistFocusItem, 1);
                         }
         });
-
-        // TweenManager.tween().to("detailsScreenContainer", 0, {
-        //         alpha: 1, delay: 500, onComplete:
-        //                 (ok) => {
-        //                         (context.artistListReference as FlatList).scrollToIndex(
-        //                                 { animated: true, index: artistData.index, viewOffset: 0, viewPosition: 0 });
-
-        //                         TweenManager.tween().to("detailsScreenContainer", 0, {
-        //                                 alpha: 1, delay: 500
-        //                         });
-        //                 }
-        // });
-
-
-
-
-
-
-
 }
 
 export default TransitionLinkToArtistPage;
