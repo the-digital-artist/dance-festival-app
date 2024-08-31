@@ -1,23 +1,30 @@
 import { PureComponent } from "react";
 import { Text } from "react-native";
 
-class LText extends PureComponent<any,any> {
+class LText extends PureComponent<any, any> {
+    textRef = null;
 
     constructor(props) {
         super(props);
     }
 
     render() {
-        console.log('TEXT RENDER '+JSON.stringify(this.props))
-        // let newProps:Object = structuredClone(this.props);
-     
+        const mergeProps = this.props as any;
+        mergeProps['allowFontScaling'] = false;
+        // mergeProps['selectable'] = true;
+        // mergeProps['numberOfLines'] = 0
 
-        // const newProps = this.props;
-        
         return (
-            <Text {...this.props} />
+            <Text
+                // ref={(e) => {
+                    // this.textRef = e;
+                    // if(e==null) return;
+                    // e.measure((fx, fy, width, height, px , py) => console.log(this.props.children+' textRef offset height:' + height));
+                // }}
+                {...mergeProps}>
+                {this.props.children}
+            </Text>
         );
-
     }
 }
 
