@@ -30,11 +30,12 @@ const ScheduleListItem = ({ item, index }) => {
     if ((item.artistName as string).length > 20) itemHeight += 30;
   }
   else if (item.itemType == 'type4')
-    itemHeight = (item.sessionMainTitle as string).length > 20 ? 164 : 138;
+    itemHeight = (item.sessionMainTitle as string).length > 20 ? 200 : 185;
   else if (item.itemType == 'type5')
     itemHeight = 100;
 
   item['assignedListIndex'] = index;
+  item['itemHeight'] = itemHeight;
 
   let orientation = 'left';
   if (item.itemType == 'type1') {
