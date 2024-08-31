@@ -10,12 +10,13 @@ import NavBarHighlight from "./components/navbar/NavBarHighlight";
 import ArtistMainScreen from "./components/screens/ArtistMainScreen";
 import HomeScreen from "./components/screens/HomeScreen";
 import LoadingScreen from "./components/screens/LoadingScreen";
-import SchedulerScreen from "./components/screens/SchedulerScreen";
+import SchedulerScreen from "./components/screens/SchedulerListScreen";
 import SettingsScreen from "./components/screens/SettingsScreen";
 import UpdateOverlayFragement from "./components/screens/UpdateOverlayFragement";
 import Eventl from "./core/LEventl";
 import StateDependentComponent from "./core/LStateDependentComponent";
 import LoginScreen from "./components/screens/LoginScreen";
+import SchedulerMainScreen from "./components/screens/SchedulerMainScreen";
 
 
 class Launcher extends PureComponent<any, any> {
@@ -45,7 +46,7 @@ class Launcher extends PureComponent<any, any> {
                         <>
 
                             <StateDependentComponent states={['loading', 'main']} controller={this.controller}>
-                                <SchedulerScreen />
+                                <SchedulerMainScreen />
                                 <HomeScreen />
                                 <ArtistMainScreen />
                                 <SettingsScreen />
