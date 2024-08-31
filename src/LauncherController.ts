@@ -59,6 +59,42 @@ class LauncherController extends OperatorStates {
                 insta: ''
             },
 
+            schedulerFocusItem: {
+                "id": 10205,
+                "itemType": "type4",
+                "artistName": "Sisy Ayala",
+                "sessionMainTitle": "Absolute Beginner Track - Salsa",
+                "time": "13:00 - 14:00",
+                "room": "ROOM  4",
+                "level": "-1",
+                "group": [
+                  10201,
+                  10202,
+                  10203,
+                  10204,
+                  10205,
+                  10206,
+                  10207,
+                  10208
+                ],
+                "groupTitle": "Workshops",
+                "groupSubtitle": "",
+                "shortMainTitle": "",
+                "dateString": "Fri, October 18, 2024",
+                "startTime": "2024-10-18T13:00:00.000Z",
+                "endTime": "2024-10-18T14:00:00.000Z",
+                "place": "",
+                "sessionSubtitle": "",
+                "sessionDescription": "",
+                "artistOne": "Sisy Ayala",
+                "artistTwo": "",
+                "artistLocation": "Aurora",
+                "flag": false,
+                "flagIncludeInNow": false,
+                "artistCompany": "Somos Dance Studio",
+                "sessionSpecialTrackCount": "(1 of 2)"
+              },
+
             //happeningNow
             happeningNowItems: [],
             happeningNowItemNoSession: {
@@ -183,7 +219,7 @@ class LauncherController extends OperatorStates {
     navBarData =
         [
             { id: 0, itemText: "Home", associatedScreenName: "homeScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_home.png') },
-            { id: 1, itemText: "Schedule", associatedScreenName: "sessionScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_planner.png') },
+            { id: 1, itemText: "Schedule", associatedScreenName: "schedulerMainScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_planner.png') },
             { id: 3, itemText: "Artists", associatedScreenName: "artistsMainScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_artists.png') },
             { id: 4, itemText: "More", associatedScreenName: "settingsScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_settings.png') }
         ]
@@ -195,6 +231,14 @@ class LauncherController extends OperatorStates {
             { id: 1, itemText: "Artist Details", associatedScreenName: "artistsDetailsScreenContainer", imgSrc: null, screenComponentRef: null },
         ]
 
+        schedulerStackIndex = 0
+        schedulerStackData =
+            [
+                { id: 0, itemText: "Festival Program", associatedScreenName: "schedulerSelectionScreenContainer", imgSrc: null, screenComponentRef: null },
+                { id: 1, itemText: "Session Details", associatedScreenName: "schedulerDetailsScreenContainer", imgSrc: null, screenComponentRef: null },
+            ]
+    
+
     customFonts = {
         'DINNeuzeitGroteskStd-Light': require('../assets/fonts/DINNeuzeitGroteskStdLight.otf'),
         'DINCondensed-Regular': require('../assets/fonts/DINNeuzeitGroteskStdBdCond.otf'),
@@ -205,6 +249,8 @@ class LauncherController extends OperatorStates {
 
     };
 
+    staticImageList = [];
+
     constructor() {
         super();
     }
@@ -214,7 +260,7 @@ class LauncherController extends OperatorStates {
         try {
             await Font.loadAsync(this.customFonts);
             console.log("LauncherController - Fonts loaded.");
-            await this.getLocallyStoredDataModel();
+            // await this.getLocallyStoredDataModel();
             await this.getRemoteDataModel();
             console.log('LauncherController - Model local/remote checks w/ potential update completed.');
             await this.prepareDataModel();
@@ -236,11 +282,16 @@ class LauncherController extends OperatorStates {
 
     async getLocallyStoredDataModel() {
         const dataModel = DataModel.getInstance().static;
-
+        console.log('LauncherController - DataModel.getInstance().static==undefined: ' + (DataModel.getInstance().static==undefined));
+        console.log('LauncherController - DataModel.getInstance().static.modelVersion==undefined: ' + (DataModel.getInstance().static.modelVersion==undefined));
+        // console.log('LauncherController - DataModel.getInstance().static: ' + JSON.stringify(DataModel.getInstance().static));
+      
         try {
             console.log('LauncherController - checking local models...');
 
             const value = await AsyncStorage.getItem('dataModel');
+            console.log('LauncherController - value ' + value);
+      
             const localModelCopy = {};
             if (value == null) { //never used local storage - first time load
                 const modelAsString = JSON.stringify(DataModel.getInstance().static);
@@ -258,15 +309,17 @@ class LauncherController extends OperatorStates {
                 return;
             }
             if (value !== null) {
+                console.log("LauncherController - retrieving local storage ")
                 const locallyStoredModel = JSON.parse(value);
                 if (locallyStoredModel.modelVersion <= dataModel.modelVersion) return;
+                console.log('LauncherController - initial model version: ' + DataModel.getInstance().static.modelVersion);
                 DataModel.getInstance().static = locallyStoredModel;
                 // for (const key in locallyStoredModel) {
                 //     console.log("LauncherController - retrieving local storage "+key)
                 //     dataModel[key] = locallyStoredModel[key];
                 // }
 
-                console.log('LauncherController - using locally stored model: ' + dataModel.modelVersion);
+                console.log('LauncherController - after overwriting with locally stored model: ' + DataModel.getInstance().static.modelVersion);
                 return;
             }
         } catch (e) {
@@ -317,91 +370,95 @@ class LauncherController extends OperatorStates {
         //artist data reformatting
         //1) add static references to the imgSrc field of the artist data item
 
-        const imgList = [];
         //load images
         try {
-            imgList.push({ fileName: 'adolfo_-_tania.png', imgSrc: require('../assets/portraits/adolfo_-_tania.png') });
-            imgList.push({ fileName: 'adolfo_indacochea.png', imgSrc: require('../assets/portraits/adolfo_indacochea.png') });
-            imgList.push({ fileName: 'adrian_tenorio.png', imgSrc: require('../assets/portraits/adrian_tenorio.png') });
-            imgList.push({ fileName: 'adriana_-_jorge.png', imgSrc: require('../assets/portraits/adriana_-_jorge.png') });
-            imgList.push({ fileName: 'alex_-_desiree.png', imgSrc: require('../assets/portraits/alex_-_desiree.png') });
-            imgList.push({ fileName: 'aris_gingundo.png', imgSrc: require('../assets/portraits/aris_gingundo.png') });
-            imgList.push({ fileName: 'ataca_-_alemana.png', imgSrc: require('../assets/portraits/ataca_-_alemana.png') });
-            imgList.push({ fileName: 'bachata_denver.png', imgSrc: require('../assets/portraits/bachata_denver.png') });
-            imgList.push({ fileName: 'bachatito.png', imgSrc: require('../assets/portraits/bachatito.png') });
-            imgList.push({ fileName: 'benny_-_ashley.png', imgSrc: require('../assets/portraits/benny_-_ashley.png') });
-            imgList.push({ fileName: 'bianca_chapman.png', imgSrc: require('../assets/portraits/bianca_chapman.png') });
-            imgList.push({ fileName: 'brandon_-_michelle.png', imgSrc: require('../assets/portraits/brandon_-_michelle.png') });
-            imgList.push({ fileName: 'cam.png', imgSrc: require('../assets/portraits/cam.png') });
-            imgList.push({ fileName: 'carine_-_rafael.png', imgSrc: require('../assets/portraits/carine_-_rafael.png') });
-            imgList.push({ fileName: 'carlos_-_susan.png', imgSrc: require('../assets/portraits/carlos_-_susan.png') });
-            imgList.push({ fileName: 'casino_stars.png', imgSrc: require('../assets/portraits/casino_stars.png') });
-            imgList.push({ fileName: 'celeste_williamson.png', imgSrc: require('../assets/portraits/celeste_williamson.png') });
-            imgList.push({ fileName: 'chelsey_owen.png', imgSrc: require('../assets/portraits/chelsey_owen.png') });
-            imgList.push({ fileName: 'chris_-_alexus.png', imgSrc: require('../assets/portraits/chris_-_alexus.png') });
-            imgList.push({ fileName: 'christopher_webster.png', imgSrc: require('../assets/portraits/christopher_webster.png') });
-            imgList.push({ fileName: 'clifton_stennet.png', imgSrc: require('../assets/portraits/clifton_stennet.png') });
-            imgList.push({ fileName: 'colorado_dancesport.png', imgSrc: require('../assets/portraits/colorado_dancesport.png') });
-            imgList.push({ fileName: 'damilola_elegbede.png', imgSrc: require('../assets/portraits/damilola_elegbede.png') });
-            imgList.push({ fileName: 'daniel_-_kathryn.png', imgSrc: require('../assets/portraits/daniel_-_kathryn.png') });
-            imgList.push({ fileName: 'daniel_agosto.png', imgSrc: require('../assets/portraits/daniel_agosto.png') });
-            imgList.push({ fileName: 'danny_salsita.png', imgSrc: require('../assets/portraits/danny_salsita.png') });
-            imgList.push({ fileName: 'dejon_-_clo.png', imgSrc: require('../assets/portraits/dejon_-_clo.png') });
-            imgList.push({ fileName: 'desi_caliente.png', imgSrc: require('../assets/portraits/desi_caliente.png') });
-            imgList.push({ fileName: 'devon_nearhill.png', imgSrc: require('../assets/portraits/devon_nearhill.png') });
-            imgList.push({ fileName: 'diane_page.png', imgSrc: require('../assets/portraits/diane_page.png') });
-            imgList.push({ fileName: 'diego_-_yurley.png', imgSrc: require('../assets/portraits/diego_-_yurley.png') });
-            imgList.push({ fileName: 'ebonie_lee.png', imgSrc: require('../assets/portraits/ebonie_lee.png') });
-            imgList.push({ fileName: 'eddie_peligro.png', imgSrc: require('../assets/portraits/eddie_peligro.png') });
-            imgList.push({ fileName: 'eder_-_milton.png', imgSrc: require('../assets/portraits/eder_-_milton.png') });
-            imgList.push({ fileName: 'edwin_-_ahtoy.png', imgSrc: require('../assets/portraits/edwin_-_ahtoy.png') });
-            imgList.push({ fileName: 'el_tiguere_-_bianca.png', imgSrc: require('../assets/portraits/el_tiguere_-_bianca.png') });
-            imgList.push({ fileName: 'eric_-_marcela.png', imgSrc: require('../assets/portraits/eric_-_marcela.png') });
-            imgList.push({ fileName: 'fuego_-_hielo.png', imgSrc: require('../assets/portraits/fuego_-_hielo.png') });
-            imgList.push({ fileName: 'gio_-_gaby.png', imgSrc: require('../assets/portraits/gio_-_gaby.png') });
-            imgList.push({ fileName: 'gustavo_-_ayane.png', imgSrc: require('../assets/portraits/gustavo_-_ayane.png') });
-            imgList.push({ fileName: 'iroko.png', imgSrc: require('../assets/portraits/iroko.png') });
-            imgList.push({ fileName: 'jsquared.png', imgSrc: require('../assets/portraits/jsquared.png') });
-            imgList.push({ fileName: 'jahaira_-_angelica.png', imgSrc: require('../assets/portraits/jahaira_-_angelica.png') });
-            imgList.push({ fileName: 'javier_rebollar.png', imgSrc: require('../assets/portraits/javier_rebollar.png') });
-            imgList.push({ fileName: 'jenny_pham.png', imgSrc: require('../assets/portraits/jenny_pham.png') });
-            imgList.push({ fileName: 'jesica_cutler.png', imgSrc: require('../assets/portraits/jesica_cutler.png') });
-            imgList.push({ fileName: 'jessica_quiles.png', imgSrc: require('../assets/portraits/jessica_quiles.png') });
-            imgList.push({ fileName: 'jk_dance_company.png', imgSrc: require('../assets/portraits/jk_dance_company.png') });
-            imgList.push({ fileName: 'johan_-_alyssa.png', imgSrc: require('../assets/portraits/johan_-_alyssa.png') });
-            imgList.push({ fileName: 'jorge_-_indira.png', imgSrc: require('../assets/portraits/jorge_-_indira.png') });
-            imgList.push({ fileName: 'joseal.png', imgSrc: require('../assets/portraits/joseal.png') });
-            imgList.push({ fileName: 'jovan_casanova.png', imgSrc: require('../assets/portraits/jovan_casanova.png') });
-            imgList.push({ fileName: 'karen_-_ricardo.png', imgSrc: require('../assets/portraits/karen_-_ricardo.png') });
-            imgList.push({ fileName: 'kate_rodriguez.png', imgSrc: require('../assets/portraits/kate_rodriguez.png') });
-            imgList.push({ fileName: 'kebrina_dejesus.png', imgSrc: require('../assets/portraits/kebrina_dejesus.png') });
-            imgList.push({ fileName: 'kiki_elsilencio.png', imgSrc: require('../assets/portraits/kiki_elsilencio.png') });
-            imgList.push({ fileName: 'kingsmen.png', imgSrc: require('../assets/portraits/kingsmen.png') });
-            imgList.push({ fileName: 'latisha_hardy.png', imgSrc: require('../assets/portraits/latisha_hardy.png') });
-            imgList.push({ fileName: 'lawrence_-_jewel.png', imgSrc: require('../assets/portraits/lawrence_-_jewel.png') });
-            imgList.push({ fileName: 'lorena_charry.png', imgSrc: require('../assets/portraits/lorena_charry.png') });
-            imgList.push({ fileName: 'luan_-_adriana.png', imgSrc: require('../assets/portraits/luan_-_adriana.png') });
-            imgList.push({ fileName: 'maissaa_bachir.png', imgSrc: require('../assets/portraits/maissaa_bachir.png') });
-            imgList.push({ fileName: 'marc_-_rose-.png', imgSrc: require('../assets/portraits/marc_-_rose-.png') });
-            imgList.push({ fileName: 'marisol_blanco.png', imgSrc: require('../assets/portraits/marisol_blanco.png') });
-            imgList.push({ fileName: 'natasha_tia.png', imgSrc: require('../assets/portraits/natasha_tia.png') });
-            imgList.push({ fileName: 'nathan_hook.png', imgSrc: require('../assets/portraits/nathan_hook.png') });
-            imgList.push({ fileName: 'paolo_-_luisa.png', imgSrc: require('../assets/portraits/paolo_-_luisa.png') });
-            imgList.push({ fileName: 'rachel_-_hunter.png', imgSrc: require('../assets/portraits/rachel_-_hunter.png') });
-            imgList.push({ fileName: 'rafa_gonzalez.png', imgSrc: require('../assets/portraits/rafa_gonzalez.png') });
-            imgList.push({ fileName: 'raul_-_delia.png', imgSrc: require('../assets/portraits/raul_-_delia.png') });
-            imgList.push({ fileName: 'reiner_valdez.png', imgSrc: require('../assets/portraits/reiner_valdez.png') });
-            imgList.push({ fileName: 'rna.png', imgSrc: require('../assets/portraits/rna.png') });
-            imgList.push({ fileName: 'rose_turuka.png', imgSrc: require('../assets/portraits/rose_turuka.png') });
-            imgList.push({ fileName: 'sandra_-_zach.png', imgSrc: require('../assets/portraits/sandra_-_zach.png') });
-            imgList.push({ fileName: 'saulo_-_jasmin.png', imgSrc: require('../assets/portraits/saulo_-_jasmin.png') });
-            imgList.push({ fileName: 'sebastian_-_jocelyn.png', imgSrc: require('../assets/portraits/sebastian_-_jocelyn.png') });
-            imgList.push({ fileName: 'serena_spears.png', imgSrc: require('../assets/portraits/serena_spears.png') });
-            imgList.push({ fileName: 'somos_dance_studio.png', imgSrc: require('../assets/portraits/somos_dance_studio.png') });
-            imgList.push({ fileName: 'tania_cannarsa.png', imgSrc: require('../assets/portraits/tania_cannarsa.png') });
-            imgList.push({ fileName: 'tito_garcia.png', imgSrc: require('../assets/portraits/tito_garcia.png') });
-            imgList.push({ fileName: 'watson_saintsulne.png', imgSrc: require('../assets/portraits/watson_saintsulne.png') });
-            imgList.push({ fileName: 'yayita_-_carlos.png', imgSrc: require('../assets/portraits/yayita_-_carlos.png') });
+            this.staticImageList.push({ fileName: 'adolfo_-_tania.png', imgSrc: require('../assets/portraits/adolfo_-_tania.png') });
+            this.staticImageList.push({ fileName: 'adolfo_indacochea.png', imgSrc: require('../assets/portraits/adolfo_indacochea.png') });
+            this.staticImageList.push({ fileName: 'adrian_tenorio.png', imgSrc: require('../assets/portraits/adrian_tenorio.png') });
+            this.staticImageList.push({ fileName: 'adriana_-_jorge.png', imgSrc: require('../assets/portraits/adriana_-_jorge.png') });
+            this.staticImageList.push({ fileName: 'alex_-_desiree.png', imgSrc: require('../assets/portraits/alex_-_desiree.png') });
+            this.staticImageList.push({ fileName: 'aris_gingundo.png', imgSrc: require('../assets/portraits/aris_gingundo.png') });
+            this.staticImageList.push({ fileName: 'ataca_-_alemana.png', imgSrc: require('../assets/portraits/ataca_-_alemana.png') });
+            this.staticImageList.push({ fileName: 'bachata_denver.png', imgSrc: require('../assets/portraits/bachata_denver.png') });
+            this.staticImageList.push({ fileName: 'bachatito.png', imgSrc: require('../assets/portraits/bachatito.png') });
+            this.staticImageList.push({ fileName: 'benny_-_ashley.png', imgSrc: require('../assets/portraits/benny_-_ashley.png') });
+            this.staticImageList.push({ fileName: 'bianca_chapman.png', imgSrc: require('../assets/portraits/bianca_chapman.png') });
+            this.staticImageList.push({ fileName: 'brandon_-_michelle.png', imgSrc: require('../assets/portraits/brandon_-_michelle.png') });
+            this.staticImageList.push({ fileName: 'cam.png', imgSrc: require('../assets/portraits/cam.png') });
+            this.staticImageList.push({ fileName: 'carine_-_rafael.png', imgSrc: require('../assets/portraits/carine_-_rafael.png') });
+            this.staticImageList.push({ fileName: 'carlos_-_susan.png', imgSrc: require('../assets/portraits/carlos_-_susan.png') });
+            this.staticImageList.push({ fileName: 'casino_stars.png', imgSrc: require('../assets/portraits/casino_stars.png') });
+            this.staticImageList.push({ fileName: 'celeste_williamson.png', imgSrc: require('../assets/portraits/celeste_williamson.png') });
+            this.staticImageList.push({ fileName: 'chelsey_owen.png', imgSrc: require('../assets/portraits/chelsey_owen.png') });
+            this.staticImageList.push({ fileName: 'chris_-_alexus.png', imgSrc: require('../assets/portraits/chris_-_alexus.png') });
+            this.staticImageList.push({ fileName: 'christopher_webster.png', imgSrc: require('../assets/portraits/christopher_webster.png') });
+            this.staticImageList.push({ fileName: 'clifton_stennet.png', imgSrc: require('../assets/portraits/clifton_stennet.png') });
+            this.staticImageList.push({ fileName: 'colorado_dancesport.png', imgSrc: require('../assets/portraits/colorado_dancesport.png') });
+            this.staticImageList.push({ fileName: 'damilola_elegbede.png', imgSrc: require('../assets/portraits/damilola_elegbede.png') });
+            this.staticImageList.push({ fileName: 'daniel_-_kathryn.png', imgSrc: require('../assets/portraits/daniel_-_kathryn.png') });
+            this.staticImageList.push({ fileName: 'daniel_agosto.png', imgSrc: require('../assets/portraits/daniel_agosto.png') });
+            this.staticImageList.push({ fileName: 'danny_salsita.png', imgSrc: require('../assets/portraits/danny_salsita.png') });
+            this.staticImageList.push({ fileName: 'dejon_-_clo.png', imgSrc: require('../assets/portraits/dejon_-_clo.png') });
+            this.staticImageList.push({ fileName: 'desi_caliente.png', imgSrc: require('../assets/portraits/desi_caliente.png') });
+            this.staticImageList.push({ fileName: 'devon_nearhill.png', imgSrc: require('../assets/portraits/devon_nearhill.png') });
+            this.staticImageList.push({ fileName: 'diane_page.png', imgSrc: require('../assets/portraits/diane_page.png') });
+            this.staticImageList.push({ fileName: 'diego_-_yurley.png', imgSrc: require('../assets/portraits/diego_-_yurley.png') });
+            this.staticImageList.push({ fileName: 'ebonie_lee.png', imgSrc: require('../assets/portraits/ebonie_lee.png') });
+            this.staticImageList.push({ fileName: 'eddie_peligro.png', imgSrc: require('../assets/portraits/eddie_peligro.png') });
+            this.staticImageList.push({ fileName: 'eder_-_milton.png', imgSrc: require('../assets/portraits/eder_-_milton.png') });
+            this.staticImageList.push({ fileName: 'edwin_-_ahtoy.png', imgSrc: require('../assets/portraits/edwin_-_ahtoy.png') });
+            this.staticImageList.push({ fileName: 'el_tiguere_-_bianca.png', imgSrc: require('../assets/portraits/el_tiguere_-_bianca.png') });
+            this.staticImageList.push({ fileName: 'eric_-_marcela.png', imgSrc: require('../assets/portraits/eric_-_marcela.png') });
+            this.staticImageList.push({ fileName: 'fuego_-_hielo.png', imgSrc: require('../assets/portraits/fuego_-_hielo.png') });
+            this.staticImageList.push({ fileName: 'gio_-_gaby.png', imgSrc: require('../assets/portraits/gio_-_gaby.png') });
+            this.staticImageList.push({ fileName: 'gustavo_-_ayane.png', imgSrc: require('../assets/portraits/gustavo_-_ayane.png') });
+            this.staticImageList.push({ fileName: 'iroko.png', imgSrc: require('../assets/portraits/iroko.png') });
+            this.staticImageList.push({ fileName: 'jsquared.png', imgSrc: require('../assets/portraits/jsquared.png') });
+            this.staticImageList.push({ fileName: 'jahaira_-_angelica.png', imgSrc: require('../assets/portraits/jahaira_-_angelica.png') });
+            this.staticImageList.push({ fileName: 'javier_rebollar.png', imgSrc: require('../assets/portraits/javier_rebollar.png') });
+            this.staticImageList.push({ fileName: 'jenny_pham.png', imgSrc: require('../assets/portraits/jenny_pham.png') });
+            this.staticImageList.push({ fileName: 'jesica_cutler.png', imgSrc: require('../assets/portraits/jesica_cutler.png') });
+            this.staticImageList.push({ fileName: 'jessica_quiles.png', imgSrc: require('../assets/portraits/jessica_quiles.png') });
+            this.staticImageList.push({ fileName: 'jk_dance_company.png', imgSrc: require('../assets/portraits/jk_dance_company.png') });
+            this.staticImageList.push({ fileName: 'johan_-_alyssa.png', imgSrc: require('../assets/portraits/johan_-_alyssa.png') });
+            this.staticImageList.push({ fileName: 'jorge_-_indira.png', imgSrc: require('../assets/portraits/jorge_-_indira.png') });
+            this.staticImageList.push({ fileName: 'joseal.png', imgSrc: require('../assets/portraits/joseal.png') });
+            this.staticImageList.push({ fileName: 'jovan_casanova.png', imgSrc: require('../assets/portraits/jovan_casanova.png') });
+            this.staticImageList.push({ fileName: 'karen_-_ricardo.png', imgSrc: require('../assets/portraits/karen_-_ricardo.png') });
+            this.staticImageList.push({ fileName: 'kate_rodriguez.png', imgSrc: require('../assets/portraits/kate_rodriguez.png') });
+            this.staticImageList.push({ fileName: 'kebrina_dejesus.png', imgSrc: require('../assets/portraits/kebrina_dejesus.png') });
+            this.staticImageList.push({ fileName: 'kiki_elsilencio.png', imgSrc: require('../assets/portraits/kiki_elsilencio.png') });
+            this.staticImageList.push({ fileName: 'kingsmen.png', imgSrc: require('../assets/portraits/kingsmen.png') });
+            this.staticImageList.push({ fileName: 'latisha_hardy.png', imgSrc: require('../assets/portraits/latisha_hardy.png') });
+            this.staticImageList.push({ fileName: 'lawrence_-_jewel.png', imgSrc: require('../assets/portraits/lawrence_-_jewel.png') });
+            this.staticImageList.push({ fileName: 'lorena_charry.png', imgSrc: require('../assets/portraits/lorena_charry.png') });
+            this.staticImageList.push({ fileName: 'luan_-_adriana.png', imgSrc: require('../assets/portraits/luan_-_adriana.png') });
+            this.staticImageList.push({ fileName: 'maissaa_bachir.png', imgSrc: require('../assets/portraits/maissaa_bachir.png') });
+            this.staticImageList.push({ fileName: 'marc_-_rose-.png', imgSrc: require('../assets/portraits/marc_-_rose-.png') });
+            this.staticImageList.push({ fileName: 'marisol_blanco.png', imgSrc: require('../assets/portraits/marisol_blanco.png') });
+            this.staticImageList.push({ fileName: 'natasha_tia.png', imgSrc: require('../assets/portraits/natasha_tia.png') });
+            this.staticImageList.push({ fileName: 'nathan_hook.png', imgSrc: require('../assets/portraits/nathan_hook.png') });
+            this.staticImageList.push({ fileName: 'paolo_-_luisa.png', imgSrc: require('../assets/portraits/paolo_-_luisa.png') });
+            this.staticImageList.push({ fileName: 'rachel_-_hunter.png', imgSrc: require('../assets/portraits/rachel_-_hunter.png') });
+            this.staticImageList.push({ fileName: 'rafa_gonzalez.png', imgSrc: require('../assets/portraits/rafa_gonzalez.png') });
+            this.staticImageList.push({ fileName: 'raul_-_delia.png', imgSrc: require('../assets/portraits/raul_-_delia.png') });
+            this.staticImageList.push({ fileName: 'reiner_valdez.png', imgSrc: require('../assets/portraits/reiner_valdez.png') });
+            this.staticImageList.push({ fileName: 'rna.png', imgSrc: require('../assets/portraits/rna.png') });
+            this.staticImageList.push({ fileName: 'rose_turuka.png', imgSrc: require('../assets/portraits/rose_turuka.png') });
+            this.staticImageList.push({ fileName: 'sandra_-_zach.png', imgSrc: require('../assets/portraits/sandra_-_zach.png') });
+            this.staticImageList.push({ fileName: 'saulo_-_jasmin.png', imgSrc: require('../assets/portraits/saulo_-_jasmin.png') });
+            this.staticImageList.push({ fileName: 'sebastian_-_jocelyn.png', imgSrc: require('../assets/portraits/sebastian_-_jocelyn.png') });
+            this.staticImageList.push({ fileName: 'serena_spears.png', imgSrc: require('../assets/portraits/serena_spears.png') });
+            this.staticImageList.push({ fileName: 'sisy_ayala.png', imgSrc: require('../assets/portraits/sisy_ayala.png') });
+            this.staticImageList.push({ fileName: 'jared_-_nicole.png', imgSrc: require('../assets/portraits/jared_-_nicole.png') });
+            this.staticImageList.push({ fileName: 'tania_cannarsa.png', imgSrc: require('../assets/portraits/tania_cannarsa.png') });
+            this.staticImageList.push({ fileName: 'tito_garcia.png', imgSrc: require('../assets/portraits/tito_garcia.png') });
+            this.staticImageList.push({ fileName: 'watson_saintsulne.png', imgSrc: require('../assets/portraits/watson_saintsulne.png') });
+            this.staticImageList.push({ fileName: 'yayita_-_carlos.png', imgSrc: require('../assets/portraits/yayita_-_carlos.png') });
+
+
+
+            this.staticImageList.push({ fileName: 'somos_dance_studio.png', imgSrc: require('../assets/logos/somos_dance_studio.png') });
 
         } catch (error) {
             console.log('Could not assign an image for a particular artist' + error)
@@ -409,15 +466,17 @@ class LauncherController extends OperatorStates {
 
         for (const k in dataModel.dataArtists) {
             const artistItem = dataModel.dataArtists[k];
-            console.log('Artist: ' + k.toLowerCase().replace(' y ', ' & '))
-            for (let j = 0; j < imgList.length; j++) {
-                const namefile = imgList[j].fileName.replaceAll('_', ' ').replace('-', '&').replace('.png', '');
-                // console.log('          namefile ' + namerrfile)
-                const nameartist = k.toLowerCase().replace(' y ', ' & ');
+            const artistNameNorm =  k.toLowerCase().replace(" y ", " & ");
+            console.log('Artist: ' + artistNameNorm)
+            const expectedFilename = artistNameNorm.toLowerCase().replace(/[.’]/g, "").replace(/[ ]/g, "_").replace(/[&]/g, "-")+".png"
+            // ('&','-').replaceAll(' ','_').replaceAll('.','').replace(`’`,'');
 
-                if (nameartist == namefile) {
-                    artistItem['imgSrc'] = imgList[j].imgSrc;
-                    console.log('          ' + ' -> ' + namefile)
+            for (let j = 0; j < this.staticImageList.length; j++) {
+                // const namefile = this.staticImageList[j].fileName.replaceAll('_', ' ').replace('-', '&').replace(`’`,'').replace('.png', '');
+                // console.log('          namefile ' + namerrfile)
+                if (this.staticImageList[j].fileName == expectedFilename) {
+                    artistItem['imgSrc'] = this.staticImageList[j].imgSrc;
+                    console.log('          ' + ' -> ' + this.staticImageList[j].fileName)
                     break;
                 }
             }
