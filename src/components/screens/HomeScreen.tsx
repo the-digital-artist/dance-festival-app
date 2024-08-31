@@ -79,18 +79,20 @@ class HomeScreen extends PureComponent<any, any> {
                         style={{ position: 'absolute' }}
                         visualProperties={{ alpha: 1.0, x: 0, y: 0, z: 0, w: "windowWidth", h: "windowHeight" }}
                     >
-                        <LVideoPlayback
-                            videoSrc={require('../../../assets/video/bgvideo_1.mp4')}
-                            style={{
-                                position: 'absolute',
-                                opacity: 0.3,
-                                width: (Dimensions.get('screen').width + 1200),
-                                height: (Dimensions.get('screen').width + 1200) * (1080 / 1920),
-                                top: 0,
-                                left: -600,
-                            }}
-                            shouldPlay={true}
-                        />
+                        {Platform.OS == "ios" &&
+                            <LVideoPlayback
+                                videoSrc={require('../../../assets/video/bgvideo_1.mp4')}
+                                style={{
+                                    position: 'absolute',
+                                    opacity: 0.3,
+                                    width: (Dimensions.get('screen').width + 1200),
+                                    height: (Dimensions.get('screen').width + 1200) * (1080 / 1920),
+                                    top: 0,
+                                    left: -600,
+                                }}
+                                shouldPlay={true}
+                            />
+                        }
                     </LComponent>
 
                     <Image
@@ -105,13 +107,14 @@ class HomeScreen extends PureComponent<any, any> {
                             height: Dimensions.get('screen').width - (2 * 80) * 1313 / 815,
                         }}
                     />
+
                     <ScreenHeader
                         text={"WELCOME MY FRIEND"}
                         textStyle={{ top: 65 }}
                         color='#FFFFFF'
                         imgSrc={require('../../../assets/header-home-bg.png')} />
 
-
+               
                     <ScrollView style={{
                         position: 'absolute',
                         top: screenHeaderHeight, left: 0,
@@ -125,11 +128,11 @@ class HomeScreen extends PureComponent<any, any> {
                             this.setState({ activeItems: this.state.activeItems, scrollPosY: e.nativeEvent.contentOffset.y })
                         }}
                     >
-                        { (Date.now() > Date.parse(DataModel.getInstance().static.dataTicketSales.earlyBirdStartTimeString)) &&
+                        {(Date.now() > Date.parse(DataModel.getInstance().static.dataTicketSales.earlyBirdStartTimeString)) &&
                             <View
                                 style={{
                                     top: Dimensions.get("screen").height > 800 ? 240 : 40,
-                                    // backgroundColor:'red',
+                                    // backgroundColor: 'red',
                                     width: Dimensions.get("screen").width,
                                     height: 190,
                                 }}>
@@ -146,12 +149,13 @@ class HomeScreen extends PureComponent<any, any> {
 
                                     }} />
                                 }
-                                <EarlyPassesTile offsetY={0} />
+
                                 {/* <LoginTile offsetY={0}/> */}
                                 {/* <HappeningNowTile offsetY={400} activeItems={activeItems} /> */}
                             </View>
 
                         }
+
 
                         {/* {(LauncherController.getInstance().context.happeningNowItems.length > 0) &&
                             <View
@@ -180,8 +184,10 @@ class HomeScreen extends PureComponent<any, any> {
                             </View>
                         } */}
 
-                     
+
                     </ScrollView>
+
+                    <EarlyPassesTile offsetY={300} />
 
                     {/* {(Platform.OS == 'android') &&
                         <View

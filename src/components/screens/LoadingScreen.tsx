@@ -22,7 +22,7 @@ class LoadingScreen extends PureComponent<any, any> {
 
                 <Image
                     style={{
-                        position: 'absolute', top:  Platform.OS == "ios"?0:-12,
+                        position: 'absolute', top: Platform.OS == "ios" ? 0 : -12,
                         width: Dimensions.get('screen').width, height: Dimensions.get('screen').height,
                         resizeMode: "cover",
                     }}
@@ -40,25 +40,26 @@ class LoadingScreen extends PureComponent<any, any> {
                 >
                     <Image
                         style={{
-                            position: 'absolute', top: Platform.OS == "ios"?0:-12,
+                            position: 'absolute', top: Platform.OS == "ios" ? 0 : -12,
                             width: Dimensions.get('screen').width, height: Dimensions.get('screen').height,
                             resizeMode: "cover",
                         }}
                         source={require('../../../assets/welcome.png')}
                     />
-                    <LVideoPlayback
-                        videoSrc={require('../../../assets/video/loading_video.mp4')}
-                        style={{
-                            position: 'absolute',
-                            opacity: 0.5,
-                            width: (Dimensions.get('screen').width-2*videoOffsetX), 
-                            height:  (Dimensions.get('screen').width-2*videoOffsetX)*(1080/1920),
-                            top: Dimensions.get('screen').height-(Dimensions.get('screen').width-2*videoOffsetX)*(1080/1920)*2,
-                            left:videoOffsetX,
-                        }}
-                        shouldPlay={true}
-                        
-                    />
+                    {Platform.OS != 'android' &&
+                        <LVideoPlayback
+                            videoSrc={require('../../../assets/video/loading_video.mp4')}
+                            style={{
+                                position: 'absolute',
+                                opacity: 0.5,
+                                width: (Dimensions.get('screen').width - 2 * videoOffsetX),
+                                height: (Dimensions.get('screen').width - 2 * videoOffsetX) * (1080 / 1920),
+                                top: Dimensions.get('screen').height - (Dimensions.get('screen').width - 2 * videoOffsetX) * (1080 / 1920) * 2,
+                                left: videoOffsetX,
+                            }}
+                            shouldPlay={true}
+                        />
+                    }
                 </LComponent>
             </LComponent>
 
