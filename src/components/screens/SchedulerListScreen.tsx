@@ -12,7 +12,7 @@ import ScreenHomeButton from "./ScreenHomeButton";
 
 
 
-class SchedulerScreen extends PureComponent {
+class SchedulerListScreen extends PureComponent {
     // scheduleListArray = [] //{flatListRef: reference, nativeGestureObj: native, data: dataModelList[0] }
 
     state = {
@@ -32,7 +32,7 @@ class SchedulerScreen extends PureComponent {
     }
 
     render() {
-        console.log("___________SchedulerScreen render ")
+        // console.log("___________SchedulerScreen render ")
         let scheduleListArray = []
         if (this.state.dataModelList != null && this.state.modelUpdateState == 2) {
             //{flatListRef: reference, nativeGestureObj: native, data: dataModelList[0] }
@@ -62,17 +62,6 @@ class SchedulerScreen extends PureComponent {
 
         return (
             <>
-
-                <LComponent
-                    name='sessionScreenContainer'
-                    style={{
-                        position: 'absolute',
-                        backgroundColor: 'transparent',
-                    }}
-                    visualProperties={{
-                        alpha: 1.0, x: 'windowWidth', y: 0, z: 0, w: "windowWidth", h: "windowHeight"
-                    }}
-                >
                     <Image
                         style={{
                             // backgroundColor: 'skyblue',
@@ -141,7 +130,7 @@ class SchedulerScreen extends PureComponent {
 
 
                     <ScreenHeader
-                        text={"WORKSHOP SCHEDULE"}
+                        text={"FESTIVAL PROGRAM"}
                         textStyle={{ top: 65 }}
                         color='#FFFFFF'
                         imgSrc={require('../../../assets/header-schedule-bg.png')} />
@@ -188,7 +177,6 @@ class SchedulerScreen extends PureComponent {
                                 opacity: 0.8
                             }} />
                     }
-                </LComponent>
             </>
         );
     }
@@ -208,4 +196,4 @@ class SchedulerScreen extends PureComponent {
     }
 }
 
-export default SchedulerScreen;
+export default SchedulerListScreen;
