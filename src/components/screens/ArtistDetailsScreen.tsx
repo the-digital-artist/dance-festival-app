@@ -7,6 +7,7 @@ import ButtonSmall from "../ButtonSmall";
 import ScreenHeader from "./ScreenHeader";
 import ActionHistoryBackButton from "../../actions/ActionHistoryBackButton";
 import ScreenHomeButton from "./ScreenHomeButton";
+import NavBar from "../navbar/NavBar";
 
 
 class ArtistDetailsScreen extends PureComponent {
@@ -26,10 +27,12 @@ class ArtistDetailsScreen extends PureComponent {
         // console.log("Setting Reference")
         LauncherController.getInstance().artistStackData[1].screenComponentRef = this;
 
+        const artistBiography = (item!=undefined && item.bio != undefined && item.bio.length>0)?(item.bio as string):"Stay tuned - more information coming soon"
+
         const scrollViewContent =
             Platform.OS == 'ios' ?
-                (item.bio as string).length / 1100 * 1.5 * Dimensions.get('screen').height :
-                (item.bio as string).length / 1100 * 1.7 * Dimensions.get('screen').height;
+                (artistBiography as string).length / 1100 * 1.5 * Dimensions.get('screen').height :
+                (artistBiography as string).length / 1100 * 1.7 * Dimensions.get('screen').height;
 
         let socialBarData = [
             { id: 0, provider: "Instagram", account: item.insta, imgSrc: require('../../../assets/icon-social-insta-black.png') },
@@ -44,6 +47,7 @@ class ArtistDetailsScreen extends PureComponent {
 
         return (
             <>
+   
 
                 <View
                     style={{
@@ -76,8 +80,7 @@ class ArtistDetailsScreen extends PureComponent {
 
                         <View
                             style={{
-
-                                backgroundColor: '#eeac55',
+                                // backgroundColor: '#eeac55',
                                 top: 0, left: 5,
                                 width: Dimensions.get('screen').width - 50,
                                 height: scrollViewContent,
@@ -101,15 +104,15 @@ class ArtistDetailsScreen extends PureComponent {
                                 position: 'absolute',
                                 top: (220), left: 30,
                                 width: Dimensions.get('screen').width - 70 - 25,
-                                height: (item.bio as string).length / 1100 * 1.2 * Dimensions.get('screen').height,
+                                height: (artistBiography as string).length / 1100 * 1.2 * Dimensions.get('screen').height,
                                 fontFamily: 'Arcon-Regular',
                                 letterSpacing: 1,
                                 textAlign: 'justify',
                                 // backgroundColor: 'indigo',
-                                color: '#232323',
+                                color: '#EFEFEF',
                                 fontSize: 15,
                             }}>
-                                {item ? (item.bio as string) : ""}
+                                {artistBiography}
                             </Text>
                         </View>
 
@@ -151,20 +154,13 @@ class ArtistDetailsScreen extends PureComponent {
                     style={{
                         position: 'absolute',
                         right: -40,
-                        bottom: ((Platform.OS == 'android') ? 70 : 0),
+                        bottom: ((Platform.OS == 'android') ? NavBar.navBarHeight+50 : NavBar.navBarHeight-20),
                         width: 300,
                         height: 300,
-                        opacity: 0.9
+                        opacity: 0.8
 
                     }}
-                // bgBoxVisible={false}
-                // visualProperties={{ alpha: 0.7 }}
-                // onSelect={() => {
-                // context.navigationHistory.push({ out: "ArtistDetailsScreen", transition: "ActionOpenSocialMediaApp" });
-                // ActionOpenSocialMediaApp("Instagram", item.insta)
-                // }}
                 />
-
 
                 <ScreenHeader
                     text={"ARTIST DETAILS"}
