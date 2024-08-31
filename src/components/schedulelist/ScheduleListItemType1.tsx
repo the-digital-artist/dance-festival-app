@@ -37,7 +37,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     // console.log("ScheduleListItemType1 Render Function Called: " + this.state.dataItem.id);
 
     let item = this.state.dataItem;
-    if (item.itemType != 'type1') return;
+    // if (item.itemType != 'type1') return;
 
 
     const levelData = [
@@ -46,7 +46,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
       { src: require('../../../assets/schedule-levelicon-3.png'), text: "ADVANCED", textWidth: 54 }
     ]
     let levelId = item.level != undefined ? item.level : -1;
-    levelId = 0; //DEBUG always set a level
+    // levelId = 0; //DEBUG always set a level
     const levelImageSize = 10;
     //get data of artists
     const artistData1 = DataModel.getInstance().static.dataArtists[item.artistOne];
@@ -64,8 +64,10 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     const imageOffsetYArtistImage = 10 + ((305 - this.props.tileWidth) / (305 - 245)) * 10
     const imageOffsetXRArtistImage = -17;
     const imageOffsetXLArtistImage = -17;
-    const fontSizeMainTitle = this.props.tileWidth * (18 / 305);
-    const fontSizeArtistName = this.props.tileWidth * (13 / 305)
+    // const fontSizeMainTitle = this.props.tileWidth * (18 / 305);
+    // const fontSizeArtistName = this.props.tileWidth * (13 / 305)
+    const fontSizeMainTitle =20;
+    const fontSizeArtistName =16;
 
     // console.log("ScheduleListItemType1 tileLength " + this.props.tileWidth + " artistImageWidth: "+ imageWidthArtistImage);
 
@@ -277,12 +279,13 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               left: (item.orientation == 'left' ? undefined : (4 + 35)),
               height: fontSizeArtistName +4,
               width: 190,
-              fontFamily: 'RobotoCondensed-Medium',
-              letterSpacing: 1.2,
+              fontFamily: 'Cabin-Regular',
+              letterSpacing: 2.0,
+              fontSize: 13,
               // backgroundColor: 'indigo',
               textAlign: (item.orientation == 'right' ? 'left' : 'right'),
               color: '#e4a35e',
-              fontSize: (fontSizeArtistName),
+              // fontSize: (fontSizeArtistName),
             }}>
               {item.artistName ? (item.artistName as string).toLocaleUpperCase() : ""}
             </Text >
