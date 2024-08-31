@@ -4,11 +4,11 @@ import ButtonSmall from '../ButtonSmall';
 
 
 const EarlyPassesTile = (props) => {
-    // console.log("Rendering EarlyPassesTile")
+    console.log("Rendering EarlyPassesTile")
 
     return (
         <>
-            <View
+            {/* <View
                 style={{
                     position: 'absolute',
                     opacity: 0.2,
@@ -18,7 +18,7 @@ const EarlyPassesTile = (props) => {
                     height: 230,
                     backgroundColor: '#3e3b3a'
                 }}
-            ></View>
+            ></View> */}
             <Text allowFontScaling={false} id='textHeader'
                 style={{
                     top: props.offsetY,
