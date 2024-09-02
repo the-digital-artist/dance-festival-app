@@ -28,15 +28,12 @@ const ActionHistoryBackButton = () => {
     TransitionSchedulerNavigateDown(LauncherController.getInstance().context.schedulerFocusItem, 0)
     return;
   } else if (historyItem.out == 'SchedulerSessionDetailsScreen') {
-    context.navigationHistory.push({ out: "ArtistDetailsScreen", transition: "TransitionSchedulerNavigateDown" });
+    // context.navigationHistory.push({ out: "ArtistDetailsScreen", transition: "TransitionSchedulerNavigateDown" });
     TransitionArtistNavigateDown(LauncherController.getInstance().context.artistFocusItem, 0)
     TransitionSchedulerNavigateDown(LauncherController.getInstance().context.schedulerFocusItem, 1)
     TransitionNavbarSelect(1, false);
     return;
   }
-
-  
-
 }
 
 export default ActionHistoryBackButton;
