@@ -1,6 +1,6 @@
 export const modelInitStaticOverwrite = 
 {
-  "modelVersion": 1091,
+  "modelVersion": 1093,
   "festivalName": "CALDAC",
   "modelRemoteGetModelUrl": "https://wa1koeb029.execute-api.eu-central-1.amazonaws.com/caldacModelContent",
   "modelRemoteVersionCheckUrl": "https://wa1koeb029.execute-api.eu-central-1.amazonaws.com/caldacModelVersion",
@@ -335,7 +335,7 @@ export const modelInitStaticOverwrite =
       "artistLocation": "NY/NJ/DR",
       "artistCompany": "",
       "insta": "",
-      "bio": "Adolfo moved to New York City in September of 2004 and was invited to be the exclusive partner of Amanda Estilo in addition to training with Karisma Dancers, directed by his friend Victor Mayovanex. It wasn’t until December 2004 that his dream of becoming an Eddie Torres Dancer was fulfilled. His mentor Eddie Torres discovered his talent and potential instantly and invited Adolfo to join one of the most prestigious teams in the world. After 8 months, Adolfo began to perform exclusively with Jessica Ortiz at the same time becoming one of the elite dancers in the Eddie Torres Company and rising to be one of the newest stars in the New York Mambo scene. After 2 years, his mentor Eddie Torres gave him his blessing to move on and to strive to be one of the top mambo dancers in the world.",
+      "bio": "",
       "shortBio": "",
       "facebook": "",
       "portrait": "alex_-_desiree"
@@ -575,7 +575,7 @@ export const modelInitStaticOverwrite =
       "artistLocation": "FLORIDA",
       "artistCompany": "",
       "insta": "",
-      "bio": "Born and raised in Lima, Peru, Adolfo moved to Monterrey, Mexico when he was 19 to study Industrial Engineering and began taking salsa classes “On 1″ as a hobby in 2001. In less than two months, his talent was quickly recognized by Adrian Arellano, a well-known performer and instructor in Mexico, and was asked to be one of the founding members of Salzumba Dance Company, he later formed his first dance company named “Mamboss,” which is now recognized as one of the biggest salsa companies and schools in Mexico. In search of developing his talent, Adolfo moved to San Antonio, Texas in January of 2004 and was invited to join and teach with Semeneya Dance Company as well as work independently with his former partner Claudia Vazques. It wasn’t until 2003 that his passion for dancing “On 2″ developed after seeing Eddie Torres and his Dancers perform at the New York Salsa Congress that year. He taught himself how to dance “On 2,” New York Style, with the dream of becoming an Eddie Torres Dancer within the next few years.",
+      "bio": "",
       "shortBio": "",
       "facebook": "",
       "portrait": "adriana_-_jorge"
@@ -585,7 +585,7 @@ export const modelInitStaticOverwrite =
       "artistLocation": "CHICAGO",
       "artistCompany": "",
       "insta": "",
-      "bio": "Is an explosive and energetic dancer who is known all around the world for his smooth and unique style. This unique style combines traditional mambo with elements of jazz/modern, flamenco, and ballroom dances. His sense of musicality and flow is evident through his choreography and improvisations…..",
+      "bio": "A born dancer, Adrian has a natural flavor combined with various styles and technique that he has merged to call his own. As a part of the world-renowned Descarga Caribe Dance Company, Adrian trained and developed under internationally acclaimed dancer and choreographer Sekou Mcmiller. After gaining a wealth of knowledge and experience, Adrian went on to travel the globe with notable dance partners Cristina Zavala, Kimberly Rivera, and Daniela Leon. He has performed and conducted workshops in countries such as Angola, Canada, Curacao, England, France, Hungary, Ireland, Japan, Mexico, Poland, Spain, Turkey, and countless cities in the U.S.  ",
       "shortBio": "",
       "facebook": "",
       "portrait": "adrian_tenorio"
@@ -685,7 +685,7 @@ export const modelInitStaticOverwrite =
       "artistLocation": "NEW YORK",
       "artistCompany": "",
       "insta": "",
-      "bio": "Adolfo Indacochea, a world-renowned dancer with over 23 years of international experience, is celebrated for his explosive and unique mambo style. Born in Lima, Peru, he mastered salsa in Mexico before conquering the New York Mambo scene. Adolfo’s journey includes performing at prestigious venues like Lincoln Center, sharing the stage with music icons, and partnering with acclaimed dancers.Tania Cannarsa, born in Sri Lanka and raised in Italy, brings a distinctive mambo style with a background in classical dance. As a principal dancer in Adolfo Indacochea’s Latin Soul Dancers, she has crafted mesmerizing mambo pieces.Their passion for mambo extends to teaching, with Adolfo’s expertise covering timing, styling, shines, and more. Together with Tania, they’ve traveled the world, captivating audiences and imparting the joy and tradition of mambo. Join them on a journey of rhythm, style, and pure dance magic!#AdolfoIndacochea #TaniaCannarsa #MamboLegends #DanceMagic #LatinSoulDancers",
+      "bio": "Adolfo Indacochea, a world-renowned dancer with over 23 years of international experience, is celebrated for his explosive and unique mambo style. Born in Lima, Peru, he mastered salsa in Mexico before conquering the New York Mambo scene. Adolfo’s journey includes performing at prestigious venues like Lincoln Center, sharing the stage with music icons, and partnering with acclaimed dancers.Tania Cannarsa, born in Sri Lanka and raised in Italy, brings a distinctive mambo style with a background in classical dance. As a principal dancer in Adolfo Indacochea’s Latin Soul Dancers, she has crafted mesmerizing mambo pieces.Their passion for mambo extends to teaching, with Adolfo’s expertise covering timing, styling, shines, and more. Together with Tania, they’ve traveled the world, captivating audiences and imparting the joy and tradition of mambo. Join them on a journey of rhythm, style, and pure dance magic!#AdolfoIndacochea #TaniaCannarsa #MamboLegends #DanceMagic #LatinSoulDancers\n\nIs an explosive and energetic dancer who is known all around the world for his smooth and unique style. This unique style combines traditional mambo with elements of jazz/modern, flamenco, and ballroom dances. His sense of musicality and flow is evident through his choreography and improvisations…\n\nBorn and raised in Lima, Peru, Adolfo moved to Monterrey, Mexico when he was 19 to study Industrial Engineering and began taking salsa classes “On 1″ as a hobby in 2001. In less than two months, his talent was quickly recognized by Adrian Arellano, a well-known performer and instructor in Mexico, and was asked to be one of the founding members of Salzumba Dance Company, he later formed his first dance company named “Mamboss,” which is now recognized as one of the biggest salsa companies and schools in Mexico. In search of developing his talent, Adolfo moved to San Antonio, Texas in January of 2004 and was invited to join and teach with Semeneya Dance Company as well as work independently with his former partner Claudia Vazques. It wasn’t until 2003 that his passion for dancing “On 2″ developed after seeing Eddie Torres and his Dancers perform at the New York Salsa Congress that year. He taught himself how to dance “On 2,” New York Style, with the dream of becoming an Eddie Torres Dancer within the next few years.\n\nAdolfo moved to New York City in September of 2004 and was invited to be the exclusive partner of Amanda Estilo in addition to training with Karisma Dancers, directed by his friend Victor Mayovanex. It wasn’t until December 2004 that his dream of becoming an Eddie Torres Dancer was fulfilled. His mentor Eddie Torres discovered his talent and potential instantly and invited Adolfo to join one of the most prestigious teams in the world. After 8 months, Adolfo began to perform exclusively with Jessica Ortiz at the same time becoming one of the elite dancers in the Eddie Torres Company and rising to be one of the newest stars in the New York Mambo scene. After 2 years, his mentor Eddie Torres gave him his blessing to move on and to strive to be one of the top mambo dancers in the world.",
       "shortBio": "",
       "facebook": "",
       "portrait": "adolfo_-_tania"
@@ -807,7 +807,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Carlos & Susan",
       "sessionMainTitle": "Bachata Partnerwork",
-      "time": "",
+      "time": "18:00 - 19:00",
       "room": "AURORA 1",
       "level": "0",
       "group": [
@@ -818,7 +818,7 @@ export const modelInitStaticOverwrite =
       "shortMainTitle": "",
       "dateString": "Thu, October 17, 2024",
       "startTime": "2024-10-17T18:00:00.000Z",
-      "endTime": "23:00",
+      "endTime": "2024-10-17T19:00:00.000Z",
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
@@ -835,7 +835,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Brandon & Michelle",
       "sessionMainTitle": "Salsa On2 Partnerwork",
-      "time": "",
+      "time": "19:00 - 20:00",
       "room": "AURORA 1",
       "level": "0",
       "group": [
@@ -846,7 +846,7 @@ export const modelInitStaticOverwrite =
       "shortMainTitle": "",
       "dateString": "Thu, October 17, 2024",
       "startTime": "2024-10-17T19:00:00.000Z",
-      "endTime": "23:00",
+      "endTime": "2024-10-17T20:00:00.000Z",
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
@@ -863,7 +863,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "El Tiguere Y Bianca",
       "sessionMainTitle": "Bachata Shines/Partner",
-      "time": "",
+      "time": "20:00 - 21:00",
       "room": "AURORA 1",
       "level": "0",
       "group": [
@@ -874,7 +874,7 @@ export const modelInitStaticOverwrite =
       "shortMainTitle": "",
       "dateString": "Thu, October 17, 2024",
       "startTime": "2024-10-17T20:00:00.000Z",
-      "endTime": "23:00",
+      "endTime": "2024-10-17T21:00:00.000Z",
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
@@ -2433,7 +2433,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Celeste Williamson",
       "sessionMainTitle": "YOGA",
-      "time": "",
+      "time": "9:00 - 10:00",
       "room": "AURORA 1",
       "level": "0",
       "group": [
@@ -2444,7 +2444,7 @@ export const modelInitStaticOverwrite =
       "shortMainTitle": "",
       "dateString": "Sat, October 19, 2024",
       "startTime": "2024-10-19T09:00:00.000Z",
-      "endTime": "23:00",
+      "endTime": "2024-10-19T10:00:00.000Z",
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
