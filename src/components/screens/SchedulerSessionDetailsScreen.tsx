@@ -110,12 +110,6 @@ class SchedulerSessionDetailsScreen extends PureComponent {
                             opacity: 0.3
 
                         }}
-                    // bgBoxVisible={false}
-                    // visualProperties={{ alpha: 0.7 }}
-                    // onSelect={() => {
-                    // context.navigationHistory.push({ out: "ArtistDetailsScreen", transition: "ActionOpenSocialMediaApp" });
-                    // ActionOpenSocialMediaApp("Instagram", item.insta)
-                    // }}
                     />
 
                     <View
