@@ -9,7 +9,7 @@ import TransitionScreenSplashToLoading from './transitions/TransitionScreenSplas
 import ActionUpdateDataModelWithRemote from './actions/ActionUpdateDataModel';
 import { BackHandler } from 'react-native';
 import ActionHistoryBackButton from './actions/ActionHistoryBackButton';
-
+import * as Updates from "expo-updates";
 
 class LauncherController extends OperatorStates {
 
@@ -258,6 +258,7 @@ class LauncherController extends OperatorStates {
     async initialize() {
         const dataModel = DataModel.getInstance().static;
         try {
+            await this.onFetchUpdateAsync();
             await Font.loadAsync(this.customFonts);
             console.log("LauncherController - Fonts loaded.");
             // await this.getLocallyStoredDataModel();
@@ -279,6 +280,19 @@ class LauncherController extends OperatorStates {
 
     }
 
+    async onFetchUpdateAsync() {
+        try {
+            console.log("LoadingScreen - checking updates")
+            const update = await Updates.checkForUpdateAsync();
+            if (update.isAvailable) {
+                console.log("LoadingScreen - new Update available")
+                await Updates.fetchUpdateAsync();
+                await Updates.reloadAsync();
+            }
+        } catch (error) {
+            // You can also add an alert() to see the error message in case of an error when fetching updates.
+        }
+    }
 
     async getLocallyStoredDataModel() {
         const dataModel = DataModel.getInstance().static;
@@ -467,7 +481,7 @@ class LauncherController extends OperatorStates {
         for (const k in dataModel.dataArtists) {
             const artistItem = dataModel.dataArtists[k];
             const artistNameNorm =  k.toLowerCase().replace(" y ", " & ");
-            console.log('Artist: ' + artistNameNorm)
+            // console.log('Artist: ' + artistNameNorm)
             const expectedFilename = artistNameNorm.toLowerCase().replace(/[.’]/g, "").replace(/[ ]/g, "_").replace(/[&]/g, "-")+".png"
             // ('&','-').replaceAll(' ','_').replaceAll('.','').replace(`’`,'');
 
@@ -476,7 +490,7 @@ class LauncherController extends OperatorStates {
                 // console.log('          namefile ' + namerrfile)
                 if (this.staticImageList[j].fileName == expectedFilename) {
                     artistItem['imgSrc'] = this.staticImageList[j].imgSrc;
-                    console.log('          ' + ' -> ' + this.staticImageList[j].fileName)
+                    // console.log('          ' + ' -> ' + this.staticImageList[j].fileName)
                     break;
                 }
             }

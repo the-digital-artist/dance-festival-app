@@ -2,12 +2,27 @@ import React, { PureComponent } from "react";
 import { Dimensions, Image, Platform } from "react-native";
 import LComponent from "../../core/LComponent";
 import LVideoPlayback from "../../core/LVideoPlayback";
+import * as Updates from "expo-updates";
 
 
 class LoadingScreen extends PureComponent<any, any> {
 
     constructor({ props, children = null }) {
         super(props);
+    }
+
+    async onFetchUpdateAsync() {
+        try {
+            console.log("LoadingScreen - checking updates")
+            const update = await Updates.checkForUpdateAsync();
+            if (update.isAvailable) {
+                console.log("LoadingScreen - new Update available")
+                await Updates.fetchUpdateAsync();
+                await Updates.reloadAsync();
+            }
+        } catch (error) {
+            // You can also add an alert() to see the error message in case of an error when fetching updates.
+        }
     }
 
     render() {
