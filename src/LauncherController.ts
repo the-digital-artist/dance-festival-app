@@ -1,15 +1,14 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Font from 'expo-font';
+import * as Updates from "expo-updates";
+import { BackHandler } from 'react-native';
 import DataModel from './DataModel';
-import ActionUpdateHappeningNow from './components/happeningnowtile/ActionUpdateHappeningNow';
+import ActionHistoryBackButton from './actions/ActionHistoryBackButton';
+import ActionUpdateDataModelWithRemote from './actions/ActionUpdateDataModel';
 import OperatorStates from './core/LOperatorStates';
 import TransitionScreenL1toL2 from './transitions/TransitionScreenL1toL2';
 import TransitionScreenL2toL3 from './transitions/TransitionScreenL2toL3';
 import TransitionScreenSplashToLoading from './transitions/TransitionScreenSplashToLoading';
-import ActionUpdateDataModelWithRemote from './actions/ActionUpdateDataModel';
-import { BackHandler } from 'react-native';
-import ActionHistoryBackButton from './actions/ActionHistoryBackButton';
-import * as Updates from "expo-updates";
 
 class LauncherController extends OperatorStates {
 
@@ -204,6 +203,8 @@ class LauncherController extends OperatorStates {
     appTutorialCompleted = false;
     navigator = null;
 
+    updateInfo = 'none';
+
     tabBarIndex = 0
     tabBarData =
         [
@@ -258,7 +259,7 @@ class LauncherController extends OperatorStates {
     async initialize() {
         const dataModel = DataModel.getInstance().static;
         try {
-            await this.onFetchUpdateAsync();
+            await this.checkForUpdate();
             await Font.loadAsync(this.customFonts);
             console.log("LauncherController - Fonts loaded.");
             // await this.getLocallyStoredDataModel();
@@ -280,10 +281,11 @@ class LauncherController extends OperatorStates {
 
     }
 
-    async onFetchUpdateAsync() {
+    async checkForUpdate() {
         try {
             console.log("LoadingScreen - checking updates")
-            const update = await Updates.checkForUpdateAsync();
+            const update:Updates.UpdateCheckResult = await Updates.checkForUpdateAsync();
+            this.updateInfo = Updates.updateId;
             if (update.isAvailable) {
                 console.log("LoadingScreen - new Update available")
                 await Updates.fetchUpdateAsync();
