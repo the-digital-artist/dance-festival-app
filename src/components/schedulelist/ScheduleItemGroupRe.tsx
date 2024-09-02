@@ -6,7 +6,7 @@ import ButtonSmall from "../ButtonSmall";
 import ScheduleListItemType1 from "./ScheduleListItemType1";
 
 const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
-    // console.log('ScheduleItemGroupRe render')
+    // console.log('ScheduleItemGroupRe render'+group.length+mainItem.dateString)
     const paddingLeftAndRight = 5;
 
     const tileWidth = Dimensions.get('screen').width - (2 * paddingLeftAndRight + 45 + 35 + 35)
@@ -162,7 +162,8 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
                     style={[{
                         position: 'absolute',
                         // backgroundColor: 'skyblue',
-                        left: 0, top: 45,
+                        left: 0, 
+                        top: ((mainItem.dateString == "Thu, October 17, 2024")?30:45),
                         height: 90, width: Dimensions.get("screen").width - 2 * paddingLeftAndRight,
                         opacity: 1
                     }]}>

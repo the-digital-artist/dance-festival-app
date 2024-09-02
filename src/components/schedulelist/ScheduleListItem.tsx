@@ -34,8 +34,16 @@ const ScheduleListItem = ({ item, index }) => {
   else if (item.itemType == 'type5')
     itemHeight = 100;
 
+  if (item.itemType == 'type1' && item.dateString == "Thu, October 17, 2024") {
+    itemHeight = 170;
+  }
+   
+  console.log("time value: "+item.time);
+
   item['assignedListIndex'] = index;
   item['itemHeight'] = itemHeight;
+
+
 
   let orientation = 'left';
   if (item.itemType == 'type1') {
