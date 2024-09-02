@@ -1,6 +1,7 @@
-import { Dimensions, Image, Text, View } from 'react-native';
+import { Dimensions, Image, Platform, Text, View } from 'react-native';
 import ActionOpenBrowserWithTicketURL from '../../actions/ActionOpenBrowserWithURL';
 import ButtonSmall from '../ButtonSmall';
+import { BlurView } from 'expo-blur';
 
 
 const EarlyPassesTile = (props) => {
@@ -33,25 +34,36 @@ const EarlyPassesTile = (props) => {
                 }}>
                 {'GET TICKETS'}
             </Text>
+            {Platform.OS == "ios" && <BlurView
+                                    intensity={40}
+                                    style={{
+                                        // backgroundColor:'skyblue',
+                                        position: 'absolute',
+                                        opacity: 1.0,
+                                        left: 30,
+                                        top: props.offsetY + 30,
+                                        width: Dimensions.get('screen').width - (2 * 30), 
+                                        height: 170,
+                                    }} />
+                                }
 
 
-
-                            <View style={{
+                            {/* <View style={{
                                 position: 'absolute',
-                                backgroundColor: '#355a7d',
+                                backgroundColor: '#232323',
                                 left: 30,
                                 top: props.offsetY + 30,
                                 width: Dimensions.get('screen').width - (2 * 30), 
                                 height: 170,
-                                opacity: 0.5
+                                opacity: 0.3
                             }}>
-                            </View>
+                            </View> */}
 
                             <Image
-                                source={require('../../../assets/home-happening-banner.png')}
+                                source={require('../../../assets/hometile-overlay-shine.png')}
                                 style={{
                                     position: 'absolute', 
-                                    resizeMode: 'cover', opacity: 0.5,
+                                    resizeMode: 'cover', opacity: 0.15,
                                     left: 30,
                                     top: props.offsetY + 30,
                                     width: (Dimensions.get('screen').width - 2 * 30),
