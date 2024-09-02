@@ -175,14 +175,14 @@ class SettingsScreen extends PureComponent {
                     width: Dimensions.get('screen').width - (45 * 2),
                     fontFamily: 'Cabin-Regular',
                     letterSpacing: 2.0,
-                    fontSize: 5,
+                    fontSize: 7,
                     opacity:0.5,
                     color: '#5c5c5c',
                     // backgroundColor: 'skyblue',
                     textAlign: 'center',
                 }]}>
-                   {"BUILD VERSION: "+Application.nativeBuildVersion + 
-                   " - MODEL VERSION: "+DataModel.getInstance().static.modelVersion}
+                   {"BUILD: "+Application.nativeBuildVersion + 
+                   " - MODEL: "+DataModel.getInstance().static.modelVersion}
                 </Text>
 
 
