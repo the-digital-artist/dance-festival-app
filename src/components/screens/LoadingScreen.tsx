@@ -2,8 +2,6 @@ import React, { PureComponent } from "react";
 import { Dimensions, Image, Platform } from "react-native";
 import LComponent from "../../core/LComponent";
 import LVideoPlayback from "../../core/LVideoPlayback";
-import * as Updates from "expo-updates";
-
 
 class LoadingScreen extends PureComponent<any, any> {
 
@@ -11,19 +9,6 @@ class LoadingScreen extends PureComponent<any, any> {
         super(props);
     }
 
-    async onFetchUpdateAsync() {
-        try {
-            console.log("LoadingScreen - checking updates")
-            const update = await Updates.checkForUpdateAsync();
-            if (update.isAvailable) {
-                console.log("LoadingScreen - new Update available")
-                await Updates.fetchUpdateAsync();
-                await Updates.reloadAsync();
-            }
-        } catch (error) {
-            // You can also add an alert() to see the error message in case of an error when fetching updates.
-        }
-    }
 
     render() {
         // console.log('render LoadingScreen');
@@ -41,7 +26,7 @@ class LoadingScreen extends PureComponent<any, any> {
                         width: Dimensions.get('screen').width, height: Dimensions.get('screen').height,
                         resizeMode: "cover",
                     }}
-                    source={require('../../../assets/splash.png')}
+                    source={require('../../../assets/screen-home-bg.png')}
                 />
                 <LComponent
                     name="loadingImage"
@@ -63,14 +48,18 @@ class LoadingScreen extends PureComponent<any, any> {
                     />
                     {Platform.OS != 'android' &&
                         <LVideoPlayback
-                            videoSrc={require('../../../assets/video/loading_video.mp4')}
+                            videoSrc={require('../../../assets/video/loading_video2.mp4')}
                             style={{
                                 position: 'absolute',
-                                opacity: 0.5,
-                                width: (Dimensions.get('screen').width - 2 * videoOffsetX),
-                                height: (Dimensions.get('screen').width - 2 * videoOffsetX) * (1080 / 1920),
-                                top: Dimensions.get('screen').height - (Dimensions.get('screen').width - 2 * videoOffsetX) * (1080 / 1920) * 2,
-                                left: videoOffsetX,
+                                opacity: .1,
+                                width: Dimensions.get('screen').width,
+                                height:Dimensions.get('screen').height+100,
+                                top: 0,
+                                left:0,
+                                // width: (Dimensions.get('screen').width - 2 * videoOffsetX),
+                                // height: (Dimensions.get('screen').width - 2 * videoOffsetX) * (1080 / 1920),
+                                // top: Dimensions.get('screen').height - (Dimensions.get('screen').width - 2 * videoOffsetX) * (1080 / 1920) * 2+100,
+                                // left: videoOffsetX,
                             }}
                             shouldPlay={true}
                         />
