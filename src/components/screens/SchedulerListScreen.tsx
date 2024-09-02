@@ -9,6 +9,7 @@ import ScheduleListItem from "../schedulelist/ScheduleListItem";
 import TabBar from "../tabbar/TabBar";
 import ScreenHeader from "./ScreenHeader";
 import ScreenHomeButton from "./ScreenHomeButton";
+import NavBar from "../navbar/NavBar";
 
 
 
@@ -42,8 +43,6 @@ class SchedulerListScreen extends PureComponent {
                     const item = this.state.dataModelList[i].data[j];
                     item['refNativeGesture'] = scheduleListArray[i].nativeGestureObj;
                 }
-                scheduleListArray[i].data.push({ "id": 'emptyschedule' + (Math.floor(Math.random()*100000)), "itemType": "type5", "artistName": "", "sessionMainTitle": "", "time": "", "room": "", "level": "-1", "group": [], "groupTitle": "", "groupSubtitle": "", "shortMainTitle": "", "dateString": "", "startTime": "", "endTime": "", "place": "", "sessionSubtitle": "", "sessionDescription": "", "artistOne": "", "artistTwo": "", "artistLocation": "!", "flag": false, "flagIncludeInNow": false })
-                scheduleListArray[i].data.push({ "id": 'emptyschedule' + (Math.floor(Math.random()*100000)), "itemType": "type5", "artistName": "", "sessionMainTitle": "", "time": "", "room": "", "level": "-1", "group": [], "groupTitle": "", "groupSubtitle": "", "shortMainTitle": "", "dateString": "", "startTime": "", "endTime": "", "place": "", "sessionSubtitle": "", "sessionDescription": "", "artistOne": "", "artistTwo": "", "artistLocation": "!", "flag": false, "flagIncludeInNow": false })
             }
         }
 
@@ -62,6 +61,7 @@ class SchedulerListScreen extends PureComponent {
 
         return (
             <>
+           
                     <Image
                         style={{
                             // backgroundColor: 'skyblue',
@@ -118,6 +118,10 @@ class SchedulerListScreen extends PureComponent {
                                             data={scheduleList.data}
                                             renderItem={ScheduleListItem}
                                             keyExtractor={item => item.id}
+                                            ListFooterComponent={() => (
+                                                <View style={{ 
+                                                    height:NavBar.navBarHeight+50}}/>
+                                            )}
                                         />
                                     </GestureDetector>
                                 </LComponent>

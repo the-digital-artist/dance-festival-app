@@ -6,6 +6,7 @@ import ArtistListItemRenderer from "./ArtistListItemRenderer";
 import ScreenHeader from "./ScreenHeader";
 import ScreenHomeButton from "./ScreenHomeButton";
 import { TextInput } from "react-native-gesture-handler";
+import NavBar from "../navbar/NavBar";
 
 
 class ArtistListScreen extends PureComponent {
@@ -30,7 +31,7 @@ class ArtistListScreen extends PureComponent {
     }
 
     render() {
-        console.log("___________ArtistListScreen render ")
+        // console.log("___________ArtistListScreen render ")
         // console.log("___________ArtistListScreen render - state dataModel: "+JSON.stringify(this.state.dataModelList, null, 2)); 
         //add one empty artist item into the list for presentation reasons
         // if (this.state.dataModelList != null && this.state.dataModelList != undefined &&
@@ -105,6 +106,11 @@ class ArtistListScreen extends PureComponent {
                         data={this.state.dataModelList}
                         renderItem={ArtistListItemRenderer}
                         keyExtractor={item => item.fullName}
+                        ListFooterComponent={() => (
+                            <View style={{ 
+                                marginTop:20,
+                                height:NavBar.navBarHeight+50}}/>
+                        )}
                     />
                 }
 
