@@ -69,6 +69,8 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     // const fontSizeMainTitle =20;
     const fontSizeArtistName =16;
 
+    const reduceInnerTileHeightBy = item.dateString != "Thu, October 17, 2024"?30:5;
+
     // console.log("ScheduleListItemType1 tileLength " + this.props.tileWidth + " artistImageWidth: "+ imageWidthArtistImage);
 
     return (
@@ -97,7 +99,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
             opacity: 0.9,
             left: 0,
             top: roomBoxOffsetY,
-            height: (itemHeight - 30),
+            height: (itemHeight - reduceInnerTileHeightBy),
             width: this.props.tileWidth
           }}
         />
@@ -117,7 +119,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
             opacity: 1,
             left: 0,
             top: roomBoxOffsetY,
-            height: (itemHeight - 30),
+            height: (itemHeight - reduceInnerTileHeightBy),
             width: this.props.tileWidth
           }}
         />
@@ -131,7 +133,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
             position: 'absolute',
             left: 0,
             top: roomBoxOffsetY,
-            height: (itemHeight - 30),
+            height: (itemHeight - reduceInnerTileHeightBy),
             width: this.props.tileWidth,
             opacity: 1,
             // backgroundColor:'skyblue',
@@ -146,7 +148,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               left: 0, top: roomBoxOffsetY,
               opacity: 0.2,
               width: this.props.tileWidth,
-              height: itemHeight - 50,
+              height: itemHeight - reduceInnerTileHeightBy -20,
               resizeMode: 'cover'
             }}
           /> 
@@ -156,7 +158,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
             style={{
               backgroundColor: '#615a83',
             }}
-            visualProperties={{ alpha: 0, x: 0, y: 0, h: (itemHeight - 30), w: this.props.tileWidth}}
+            visualProperties={{ alpha: 0, x: 0, y: 0, h: (itemHeight - reduceInnerTileHeightBy), w: this.props.tileWidth}}
           />
 
           <Animated.Text allowFontScaling={false} id='textLocation' style={[{
@@ -297,10 +299,10 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                   style={{
                     // backgroundColor: 'greenyellow',
                     position: 'absolute',
-                    top: (36 + verticalOffsetTitleLength),
+                    top: (34 + verticalOffsetTitleLength),
                     right: (item.orientation == 'right' ? undefined : (levelData[levelId].textWidth + 40)),
-                    left: (item.orientation == 'left' ? undefined : (levelData[levelId].textWidth + 40)),
-                    width: levelImageSize,
+                    left: (item.orientation == 'left' ? undefined : (levelData[levelId].textWidth + 38)),
+                    width: levelImageSize*(105/33),
                     height: levelImageSize,
                     resizeMode: 'cover'
                   }}>
