@@ -64,9 +64,9 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     const imageOffsetYArtistImage = 10 + ((305 - this.props.tileWidth) / (305 - 245)) * 10
     const imageOffsetXRArtistImage = -17;
     const imageOffsetXLArtistImage = -17;
-    // const fontSizeMainTitle = this.props.tileWidth * (18 / 305);
+    const fontSizeMainTitle = this.props.tileWidth * (20 / 305);
     // const fontSizeArtistName = this.props.tileWidth * (13 / 305)
-    const fontSizeMainTitle =20;
+    // const fontSizeMainTitle =20;
     const fontSizeArtistName =16;
 
     // console.log("ScheduleListItemType1 tileLength " + this.props.tileWidth + " artistImageWidth: "+ imageWidthArtistImage);
