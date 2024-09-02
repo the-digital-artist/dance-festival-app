@@ -11,6 +11,8 @@ import LComponent from "../../core/LComponent";
 import ButtonSmall from "../ButtonSmall";
 import NavBar from "../navbar/NavBar";
 import SettingsItemRenderer from "./SettingsItemRenderer";
+import { useUpdates } from 'expo-updates';
+import LauncherController from '../../LauncherController';
 
 class SettingsScreen extends PureComponent {
 
@@ -45,6 +47,7 @@ class SettingsScreen extends PureComponent {
         let startX = (Dimensions.get('screen').width / 2 - ((socialBarData.length - 1) * itemDistance) / 2) - iconSize / 2
 
         const socialBarOffsetY = 500;
+
         return (
             <LComponent
                 name='settingsScreenContainer'
@@ -182,7 +185,8 @@ class SettingsScreen extends PureComponent {
                     textAlign: 'center',
                 }]}>
                    {"BUILD: "+Application.nativeBuildVersion + 
-                   " - MODEL: "+DataModel.getInstance().static.modelVersion}
+                   " - MODEL: "+DataModel.getInstance().static.modelVersion+"\n"+
+                   " - UPDATE: "+LauncherController.getInstance().updateInfo}
                 </Text>
 
 
