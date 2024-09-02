@@ -1,17 +1,13 @@
 import { BlurView } from "expo-blur";
 import React, { PureComponent } from "react";
-import { Dimensions, Image, Platform, ScrollView, Text, View } from "react-native";
+import { Dimensions, Image, Platform, ScrollView, View } from "react-native";
 import DataModel from "../../DataModel";
 import LauncherController from "../../LauncherController";
 import LComponent from "../../core/LComponent";
+import LVideoPlayback from "../../core/LVideoPlayback";
 import NavBar from "../navbar/NavBar";
 import EarlyPassesTile from "./EarlyPassesTile";
-import HomeScreenProgramItem from "./HomeScreenProgramItem";
 import ScreenHeader from "./ScreenHeader";
-import LVideoPlayback from "../../core/LVideoPlayback";
-import HappeningNowTile from "../happeningnowtile/HappeningNowTile";
-import LoginScreen from "./LoginScreen";
-import LoginTile from "./LoginTile";
 
 
 
@@ -81,14 +77,14 @@ class HomeScreen extends PureComponent<any, any> {
                     >
                         {Platform.OS == "ios" &&
                             <LVideoPlayback
-                                videoSrc={require('../../../assets/video/bgvideo_1.mp4')}
+                                videoSrc={require('../../../assets/video/bgvideo_2.mp4')}
                                 style={{
                                     position: 'absolute',
                                     opacity: 0.3,
-                                    width: (Dimensions.get('screen').width + 1200),
-                                    height: (Dimensions.get('screen').width + 1200) * (1080 / 1920),
+                                    width: (Dimensions.get('screen').width),
+                                    height: (Dimensions.get('screen').height),
                                     top: 0,
-                                    left: -600,
+                                    left: 0,
                                 }}
                                 shouldPlay={true}
                             />
