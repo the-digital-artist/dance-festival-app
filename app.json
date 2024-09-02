@@ -2,7 +2,7 @@
   "expo": {
     "name": "CALDAC",
     "slug": "colorado-afro-latin-festival-app",
-    "version": "0.0.1",
+    "version": "0.0.9",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
@@ -14,14 +14,15 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.thedigitalartist.caldac.festivalapp",
-      "buildNumber": "19",
+      "buildNumber": "22",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "LSApplicationQueriesSchemes": [
           "instagram",
           "fb",
           "vnd.youtube"
-        ]
+        ],
+        "NSCameraUsageDescription": "This app uses the camera to scan barcodes during the event."
       }
     },
     "android": {
@@ -37,6 +38,12 @@
         "projectId": "66eef67d-c5b7-4262-b95f-4e862c5dea37"
       }
     },
-    "owner": "the.digital.artist"
+    "owner": "the.digital.artist",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/66eef67d-c5b7-4262-b95f-4e862c5dea37"
+    }
   }
 }
