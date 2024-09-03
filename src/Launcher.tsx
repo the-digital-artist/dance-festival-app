@@ -50,10 +50,10 @@ class Launcher extends PureComponent<any, any> {
                                 {/* <SchedulerScreen /> */}
                                 {/* <FocusFragment/> */}
                                 <HomeScreen />
-                                {/* <ArtistMainScreen /> */}
+                                <ArtistMainScreen />
                                 {/* <SettingsScreen /> */}
 
-                                {/* <NavBar highlightRenderer={NavBarHighlight} data={LauncherController.getInstance().navBarData} /> */}
+                                <NavBar highlightRenderer={NavBarHighlight} data={LauncherController.getInstance().navBarData} />
                                 {/* <ScreenHeader text="" color='#FFFFFF' /> */}
 
                                 {/* <LoginScreen/> */}

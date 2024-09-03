@@ -75,7 +75,7 @@ class HomeScreen extends PureComponent<any, any> {
                         style={{ position: 'absolute' }}
                         visualProperties={{ alpha: 1.0, x: 0, y: 0, z: 0, w: "windowWidth", h: "windowHeight" }}
                     >
-                        {Platform.OS == "ios" &&
+                        {false && Platform.OS == "ios" &&
                             <LVideoPlayback
                                 videoSrc={require('../../../assets/video/bgvideo_2.mp4')}
                                 style={{

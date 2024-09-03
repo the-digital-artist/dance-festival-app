@@ -2,6 +2,7 @@ import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
 import ActionArtistListOnDetailsBtn from '../../actions/ActionArtistListOnDetailsBtn';
 import LTouchableOpacity from '../../core/LTouchableOpacity';
 import ButtonSmall from '../ButtonSmall';
+import { opacity } from 'react-native-reanimated/lib/typescript/reanimated2/Colors';
 
 const ArtistListItemRenderer = ({ item, index }) => {
   const centerPieceWidth = Dimensions.get('screen').width - (5 + 45 + 35 + 35 + 5)
@@ -23,7 +24,7 @@ const ArtistListItemRenderer = ({ item, index }) => {
           backgroundColor: 'transparent',
           left: paddingLeftAndRight,
           height: itemHeight, width: Dimensions.get('screen').width - 2 * paddingLeftAndRight,
-          borderTopColor: '#edc36a',
+          borderTopColor: '#78747c',
           borderTopWidth: 0,
           borderBottomColor: 'black',
           borderBottomWidth: StyleSheet.hairlineWidth,
@@ -34,7 +35,7 @@ const ArtistListItemRenderer = ({ item, index }) => {
           <View
             style={{
               position: 'absolute',
-              backgroundColor: '#1a202e',
+              backgroundColor: 'transparent',
               left: -paddingLeftAndRight,
               height: itemHeight, width: Dimensions.get('screen').width,
               // borderTopColor: '#edc36a',
@@ -47,7 +48,7 @@ const ArtistListItemRenderer = ({ item, index }) => {
             source={item.imgSrc}
             style={{
               position: 'absolute', resizeMode: 'cover', opacity: 1.0,
-              left: 0, top: imageOffsetY, width: imageSize, height: imageSize,
+              left: 10, top: imageOffsetY, width: imageSize, height: imageSize,
             }}
           />
 
@@ -59,7 +60,7 @@ const ArtistListItemRenderer = ({ item, index }) => {
             letterSpacing: 2.0,
             // backgroundColor: 'indigo',
             textAlign: 'left',
-            color: '#eda253',
+            color: '#26272b',
             fontSize: 14,
           }}>{(item.fullName as string).toLocaleUpperCase()}
           </Text>
@@ -74,10 +75,10 @@ const ArtistListItemRenderer = ({ item, index }) => {
                 top: 60,
                 height: 26, width: 120,
               }}
-              text={"ARTIST DETAILS"}
+              text={"MORE DETAILS"}
               bgBoxVisible={true}
               bgBoxStyle={{
-                backgroundColor: '#d6c8cb',
+                backgroundColor: '#4c4a4d',
                 height: 23, width: 120
               }}
               fontStyle={{
@@ -86,7 +87,7 @@ const ArtistListItemRenderer = ({ item, index }) => {
                 textAlign: 'center',
                 textAlignVertical: 'center',
                 letterSpacing: 2.0,
-                color: '#010101',
+                color: '#FFFFFF',
                 fontSize: 9,
                 top: 6
               }}
