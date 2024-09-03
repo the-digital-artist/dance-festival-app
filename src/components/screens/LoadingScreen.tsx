@@ -46,7 +46,7 @@ class LoadingScreen extends PureComponent<any, any> {
                         }}
                         source={require('../../../assets/welcome.png')}
                     />
-                    {Platform.OS != 'android' &&
+                    {false && Platform.OS != 'android' &&
                         <LVideoPlayback
                             videoSrc={require('../../../assets/video/loading_video2.mp4')}
                             style={{

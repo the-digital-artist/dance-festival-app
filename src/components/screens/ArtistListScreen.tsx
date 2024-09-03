@@ -73,7 +73,7 @@ class ArtistListScreen extends PureComponent {
                 />
 
                 <ScreenHeader
-                    text={"ARTISTS & DJs"}
+                    text={"ARTISTS & PRACTITIONERS"}
                     color='#f8f6d3'
                     imgSrc={require('../../../assets/header-artists-bg.png')} />
                 <ScreenHomeButton />

@@ -3,9 +3,14 @@ import { modelInitStaticOverwrite } from "./DataModelOverwrite";
 class DataModel {
 	static _instance = null;
 	static getInstance(): DataModel { return (DataModel._instance == null ? (DataModel._instance = new DataModel()) : DataModel._instance) }
+	static modelOverWriteOnFirstLoad = false;
+
 	constructor() { 
-		console.log('DataModel Creation - model version: ' + modelInitStaticOverwrite.modelVersion); 
+		console.log('DataModel Creation - model version: ' + this.static); 
+		if(!DataModel.modelOverWriteOnFirstLoad) return;
+		
 		this.static = modelInitStaticOverwrite; 
+		console.log('DataModel Creation - model overwrite: ' + this.static); 
 	}
 
 
@@ -40,8 +45,8 @@ class DataModel {
 
 	//static properties (may be updated by remote model version)
 	static: any = {
-		modelRemoteGetModelUrl: 'https://wa1koeb029.execute-api.eu-central-1.amazonaws.com/caldacModelContent',
-		modelRemoteVersionCheckUrl: 'https://wa1koeb029.execute-api.eu-central-1.amazonaws.com/caldacModelVersion',
+		modelRemoteGetModelUrl: '',
+		modelRemoteVersionCheckUrl: '',
 		modelRemoteUpdateInterval: 55000,
 
 		happeningNowUpdateInterval: 30000,
@@ -49,9 +54,11 @@ class DataModel {
 		modelVersion: 1000,
 
 		dataArtists: {
-			"Carlos & Suzan": { "fullName": "Carlos & Suzan", imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
-			"Brandon & Michelle": { "fullName": "Brandon & Michelle", imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
-			"El Tiguere Y Bianca": { "fullName": "El Tiguere Y Bianca", imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
+			"Ki Charles": { "fullName": "Ki Charles", presence: ["01/24", "02/24", "03/24", "04/24" ], imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
+			"Alex Castro": { "fullName": "Alex Castro", presence: ["01/24", "02/24" ], imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
+			"David Khalili": { "fullName": "David Khalili", presence: ["01/24", "03/24" ], imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
+			"Alexandria": { "fullName": "Alexandria",  presence: ["01/24" ], imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
+			"Kramer & Dhiraj": { "fullName": "Kramer & Dhiraj", presence: ["01/24", "02/24", "03/24" ],imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
 		},
 
 		dataScheduleRaw: [
