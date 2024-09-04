@@ -251,6 +251,7 @@ class LauncherController extends OperatorStates {
     };
 
     staticImageList = [];
+    staticImageMap = {};
 
     constructor() {
         super();
@@ -418,10 +419,10 @@ class LauncherController extends OperatorStates {
 
            //load edition images
            try {
-            this.staticImageList.push({ fileName: '01-2024.png', imgSrc: require('../assets/editions/01-2024.png') });
-            this.staticImageList.push({ fileName: '02-2024.png', imgSrc: require('../assets/editions/02-2024.png') });
-            this.staticImageList.push({ fileName: '03-2024.png', imgSrc: require('../assets/editions/03-2024.png') });
-            this.staticImageList.push({ fileName: '04-2024.png', imgSrc: require('../assets/editions/04-2024.png') });
+            this.staticImageMap['01-2024'] = { fileName: '01-2024', imgSrc: require('../assets/editions/01-2024.png') };
+            this.staticImageMap['02-2024'] = { fileName: '02-2024', imgSrc: require('../assets/editions/02-2024.png') };
+            this.staticImageMap['03-2024'] = { fileName: '03-2024', imgSrc: require('../assets/editions/03-2024.png') };
+            this.staticImageMap['04-2024'] = { fileName: '04-2024', imgSrc: require('../assets/editions/04-2024.png') };
 
         } catch (error) {
             console.log('Could not assign an image for a particular artist' + error)

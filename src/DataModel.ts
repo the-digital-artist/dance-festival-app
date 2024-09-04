@@ -54,11 +54,11 @@ class DataModel {
 		modelVersion: 1000,
 
 		dataArtists: {
-			"Ki Charles": { "fullName": "Ki Charles", presence: ["01/24", "02/24", "03/24", "04/24" ], imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
-			"Alex Castro": { "fullName": "Alex Castro", presence: ["01/24", "02/24" ], imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
-			"David Khalili": { "fullName": "David Khalili", presence: ["01/24", "03/24" ], imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
-			"Alexandria": { "fullName": "Alexandria",  presence: ["01/24" ], imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
-			"Kramer & Dhiraj": { "fullName": "Kramer & Dhiraj", presence: ["01/24", "02/24", "03/24" ],imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
+			"Ki Charles": { "fullName": "Ki Charles", presence: ["01-2024", "02-2024", "03-2024", "04-2024" ], imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
+			"Alex Castro": { "fullName": "Alex Castro", presence: ["01-2024", "02-2024" ], imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
+			"David Khalili": { "fullName": "David Khalili", presence: ["01-2024", "03-2024" ], imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
+			"Alexandria": { "fullName": "Alexandria",  presence: ["01-2024" ], imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
+			"Kramer & Dhiraj": { "fullName": "Kramer & Dhiraj", presence: ["01-2024", "02-2024", "03-2024" ],imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
 		},
 
 		dataScheduleRaw: [
