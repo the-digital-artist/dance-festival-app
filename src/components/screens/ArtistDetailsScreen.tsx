@@ -1,16 +1,22 @@
 import React, { Fragment, PureComponent } from "react";
 import { Dimensions, Image, Platform, Text, View } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
+import { Gesture, GestureDetector, GestureType, ScrollView } from "react-native-gesture-handler";
 import LauncherController from "../../LauncherController";
+import ActionHistoryBackButton from "../../actions/ActionHistoryBackButton";
 import ActionOpenSocialMediaApp from "../../actions/ActionOpenSocialMediaApp";
 import ButtonSmall from "../ButtonSmall";
-import ScreenHeader from "./ScreenHeader";
-import ActionHistoryBackButton from "../../actions/ActionHistoryBackButton";
-import ScreenHomeButton from "./ScreenHomeButton";
 import NavBar from "../navbar/NavBar";
+import ScreenHeader from "./ScreenHeader";
+import ScreenHomeButton from "./ScreenHomeButton";
+import TweenManager from "../../core/LTweenManager";
+import LComponent from "../../core/LComponent";
+import ArtistDetailsBioComponent from "./ArtistDetailsBioComponent";
 
 
 class ArtistDetailsScreen extends PureComponent {
+    gestureRef: any = React.createRef();
+    scrollRef: any = React.createRef();
+
     constructor(props) {
         super(props);
         this.state = {
@@ -21,13 +27,13 @@ class ArtistDetailsScreen extends PureComponent {
     render() {
         const context = LauncherController.getInstance().context
         const item = LauncherController.getInstance().context.artistFocusItem
-
+        
         const logoScrollAlphaReductionDelta = 0.9
 
         // console.log("Setting Reference")
         LauncherController.getInstance().artistStackData[1].screenComponentRef = this;
 
-        const artistBiography = (item!=undefined && item.bio != undefined && item.bio.length>0)?(item.bio as string):"Stay tuned - more information coming soon"
+        const artistBiography = (item != undefined && item.bio != undefined && item.bio.length > 0) ? (item.bio as string) : "Stay tuned - more information coming soon"
 
         const scrollViewContent =
             Platform.OS == 'ios' ?
@@ -35,7 +41,7 @@ class ArtistDetailsScreen extends PureComponent {
                 (artistBiography as string).length / 1100 * 1.7 * Dimensions.get('screen').height;
 
         let socialBarData = [
-            { id: 0, provider: "Instagram", account: item.insta, imgSrc: require('../../../assets/icon-social-insta-black.png') },
+            { id: 0, provider: "Instagram", account: item.insta, imgSrc: require('../../../assets/icon-social-insta.png') },
             // { id: 1, provider: "Youtube", account: "", imgSrc: require('../../../assets/icon-social-youtube.png') },
             // { id: 2, provider: "Facebook", account: "", imgSrc: require('../../../assets/icon-social-facebook.png') },
             // { id: 3, provider: "Web", account: "", imgSrc: require('../../../assets/icon-social-web.png') }
@@ -45,9 +51,45 @@ class ArtistDetailsScreen extends PureComponent {
         let startX = Dimensions.get('screen').width - (20 + 5 + 30 + 30) - ((socialBarData.length - 1) * itemDistance + iconSize / 2);
         // let startX = ((((socialBarData.length - 1) * itemDistance) / 2) - iconSize / 2 - 40)
 
+
+        // const offsetXStart = useSharedValue(0);
+        const gestureObj = Gesture.Pan()
+        // .minDistance(30)
+        // .failOffsetY(10)
+        gestureObj
+            .simultaneousWithExternalGesture(this.scrollRef)
+            .onBegin((event) => {
+                console.log("pan start");
+                TweenManager.tween().to("artistImageOverlay" + item.fullName, 300, { alpha: 0 })
+            })
+            .onChange((event) => {
+                console.log("offset.value: " + (event.translationX));
+                // offset.value = event.translationX + offsetXStart.value;
+                // currentIndex.value = -event.translationX / tileDistance +currentIndexStart.value;
+            })
+            .onFinalize((event) => {
+                console.log("offset.value: " + (event.translationX));
+                // offset.value = event.translationX + offsetXStart.value;
+                // pressed.value = false;
+                // const potentialStopPoint = offset.value + 0.1 * event.velocityX;
+                // let targetValue = findClosestPoint(snapPoints, potentialStopPoint)
+                // offset.value = withSpring(targetValue,
+                //     {
+                //         velocity: event.velocityX,
+                //         mass: 1.2,
+                //         damping: 27,
+                //         stiffness: 383,
+                //         overshootClamping: false,
+                //         restDisplacementThreshold: 0.001,
+                //         restSpeedThreshold: 2,
+                //     }
+                // );
+                // newIndex.value = Math.round(currentIndex.value);
+            })
+            .withRef(this.gestureRef);
+
         return (
             <>
-   
 
                 <View
                     style={{
@@ -57,66 +99,32 @@ class ArtistDetailsScreen extends PureComponent {
                         opacity: 1
                     }}
                 >
-                               <Image
-                    style={{
-                        // backgroundColor: 'skyblue',
-                        top: 0, left: 0, position: 'absolute',
-                        width: Dimensions.get('screen').width,
-                        height: Dimensions.get('screen').height,
-                        resizeMode: "cover",
-                        opacity: 1.0
-                    }}
-                    source={require('../../../assets/screen-artists-bg.png')}/>
-                    <ScrollView
+                    <Image
                         style={{
-                            backgroundColor: 'transparent',
-                            top: 0, left: 20, position: 'absolute',
-                            width: Dimensions.get('screen').width - 40,
+                            backgroundColor: 'skyblue',
+                            top: 0, left: 0, position: 'absolute',
+                            width: Dimensions.get('screen').width,
                             height: Dimensions.get('screen').height,
-                            opacity: 1
-                        }}>
-
-
-
-                        <View
-                            style={{
-                                // backgroundColor: '#eeac55',
-                                top: 0, left: 5,
-                                width: Dimensions.get('screen').width - 50,
-                                height: scrollViewContent,
-                                opacity: 1
-                            }}>
-                            <Text allowFontScaling={false} id='textLabelArtist' style={{
-                                position: 'absolute',
-                                top: 180,
-                                left: 30,
-                                height: 20,
-                                // backgroundColor: 'indigo'
-                                fontFamily: 'Arcon-Regular',
-                                textAlign: 'center',
-                                letterSpacing: 1.7,
-                                color: '#eda253',
-                                fontSize: 17,
-                            }}>
-                                {(item.fullName as string).toLocaleUpperCase()}
-                            </Text>
-                            <Text allowFontScaling={false} id='artistBioFocus' style={{
-                                position: 'absolute',
-                                top: (220), left: 30,
-                                width: Dimensions.get('screen').width - 70 - 25,
-                                height: (artistBiography as string).length / 1100 * 1.2 * Dimensions.get('screen').height,
-                                fontFamily: 'Arcon-Regular',
-                                letterSpacing: 1,
-                                textAlign: 'justify',
-                                // backgroundColor: 'indigo',
-                                color: '#EFEFEF',
-                                fontSize: 15,
-                            }}>
-                                {artistBiography}
-                            </Text>
-                        </View>
-
-                        {item.insta != '' && socialBarData.map((itemData, i) => {
+                            resizeMode: "cover",
+                            opacity: 1.0
+                        }}
+                        source={require('../../../assets/screen-artists-bg.png')} />
+                    <Text allowFontScaling={false} id='textLabelArtist' style={{
+                        position: 'absolute',
+                        top: 130,
+                        left: 35,
+                        height: 20,
+                        // backgroundColor: 'indigo'
+                        fontFamily: 'Arcon-Regular',
+                        textAlign: 'center',
+                        letterSpacing: 1.7,
+                        color: '#eda253',
+                        fontSize: 17,
+                    }}>
+                        {(item.fullName as string).toLocaleUpperCase()}
+                    </Text>
+                    {(item.insta != undefined && item.insta != '') &&
+                        socialBarData.map((itemData, i) => {
                             return (
                                 <Fragment key={'socalBarFrag' + i}>
 
@@ -125,7 +133,7 @@ class ArtistDetailsScreen extends PureComponent {
                                         style={{
                                             // backgroundColor: 'skyblue',
                                             position: 'absolute',
-                                            top: 130, left: (startX + (i * itemDistance)),
+                                            top: 130, right: (30 + (i * itemDistance)),
                                             width: iconSize, height: iconSize,
                                             opacity: 1.0
                                         }}
@@ -135,37 +143,22 @@ class ArtistDetailsScreen extends PureComponent {
                                             ActionOpenSocialMediaApp(itemData.provider, itemData.account)
                                         }}
                                         source={itemData.imgSrc}
-                                        text={''}
+                                        // text={''}
                                     />
                                 </Fragment>
                             );
                         })}
 
-                    </ScrollView>
 
-
-
+                    <ArtistDetailsBioComponent />
 
                 </View>
 
-                <Image
-                    // name={("ScheduleListArtistDetailsButton" + item.fullName)}
-                    source={item.imgSrc}
-                    style={{
-                        position: 'absolute',
-                        right: -40,
-                        bottom: ((Platform.OS == 'android') ? NavBar.navBarHeight+50 : NavBar.navBarHeight-20),
-                        width: 300,
-                        height: 300,
-                        opacity: 0.8
-
-                    }}
-                />
 
                 <ScreenHeader
-                    text={"ARTIST DETAILS"}
+                    text={"   ARTIST DETAILS"}
                     color='#f8f6d3'
-                    textStyle={{left:50}}
+                    textStyle={{ left: 50 }}
                     imgSrc={require('../../../assets/header-artists-bg.png')} />
                 <ScreenHomeButton />
 
@@ -181,17 +174,6 @@ class ArtistDetailsScreen extends PureComponent {
                     }}
                     visualProperties={{ alpha: 1, x: 0, y: 0, z: 0 }}
                     onSelect={() => { ActionHistoryBackButton(); }}
-                    // text={'BACK'}
-                    // fontStyle={{
-                    //     width:40,
-                    //     top:42,
-                    //     fontFamily: 'Arcon-Regular',
-                    //     textAlign: 'center',
-                    //     letterSpacing: 1.7,
-                    //     color: '#f8f6d3',
-                    //     fontSize: 7,
-
-                    // }}
                     source={require('../../../assets/stack-backicon.png')}
                 />
             </>

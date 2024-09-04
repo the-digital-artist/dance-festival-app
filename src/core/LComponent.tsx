@@ -75,7 +75,9 @@ class LComponent extends PureComponent<any, any> {
 
 
         return (
-            <Animated.View style={[this._processedStyle, { position: 'absolute' }]}>
+            <Animated.View
+                pointerEvents={this.props.pointerEvents}
+                style={[this._processedStyle, { position: 'absolute' }]}>
                 {this.props.children}
             </Animated.View>
         );

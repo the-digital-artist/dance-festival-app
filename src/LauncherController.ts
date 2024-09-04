@@ -48,6 +48,8 @@ class LauncherController extends OperatorStates {
             detailScreenReference: null,
 
             stackNavigator: null,
+
+            //focus item on artist screen
             artistFocusItem: {
                 fullName: 'Susana Arenas',
                 portrait: "_0023_SUSANA-ARENAS.png",
@@ -55,8 +57,9 @@ class LauncherController extends OperatorStates {
                 shortBio: ``,
                 bio: `Susana Arenas Pedroso is `,
                 facebook: ``,
-                insta: ''
+                insta: '',
             },
+            artistFocusItemUpdateListeners: [],
 
             schedulerFocusItem: {
                 "id": 10205,
@@ -480,7 +483,9 @@ class LauncherController extends OperatorStates {
             console.log('Could not assign an image for a particular artist' + error)
         }
 
+       
         for (const k in dataModel.dataArtists) {
+            // console.log('Assigning Images' +k)
             const artistItem = dataModel.dataArtists[k];
             const artistNameNorm =  k.toLowerCase().replace(" y ", " & ");
             // console.log('Artist: ' + artistNameNorm)
@@ -524,11 +529,14 @@ class LauncherController extends OperatorStates {
         // console.log("::::::::Preparing Data Model - End Assigning Images");
 
         //2) shorten the biography
+       
         const upperLimit = 200;
         const lowerLimit = 80;
         let index = 0;
         for (const k in dataModel.dataArtists) {
+            // console.log('Shortening Biographies ' +k)
             const item = dataModel.dataArtists[k];
+            if(item.bio == undefined) continue;
             const lastFullStop = (item.bio as string).lastIndexOf(".", upperLimit)
 
             item.shortBio = lastFullStop > lowerLimit ? (item.bio as string).substring(0, lastFullStop) + " ..." : (item.bio as string).substring(0, upperLimit) + " ..."

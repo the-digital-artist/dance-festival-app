@@ -38,7 +38,7 @@ const ScheduleListItem = ({ item, index }) => {
     itemHeight = 170;
   }
    
-  console.log("time value: "+item.time);
+  // console.log("time value: "+item.time);
 
   item['assignedListIndex'] = index;
   item['itemHeight'] = itemHeight;

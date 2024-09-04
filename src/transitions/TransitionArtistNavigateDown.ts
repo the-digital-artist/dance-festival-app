@@ -7,9 +7,10 @@ const TransitionArtistNavigateDown = (item, levelIndex) => {
         console.log("TransitionArtistNavigateDown");
 
         LauncherController.getInstance().context.artistFocusItem = item;
+        let listeners = LauncherController.getInstance().context.artistFocusItemUpdateListeners
+        for (let i = 0; i < listeners.length; i++) listeners[i]();
+                
 
-
-     //now animate screens
         // LauncherController.getInstance().context.stackNavigator.navigate("ARTIST DETAILS")
         const stackData = LauncherController.getInstance().artistStackData;
         const oldIndex =  LauncherController.getInstance().artistStackIndex;
