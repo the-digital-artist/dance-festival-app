@@ -102,7 +102,7 @@ class ArtistDetailsBioComponent extends PureComponent<any, any> {
                     <View
                      style={{
                         width: Dimensions.get('screen').width - 40 - 25,
-                        height: Dimensions.get('screen').height*(500/2796),
+                        height: Dimensions.get('screen').height*(700/2796),
                     }}
                     />
 
