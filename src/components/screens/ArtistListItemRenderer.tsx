@@ -3,6 +3,8 @@ import ActionArtistListOnDetailsBtn from '../../actions/ActionArtistListOnDetail
 import LTouchableOpacity from '../../core/LTouchableOpacity';
 import ButtonSmall from '../ButtonSmall';
 import { opacity } from 'react-native-reanimated/lib/typescript/reanimated2/Colors';
+import LauncherController from '../../LauncherController';
+import LText from '../../core/LText';
 
 const ArtistListItemRenderer = ({ item, index }) => {
   const centerPieceWidth = Dimensions.get('screen').width - (5 + 45 + 35 + 35 + 5)
@@ -11,6 +13,9 @@ const ArtistListItemRenderer = ({ item, index }) => {
 
   const imageSize = 100;
   const imageOffsetY = (itemHeight - imageSize) / 2
+
+  const editionData = item.presence;
+
 
 
   return (
@@ -52,9 +57,48 @@ const ArtistListItemRenderer = ({ item, index }) => {
             }}
           />
 
-          <Text allowFontScaling={false} id='textArtistName' style={{
+<Image
+            source={require('../../../assets/artist-itemrenderer-dividerline.png')}
+            style={{
+              position: 'absolute', resizeMode: 'contain', opacity: 0.5,
+              left: Dimensions.get('screen').width - 130,
+             top: imageOffsetY+3, width: 2, height: 2*(220/5),
+            }}
+          />
+
+          <LText id='textHeadlineEditions' style={{
             position: 'absolute',
-            top: 30, left: 140,
+            top: imageOffsetY, 
+            left: Dimensions.get('screen').width - 120,
+            width: 150, height: 11,
+            // backgroundColor: 'indigo',
+            textAlign: 'left',
+            fontFamily: 'Cabin-Regular',
+            letterSpacing: 1.0,
+            color: '#FFFFFF',
+            fontSize: 8,
+          }}>WELL-BEING PRESENCE</LText>
+
+          {editionData.map((editionName, i) => {
+            console.log("editiondata" + JSON.stringify(LauncherController.getInstance().staticImageMap[editionName]));
+
+            return (
+              <Image
+                key={"editionImage" + item.fullName + editionName}
+                source={LauncherController.getInstance().staticImageMap[editionName].imgSrc}
+                style={{
+                  position: 'absolute', resizeMode: 'cover', opacity: 1.0,
+                  left: Dimensions.get('screen').width - 110 + i * 15, top: imageOffsetY + 20, width: 40, height: 40,
+                }}
+              />
+            )
+          })
+          }
+
+
+          <LText id='textArtistName' style={{
+            position: 'absolute',
+            top: 30, left: 130,
             width: 290, height: 19,
             fontFamily: 'Cabin-Regular',
             letterSpacing: 2.0,
@@ -63,15 +107,16 @@ const ArtistListItemRenderer = ({ item, index }) => {
             color: '#26272b',
             fontSize: 14,
           }}>{(item.fullName as string).toLocaleUpperCase()}
-          </Text>
+          </LText>
 
-          {item.fullName != '' &&
+          {
+            item.fullName != '' &&
             <ButtonSmall
               name={("focusItemArtistButton" + index)}
               source={null}
               style={{
                 position: 'absolute',
-                left: 140,
+                left: 130,
                 top: 60,
                 height: 26, width: 120,
               }}
@@ -84,11 +129,11 @@ const ArtistListItemRenderer = ({ item, index }) => {
               fontStyle={{
                 width: 120,
                 fontFamily: 'Cabin-Regular',
-                textAlign: 'center',
-                textAlignVertical: 'center',
                 letterSpacing: 2.0,
                 color: '#FFFFFF',
                 fontSize: 9,
+                textAlign: 'center',
+                textAlignVertical: 'center',
                 top: 6
               }}
               visualProperties={{ alpha: 1 }}
