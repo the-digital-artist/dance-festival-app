@@ -334,11 +334,6 @@ class LauncherController extends OperatorStates {
                 if (locallyStoredModel.modelVersion <= dataModel.modelVersion) return;
                 console.log('LauncherController - initial model version: ' + DataModel.getInstance().static.modelVersion);
                 DataModel.getInstance().static = locallyStoredModel;
-                // for (const key in locallyStoredModel) {
-                //     console.log("LauncherController - retrieving local storage "+key)
-                //     dataModel[key] = locallyStoredModel[key];
-                // }
-
                 console.log('LauncherController - after overwriting with locally stored model: ' + DataModel.getInstance().static.modelVersion);
                 return;
             }
@@ -359,6 +354,7 @@ class LauncherController extends OperatorStates {
             if (!response.ok) return;
 
             const remoteModel = await response.json();
+            // console.log(JSON.stringify(remoteModel));
             console.log('LauncherController - remote model with version: ' + remoteModel.modelVersion,);
 
             if (remoteModel.modelVersion <= dataModel.modelVersion) return;

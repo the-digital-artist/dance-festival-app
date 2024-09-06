@@ -14,8 +14,7 @@ const ArtistListItemRenderer = ({ item, index }) => {
   const imageSize = 100;
   const imageOffsetY = (itemHeight - imageSize) / 2
 
-  const editionData = item.presence;
-
+  const editionData = item['editionData']!=undefined?item['editionData']:[];
 
 
   return (
@@ -80,7 +79,7 @@ const ArtistListItemRenderer = ({ item, index }) => {
           }}>WELL-BEING PRESENCE</LText>
 
           {editionData.map((editionName, i) => {
-            console.log("editiondata" + JSON.stringify(LauncherController.getInstance().staticImageMap[editionName]));
+            // console.log("editiondata" + JSON.stringify(LauncherController.getInstance().staticImageMap[editionName]));
 
             return (
               <Image

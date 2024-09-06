@@ -49,7 +49,7 @@ class NavBar extends PureComponent<any, any> {
                         width: Dimensions.get('screen').width,
                         height: NavBar.navBarHeight,
                         resizeMode: "cover",
-                        opacity: ((Platform.OS == "ios")?0.6:1.0)
+                        opacity: ((Platform.OS == "ios")?1.0:1.0)
                     }}
                     source={require('../../../assets/navbar/navbar_bg.png')}
                 />
@@ -80,7 +80,7 @@ class NavBar extends PureComponent<any, any> {
                                     fontFamily: 'DINNeuzeitGroteskStd-Light',
                                     textAlign: 'center',
                                     letterSpacing: 1.7,
-                                    color: '#000000',
+                                    color: '#EFEFEF',
                                     fontSize: 12,
                                 }}
                             />

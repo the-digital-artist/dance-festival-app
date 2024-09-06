@@ -47,7 +47,7 @@ class Launcher extends PureComponent<any, any> {
 
                             <StateDependentComponent states={['loading', 'main']} controller={this.controller}>
                                 {/* <DetailsScreen /> */}
-                                {/* <SchedulerScreen /> */}
+                                <SchedulerScreen />
                                 {/* <FocusFragment/> */}
                                 <HomeScreen />
                                 <ArtistMainScreen />
