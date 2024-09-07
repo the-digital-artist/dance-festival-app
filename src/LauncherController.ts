@@ -2,6 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Font from 'expo-font';
 import * as Updates from "expo-updates";
 import { BackHandler } from 'react-native';
+import AssetLoader from './AssetLoader';
 import DataModel from './DataModel';
 import ActionHistoryBackButton from './actions/ActionHistoryBackButton';
 import ActionUpdateDataModelWithRemote from './actions/ActionUpdateDataModel';
@@ -9,6 +10,7 @@ import OperatorStates from './core/LOperatorStates';
 import TransitionScreenL1toL2 from './transitions/TransitionScreenL1toL2';
 import TransitionScreenL2toL3 from './transitions/TransitionScreenL2toL3';
 import TransitionScreenSplashToLoading from './transitions/TransitionScreenSplashToLoading';
+
 
 class LauncherController extends OperatorStates {
 
@@ -70,14 +72,14 @@ class LauncherController extends OperatorStates {
                 "room": "ROOM  4",
                 "level": "-1",
                 "group": [
-                  10201,
-                  10202,
-                  10203,
-                  10204,
-                  10205,
-                  10206,
-                  10207,
-                  10208
+                    10201,
+                    10202,
+                    10203,
+                    10204,
+                    10205,
+                    10206,
+                    10207,
+                    10208
                 ],
                 "groupTitle": "Workshops",
                 "groupSubtitle": "",
@@ -95,7 +97,7 @@ class LauncherController extends OperatorStates {
                 "flagIncludeInNow": false,
                 "artistCompany": "Somos Dance Studio",
                 "sessionSpecialTrackCount": "(1 of 2)"
-              },
+            },
 
             //happeningNow
             happeningNowItems: [],
@@ -211,10 +213,12 @@ class LauncherController extends OperatorStates {
     tabBarIndex = 0
     tabBarData =
         [
-            { id: 0, itemText: "Thursday", associatedScreenName: "scheduleList0", imgSrc: null },
-            { id: 1, itemText: "Friday", associatedScreenName: "scheduleList1", imgSrc: null },
-            { id: 2, itemText: "Saturday", associatedScreenName: "scheduleList2", imgSrc: null },
-            { id: 3, itemText: "Sunday", associatedScreenName: "scheduleList3", imgSrc: null }
+            { id: 0, itemText: "Main Fair Program ", associatedScreenName: "scheduleList0", imgSrc: null },
+            { id: 1, itemText: "Breakout Sessions", associatedScreenName: "scheduleList1", imgSrc: null },
+            // { id: 1, itemText: "Classes, Conversation Circles & Outside", associatedScreenName: "scheduleList1", imgSrc: null },
+            // { id: 2, itemText: "Outside", associatedScreenName: "scheduleList2", imgSrc: null },
+            { id: 2, itemText: "Massage", associatedScreenName: "scheduleList2", imgSrc: null },
+            { id: 3, itemText: "Crafty Corners", associatedScreenName: "scheduleList3", imgSrc: null }
         ]
 
 
@@ -222,10 +226,10 @@ class LauncherController extends OperatorStates {
     navBarIndex = 0
     navBarData =
         [
-            { id: 0, itemText: "Home", associatedScreenName: "homeScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_home.png') },
+            { id: 0, itemText: "Calm Space", associatedScreenName: "homeScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_home.png') },
             { id: 1, itemText: "Schedule", associatedScreenName: "schedulerMainScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_planner.png') },
             { id: 3, itemText: "Artists", associatedScreenName: "artistsMainScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_artists.png') },
-            { id: 4, itemText: "More", associatedScreenName: "settingsScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_settings.png') }
+            // { id: 4, itemText: "More", associatedScreenName: "settingsScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_settings.png') }
         ]
 
     artistStackIndex = 0
@@ -235,22 +239,23 @@ class LauncherController extends OperatorStates {
             { id: 1, itemText: "Artist Details", associatedScreenName: "artistsDetailsScreenContainer", imgSrc: null, screenComponentRef: null },
         ]
 
-        schedulerStackIndex = 0
-        schedulerStackData =
-            [
-                { id: 0, itemText: "Festival Program", associatedScreenName: "schedulerSelectionScreenContainer", imgSrc: null, screenComponentRef: null },
-                { id: 1, itemText: "Session Details", associatedScreenName: "schedulerDetailsScreenContainer", imgSrc: null, screenComponentRef: null },
-            ]
-    
+    schedulerStackIndex = 0
+    schedulerStackData =
+        [
+            { id: 0, itemText: "Festival Program", associatedScreenName: "schedulerSelectionScreenContainer", imgSrc: null, screenComponentRef: null },
+            { id: 1, itemText: "Session Details", associatedScreenName: "schedulerDetailsScreenContainer", imgSrc: null, screenComponentRef: null },
+        ]
+
 
     customFonts = {
-        'DINNeuzeitGroteskStd-Light': require('../assets/fonts/DINNeuzeitGroteskStdLight.otf'),
-        'DINCondensed-Regular': require('../assets/fonts/DINNeuzeitGroteskStdBdCond.otf'),
-        'DINCondensed-Bold': require('../assets/fonts/DINNeuzeitGroteskStdBdCond.otf'),
+        // 'DINNeuzeitGroteskStd-Light': require('../assets/fonts/DINNeuzeitGroteskStdLight.otf'),
+        // 'DINCondensed-Regular': require('../assets/fonts/DINNeuzeitGroteskStdBdCond.otf'),
+        // 'DINCondensed-Bold': require('../assets/fonts/DINNeuzeitGroteskStdBdCond.otf'),
         'Arcon-Regular': require('../assets/fonts/Arcon-Regular.otf'),
         'Arcon-Rounded-Regular': require('../assets/fonts/Arcon-Regular.otf'),
         'Cabin-Regular': require('../assets/fonts/Cabin-Regular.ttf'),
-
+        'RobotoCondensed-Regular': require('../assets/fonts/RobotoCondensed-Regular.ttf'),
+        'RobotoCondensed-Medium': require('../assets/fonts/RobotoCondensed-Medium.ttf'),
     };
 
     staticImageList = [];
@@ -288,7 +293,7 @@ class LauncherController extends OperatorStates {
     async checkForUpdate() {
         try {
             console.log("LoadingScreen - checking updates")
-            const update:Updates.UpdateCheckResult = await Updates.checkForUpdateAsync();
+            const update: Updates.UpdateCheckResult = await Updates.checkForUpdateAsync();
             this.updateInfo = Updates.updateId;
             if (update.isAvailable) {
                 console.log("LoadingScreen - new Update available")
@@ -302,16 +307,16 @@ class LauncherController extends OperatorStates {
 
     async getLocallyStoredDataModel() {
         const dataModel = DataModel.getInstance().static;
-        console.log('LauncherController - DataModel.getInstance().static==undefined: ' + (DataModel.getInstance().static==undefined));
-        console.log('LauncherController - DataModel.getInstance().static.modelVersion==undefined: ' + (DataModel.getInstance().static.modelVersion==undefined));
+        // console.log('LauncherController - DataModel.getInstance().static==undefined: ' + (DataModel.getInstance().static==undefined));
+        // console.log('LauncherController - DataModel.getInstance().static.modelVersion==undefined: ' + (DataModel.getInstance().static.modelVersion==undefined));
         // console.log('LauncherController - DataModel.getInstance().static: ' + JSON.stringify(DataModel.getInstance().static));
-      
+
         try {
             console.log('LauncherController - checking local models...');
 
             const value = await AsyncStorage.getItem('dataModel');
             console.log('LauncherController - value ' + value);
-      
+
             const localModelCopy = {};
             if (value == null) { //never used local storage - first time load
                 const modelAsString = JSON.stringify(DataModel.getInstance().static);
@@ -387,39 +392,29 @@ class LauncherController extends OperatorStates {
         //1) add static references to the imgSrc field of the artist data item
 
         //load artist images
-        try {
-            this.staticImageList.push({ fileName: 'alex_castro.png', imgSrc: require('../assets/portraits/alex_castro.png') });
-            this.staticImageList.push({ fileName: 'alexandria.png', imgSrc: require('../assets/portraits/alexandria.png') });
-            this.staticImageList.push({ fileName: 'david_khalili.png', imgSrc: require('../assets/portraits/david_khalili.png') });
-            this.staticImageList.push({ fileName: 'ki_charles.png', imgSrc: require('../assets/portraits/ki_charles.png') });
-            this.staticImageList.push({ fileName: 'kramer_-_dhiraj.png', imgSrc: require('../assets/portraits/kramer_-_dhiraj.png') });
-
-        } catch (error) {
-            console.log('Could not assign an image for a particular artist' + error)
-        }
-
-       
+        AssetLoader.instance.loadAssets(this.staticImageList)
+     
         for (const k in dataModel.dataArtists) {
             // console.log('Assigning Images' +k)
             const artistItem = dataModel.dataArtists[k];
-            const artistNameNorm =  k.toLowerCase().replace(" y ", " & ");
-            // console.log('Artist: ' + artistNameNorm)
-            const expectedFilename = artistNameNorm.toLowerCase().replace(/[.’]/g, "").replace(/[ ]/g, "_").replace(/[&]/g, "-")+".png"
+            const artistNameNorm = k.toLowerCase().replace(" y ", " & ");
+            console.log('Artist: ' + artistNameNorm)
+            const expectedFilename = artistNameNorm.toLowerCase().replace(/[.’]/g, "").replace(/[ ]/g, "_").replace(/[&]/g, "-").replace('é','e') + ".png"
             // ('&','-').replaceAll(' ','_').replaceAll('.','').replace(`’`,'');
 
             for (let j = 0; j < this.staticImageList.length; j++) {
                 // const namefile = this.staticImageList[j].fileName.replaceAll('_', ' ').replace('-', '&').replace(`’`,'').replace('.png', '');
-                // console.log('          namefile ' + namerrfile)
+                // console.log(`   expectedFilename: ${expectedFilename} - checking asset name: ${this.staticImageList[j].fileName}` )
                 if (this.staticImageList[j].fileName == expectedFilename) {
                     artistItem['imgSrc'] = this.staticImageList[j].imgSrc;
-                    // console.log('          ' + ' -> ' + this.staticImageList[j].fileName)
+                    console.log('          ' + ' -> ' + this.staticImageList[j].fileName)
                     break;
                 }
             }
         }
 
-           //load edition images
-           try {
+        //load edition images
+        try {
             this.staticImageMap['01-2024'] = { fileName: '01-2024', imgSrc: require('../assets/editions/01-2024.png') };
             this.staticImageMap['02-2024'] = { fileName: '02-2024', imgSrc: require('../assets/editions/02-2024.png') };
             this.staticImageMap['03-2024'] = { fileName: '03-2024', imgSrc: require('../assets/editions/03-2024.png') };
@@ -455,14 +450,14 @@ class LauncherController extends OperatorStates {
         // console.log("::::::::Preparing Data Model - End Assigning Images");
 
         //2) shorten the biography
-       
+
         const upperLimit = 200;
         const lowerLimit = 80;
         let index = 0;
         for (const k in dataModel.dataArtists) {
             // console.log('Shortening Biographies ' +k)
             const item = dataModel.dataArtists[k];
-            if(item.bio == undefined) continue;
+            if (item.bio == undefined) continue;
             const lastFullStop = (item.bio as string).lastIndexOf(".", upperLimit)
 
             item.shortBio = lastFullStop > lowerLimit ? (item.bio as string).substring(0, lastFullStop) + " ..." : (item.bio as string).substring(0, upperLimit) + " ..."
@@ -500,36 +495,68 @@ class LauncherController extends OperatorStates {
         //groups are sessions that happen in different rooms but at the same time
         //3) store fav value
 
+
+        const sectionStructure = [
+            { sectionTitles: ['Opening', 'Main Fair Room', 'Closing'], sectionDataList: { title: 'Main Fair Room', data: [] } },
+            { sectionTitles: ['Group Class', 'Conversation Circles', 'Outside'], sectionDataList: { title: 'Group Classes, Conversations, Outside', data: [] } },
+            // { sectionTitles: ['Opening', 'Outside', 'Closing'], sectionDataList: [] },
+            { sectionTitles: ['Massage' ], sectionDataList: { title: 'Massage', data: [] } },
+            { sectionTitles: ['Crafty Corner'], sectionDataList: { title: 'Crafty Corner', data: [] } }
+        ]
+
         DataModel.getInstance().dyn_dataScheduleListsByDay = [];
+        DataModel.getInstance().dyn_dataScheduleListsBySection = [];
+
+        for (let j = 0; j < sectionStructure.length; j++) 
+            DataModel.getInstance().dyn_dataScheduleListsBySection.push(sectionStructure[j].sectionDataList)
+
 
         let dataItem = null;
         let dataItemOldGroup = null;
         let dataItemNewGroup = null;
-        let sectionListData = null;
+        let found = false;
+        let sectionLists = null;
         for (let i = 0; i < dataModel.dataScheduleRaw.length; i++) {
             dataItem = dataModel.dataScheduleRaw[i];
+            //    //1a) structure by date
+            //     found = false;
+            //     for (let j = 0; j < DataModel.getInstance().dyn_dataScheduleListsByDay.length; j++) {
+            //         if (DataModel.getInstance().dyn_dataScheduleListsByDay[j].title == dataItem.dateString) {
+            //             sectionListData = DataModel.getInstance().dyn_dataScheduleListsByDay[j]
+            //             found = true;
+            //             break;
+            //         }
+            //     }
 
-            //1) structure by date
+            //     if (!found) {
+            //         sectionListData = { title: dataItem.dateString, data: [] }
+            //         DataModel.getInstance().dyn_dataScheduleListsByDay.push(sectionListData)
+            //         // console.log("LauncherController - processing raw schedule - new date found:" + sectionListData.title);
+            //     }
 
-            let found = false;
-            for (let j = 0; j < DataModel.getInstance().dyn_dataScheduleListsByDay.length; j++) {
-                if (DataModel.getInstance().dyn_dataScheduleListsByDay[j].title == dataItem.dateString) {
-                    sectionListData = DataModel.getInstance().dyn_dataScheduleListsByDay[j]
-                    found = true;
-                    break;
+          
+            //1b) structure by section and then reorganize
+            // console.log("undefined?"+(DataModel.getInstance().dyn_dataScheduleListsBySection==undefined))
+            found = false;
+            sectionLists = [];
+            for (let j = 0; j < sectionStructure.length; j++) {
+                for (let k = 0; k < sectionStructure[j].sectionTitles.length; k++) {
+                    if (sectionStructure[j].sectionTitles[k] == dataItem.groupTitle) {
+                        // console.log("Adding Item: "+dataItem.artistName.substring(0,5)+"|"+ dataItem.sessionMainTitle.substring(0,5)+" to section (tab): "+sectionStructure[j].sectionTitles[k])
+                        sectionLists.push(sectionStructure[j].sectionDataList);
+                        found = true;
+                    }
                 }
             }
 
             if (!found) {
-
-                sectionListData = { title: dataItem.dateString, data: [] }
-
-                DataModel.getInstance().dyn_dataScheduleListsByDay.push(sectionListData)
-                console.log("LauncherController - processing raw schedule - new date found:" + sectionListData.title);
+                console.log("LauncherController - processing raw schedule - now section found: " + dataItem.id+" | "+ dataItem.groupTitle);
             }
 
-            //2) reformat group element
+
+            //2) set up group field (add refrences to the data item objects)
             dataItemOldGroup = dataItem['group']
+            if (dataItemOldGroup == undefined) dataItemOldGroup = [];
             dataItemNewGroup = [];
             for (let j = 0; j < dataItemOldGroup.length; j++) {
                 for (let k = 0; k < dataModel.dataScheduleRaw.length; k++) {
@@ -541,17 +568,9 @@ class LauncherController extends OperatorStates {
                 }
             }
             dataItem['group'] = dataItemNewGroup;
-
-            //measure title width
-            dataItem['lineCount'] = Math.ceil((dataItem.sessionMainTitle as string).length / 25);
-            // console.log("sessionMainTitle: "+dataItem.sessionMainTitle +" count: "+dataItem['lineCount']+" id "+dataItem.id + "");
-
-            //floor into place field
-            dataItem['place'] = ((dataItem['room'] == 'Room 01') || (dataItem['room'] == 'Room 02') || (dataItem['room'] == 'Room 03')) ?
-                'Floor 01' : 'Floor 02'
+            // dataItem['lineCount'] = Math.ceil((dataItem.sessionMainTitle as string).length / 25);
 
             //3) store initial favorite value for the pesisted list
-
             let storedValue = await LauncherController.getInstance().getData(dataItem.id);
             this.persistedList[dataItem.id] = storedValue;
             dataItem['favoriteState'] = storedValue == '1' ? true : false;
@@ -559,27 +578,10 @@ class LauncherController extends OperatorStates {
 
 
             //add the data item to the specific section list (usually ordered by day)
-            sectionListData.data.push(dataItem);
+            for (let j = 0; j < sectionLists.length; j++) 
+                sectionLists[j].data.push(dataItem);
             // console.log('adding ' + dataItem.id)
-
         }
-        //add empty item at the end of each day schedule
-        for (let j = 0; j < DataModel.getInstance().dyn_dataScheduleListsByDay.length; j++) {
-            DataModel.getInstance().dyn_dataScheduleListsByDay[j].data.push({ "id": j * 10000, "itemType": "type5", group: [] })
-        }
-
-
-
-        DataModel.getInstance().dyn_dataModelProgram = [];
-        for (let i = 0; i < dataModel.dataModelProgram.length; i++) {
-            // console.log(dataModel.dataModelProgram[i].startTime);
-            if (dataModel.dataModelProgram[i].endTime == '' || Date.parse(dataModel.dataModelProgram[i].endTime) > Date.now()) {
-                DataModel.getInstance().dyn_dataModelProgram.push(dataModel.dataModelProgram[i])
-            }
-        }
-
-
-
     }
 
     stateChange(oldState, newState): void {
