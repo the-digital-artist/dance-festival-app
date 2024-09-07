@@ -12,28 +12,6 @@ class ArtistMainScreen extends PureComponent {
     }
 
     render() {
-
-        const stack = createNativeStackNavigator();
-        const headerOptions: any = {
-            // headerTitle: (props) => <HeaderNavigator {...props} />
-            // title: 'ARTIST PAGES',
-            headerBackVisible: true,
-            headerBackTitleVisible: false,
-            headerTransparent: true,
-            headerStyle: {
-                backgroundColor: '#EF4260',
-                fontFamily: "DINNeuzeitGroteskStd-Light",
-                fontWeight: 'bold',
-                fontSize: 26,
-            },
-            headerTintColor: '#ffffff',
-            headerTitleStyle: {
-                fontFamily: "DINNeuzeitGroteskStd-Light",
-                fontWeight: 'normal',
-                fontSize: 26,
-            },
-        }
-
         return (
             <>
                 <LComponent
