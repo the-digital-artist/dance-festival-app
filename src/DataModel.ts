@@ -16,7 +16,11 @@ class DataModel {
 
 	//dynamic properties (get generated)
 	dyn_dataArtistsList = null;
+
+	//schedule can be structured by day or section, pre-generated lists (arrays of array)
 	dyn_dataScheduleListsByDay = null;
+	dyn_dataScheduleListsBySection = null;
+
 	dyn_dataModelProgram = null;
 	dyn_userManagement = {
 		userDataIndexLoggedIn: -1,

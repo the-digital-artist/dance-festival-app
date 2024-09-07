@@ -1,6 +1,6 @@
 export const modelInitStaticOverwrite =
 {
-  "modelVersion": 1104,
+  "modelVersion": 1139,
   "festivalName": "WELLBEING",
   "modelRemoteGetModelUrl": "https://5sw1zcun82.execute-api.us-west-1.amazonaws.com/wellbeingModelContent",
   "modelRemoteVersionCheckUrl": "https://5sw1zcun82.execute-api.us-west-1.amazonaws.com/wellbeingModelVersion",
@@ -10,8 +10,8 @@ export const modelInitStaticOverwrite =
     "earlyBirdStartTimeString": "2024-07-21T05:00:00.000"
   },
   "dataArtists": {
-    "Nicola Bosco": {
-      "fullName": "Nicola Bosco",
+    "Dr. Brian Hernandez": {
+      "fullName": "Dr. Brian Hernandez",
       "pronouns": "",
       "artistLocation": "",
       "artistCompany": "",
@@ -20,85 +20,12 @@ export const modelInitStaticOverwrite =
       ],
       "insta": "",
       "web": "",
-      "bio": "was born.. ",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "nicola_bosco"
-    },
-    "Practitioner?": {
-      "fullName": "Practitioner?",
-      "pronouns": "",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "03-2024"
-      ],
-      "insta": "",
-      "web": "",
-      "bio": "was born.. ",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "practitioner?"
-    },
-    "Andrea Stern": {
-      "fullName": "Andrea Stern",
-      "pronouns": "",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "03-2024"
-      ],
-      "insta": "",
-      "web": "",
-      "bio": "was born.. ",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "andrea_stern"
-    },
-    "Marc Morozumi": {
-      "fullName": "Marc Morozumi",
-      "pronouns": "",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "03-2024"
-      ],
-      "insta": "",
-      "web": "",
-      "bio": "was born.. ",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "marc_morozumi"
-    },
-    "Kamelle Mills": {
-      "fullName": "Kamelle Mills",
-      "pronouns": "",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "03-2024"
-      ],
-      "insta": "@kamellemills",
-      "web": "https://www.instagram.com/kamellemills",
       "bio": "",
       "shortBio": "",
       "facebook": "",
-      "portrait": "kamelle_mills"
-    },
-    "Gogoflow": {
-      "fullName": "Gogoflow",
-      "pronouns": "",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "03-2024"
-      ],
-      "insta": "",
-      "web": "",
-      "bio": "was born.. ",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "gogoflow"
+      "portrait": "dr_brian_hernandez",
+      "email": "hernandezchiropractic@hotmail.com",
+      "phone": ""
     },
     "Christine Lu Singh": {
       "fullName": "Christine Lu Singh",
@@ -113,37 +40,9 @@ export const modelInitStaticOverwrite =
       "bio": "",
       "shortBio": "",
       "facebook": "",
-      "portrait": "christine_lu_singh"
-    },
-    "Emiko Oye": {
-      "fullName": "Emiko Oye",
-      "pronouns": "",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "03-2024"
-      ],
-      "insta": "",
-      "web": "",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "emiko_oye"
-    },
-    "Erynne Elkins": {
-      "fullName": "Erynne Elkins",
-      "pronouns": "",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "03-2024"
-      ],
-      "insta": "",
-      "web": "https://digitalhippy70.com",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "erynne_elkins"
+      "portrait": "christine_lu_singh",
+      "email": "hello@breathewithtine.com",
+      "phone": ""
     },
     "Chuck Rosenthal": {
       "fullName": "Chuck Rosenthal",
@@ -158,55 +57,12 @@ export const modelInitStaticOverwrite =
       "bio": "",
       "shortBio": "",
       "facebook": "",
-      "portrait": "chuck_rosenthal"
+      "portrait": "chuck_rosenthal",
+      "email": "thelogosmethod@gmail.com",
+      "phone": ""
     },
-    "Gautam Mulchandani": {
-      "fullName": "Gautam Mulchandani",
-      "pronouns": "he/him",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "03-2024"
-      ],
-      "insta": "@gemsofclaritysocial.com",
-      "web": "https://gemsofclarity.com",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "gautam_mulchandani"
-    },
-    "Nirel Salazar": {
-      "fullName": "Nirel Salazar",
-      "pronouns": "",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "03-2024"
-      ],
-      "insta": "",
-      "web": "https://www.nireltheyogini.com",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "nirel_salazar"
-    },
-    "Tina Pham": {
-      "fullName": "Tina Pham",
-      "pronouns": "she/they",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "03-2024"
-      ],
-      "insta": "",
-      "web": "https://www.persimmonacupuncture.com",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "tina_pham"
-    },
-    "Dr. Brian Hernandez": {
-      "fullName": "Dr. Brian Hernandez",
+    "Emiko Oye": {
+      "fullName": "Emiko Oye",
       "pronouns": "",
       "artistLocation": "",
       "artistCompany": "",
@@ -218,7 +74,132 @@ export const modelInitStaticOverwrite =
       "bio": "",
       "shortBio": "",
       "facebook": "",
-      "portrait": "dr_brian_hernandez"
+      "portrait": "emiko_oye",
+      "email": "emiko@emikooyoga.com",
+      "phone": ""
+    },
+    "Erynne Elkins": {
+      "fullName": "Erynne Elkins",
+      "pronouns": "",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "03-2024"
+      ],
+      "insta": "",
+      "web": "https://digitalhippy70.com",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "erynne_elkins",
+      "email": "erynne@digitalhippy70.com",
+      "phone": ""
+    },
+    "Gautam Mulchandani": {
+      "fullName": "Gautam Mulchandani",
+      "pronouns": "he/him",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "03-2024",
+        "02-2024"
+      ],
+      "insta": "@gemsofclaritysocial.com",
+      "web": "https://gemsofclarity.com",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "gautam_mulchandani",
+      "email": "gmulchandani@gmail.com",
+      "phone": "415-699-4263"
+    },
+    "Gogo Zoger": {
+      "fullName": "Gogo Zoger",
+      "pronouns": "",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "03-2024"
+      ],
+      "insta": "@gogoflow",
+      "web": "https://www.gogoflowpodcast.com",
+      "bio": "Y",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "gogo_zoger",
+      "email": "onlyonegogoz@gmail.com",
+      "phone": ""
+    },
+    "Jerry Cuffey": {
+      "fullName": "Jerry Cuffey",
+      "pronouns": "he/him",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "03-2024",
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "yelp.com",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "jerry_cuffey",
+      "email": "undermyhandsbyjerry@gmail.com",
+      "phone": ""
+    },
+    "Kamelle Mills": {
+      "fullName": "Kamelle Mills",
+      "pronouns": "",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "03-2024"
+      ],
+      "insta": "@kamellemills",
+      "web": "https://www.instagram.com/kamellemills",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "kamelle_mills",
+      "email": "kamelle@enbeyes.com",
+      "phone": ""
+    },
+    "Lars Kallman": {
+      "fullName": "Lars Kallman",
+      "pronouns": "he/him",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "03-2024",
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "yelp.com",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "lars_kallman",
+      "email": "kallmanlars@gmail.com",
+      "phone": ""
+    },
+    "Lydia Real": {
+      "fullName": "Lydia Real",
+      "pronouns": "",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "03-2024",
+        "02-2024"
+      ],
+      "insta": " ",
+      "web": "https://sistahplanet.com",
+      "bio": "Y",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "lydia_real",
+      "email": "sistahplanet@gmail.com",
+      "phone": ""
     },
     "Mané": {
       "fullName": "Mané",
@@ -233,52 +214,27 @@ export const modelInitStaticOverwrite =
       "bio": "",
       "shortBio": "",
       "facebook": "",
-      "portrait": "mané"
+      "portrait": "mané",
+      "email": "soapsbymane@gmail.com",
+      "phone": ""
     },
-    "Lydia Reel": {
-      "fullName": "Lydia Reel",
-      "pronouns": "",
+    "Meghan Johnson": {
+      "fullName": "Meghan Johnson",
+      "pronouns": "she/her",
       "artistLocation": "",
       "artistCompany": "",
       "editionData": [
-        "03-2024"
+        "03-2024",
+        "02-2024"
       ],
       "insta": "",
-      "web": "",
-      "bio": "was born.. ",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "lydia_reel"
-    },
-    "Nicola's friend": {
-      "fullName": "Nicola's friend",
-      "pronouns": "",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "03-2024"
-      ],
-      "insta": "",
-      "web": "",
-      "bio": "was born.. ",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "nicola's_friend"
-    },
-    "Suzannah Weening": {
-      "fullName": "Suzannah Weening",
-      "pronouns": "",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "03-2024"
-      ],
-      "insta": "",
-      "web": "",
+      "web": "https://stclaudehealingarts.com",
       "bio": "",
       "shortBio": "",
       "facebook": "",
-      "portrait": "suzannah_weening"
+      "portrait": "meghan_johnson",
+      "email": "stclaudemassage@gmail.com",
+      "phone": ""
     },
     "Mirabai Warkulwiz": {
       "fullName": "Mirabai Warkulwiz",
@@ -293,10 +249,12 @@ export const modelInitStaticOverwrite =
       "bio": "",
       "shortBio": "",
       "facebook": "",
-      "portrait": "mirabai_warkulwiz"
+      "portrait": "mirabai_warkulwiz",
+      "email": "mirabaiyoga@hotmail.com",
+      "phone": ""
     },
-    "TBD": {
-      "fullName": "TBD",
+    "Nirel Salazar": {
+      "fullName": "Nirel Salazar",
       "pronouns": "",
       "artistLocation": "",
       "artistCompany": "",
@@ -304,71 +262,13 @@ export const modelInitStaticOverwrite =
         "03-2024"
       ],
       "insta": "",
-      "web": "",
-      "bio": "was born.. ",
+      "web": "https://www.nireltheyogini.com",
+      "bio": "Y",
       "shortBio": "",
       "facebook": "",
-      "portrait": "tbd"
-    },
-    "Meghan Johnson": {
-      "fullName": "Meghan Johnson",
-      "pronouns": "she/her",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "03-2024"
-      ],
-      "insta": "",
-      "web": "https://stclaudehealingarts.com",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "meghan_johnson"
-    },
-    "Jerry Cuffey": {
-      "fullName": "Jerry Cuffey",
-      "pronouns": "he/him",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "03-2024"
-      ],
-      "insta": "",
-      "web": "yelp.com",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "jerry_cuffey"
-    },
-    "Lars Kallman": {
-      "fullName": "Lars Kallman",
-      "pronouns": "he/him",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "03-2024"
-      ],
-      "insta": "",
-      "web": "yelp.com",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "lars_kallman"
-    },
-    "Taylor Bowman": {
-      "fullName": "Taylor Bowman",
-      "pronouns": "",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "03-2024"
-      ],
-      "insta": "",
-      "web": "",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "taylor_bowman"
+      "portrait": "nirel_salazar",
+      "email": "hello@nireltheyogini.com",
+      "phone": ""
     },
     "Robert Bray": {
       "fullName": "Robert Bray",
@@ -383,7 +283,43 @@ export const modelInitStaticOverwrite =
       "bio": "",
       "shortBio": "",
       "facebook": "",
-      "portrait": "robert_bray"
+      "portrait": "robert_bray",
+      "email": "robtbray@sbcglobal.net",
+      "phone": ""
+    },
+    "Suzannah Weening": {
+      "fullName": "Suzannah Weening",
+      "pronouns": "",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "03-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "suzannah_weening",
+      "email": "suzannah88@gmaill.com",
+      "phone": ""
+    },
+    "Taylor Bowman": {
+      "fullName": "Taylor Bowman",
+      "pronouns": "",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "03-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "taylor_bowman",
+      "email": "taylor.bowman9573@gmail.com",
+      "phone": ""
     },
     "TendWell Collective": {
       "fullName": "TendWell Collective",
@@ -398,17 +334,376 @@ export const modelInitStaticOverwrite =
       "bio": "",
       "shortBio": "",
       "facebook": "",
-      "portrait": "tendwell_collective"
+      "portrait": "tendwell_collective",
+      "email": "hello@tendwellcollective.com",
+      "phone": ""
+    },
+    "Tina Pham": {
+      "fullName": "Tina Pham",
+      "pronouns": "she/they",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "03-2024"
+      ],
+      "insta": "",
+      "web": "https://www.persimmonacupuncture.com",
+      "bio": "Y",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "tina_pham",
+      "email": "tina@persimmonacupuncture.com",
+      "phone": ""
+    },
+    "Adrien Joyner": {
+      "fullName": "Adrien Joyner",
+      "pronouns": "they/them",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "adrien_joyner",
+      "email": "chakrarainbowyoga@gmail.com",
+      "phone": ""
+    },
+    "Alex Castro": {
+      "fullName": "Alex Castro",
+      "pronouns": "She/Her",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "alex_castro",
+      "email": "alexcastro@lgbtqmindfulness.com",
+      "phone": ""
+    },
+    "Alexandria Nichandros": {
+      "fullName": "Alexandria Nichandros",
+      "pronouns": "She/Her",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "alexandria_nichandros",
+      "email": "2468dance@gmail.com",
+      "phone": ""
+    },
+    "Bex Mui, M. Ed": {
+      "fullName": "Bex Mui, M. Ed",
+      "pronouns": "she/her",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "bex_mui_m_ed",
+      "email": "bex@houseofourqueer.com",
+      "phone": ""
+    },
+    "David Khalili": {
+      "fullName": "David Khalili",
+      "pronouns": "he/him",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "david_khalili",
+      "email": "david@rousetherapy.com",
+      "phone": ""
+    },
+    "Den Bremond, DACM, RN, LAc": {
+      "fullName": "Den Bremond, DACM, RN, LAc",
+      "pronouns": "she/her/they",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "den_bremond_dacm_rn_lac",
+      "email": "denbremond@gmail.com",
+      "phone": ""
+    },
+    "Dhiraj Korwani": {
+      "fullName": "Dhiraj Korwani",
+      "pronouns": "he/him",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "dhiraj_korwani",
+      "email": "djkorwani@gmail.com,",
+      "phone": "415-351-8013"
+    },
+    "Jeanna Eichenbaum": {
+      "fullName": "Jeanna Eichenbaum",
+      "pronouns": "they/them/elle",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "jeanna_eichenbaum",
+      "email": "jeannamind@yahoo.com",
+      "phone": ""
+    },
+    "Ki Charles": {
+      "fullName": "Ki Charles",
+      "pronouns": "They/She",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "ki_charles",
+      "email": "ki@haumsf.com",
+      "phone": ""
+    },
+    "Kramer Dahl and Dhiraj Korwani": {
+      "fullName": "Kramer Dahl and Dhiraj Korwani",
+      "pronouns": "he/him",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "kramer_dahl_and_dhiraj_korwani",
+      "email": "kramer.dahl90@gmail.com",
+      "phone": "650-200-9079"
+    },
+    "Olivier De Wulf": {
+      "fullName": "Olivier De Wulf",
+      "pronouns": "he/him",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "olivier_de_wulf",
+      "email": "info@neurasonic.com",
+      "phone": ""
+    },
+    "Phil Deem": {
+      "fullName": "Phil Deem",
+      "pronouns": "he/him",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "phil_deem",
+      "email": "phil@spirit-treeapothecary.com",
+      "phone": ""
+    },
+    "Sophia Lin": {
+      "fullName": "Sophia Lin",
+      "pronouns": "she/her",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "sophia_lin",
+      "email": "sophialin499@gmail.com",
+      "phone": ""
+    },
+    "Susan Sullivan": {
+      "fullName": "Susan Sullivan",
+      "pronouns": "she/her",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": " ",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "susan_sullivan",
+      "email": "susansullivanis@gmail.com",
+      "phone": ""
+    },
+    "Tijanna Eaton": {
+      "fullName": "Tijanna Eaton",
+      "pronouns": "she/her",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "tijanna_eaton",
+      "email": "thatsbennett2u@gmail.com",
+      "phone": ""
+    },
+    "Nicola Bosco": {
+      "fullName": "Nicola Bosco",
+      "pronouns": "",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "03-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "was born.. ",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "nicola_bosco",
+      "email": "",
+      "phone": ""
+    },
+    "Practitioner?": {
+      "fullName": "Practitioner?",
+      "pronouns": "",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "03-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "was born.. ",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "practitioner?",
+      "email": "",
+      "phone": ""
+    },
+    "Andrea Stern": {
+      "fullName": "Andrea Stern",
+      "pronouns": "",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "03-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "was born.. ",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "andrea_stern",
+      "email": "",
+      "phone": ""
+    },
+    "Marc Morozumi": {
+      "fullName": "Marc Morozumi",
+      "pronouns": "",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "03-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "was born.. ",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "marc_morozumi",
+      "email": "",
+      "phone": ""
+    },
+    "TBD": {
+      "fullName": "TBD",
+      "pronouns": "",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "03-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "was born.. ",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "tbd",
+      "email": "",
+      "phone": ""
     }
   },
   "dataScheduleRaw": [
     {
       "id": "48aaa69e8eb8bd6537c08a5326f664d6",
-      "itemType": "type1",
+      "itemType": "type2",
       "artistName": "Nicola Bosco",
       "sessionMainTitle": "Welcome to attendees from our Autumn Abundance host!",
       "time": "",
-      "room": "",
+      "room": "Opening",
       "level": "",
       "group": [],
       "groupTitle": "Opening",
@@ -420,7 +715,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Nicola Bosco",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -428,11 +723,11 @@ export const modelInitStaticOverwrite =
     },
     {
       "id": "6b4161fb90cbf72af72611bdc9811245",
-      "itemType": "type1",
+      "itemType": "type2",
       "artistName": "Practitioner?",
       "sessionMainTitle": "Land Acknowledgement",
       "time": "",
-      "room": "",
+      "room": "Opening",
       "level": "",
       "group": [],
       "groupTitle": "Opening",
@@ -444,7 +739,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Practitioner?",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -452,11 +747,11 @@ export const modelInitStaticOverwrite =
     },
     {
       "id": "0f68568d33f351b0ec4c269e3fedb5a8",
-      "itemType": "type1",
+      "itemType": "type2",
       "artistName": "Andrea Stern",
       "sessionMainTitle": "Co-founder of TendWell Collective and Collaborator in the SF WBF",
       "time": "",
-      "room": "",
+      "room": "Opening",
       "level": "",
       "group": [],
       "groupTitle": "Opening",
@@ -468,7 +763,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Andrea Stern",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -476,11 +771,11 @@ export const modelInitStaticOverwrite =
     },
     {
       "id": "7708770154a0f8fea805e9a0360eb24e",
-      "itemType": "type1",
+      "itemType": "type2",
       "artistName": "Marc Morozumi",
       "sessionMainTitle": "Founder and Owner of Mukunda Studio and Presenter of the SF WBF",
       "time": "",
-      "room": "",
+      "room": "Opening",
       "level": "",
       "group": [],
       "groupTitle": "Opening",
@@ -492,7 +787,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Marc Morozumi",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -500,11 +795,11 @@ export const modelInitStaticOverwrite =
     },
     {
       "id": "3c5f0fd6ffb1dd45f1c4f0fa01966503",
-      "itemType": "type1",
+      "itemType": "type2",
       "artistName": "Kamelle Mills",
       "sessionMainTitle": "Grand Host Welcome",
       "time": "",
-      "room": "",
+      "room": "Opening",
       "level": "",
       "group": [],
       "groupTitle": "Opening",
@@ -516,23 +811,24 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Kamelle Mills",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
       "flagIncludeInNow": false
     },
     {
-      "id": "68615946e0d4df16c73d772bead75c37",
+      "id": "60a32f5faa5302527718928f28103ec1",
       "itemType": "type1",
-      "artistName": "Gogoflow",
+      "artistName": "Gogo Zoger",
       "sessionMainTitle": "Take a Pause From Overthinking - gogoflow Yoga",
       "time": "1:00-1:30pm",
-      "room": "",
+      "room": "Group Class",
       "level": "",
       "group": [
-        "68615946e0d4df16c73d772bead75c37",
-        "041002ff697e9a60e41a1c5daeb9437e"
+        "60a32f5faa5302527718928f28103ec1",
+        "041002ff697e9a60e41a1c5daeb9437e",
+        "ae13e0992b99c7db7021f72810b9e03e"
       ],
       "groupTitle": "Group Class",
       "groupSubtitle": "",
@@ -543,7 +839,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Gogo Zoger",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -555,11 +851,12 @@ export const modelInitStaticOverwrite =
       "artistName": "Christine Lu Singh",
       "sessionMainTitle": "Reiki-Infused Sound Healing & Aromatherapy",
       "time": "1:45-2:15pm",
-      "room": "",
+      "room": "Group Class",
       "level": "",
       "group": [
         "eb603860d03004651c75294a43f01683",
-        "655e6b81f62b969837f28b6a183e2757"
+        "655e6b81f62b969837f28b6a183e2757",
+        "84b3bba80ff1f778c34c3ea95526d2f0"
       ],
       "groupTitle": "Group Class",
       "groupSubtitle": "",
@@ -570,7 +867,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Christine Lu Singh",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -582,11 +879,12 @@ export const modelInitStaticOverwrite =
       "artistName": "Emiko Oye",
       "sessionMainTitle": "Easy Exercises for Hands, Head and Neck Health",
       "time": "2:30-3pm",
-      "room": "",
+      "room": "Group Class",
       "level": "",
       "group": [
         "c874cbe1d329de443aa4e160be462c0c",
-        "334045fec8b614d4c4407f229e08c243"
+        "334045fec8b614d4c4407f229e08c243",
+        "13b859bcec5e064aa8e79112a8f4ada8"
       ],
       "groupTitle": "Group Class",
       "groupSubtitle": "",
@@ -597,7 +895,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Emiko Oye",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -609,11 +907,12 @@ export const modelInitStaticOverwrite =
       "artistName": "Erynne Elkins",
       "sessionMainTitle": "Transformative Breathwork",
       "time": "3:15-3:45pm",
-      "room": "",
+      "room": "Group Class",
       "level": "",
       "group": [
         "41dfc83d10c5de7e04881bcf01c0b40e",
-        "49f990775afcf563b54925862b816878"
+        "1e1cb04b93d251864aebfad733966867",
+        "fb7bd60a1f2ce8c5d57da4d55153afc6"
       ],
       "groupTitle": "Group Class",
       "groupSubtitle": "",
@@ -624,7 +923,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Erynne Elkins",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -636,7 +935,7 @@ export const modelInitStaticOverwrite =
       "artistName": "Chuck Rosenthal",
       "sessionMainTitle": "Therapeutic Sound Journeys with Reiki",
       "time": "4-4:30pm",
-      "room": "",
+      "room": "Group Class",
       "level": "",
       "group": [
         "44fd835bdb68fa479ada5f243e8682fd",
@@ -651,7 +950,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Chuck Rosenthal",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -659,11 +958,11 @@ export const modelInitStaticOverwrite =
     },
     {
       "id": "e875f1a2adad6629d5677f445221284f",
-      "itemType": "type1",
+      "itemType": "type3",
       "artistName": "Gautam Mulchandani",
       "sessionMainTitle": "Intuitive Readings",
       "time": "",
-      "room": "",
+      "room": "Main Fair Room",
       "level": "",
       "group": [],
       "groupTitle": "Main Fair Room",
@@ -675,7 +974,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Gautam Mulchandani",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -683,11 +982,11 @@ export const modelInitStaticOverwrite =
     },
     {
       "id": "3425b89d9cbb43011c81755705371511",
-      "itemType": "type1",
+      "itemType": "type3",
       "artistName": "Chuck Rosenthal",
       "sessionMainTitle": "Therapeutic Sound Journeys with Reiki",
       "time": "4-4:30pm",
-      "room": "",
+      "room": "Main Fair Room",
       "level": "",
       "group": [],
       "groupTitle": "Main Fair Room",
@@ -699,7 +998,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Chuck Rosenthal",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -707,11 +1006,11 @@ export const modelInitStaticOverwrite =
     },
     {
       "id": "56b4e41bd982cb83104bdc380fa7811f",
-      "itemType": "type1",
+      "itemType": "type3",
       "artistName": "Nirel Salazar",
       "sessionMainTitle": "Energy balancing sessions through Reiki and Somatic Sound Healing",
       "time": "",
-      "room": "",
+      "room": "Main Fair Room",
       "level": "",
       "group": [],
       "groupTitle": "Main Fair Room",
@@ -723,7 +1022,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Nirel Salazar",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -731,11 +1030,11 @@ export const modelInitStaticOverwrite =
     },
     {
       "id": "1a4ef88ecf3acb44ff29257550bab9a4",
-      "itemType": "type1",
+      "itemType": "type3",
       "artistName": "Erynne Elkins",
       "sessionMainTitle": "Learn about Transformative Breathwork",
       "time": "",
-      "room": "",
+      "room": "Main Fair Room",
       "level": "",
       "group": [],
       "groupTitle": "Main Fair Room",
@@ -747,7 +1046,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Erynne Elkins",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -755,11 +1054,11 @@ export const modelInitStaticOverwrite =
     },
     {
       "id": "211e154258aef20d52674f4f3112626d",
-      "itemType": "type1",
+      "itemType": "type3",
       "artistName": "Tina Pham",
       "sessionMainTitle": "Ear Acupressure and Herbal Tea Sampling",
       "time": "",
-      "room": "",
+      "room": "Main Fair Room",
       "level": "",
       "group": [],
       "groupTitle": "Main Fair Room",
@@ -771,7 +1070,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Tina Pham",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -779,11 +1078,11 @@ export const modelInitStaticOverwrite =
     },
     {
       "id": "5ead93d8a7ecf9333cb38385e8a1d01e",
-      "itemType": "type1",
+      "itemType": "type3",
       "artistName": "Dr. Brian Hernandez",
       "sessionMainTitle": "Free spinal screening with promotional signup discount",
       "time": "",
-      "room": "",
+      "room": "Main Fair Room",
       "level": "",
       "group": [],
       "groupTitle": "Main Fair Room",
@@ -795,7 +1094,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Dr. Brian Hernandez",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -803,11 +1102,11 @@ export const modelInitStaticOverwrite =
     },
     {
       "id": "3362fe14b0de75e8a08e49f77f930055",
-      "itemType": "type1",
+      "itemType": "type3",
       "artistName": "Mané",
       "sessionMainTitle": "Handmade Shea butter soaps and lotion",
       "time": "",
-      "room": "",
+      "room": "Main Fair Room",
       "level": "",
       "group": [],
       "groupTitle": "Main Fair Room",
@@ -819,19 +1118,19 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Mané",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
       "flagIncludeInNow": false
     },
     {
-      "id": "e6740e147a20524bab7e92bc090ac6b5",
-      "itemType": "type1",
-      "artistName": "Lydia Reel",
+      "id": "5a8f2e8beb95cd9fdbdff1a22a908cde",
+      "itemType": "type3",
+      "artistName": "Lydia Real",
       "sessionMainTitle": "Goddess figurines and original body positive feminine art",
       "time": "",
-      "room": "",
+      "room": "Main Fair Room",
       "level": "",
       "group": [],
       "groupTitle": "Main Fair Room",
@@ -843,31 +1142,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
-      "artistTwo": "",
-      "artistLocation": "",
-      "flag": false,
-      "flagIncludeInNow": false
-    },
-    {
-      "id": "fdd17e3663a835aa7aca0d9f9ee911bb",
-      "itemType": "type1",
-      "artistName": "Nicola's friend",
-      "sessionMainTitle": "Skin care products and consultation",
-      "time": "",
-      "room": "",
-      "level": "",
-      "group": [],
-      "groupTitle": "Main Fair Room",
-      "groupSubtitle": "",
-      "shortMainTitle": "",
-      "dateString": "Sat, September 21, 2024",
-      "startTime": "",
-      "endTime": "",
-      "place": "",
-      "sessionSubtitle": "",
-      "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Lydia Real",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -875,11 +1150,11 @@ export const modelInitStaticOverwrite =
     },
     {
       "id": "82f24c5939ba152344d3db96d5314809",
-      "itemType": "type1",
+      "itemType": "type3",
       "artistName": "Suzannah Weening",
       "sessionMainTitle": "Mid-wife and birth photographer",
       "time": "",
-      "room": "",
+      "room": "Main Fair Room",
       "level": "",
       "group": [],
       "groupTitle": "Main Fair Room",
@@ -891,7 +1166,31 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Suzannah Weening",
+      "artistTwo": "",
+      "artistLocation": "",
+      "flag": false,
+      "flagIncludeInNow": false
+    },
+    {
+      "id": "a36c26f335bd2e80a5553be5264a3486",
+      "itemType": "type3",
+      "artistName": "TBD",
+      "sessionMainTitle": "",
+      "time": "",
+      "room": "Main Fair Room",
+      "level": "",
+      "group": [],
+      "groupTitle": "Main Fair Room",
+      "groupSubtitle": "",
+      "shortMainTitle": "",
+      "dateString": "Sat, September 21, 2024",
+      "startTime": "",
+      "endTime": "",
+      "place": "",
+      "sessionSubtitle": "",
+      "sessionDescription": "",
+      "artistOne": "TBD",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -903,11 +1202,12 @@ export const modelInitStaticOverwrite =
       "artistName": "Mirabai Warkulwiz",
       "sessionMainTitle": "Bhakti Ocean",
       "time": "1:00-1:30pm",
-      "room": "",
+      "room": "Conversation Circles",
       "level": "",
       "group": [
+        "60a32f5faa5302527718928f28103ec1",
         "041002ff697e9a60e41a1c5daeb9437e",
-        "68615946e0d4df16c73d772bead75c37"
+        "ae13e0992b99c7db7021f72810b9e03e"
       ],
       "groupTitle": "Conversation Circles",
       "groupSubtitle": "",
@@ -918,7 +1218,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Mirabai Warkulwiz",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -930,11 +1230,12 @@ export const modelInitStaticOverwrite =
       "artistName": "Kamelle Mills",
       "sessionMainTitle": "enbeyes - No Bullsh!t :) (Ask about Prosperity Practice)",
       "time": "1:45-2:15pm",
-      "room": "",
+      "room": "Conversation Circles",
       "level": "",
       "group": [
+        "eb603860d03004651c75294a43f01683",
         "655e6b81f62b969837f28b6a183e2757",
-        "eb603860d03004651c75294a43f01683"
+        "84b3bba80ff1f778c34c3ea95526d2f0"
       ],
       "groupTitle": "Conversation Circles",
       "groupSubtitle": "",
@@ -945,7 +1246,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Kamelle Mills",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -957,11 +1258,12 @@ export const modelInitStaticOverwrite =
       "artistName": "TBD",
       "sessionMainTitle": "Searching for an elder voice",
       "time": "2:30-3pm",
-      "room": "",
+      "room": "Conversation Circles",
       "level": "",
       "group": [
+        "c874cbe1d329de443aa4e160be462c0c",
         "334045fec8b614d4c4407f229e08c243",
-        "c874cbe1d329de443aa4e160be462c0c"
+        "13b859bcec5e064aa8e79112a8f4ada8"
       ],
       "groupTitle": "Conversation Circles",
       "groupSubtitle": "",
@@ -972,23 +1274,24 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "TBD",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
       "flagIncludeInNow": false
     },
     {
-      "id": "49f990775afcf563b54925862b816878",
+      "id": "1e1cb04b93d251864aebfad733966867",
       "itemType": "type1",
-      "artistName": "Lydia Reel",
+      "artistName": "Lydia Real",
       "sessionMainTitle": "Positive Body Talk - Turning Down the Noise!",
       "time": "3:15-3:45pm",
-      "room": "",
+      "room": "Conversation Circles",
       "level": "",
       "group": [
-        "49f990775afcf563b54925862b816878",
-        "41dfc83d10c5de7e04881bcf01c0b40e"
+        "41dfc83d10c5de7e04881bcf01c0b40e",
+        "1e1cb04b93d251864aebfad733966867",
+        "fb7bd60a1f2ce8c5d57da4d55153afc6"
       ],
       "groupTitle": "Conversation Circles",
       "groupSubtitle": "",
@@ -999,7 +1302,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Lydia Real",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -1011,11 +1314,11 @@ export const modelInitStaticOverwrite =
       "artistName": "Marc Morozumi",
       "sessionMainTitle": "We Are More Than Our Stories",
       "time": "4-4:30pm",
-      "room": "",
+      "room": "Conversation Circles",
       "level": "",
       "group": [
-        "645006a3f617b0ac44ef01bf752cb4a1",
-        "44fd835bdb68fa479ada5f243e8682fd"
+        "44fd835bdb68fa479ada5f243e8682fd",
+        "645006a3f617b0ac44ef01bf752cb4a1"
       ],
       "groupTitle": "Conversation Circles",
       "groupSubtitle": "",
@@ -1026,7 +1329,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Marc Morozumi",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -1034,11 +1337,11 @@ export const modelInitStaticOverwrite =
     },
     {
       "id": "943fd4185f001806cb57be4115d4be07",
-      "itemType": "type1",
+      "itemType": "type4",
       "artistName": "Meghan Johnson",
       "sessionMainTitle": "Chair Massage",
       "time": "",
-      "room": "",
+      "room": "Massage",
       "level": "",
       "group": [],
       "groupTitle": "Massage",
@@ -1050,7 +1353,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Meghan Johnson",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -1058,11 +1361,11 @@ export const modelInitStaticOverwrite =
     },
     {
       "id": "1eeda4ae39f7fb04fbb87eacc523f8d2",
-      "itemType": "type1",
+      "itemType": "type4",
       "artistName": "Jerry Cuffey",
       "sessionMainTitle": "Chair Massage - Japanese Acupressure Techniques",
       "time": "",
-      "room": "",
+      "room": "Massage",
       "level": "",
       "group": [],
       "groupTitle": "Massage",
@@ -1074,7 +1377,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Jerry Cuffey",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -1082,11 +1385,11 @@ export const modelInitStaticOverwrite =
     },
     {
       "id": "b3f09cb8696993a8ce8b0fcd26164aee",
-      "itemType": "type1",
+      "itemType": "type4",
       "artistName": "Lars Kallman",
       "sessionMainTitle": "Deep bodywork and gestalt",
       "time": "",
-      "room": "",
+      "room": "Massage",
       "level": "",
       "group": [],
       "groupTitle": "Massage",
@@ -1098,7 +1401,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Lars Kallman",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -1106,11 +1409,11 @@ export const modelInitStaticOverwrite =
     },
     {
       "id": "0b4a9236b87045ab2a8980bce37d8b67",
-      "itemType": "type1",
+      "itemType": "type4",
       "artistName": "Taylor Bowman",
       "sessionMainTitle": "Crafty Corner",
       "time": "",
-      "room": "",
+      "room": "Crafty Corner",
       "level": "",
       "group": [],
       "groupTitle": "Crafty Corner",
@@ -1122,21 +1425,25 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Taylor Bowman",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
       "flagIncludeInNow": false
     },
     {
-      "id": "0077049003cabf57f80123087a8abb1e",
+      "id": "ae13e0992b99c7db7021f72810b9e03e",
       "itemType": "type1",
       "artistName": "Taylor Bowman",
-      "sessionMainTitle": "Mandala Making Class",
+      "sessionMainTitle": "Community Mandala on the lawn",
       "time": "1:00-1:30pm",
-      "room": "",
+      "room": "Outside",
       "level": "",
-      "group": [],
+      "group": [
+        "60a32f5faa5302527718928f28103ec1",
+        "041002ff697e9a60e41a1c5daeb9437e",
+        "ae13e0992b99c7db7021f72810b9e03e"
+      ],
       "groupTitle": "Outside",
       "groupSubtitle": "",
       "shortMainTitle": "",
@@ -1146,7 +1453,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Taylor Bowman",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -1158,9 +1465,13 @@ export const modelInitStaticOverwrite =
       "artistName": "Tina Pham",
       "sessionMainTitle": "Qigong for Anxiety",
       "time": "1:45-2:15pm",
-      "room": "",
+      "room": "Outside",
       "level": "",
-      "group": [],
+      "group": [
+        "eb603860d03004651c75294a43f01683",
+        "655e6b81f62b969837f28b6a183e2757",
+        "84b3bba80ff1f778c34c3ea95526d2f0"
+      ],
       "groupTitle": "Outside",
       "groupSubtitle": "",
       "shortMainTitle": "",
@@ -1170,7 +1481,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Tina Pham",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -1182,9 +1493,13 @@ export const modelInitStaticOverwrite =
       "artistName": "Robert Bray",
       "sessionMainTitle": "Forest bathing/informative nature walk",
       "time": "2:30-3pm",
-      "room": "",
+      "room": "Outside",
       "level": "",
-      "group": [],
+      "group": [
+        "c874cbe1d329de443aa4e160be462c0c",
+        "334045fec8b614d4c4407f229e08c243",
+        "13b859bcec5e064aa8e79112a8f4ada8"
+      ],
       "groupTitle": "Outside",
       "groupSubtitle": "",
       "shortMainTitle": "",
@@ -1194,7 +1509,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Robert Bray",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -1206,9 +1521,13 @@ export const modelInitStaticOverwrite =
       "artistName": "TendWell Collective",
       "sessionMainTitle": "Finding Refuge, Embodied Reading",
       "time": "3:15-3:45pm",
-      "room": "",
+      "room": "Outside",
       "level": "",
-      "group": [],
+      "group": [
+        "41dfc83d10c5de7e04881bcf01c0b40e",
+        "1e1cb04b93d251864aebfad733966867",
+        "fb7bd60a1f2ce8c5d57da4d55153afc6"
+      ],
       "groupTitle": "Outside",
       "groupSubtitle": "",
       "shortMainTitle": "",
@@ -1218,18 +1537,19 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "TendWell Collective",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
       "flagIncludeInNow": false
     },
     {
-      "id": "43f9f8175e87a03fb99df3356e308a3b",
-      "itemType": "type1",
+      "id": "76e3fb71691ade3084d24ac98537500d",
+      "itemType": "type2",
       "artistName": "Nicola Bosco",
+      "sessionMainTitle": "",
       "time": "",
-      "room": "",
+      "room": "Closing",
       "level": "",
       "group": [],
       "groupTitle": "Closing",
@@ -1241,7 +1561,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Nicola Bosco",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -1249,11 +1569,11 @@ export const modelInitStaticOverwrite =
     },
     {
       "id": "3655670483b76497c0def0587096e40d",
-      "itemType": "type1",
+      "itemType": "type2",
       "artistName": "Andrea Stern",
       "sessionMainTitle": "Moment of gratitude for this beautiful day for everyone here",
       "time": "",
-      "room": "",
+      "room": "Closing",
       "level": "",
       "group": [],
       "groupTitle": "Closing",
@@ -1265,7 +1585,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Andrea Stern",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -1273,11 +1593,11 @@ export const modelInitStaticOverwrite =
     },
     {
       "id": "b8a0d0599f5e173c3f2267a3a8cad258",
-      "itemType": "type1",
+      "itemType": "type2",
       "artistName": "Marc Morozumi",
       "sessionMainTitle": "Taking this with you, into your everyday life",
       "time": "",
-      "room": "",
+      "room": "Closing",
       "level": "",
       "group": [],
       "groupTitle": "Closing",
@@ -1289,7 +1609,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "",
+      "artistOne": "Marc Morozumi",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
