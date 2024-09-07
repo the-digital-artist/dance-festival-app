@@ -17,7 +17,7 @@ const TabBar = (props) => {
     let offsetY = props.offsetY==undefined?112:props.offsetY;
 
     let itemWidth =  (Dimensions.get('screen').width/tabBarData.length);
-    let itemHeight = 43;
+    let itemHeight = 50;
     let itemHeightSelectedOffset = 8;
     let itemSpread = (Dimensions.get('screen').width/tabBarData.length)
     let startX = (Dimensions.get('screen').width / 2 - ((tabBarData.length - 1) * itemSpread) / 2) - itemWidth / 2
@@ -45,13 +45,13 @@ const TabBar = (props) => {
 
             <View style={{
                 pointerEvents: 'none',
-                backgroundColor: '#8cb5d8',
+                backgroundColor: '#dac4a7',
                 top: offsetY + itemHeightSelectedOffset, left: 0, position: 'absolute',
                 width: Dimensions.get('screen').width,
                 height: itemHeight - itemHeightSelectedOffset,
                 //  borderTopColor: 'white',
                 //  borderTopWidth: StyleSheet.hairlineWidth,
-                opacity: 0.23
+                opacity: 0.73
             }}>
                 {/* <Image
                     style={{
@@ -81,7 +81,7 @@ const TabBar = (props) => {
                             dynamicVisualPropertiesText={animValuesText[i]}
                             bgBoxVisible={true}
                             bgBoxStyle={{
-                                backgroundColor: '#25649a',
+                                backgroundColor: '#c75e2c',
                                 // opacity: 0.9,
                                 position: 'absolute',
                                 width: itemWidth, height: itemHeight,
@@ -90,14 +90,17 @@ const TabBar = (props) => {
                                 TransitionTabbarSelect(itemData, i, currentIndex)
                              } }
                             source={itemData.imgSrc}
-                            text={(itemData.itemText as string).toLocaleUpperCase()}
+                            text={(itemData.itemText as string)}
                             fontStyle={{
-                                fontFamily: 'Arcon-Regular',
-                                letterSpacing: 1.7,
+                                fontFamily: 'RobotoCondensed-Regular',
+                                letterSpacing: 0,
                                 color: '#FFFFFF',
-                                fontSize: 12,
+                                // backgroundColor:'skyblue',
+                                // height: itemHeight,
+                                textAlignVertical: 'center',
+                                fontSize: 14,
                                 opacity: 1.0,
-                                top:18
+                                top:10
                             }}
                         />
 
