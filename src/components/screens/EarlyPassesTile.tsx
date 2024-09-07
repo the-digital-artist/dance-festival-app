@@ -32,7 +32,7 @@ const EarlyPassesTile = (props) => {
                     letterSpacing: 2.0,
                     fontSize: 12
                 }}>
-                {'GET TICKETS'}
+                {'Register Now'}
             </Text>
             {Platform.OS == "ios" && <BlurView
                                     intensity={40}
@@ -78,7 +78,7 @@ const EarlyPassesTile = (props) => {
                                 top: props.offsetY + 50,
                                 left: 30,
                                 width: Dimensions.get('screen').width - (2 * 30),
-                                fontFamily: 'DINCondensed-Bold',
+                                fontFamily: 'RobotoCondensed-Medium',
                                 // backgroundColor: 'indigo',
                                 letterSpacing: 1.0,
                                 textAlign: 'center',
@@ -86,7 +86,7 @@ const EarlyPassesTile = (props) => {
                                 fontSize: 24,
                                 opacity: 0.9
                             }}>
-                                {("2024 Festival Passes").toLocaleUpperCase()}
+                                {("SF Well-being Tickets")}
                             </Text>
 
                             <Text allowFontScaling={false} id='textEarlyBird1' style={{

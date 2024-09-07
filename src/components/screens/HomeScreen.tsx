@@ -91,7 +91,7 @@ class HomeScreen extends PureComponent<any, any> {
                         }
                     </LComponent>
 
-                    <Image
+                    {/* <Image
                         source={require('../../../assets/logo-white.png')}
                         style={{
                             position: 'absolute', resizeMode: 'contain',
@@ -102,7 +102,7 @@ class HomeScreen extends PureComponent<any, any> {
                             width: Dimensions.get('screen').width - (2 * 80),
                             height: Dimensions.get('screen').width - (2 * 80) * 1313 / 815,
                         }}
-                    />
+                    /> */}
 
                     <ScreenHeader
                         text={"WELCOME MY FRIEND"}
@@ -183,7 +183,7 @@ class HomeScreen extends PureComponent<any, any> {
 
                     </ScrollView>
 
-                    <EarlyPassesTile offsetY={300} />
+                    {/* <EarlyPassesTile offsetY={300} /> */}
 
                     {/* {(Platform.OS == 'android') &&
                         <View
