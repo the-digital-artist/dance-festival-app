@@ -77,7 +77,7 @@ class NavBar extends PureComponent<any, any> {
                                 fontStyle={{
                                     // backgroundColor: 'skyblue',
                                     top: 20, width: NavBar.navBarIconSize,
-                                    fontFamily: 'DINNeuzeitGroteskStd-Light',
+                                    fontFamily: 'Cabin-Regular',
                                     textAlign: 'center',
                                     letterSpacing: 1.7,
                                     color: '#EFEFEF',

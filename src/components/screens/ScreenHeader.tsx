@@ -29,7 +29,7 @@ const ScreenHeader = (props) => {
         position:'absolute',
         top: 80, left: 30,
         width: Dimensions.get('screen').width - 40, height: 32,
-        fontFamily: 'DINNeuzeitGroteskStd-Light',
+        fontFamily: 'Cabin-Regular',
         // backgroundColor: 'skyblue',
         letterSpacing: 4.0,
         textAlign: 'left',

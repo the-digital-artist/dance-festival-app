@@ -71,7 +71,7 @@ const LoginTile = (props) => {
                 top: props.offsetY + 60,
                 left: 30,
                 width: Dimensions.get('screen').width - (2 * 30),
-                fontFamily: 'DINCondensed-Bold',
+                fontFamily: 'RobotoCondensed-Regular',
                 // backgroundColor: 'indigo',
                 letterSpacing: 1.0,
                 textAlign: 'center',

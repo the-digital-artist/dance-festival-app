@@ -7,7 +7,7 @@ import LText from '../../core/LText';
 import ActionSessionListOnDetailsBtn from '../../actions/ActionSessionListOnDetailsBtn';
 
 
-
+//Special Sessions
 const ScheduleListItemType4 = ({ item }) => {
 
   // console.log("ScheduleListItem: " + JSON.stringify(item, null, 2));
@@ -83,7 +83,7 @@ const ScheduleListItemType4 = ({ item }) => {
           top: 10,
           left: 0,
           width: 220,
-          fontFamily: 'DINCondensed-Bold',
+          fontFamily: 'RobotoCondensed-Regular',
           // backgroundColor: 'indigo',
           letterSpacing: 0.0,
           textAlign: 'left',
