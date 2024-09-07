@@ -21,13 +21,13 @@ const ScheduleListItem = ({ item, index }) => {
   if (group.length == 0) group = [{ id: item.id, obj: item }]
 
   if (item.itemType == 'type1')
-    itemHeight = (item.sessionMainTitle as string).length > 25 ? 200 : 200;
+    itemHeight = (item.sessionMainTitle as string).length > 25 ? 190 : 190;
   else if (item.itemType == 'type2')
     itemHeight = (item.room == "" ? 50 : 65);
   else if (item.itemType == 'type3') {
-    itemHeight = 40
-    if ((item.sessionMainTitle as string).length > 20) itemHeight += 30;
-    if ((item.artistName as string).length > 20) itemHeight += 30;
+    itemHeight = 200
+    // if ((item.sessionMainTitle as string).length > 20) itemHeight += 30;
+    // if ((item.artistName as string).length > 20) itemHeight += 30;
   }
   else if (item.itemType == 'type4')
     itemHeight = (item.sessionMainTitle as string).length > 20 ? 200 : 185;
@@ -50,7 +50,7 @@ const ScheduleListItem = ({ item, index }) => {
     orientation = (LauncherController.getInstance().context['sessionListCount']++) % 2 == 0 ? 'left' : 'right'
   }
 
-  const overwriteGroupTitles = true;
+  const overwriteGroupTitles = false;
   const groupMainTitle = overwriteGroupTitles ? ("Parallel Workshop Sessions" as string).toLocaleUpperCase() : (item.groupTitle)
   const groupSubTitle = overwriteGroupTitles ? ("Swipe to Browse Rooms:" as string).toLocaleUpperCase() : (item.groupSubtitle as string).toLocaleUpperCase()
 
@@ -65,10 +65,10 @@ const ScheduleListItem = ({ item, index }) => {
           // backgroundColor: '#FBB03A',
           left: paddingLeftAndRight,
           height: itemHeight, width: Dimensions.get('screen').width - 2 * paddingLeftAndRight,
-          borderTopColor: '#FFFFFF',
-          borderTopWidth: 0,
-          borderBottomWidth: (item.itemType == "type5"?0:StyleSheet.hairlineWidth),
-          borderBottomColor: '#EFEFEF',
+          // borderTopColor: '#FFFFFF',
+          // borderTopWidth: 0,
+          // borderBottomWidth: (item.itemType == "type5"?0:StyleSheet.hairlineWidth),
+          // borderBottomColor: '#EFEFEF',
         }}>
 
 
@@ -103,11 +103,12 @@ const ScheduleListItem = ({ item, index }) => {
               width: 300,
               fontFamily: 'Cabin-Regular',
               letterSpacing: 1.0,
+              opacity: 0.5,
               textAlign: 'left',
-              color: '#90a0b9',
-              fontSize: 12,
+              color: '#88617f',
+              fontSize: 11,
             }}>
-              {("Browse Sessions In Different Rooms" as string).toLocaleUpperCase()}
+              {("Browse Sessions In Different Areas" as string).toLocaleUpperCase()}
             </Text>
             }
 
@@ -130,13 +131,13 @@ const ScheduleListItem = ({ item, index }) => {
 
       <Text allowFontScaling={false} id='textTime' style={{
         position: 'absolute',
-        top: 10, left: 6,
+        top: 4, left: 6,
         width: 70, height: 15,
-        fontFamily: 'DINNeuzeitGroteskStd-Light',
+        fontFamily: 'RobotoCondensed-Regular',
         // backgroundColor: 'skyblue',
         textAlign: 'right',
-        color: '#ede8e3',
-        fontSize: 12,
+        color: '#232323',
+        fontSize: 13,
       }}>
         {item.time}
       </Text>

@@ -10,6 +10,7 @@ import TabBar from "../tabbar/TabBar";
 import ScreenHeader from "./ScreenHeader";
 import ScreenHomeButton from "./ScreenHomeButton";
 import NavBar from "../navbar/NavBar";
+import LText from "../../core/LText";
 
 
 
@@ -29,7 +30,7 @@ class SchedulerListScreen extends PureComponent {
         LauncherController.getInstance().context.dataDependentComponentSchedulerScreen = this;
 
         this.state.modelUpdateState = 2;
-        this.state.dataModelList = DataModel.getInstance().dyn_dataScheduleListsByDay;
+        this.state.dataModelList = DataModel.getInstance().dyn_dataScheduleListsBySection;
     }
 
     render() {
@@ -50,7 +51,7 @@ class SchedulerListScreen extends PureComponent {
 
         let offsetX = 0;
         // let offsetY = 181;
-        let offsetY = 155;
+        let offsetY = 165;
 
 
         // let focusItem = LauncherController.getInstance().context.focusedItemData;
@@ -95,11 +96,19 @@ class SchedulerListScreen extends PureComponent {
                                         h: Dimensions.get('screen').height - offsetY,
                                     }}
                                 >
+                                    <LText
+                                     style={{
+                                        position:'absolute',
+                                        backgroundColor: '#EFEFEF',
+                                        opacity: 0
+                                    }}>
+                                        Description
+                                    </LText>
                                     <View
                                         style={{
                                             width: Dimensions.get('screen').width - offsetX,
                                             height: Dimensions.get('screen').height - offsetY,
-                                            backgroundColor: '#25649a',
+                                            backgroundColor: '#cbb7b8',
                                             opacity: 0.7
                                         }}
                                     />
@@ -134,7 +143,7 @@ class SchedulerListScreen extends PureComponent {
 
 
                     <ScreenHeader
-                        text={"FESTIVAL PROGRAM"}
+                        text={"SCHEDULE"}
                         textStyle={{ top: 65 }}
                         color='#FFFFFF'
                         imgSrc={require('../../../assets/header-schedule-bg.png')} />

@@ -11,6 +11,7 @@ import ScheduleItemToggle from './ScheduleItemToggle';
 import LauncherController from '../../LauncherController';
 import { GestureDetector } from 'react-native-gesture-handler';
 import { tapGestureHandlerProps } from 'react-native-gesture-handler/lib/typescript/handlers/TapGestureHandler';
+import { opacity } from 'react-native-reanimated/lib/typescript/reanimated2/Colors';
 
 
 class ScheduleListItemType1 extends PureComponent<any, any> {
@@ -64,12 +65,14 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     const imageOffsetYArtistImage = 10 + ((305 - this.props.tileWidth) / (305 - 245)) * 10
     const imageOffsetXRArtistImage = -17;
     const imageOffsetXLArtistImage = -17;
-    const fontSizeMainTitle = this.props.tileWidth * (20 / 305);
+    const fontSizeMainTitle = this.props.tileWidth * (17 / 305);
     // const fontSizeArtistName = this.props.tileWidth * (13 / 305)
     // const fontSizeMainTitle =20;
     const fontSizeArtistName =16;
 
     const reduceInnerTileHeightBy = item.dateString != "Thu, October 17, 2024"?30:5;
+
+    const roomString = (item.room.toLowerCase()=='group class'?'Group Class Space':item.room).toLocaleUpperCase();
 
     // console.log("ScheduleListItemType1 tileLength " + this.props.tileWidth + " artistImageWidth: "+ imageWidthArtistImage);
 
@@ -84,11 +87,11 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
         }, this.props.dynamicVisualProperties0]}
       >
 
-        <View
+        {/* <View
           //  name={"ScheduleItemFrame1_" + item.id}
           style={{
             position: 'absolute',
-            backgroundColor: '#517d97',
+            // backgroundColor: '#517d97',
             borderColor: '#9F509F',
             // borderLeftWidth: 3,
             // borderRightWidth: 3,
@@ -102,7 +105,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
             height: (itemHeight - reduceInnerTileHeightBy),
             width: this.props.tileWidth
           }}
-        />
+        /> */}
 
 
 
@@ -110,8 +113,8 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
           // name={"ScheduleItemFrame2_" + item.id}
           style={{
             position: 'absolute',
-            backgroundColor: 'transparent',
-            borderColor: '#5e8099',
+            backgroundColor: '#b9a1a6',
+            borderColor: '#88617f',
             // borderLeftWidth: 3,
             // borderRightWidth: 3,
             borderTopWidth: 20,
@@ -140,7 +143,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
           }}
         >
 
-          <Image
+          {/* <Image
             source={require('../../../assets/schedulelistitem-bg-overlay.png')}
             style={{
               // backgroundColor: 'greenyellow',
@@ -151,7 +154,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               height: itemHeight - reduceInnerTileHeightBy -20,
               resizeMode: 'cover'
             }}
-          /> 
+          />  */}
 
           <LComponent
             name={"ScheduleItemHighlight" + item.id}
@@ -163,20 +166,20 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
 
           <Animated.Text allowFontScaling={false} id='textLocation' style={[{
             position: 'absolute',
-            top: 5,
-            left: (this.props.tileWidth - 60) / 2,
+            top: 2,
+            left: (this.props.tileWidth - 150) / 2,
             // right: (item.orientation == 'right' ? undefined : 10),
             // left: (item.orientation == 'left' ? undefined : 10),
             height: 15,
-            width: 70,
-            fontFamily: 'DINCondensed-Regular',
+            width: 150,
+            fontFamily: 'Cabin-Regular',
             // backgroundColor: 'skyblue',
             textAlign: 'center',
             color: '#FFFFFF',
-            fontSize: 15,
+            fontSize: 12,
             letterSpacing: 0.0
           }, this.props.dynamicVisualProperties2]}>
-            {(item.room as string).toLocaleUpperCase()}
+            {roomString}
           </Animated.Text>
 
           {/* <Animated.Image
@@ -263,14 +266,14 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               right: (item.orientation == 'right' ? undefined : (4 + 35)),
               left: (item.orientation == 'left' ? undefined : (4 + 35)),
               width: 190,
-              fontFamily: 'DINCondensed-Bold',
+              fontFamily: 'RobotoCondensed-Regular',
               // backgroundColor: 'indigo',
               textAlign: (item.orientation == 'right' ? 'left' : 'right'),
               color: '#fefefe',
               fontSize: (fontSizeMainTitle),
               opacity:1.0
             }}>
-              {(item.sessionMainTitle as string).toLocaleUpperCase()}
+              {(item.sessionMainTitle as string)}
             </Animated.Text>
 
 
@@ -286,13 +289,13 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               fontSize: 13,
               // backgroundColor: 'indigo',
               textAlign: (item.orientation == 'right' ? 'left' : 'right'),
-              color: '#e4a35e',
+              color: '#3f3639',
               // fontSize: (fontSizeArtistName),
             }}>
               {item.artistName ? (item.artistName as string).toLocaleUpperCase() : ""}
             </Text >
 
-            {levelData[levelId] != undefined &&
+            {/* {levelData[levelId] != undefined &&
               <>
                 <Image
                   source={levelData[levelId].src}
@@ -327,7 +330,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                 </Text >
               </>
 
-            }
+            } */}
 
             <ScheduleItemToggle
               ref={(r) => { this.toggleButtonReference = r }}
@@ -360,10 +363,11 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                   top: (67 + verticalOffsetTitleLength),
                   height: 23, width: 120,
                 }}
-                text={"ARTIST DETAILS"}
+                text={"DETAILS"}
                 bgBoxVisible={true}
                 bgBoxStyle={{
-                  backgroundColor: '#1d1c24',
+                  backgroundColor: '#937d7f',
+                  opacity: 0.5,
                   height: 23, width: 120
                 }}
                 fontStyle={{

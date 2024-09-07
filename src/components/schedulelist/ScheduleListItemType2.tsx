@@ -1,42 +1,72 @@
-import { Dimensions, Text } from 'react-native';
-
-
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
+import LText from '../../core/LText';
+import LComponent from '../../core/LComponent';
 
 const ScheduleListItemType2 = ({ item }) => {
-
   // console.log("ScheduleListItem: " + JSON.stringify(item, null, 2));
   if (item.itemType != 'type2') return;
-
   return (
     <>
-
-      <Text allowFontScaling={false} id='textSessionMainTitle' style={{
+      <View id='bg' style={{
         position: 'absolute',
-        top: 7, left: 90,
-        width: Dimensions.get('screen').width-90-30,
-        fontFamily: 'DINNeuzeitGroteskStd-Light',
+        top: 0, left: 0,
+        height: item.itemHeight,
+        width: Dimensions.get('screen').width,
+        opacity: 0.1,
+        borderBottomWidth: StyleSheet.hairlineWidth,
+        borderColor: '#FFFFFF',
+        padding: 0,
+        backgroundColor: '#382b38',
+      }}
+      />
+
+      {/* <LText allowFontScaling={false} id='textSessionMainTitle' style={{
+        position: 'absolute',
+        top: 0,
+        left: (4 + 35),
+        width: Dimensions.get('screen').width - 70,
+        fontFamily: 'RobotoCondensed-Regular',
         // backgroundColor: 'indigo',
         textAlign: 'left',
-        color: '#000000',
-        fontSize: 22,
+        color: '#fefefe',
+        fontSize: (14),
+        opacity: 1.0
       }}>
-        {item.sessionMainTitle ? (item.sessionMainTitle as string).toLocaleUpperCase() : ""}
-      </Text>
+        {(item.groupTitle as string).toLocaleUpperCase()}
+      </LText> */}
 
-
-      <Text allowFontScaling={false} id='textLocation' style={{
+      <LText allowFontScaling={false} id='textSessionMainTitle' style={{
         position: 'absolute',
-        top: 40, left: 90,
-        width: 290, height: 22,
+        top: 10,
+        left: (4 + 15),
+        width: Dimensions.get('screen').width/2-15,
+        fontFamily: 'RobotoCondensed-Regular',
+        // backgroundColor: 'indigo',
+        textAlign: 'left',
+        color: '#fefefe',
+        fontSize: (15),
+        opacity: 1.0
+      }}>
+        {(item.sessionMainTitle as string)}
+      </LText>
+
+
+      <LText allowFontScaling={false} id='textSessionArtistName' style={{
+        position: 'absolute',
+        top: 20,
+        right: (4 + 15),
+        height: 12 + 4,
+        width: Dimensions.get('screen').width/2-15,
         fontFamily: 'Cabin-Regular',
         letterSpacing: 2.0,
+        fontSize: 13,
         // backgroundColor: 'indigo',
-        textAlign: 'left',
-        color: '#000000',
-        fontSize: 12,
+        textAlign: 'right',
+        color: '#3f3639',
+        // fontSize: (fontSizeArtistName),
       }}>
-        {item.room ? (item.room as string).toLocaleUpperCase() : ""}
-      </Text>
+        {item.artistName ? (item.artistName as string).toLocaleUpperCase() : ""}
+      </LText >
     </>
   );
 }
