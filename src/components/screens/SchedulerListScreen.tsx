@@ -23,6 +23,12 @@ class SchedulerListScreen extends PureComponent {
         dataModelList: null
     }
 
+    descriptions = [
+        "",
+        "After the Opening in the Main Fair space, the breakout sessions start at 01:00pm and come in different flavors: 1) Group Classes 2) Conversation Circles 3) Outside. Feel free to browse the parallel sessions and mark the ones you would like to go to.",
+        "",
+        ""
+    ]
 
     constructor(props) {
         super(props);
@@ -86,7 +92,7 @@ class SchedulerListScreen extends PureComponent {
                                     style={{
                                         position: 'absolute',
                                         // backgroundColor: '#25649a',
-                                        opacity: 0.5
+                                        opacity: 1.0
                                     }}
                                     visualProperties={{
                                         alpha: 1 - Math.max(Math.min(1, i - selectedDayIndex), 0) / 2,
@@ -96,29 +102,39 @@ class SchedulerListScreen extends PureComponent {
                                         h: Dimensions.get('screen').height - offsetY,
                                     }}
                                 >
-                                    <LText
-                                     style={{
-                                        position:'absolute',
-                                        backgroundColor: '#EFEFEF',
-                                        opacity: 0
-                                    }}>
-                                        Description
-                                    </LText>
-                                    <View
+                                   <View
                                         style={{
+                                            position:'absolute',
+                                            borderTopWidth: 6,
+                                            borderBottomWidth: 6,
+                                            borderColor:'#c75e2c',
                                             width: Dimensions.get('screen').width - offsetX,
                                             height: Dimensions.get('screen').height - offsetY,
                                             backgroundColor: '#cbb7b8',
-                                            opacity: 0.7
+                                            opacity: 1.0
                                         }}
                                     />
+                                    <LText
+                                     style={{
+                                        top:6,
+                                        color:'#231e28',
+                                        fontFamily: 'Cabin-Regular',
+                                        letterSpacing: 1.2,
+                                        backgroundColor: '#d6b6a9',
+                                        padding: Dimensions.get('screen').width*0.06,
+                                        opacity: 0.8
+                                    }}>
+                                        {this.descriptions[i]}
+                                    </LText>
+                               
 
                                     <GestureDetector gesture={scheduleList.nativeGestureObj}>
                                         <FlatList
                                             ref={(list) => { scheduleList.flatListRef = list; }}
                                             style={{
-                                                position: 'absolute',
                                                 // backgroundColor: '#25649a',
+                                                // borderTopWidth: 2,
+                                                // borderColor:'#c75e2c',
                                                 left: 0, top: 20,
                                                 width: Dimensions.get('screen').width - offsetX,
                                                 height: Dimensions.get('screen').height - offsetY - 10,
@@ -205,7 +221,7 @@ class SchedulerListScreen extends PureComponent {
     }
     finishModelUpdate() {
         // console.log("___________SchedulerScreen finishModelUpdate -  update (state 2)");
-        this.setState({ modelUpdateState: 2, dataModelList: DataModel.getInstance().dyn_dataScheduleListsByDay })
+        this.setState({ modelUpdateState: 2, dataModelList: DataModel.getInstance().dyn_dataScheduleListsBySection })
     }
 }
 
