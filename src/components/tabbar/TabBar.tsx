@@ -100,7 +100,7 @@ const TabBar = (props) => {
                                 textAlignVertical: 'center',
                                 fontSize: 14,
                                 opacity: 1.0,
-                                top:10
+                                top:16
                             }}
                         />
 

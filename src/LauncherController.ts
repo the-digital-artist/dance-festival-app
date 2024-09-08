@@ -213,8 +213,8 @@ class LauncherController extends OperatorStates {
     tabBarIndex = 0
     tabBarData =
         [
-            { id: 0, itemText: "Main Fair Program ", associatedScreenName: "scheduleList0", imgSrc: null },
-            { id: 1, itemText: "Breakout Sessions", associatedScreenName: "scheduleList1", imgSrc: null },
+            { id: 0, itemText: "Main Fair ", associatedScreenName: "scheduleList0", imgSrc: null },
+            { id: 1, itemText: "Sessions", associatedScreenName: "scheduleList1", imgSrc: null },
             // { id: 1, itemText: "Classes, Conversation Circles & Outside", associatedScreenName: "scheduleList1", imgSrc: null },
             // { id: 2, itemText: "Outside", associatedScreenName: "scheduleList2", imgSrc: null },
             { id: 2, itemText: "Massage", associatedScreenName: "scheduleList2", imgSrc: null },
