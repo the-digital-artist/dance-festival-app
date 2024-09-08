@@ -7,13 +7,13 @@ const NavBarHighlight = (props) => {
             <LComponent
                 name="navBarHighlight"
                 style={{
-                    backgroundColor: '#010101',
+                    backgroundColor: '#f2f2f2',
                     width: props.style.width,
                     height: 4,
                     bottom:props.bottomOffsetY
                 }}
                 visualProperties={{
-                    alpha: 0.0, x: props.startX
+                    alpha: 1.0, x: props.startX
                 }}
             />
         </>

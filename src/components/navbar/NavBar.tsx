@@ -9,8 +9,8 @@ import ButtonSmall from "../ButtonSmall";
 class NavBar extends PureComponent<any, any> {
     navBarData = [];
 
-    static navBarIconSize = 90;
-    static navBarItemDistance = 100
+    static navBarIconSize = Dimensions.get('screen').width/3;
+    static navBarItemDistance = Dimensions.get('screen').width/3-10;
     static navBarStartX = 0;
     static navBarHeight = (Dimensions.get('screen').width * (300 / 1290))
 
