@@ -12,12 +12,13 @@ const ScheduleListItemType3 = ({ item }) => {
   // console.log("ScheduleListItem: " + JSON.stringify(item, null, 2));
   if (item.itemType != 'type3') return;
 
-  const sessionCategoryName = (item.level != undefined && item.level == 'M') ? " Masterclass " : " Special Track "
+  const sessionCategoryName = "BOOTH"
   const artistData1 = DataModel.getInstance().static.dataArtists[item.artistOne];
   const artistData2 = item.artistTwo ? DataModel.getInstance().static.dataArtists[item.artistTwo] : null;
   const verticalOffsetTitleLength = item.lineCount != undefined ? (item.lineCount * 19) : 19;
   const preSignupRequired = false;
 
+  const artistImageSize = item.itemHeight-52;
 
 
   const companyString = artistData1.artistCompany != undefined ? artistData1.artistCompany : '';
@@ -38,10 +39,10 @@ const ScheduleListItemType3 = ({ item }) => {
       <Text allowFontScaling={false} id='textSessionCategoryAndRoom' style={{
         position: 'absolute',
         top: 7,
-        left: 85,
+        left: Dimensions.get('screen').width/2-56,
         fontFamily: 'Cabin-Regular',
         letterSpacing: 1.2,
-        opacity: 0.8,
+        opacity: 0.4,
         padding: 2,
         backgroundColor: '#382b38',
         // backgroundColor: '#600f2c',
@@ -49,14 +50,15 @@ const ScheduleListItemType3 = ({ item }) => {
         color: '#bcd4ee',
         fontSize: 11,
       }}>
-        {sessionCategoryName.toLocaleUpperCase() + "  |  " + (item.room ? (item.room as string).toLocaleUpperCase() + " " : "")}
+        {/* {sessionCategoryName.toLocaleUpperCase() + "  |  " + (item.room ? (item.room as string).toLocaleUpperCase() + " " : "")} */}
+        {(item.room ? (item.room as string).toLocaleUpperCase() + " " : "")}
       </Text >
 
       <View
         style={{
           // backgroundColor: 'skyblue',
           flex: 1, flexDirection: 'column',
-          left: 85,
+          left: 20,
           top: 43,
           width: Dimensions.get('screen').width / 2,
           height: 40
@@ -87,8 +89,8 @@ const ScheduleListItemType3 = ({ item }) => {
           // backgroundColor: 'indigo',
           letterSpacing: 0.0,
           textAlign: 'left',
-          color: '#e3dfbb',
-          fontSize: 23,
+          color: '#d2cbd1',
+          fontSize: 20,
         }}>
 
           <LText>
@@ -123,13 +125,13 @@ const ScheduleListItemType3 = ({ item }) => {
         </Text>
 
       </View >
-      <ButtonSmall
+      {/* <ButtonSmall
         name={("ScheduleListArtistDetailsButton" + item.id)}
         source={null}
         style={{
           position: 'absolute',
-          left: 80,
-          top: item.itemHeight - 55,
+          left: 20,
+          top: item.itemHeight - 46,
           height: 23, width: 130,
         }}
         text={"SESSION INFO"}
@@ -153,7 +155,7 @@ const ScheduleListItemType3 = ({ item }) => {
         visualProperties={{ alpha: 1 }}
         onSelect={() => {
         }}
-      />
+      /> */}
 
       <ButtonSmall
         name={("artistImageButton1" + item.id)
@@ -162,28 +164,21 @@ const ScheduleListItemType3 = ({ item }) => {
         style={{
           position: 'absolute',
           // backgroundColor: 'skyblue',
-          top: 30,
+          top: 32,
           left: Dimensions.get('screen').width - 150,
-          width: 135,
-          height: 135,
+          width: artistImageSize,
+          height: artistImageSize,
         }}
         imageStyle={
           [{
             position: 'absolute',
             right: undefined, left: undefined,
-            width: 135,
-            height: 135,
+            width: artistImageSize,
+            height: artistImageSize,
             resizeMode: 'cover',
             opacity: 0.9,
           }]}
         bgBoxVisible={false}
-        bgBoxStyle={{
-          backgroundColor: '#FFFFFF',
-          opacity: 0.1,
-          left: -5,
-          width: 145,
-          height: 145,
-        }}
         visualProperties={{ alpha: 1 }}
         onSelect={() => {
           if (artistData1 == undefined) return;
@@ -194,7 +189,7 @@ const ScheduleListItemType3 = ({ item }) => {
 
 
       {
-        (!preSignupRequired) &&
+        (false && !preSignupRequired) &&
 
         <Image
           source={LauncherController.getInstance().staticImageList[LauncherController.getInstance().staticImageList.length - 1].imgSrc}

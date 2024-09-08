@@ -19,6 +19,7 @@ const ScheduleListItemType4 = ({ item }) => {
   const verticalOffsetTitleLength = item.lineCount != undefined ? (item.lineCount * 19) : 19;
   const preSignupRequired = ((item.sessionMainTitle as string).toLowerCase().indexOf("absolute beginner") == -1)
 
+  const artistImageSize = item.itemHeight;
 
 
   const companyString = artistData1.artistCompany != undefined ? artistData1.artistCompany : '';
@@ -162,18 +163,18 @@ const ScheduleListItemType4 = ({ item }) => {
         source={artistData1 ? artistData1.imgSrc : null}
         style={{
           position: 'absolute',
-          // backgroundColor: 'skyblue',
+          backgroundColor: 'skyblue',
           top: 30,
           left: Dimensions.get('screen').width - 150,
-          width: 135,
-          height: 135,
+          width: artistImageSize,
+          height: artistImageSize,
         }}
         imageStyle={
           [{
             position: 'absolute',
             right: undefined, left: undefined,
-            width: 135,
-            height: 135,
+            width: artistImageSize,
+            height: artistImageSize,
             resizeMode: 'cover',
             opacity: 0.9,
           }]}
@@ -182,8 +183,8 @@ const ScheduleListItemType4 = ({ item }) => {
           backgroundColor: '#FFFFFF',
           opacity: 0.1,
           left: -5,
-          width: 145,
-          height: 145,
+          width: artistImageSize,
+          height: artistImageSize,
         }}
         visualProperties={{ alpha: 1 }}
         onSelect={() => {
@@ -195,7 +196,7 @@ const ScheduleListItemType4 = ({ item }) => {
 
 
       {
-        (!preSignupRequired) &&
+        (false && !preSignupRequired) &&
 
         <Image
           source={LauncherController.getInstance().staticImageList[LauncherController.getInstance().staticImageList.length - 1].imgSrc}
