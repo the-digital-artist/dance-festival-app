@@ -70,6 +70,18 @@ class HomeScreen extends PureComponent<any, any> {
                         source={require('../../../assets/screen-home-bg.png')}
                     />
 
+<Image
+                        source={require('../../../assets/home-element-0324.png')}
+                        style={{
+                            position: 'absolute', resizeMode: 'contain',
+                            // opacity: (Dimensions.get("screen").height < 800 ? 0.1 : 1.0 - (logoScrollAlphaReductionDelta * Math.min(1, Math.max(0, this.state.scrollPosY / 100)))),
+                            left: 0,
+                            bottom: NavBar.navBarHeight-3,
+                            // backgroundColor: 'red',
+                            width: Dimensions.get('screen').width,
+                            height: Dimensions.get('screen').width * 967/1287,
+                        }}
+                    />
                     <LComponent
                         name='homeScreenVideoBgContainer'
                         style={{ position: 'absolute' }}
@@ -91,18 +103,6 @@ class HomeScreen extends PureComponent<any, any> {
                         }
                     </LComponent>
 
-                    {/* <Image
-                        source={require('../../../assets/logo-white.png')}
-                        style={{
-                            position: 'absolute', resizeMode: 'contain',
-                            opacity: (Dimensions.get("screen").height < 800 ? 0.1 : 1.0 - (logoScrollAlphaReductionDelta * Math.min(1, Math.max(0, this.state.scrollPosY / 100)))),
-                            left: 80,
-                            // backgroundColor: 'red',
-                            top: screenHeaderHeight + 15,
-                            width: Dimensions.get('screen').width - (2 * 80),
-                            height: Dimensions.get('screen').width - (2 * 80) * 1313 / 815,
-                        }}
-                    /> */}
 
                     <ScreenHeader
                         text={"WELCOME MY FRIEND"}
