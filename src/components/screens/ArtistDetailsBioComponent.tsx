@@ -4,6 +4,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import LauncherController from "../../LauncherController";
 import LComponent from "../../core/LComponent";
 import NavBar from "../navbar/NavBar";
+import { BlurView } from "expo-blur";
 
 
 class ArtistDetailsBioComponent extends PureComponent<any, any> {
@@ -30,7 +31,7 @@ class ArtistDetailsBioComponent extends PureComponent<any, any> {
         const maskStart = Dimensions.get('screen').height*(1590/2796)
         const maskStart2 = Dimensions.get('screen').height*(1736/2796)
         const artistImageOffsetBottom = ((Platform.OS == 'android') ? NavBar.navBarHeight + 50 : NavBar.navBarHeight - 20)
-        const artistImageSize = Dimensions.get('screen').height-artistImageOffsetBottom-maskStart;
+        const artistImageSize = Dimensions.get('screen').width/2-20;
 
         // const gestureObj = Gesture.Pan()
         // gestureObj
@@ -49,6 +50,20 @@ class ArtistDetailsBioComponent extends PureComponent<any, any> {
 
         return (
             <>
+              <Image
+                        // name={("ScheduleListArtistDetailsButton" + item.fullName)}
+                        source={item.imgSrc}
+                        style={{
+                            // backgroundColor:'skyblue',
+                            position: 'absolute',
+                            left:35, top: 180,
+                            bottom: artistImageOffsetBottom,
+                            width: artistImageSize,
+                            height: artistImageSize,
+                            opacity: 1.0 - (0.95 * Math.min(1, Math.max(0, this.state.scrollPosY / 60)))
+
+                        }}
+                    />
                 <ScrollView
                     // simultaneousHandlers={[this.gestureRef]}
                     ref={this.scrollViewRef}
@@ -68,10 +83,22 @@ class ArtistDetailsBioComponent extends PureComponent<any, any> {
                 >
 
 
+{/* {Platform.OS == "ios" && <BlurView
+                                    intensity={5}
+                                    style={{
+                                        // backgroundColor:'skyblue',
+                                        position: 'absolute',
+                                        opacity: 1.0,
+                                        top: 200, margin: 15,
+                                        width: Dimensions.get('screen').width - 40 - 25,
+                                        height: Dimensions.get('screen').height - 180 - NavBar.navBarHeight - 20,
+                                    }} />
+                                } */}
+
                     <Text
                         id='artistBioFocus'
                         style={{
-                            top: 0, margin: 15,
+                            top: 200, margin: 15,
                             width: Dimensions.get('screen').width - 40 - 25,
                             // height: (artistBiography as string).length / 1100 * 1.2 * Dimensions.get('screen').height,
                             fontFamily: 'Arcon-Regular',
@@ -129,20 +156,7 @@ class ArtistDetailsBioComponent extends PureComponent<any, any> {
                         }}
                         source={require('../../../assets/screen-artists-bg-masked.png')} />
 
-                    <Image
-                        // name={("ScheduleListArtistDetailsButton" + item.fullName)}
-                        source={item.imgSrc}
-                        style={{
-                            // backgroundColor:'skyblue',
-                            position: 'absolute',
-                            right: -40,
-                            bottom: artistImageOffsetBottom,
-                            width: artistImageSize,
-                            height: artistImageSize,
-                            opacity: 1.0 - (0.9 * Math.min(1, Math.max(0, this.state.scrollPosY / 10)))
-
-                        }}
-                    />
+                  
                 </LComponent>
 
                 {this.state.heightThresholdPassed &&
@@ -151,23 +165,23 @@ class ArtistDetailsBioComponent extends PureComponent<any, any> {
                             position: 'absolute',
                             // bottom: artistImageSize-50+((Platform.OS == 'android') ? NavBar.navBarHeight + 50 : NavBar.navBarHeight - 20),
                             // top: Dimensions.get('screen').height-artistImageSize-NavBar.navBarHeight+45, 
-                            top: maskStart2, 
-                            left: 35,
-                            backgroundColor: 'transparent',
+                            bottom: NavBar.navBarHeight+20, 
+                            right: 35,
+                            // backgroundColor: 'skyblue',
                             opacity: 1.0 - (1.0 * Math.min(1, Math.max(0, this.state.scrollPosY / 10)))
                         }}
                        >
                         <Text
                             id='artistBioFocus'
                             style={{
-                                width:Dimensions.get('screen').width-artistImageSize+40,
+                                // width:Dimensions.get('screen').width-artistImageSize+40,
                                 // height: (artistBiography as string).length / 1100 * 1.2 * Dimensions.get('screen').height,
-                                fontFamily: 'Arcon-Regular',
+                                fontFamily: 'Arcon-Bold',
                                 letterSpacing: 1.0,
                                 // textAlign: 'justify',
                                 // backgroundColor: 'indigo',
-                                color: '#7a87a6',
-                                fontSize: 10,
+                                color: '#433d40',
+                                fontSize: 12,
                             }}
                         >
                             {"SCROLL TO READ MORE"}

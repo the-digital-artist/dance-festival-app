@@ -41,7 +41,7 @@ class ArtistDetailsScreen extends PureComponent {
                 (artistBiography as string).length / 1100 * 1.7 * Dimensions.get('screen').height;
 
         let socialBarData = [
-            { id: 0, provider: "Instagram", account: item.insta, imgSrc: require('../../../assets/icon-social-insta.png') },
+            { id: 0, provider: "Instagram", account: item.insta.substring(1), imgSrc: require('../../../assets/icon-social-insta.png') },
             // { id: 1, provider: "Youtube", account: "", imgSrc: require('../../../assets/icon-social-youtube.png') },
             // { id: 2, provider: "Facebook", account: "", imgSrc: require('../../../assets/icon-social-facebook.png') },
             // { id: 3, provider: "Web", account: "", imgSrc: require('../../../assets/icon-social-web.png') }
@@ -118,7 +118,7 @@ class ArtistDetailsScreen extends PureComponent {
                         fontFamily: 'Arcon-Regular',
                         textAlign: 'center',
                         letterSpacing: 1.7,
-                        color: '#eda253',
+                        color: '#e2b078',
                         fontSize: 17,
                     }}>
                         {(item.fullName as string).toLocaleUpperCase()}

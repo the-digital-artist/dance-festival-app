@@ -14,7 +14,7 @@ const ArtistListItemRenderer = ({ item, index }) => {
   const imageSize = 100;
   const imageOffsetY = (itemHeight - imageSize) / 2
 
-  const editionData = item['editionData']!=undefined?item['editionData']:[];
+  const editionData = item['editionData'] != undefined ? item['editionData'] : [];
 
 
   return (
@@ -56,18 +56,18 @@ const ArtistListItemRenderer = ({ item, index }) => {
             }}
           />
 
-<Image
+          <Image
             source={require('../../../assets/artist-itemrenderer-dividerline.png')}
             style={{
               position: 'absolute', resizeMode: 'contain', opacity: 0.5,
               left: Dimensions.get('screen').width - 130,
-             top: imageOffsetY+3, width: 2, height: 2*(220/5),
+              top: imageOffsetY + 3, width: 2, height: 2 * (220 / 5),
             }}
           />
 
           <LText id='textHeadlineEditions' style={{
             position: 'absolute',
-            top: imageOffsetY, 
+            top: imageOffsetY,
             left: Dimensions.get('screen').width - 120,
             width: 150, height: 11,
             // backgroundColor: 'indigo',
@@ -94,51 +94,58 @@ const ArtistListItemRenderer = ({ item, index }) => {
           })
           }
 
-
-          <LText id='textArtistName' style={{
-            position: 'absolute',
-            top: 30, left: 130,
-            width: 290, height: 19,
-            fontFamily: 'Cabin-Regular',
-            letterSpacing: 2.0,
-            // backgroundColor: 'indigo',
-            textAlign: 'left',
-            color: '#26272b',
-            fontSize: 14,
-          }}>{(item.fullName as string).toLocaleUpperCase()}
-          </LText>
-
-          {
-            item.fullName != '' &&
-            <ButtonSmall
-              name={("focusItemArtistButton" + index)}
-              source={null}
+          <View
+            style={{
+              position: 'absolute',
+              top: 30, left: 125,
+              flexDirection: 'column',
+              width: Dimensions.get('screen').width - imageSize - 160, 
+              // backgroundColor: 'red',
+            }}>
+            <LText id='textArtistName'
               style={{
-                position: 'absolute',
-                left: 130,
-                top: 60,
-                height: 26, width: 120,
-              }}
-              text={"MORE DETAILS"}
-              bgBoxVisible={true}
-              bgBoxStyle={{
-                backgroundColor: '#4c4a4d',
-                height: 23, width: 120
-              }}
-              fontStyle={{
-                width: 120,
+                top: 0, left: 0,
                 fontFamily: 'Cabin-Regular',
                 letterSpacing: 2.0,
-                color: '#FFFFFF',
-                fontSize: 9,
-                textAlign: 'center',
-                textAlignVertical: 'center',
-                top: 6
-              }}
-              visualProperties={{ alpha: 1 }}
-              onSelect={() => { ActionArtistListOnDetailsBtn(item) }}
-            />
-          }
+                // backgroundColor: 'skyblue',
+                textAlign: 'left',
+                color: '#26272b',
+                fontSize: 14,
+              }}>{(item.fullName as string).toLocaleUpperCase()}
+            </LText>
+
+            {item.fullName != '' &&
+              <ButtonSmall
+                name={("focusItemArtistButton" + index)}
+                source={null}
+                style={{
+                  top:15,
+                  height: 26, width: 120,
+                }}
+                text={"MORE DETAILS"}
+                bgBoxVisible={true}
+                bgBoxStyle={{
+                  backgroundColor: '#4c4a4d',
+                  height: 23, width: 120
+                }}
+                fontStyle={{
+                  width: 120,
+                  fontFamily: 'Cabin-Regular',
+                  letterSpacing: 2.0,
+                  color: '#FFFFFF',
+                  fontSize: 9,
+                  textAlign: 'center',
+                  textAlignVertical: 'center',
+                  top: 6
+                }}
+                visualProperties={{ alpha: 1 }}
+                onSelect={() => { ActionArtistListOnDetailsBtn(item) }}
+              />
+            }
+
+
+          </View>
+
         </>
       </LTouchableOpacity>
     </>
