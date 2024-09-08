@@ -9,7 +9,7 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
     // console.log('ScheduleItemGroupRe render'+group.length+mainItem.dateString)
     const paddingLeftAndRight = 5;
 
-    const tileWidth = Dimensions.get('screen').width - (2 * paddingLeftAndRight + 45 + 35 + 35)
+    const tileWidth = Dimensions.get('screen').width - (2 * paddingLeftAndRight + 45 + 20+20)
     const tileDistance = tileWidth + 10;
     const tileHeight = rowHeight != undefined ? rowHeight : 100;
 
@@ -30,7 +30,7 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
         const dynamicValueXRoom = useDerivedValue(() => {
             let scalingFactor = i > currentIndex.value ? -(tileWidth - 60) / 2 : (tileWidth - 60) / 2;
             let centerDeltaX = Math.max(0, Math.min(1, Math.abs(i - currentIndex.value)));//gives you 0 for the incoming item and 1 for all outgoing
-            return (centerDeltaX * scalingFactor)
+            return (centerDeltaX * scalingFactor/1.6)
         });
 
 
@@ -211,7 +211,7 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
             <Animated.View style={
                 [{
                     position: 'absolute',
-                    left: (15), top: 115,
+                    left: (3), top: 115,
                     width: 32, height: 28,
                     // backgroundColor: 'skyblue'
                 }, animValueLeftButtonAlpha]
@@ -236,7 +236,7 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
             <Animated.View style={
                 [{
                     position: 'absolute',
-                    left: (55 + 25 + tileWidth), top: 115,
+                    left: (60  + tileWidth), top: 115,
                     width: 32, height: 28,
                     // backgroundColor: 'skyblue'
                 }, animValueRightButtonAlpha]

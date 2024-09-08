@@ -21,7 +21,7 @@ const ScheduleListItem = ({ item, index }) => {
   if (group.length == 0) group = [{ id: item.id, obj: item }]
 
   if (item.itemType == 'type1')
-    itemHeight = (item.sessionMainTitle as string).length > 25 ? 190 : 190;
+    itemHeight = (item.sessionMainTitle as string).length > 25 ? 200 : 200;
   else if (item.itemType == 'type2')
     itemHeight = (item.room == "" ? 50 : 65);
   else if (item.itemType == 'type3') {
@@ -132,12 +132,12 @@ const ScheduleListItem = ({ item, index }) => {
       <Text allowFontScaling={false} id='textTime' style={{
         position: 'absolute',
         top: 4, left: 6,
-        width: 70, height: 15,
-        fontFamily: 'RobotoCondensed-Regular',
+        height: 15,
+        fontFamily: 'RobotoCondensed-Bold',
         // backgroundColor: 'skyblue',
         textAlign: 'right',
         color: '#232323',
-        fontSize: 13,
+        fontSize: 14,
       }}>
         {item.time}
       </Text>
