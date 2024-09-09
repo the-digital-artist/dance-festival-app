@@ -2,6 +2,7 @@ import { Dimensions } from "react-native";
 import LauncherController from "../LauncherController";
 import TweenManager from "../core/LTweenManager";
 import { PureComponent } from "react";
+import DataModel from "../DataModel";
 
 const TransitionArtistNavigateDown = (item, levelIndex) => {
         console.log("TransitionArtistNavigateDown");
@@ -12,12 +13,12 @@ const TransitionArtistNavigateDown = (item, levelIndex) => {
                 
 
         // LauncherController.getInstance().context.stackNavigator.navigate("ARTIST DETAILS")
-        const stackData = LauncherController.getInstance().artistStackData;
+        const stackData = DataModel.getInstance().static.dataComponents.artistStack;
         const oldIndex =  LauncherController.getInstance().artistStackIndex;
         const newIndex = levelIndex;
         if(newIndex == oldIndex) return;
 
-        (stackData[1].screenComponentRef as PureComponent).forceUpdate();
+        (LauncherController.getInstance().artistStackComponentRef as PureComponent).forceUpdate();
 
         //animate incoming screen
         let targetX = newIndex > oldIndex ? Dimensions.get('screen').width : -Dimensions.get('screen').width;

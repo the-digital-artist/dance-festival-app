@@ -11,6 +11,7 @@ import ScreenHomeButton from "./ScreenHomeButton";
 import TweenManager from "../../core/LTweenManager";
 import LComponent from "../../core/LComponent";
 import ArtistDetailsBioComponent from "./ArtistDetailsBioComponent";
+import DataModel from "../../DataModel";
 
 
 class ArtistDetailsScreen extends PureComponent {
@@ -31,7 +32,7 @@ class ArtistDetailsScreen extends PureComponent {
         const logoScrollAlphaReductionDelta = 0.9
 
         // console.log("Setting Reference")
-        LauncherController.getInstance().artistStackData[1].screenComponentRef = this;
+        LauncherController.getInstance().artistStackComponentRef = this;
 
         const artistBiography = (item != undefined && item.bio != undefined && item.bio.length > 0) ? (item.bio as string) : "Stay tuned - more information coming soon"
 

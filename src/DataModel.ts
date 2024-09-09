@@ -1,16 +1,18 @@
 import { modelInitStaticOverwrite } from "./DataModelOverwrite";
 
 class DataModel {
-	static _instance = null;
-	static getInstance(): DataModel { return (DataModel._instance == null ? (DataModel._instance = new DataModel()) : DataModel._instance) }
+
+	private static _instance: DataModel;
+	public static getInstance() { if (!this._instance) { this._instance = new DataModel(); } return this._instance; }
+
 	static modelOverWriteOnFirstLoad = true;
 
-	constructor() { 
-		console.log('DataModel Creation - model version: ' + this.static); 
-		if(!DataModel.modelOverWriteOnFirstLoad) return;
-		
-		this.static = modelInitStaticOverwrite; 
-		console.log('DataModel Creation - model overwrite: ' + this.static); 
+	constructor() {
+		// console.log('DataModel Creation - model version: ' + this.static);
+		if (!DataModel.modelOverWriteOnFirstLoad) return;
+
+		(this.static as any) = modelInitStaticOverwrite;
+		console.log('DataModel Creation - model overwrite: ' + this.static);
 	}
 
 
@@ -48,7 +50,7 @@ class DataModel {
 
 
 	//static properties (may be updated by remote model version)
-	static: any = {
+	static = {
 		modelRemoteGetModelUrl: '',
 		modelRemoteVersionCheckUrl: '',
 		modelRemoteUpdateInterval: 55000,
@@ -58,11 +60,11 @@ class DataModel {
 		modelVersion: 1000,
 
 		dataArtists: {
-			"Ki Charles": { "fullName": "Ki Charles", editionData: ["01-2024", "02-2024", "03-2024", "04-2024" ], imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
-			"Alex Castro": { "fullName": "Alex Castro", editionData: ["01-2024", "02-2024" ], imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
-			"David Khalili": { "fullName": "David Khalili", editionData: ["01-2024", "03-2024" ], imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
-			"Alexandria": { "fullName": "Alexandria",  editionData: ["01-2024" ], imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
-			"Kramer & Dhiraj": { "fullName": "Kramer & Dhiraj", editionData: ["01-2024", "02-2024", "03-2024" ],imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
+			"Ki Charles": { "fullName": "Ki Charles", editionData: ["01-2024", "02-2024", "03-2024", "04-2024"], imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
+			"Alex Castro": { "fullName": "Alex Castro", editionData: ["01-2024", "02-2024"], imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
+			"David Khalili": { "fullName": "David Khalili", editionData: ["01-2024", "03-2024"], imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
+			"Alexandria": { "fullName": "Alexandria", editionData: ["01-2024"], imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
+			"Kramer & Dhiraj": { "fullName": "Kramer & Dhiraj", editionData: ["01-2024", "02-2024", "03-2024"], imgSrc: "", "insta": "", "bio": "was born.. ", "shortBio": "", "facebook": "", "portrait": "_0000_DEFAULT.png" },
 		},
 
 		dataScheduleRaw: [
@@ -75,25 +77,45 @@ class DataModel {
 			"Track Name": { company: '', description: '', title: '', price: '', signup: '', artistNames: [] }
 		},
 
-		dataStyles: {
-			// 'type1': { note: 'workshops', color1: '#312816', color2: '#312816', color3: '#f8f6d3', bgColor: '#bfa269' },
-			// 'type2': { note: 'city', color1: '#f8f6d3', color2: '#312816', color3: '#FFFFFF', bgColor: '#d7c8ac' },
-			// 'type3': { note: 'bootcamp', color1: '#312816', color2: '#f8f6d3', color3: '#010101', bgColor: '#fefac9' },
-			// 'type4': { note: 'party', color1: '#f8f6d3', color2: '#f2aa3e', color3: '#FFFFFF', bgColor: '#3e3b3a' },
-		},
-
-		dataLocation: {
-			// 'altemuenze': { locationName: `Alte Münze`, mapObj: { lat: '52.5161353', lon: '13.4065007', q: `Alte+Münze` } },
-		},
-
-		dataModelProgram: [
-			// { id: 10, type: 'type4', title: 'Goodbye Party', dateText: "Sun, 21.07.24", timeText: "20:15 - 01:00", location: 'soda', locationAdress: 'Schönhauser Allee 36, 10435 Berlin', tickets: ['Berlin Experience Ticket', "All-Inclusive Pass,"], startTime: '2024-07-21T20:15:00.000', endTime: '2024-07-22T01:00:00.000', description: "Special:  23:00: Show" },
-			// { id: 11, type: 'type5', title: 'EMPTY', dateText: "", timeText: "", location: '', locationAdress: '', tickets: [], startTime: '', endTime: '', description: "" },
-		],
-
-
 		dataTicketSales: {
 			earlyBirdStartTimeString: '2024-07-21T05:00:00.000'
+		},
+
+		//data backing component labels / information architecture
+		dataComponents: {
+			schedulerTabBar:
+			[
+				{ id: 0, itemText: "Main Fair Progam", associatedScreenName: "scheduleList0", imgSrc: null },
+				{ id: 1, itemText: "Sessions", associatedScreenName: "scheduleList1", imgSrc: null },
+				// { id: 1, itemText: "Classes, Conversation Circles & Outside", associatedScreenName: "scheduleList1", imgSrc: null },
+				// { id: 2, itemText: "Outside", associatedScreenName: "scheduleList2", imgSrc: null },
+				{ id: 2, itemText: "Massage", associatedScreenName: "scheduleList2", imgSrc: null },
+				{ id: 3, itemText: "Crafty Corners", associatedScreenName: "scheduleList3", imgSrc: null }
+			],
+			schedulerTabDescriptions: [
+				"Welcome to the SF Wellbeing Fair. Below you can find the main program of the fair. The Opening starts 12:00 in the Main Fair Space. Closing will take place 4:45-5pm",
+				"Our breakout sessions start at 1:00pm and come in different flavors. 1) Group Classes 2) Conversation Circles 3) Outside. Feel free to browse the parallel sessions and mark the ones you would like to go to.",
+				"Massage Spaces - Open from 12:15-4:30pm",
+				"Crafty Corner - Open from 12:15-4:30pm"
+			],
+			navBar:
+			[
+				{ id: 0, itemText: "Calm Space", associatedScreenName: "homeScreenContainer", imgSrc: null, imgPath: '../assets/navbar/navbar_icon_home.png' },
+				{ id: 1, itemText: "Schedule", associatedScreenName: "schedulerMainScreenContainer", imgSrc: null, imgPath: '../assets/navbar/navbar_icon_planner.png' },
+				{ id: 3, itemText: "Artists", associatedScreenName: "artistsMainScreenContainer", imgSrc: null, imgPath: '../assets/navbar/navbar_icon_artists.png' },
+			],
+	
+			artistStack:
+			[
+				{ id: 0, itemText: "Artists & Practitioners", associatedScreenName: "artistsSelectionScreenContainer", imgSrc: null},
+				{ id: 1, itemText: "Artist Details", associatedScreenName: "artistsDetailsScreenContainer", imgSrc: null },
+			],
+	
+			schedulerStack:
+			[
+				{ id: 0, itemText: "Schedule", associatedScreenName: "schedulerSelectionScreenContainer", imgSrc: null },
+				{ id: 1, itemText: "Session Details", associatedScreenName: "schedulerDetailsScreenContainer", imgSrc: null },
+			]
 		}
 	}
 }

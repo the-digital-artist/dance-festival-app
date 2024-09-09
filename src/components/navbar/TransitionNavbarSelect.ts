@@ -2,6 +2,7 @@ import { Dimensions } from "react-native";
 import LauncherController from "../../LauncherController";
 import TweenManager from "../../core/LTweenManager";
 import NavBar from "./NavBar";
+import DataModel from "../../DataModel";
 
 const TransitionNavbarSelect = (index, storeHistory=true) => {
         console.log("TransitionNavbarSelect" + index);
@@ -17,14 +18,14 @@ const TransitionNavbarSelect = (index, storeHistory=true) => {
         let targetX = index > oldIdx ? Dimensions.get('screen').width : -Dimensions.get('screen').width;
 
 
-        let screenNameIn = LauncherController.getInstance().navBarData[index].associatedScreenName
+        let screenNameIn = DataModel.getInstance().static.dataComponents.navBar[index].associatedScreenName
         TweenManager.tween().to(screenNameIn, 0, { y: 0, 
                 onComplete: (ok) => { TweenManager.tween().to(screenNameIn, 200, { x: 0 })} 
                
         });
         TweenManager.tween().to(screenNameIn, 284, { alpha: 1, z: 0, delay: 137 });
 
-        let screenNameOut = LauncherController.getInstance().navBarData[oldIdx].associatedScreenName
+        let screenNameOut = DataModel.getInstance().static.dataComponents.navBar[oldIdx].associatedScreenName
         TweenManager.tween().to(screenNameOut, 134, { alpha: 0.5, z: 0 });
         TweenManager.tween().to(screenNameOut, 200, { x: -targetX, initValue: 100, 
                 onComplete: (ok) => { TweenManager.tween().to(screenNameOut, 0, { y: Dimensions.get('screen').height });} 

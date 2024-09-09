@@ -1,15 +1,15 @@
 import React, { PureComponent } from "react";
-import { Dimensions, Image, Platform, ScrollView, StyleSheet, View } from "react-native";
+import { Dimensions, Image, Platform, ScrollView, View } from "react-native";
 import ActionHistoryBackButton from "../../actions/ActionHistoryBackButton";
 import LText from "../../core/LText";
 import DataModel from "../../DataModel";
 import LauncherController from "../../LauncherController";
+import TransitionLinkToArtistPage from "../../transitions/TransitionLinkToArtistPage";
 import ButtonSmall from "../ButtonSmall";
+import NavBar from "../navbar/NavBar";
 import ScreenHeader from "./ScreenHeader";
 import ScreenHomeButton from "./ScreenHomeButton";
-import TabBar from "../tabbar/TabBar";
-import NavBar from "../navbar/NavBar";
-import TransitionLinkToArtistPage from "../../transitions/TransitionLinkToArtistPage";
+import ScheduleListItemType4 from "../schedulelist/ScheduleListItemType4";
 
 
 class SchedulerSessionDetailsScreen extends PureComponent {
@@ -23,14 +23,17 @@ class SchedulerSessionDetailsScreen extends PureComponent {
     render() {
         const context = LauncherController.getInstance().context
         const item = LauncherController.getInstance().context.schedulerFocusItem
-        LauncherController.getInstance().schedulerStackData[1].screenComponentRef = this;
+
+        LauncherController.getInstance().schedulerStackComponentRef = this;
 
         const sessionCategoryName = (item.level != undefined && item.level == 'M') ? " Masterclass " : " Special Track "
         const artistData1 = DataModel.getInstance().static.dataArtists[item.artistOne];
+        if (artistData1 == undefined) return;
+
         const preSignupRequired = ((item.sessionMainTitle as string).toLowerCase().indexOf("absolute beginner") == -1)
 
         const specialTrackData = DataModel.getInstance().static.dataSpecialSessions[item.sessionMainTitle];
-        const companyString = artistData1.artistCompany != undefined ? artistData1.artistCompany : '';
+        // const companyString = artistData1.artistCompany != undefined ? artistData1.artistCompany : '';
 
         // const scrollViewContent =
         //     Platform.OS == 'ios' ?
@@ -52,256 +55,79 @@ class SchedulerSessionDetailsScreen extends PureComponent {
             <>
                 <View
                     style={{
-                        backgroundColor: '#f2a33a',
+                        backgroundColor: '#595462',
                         top: 0, left: 0, position: 'absolute',
                         width: Dimensions.get('screen').width, height: Dimensions.get('screen').height,
-                        opacity: 1
+                        opacity: 0.7
                     }}
                 >
-                    <Image
+                    
+                </View>
+                <Image
                         style={{
                             // backgroundColor: 'skyblue',
                             top: 0, left: 0, position: 'absolute',
                             width: Dimensions.get('screen').width,
                             height: Dimensions.get('screen').height,
                             resizeMode: "cover",
-                            opacity: 1.0
+                            opacity: 0.8
                         }}
                         source={require('../../../assets/screen-scheduler-bg.png')}
                     />
-                </View>
-
 
                 <>
-                    <View id='bg' style={{
-                        position: 'absolute',
-                        top: 185, left: 0,
-                        height: 180 - 50,
-                        width: Dimensions.get('screen').width - 10,
-                        opacity: 0.2,
-                        padding: 0,
-                        backgroundColor: '#382b38',
-                    }}
-                    />
 
                     <LText id='headerSessionDetails' style={{
                         position: 'absolute',
-                        top: 150, left: 26,
+                        top: 170, left: 26,
                         fontFamily: 'Cabin-Regular',
                         // backgroundColor: 'skyblue',
                         textAlign: 'left',
                         letterSpacing: 1.0,
-                        opacity: 0.5,
-                        color: '#FFFFFF',
+                        opacity: 0.7,
+                        color: '#2f2b29',
                         fontSize: 9,
                     }}>
                         {"SESSION DETAILS"}
                     </LText>
 
-                    <Image
-                        // name={("ScheduleListArtistDetailsButton" + item.fullName)}
-                        source={artistData1.imgSrc}
-                        style={{
-                            position: 'absolute',
-                            right: -40,
-                            bottom: ((Platform.OS == 'android') ? 140 : 70),
-                            width: 300,
-                            height: 300,
-                            opacity: 0.3
-
-                        }}
-                    />
-
                     <View
                         style={{
+                            position: 'absolute',
+                            transform:[{scale:(Dimensions.get('screen').width-80)/Dimensions.get('screen').width}],
+                            top: 165, left: 5, 
+                            width:Dimensions.get('screen').width-10,
+                            height: 190,
                             // backgroundColor: 'skyblue',
-                            flexDirection: 'column',
-                            left: 60,
-                            top: 190,
-                            width: Dimensions.get('screen').width / 2,
-                            height: 120
-                        }}>
-
-                        <LText id='textSessionCategoryAndRoom' style={{
-                            left: -5,
-                            fontFamily: 'Cabin-Regular',
-                            letterSpacing: 1.2,
-                            opacity: 0.8,
-                            padding: 2,
-                            backgroundColor: '#382b38',
-                            // backgroundColor: '#600f2c',
-                            textAlign: 'left',
-                            color: '#bcd4ee',
-                            fontSize: 11,
-                        }}>
-                            {sessionCategoryName.toLocaleUpperCase() + "  |  " + (item.room ? (item.room as string).toLocaleUpperCase() + " " : "")}
-                        </LText >
-
-
-                        {preSignupRequired &&
-                            <LText allowFontScaling={false} id='textPreSignup' style={{
-                                top: 5,
-                                left: 0,
-                                width: Dimensions.get('screen').width - 90,
-                                height: 15,
-                                fontFamily: 'Cabin-Regular',
-                                letterSpacing: 1.2,
-                                // opacity: 0.5,
-                                // backgroundColor: 'indigo',
-                                textAlign: 'left',
-                                color: '#FFFFFF',
-                                fontSize: 10,
-                            }}>
-                                {"PRE-SIGNUP REQUIRED"}
-                            </LText >
-                        }
-                          {
-        (!preSignupRequired) &&
-
-        <Image
-          source={LauncherController.getInstance().staticImageList[LauncherController.getInstance().staticImageList.length - 1].imgSrc}
-          style={{
-            position: 'absolute',
-            opacity: 0.5,
-            top: 10,
-            left: Dimensions.get('screen').width -145,
-            width: 50,
-            height: 50,
-          }}
-        >
-        </Image>
-      }
-
-
-                        <LText allowFontScaling={false} id='textSessionMainTitle' style={{
-                            top: 10,
-                            left: 0,
-                            width: 220,
-                            fontFamily: 'RobotoCondensed-Regular',
-                            // backgroundColor: 'indigo',
-                            letterSpacing: 0.0,
-                            textAlign: 'left',
-                            color: '#e3dfbb',
-                            fontSize: 23,
-                        }}>
-
-                            <LText>
-                                {(item.sessionMainTitle ? (item.sessionMainTitle as string) : "") + "  "}
-                            </LText>
-
-                            <LText allowFontScaling={false} id='textSessionCount' style={{
-                                fontFamily: 'Cabin-Regular',
-                                // backgroundColor: 'indigo',
-                                textAlign: 'left',
-                                color: '#e3dfbb',
-                                fontSize: 12,
-                            }}>
-                                {item.sessionSpecialTrackCount ? (item.sessionSpecialTrackCount as string).substring(1, item.sessionSpecialTrackCount.length - 1) : ""}
-                            </LText>
-                        </LText>
-
-
-                        <LText allowFontScaling={false} id='textArtistName' style={{
-                            top: 15,
-                            left: 0,
-                            width: 290, height: 16,
-                            fontFamily: 'Cabin-Regular',
-                            letterSpacing: 2.0,
-                            // backgroundColor: 'indigo',
-                            textAlign: 'left',
-                            color: '#FFFFFF',
-                            fontSize: 12,
-                        }}>
-                            {item.artistName ? (item.artistName as string).toLocaleUpperCase() : ""}
-                        </LText>
-
-                        <LText allowFontScaling={false} id='textArtistName' style={{
-                            top: 15,
-                            left: 0,
-                            width: 290, height: 16,
-                            fontFamily: 'Cabin-Regular',
-                            letterSpacing: 2.0,
-                            // backgroundColor: 'indigo',
-                            textAlign: 'left',
-                            color: '#FFFFFF',
-                            fontSize: 12,
-                        }}>
-                            {item.artistCompany ? (item.artistCompany as string) : ""}
-                        </LText>
-
-                    </View >
+                            opacity: 1.0,
+                        }}
+                    >
+                        <ScheduleListItemType4 item={item} showDetailsButton={false}/>
+                    </View>
                 </>
 
-                <LText allowFontScaling={false} id='textSessionMainTitle' style={{
-                    top: 10,
-                    left: 0,
-                    width: 220,
-                    fontFamily: 'RobotoCondensed-Regular',
-                    // backgroundColor: 'indigo',
-                    letterSpacing: 0.0,
-                    textAlign: 'left',
-                    color: '#e3dfbb',
-                    fontSize: 23,
-                }}>
-                </LText>
 
-                <ButtonSmall
-        name={("artistScheduleDetailsButton" + item.id)
-        }
-        source={artistData1 ? artistData1.imgSrc : null}
-        style={{
-          position: 'absolute',
-          // backgroundColor: 'skyblue',
-          top: 210,
-          right:  45,
-          width: 80,
-          height: 80,
-        }}
-        imageStyle={
-          [{
-            position: 'absolute',
-            right: undefined, left: undefined,
-            width: 80,
-            height: 80,
-            resizeMode: 'cover',
-            opacity: 0.9,
-          }]}
-        bgBoxVisible={true}
-        bgBoxStyle={{
-          backgroundColor: '#232323',
-          opacity: 0.1,
-          left:-10,
-          top:-10,
-          width: 100,
-          height: 100,
-        }}
-        visualProperties={{ alpha: 1 }}
-        onSelect={() => {
-          if (artistData1 == undefined) return;
-          LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage" });
-          TransitionLinkToArtistPage(artistData1)
-        }}
-      />
+               
 
-                {specialTrackData != undefined &&
+                {true &&
                     <ScrollView
                         style={{
                             // backgroundColor: 'skyblue',
-                            top: 330, left: 20, position: 'absolute',
+                            top: 355, left: 20, position: 'absolute',
                             width: Dimensions.get('screen').width - 40,
                             height: Dimensions.get('screen').height - 330 - NavBar.navBarHeight,
                             opacity: 1
                         }}>
 
 
-                         
+
 
                         <View
                             style={{
                                 // backgroundColor: 'skyblue',
                                 flexDirection: 'column',
-                                top: 0, left: 5,
-                                width: Dimensions.get('screen').width - 50,
+                                top: 0, left: 0,
+                                width: Dimensions.get('screen').width - 45,
                                 opacity: 1
                             }}>
 
@@ -313,22 +139,22 @@ class SchedulerSessionDetailsScreen extends PureComponent {
                                 // backgroundColor: 'skyblue',
                                 textAlign: 'left',
                                 letterSpacing: 1.0,
-                                opacity: 0.5,
-                                color: '#FFFFFF',
+                                opacity: 0.7,
+                                color: '#2f2b29',
                                 fontSize: 9,
                             }}>
-                                {"INSTRUCTORS / ARTISTS"}
+                                {"PRACTITIONERS / ARTISTS"}
                             </LText>
 
                             <LText id='textSessionArtistName' style={{
                                 marginTop: 10,
                                 top: 0, left: 30,
                                 width: 190,
-                                fontFamily: 'RobotoCondensed-Regular',
+                                fontFamily: 'Cabin-Regular',
                                 letterSpacing: 1.2,
                                 //   backgroundColor: 'indigo',
                                 textAlign: 'left',
-                                color: '#e4a35e',
+                                color: '#5c5177',
                                 fontSize: 13,
                             }}>
                                 {artistData1.fullName ? (artistData1.fullName as string).toLocaleUpperCase() : ""}
@@ -388,15 +214,15 @@ class SchedulerSessionDetailsScreen extends PureComponent {
                             />
 
                             <LText id='headlineDescription' style={{
-                                marginTop: 30,
+                                marginTop: 15,
                                 left: 0,
                                 top: 0,
                                 fontFamily: 'Cabin-Regular',
                                 // backgroundColor: 'skyblue',
                                 textAlign: 'left',
                                 letterSpacing: 1.0,
-                                opacity: 0.5,
-                                color: '#FFFFFF',
+                                opacity: 0.7,
+                                color: '#2f2b29',
                                 fontSize: 9,
                             }}>
                                 {"DESCRIPTION"}
@@ -412,9 +238,14 @@ class SchedulerSessionDetailsScreen extends PureComponent {
                                 color: '#EFEFEF',
                                 fontSize: 14,
                             }}>
-                                {item ? (specialTrackData.description as string) : ""}
+                                {item ? (item.description as string) : ""}
                             </LText>
                         </View>
+                        <View 
+style={{
+    height: 100,
+}}
+                        />
                     </ScrollView>
 
                 }

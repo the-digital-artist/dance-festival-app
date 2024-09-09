@@ -25,23 +25,25 @@ class LauncherController extends OperatorStates {
 
             focusedItemData: {
                 id: "focus",
-                group: [13, 40, 41, 42, 43, 44, 45],
+                group: [],
                 itemType: "type1",
-                artistName: "Joel Gomez",
-                sessionMainTitle: "Salsa Caleña",
-                dateString: "Fri, June 14th 2024",
-                time: "12:00-12:50 PM",
+                artistName: "",
+                sessionMainTitle: "",
+                dateString: "",
+                time: "",
                 place: "",
-                room: "Room 1 | Floor 1",
+                room: "",
                 sessionSubtitle: "",
                 sessionDescription: "",
-                artistOne: "Joel Gomez",
+                artistOne: "",
                 artistTwo: "",
                 flag: false,
                 lineCount: 0,
                 //layoutbased properties added in session screen/list item ScheduleListItemType1
                 orientation: "left",
                 rowHeight: 120,
+                groupTitle: '',
+                groupSubtitle: '',
                 groupIndex: 1,
                 groupIndexUpdateFunction: null,
                 renderer: null
@@ -84,13 +86,14 @@ class LauncherController extends OperatorStates {
                 "groupTitle": "Workshops",
                 "groupSubtitle": "",
                 "shortMainTitle": "",
+                "description": "",
                 "dateString": "Fri, October 18, 2024",
                 "startTime": "2024-10-18T13:00:00.000Z",
                 "endTime": "2024-10-18T14:00:00.000Z",
                 "place": "",
                 "sessionSubtitle": "",
                 "sessionDescription": "",
-                "artistOne": "Sisy Ayala",
+                "artistOne": "",
                 "artistTwo": "",
                 "artistLocation": "Aurora",
                 "flag": false,
@@ -210,41 +213,15 @@ class LauncherController extends OperatorStates {
 
     updateInfo = 'none';
 
+    //component indices
     tabBarIndex = 0
-    tabBarData =
-        [
-            { id: 0, itemText: "Main Fair ", associatedScreenName: "scheduleList0", imgSrc: null },
-            { id: 1, itemText: "Sessions", associatedScreenName: "scheduleList1", imgSrc: null },
-            // { id: 1, itemText: "Classes, Conversation Circles & Outside", associatedScreenName: "scheduleList1", imgSrc: null },
-            // { id: 2, itemText: "Outside", associatedScreenName: "scheduleList2", imgSrc: null },
-            { id: 2, itemText: "Massage", associatedScreenName: "scheduleList2", imgSrc: null },
-            { id: 3, itemText: "Crafty Corners", associatedScreenName: "scheduleList3", imgSrc: null }
-        ]
-
-
-
     navBarIndex = 0
-    navBarData =
-        [
-            { id: 0, itemText: "Calm Space", associatedScreenName: "homeScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_home.png') },
-            { id: 1, itemText: "Schedule", associatedScreenName: "schedulerMainScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_planner.png') },
-            { id: 3, itemText: "Artists", associatedScreenName: "artistsMainScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_artists.png') },
-            // { id: 4, itemText: "More", associatedScreenName: "settingsScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_settings.png') }
-        ]
-
     artistStackIndex = 0
-    artistStackData =
-        [
-            { id: 0, itemText: "Artists & DJs", associatedScreenName: "artistsSelectionScreenContainer", imgSrc: null, screenComponentRef: null },
-            { id: 1, itemText: "Artist Details", associatedScreenName: "artistsDetailsScreenContainer", imgSrc: null, screenComponentRef: null },
-        ]
-
     schedulerStackIndex = 0
-    schedulerStackData =
-        [
-            { id: 0, itemText: "Festival Program", associatedScreenName: "schedulerSelectionScreenContainer", imgSrc: null, screenComponentRef: null },
-            { id: 1, itemText: "Session Details", associatedScreenName: "schedulerDetailsScreenContainer", imgSrc: null, screenComponentRef: null },
-        ]
+    artistStackComponentRef = null;
+    schedulerStackComponentRef = null;
+
+  
 
 
     customFonts = {
@@ -496,8 +473,10 @@ class LauncherController extends OperatorStates {
         //3) store fav value
 
 
-        const sectionStructure = [
-            { sectionTitles: ['Opening', 'Main Fair Room', 'Closing'], sectionDataList: { title: 'Main Fair Room', data: [] } },
+        const sectionRestructuringMapping = [
+            { sectionTitles: ['Opening'], sectionDataList: { title: 'Opening', data: [] } },
+            { sectionTitles: ['Main Fair Room'], sectionDataList: { title: 'Main Fair', data: [] } },
+            { sectionTitles: ['Closing'], sectionDataList: { title: 'Closing', data: [] } },
             { sectionTitles: ['Group Class', 'Conversation Circles', 'Outside'], sectionDataList: { title: 'Group Classes, Conversations, Outside', data: [] } },
             // { sectionTitles: ['Opening', 'Outside', 'Closing'], sectionDataList: [] },
             { sectionTitles: ['Massage' ], sectionDataList: { title: 'Massage', data: [] } },
@@ -507,8 +486,13 @@ class LauncherController extends OperatorStates {
         DataModel.getInstance().dyn_dataScheduleListsByDay = [];
         DataModel.getInstance().dyn_dataScheduleListsBySection = [];
 
-        for (let j = 0; j < sectionStructure.length; j++) 
-            DataModel.getInstance().dyn_dataScheduleListsBySection.push(sectionStructure[j].sectionDataList)
+        for (let j = 0; j < sectionRestructuringMapping.length; j++) {
+            // let item = JSON.parse(JSON.stringify(this.context.focusedItemData));
+            // item.itemType = 'type6';
+            // item.sessionMainTitle = sectionRestructuringMapping[j].sectionDataList.title;
+            // sectionRestructuringMapping[j].sectionDataList.data.push(item)
+            DataModel.getInstance().dyn_dataScheduleListsBySection.push(sectionRestructuringMapping[j].sectionDataList)
+        }
 
 
         let dataItem = null;
@@ -539,11 +523,11 @@ class LauncherController extends OperatorStates {
             // console.log("undefined?"+(DataModel.getInstance().dyn_dataScheduleListsBySection==undefined))
             found = false;
             sectionLists = [];
-            for (let j = 0; j < sectionStructure.length; j++) {
-                for (let k = 0; k < sectionStructure[j].sectionTitles.length; k++) {
-                    if (sectionStructure[j].sectionTitles[k] == dataItem.groupTitle) {
+            for (let j = 0; j < sectionRestructuringMapping.length; j++) {
+                for (let k = 0; k < sectionRestructuringMapping[j].sectionTitles.length; k++) {
+                    if (sectionRestructuringMapping[j].sectionTitles[k] == dataItem.groupTitle) {
                         // console.log("Adding Item: "+dataItem.artistName.substring(0,5)+"|"+ dataItem.sessionMainTitle.substring(0,5)+" to section (tab): "+sectionStructure[j].sectionTitles[k])
-                        sectionLists.push(sectionStructure[j].sectionDataList);
+                        sectionLists.push(sectionRestructuringMapping[j].sectionDataList);
                         found = true;
                     }
                 }
@@ -577,10 +561,9 @@ class LauncherController extends OperatorStates {
             // console.log("PersistedList - itemId: " + dataItem.id + " has stored value: " + this.persistedList[dataItem.id])
 
 
-            //add the data item to the specific section list (usually ordered by day)
+            //add the data item to the specific section lists - can be inside multiple section (usually ordered by day)
             for (let j = 0; j < sectionLists.length; j++) 
                 sectionLists[j].data.push(dataItem);
-            // console.log('adding ' + dataItem.id)
         }
     }
 

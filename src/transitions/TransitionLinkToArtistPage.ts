@@ -21,7 +21,7 @@ const TransitionLinkToArtistPage = (artistData) => {
         );
 
         TransitionArtistNavigateDown(artistData, 0); 
-        TweenManager.tween().to("settingsScreenContainer", 0, {
+        TweenManager.tween().to("schedulerSelectionScreenContainer", 0, {
                 alpha: 1, delay: 600, onComplete:
                         (ok) => {
 

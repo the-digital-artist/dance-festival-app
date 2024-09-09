@@ -17,6 +17,7 @@ import Eventl from "./core/LEventl";
 import StateDependentComponent from "./core/LStateDependentComponent";
 import LoginScreen from "./components/screens/LoginScreen";
 import SchedulerMainScreen from "./components/screens/SchedulerMainScreen";
+import DataModel from "./DataModel";
 
 
 class Launcher extends PureComponent<any, any> {
@@ -47,13 +48,13 @@ class Launcher extends PureComponent<any, any> {
 
                             <StateDependentComponent states={['loading', 'main']} controller={this.controller}>
                                 {/* <DetailsScreen /> */}
-                                <SchedulerScreen />
+                                <SchedulerMainScreen />
                                 {/* <FocusFragment/> */}
                                 <HomeScreen />
                                 <ArtistMainScreen />
                                 {/* <SettingsScreen /> */}
 
-                                <NavBar highlightRenderer={NavBarHighlight} data={LauncherController.getInstance().navBarData} />
+                                <NavBar highlightRenderer={NavBarHighlight} data={DataModel.getInstance().static.dataComponents.navBar} />
                                 {/* <ScreenHeader text="" color='#FFFFFF' /> */}
 
                                 {/* <LoginScreen/> */}

@@ -2,6 +2,7 @@ import { Dimensions } from "react-native";
 import LauncherController from "../LauncherController";
 import TweenManager from "../core/LTweenManager";
 import { PureComponent } from "react";
+import DataModel from "../DataModel";
 
 const TransitionSchedulerNavigateDown = (item, levelIndex) => {
         console.log("TransitionSchedulerNavigateDown");
@@ -10,12 +11,12 @@ const TransitionSchedulerNavigateDown = (item, levelIndex) => {
 
 
      //now animate screens
-        const stackData = LauncherController.getInstance().schedulerStackData;
+        const stackData = DataModel.getInstance().static.dataComponents.schedulerStack;
         const oldIndex =  LauncherController.getInstance().schedulerStackIndex;
         const newIndex = levelIndex;
         if(newIndex == oldIndex) return;
 
-        (stackData[1].screenComponentRef as PureComponent).forceUpdate();
+        (LauncherController.getInstance().schedulerStackComponentRef as PureComponent).forceUpdate();
 
         //animate incoming screen
         let targetX = newIndex > oldIndex ? Dimensions.get('screen').width : -Dimensions.get('screen').width;

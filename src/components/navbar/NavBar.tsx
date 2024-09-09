@@ -9,15 +9,23 @@ import ButtonSmall from "../ButtonSmall";
 class NavBar extends PureComponent<any, any> {
     navBarData = [];
 
-    static navBarIconSize = Dimensions.get('screen').width/3;
-    static navBarItemDistance = Dimensions.get('screen').width/3-10;
+    static navBarIconSize = Dimensions.get('screen').width / 3;
+    static navBarItemDistance = Dimensions.get('screen').width / 3 - 10;
     static navBarStartX = 0;
     static navBarHeight = (Dimensions.get('screen').width * (300 / 1290))
 
 
     constructor(props) {
         super(props)
-        this.navBarData = props.data;
+
+        this.navBarData =
+            (props.data != undefined) ?
+                props.data :
+                ([
+                    { id: 0, itemText: "Calm Space", associatedScreenName: "homeScreenContainer", imgPath: '', imgSrc: null },
+                    { id: 1, itemText: "Schedule", associatedScreenName: "schedulerMainScreenContainer", imgPath: '', imgSrc: null  },
+                    { id: 2, itemText: "Artists", associatedScreenName: "artistsMainScreenContainer", imgPath: '', imgSrc: null },
+                ])
 
         NavBar.navBarStartX = (Dimensions.get('screen').width / 2 - ((this.navBarData.length - 1) * NavBar.navBarItemDistance) / 2) - NavBar.navBarIconSize / 2
 
@@ -49,7 +57,7 @@ class NavBar extends PureComponent<any, any> {
                         width: Dimensions.get('screen').width,
                         height: NavBar.navBarHeight,
                         resizeMode: "cover",
-                        opacity: ((Platform.OS == "ios")?1.0:1.0)
+                        opacity: ((Platform.OS == "ios") ? 1.0 : 1.0)
                     }}
                     source={require('../../../assets/navbar/navbar_bg.png')}
                 />

@@ -1,25 +1,25 @@
 import React, { Fragment } from "react";
-import { Dimensions, Image, StyleSheet, View } from "react-native";
-import LauncherController from "../../LauncherController";
-import TransitionTabbarSelect from "./TransitionTabbarSelect";
-import ButtonSmall from "../ButtonSmall";
+import { Dimensions, View } from "react-native";
 import { useAnimatedStyle, useDerivedValue, useSharedValue } from "react-native-reanimated";
-import { opacity } from "react-native-reanimated/lib/typescript/reanimated2/Colors";
+import ButtonSmall from "../ButtonSmall";
+import TransitionTabbarSelect from "./TransitionTabbarSelect";
 
 const TabBar = (props) => {
-    let tabBarData = LauncherController.getInstance().tabBarData;
-    // [
-    //     { id: 0, itemText: "Friday", associatedScreenName: "scheduleList0", imgSrc: null },
-    //     { id: 1, itemText: "Saturday", associatedScreenName: "scheduleList1", imgSrc: null },
-    //     { id: 2, itemText: "Sunday", associatedScreenName: "scheduleList2", imgSrc: null }
-    // ]
+    let tabBarData = (props.data != undefined) ?
+                        props.data :
+                        ([
+                            { id: 0, itemText: "Main Fair", associatedScreenName: "scheduleList0", imgSrc: null },
+                            { id: 1, itemText: "Sessions", associatedScreenName: "scheduleList1", imgSrc: null },
+                            { id: 2, itemText: "Massage", associatedScreenName: "scheduleList2", imgSrc: null },
+                            { id: 3, itemText: "Crafty Corners", associatedScreenName: "scheduleList3", imgSrc: null }
+                        ])
 
-    let offsetY = props.offsetY==undefined?112:props.offsetY;
+    let offsetY = props.offsetY == undefined ? 112 : props.offsetY;
 
-    let itemWidth =  (Dimensions.get('screen').width/tabBarData.length);
+    let itemWidth = (Dimensions.get('screen').width / tabBarData.length);
     let itemHeight = 50;
     let itemHeightSelectedOffset = 8;
-    let itemSpread = (Dimensions.get('screen').width/tabBarData.length)
+    let itemSpread = (Dimensions.get('screen').width / tabBarData.length)
     let startX = (Dimensions.get('screen').width / 2 - ((tabBarData.length - 1) * itemSpread) / 2) - itemWidth / 2
 
     const currentIndex = useSharedValue(0);
@@ -86,21 +86,23 @@ const TabBar = (props) => {
                                 position: 'absolute',
                                 width: itemWidth, height: itemHeight,
                             }}
-                            onSelect={() => { 
+                            onSelect={() => {
                                 TransitionTabbarSelect(itemData, i, currentIndex)
-                             } }
+                            }}
                             source={itemData.imgSrc}
                             text={(itemData.itemText as string)}
                             fontStyle={{
                                 fontFamily: 'RobotoCondensed-Regular',
                                 letterSpacing: 0,
+                                left: 5,
                                 color: '#FFFFFF',
+                                width: itemWidth-5, 
                                 // backgroundColor:'skyblue',
                                 // height: itemHeight,
                                 textAlignVertical: 'center',
                                 fontSize: 14,
                                 opacity: 1.0,
-                                top:16
+                                top: 16
                             }}
                         />
 

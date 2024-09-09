@@ -1,6 +1,6 @@
 export const modelInitStaticOverwrite =
 {
-  "modelVersion": 1149,
+  "modelVersion": 1173,
   "festivalName": "WELLBEING",
   "modelRemoteGetModelUrl": "https://5sw1zcun82.execute-api.us-west-1.amazonaws.com/wellbeingModelContent",
   "modelRemoteVersionCheckUrl": "https://5sw1zcun82.execute-api.us-west-1.amazonaws.com/wellbeingModelVersion",
@@ -10,6 +10,351 @@ export const modelInitStaticOverwrite =
     "earlyBirdStartTimeString": "2024-07-21T05:00:00.000"
   },
   "dataArtists": {
+    "Adrien Joyner": {
+      "fullName": "Adrien Joyner",
+      "pronouns": "they/them",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "Adrien Joyner (they/them) is a yoga instructor and advocate based in San Francisco, California, dedicated to creating safe, inclusive spaces for trans, intersex, and nonbinary individuals to explore their bodies and spirits. With a passion for social justice and community building, Adrien crafts yoga practices that honor the unique experiences and needs of trans/intersex/nonbinary folx.\n\nThrough their teaching, Adrien aims to empower participants to connect with their bodies, cultivate self-love, and find strength in their identities. By centering trans/intersex/nonbinary voices and experiences, Adrien's yoga offerings promote healing, resilience, and community among marginalized individuals.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "adrien_joyner",
+      "email": "chakrarainbowyoga@gmail.com",
+      "phone": ""
+    },
+    "Alex Castro": {
+      "fullName": "Alex Castro",
+      "pronouns": "She/Her",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "Alex Castro is a meditation and mindfulness guide based in San Francisco, California, dedicated to helping individuals cultivate inner peace, clarity, and resilience in the midst of modern life. With a warm and non-judgmental approach, Alex shares practical techniques and wisdom from various spiritual traditions to support individuals in developing a consistent meditation practice.\n\nThrough guided meditations, workshops, and one-on-one sessions, Alex creates a safe and supportive environment for individuals to explore their inner world, release stress and anxiety, and connect with their deepest selves. By integrating mindfulness into daily life, Alex aims to empower individuals to navigate life's challenges with greater ease, compassion, and wisdom. With a focus on accessibility and inclusivity, Alex welcomes individuals of all backgrounds and experience levels to explore the transformative power of meditation and mindfulness.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "alex_castro",
+      "email": "alexcastro@lgbtqmindfulness.com",
+      "phone": ""
+    },
+    "Alexandria Nichandros": {
+      "fullName": "Alexandria Nichandros",
+      "pronouns": "She/Her",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "Alexandria Nichandros is a body positivity advocate, movement educator, and wellness expert based in San Francisco, California. She is dedicated to empowering individuals to cultivate body confidence, self-love, and self-acceptance through mindful movement and self-care practices.\n\nAs a group movement class instructor, Alexandria creates a safe, inclusive, and playful environment where participants can explore their bodies, release tension, and connect with their inner selves. Her classes, which she taught during the Summer Edition of the SF Well-Being Fair 2024, blend elements of dance, yoga, and somatic practices to promote relaxation, joy, and body awareness.\n\nThrough her work, Alexandria aims to challenge societal beauty standards, promote body inclusivity, and inspire individuals to embrace their unique shapes, sizes, and abilities. By fostering a culture of self-love and acceptance, Alexandria empowers individuals to live more authentic, confident, and fulfilling lives.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "alexandria_nichandros",
+      "email": "2468dance@gmail.com",
+      "phone": ""
+    },
+    "Bex Mui": {
+      "fullName": "Bex Mui",
+      "pronouns": "she/her",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "Bex Mui is a spiritual wellness expert, intuitive tarot reader, and author based in San Francisco, California. With a Master's degree in Education and a passion for holistic well-being, Bex supports individuals in nourishing their spiritual health through intuitive guidance, tarot readings, and mindful practices.\n\nAs a knowledgeable and compassionate guide, Bex offers intuitive tarot readings to help individuals gain clarity, insight, and perspective on their life's journey. Her book, which will be available for sale at the SF Well-Being Fair, explores the intersection of spirituality, self-care, and personal growth.\n\nBex's presentation, \"Nourishing Your Spiritual Health,\" will delve into practical strategies for cultivating a deeper connection with oneself, others, and the world. By sharing her expertise and experience, Bex aims to empower individuals to prioritize their spiritual well-being, trust their intuition, and live a more authentic, meaningful life.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "bex_mui",
+      "email": "bex@houseofourqueer.com",
+      "phone": ""
+    },
+    "David Khalili": {
+      "fullName": "David Khalili",
+      "pronouns": "he/him",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "David Khalili is a wellness entrepreneur and relationship expert based in San Francisco, California. As the founder of Rouse, a platform dedicated to fostering meaningful connections and community, David is passionate about promoting relational wellness and empowering individuals to cultivate healthy, fulfilling relationships.\n\nThrough his work with Rouse, David provides resources, workshops, and events that support individuals in building strong, supportive networks and navigating the complexities of modern relationships. His presentation, \"Relational Wellness,\" will explore the importance of social connections in our overall well-being, offering practical strategies for nurturing friendships, communication skills, and emotional intelligence.\n\nBy combining his expertise in community-building and relationship development, David aims to inspire individuals to prioritize relational wellness, cultivate empathy and understanding, and create a more compassionate, connected world.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "david_khalili",
+      "email": "david@rousetherapy.com",
+      "phone": ""
+    },
+    "Den Bremond": {
+      "fullName": "Den Bremond",
+      "pronouns": "she/her/they",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "Den Bremond, DACM, RN, LAc (she/her/they) is a licensed acupuncturist, registered nurse, and Chinese medicine expert based in San Francisco, California. With a passion for holistic healing and wellness, Den combines traditional Chinese medicine techniques with modern nursing expertise to support individuals in achieving balance and harmony in their lives.\n\nSpecializing in calming ear seeds, Den offers a unique approach to stress relief and anxiety management. By applying tiny seeds to specific points on the ear, Den's treatment promotes relaxation, reduces tension, and calms the mind. This non-invasive, pain-free technique is rooted in ancient Chinese medicine principles and has been adapted for modern times.\n\nThrough her practice, Den aims to empower individuals to take control of their well-being, cultivate self-care habits, and find peace in a busy world. With a warm and inclusive approach, Den welcomes individuals of all backgrounds and identities to explore the benefits of calming ear seeds and Chinese medicine.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "den_bremond",
+      "email": "denbremond@gmail.com",
+      "phone": ""
+    },
+    "Dhiraj Korwani": {
+      "fullName": "Dhiraj Korwani",
+      "pronouns": "he/him",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "dhiraj_korwani",
+      "email": "djkorwani@gmail.com,",
+      "phone": "415-351-8013"
+    },
+    "Gautam Mulchandani": {
+      "fullName": "Gautam Mulchandani",
+      "pronouns": "he/him",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024",
+        "03-2024"
+      ],
+      "insta": "@gemsofclaritysocial.com",
+      "web": "https://gemsofclarity.com",
+      "bio": "Gautam Mulchandani is a San Francisco-based yoga teacher and intuitive reader, guiding individuals on their journey of self-discovery and spiritual growth. With a compassionate and empathetic approach, Gautam offers intuitive readings that provide insight, clarity, and guidance for navigating life's challenges.\n\nBlending his knowledge of yoga philosophy, energy healing, and intuitive wisdom, Gautam creates a safe and supportive space for individuals to explore their inner world, awaken their potential, and connect with their deepest selves.\n\nThrough his intuitive readings and yoga teachings, Gautam aims to empower others to live more authentic, meaningful, and fulfilling lives.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "gautam_mulchandani",
+      "email": "gmulchandani@gmail.com",
+      "phone": "415-699-4263"
+    },
+    "Jeanna Eichenbaum": {
+      "fullName": "Jeanna Eichenbaum",
+      "pronouns": "they/them/elle",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "jeanna_eichenbaum",
+      "email": "jeannamind@yahoo.com",
+      "phone": ""
+    },
+    "Jerry Cuffey": {
+      "fullName": "Jerry Cuffey",
+      "pronouns": "he/him",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024",
+        "03-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "Jerry Cuffey is a licensed massage therapist based in San Francisco, California, specializing in chair massage. With a gentle and intuitive touch, Jerry provides stress-relieving and tension-melting chair massages, tailored to ease muscle strain, improve circulation, and promote overall well-being.\n\nJerry's chair massage sessions are designed to be convenient, accessible, and adaptable to any lifestyle, allowing individuals to take a moment for self-care and relaxation in the midst of a busy day. With a focus on comfort and relaxation, Jerry helps clients unwind, recharge, and feel their best.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "jerry_cuffey",
+      "email": "undermyhandsbyjerry@gmail.com",
+      "phone": ""
+    },
+    "Ki Charles": {
+      "fullName": "Ki Charles",
+      "pronouns": "They/She",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "ki_charles",
+      "email": "ki@haumsf.com",
+      "phone": ""
+    },
+    "Kramer Dahl": {
+      "fullName": "Kramer Dahl",
+      "pronouns": "he/him",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "kramer_dahl",
+      "email": "kramer.dahl90@gmail.com",
+      "phone": "650-200-9079"
+    },
+    "Lars Kallman": {
+      "fullName": "Lars Kallman",
+      "pronouns": "he/him",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024",
+        "03-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "Lars Kallman is a licensed massage therapist and Gestalt practitioner based in San Francisco, California, offering deep bodywork and transformative sessions. With a focus on holistic healing, Lars combines intuitive bodywork, breath awareness, and Gestalt principles to guide clients in releasing tension, awakening awareness, and integrating body, mind, and spirit.\n\nThrough his unique approach, Lars creates a safe and supportive environment for individuals to explore their inner world, process emotions, and cultivate greater self-awareness. His deep bodywork and Gestalt sessions invite clients to embark on a journey of self-discovery, empowerment, and profound transformation.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "lars_kallman",
+      "email": "kallmanlars@gmail.com",
+      "phone": ""
+    },
+    "Lydia Real": {
+      "fullName": "Lydia Real",
+      "pronouns": "she/her",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024",
+        "03-2024"
+      ],
+      "insta": "",
+      "web": "https://sistahplanet.com",
+      "bio": "Lydia Real is a body positivity advocate and wellness expert based in San Francisco, California, dedicated to empowering individuals to cultivate a positive and compassionate relationship with their bodies. With her message of Positive Body Talk, Lydia encourages others to turn down the noise of self-criticism and internalize self-love, self-acceptance, and self-care.\n\nThrough workshops, coaching, and community engagement, Lydia provides tools and support for individuals to rewire their mindset, challenge societal beauty standards, and embrace their unique beauty and worth. By promoting Positive Body Talk, Lydia aims to create a more inclusive and supportive environment where everyone can thrive and celebrate their individuality.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "lydia_real",
+      "email": "sistahplanet@gmail.com",
+      "phone": ""
+    },
+    "Meghan Johnson": {
+      "fullName": "Meghan Johnson",
+      "pronouns": "she/her",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024",
+        "03-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "Meghan Johnson is a licensed massage therapist based in San Francisco, California, specializing in chair massage therapy. With a warm and intuitive touch, Meghan provides relaxing and rejuvenating chair massages, tailored to ease tension, soothe muscles, and calm the mind.\n\nThrough her skilled and gentle technique, Meghan helps individuals release physical and mental stress, promoting a sense of calm, clarity, and overall well-being. Whether you're looking to unwind, improve your focus, or simply indulge in some self-care, Meghan's chair massages offer a peaceful oasis in the midst of a busy day.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "meghan_johnson",
+      "email": "stclaudemassage@gmail.com",
+      "phone": ""
+    },
+    "Olivier De Wulf": {
+      "fullName": "Olivier De Wulf",
+      "pronouns": "he/him",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "olivier_de_wulf",
+      "email": "info@neurasonic.com",
+      "phone": ""
+    },
+    "Phil Deem": {
+      "fullName": "Phil Deem",
+      "pronouns": "he/him",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "phil_deem",
+      "email": "phil@spirit-treeapothecary.com",
+      "phone": ""
+    },
+    "Sophia Lin": {
+      "fullName": "Sophia Lin",
+      "pronouns": "she/her",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "sophia_lin",
+      "email": "sophialin499@gmail.com",
+      "phone": ""
+    },
+    "Susan Sullivan": {
+      "fullName": "Susan Sullivan",
+      "pronouns": "she/her",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": " ",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "susan_sullivan",
+      "email": "susansullivanis@gmail.com",
+      "phone": ""
+    },
+    "Tijanna Eaton": {
+      "fullName": "Tijanna Eaton",
+      "pronouns": "she/her",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "tijanna_eaton",
+      "email": "thatsbennett2u@gmail.com",
+      "phone": ""
+    },
     "Dr. Brian Hernandez": {
       "fullName": "Dr. Brian Hernandez",
       "pronouns": "",
@@ -95,24 +440,6 @@ export const modelInitStaticOverwrite =
       "email": "erynne@digitalhippy70.com",
       "phone": ""
     },
-    "Gautam Mulchandani": {
-      "fullName": "Gautam Mulchandani",
-      "pronouns": "he/him",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "03-2024",
-        "02-2024"
-      ],
-      "insta": "@gemsofclaritysocial.com",
-      "web": "https://gemsofclarity.com",
-      "bio": "Gautam Mulchandani is a San Francisco-based yoga teacher and intuitive reader, guiding individuals on their journey of self-discovery and spiritual growth. With a compassionate and empathetic approach, Gautam offers intuitive readings that provide insight, clarity, and guidance for navigating life's challenges.\n\nBlending his knowledge of yoga philosophy, energy healing, and intuitive wisdom, Gautam creates a safe and supportive space for individuals to explore their inner world, awaken their potential, and connect with their deepest selves.\n\nThrough his intuitive readings and yoga teachings, Gautam aims to empower others to live more authentic, meaningful, and fulfilling lives.",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "gautam_mulchandani",
-      "email": "gmulchandani@gmail.com",
-      "phone": "415-699-4263"
-    },
     "Gogo Zoger": {
       "fullName": "Gogo Zoger",
       "pronouns": "",
@@ -128,24 +455,6 @@ export const modelInitStaticOverwrite =
       "facebook": "",
       "portrait": "gogo_zoger",
       "email": "onlyonegogoz@gmail.com",
-      "phone": ""
-    },
-    "Jerry Cuffey": {
-      "fullName": "Jerry Cuffey",
-      "pronouns": "he/him",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "03-2024",
-        "02-2024"
-      ],
-      "insta": "",
-      "web": "yelp.com",
-      "bio": "Jerry Cuffey is a licensed massage therapist based in San Francisco, California, specializing in chair massage. With a gentle and intuitive touch, Jerry provides stress-relieving and tension-melting chair massages, tailored to ease muscle strain, improve circulation, and promote overall well-being.\n\nJerry's chair massage sessions are designed to be convenient, accessible, and adaptable to any lifestyle, allowing individuals to take a moment for self-care and relaxation in the midst of a busy day. With a focus on comfort and relaxation, Jerry helps clients unwind, recharge, and feel their best.",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "jerry_cuffey",
-      "email": "undermyhandsbyjerry@gmail.com",
       "phone": ""
     },
     "Kamelle Mills": {
@@ -165,42 +474,6 @@ export const modelInitStaticOverwrite =
       "email": "kamelle@enbeyes.com",
       "phone": ""
     },
-    "Lars Kallman": {
-      "fullName": "Lars Kallman",
-      "pronouns": "he/him",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "03-2024",
-        "02-2024"
-      ],
-      "insta": "",
-      "web": "yelp.com",
-      "bio": "Lars Kallman is a licensed massage therapist and Gestalt practitioner based in San Francisco, California, offering deep bodywork and transformative sessions. With a focus on holistic healing, Lars combines intuitive bodywork, breath awareness, and Gestalt principles to guide clients in releasing tension, awakening awareness, and integrating body, mind, and spirit.\n\nThrough his unique approach, Lars creates a safe and supportive environment for individuals to explore their inner world, process emotions, and cultivate greater self-awareness. His deep bodywork and Gestalt sessions invite clients to embark on a journey of self-discovery, empowerment, and profound transformation.",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "lars_kallman",
-      "email": "kallmanlars@gmail.com",
-      "phone": ""
-    },
-    "Lydia Real": {
-      "fullName": "Lydia Real",
-      "pronouns": "",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "03-2024",
-        "02-2024"
-      ],
-      "insta": " ",
-      "web": "https://sistahplanet.com",
-      "bio": "Lydia Real is a body positivity advocate and wellness expert based in San Francisco, California, dedicated to empowering individuals to cultivate a positive and compassionate relationship with their bodies. With her message of Positive Body Talk, Lydia encourages others to turn down the noise of self-criticism and internalize self-love, self-acceptance, and self-care.\n\nThrough workshops, coaching, and community engagement, Lydia provides tools and support for individuals to rewire their mindset, challenge societal beauty standards, and embrace their unique beauty and worth. By promoting Positive Body Talk, Lydia aims to create a more inclusive and supportive environment where everyone can thrive and celebrate their individuality.",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "lydia_real",
-      "email": "sistahplanet@gmail.com",
-      "phone": ""
-    },
     "Mané": {
       "fullName": "Mané",
       "pronouns": "she/her",
@@ -216,24 +489,6 @@ export const modelInitStaticOverwrite =
       "facebook": "",
       "portrait": "mane",
       "email": "soapsbymane@gmail.com",
-      "phone": ""
-    },
-    "Meghan Johnson": {
-      "fullName": "Meghan Johnson",
-      "pronouns": "she/her",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "03-2024",
-        "02-2024"
-      ],
-      "insta": "",
-      "web": "https://stclaudehealingarts.com",
-      "bio": "Meghan Johnson is a licensed massage therapist based in San Francisco, California, specializing in chair massage therapy. With a warm and intuitive touch, Meghan provides relaxing and rejuvenating chair massages, tailored to ease tension, soothe muscles, and calm the mind.\n\nThrough her skilled and gentle technique, Meghan helps individuals release physical and mental stress, promoting a sense of calm, clarity, and overall well-being. Whether you're looking to unwind, improve your focus, or simply indulge in some self-care, Meghan's chair massages offer a peaceful oasis in the midst of a busy day.",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "meghan_johnson",
-      "email": "stclaudemassage@gmail.com",
       "phone": ""
     },
     "Mirabai Warkulwiz": {
@@ -355,278 +610,6 @@ export const modelInitStaticOverwrite =
       "email": "tina@persimmonacupuncture.com",
       "phone": ""
     },
-    "Adrien Joyner": {
-      "fullName": "Adrien Joyner",
-      "pronouns": "they/them",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "02-2024"
-      ],
-      "insta": "",
-      "web": "",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "adrien_joyner",
-      "email": "chakrarainbowyoga@gmail.com",
-      "phone": ""
-    },
-    "Alex Castro": {
-      "fullName": "Alex Castro",
-      "pronouns": "She/Her",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "02-2024"
-      ],
-      "insta": "",
-      "web": "",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "alex_castro",
-      "email": "alexcastro@lgbtqmindfulness.com",
-      "phone": ""
-    },
-    "Alexandria Nichandros": {
-      "fullName": "Alexandria Nichandros",
-      "pronouns": "She/Her",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "02-2024"
-      ],
-      "insta": "",
-      "web": "",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "alexandria_nichandros",
-      "email": "2468dance@gmail.com",
-      "phone": ""
-    },
-    "Bex Mui": {
-      "fullName": "Bex Mui",
-      "pronouns": "she/her",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "02-2024"
-      ],
-      "insta": "",
-      "web": "",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "bex_mui",
-      "email": "bex@houseofourqueer.com",
-      "phone": ""
-    },
-    "David Khalili": {
-      "fullName": "David Khalili",
-      "pronouns": "he/him",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "02-2024"
-      ],
-      "insta": "",
-      "web": "",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "david_khalili",
-      "email": "david@rousetherapy.com",
-      "phone": ""
-    },
-    "Den Bremond": {
-      "fullName": "Den Bremond",
-      "pronouns": "she/her/they",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "02-2024"
-      ],
-      "insta": "",
-      "web": "",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "den_bremond",
-      "email": "denbremond@gmail.com",
-      "phone": ""
-    },
-    "Dhiraj Korwani": {
-      "fullName": "Dhiraj Korwani",
-      "pronouns": "he/him",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "02-2024"
-      ],
-      "insta": "",
-      "web": "",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "dhiraj_korwani",
-      "email": "djkorwani@gmail.com,",
-      "phone": "415-351-8013"
-    },
-    "Jeanna Eichenbaum": {
-      "fullName": "Jeanna Eichenbaum",
-      "pronouns": "they/them/elle",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "02-2024"
-      ],
-      "insta": "",
-      "web": "",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "jeanna_eichenbaum",
-      "email": "jeannamind@yahoo.com",
-      "phone": ""
-    },
-    "Ki Charles": {
-      "fullName": "Ki Charles",
-      "pronouns": "They/She",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "02-2024"
-      ],
-      "insta": "",
-      "web": "",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "ki_charles",
-      "email": "ki@haumsf.com",
-      "phone": ""
-    },
-    "Kramer Dahl": {
-      "fullName": "Kramer Dahl",
-      "pronouns": "he/him",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "02-2024"
-      ],
-      "insta": "",
-      "web": "",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "kramer_dahl",
-      "email": "kramer.dahl90@gmail.com",
-      "phone": "650-200-9079"
-    },
-    "Olivier De Wulf": {
-      "fullName": "Olivier De Wulf",
-      "pronouns": "he/him",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "02-2024"
-      ],
-      "insta": "",
-      "web": "",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "olivier_de_wulf",
-      "email": "info@neurasonic.com",
-      "phone": ""
-    },
-    "Phil Deem": {
-      "fullName": "Phil Deem",
-      "pronouns": "he/him",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "02-2024"
-      ],
-      "insta": "",
-      "web": "",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "phil_deem",
-      "email": "phil@spirit-treeapothecary.com",
-      "phone": ""
-    },
-    "Sophia Lin": {
-      "fullName": "Sophia Lin",
-      "pronouns": "she/her",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "02-2024"
-      ],
-      "insta": "",
-      "web": "",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "sophia_lin",
-      "email": "sophialin499@gmail.com",
-      "phone": ""
-    },
-    "Susan Sullivan": {
-      "fullName": "Susan Sullivan",
-      "pronouns": "she/her",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "02-2024"
-      ],
-      "insta": " ",
-      "web": "",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "susan_sullivan",
-      "email": "susansullivanis@gmail.com",
-      "phone": ""
-    },
-    "Tijanna Eaton": {
-      "fullName": "Tijanna Eaton",
-      "pronouns": "she/her",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "02-2024"
-      ],
-      "insta": "",
-      "web": "",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "tijanna_eaton",
-      "email": "thatsbennett2u@gmail.com",
-      "phone": ""
-    },
-    "Nicola Bosco": {
-      "fullName": "Nicola Bosco",
-      "pronouns": "",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "03-2024"
-      ],
-      "insta": "",
-      "web": "",
-      "bio": "was born.. ",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "nicola_bosco",
-      "email": "",
-      "phone": ""
-    },
     "Andrea Stern": {
       "fullName": "Andrea Stern",
       "pronouns": "",
@@ -637,10 +620,27 @@ export const modelInitStaticOverwrite =
       ],
       "insta": "",
       "web": "",
-      "bio": "was born.. ",
+      "bio": "Andrea Stern is the founder and owner of Satori Yoga Studio, a pioneering wellness space in the heart of San Francisco's Financial District. With a background in Corporate Human Resources, Andrea was inspired to create a sanctuary for urban professionals seeking balance and fulfillment in their fast-paced lives.\n\nOver 15 years ago, Andrea responded to a calling to support employees on a deeper level, recognizing the transformative power of yoga and mindfulness in the workplace. After experiencing the benefits of midday yoga sessions firsthand, she took a leap of faith and established Satori Yoga Studio.\n\nToday, Andrea's vision has evolved into a global phenomenon, with Satori Yoga Studio offering bespoke programming to businesses worldwide. Despite expansion, the studio remains rooted in San Francisco, continuing to serve as a haven for professionals seeking stress relief, increased productivity, and overall well-being. Through her work, Andrea aims to empower individuals and organizations to prioritize self-care, cultivate resilience, and thrive in the modern world.",
       "shortBio": "",
       "facebook": "",
       "portrait": "andrea_stern",
+      "email": "",
+      "phone": ""
+    },
+    "Nicola Bosco-Alvarez": {
+      "fullName": "Nicola Bosco-Alvarez",
+      "pronouns": "",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "03-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "nicola_bosco-alvarez",
       "email": "",
       "phone": ""
     },
@@ -664,12 +664,13 @@ export const modelInitStaticOverwrite =
   },
   "dataScheduleRaw": [
     {
-      "id": "48aaa69e8eb8bd6537c08a5326f664d6",
+      "id": "7aad6cb3465f1fd23b2a684db2630632",
       "itemType": "type2",
-      "artistName": "Nicola Bosco",
+      "artistName": "Nicola Bosco-Alvarez",
       "sessionMainTitle": "Welcome to attendees from our Autumn Abundance host!",
       "time": "",
-      "room": "Opening",
+      "room": "Main Fair Room",
+      "description": "",
       "level": "",
       "group": [],
       "groupTitle": "Opening",
@@ -681,7 +682,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Nicola Bosco",
+      "artistOne": "Nicola Bosco-Alvarez",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -693,7 +694,8 @@ export const modelInitStaticOverwrite =
       "artistName": "Andrea Stern",
       "sessionMainTitle": "Co-founder of TendWell Collective and Collaborator in the SF WBF",
       "time": "",
-      "room": "Opening",
+      "room": "Main Fair Room",
+      "description": "",
       "level": "",
       "group": [],
       "groupTitle": "Opening",
@@ -717,7 +719,8 @@ export const modelInitStaticOverwrite =
       "artistName": "Marc Morozumi",
       "sessionMainTitle": "Founder and Owner of Mukunda Studio and Presenter of the SF WBF",
       "time": "",
-      "room": "Opening",
+      "room": "Main Fair Room",
+      "description": "",
       "level": "",
       "group": [],
       "groupTitle": "Opening",
@@ -741,7 +744,8 @@ export const modelInitStaticOverwrite =
       "artistName": "Kamelle Mills",
       "sessionMainTitle": "Grand Host Welcome",
       "time": "",
-      "room": "Opening",
+      "room": "Main Fair Room",
+      "description": "",
       "level": "",
       "group": [],
       "groupTitle": "Opening",
@@ -765,7 +769,8 @@ export const modelInitStaticOverwrite =
       "artistName": "Gogo Zoger",
       "sessionMainTitle": "Take a Pause From Overthinking - gogoflow Yoga",
       "time": "1:00-1:30pm",
-      "room": "Group Class",
+      "room": "Dance Studio",
+      "description": "",
       "level": "",
       "group": [
         "60a32f5faa5302527718928f28103ec1",
@@ -793,7 +798,8 @@ export const modelInitStaticOverwrite =
       "artistName": "Christine Lu Singh",
       "sessionMainTitle": "Reiki-Infused Sound Healing & Aromatherapy",
       "time": "1:45-2:15pm",
-      "room": "Group Class",
+      "room": "Dance Studio",
+      "description": "",
       "level": "",
       "group": [
         "eb603860d03004651c75294a43f01683",
@@ -821,7 +827,8 @@ export const modelInitStaticOverwrite =
       "artistName": "Emiko Oye",
       "sessionMainTitle": "Easy Exercises for Hands, Head and Neck Health",
       "time": "2:30-3pm",
-      "room": "Group Class",
+      "room": "Dance Studio",
+      "description": "",
       "level": "",
       "group": [
         "c874cbe1d329de443aa4e160be462c0c",
@@ -848,7 +855,8 @@ export const modelInitStaticOverwrite =
       "artistName": "Erynne Elkins",
       "sessionMainTitle": "Transformative Breathwork",
       "time": "3:15-3:45pm",
-      "room": "Group Class",
+      "room": "Dance Studio",
+      "description": "",
       "level": "",
       "group": [
         "41dfc83d10c5de7e04881bcf01c0b40e",
@@ -876,7 +884,8 @@ export const modelInitStaticOverwrite =
       "artistName": "Chuck Rosenthal",
       "sessionMainTitle": "Therapeutic Sound Journeys with Reiki",
       "time": "4-4:30pm",
-      "room": "Group Class",
+      "room": "Dance Studio",
+      "description": "",
       "level": "",
       "group": [
         "44fd835bdb68fa479ada5f243e8682fd",
@@ -904,6 +913,7 @@ export const modelInitStaticOverwrite =
       "sessionMainTitle": "Intuitive Readings",
       "time": "",
       "room": "Main Fair Room",
+      "description": "",
       "level": "",
       "group": [],
       "groupTitle": "Main Fair Room",
@@ -928,6 +938,7 @@ export const modelInitStaticOverwrite =
       "sessionMainTitle": "Therapeutic Sound Journeys with Reiki",
       "time": "4-4:30pm",
       "room": "Main Fair Room",
+      "description": "",
       "level": "",
       "group": [],
       "groupTitle": "Main Fair Room",
@@ -952,6 +963,7 @@ export const modelInitStaticOverwrite =
       "sessionMainTitle": "Energy balancing sessions through Reiki and Somatic Sound Healing",
       "time": "",
       "room": "Main Fair Room",
+      "description": "",
       "level": "",
       "group": [],
       "groupTitle": "Main Fair Room",
@@ -976,6 +988,7 @@ export const modelInitStaticOverwrite =
       "sessionMainTitle": "Learn about Transformative Breathwork",
       "time": "",
       "room": "Main Fair Room",
+      "description": "",
       "level": "",
       "group": [],
       "groupTitle": "Main Fair Room",
@@ -1000,6 +1013,7 @@ export const modelInitStaticOverwrite =
       "sessionMainTitle": "Ear Acupressure and Herbal Tea Sampling",
       "time": "",
       "room": "Main Fair Room",
+      "description": "",
       "level": "",
       "group": [],
       "groupTitle": "Main Fair Room",
@@ -1024,6 +1038,7 @@ export const modelInitStaticOverwrite =
       "sessionMainTitle": "Free spinal screening with promotional signup discount",
       "time": "",
       "room": "Main Fair Room",
+      "description": "",
       "level": "",
       "group": [],
       "groupTitle": "Main Fair Room",
@@ -1048,6 +1063,7 @@ export const modelInitStaticOverwrite =
       "sessionMainTitle": "Handmade Shea butter soaps and lotion",
       "time": "",
       "room": "Main Fair Room",
+      "description": "",
       "level": "",
       "group": [],
       "groupTitle": "Main Fair Room",
@@ -1072,6 +1088,7 @@ export const modelInitStaticOverwrite =
       "sessionMainTitle": "Goddess figurines and original body positive feminine art",
       "time": "",
       "room": "Main Fair Room",
+      "description": "",
       "level": "",
       "group": [],
       "groupTitle": "Main Fair Room",
@@ -1096,6 +1113,7 @@ export const modelInitStaticOverwrite =
       "sessionMainTitle": "Mid-wife and birth photographer",
       "time": "",
       "room": "Main Fair Room",
+      "description": "",
       "level": "",
       "group": [],
       "groupTitle": "Main Fair Room",
@@ -1119,7 +1137,8 @@ export const modelInitStaticOverwrite =
       "artistName": "Mirabai Warkulwiz",
       "sessionMainTitle": "Bhakti Ocean",
       "time": "1:00-1:30pm",
-      "room": "Conversation Circles",
+      "room": "Main Fair Room",
+      "description": "",
       "level": "",
       "group": [
         "60a32f5faa5302527718928f28103ec1",
@@ -1147,7 +1166,8 @@ export const modelInitStaticOverwrite =
       "artistName": "Kamelle Mills",
       "sessionMainTitle": "enbeyes - No Bullsh!t :) (Ask about Prosperity Practice)",
       "time": "1:45-2:15pm",
-      "room": "Conversation Circles",
+      "room": "Main Fair Room",
+      "description": "",
       "level": "",
       "group": [
         "eb603860d03004651c75294a43f01683",
@@ -1175,7 +1195,8 @@ export const modelInitStaticOverwrite =
       "artistName": "Lydia Real",
       "sessionMainTitle": "Positive Body Talk - Turning Down the Noise!",
       "time": "3:15-3:45pm",
-      "room": "Conversation Circles",
+      "room": "Main Fair Room",
+      "description": "",
       "level": "",
       "group": [
         "41dfc83d10c5de7e04881bcf01c0b40e",
@@ -1203,7 +1224,8 @@ export const modelInitStaticOverwrite =
       "artistName": "Marc Morozumi",
       "sessionMainTitle": "We Are More Than Our Stories",
       "time": "4-4:30pm",
-      "room": "Conversation Circles",
+      "room": "Main Fair Room",
+      "description": "",
       "level": "",
       "group": [
         "44fd835bdb68fa479ada5f243e8682fd",
@@ -1225,12 +1247,13 @@ export const modelInitStaticOverwrite =
       "flagIncludeInNow": false
     },
     {
-      "id": "943fd4185f001806cb57be4115d4be07",
+      "id": "cb16abf7018dc8e2281c57b3bb492e25",
       "itemType": "type4",
       "artistName": "Meghan Johnson",
-      "sessionMainTitle": "Chair Massage",
+      "sessionMainTitle": "Chair Massage and Aromatherapy",
       "time": "",
-      "room": "Massage",
+      "room": "Main Fair Room",
+      "description": "To the care takers, worriers, workaholics, activists, and intuitives! Landscapers, executives, carpenters, artists, and self employed weirdos! Witches, bitches, teachers, and tech bros! Whether your day-to-day is filled with the physical strain of training for a marathon or sitting at a desk, your body is your tool that needs restoration and replenishment. Massage therapy is a powerful support for easing stress, relieving aches and pains, and establishing a new relationship to touch. From chronic pain to acute injuries, I have helped many of my clients find new neural and physical pathways to feeling better through manual therapy and brainstorming shifting daily habits that may be causing recurring pain. I offer holistic care that is trauma informed, pharmaceutical inclusive, and guided by my knowledge of anatomy and space holding skills.",
       "level": "",
       "group": [],
       "groupTitle": "Massage",
@@ -1254,7 +1277,8 @@ export const modelInitStaticOverwrite =
       "artistName": "Jerry Cuffey",
       "sessionMainTitle": "Chair Massage - Japanese Acupressure Techniques",
       "time": "",
-      "room": "Massage",
+      "room": "Main Fair Room",
+      "description": "UnderMyHands massage by Jerry Cuffey is a San Francisco based private practice that addresses your individual massage needs. Jerry is trained in Shiatsu, Swedish, Deep Tissue, Thai, Tui Na, Energy, Reflexology, Trigger Point, Sports massages and Myofascial Therapy. He has a B.S. Psychology from Union College in Schenectady, N.Y. and Graduated with honors from the National Holistic Institute School of Massage in San Francisco, CA.",
       "level": "",
       "group": [],
       "groupTitle": "Massage",
@@ -1273,12 +1297,13 @@ export const modelInitStaticOverwrite =
       "flagIncludeInNow": false
     },
     {
-      "id": "b3f09cb8696993a8ce8b0fcd26164aee",
+      "id": "cc4b915cda20857cc811090e10661b23",
       "itemType": "type4",
       "artistName": "Lars Kallman",
-      "sessionMainTitle": "Deep bodywork and gestalt",
+      "sessionMainTitle": "Table Massage and Gestalt",
       "time": "",
-      "room": "Massage",
+      "room": "Main Fair Room",
+      "description": "My massage practice is informed by 8 years of life and study at Esalen Institute, from 2008-2016. Long flowing integrating strokes combine with energy work and deep therapeutic touch. Gestalt process, mindfulness and parts work are also an option. LCMT since 2010.",
       "level": "",
       "group": [],
       "groupTitle": "Massage",
@@ -1302,7 +1327,8 @@ export const modelInitStaticOverwrite =
       "artistName": "Taylor Bowman",
       "sessionMainTitle": "Crafty Corner",
       "time": "",
-      "room": "Crafty Corner",
+      "room": "Art Studio",
+      "description": "You are welcome to keep building and designing the Mandala all day!\n\nA guided experience is offered  from 1-1:30pm.\n\nI was raised in Colorado and call many places home. I am a marriage and family therapist who specializes in Expressive Arts Therapy with kids.  I have always had a love for children and the pure curiosity and imaginations that they possess. It’s also a life goal of mine to open an eating disorder treatment center specifically for the BIPOC community. One of my ultimate goals in life is to cultivate and create spaces where BIPOC and fat bodies are welcome without judgement. My love of moving my body, working with children and being a therapist is what drives me. TendWell is an opportunity for me to work with individuals who are grounded in their values and accept me as I am with what I have to offer the world.",
       "level": "",
       "group": [],
       "groupTitle": "Crafty Corner",
@@ -1326,7 +1352,8 @@ export const modelInitStaticOverwrite =
       "artistName": "Taylor Bowman",
       "sessionMainTitle": "Community Mandala on the lawn",
       "time": "1:00-1:30pm",
-      "room": "Outside",
+      "room": "Out front - 50 Scott Street",
+      "description": "",
       "level": "",
       "group": [
         "60a32f5faa5302527718928f28103ec1",
@@ -1354,7 +1381,8 @@ export const modelInitStaticOverwrite =
       "artistName": "Tina Pham",
       "sessionMainTitle": "Qigong for Anxiety",
       "time": "1:45-2:15pm",
-      "room": "Outside",
+      "room": "Out front - 50 Scott Street",
+      "description": "",
       "level": "",
       "group": [
         "eb603860d03004651c75294a43f01683",
@@ -1382,7 +1410,8 @@ export const modelInitStaticOverwrite =
       "artistName": "Robert Bray",
       "sessionMainTitle": "Forest bathing/informative nature walk",
       "time": "2:30-3pm",
-      "room": "Outside",
+      "room": "Out front - 50 Scott Street",
+      "description": "",
       "level": "",
       "group": [
         "c874cbe1d329de443aa4e160be462c0c",
@@ -1409,7 +1438,8 @@ export const modelInitStaticOverwrite =
       "artistName": "TendWell Collective",
       "sessionMainTitle": "Finding Refuge, Embodied Reading",
       "time": "3:15-3:45pm",
-      "room": "Outside",
+      "room": "Out front - 50 Scott Street",
+      "description": "",
       "level": "",
       "group": [
         "41dfc83d10c5de7e04881bcf01c0b40e",
@@ -1432,12 +1462,13 @@ export const modelInitStaticOverwrite =
       "flagIncludeInNow": false
     },
     {
-      "id": "76e3fb71691ade3084d24ac98537500d",
+      "id": "977e0e1c1b976b1752892443a0c35ced",
       "itemType": "type2",
-      "artistName": "Nicola Bosco",
+      "artistName": "Nicola Bosco-Alvarez",
       "sessionMainTitle": "",
       "time": "",
-      "room": "Closing",
+      "room": "Main Fair Room",
+      "description": "",
       "level": "",
       "group": [],
       "groupTitle": "Closing",
@@ -1449,7 +1480,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Nicola Bosco",
+      "artistOne": "Nicola Bosco-Alvarez",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -1461,7 +1492,8 @@ export const modelInitStaticOverwrite =
       "artistName": "Andrea Stern",
       "sessionMainTitle": "Moment of gratitude for this beautiful day for everyone here",
       "time": "",
-      "room": "Closing",
+      "room": "Main Fair Room",
+      "description": "",
       "level": "",
       "group": [],
       "groupTitle": "Closing",
@@ -1485,7 +1517,8 @@ export const modelInitStaticOverwrite =
       "artistName": "Marc Morozumi",
       "sessionMainTitle": "Taking this with you, into your everyday life",
       "time": "",
-      "room": "Closing",
+      "room": "Main Fair Room",
+      "description": "",
       "level": "",
       "group": [],
       "groupTitle": "Closing",
@@ -1507,5 +1540,90 @@ export const modelInitStaticOverwrite =
   "dataSpecialSessions": {},
   "dataStyles": {},
   "dataLocation": {},
-  "dataModelProgram": []
+  "dataModelProgram": [],
+  "dataComponents": {
+    "schedulerTabBar": [
+      {
+        "id": 0,
+        "itemText": "Main Fair Program",
+        "associatedScreenName": "scheduleList0",
+        "imgSrc": null
+      },
+      {
+        "id": 1,
+        "itemText": "Breakout Sessions",
+        "associatedScreenName": "scheduleList1",
+        "imgSrc": null
+      },
+      {
+        "id": 2,
+        "itemText": "Massage",
+        "associatedScreenName": "scheduleList2",
+        "imgSrc": null
+      },
+      {
+        "id": 3,
+        "itemText": "Crafty Corners",
+        "associatedScreenName": "scheduleList3",
+        "imgSrc": null
+      }
+    ],
+    "schedulerTabDescriptions": [
+      "Welcome to the SF Wellbeing Fair. Below you can find the main program of the fair. The Opening starts 12:00 in the Main Fair Space. Closing will take place 4:45-5pm",
+      "Our breakout sessions start at 1:00pm and come in different flavors. 1) Group Classes 2) Conversation Circles 3) Outside. Feel free to browse the parallel sessions and mark the ones you would like to go to.",
+      "Massage Spaces - Open from 12:15-4:30pm",
+      "Crafty Corner - Open from 12:15-4:30pm"
+    ],
+    "navBar": [
+      {
+        "id": 0,
+        "itemText": "Calm Space",
+        "associatedScreenName": "homeScreenContainer",
+        "imgSrc": null,
+        "imgPath": "../assets/navbar/navbar_icon_home.png"
+      },
+      {
+        "id": 1,
+        "itemText": "Schedule",
+        "associatedScreenName": "schedulerMainScreenContainer",
+        "imgSrc": null,
+        "imgPath": "../assets/navbar/navbar_icon_planner.png"
+      },
+      {
+        "id": 3,
+        "itemText": "Artists",
+        "associatedScreenName": "artistsMainScreenContainer",
+        "imgSrc": null,
+        "imgPath": "../assets/navbar/navbar_icon_artists.png"
+      }
+    ],
+    "artistStack": [
+      {
+        "id": 0,
+        "itemText": "Artists & Practitioners",
+        "associatedScreenName": "artistsSelectionScreenContainer",
+        "imgSrc": null
+      },
+      {
+        "id": 1,
+        "itemText": "Artist Details",
+        "associatedScreenName": "artistsDetailsScreenContainer",
+        "imgSrc": null
+      }
+    ],
+    "schedulerStack": [
+      {
+        "id": 0,
+        "itemText": "Schedule",
+        "associatedScreenName": "schedulerSelectionScreenContainer",
+        "imgSrc": null
+      },
+      {
+        "id": 1,
+        "itemText": "Session Details",
+        "associatedScreenName": "schedulerDetailsScreenContainer",
+        "imgSrc": null
+      }
+    ]
+  }
 }
