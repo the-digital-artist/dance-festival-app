@@ -46,7 +46,7 @@ class SchedulerMainScreen extends PureComponent {
                         name='schedulerDetailsScreenContainer'
                         style={{
                             position: 'absolute',
-                            backgroundColor: '#dd5163',
+                            backgroundColor: 'transparent',
                             width: Dimensions.get('screen').width,
                             height: Dimensions.get('screen').height,
                         }}
