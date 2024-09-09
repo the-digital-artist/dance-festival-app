@@ -27,7 +27,7 @@ const ScheduleListItemType3 = ({ item }) => {
     <>
  <View id='bg' style={{
         position: 'absolute',
-        top: 33, left: 0,
+        top: 0, left: 0,
         height: item.itemHeight - 50,
         width: Dimensions.get('screen').width - 10,
         opacity: 0.2,
@@ -36,7 +36,7 @@ const ScheduleListItemType3 = ({ item }) => {
       }}
       />
 
-      <Text allowFontScaling={false} id='textSessionCategoryAndRoom' style={{
+      {/* <Text allowFontScaling={false} id='textSessionCategoryAndRoom' style={{
         position: 'absolute',
         top: 7,
         left: Dimensions.get('screen').width/2-56,
@@ -49,17 +49,17 @@ const ScheduleListItemType3 = ({ item }) => {
         textAlign: 'left',
         color: '#bcd4ee',
         fontSize: 11,
-      }}>
+      }}> */}
         {/* {sessionCategoryName.toLocaleUpperCase() + "  |  " + (item.room ? (item.room as string).toLocaleUpperCase() + " " : "")} */}
-        {(item.room ? (item.room as string).toLocaleUpperCase() + " " : "")}
-      </Text >
+        {/* {(item.room ? (item.room as string).toLocaleUpperCase() + " " : "")} */}
+      {/* </Text > */}
 
       <View
         style={{
           // backgroundColor: 'skyblue',
           flex: 1, flexDirection: 'column',
           left: 20,
-          top: 43,
+          top: 10,
           width: Dimensions.get('screen').width / 2,
           height: 40
         }}>
@@ -164,7 +164,7 @@ const ScheduleListItemType3 = ({ item }) => {
         style={{
           position: 'absolute',
           // backgroundColor: 'skyblue',
-          top: 32,
+          top: -1,
           left: Dimensions.get('screen').width - 150,
           width: artistImageSize,
           height: artistImageSize,

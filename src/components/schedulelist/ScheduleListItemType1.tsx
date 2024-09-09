@@ -64,7 +64,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     const imageWidthArtistImagex2 = imageWidthArtistImagex1 * 0.7;
 
     const imageWidthArtistImage = this.props.tileWidth * (120 / 305) * 0.9;
-    const imageOffsetYArtistImage = 10 + ((305 - this.props.tileWidth) / (305 - 245)) * 10
+    const imageOffsetYArtistImage = 15 + ((305 - this.props.tileWidth) / (305 - 245)) * 10
     const imageOffsetXRArtistImage = 0;
     const imageOffsetXLArtistImage = 8;
     const fontSizeMainTitle = this.props.tileWidth * (17 / 305);
@@ -72,7 +72,15 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     // const fontSizeMainTitle =20;
     const fontSizeArtistName = 16;
 
-    const roomString = (item.room.toLowerCase() == 'group class' ? 'Group Class Space' : item.room).toLocaleUpperCase();
+    const roomString = (item.groupTitle.toLocaleUpperCase() == 'GROUP CLASS' ? 'Group Class Space'.toLocaleUpperCase() : item.groupTitle.toLocaleUpperCase());
+
+    const colorMap = {
+      'GROUP CLASS SPACE': { color1: '#b63391', color2: '#c3aabe' },
+      'CONVERSATION CIRCLES': { color1: '#4872a6', color2: '#8996a6' },
+      'OUTSIDE': { color1: '#ee785d', color2: '#ddb9a3' }
+    }
+    const categoryColor = colorMap[roomString] != undefined ? colorMap[roomString] : '#a23963'
+
 
     // console.log("ScheduleListItemType1 tileLength " + this.props.tileWidth + " artistImageWidth: "+ imageWidthArtistImage);
 
@@ -83,7 +91,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
           left: this.props.tileOffsetLeft, top: this.props.tileOffsetTop,
           height: itemHeight, width: this.props.tileWidth,
           opacity: 1,
-          // backgroundColor:'red',
+          // backgroundColor:'#121212',
         }, this.props.dynamicVisualProperties0]}
       >
 
@@ -113,13 +121,13 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
           // name={"ScheduleItemFrame2_" + item.id}
           style={{
             position: 'absolute',
-            backgroundColor: '#b9a1a6',
-            borderColor: '#88617f',
+            backgroundColor: categoryColor.color2,
+            borderColor: categoryColor.color1,
             // borderLeftWidth: 3,
             // borderRightWidth: 3,
             borderTopWidth: 20,
             borderBottomWidth: 0,
-            opacity: 1,
+            opacity: 0.5,
             left: 0,
             top: roomBoxOffsetY,
             height: (itemHeight - reduceInnerTileHeightBy),
@@ -171,11 +179,12 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
             height: 15,
             width: 150,
             fontFamily: 'Cabin-Regular',
-            // backgroundColor: 'skyblue',
+        letterSpacing: 2.2,
+        opacity: 1.0,
+        padding: 2,
             textAlign: 'center',
             color: '#FFFFFF',
-            fontSize: 12,
-            letterSpacing: 0.0
+            fontSize: 10,
           }, this.props.dynamicVisualProperties2]}>
             {roomString}
           </Animated.Text>
@@ -247,10 +256,10 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                 position: 'absolute',
                 top: 8,
                 // right: (itemOrientation == 'right' ? undefined : (4 + 35)),
-                left: imageWidthArtistImagex1+10,
+                left: imageWidthArtistImagex1 + 10,
                 // backgroundColor: 'skyblue',
                 // flex: 1, flexDirection: 'column',
-                width: this.props.tileWidth-imageWidthArtistImagex1-45,
+                width: this.props.tileWidth - imageWidthArtistImagex1 - 45,
                 height: 100
               }}>
 
@@ -258,7 +267,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                 right: (itemOrientation == 'right' ? undefined : 0),
                 left: (itemOrientation == 'left' ? undefined : 0),
                 fontFamily: 'RobotoCondensed-Regular',
-                letterSpacing:0.0,
+                letterSpacing: 0.0,
                 // backgroundColor: 'indigo',
                 textAlign: (itemOrientation == 'right' ? 'left' : 'right'),
                 color: '#fefefe',
@@ -270,11 +279,11 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
 
 
               <Text allowFontScaling={false} id='textSessionArtistName' style={{
-                top:5,
+                top: 5,
                 right: (itemOrientation == 'right' ? undefined : 0),
                 left: (itemOrientation == 'left' ? undefined : 0),
                 fontFamily: 'Cabin-Regular',
-                width: this.props.tileWidth-imageWidthArtistImagex1-40,
+                width: this.props.tileWidth - imageWidthArtistImagex1 - 40,
                 letterSpacing: 2.0,
                 fontSize: 12,
                 // backgroundColor: 'red',
@@ -285,15 +294,15 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                 {item.artistName ? (item.artistName as string).toLocaleUpperCase() : ""}
               </Text >
 
-     
+
             </View>
             <ButtonSmall
               name={("ScheduleListArtistDetailsButton" + item.id)}
               source={null}
               style={{
                 right: (itemOrientation == 'right' ? undefined : undefined),
-                left: (itemOrientation == 'left' ? this.props.tileWidth - 120-10 : 0),
-                top: itemHeight-25-50,
+                left: (itemOrientation == 'left' ? this.props.tileWidth - 120 - 10 : 0),
+                top: itemHeight - 25 - 50,
                 height: 23, width: 120,
               }}
               text={"DETAILS"}
