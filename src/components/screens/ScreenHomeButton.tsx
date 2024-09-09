@@ -2,6 +2,7 @@ import ButtonSmall from "../ButtonSmall";
 import TransitionNavbarSelect from "../navbar/TransitionNavbarSelect";
 
 const ScreenHomeButton = (props) => {
+  const size = 45;
 
   return (
     <>
@@ -9,15 +10,15 @@ const ScreenHomeButton = (props) => {
         source={require('../../../assets/logo-small.png')}
         style={{
           position: 'absolute',
-          top: 20, right: 15,
-          width: 40,
-          height: 40,
+          top: 30, right: 15,
+          width: size,
+          height: size,
         }}
         imageStyle={[{
           position: 'absolute',
           right: undefined, left: undefined,
-          width: 40,
-          height: 40,
+          width: size,
+          height: size,
           resizeMode: "contain",
           opacity: 0.9,
         }]}

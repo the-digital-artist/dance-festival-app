@@ -46,24 +46,7 @@ class LoadingScreen extends PureComponent<any, any> {
                         }}
                         source={require('../../../assets/welcome.png')}
                     />
-                    {false && Platform.OS != 'android' &&
-                        <LVideoPlayback
-                            videoSrc={require('../../../assets/video/loading_video2.mp4')}
-                            style={{
-                                position: 'absolute',
-                                opacity: .1,
-                                width: Dimensions.get('screen').width,
-                                height:Dimensions.get('screen').height+100,
-                                top: 0,
-                                left:0,
-                                // width: (Dimensions.get('screen').width - 2 * videoOffsetX),
-                                // height: (Dimensions.get('screen').width - 2 * videoOffsetX) * (1080 / 1920),
-                                // top: Dimensions.get('screen').height - (Dimensions.get('screen').width - 2 * videoOffsetX) * (1080 / 1920) * 2+100,
-                                // left: videoOffsetX,
-                            }}
-                            shouldPlay={true}
-                        />
-                    }
+                   
                 </LComponent>
             </LComponent>
 

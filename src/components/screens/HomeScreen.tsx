@@ -8,6 +8,9 @@ import LVideoPlayback from "../../core/LVideoPlayback";
 import NavBar from "../navbar/NavBar";
 import EarlyPassesTile from "./EarlyPassesTile";
 import ScreenHeader from "./ScreenHeader";
+// import { Skottie } from "react-native-skottie";
+// import LottieAnimationFile from '../../../assets/falling2.json';
+// import { ExecutionEnvironment } from "expo-constants";
 
 
 
@@ -70,39 +73,18 @@ class HomeScreen extends PureComponent<any, any> {
                         source={require('../../../assets/screen-home-bg.png')}
                     />
 
-<Image
+                    <Image
                         source={require('../../../assets/home-element-0324.png')}
                         style={{
                             position: 'absolute', resizeMode: 'contain',
                             // opacity: (Dimensions.get("screen").height < 800 ? 0.1 : 1.0 - (logoScrollAlphaReductionDelta * Math.min(1, Math.max(0, this.state.scrollPosY / 100)))),
                             left: 0,
-                            bottom: NavBar.navBarHeight-3,
+                            bottom: NavBar.navBarHeight - 3,
                             // backgroundColor: 'red',
                             width: Dimensions.get('screen').width,
-                            height: Dimensions.get('screen').width * 967/1287,
+                            height: Dimensions.get('screen').width * 967 / 1287,
                         }}
                     />
-                    <LComponent
-                        name='homeScreenVideoBgContainer'
-                        style={{ position: 'absolute' }}
-                        visualProperties={{ alpha: 1.0, x: 0, y: 0, z: 0, w: "windowWidth", h: "windowHeight" }}
-                    >
-                        {false && Platform.OS == "ios" &&
-                            <LVideoPlayback
-                                videoSrc={require('../../../assets/video/bgvideo_2.mp4')}
-                                style={{
-                                    position: 'absolute',
-                                    opacity: 0.3,
-                                    width: (Dimensions.get('screen').width),
-                                    height: (Dimensions.get('screen').height),
-                                    top: 0,
-                                    left: 0,
-                                }}
-                                shouldPlay={true}
-                            />
-                        }
-                    </LComponent>
-
 
                     <ScreenHeader
                         text={"WELCOME MY FRIEND"}
@@ -110,7 +92,7 @@ class HomeScreen extends PureComponent<any, any> {
                         color='#FFFFFF'
                         imgSrc={require('../../../assets/header-home-bg.png')} />
 
-               
+
                     <ScrollView style={{
                         position: 'absolute',
                         top: screenHeaderHeight, left: 0,
@@ -124,7 +106,7 @@ class HomeScreen extends PureComponent<any, any> {
                             this.setState({ activeItems: this.state.activeItems, scrollPosY: e.nativeEvent.contentOffset.y })
                         }}
                     >
-                        {(Date.now() > Date.parse(DataModel.getInstance().static.dataTicketSales.earlyBirdStartTimeString)) &&
+                        {false && (Date.now() > Date.parse(DataModel.getInstance().static.dataTicketSales.earlyBirdStartTimeString)) &&
                             <View
                                 style={{
                                     top: Dimensions.get("screen").height > 800 ? 240 : 40,
@@ -132,7 +114,7 @@ class HomeScreen extends PureComponent<any, any> {
                                     width: Dimensions.get("screen").width,
                                     height: 190,
                                 }}>
-                                {Platform.OS == "ios" && <BlurView
+                                {/* {Platform.OS == "ios" && <BlurView
                                     intensity={17}
                                     style={{
                                         // backgroundColor:'skyblue',
@@ -144,7 +126,7 @@ class HomeScreen extends PureComponent<any, any> {
                                         height: (HomeScreen.homeProgramItemHeight + HomeScreen.homeProgramItemSpacingY) * DataModel.getInstance().static.dataModelProgram.length - 5,
 
                                     }} />
-                                }
+                                } */}
 
                                 {/* <LoginTile offsetY={0}/> */}
                                 {/* <HappeningNowTile offsetY={400} activeItems={activeItems} /> */}
@@ -197,7 +179,22 @@ class HomeScreen extends PureComponent<any, any> {
                     } */}
 
                 </LComponent>
+
+                {/* {ExecutionEnvironment.Standalone &&
+                    <Skottie
+                        style={{
+                            left: 0,
+                            bottom: NavBar.navBarHeight - 3,
+                            // backgroundColor: 'red',
+                            width: Dimensions.get('screen').width * 967 / 1287,
+                            height: Dimensions.get('screen').width * 967 / 1287,
+                        }}
+                        source={LottieAnimationFile}
+                        autoPlay={true}
+                    />
+                } */}
             </>
+
         );
     }
     componentDidMount(): void {
