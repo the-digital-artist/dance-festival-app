@@ -4,28 +4,30 @@ import ScheduleItemGroupRe from './ScheduleItemGroupRe';
 import ScheduleListItemType2 from './ScheduleListItemType2';
 import ScheduleListItemType3 from './ScheduleListItemType3';
 import ScheduleListItemType4 from './ScheduleListItemType4';
+import ScheduleListItemType6 from './ScheduleListItemType6';
 
 
 const ScheduleListItem = ({ item, index }) => {
-  // console.log('ScheduleListItem ' + item.id)
-
+  // console.log('ScheduleListItem ' + item.id +" | "+ item.sessionMainTitle +" | "+ item.itemType )
   if (item == undefined || item == null) return null;
   if (item.itemType == "type1" && item.flag == true) return null;
   if (item.flagIncludeInNow == true) return null;
 
   const centerPieceWidth = Dimensions.get('screen').width - (5 + 45 + 35 + 35 + 5)
   const paddingLeftAndRight = 5;
-
+  if(item.itemType == "type6") console.log('ScheduleListItem ' +" . ")
   let itemHeight = 110;
+  if(item.itemType == "type6") console.log('ScheduleListItem ' +" . ")
   let group = item.group;
+  if(item.itemType == "type6") console.log('ScheduleListItem ' +" . ")
   if (group.length == 0) group = [{ id: item.id, obj: item }]
-
+  if(item.itemType == "type6") console.log('ScheduleListItem ' +" . ")
   if (item.itemType == 'type1')
     itemHeight = (item.sessionMainTitle as string).length > 25 ? 200 : 200;
   else if (item.itemType == 'type2')
     itemHeight = (item.room == "" ? 50 : 65);
   else if (item.itemType == 'type3') {
-    itemHeight = 200
+    itemHeight = 180
     // if ((item.sessionMainTitle as string).length > 20) itemHeight += 30;
     // if ((item.artistName as string).length > 20) itemHeight += 30;
   }
@@ -33,6 +35,9 @@ const ScheduleListItem = ({ item, index }) => {
     itemHeight = (item.sessionMainTitle as string).length > 20 ? 200 : 185;
   else if (item.itemType == 'type5')
     itemHeight = 100;
+  else if (item.itemType == 'type6')
+    itemHeight = 50;
+  if(item.itemType == "type6") console.log('ScheduleListItem ' +" . ")
 
   if (item.itemType == 'type1' && item.dateString == "Thu, October 17, 2024") {
     itemHeight = 170;
@@ -50,8 +55,8 @@ const ScheduleListItem = ({ item, index }) => {
     orientation = (LauncherController.getInstance().context['sessionListCount']++) % 2 == 0 ? 'left' : 'right'
   }
 
-  const overwriteGroupTitles = false;
-  const groupMainTitle = overwriteGroupTitles ? ("Parallel Workshop Sessions" as string).toLocaleUpperCase() : (item.groupTitle)
+  const overwriteGroupTitles = false && (item.itemType=='type1');
+  const groupMainTitle = overwriteGroupTitles  ? ("Parallel Workshop Sessions" as string).toLocaleUpperCase() : (item.groupTitle)
   const groupSubTitle = overwriteGroupTitles ? ("Swipe to Browse Rooms:" as string).toLocaleUpperCase() : (item.groupSubtitle as string).toLocaleUpperCase()
 
 
@@ -93,6 +98,7 @@ const ScheduleListItem = ({ item, index }) => {
         {item.itemType == "type2" ? <ScheduleListItemType2 item={item} /> : null}
         {item.itemType == "type3" ? <ScheduleListItemType3 item={item} /> : null}
         {item.itemType == "type4" ? <ScheduleListItemType4 item={item} /> : null}
+        {item.itemType == "type6" ? <ScheduleListItemType6 item={item} /> : null}
 
         {item.itemType == "type1" && item.group.length>1?
           <>
