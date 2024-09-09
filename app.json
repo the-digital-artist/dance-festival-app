@@ -14,7 +14,7 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.thedigitalartist.wellbeing",
-      "buildNumber": "4",
+      "buildNumber": "11",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "LSApplicationQueriesSchemes": [
@@ -44,6 +44,8 @@
     },
     "updates": {
       "url": "https://u.expo.dev/491d2ea7-fa97-40ea-85b5-f7d569e63cae"
-    }
+    },
+    "plugins": [
+    ]
   }
 }
