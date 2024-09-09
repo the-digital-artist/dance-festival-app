@@ -77,9 +77,9 @@ class ArtistDetailsBioComponent extends PureComponent<any, any> {
                     onScroll={(e) => {
                         this.setState({ scrollPosY: e.nativeEvent.contentOffset.y })
                     }}
-                    onLayout={(e) => {
-                        // this.setState({ showMoreButton: (e.layout.height>=100)})
-                    }}
+                    // onLayout={(e) => {
+                    //     // this.setState({ showMoreButton: (e.layout.height>=100)})
+                    // }}
                 >
 
 
@@ -119,10 +119,10 @@ class ArtistDetailsBioComponent extends PureComponent<any, any> {
                                 heightThresholdPassed: (e.nativeEvent.layout.height+180>(maskStart))
                             })
                         }}
-                        onTextLayout={(e: NativeSyntheticEvent<TextLayoutEventData>) => {
-                            // console.log("________________Text onTextLayout "+(e.nativeEvent.lines == undefined));
-                            // this.setState({ showMoreButton: (e.layout.height>=100)})
-                        }}
+                        // onTextLayout={(e: NativeSyntheticEvent<TextLayoutEventData>) => {
+                        //     // console.log("________________Text onTextLayout "+(e.nativeEvent.lines == undefined));
+                        //     // this.setState({ showMoreButton: (e.layout.height>=100)})
+                        // }}
                     >
                         {artistBiography}
                     </Text>
