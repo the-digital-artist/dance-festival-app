@@ -6,8 +6,8 @@ import LauncherController from '../../LauncherController';
 import TransitionLinkToArtistPage from '../../transitions/TransitionLinkToArtistPage';
 
 
-  // 'Main Fair Room': 'type3',
-const ScheduleListItemType3 = ({ item }) => {
+// 'Main Fair Room': 'type3',
+const ScheduleListItemType3 = ({ item, orientation }) => {
 
   // console.log("ScheduleListItem: " + JSON.stringify(item, null, 2));
   if (item.itemType != 'type3') return;
@@ -18,14 +18,16 @@ const ScheduleListItemType3 = ({ item }) => {
   const verticalOffsetTitleLength = item.lineCount != undefined ? (item.lineCount * 19) : 19;
   const preSignupRequired = false;
 
-  const artistImageSize = item.itemHeight-52;
+  const artistImageSize = item.itemHeight - 52;
+
+  const itemOrientation: string = orientation
 
 
   const companyString = artistData1.artistCompany != undefined ? artistData1.artistCompany : '';
 
   return (
     <>
- <View id='bg' style={{
+      <View id='bg' style={{
         position: 'absolute',
         top: 0, left: 0,
         height: item.itemHeight - 50,
@@ -50,45 +52,30 @@ const ScheduleListItemType3 = ({ item }) => {
         color: '#bcd4ee',
         fontSize: 11,
       }}> */}
-        {/* {sessionCategoryName.toLocaleUpperCase() + "  |  " + (item.room ? (item.room as string).toLocaleUpperCase() + " " : "")} */}
-        {/* {(item.room ? (item.room as string).toLocaleUpperCase() + " " : "")} */}
+      {/* {sessionCategoryName.toLocaleUpperCase() + "  |  " + (item.room ? (item.room as string).toLocaleUpperCase() + " " : "")} */}
+      {/* {(item.room ? (item.room as string).toLocaleUpperCase() + " " : "")} */}
       {/* </Text > */}
 
       <View
         style={{
+          position: 'absolute',
           // backgroundColor: 'skyblue',
           flex: 1, flexDirection: 'column',
-          left: 20,
-          top: 10,
-          width: Dimensions.get('screen').width / 2,
-          height: 40
+          left: (itemOrientation == 'left' ? artistImageSize : undefined),
+          right: (itemOrientation == 'right' ? artistImageSize : undefined),
+          top: 0,
+          width: Dimensions.get('screen').width - artistImageSize - 40,
+          height: 130
         }}>
-
-        {preSignupRequired && <Text allowFontScaling={false} id='textPreSignup' style={{
-          left: 0,
-          width: Dimensions.get('screen').width - 90,
-          height: 15,
-          fontFamily: 'Cabin-Regular',
-          letterSpacing: 1.2,
-          // opacity: 0.5,
-          // backgroundColor: 'indigo',
-          textAlign: 'left',
-          color: '#FFFFFF',
-          fontSize: 10,
-        }}>
-          {"PRE-SIGNUP REQUIRED"}
-        </Text >
-        }
-
 
         <LText allowFontScaling={false} id='textSessionMainTitle' style={{
           top: 10,
-          left: 0,
-          width: 220,
+          left: (itemOrientation == 'left' ? 25 : undefined),
+          right: (itemOrientation == 'right' ? 25 : undefined),
           fontFamily: 'RobotoCondensed-Regular',
           // backgroundColor: 'indigo',
           letterSpacing: 0.0,
-          textAlign: 'left',
+          textAlign: itemOrientation,
           color: '#d2cbd1',
           fontSize: 20,
         }}>
@@ -97,27 +84,17 @@ const ScheduleListItemType3 = ({ item }) => {
             {(item.sessionMainTitle ? (item.sessionMainTitle as string) : "") + "  "}
           </LText>
 
-          <LText allowFontScaling={false} id='textSessionCount' style={{
-            fontFamily: 'Cabin-Regular',
-            // backgroundColor: 'indigo',
-            textAlign: 'left',
-            color: '#e3dfbb',
-            fontSize: 12,
-          }}>
-            {item.sessionSpecialTrackCount ? (item.sessionSpecialTrackCount as string).substring(1, item.sessionSpecialTrackCount.length - 1) : ""}
-          </LText>
         </LText>
-
 
         <Text allowFontScaling={false} id='textArtistName' style={{
           top: 15,
-          left: 0,
-          width: 290, height: 16,
+          right: (itemOrientation == 'right' ? 25 : undefined),
+          left: (itemOrientation == 'left' ? 25 : undefined),
           fontFamily: 'Cabin-Regular',
           letterSpacing: 2.0,
           fontSize: 13,
           // backgroundColor: 'indigo',
-          textAlign: 'left',
+          textAlign: (itemOrientation == 'left' ? 'left' : 'right'),
           color: '#FFFFFF',
 
         }}>
@@ -125,37 +102,6 @@ const ScheduleListItemType3 = ({ item }) => {
         </Text>
 
       </View >
-      {/* <ButtonSmall
-        name={("ScheduleListArtistDetailsButton" + item.id)}
-        source={null}
-        style={{
-          position: 'absolute',
-          left: 20,
-          top: item.itemHeight - 46,
-          height: 23, width: 130,
-        }}
-        text={"SESSION INFO"}
-        bgBoxVisible={true}
-        bgBoxStyle={{
-          backgroundColor: '#600f2c',
-          opacity: 0.4,
-          height: 23, width: 130
-        }}
-        fontStyle={{
-          width: 130,
-          top: ((Platform.OS == 'android')) ? -2 : 5,
-          color: '#EFEFEF',
-          fontFamily: 'Cabin-Regular',
-          textAlign: 'center',
-          textAlignVertical: 'center',
-          letterSpacing: 2.0,
-          fontSize: 9,
-          height: 23,
-        }}
-        visualProperties={{ alpha: 1 }}
-        onSelect={() => {
-        }}
-      /> */}
 
       <ButtonSmall
         name={("artistImageButton1" + item.id)
@@ -164,8 +110,9 @@ const ScheduleListItemType3 = ({ item }) => {
         style={{
           position: 'absolute',
           // backgroundColor: 'skyblue',
-          top: -1,
-          left: Dimensions.get('screen').width - 150,
+          top: Platform.OS == 'ios' ? -1 : 0,
+          right: (itemOrientation == 'right' ? 0 : undefined),
+          left: (itemOrientation == 'left' ? 0 : undefined),
           width: artistImageSize,
           height: artistImageSize,
         }}
@@ -176,7 +123,7 @@ const ScheduleListItemType3 = ({ item }) => {
             width: artistImageSize,
             height: artistImageSize,
             resizeMode: 'cover',
-            opacity: 0.9,
+            opacity: 1.0,
           }]}
         bgBoxVisible={false}
         visualProperties={{ alpha: 1 }}
@@ -187,23 +134,42 @@ const ScheduleListItemType3 = ({ item }) => {
         }}
       />
 
-
-      {
-        (false && !preSignupRequired) &&
-
-        <Image
-          source={LauncherController.getInstance().staticImageList[LauncherController.getInstance().staticImageList.length - 1].imgSrc}
-          style={{
-            position: 'absolute',
-            opacity: 0.8,
-            top: 140,
-            left: Dimensions.get('screen').width - 145,
-            width: 50,
-            height: 50,
-          }}
-        >
-        </Image>
-      }
+      <ButtonSmall
+        name={("ScheduleListArtistDetailsButton" + item.id)}
+        source={null}
+        style={{
+          position: 'absolute',
+          left: (itemOrientation == 'left' ? 160 : undefined),
+          right: (itemOrientation == 'right' ? 160 : undefined),
+          bottom:  60,
+          height: 23, width: 120,
+        }}
+        text={"DETAILS"}
+        bgBoxVisible={true}
+        bgBoxStyle={{
+          backgroundColor: '#232323',
+          opacity: 0.5,
+          height: 23, width: 120
+        }}
+        fontStyle={{
+          width: 120,
+          top: ((Platform.OS == 'android')) ? -2 : 5,
+          color: '#FFFFFF',
+          fontFamily: 'Cabin-Regular',
+          textAlign: 'center',
+          textAlignVertical: 'center',
+          letterSpacing: 2.0,
+          // color: '#FFFFFF',
+          fontSize: 9,
+          height: 23,
+        }}
+        visualProperties={{ alpha: 1 }}
+        onSelect={() => {
+          if (artistData1 == undefined) return;
+          LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage" });
+          TransitionLinkToArtistPage(artistData1)
+        }}
+      />
     </>
   );
 }

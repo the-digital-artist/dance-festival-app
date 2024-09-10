@@ -2,7 +2,7 @@
   "expo": {
     "name": "SF Well-Being Fair",
     "slug": "well-being-fair-san-francisco",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
@@ -14,7 +14,7 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.thedigitalartist.wellbeing",
-      "buildNumber": "11",
+      "buildNumber": "16",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "LSApplicationQueriesSchemes": [
@@ -31,7 +31,7 @@
         "backgroundColor": "#000000"
       },
       "package": "com.thedigitalartist.wellbeing",
-      "versionCode": 0
+      "versionCode": 3
     },
     "extra": {
       "eas": {
@@ -46,6 +46,17 @@
       "url": "https://u.expo.dev/491d2ea7-fa97-40ea-85b5-f7d569e63cae"
     },
     "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "newArchEnabled": true
+          },
+          "android": {
+            "newArchEnabled": true
+          }
+        }
+      ]
     ]
   }
 }

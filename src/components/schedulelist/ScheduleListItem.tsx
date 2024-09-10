@@ -15,19 +15,15 @@ const ScheduleListItem = ({ item, index }) => {
 
   const centerPieceWidth = Dimensions.get('screen').width - (5 + 45 + 35 + 35 + 5)
   const paddingLeftAndRight = 5;
-  if(item.itemType == "type6") console.log('ScheduleListItem ' +" . ")
   let itemHeight = 110;
-  if(item.itemType == "type6") console.log('ScheduleListItem ' +" . ")
   let group = item.group;
-  if(item.itemType == "type6") console.log('ScheduleListItem ' +" . ")
   if (group.length == 0) group = [{ id: item.id, obj: item }]
-  if(item.itemType == "type6") console.log('ScheduleListItem ' +" . ")
   if (item.itemType == 'type1')
     itemHeight = (item.sessionMainTitle as string).length > 25 ? 200 : 200;
   else if (item.itemType == 'type2')
     itemHeight = (item.room == "" ? 50 : 65);
   else if (item.itemType == 'type3') {
-    itemHeight = 180
+    itemHeight = 200
     // if ((item.sessionMainTitle as string).length > 20) itemHeight += 30;
     // if ((item.artistName as string).length > 20) itemHeight += 30;
   }
@@ -51,7 +47,7 @@ const ScheduleListItem = ({ item, index }) => {
 
 
   let orientation = 'left';
-  if (item.itemType == 'type1') {
+  if (item.itemType == 'type3') {
     orientation = (LauncherController.getInstance().context['sessionListCount']++) % 2 == 0 ? 'left' : 'right'
   }
 
@@ -96,7 +92,7 @@ const ScheduleListItem = ({ item, index }) => {
           orientation={orientation}
           rowHeight={itemHeight} /> : null}
         {item.itemType == "type2" ? <ScheduleListItemType2 item={item} /> : null}
-        {item.itemType == "type3" ? <ScheduleListItemType3 item={item} /> : null}
+        {item.itemType == "type3" ? <ScheduleListItemType3 item={item} orientation={orientation}/> : null}
         {item.itemType == "type4" ? <ScheduleListItemType4 item={item} /> : null}
         {item.itemType == "type6" ? <ScheduleListItemType6 item={item} /> : null}
 
@@ -135,7 +131,8 @@ const ScheduleListItem = ({ item, index }) => {
           : null}
       </View>
 
-      <Text allowFontScaling={false} id='textTime' style={{
+      {item.itemType != 'type3' &&
+        <Text allowFontScaling={false} id='textTime' style={{
         position: 'absolute',
         top: 4, left: 6,
         height: 15,
@@ -147,6 +144,7 @@ const ScheduleListItem = ({ item, index }) => {
       }}>
         {item.time}
       </Text>
+}
     </>
   );
 }

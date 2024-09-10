@@ -96,13 +96,13 @@ const TabBar = (props) => {
                                 letterSpacing: 0,
                                 left: 5,
                                 color: '#FFFFFF',
-                                width: itemWidth-5, 
+                                width: itemWidth-6, 
                                 // backgroundColor:'skyblue',
-                                // height: itemHeight,
+                                height: itemHeight-15,
                                 textAlignVertical: 'center',
                                 fontSize: 14,
                                 opacity: 1.0,
-                                top: 16
+                                top: 12
                             }}
                         />
 

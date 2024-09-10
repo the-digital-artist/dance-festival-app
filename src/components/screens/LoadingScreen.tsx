@@ -26,7 +26,7 @@ class LoadingScreen extends PureComponent<any, any> {
                         width: Dimensions.get('screen').width, height: Dimensions.get('screen').height,
                         resizeMode: "cover",
                     }}
-                    source={require('../../../assets/screen-home-bg.png')}
+                    source={require('../../../assets/splash.png')}
                 />
                 <LComponent
                     name="loadingImage"

@@ -10,7 +10,7 @@ const ScreenHomeButton = (props) => {
         source={require('../../../assets/logo-small.png')}
         style={{
           position: 'absolute',
-          top: 30, right: 15,
+          top: 40, right: 15,
           width: size,
           height: size,
         }}

@@ -17,7 +17,7 @@ class LauncherController extends OperatorStates {
     context =
         {
             state: "splash",
-            sessionListCount: 0,
+            sessionListCount: 1,
 
             navigationHistory: [{ out: "HomeScreen", transition: "initial" }],
 
@@ -244,6 +244,9 @@ class LauncherController extends OperatorStates {
 
     async initialize() {
         const dataModel = DataModel.getInstance().static;
+        const uiManager = global?.nativeFabricUIManager ? 'Fabric' : 'Paper';
+        console.log(`LauncherController - using ${uiManager}`);
+
         try {
             await this.checkForUpdate();
             await Font.loadAsync(this.customFonts);

@@ -61,19 +61,19 @@ class SchedulerSessionDetailsScreen extends PureComponent {
                         opacity: 0.7
                     }}
                 >
-                    
+
                 </View>
                 <Image
-                        style={{
-                            // backgroundColor: 'skyblue',
-                            top: 0, left: 0, position: 'absolute',
-                            width: Dimensions.get('screen').width,
-                            height: Dimensions.get('screen').height,
-                            resizeMode: "cover",
-                            opacity: 0.8
-                        }}
-                        source={require('../../../assets/screen-scheduler-bg.png')}
-                    />
+                    style={{
+                        // backgroundColor: 'skyblue',
+                        top: 0, left: 0, position: 'absolute',
+                        width: Dimensions.get('screen').width,
+                        height: Dimensions.get('screen').height,
+                        resizeMode: "cover",
+                        opacity: 0.8
+                    }}
+                    source={require('../../../assets/screen-scheduler-bg.png')}
+                />
 
                 <>
 
@@ -94,20 +94,20 @@ class SchedulerSessionDetailsScreen extends PureComponent {
                     <View
                         style={{
                             position: 'absolute',
-                            transform:[{scale:(Dimensions.get('screen').width-80)/Dimensions.get('screen').width}],
-                            top: 165, left: 5, 
-                            width:Dimensions.get('screen').width-10,
+                            transform: [{ scale: (Dimensions.get('screen').width - 80) / Dimensions.get('screen').width }],
+                            top: 165, left: 5,
+                            width: Dimensions.get('screen').width - 10,
                             height: 190,
                             // backgroundColor: 'skyblue',
                             opacity: 1.0,
                         }}
                     >
-                        <ScheduleListItemType4 item={item} showDetailsButton={false}/>
+                        <ScheduleListItemType4 item={item} showDetailsButton={false} />
                     </View>
                 </>
 
 
-               
+
 
                 {true &&
                     <ScrollView
@@ -154,7 +154,7 @@ class SchedulerSessionDetailsScreen extends PureComponent {
                                 letterSpacing: 1.2,
                                 //   backgroundColor: 'indigo',
                                 textAlign: 'left',
-                                color: '#5c5177',
+                                color: '#e2b078',
                                 fontSize: 13,
                             }}>
                                 {artistData1.fullName ? (artistData1.fullName as string).toLocaleUpperCase() : ""}
@@ -241,10 +241,10 @@ class SchedulerSessionDetailsScreen extends PureComponent {
                                 {item ? (item.description as string) : ""}
                             </LText>
                         </View>
-                        <View 
-style={{
-    height: 100,
-}}
+                        <View
+                            style={{
+                                height: 100,
+                            }}
                         />
                     </ScrollView>
 

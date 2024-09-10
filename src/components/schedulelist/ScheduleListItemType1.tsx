@@ -67,7 +67,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     const imageOffsetYArtistImage = 15 + ((305 - this.props.tileWidth) / (305 - 245)) * 10
     const imageOffsetXRArtistImage = 0;
     const imageOffsetXLArtistImage = 8;
-    const fontSizeMainTitle = this.props.tileWidth * (17 / 305);
+    const fontSizeMainTitle = this.props.tileWidth * (16 / 305);
     // const fontSizeArtistName = this.props.tileWidth * (13 / 305)
     // const fontSizeMainTitle =20;
     const fontSizeArtistName = 16;
@@ -95,25 +95,6 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
         }, this.props.dynamicVisualProperties0]}
       >
 
-        {/* <View
-          //  name={"ScheduleItemFrame1_" + item.id}
-          style={{
-            position: 'absolute',
-            // backgroundColor: '#517d97',
-            borderColor: '#9F509F',
-            // borderLeftWidth: 3,
-            // borderRightWidth: 3,
-            // borderLeftWidth: 3,
-            // borderRightWidth: 3,
-            borderTopWidth: 0,
-            // borderBottomWidth: 3,
-            opacity: 0.9,
-            left: 0,
-            top: roomBoxOffsetY,
-            height: (itemHeight - reduceInnerTileHeightBy),
-            width: this.props.tileWidth
-          }}
-        /> */}
 
 
 
@@ -151,19 +132,6 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
           }}
         >
 
-          {/* <Image
-            source={require('../../../assets/schedulelistitem-bg-overlay.png')}
-            style={{
-              // backgroundColor: 'greenyellow',
-              position: 'absolute',
-              left: 0, top: roomBoxOffsetY,
-              opacity: 0.2,
-              width: this.props.tileWidth,
-              height: itemHeight - reduceInnerTileHeightBy -20,
-              resizeMode: 'cover'
-            }}
-          />  */}
-
           <LComponent
             name={"ScheduleItemHighlight" + item.id}
             style={{
@@ -172,16 +140,15 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
             visualProperties={{ alpha: 0, x: 0, y: 0, h: (itemHeight - reduceInnerTileHeightBy), w: this.props.tileWidth }}
           />
           <Animated.Text allowFontScaling={false} id='textLocation' style={[{
-            top: 2,
-            left: (this.props.tileWidth - 150) / 2,
+            top: (Platform.OS=="ios"?2:1),
+            left: (this.props.tileWidth - 160) / 2,
             // right: (itemOrientation == 'right' ? undefined : 10),
             // left: (itemOrientation == 'left' ? undefined : 10),
-            height: 15,
-            width: 150,
+            width: 160,
             fontFamily: 'Cabin-Regular',
-        letterSpacing: 2.2,
-        opacity: 1.0,
-        padding: 2,
+            letterSpacing: 1.8,
+            opacity: 1.0,
+            padding: 2,
             textAlign: 'center',
             color: '#FFFFFF',
             fontSize: 10,
@@ -308,7 +275,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               text={"DETAILS"}
               bgBoxVisible={true}
               bgBoxStyle={{
-                backgroundColor: '#937d7f',
+                backgroundColor: '#232323',
                 opacity: 0.5,
                 height: 23, width: 120
               }}

@@ -43,16 +43,16 @@ const ScheduleListItemType4 = ({ item, showDetailsButton = true }) => {
 
       <Text allowFontScaling={false} id='textSessionCategoryAndRoom' style={{
         position: 'absolute',
-        top: 7,
+        top: 0,
         left: 85,
         fontFamily: 'Cabin-Regular',
         letterSpacing: 1.2,
         opacity: 0.5,
         padding: 2,
-        backgroundColor: '#382b38',
+        // backgroundColor: '#382b38',
         // backgroundColor: '#600f2c',
         textAlign: 'left',
-        color: '#bcd4ee',
+        color: '#232323',
         fontSize: 11,
       }}>
         {sessionCategoryName.toLocaleUpperCase() + "  |  " + (item.room ? (item.room as string).toLocaleUpperCase() + " " : "")}

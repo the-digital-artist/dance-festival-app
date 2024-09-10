@@ -7,9 +7,9 @@ const ScheduleListSectionRenderer = ({ section: { title } }) => {
 
   let color = '#907b86';
   const colorMapping = {
-    'Opening': {color1:  "#2c252d", opacity1: 1 },
-    'Main Fair': {color1:  "#2c252d", opacity1: 1 },
-    'Closing': {color1:  "#2c252d", opacity1: 1 },
+    'Opening': {color1:  "#2d231f", opacity1: 1 },
+    'Main Fair': {color1:  "#2d231f", opacity1: 1 },
+    'Closing': {color1:  "#2d231f", opacity1: 1 },
     'Group Classes, Conversations, Outside' : {color1:  "#8d4487", opacity1: 1 }, 
     'Massage' : {color1:  "#907b86", opacity1: 0 }, 
     'Crafty Corner' : {color1:  "#907b86", opacity1: 0 }, 

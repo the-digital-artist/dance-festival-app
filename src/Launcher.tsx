@@ -10,13 +10,10 @@ import NavBarHighlight from "./components/navbar/NavBarHighlight";
 import ArtistMainScreen from "./components/screens/ArtistMainScreen";
 import HomeScreen from "./components/screens/HomeScreen";
 import LoadingScreen from "./components/screens/LoadingScreen";
-import SchedulerScreen from "./components/screens/SchedulerListScreen";
-import SettingsScreen from "./components/screens/SettingsScreen";
+import SchedulerMainScreen from "./components/screens/SchedulerMainScreen";
 import UpdateOverlayFragement from "./components/screens/UpdateOverlayFragement";
 import Eventl from "./core/LEventl";
 import StateDependentComponent from "./core/LStateDependentComponent";
-import LoginScreen from "./components/screens/LoginScreen";
-import SchedulerMainScreen from "./components/screens/SchedulerMainScreen";
 import DataModel from "./DataModel";
 
 
@@ -30,13 +27,11 @@ class Launcher extends PureComponent<any, any> {
     constructor(props) {
         super(props)
 
+        SplashScreen.preventAutoHideAsync();
         // ActionUpdatesCheckAndPerform();
 
         this.controller = LauncherController.getInstance();
         this.controller.view = this;
-
-        SplashScreen.preventAutoHideAsync();
-
     }
 
     public render(): ReactNode {
