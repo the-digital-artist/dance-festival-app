@@ -30,7 +30,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#000000"
       },
-      "package": "com.thedigitalartist.caldac.festivalapp",
+      "package": "org.caldac.festivalplanner",
       "versionCode": 7
     },
     "extra": {
@@ -44,6 +44,19 @@
     },
     "updates": {
       "url": "https://u.expo.dev/66eef67d-c5b7-4262-b95f-4e862c5dea37"
-    }
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "newArchEnabled": true
+          },
+          "android": {
+            "newArchEnabled": true
+          }
+        }
+      ]
+    ]
   }
 }
