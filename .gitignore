@@ -34,3 +34,7 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 *.ipa
+
+#build directories
+android/
+ios/
