@@ -7,6 +7,7 @@ import ScreenHeader from "./ScreenHeader";
 import ScreenHomeButton from "./ScreenHomeButton";
 import { TextInput } from "react-native-gesture-handler";
 import NavBar from "../navbar/NavBar";
+import { FlashList } from "@shopify/flash-list";
 
 
 class ArtistListScreen extends PureComponent {
@@ -44,7 +45,7 @@ class ArtistListScreen extends PureComponent {
         //     );
         // }
         //sort list
-        if (this.state.dataModelList!=null && this.state.modelUpdateState == 2) {
+        if (this.state.dataModelList != null && this.state.modelUpdateState == 2) {
             this.state.dataModelList.sort((a, b) => {
                 // console.log("___________compare: "+a.fullName+" "+b.fullName+" "+(a.fullName>b.fullName?1:(a.fullName<b.fullName?-1:0)))
                 // console.log("___________compare: imgSrc b: "+b.imgSrc);
@@ -93,8 +94,7 @@ class ArtistListScreen extends PureComponent {
                         opacity: 0.1
                     }} />
                 {this.state.modelUpdateState == 2 &&
-                    <FlatList
-                        ref={(list) => { this.artistListRef = list }}
+                    <View
                         style={{
                             position: 'absolute',
                             backgroundColor: 'transparent',
@@ -102,16 +102,21 @@ class ArtistListScreen extends PureComponent {
                             width: Dimensions.get('screen').width,
                             height: Dimensions.get('screen').height - 100,
                             opacity: 1
-                        }}
-                        data={this.state.dataModelList}
-                        renderItem={ArtistListItemRenderer}
-                        keyExtractor={item => item.fullName}
-                        ListFooterComponent={() => (
-                            <View style={{ 
-                                marginTop:20,
-                                height:NavBar.navBarHeight+50}}/>
-                        )}
-                    />
+                        }}> 
+                        <FlashList
+                            ref={(list) => { this.artistListRef = list }}
+                            data={this.state.dataModelList}
+                            renderItem={ArtistListItemRenderer}
+                            estimatedItemSize={130}
+                            ListFooterComponent={() => (
+                                <View style={{
+                                    marginTop: 20,
+                                    height: NavBar.navBarHeight + 50
+                                }} />
+                            )}
+                        />
+                    </View>
+
                 }
 
 
