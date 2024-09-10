@@ -20,7 +20,7 @@ const ScheduleListItemType3 = ({ item, orientation }) => {
 
   const artistImageSize = item.itemHeight - 52;
 
-  const itemOrientation: string = orientation
+  const itemOrientation: string = 'right'//orientation
 
 
   const companyString = artistData1.artistCompany != undefined ? artistData1.artistCompany : '';
