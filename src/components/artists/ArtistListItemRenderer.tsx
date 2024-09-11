@@ -1,10 +1,9 @@
-import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, Image, StyleSheet, View } from 'react-native';
+import LauncherController from '../../LauncherController';
 import ActionArtistListOnDetailsBtn from '../../actions/ActionArtistListOnDetailsBtn';
+import LText from '../../core/LText';
 import LTouchableOpacity from '../../core/LTouchableOpacity';
 import ButtonSmall from '../ButtonSmall';
-import { opacity } from 'react-native-reanimated/lib/typescript/reanimated2/Colors';
-import LauncherController from '../../LauncherController';
-import LText from '../../core/LText';
 
 const ArtistListItemRenderer = ({ item, index }) => {
   const centerPieceWidth = Dimensions.get('screen').width - (5 + 45 + 35 + 35 + 5)

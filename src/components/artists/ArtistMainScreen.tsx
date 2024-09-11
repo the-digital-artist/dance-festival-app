@@ -1,9 +1,8 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React, { PureComponent } from "react";
-import { Dimensions, Platform, View } from "react-native";
+import { Dimensions } from "react-native";
 import LComponent from "../../core/LComponent";
-import ArtistListScreen from "./ArtistListScreen";
 import ArtistDetailsScreen from "./ArtistDetailsScreen";
+import ArtistListScreen from "./ArtistListScreen";
 
 class ArtistMainScreen extends PureComponent {
 
@@ -68,7 +67,7 @@ class ArtistMainScreen extends PureComponent {
                         </stack.Navigator>
                     </NavigationContainer> */}
 
-                    {(Platform.OS == 'android') &&
+                    {/* {(Platform.OS == 'android') &&
                         <View
                             style={{
                                 backgroundColor: '#7d7974',
@@ -77,7 +76,7 @@ class ArtistMainScreen extends PureComponent {
                                 height: (Dimensions.get('screen').width * (300 / 1290)),
                                 opacity: 0.8
                             }} />
-                    }
+                    } */}
                 </LComponent>
 
             </>

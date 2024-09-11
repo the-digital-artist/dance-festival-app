@@ -1,17 +1,14 @@
 import React, { Fragment, PureComponent } from "react";
 import { Dimensions, Image, Platform, Text, View } from "react-native";
-import { Gesture, GestureDetector, GestureType, ScrollView } from "react-native-gesture-handler";
+import { Gesture } from "react-native-gesture-handler";
 import LauncherController from "../../LauncherController";
 import ActionHistoryBackButton from "../../actions/ActionHistoryBackButton";
 import ActionOpenSocialMediaApp from "../../actions/ActionOpenSocialMediaApp";
-import ButtonSmall from "../ButtonSmall";
-import NavBar from "../navbar/NavBar";
-import ScreenHeader from "./ScreenHeader";
-import ScreenHomeButton from "./ScreenHomeButton";
 import TweenManager from "../../core/LTweenManager";
-import LComponent from "../../core/LComponent";
+import ButtonSmall from "../ButtonSmall";
+import ScreenHeader from "../screens/ScreenHeader";
+import ScreenHomeButton from "../screens/ScreenHomeButton";
 import ArtistDetailsBioComponent from "./ArtistDetailsBioComponent";
-import DataModel from "../../DataModel";
 
 
 class ArtistDetailsScreen extends PureComponent {
@@ -161,6 +158,7 @@ class ArtistDetailsScreen extends PureComponent {
                     color='#f8f6d3'
                     textStyle={{ left: 50 }}
                     imgSrc={require('../../../assets/header-artists-bg.png')} />
+                    
                 <ScreenHomeButton />
 
 

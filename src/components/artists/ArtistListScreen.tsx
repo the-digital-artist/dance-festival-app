@@ -1,12 +1,12 @@
 import React, { PureComponent } from "react";
-import { Dimensions, FlatList, Image, Text, View } from "react-native";
+import { Dimensions, FlatList, Image, View } from "react-native";
+import { TextInput } from "react-native-gesture-handler";
 import DataModel from "../../DataModel";
 import LauncherController from "../../LauncherController";
-import ArtistListItemRenderer from "./ArtistListItemRenderer";
-import ScreenHeader from "./ScreenHeader";
-import ScreenHomeButton from "./ScreenHomeButton";
-import { TextInput } from "react-native-gesture-handler";
 import NavBar from "../navbar/NavBar";
+import ArtistListItemRenderer from "./ArtistListItemRenderer";
+import ScreenHeader from "../screens/ScreenHeader";
+import ScreenHomeButton from "../screens/ScreenHomeButton";
 
 
 class ArtistListScreen extends PureComponent {
@@ -76,7 +76,8 @@ class ArtistListScreen extends PureComponent {
                     text={"ARTISTS & PRACTITIONERS"}
                     color='#f8f6d3'
                     imgSrc={require('../../../assets/header-artists-bg.png')} />
-                <ScreenHomeButton />
+
+                <ScreenHomeButton/>
 
                 <View
                     style={{

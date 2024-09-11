@@ -1,5 +1,4 @@
-import { BlurView } from "expo-blur";
-import { Dimensions, Image, Text, View } from "react-native";
+import { Dimensions, Text, View } from "react-native";
 
 
 

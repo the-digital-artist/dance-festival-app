@@ -1,6 +1,6 @@
 import React, { PureComponent, createRef } from "react";
-import { Dimensions, Image, Platform, SectionList, Text, View } from "react-native";
-import { Gesture, GestureDetector } from "react-native-gesture-handler";
+import { Dimensions, Image, SectionList, View } from "react-native";
+import { Gesture } from "react-native-gesture-handler";
 import DataModel from "../../DataModel";
 import LauncherController from "../../LauncherController";
 import LComponent from "../../core/LComponent";
@@ -8,10 +8,10 @@ import LText from "../../core/LText";
 import TransitionDataModelUpdate from "../../transitions/TransitionDataModelUpdate";
 import NavBar from "../navbar/NavBar";
 import ScheduleListItem from "../schedulelist/ScheduleListItem";
-import TabBar from "../tabbar/TabBar";
-import ScreenHeader from "./ScreenHeader";
-import ScreenHomeButton from "./ScreenHomeButton";
 import ScheduleListSectionRenderer from "../schedulelist/ScheduleListSectionRenderer";
+import ScreenHeader from "../screens/ScreenHeader";
+import ScreenHomeButton from "../screens/ScreenHomeButton";
+import TabBar from "../tabbar/TabBar";
 
 
 
@@ -164,7 +164,7 @@ class SchedulerListScreen extends PureComponent {
                                 </LText>
 
 
-                                <GestureDetector gesture={scheduleList.nativeGestureObj}>
+                                {/* <GestureDetector gesture={scheduleList.nativeGestureObj}> */}
                                     <SectionList
                                         ref={(list) => { scheduleList.flatListRef = list; }}
                                         style={{
@@ -212,7 +212,7 @@ class SchedulerListScreen extends PureComponent {
                                                     height:NavBar.navBarHeight+50}}/>
                                             )}
                                         /> */}
-                                </GestureDetector>
+                                {/* </GestureDetector> */}
                             </LComponent>
                         );
                     })
@@ -266,7 +266,7 @@ class SchedulerListScreen extends PureComponent {
                         defaultValue={""}
                     /> */}
 
-                {(Platform.OS == 'android') &&
+                {/* {(Platform.OS == 'android') &&
                     <View
                         style={{
                             backgroundColor: '#7d7974',
@@ -275,7 +275,7 @@ class SchedulerListScreen extends PureComponent {
                             height: (Dimensions.get('screen').width * (300 / 1290)),
                             opacity: 0.8
                         }} />
-                }
+                } */}
             </>
         );
     }

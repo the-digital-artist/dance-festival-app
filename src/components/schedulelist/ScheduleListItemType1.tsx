@@ -246,7 +246,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
 
 
               <Text allowFontScaling={false} id='textSessionArtistName' style={{
-                top: 5,
+                top: (Platform.OS=='ios'?5:0),
                 right: (itemOrientation == 'right' ? undefined : 0),
                 left: (itemOrientation == 'left' ? undefined : 0),
                 fontFamily: 'Cabin-Regular',
