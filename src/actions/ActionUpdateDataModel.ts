@@ -1,8 +1,10 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import DataModel from "../DataModel";
 import LauncherController from "../LauncherController";
-import ArtistListScreen from "../components/screens/ArtistListScreen";
-import SchedulerScreen from "../components/screens/SchedulerListScreen";
+import ArtistListScreen from "../components/artists/ArtistListScreen";
+import SchedulerMainScreen from "../components/schedulelist/SchedulerMainScreen";
+import ArtistMainScreen from "../components/artists/ArtistMainScreen";
+import SchedulerListScreen from "../components/schedulelist/SchedulerListScreen";
 
 
 const ActionUpdateDataModelWithRemote = async () => {
@@ -43,7 +45,7 @@ const ActionUpdateDataModelWithRemote = async () => {
         console.log(":::::ActionUpdateDataModel -- modelVersion is greater than Local");
         
         (c.dataDependentComponentArtistScreen as ArtistListScreen).startModelUpdate();
-        (c.dataDependentComponentSchedulerScreen as SchedulerScreen).startModelUpdate();
+        (c.dataDependentComponentSchedulerScreen as SchedulerListScreen).startModelUpdate();
 
         console.log(":::::ActionUpdateDataModel -- updating in-memory model with remote model: " + remoteModel.modelVersion);
         DataModel.getInstance().static = remoteModel;
@@ -51,11 +53,11 @@ const ActionUpdateDataModelWithRemote = async () => {
         await LauncherController.getInstance().prepareDataModel();
 
         (c.dataDependentComponentArtistScreen as ArtistListScreen).finishModelUpdate();
-        (c.dataDependentComponentSchedulerScreen as SchedulerScreen).finishModelUpdate();
+        (c.dataDependentComponentSchedulerScreen as SchedulerListScreen).finishModelUpdate();
 
         //finally store the new model into local storage so it can be retrieved on next app startup
-        const modelAsString = JSON.stringify(DataModel.getInstance().static);
-        await AsyncStorage.setItem('dataModel', modelAsString);
+        // const modelAsString = JSON.stringify(DataModel.getInstance().static);
+        // await AsyncStorage.setItem('dataModel', modelAsString);
 
         globalThis.gc(); //this feels strange but apparently necessary with fetch
         //https://github.com/facebook/hermes/issues/1147
@@ -65,7 +67,7 @@ const ActionUpdateDataModelWithRemote = async () => {
             console.log(":::::ActionUpdateDataModel -- Internet too slow - aborting request")
             return;
         }
-        // console.error(error);
+        console.error(error);
     }
 }
 

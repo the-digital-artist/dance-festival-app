@@ -1,9 +1,9 @@
 export const modelInitStaticOverwrite =
 {
-  "modelVersion": 1094,
+  "modelVersion": 1503,
   "festivalName": "CALDAC",
-  "modelRemoteGetModelUrl": "https://wa1koeb029.execute-api.eu-central-1.amazonaws.com/caldacModelContent",
-  "modelRemoteVersionCheckUrl": "https://wa1koeb029.execute-api.eu-central-1.amazonaws.com/caldacModelVersion",
+  "modelRemoteGetModelUrl": "https://odwoytfhtf.execute-api.us-west-1.amazonaws.com/caldacModelContent",
+  "modelRemoteVersionCheckUrl": "https://odwoytfhtf.execute-api.us-west-1.amazonaws.com/caldacModelVersion",
   "modelRemoteUpdateInterval": 10000,
   "happeningNowUpdateInterval": 30000,
   "dataTicketSales": {
@@ -15,7 +15,7 @@ export const modelInitStaticOverwrite =
       "artistLocation": "Arkansas",
       "artistCompany": "",
       "insta": "carlosysusan",
-      "bio": "Our names are Carlos Gomez and Susan De Beras,  we are  dancers, choreographers, and instructors of tropical dances such as Dominican Bachata, Merengue, and On2 style Salsa. Over the course of our 8-year partnership, we have gained valuable experience teaching and performing both nationally and internationally. Originally from the Dominican Republic, we have since 2021 settled in NW Arkansas leading Raza Dance Studio, and we are committed to providing a fun and enriching learning experience that has never been seen before in this area.\nWe pride ourselves on our ability to connect with our students and create a positive and inclusive learning environment. Our teaching approach is rooted in the belief that anyone can learn to dance, regardless of their age, skill level, or background. We are passionate about sharing our knowledge and love for Latin dance, and seeing our students grow and develop their own unique dance style. \n\nAs performers, we are known for our dynamic and emotionally charged routines, showcasing our technical prowess and chemistry as dance partners. We have touched and performed in more than 50 international dance festivals, solidifying our reputation as one of the top Latin dance duos in the industry.",
+      "bio": "Carlos Gomez and Susan De Beras are accomplished dancers, choreographers, and instructors specializing in tropical dances such as Dominican Bachata, Merengue, and On2 style Salsa. With over eight years of partnership, they have gained extensive experience teaching and performing both nationally and internationally. Originally from the Dominican Republic, they settled in Northwest Arkansas in 2021, where they now lead Raza Dance Studio, offering a fresh and enriching learning experience previously unseen in the area.\n\nCarlos and Susan are known for their ability to connect with students, fostering a positive and inclusive environment. They believe that anyone can learn to dance, regardless of age, skill level, or background. Their passion for Latin dance is reflected in their dedication to helping students develop their own unique style.\n\nAs performers, Carlos and Susan are recognized for their dynamic, emotionally charged routines, which showcase their technical expertise and chemistry as dance partners. Having performed at over 50 international dance festivals, they have earned a reputation as one of the top Latin dance duos in the industry.",
       "shortBio": "",
       "facebook": "",
       "portrait": "carlos_-_susan"
@@ -25,6 +25,7 @@ export const modelInitStaticOverwrite =
       "artistLocation": "Portland/ NY",
       "artistCompany": "",
       "insta": "michelleandbrandon",
+      "bio": "Brandon Ayala is choreographer, performer and instructor from Lines Dance Studio in Portland,OR. He specializes in mambo shines, styling and Advanced turn patterns.\nHe has traveled nationally and internationally to congresses all over the continent. Performing and teaching his dynamic and unique style.\nIn 2013 he became a 2x World Salsa Champion in the Junior Couples Division and Solo Junior Division.\n2012-Brandon Ayala WLDC Junior Solo 3rd Place\n2013- Brandon WLDC Qualifier Portland Salsa Congress Junior Soloist 1st Place\n2013- Brandon Ayala WLDC Junior Couples 1st Place\n2013-Brandon Ayala WLDC Junior Solo 1st Place\n\nMichelle Morales began learning salsa at the age of 11 in her home town, Stamford, Connecticut. She then had the opportunity to dance with Jayson Molina from Puerto Rico and his Rompecabezas team. By the age of 18 she continued her training in New York City, and was welcomed to join the world-renowned Yamulee Dance Company Professional Team led by Company Director Osmar Perrones. Michelle quickly rose to the status of one of the principle dancers for Yamulee, and for the next 5 years after, she performed and taught all over the world. Michelle has currently partnered up and performs with the very talented Brandon Ayala, debuting their first piece together “Tamacun”. Michelle is known for her feminine and graceful technique which she has developed over the years, while staying true to her powerful stage presence and body movement.",
       "shortBio": "",
       "facebook": "",
       "portrait": "brandon_-_michelle"
@@ -43,6 +44,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Diane Page",
       "artistLocation": "DENVER",
       "artistCompany": "",
+      "bio": "Diane Page is the fourth generation of dancer and teacher in her family. As a child she studied with her mother, Mona Frances, in Newport Beach, California. She is a graduate of the National Ballet School of Canada, where she trained in the Cecchetti system under Betty Oliphant. She has a Certificate in French Studies from the University of Neuchâtel in Switzerland, plus a Master’s Degree in French from the University of California at Irvine. She has been teaching ballet and jazz for twenty years in Denver and California. In addition to ballet, her passions include skiing and Salsa dancing. Diane is delighted to be on the staff at the Colorado Ballet Academy. ",
       "shortBio": "",
       "facebook": "",
       "portrait": "diane_page"
@@ -61,6 +63,7 @@ export const modelInitStaticOverwrite =
       "artistLocation": "houston",
       "artistCompany": "",
       "insta": "thecasinostars",
+      "bio": "Casino Stars of Venezuela was founded in January 2006, with the intention of creating a unique and innovative style.\n\nThe foundation is responsible for teaching people of all ages, gender and capacity to learn the art of dance. \n\nAs director of this team of Venezuelan dancers, Jorge Melo has had great fortune in molding the troop with extensive coaching from instructors with world class experience. The implementation of Ballroom dancing and in other areas of dance such as Ballet, Jazz, Hip Hop, Salsa, Bachata, Latin Hustle, West Coast Swing, Kizomba and Traditional Folkloric dance has formed his team to be proficient and sought after globally.\n\nThey have presented shows in over 200 festivals throughout Venezuela and in many different countries/territories which include: Aruba, Curacao, Dominican Republic, \nGuatemala, Italy,Portugal, Puerto Rico, Spain and in U.S.A states such as: Florida, New York and Texas.",
       "shortBio": "",
       "facebook": "",
       "portrait": "casino_stars"
@@ -98,6 +101,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Eder & Milton",
       "artistLocation": "LOS ANGELES",
       "artistCompany": "",
+      "bio": "Here is the merged bio for Eder Avila and Milton Martinez:\n\nEder Avila and Milton Martinez are accomplished Salsa dancers with impressive careers spanning multiple international stages.\n\nBorn in Trujillo, Peru, Eder Avila began his dance journey after moving to the United States at age 15. He quickly mastered Salsa, creating a unique style that led him to found On2ourage in 2015, one of Southern California’s premier Salsa On2 dance companies. Eder has earned several prestigious awards, including LA’s Top Social Salsa Dancer in 2019 and 2020, and 1st Place in Salsa Same Gender Couples with Milton Martinez at Euroson Latino 2022. In 2023, he also secured 1st Place at SalsaNaMa USA in Las Vegas.\n\nMilton Martinez, born in Veracruz, is a multi-time World Salsa Champion, excelling in the Male Professional Solo and Same Gender Couples Salsa categories. He has also achieved international success in Jazz and Contemporary disciplines. Milton has studied abroad, earning scholarships in Holland and Norway, and training at renowned institutions like Broadway Dance Center and Millennium Dance Complex in New York, Salt Lake City, and Los Angeles. As a choreographer and instructor, Milton works with ME Sabor's adult and kids' teams. Together, Eder and Milton make a dynamic duo, pushing the boundaries of Salsa with their combined expertise.\n\nLet me know if you'd like any changes!",
       "shortBio": "",
       "facebook": "",
       "portrait": "eder_-_milton"
@@ -106,6 +110,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Eddie Peligro",
       "artistLocation": "Phoenix",
       "artistCompany": "",
+      "bio": "Edd Amaya is a Texas Native with Afro Latino Caribbean roots currently residing in Phoenix AZ. He specializes in Bachata and Salsa! His Urban twist on Caribbean movement in Bachata makes him one of one. He has choreographed creative/entertaining shows and absolutely loves social dancing. His workshops are always engaging and full of knowledge. He is excited to keep sharing his passion of the Afro Latin Caribbean rhythms with the world wide dance community. ",
       "shortBio": "",
       "facebook": "",
       "portrait": "eddie_peligro"
@@ -114,7 +119,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Jesica Cutler",
       "artistLocation": "Denver",
       "artistCompany": "",
-      "bio": "John Miller & Jesica Cutler are Argentine Tango teachers and performers\n based in Denver, Colorado. They organize the 'Tango on the Rocks \nFestival' annually",
+      "bio": "John Miller and Jesica Cutler are Argentine Tango teachers and performers based in Denver, Colorado. They are well-known for their expertise in Argentine Tango and their dedication to growing the local tango community. In addition to teaching, they organize the annual \"Tango on the Rocks Festival,\" which attracts tango enthusiasts from across the region. Their passion for the art form and commitment to excellence make them prominent figures in Denver's dance scene.",
       "shortBio": "",
       "facebook": "",
       "portrait": "jesica_cutler"
@@ -123,7 +128,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Yayita & Carlos",
       "artistLocation": "Houston",
       "artistCompany": "Itumọ Ayé",
-      "bio": "Dance Instructor at Amaya Dance",
+      "bio": "Itumo Aye, led by Carlos Suarez and Gerisha Figueroa from Houston, Texas, is a dynamic dance group dedicated to showcasing the rich, authentic roots of Afro-Latin dance. With a focus on dancing with passion and flavor, their performances highlight the deep cultural connections and history embedded in Afro-Latin rhythms.",
       "shortBio": "",
       "facebook": "",
       "portrait": "yayita_-_carlos"
@@ -132,6 +137,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Jared & Nicole",
       "artistLocation": "Aurora",
       "artistCompany": "Somos Dance Studio",
+      "bio": "Nicole Jamshidi and Jared both began their dance journeys with the RastaSalsa Dance Company in 2021, where they quickly excelled and became instructors at Somos Dance Studio. Nicole, known for her empathy, focuses on ensuring that every student understands and connects with the dance, whether it's with their partner, the music, or themselves. She is passionate about making dance accessible and empowering for beginners. Jared, a testament to humility and dedication, progressed rapidly through his training, advancing from apprentice to independent instructor. His success reflects his attention to detail and relentless practice, embodying the transformative energy at Somos Dance Studio.",
       "shortBio": "",
       "facebook": "",
       "portrait": "jared_-_nicole"
@@ -141,7 +147,7 @@ export const modelInitStaticOverwrite =
       "artistLocation": "Boulder",
       "artistCompany": "",
       "insta": "daelegbe",
-      "bio": "Let me know if this works: Damilola \"D\" Elegbede is a dedicated social dancer and instructor in Boulder with a passion for expressing musicality through dance. Hailing from Nigeria, specifically the Yoruba tribe, his dance background is deeply grounded in Cuban salsa, cultivated through extensive studies with diverse artists and teachers in Havana & Santiago De Cuba. As a drummer/musician, with two decades of experience encompassing both traditional drums and participation in numerous bands, Damilola's dance style is connected to his rich musical background.",
+      "bio": "Damilola \"D\" Elegbede is a dedicated social dancer and instructor in Boulder with a passion for expressing musicality through dance. Hailing from Nigeria, specifically the Yoruba tribe, his dance background is deeply grounded in Cuban salsa, cultivated through extensive studies with diverse artists and teachers in Havana & Santiago De Cuba. As a drummer/musician, with two decades of experience encompassing both traditional drums and participation in numerous bands, Damilola's dance style is connected to his rich musical background.",
       "shortBio": "",
       "facebook": "",
       "portrait": "damilola_elegbede"
@@ -159,6 +165,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Jenny Pham",
       "artistLocation": "Denver",
       "artistCompany": "",
+      "bio": "Jenny Pham is an Urban Kiz dance instructor based in Denver, known for her passion for sharing the elegance and connection of the dance. With a strong foundation in Afro-Latin styles, Jenny brings warmth and expertise to her teaching, making Urban Kiz accessible to students of all levels. She emphasizes the importance of connection, both with one's partner and the music, fostering a welcoming and empowering environment in her classes. Jenny is dedicated to growing the Urban Kiz community in Denver and inspiring her students to embrace the beauty of the dance.",
       "shortBio": "",
       "facebook": "",
       "portrait": "jenny_pham"
@@ -167,7 +174,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Jorge & Indira",
       "artistLocation": "Cuba",
       "artistCompany": "",
-      "bio": "Specializing in Cuban folklore, Afro, rumba, salsa, popular styles, and \ncontemporary dance, they have performed with renowned companies like\n Santiago Alfonso, Habana Queen, and Rakatan.",
+      "bio": "Jorge Luis Fernandez Valdes and Indira Mora Cueto are professional dancers, instructors, and choreographers from Cuba, both graduates of the National School of Art (ENA). Specializing in Cuban folklore, Afro, rumba, salsa, popular styles, and contemporary dance, they have performed with renowned companies like Santiago Alfonso, Habana Queen, and Rakatan. Their international experience includes festivals, shows, and congresses in France, Switzerland, England, Canada, Russia, and the USA, including notable appearances at the Las Vegas Salsa Bachata Congress and Cirque Du Soleil. Currently based in Las Vegas, they teach at Naiboa Dance Studio, Rhythmic Dance Studio, and Moderno Dance Center, sharing their expertise in Cuban and international dance.",
       "shortBio": "",
       "facebook": "",
       "portrait": "jorge_-_indira"
@@ -176,7 +183,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Luan & Adriana",
       "artistLocation": "Brazil",
       "artistCompany": "",
-      "bio": "Luan Correia and Adriana Gomes\n\n\n\n• have been working in ballroom dancing for 15 years;\n\n• Zouk teachers at National and International Congresses;\n\n• two-time World Lambada champions;\n\n• two-time Brazilian Latin Dance champions;\n\n• two-time Regional Ballroom Dancing champions (Santos);\n\n• Coaches (Lyouman Institute);\n\n• Speakers (Lyouman Institute);\n\n• Emotional Intelligence Trainers (Lyouman Institute);\n\n• Creators/Directors - Musical Training - The Hero's Journey;\n\n. Creators/Directors - Arte ao Encantar (Training for speakers and teachers)\n\n• Creators/Directors - Immersion Feel When Dancing (Emotional intelligence using the dance tool);",
+      "bio": "Luan Correia and Adriana Gomes are seasoned ballroom dancers with 15 years of experience. They are renowned Zouk teachers who have shared their expertise at national and international congresses. Their impressive accolades include being two-time World Lambada champions, two-time Brazilian Latin Dance champions, and two-time Regional Ballroom Dancing champions (Santos).\n\nIn addition to their competitive achievements, Luan and Adriana are influential figures at the Lyouman Institute, where they serve as coaches, speakers, and Emotional Intelligence Trainers. They are the creators and directors of several innovative programs, including \"Musical Training - The Hero's Journey,\" \"Arte ao Encantar\" (training for speakers and teachers), and \"Immersion Feel When Dancing\" (which integrates emotional intelligence with dance). Their dedication to both the art of dance and personal development continues to inspire and impact many.",
       "shortBio": "",
       "facebook": "",
       "portrait": "luan_-_adriana"
@@ -195,7 +202,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Sisy Ayala",
       "artistLocation": "Aurora",
       "artistCompany": "Somos Dance Studio",
-      "bio": "Dance Instructor at Somos Dance Studio",
+      "bio": "Sisy, affectionately known as “La Alegria,” is celebrated for her radiant smile, fun personality, and caring nature. Officially beginning her Salsa and Bachata journey in 2011, she has directed numerous teams across the Denver Metro area. Since connecting with Tom in 2015, they have become dance partners, performing and teaching nationwide. Sisy's positive energy, combined with her attention to detail, pushes her students to excel while ensuring a fun, supportive learning environment. A true lover of salsa and bachata, Sisy spreads the joy of dance wherever she goes!",
       "shortBio": "",
       "facebook": "",
       "portrait": "sisy_ayala"
@@ -224,7 +231,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Kebrina Dejesus",
       "artistLocation": "Denver",
       "artistCompany": "",
-      "bio": "Artist, Professor, Creator\nFounder, Artistic Director Samba Colorado\n200Hr RYT Yoga with Kebrina",
+      "bio": "Kebrina is an artist, professor, and creator, and the founder and Artistic Director of Samba Colorado. She has been a dedicated supporter of the Denver Salsa Bachata Congress since its inception in 2013. Originally from Puerto Rico and New York, Kebrina teaches various classes in Denver and Boulder, where her passion for the Afro-Brazilian arts shines through.\n\nHer commitment to the Afro-Brazilian arts is evident in her regular travels to Brazil for advanced training with renowned masters in the field. This ongoing journey reflects her deep dedication to mastering and preserving the rich traditions of Afro-Brazilian dance and culture. Through her work and continuous self-improvement, Kebrina strives to share the vibrant energy and cultural richness of Afro-Brazilian arts with her students and the broader community.",
       "shortBio": "",
       "facebook": "",
       "portrait": "kebrina_dejesus"
@@ -233,7 +240,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Raul & Delia",
       "artistLocation": "ORLANDO",
       "artistCompany": "",
-      "bio": "Delia Madera was born and raised in New York City, from Dominican parents. \nHer salsa dance career has started in 2007 as she joined a Company called\n Yamulee Dance Company, directed by Osmar Perrones. In 2009 Madera \nhas started traveling the world as a professional dancer with Yamulee. \nDuring her journey she has visited many countries worldwide. During \nher career she had the pleasure to dance on stage with Jose Alberto\n \"El Canario\" David Kada, Oscar de Leon, Chiquito Team Band, Jhonny \nVentura etc\nRaul Valenzuela was born in the Dominican Republic but raised in New \nYork City. He started his salsa career ten years ago with the Yamuleé Dance \nCompany directed by Osmar Perrones.",
+      "bio": "Delia Madera, born and raised in New York City to Dominican parents, began her salsa career in 2007 with the renowned Yamulee Dance Company, directed by Osmar Perrones. By 2009, she was performing professionally and touring internationally, sharing the stage with legends like Jose Alberto \"El Canario,\" David Kada, Oscar de Leon, and Johnny Ventura.\n\nRaul Valenzuela, originally from the Dominican Republic but raised in New York City, also began his salsa journey with Yamulee Dance Company, joining ten years ago under the direction of Osmar Perrones. Together, Delia and Raul have become celebrated figures in the salsa world.",
       "shortBio": "",
       "facebook": "",
       "portrait": "raul_-_delia"
@@ -243,7 +250,7 @@ export const modelInitStaticOverwrite =
       "artistLocation": "FLORIDA",
       "artistCompany": "",
       "insta": "atacaylaalemanaofficial",
-      "bio": "Jorge \"ATACA Jorgie\" Burgos\n\nJorge \"ATACA Jorgie\" Burgos is world-renowned for his pioneering work in the Bachata dance community. He, along with his dance partner, La Alemana, has the highest number of views on YouTube of any Latin dance artist with over 100,000,000 hits. Born in Humacao, Puerto Rico, Ataca comes from a family with a rich history of music appreciation. His talent of having an ear for melody & rhythm shows in the musicality of his choreographies. Along with La Alemana, Ataca choreographs every routine performed by the Island Touch Pro team and global Island Touch Dance teams. Around the world, their shows are loved for their connection to music, sensual chemistry, detailed footwork, and innovative partnerwork.\n\nAs an instructor, Ataca is known for his depth of technical knowledge and clarity of instruction. His classes are always fun and filled with sexy dance moves that are both practical and social dance-ready. In addition to dance, Ataca has starred as the male lead in the Salsa movie, \"SHINE.\"\n\n \n\nTanja \"La Alemana\" Kensinger\n\nTanja \"La Alemana\" Kensinger is world-renowned for her pioneering work in the Bachata dance community. Along with her dance partner, Ataca, she has the highest number of views on YouTube of any Latin dance artist with over 100,000,000 hits. La Alemana was born in Germany and moved to the United States at the age of 8.\n\nShe has loved to dance all of her life, with training in ballroom, jazz, ballet, and rock-n-roll/swing dancing, as well as many of the Latin style dances. A fierce presence on stage, La Alemana is known for her sex appeal, ladies' styling, and vibrant personality as a performer and instructor. In addition to dance, La Alemana's altruism drives her involvement in various charities, and she is the force behind Island Touch commitment to women's and children's issues.",
+      "bio": "Jorge \"ATACA Jorgie\" Burgos and Tanja \"La Alemana\" Kensinger are celebrated figures in the Bachata dance community, renowned for their groundbreaking contributions and global impact. Together, they have amassed over 100,000,000 views on YouTube, making them the most-watched Latin dance artists on the platform.\n\nBorn in Humacao, Puerto Rico, Jorge \"ATACA Jorgie\" Burgos has a deep-rooted musical background that enriches his choreography. His innovative routines with La Alemana showcase their exceptional musicality, sensual chemistry, and detailed footwork. Ataca's classes are known for their technical precision, clarity, and fun, incorporating dance moves that are both practical and ready for social settings. He also made his mark as the male lead in the Salsa movie \"SHINE.\"\n\nTanja \"La Alemana\" Kensinger, originally from Germany and raised in the United States, brings a wealth of dance experience from her background in ballroom, jazz, ballet, and Latin styles. Her stage presence, sex appeal, and vibrant personality make her a standout performer and instructor. Beyond dance, La Alemana is committed to charity work, leading Island Touch's efforts in supporting women's and children's issues.\n\nTogether, Ataca and La Alemana choreograph for the Island Touch Pro team and global Island Touch Dance teams, captivating audiences worldwide with their dynamic performances and passionate connection to the music.",
       "shortBio": "",
       "facebook": "",
       "portrait": "ataca_y_alemana"
@@ -336,7 +343,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Gustavo & Ayane",
       "artistLocation": "BRAZIL",
       "artistCompany": "",
-      "bio": "Are Brazilian zouk international instructors. Originally from Brazil they developed their career teaching and performing at various places like Carnival parade in Rio, opening ceremony of Olympic games in Brazil, and some of the most well known events.  After 20 years of experience teaching Gustavo started partnering with Ayane and their style absolutely complement each other. Partnering since summer of 2022, Gustavo and Ayane are part of Zouk United team in Miami with their coaches Paulo and Luiza. Together they won the first Brazilian Zouk World Championship in two divisions.(Teams and Originals), and went back as instructors for the second edition of the same event. \n\nVersed in various Brazilian partner styles as Samba de Gafieira, forró, bolero, and Argentine Tango, their international Brazilian Zouk career has been taking them places. We’ll know for the breaking down in a very detailed way and creating the right vibe for the class. This is their third time teaching at CALDAC. They  are super excited to and the \n\nThey are super excited about sharing their technique and love for this dance and culture with you. Find them at CALDAC, teaching workshops, private lessons, performing, and social dancing. Zouk hugs!",
+      "bio": "Gustavo and Ayane are internationally renowned Brazilian Zouk instructors with roots in Brazil. Their impressive career spans performances at prestigious events such as the Carnival parade in Rio and the opening ceremony of the Olympic Games in Brazil. With over 20 years of teaching experience, Gustavo began partnering with Ayane in the summer of 2022. Their styles perfectly complement each other, and together, they have become a dynamic force in the Zouk world.\n\nAs members of the Zouk United team in Miami, coached by Paulo and Luiza, they have achieved remarkable success. They won the first Brazilian Zouk World Championship in two divisions—Teams and Originals—and returned as instructors for the second edition of the event.\n\nBeyond Brazilian Zouk, Gustavo and Ayane are well-versed in other Brazilian partner dances such as Samba de Gafieira, forró, bolero, and Argentine Tango. Known for their detailed teaching style and ability to create the perfect class atmosphere, their international career continues to thrive. \n\nNow teaching for the third time at CALDAC, Gustavo and Ayane are excited to share their passion for Brazilian Zouk, offering workshops, private lessons, performances, and social dancing.",
       "shortBio": "",
       "facebook": "",
       "portrait": "gustavo_-_ayane"
@@ -374,6 +381,7 @@ export const modelInitStaticOverwrite =
       "artistLocation": "PORTLAND",
       "artistCompany": "",
       "insta": "bennyandashley",
+      "bio": "Benny and Ashley are dance instructors based in Seattle WA",
       "shortBio": "",
       "facebook": "",
       "portrait": "benny_-_ashley"
@@ -392,7 +400,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Sandra & Zack",
       "artistLocation": "DENVER",
       "artistCompany": "",
-      "bio": "Dance Instructors  in the Denver area",
+      "bio": "Sandra Milena and Zach Fivgas are passionate salsa and bachata instructors based in Denver, known for their regular classes at Blue Ice. Their love for these dance styles shines through in their teaching, as they are dedicated to sharing the joy and vibrant energy of salsa and bachata with their students. Sandra and Zach create a welcoming and dynamic learning environment, inspiring dancers of all levels to embrace the rhythms and excitement of Latin dance.",
       "shortBio": "",
       "facebook": "",
       "portrait": "sandra_-_zack"
@@ -402,7 +410,7 @@ export const modelInitStaticOverwrite =
       "artistLocation": "DENVER",
       "artistCompany": "",
       "insta": "thewebstergram",
-      "bio": "My salsa journey started many years ago, performing and recording with some of the top musicians in Latin Jazz, including a few Grammy winners. With a music degree from Wesleyan University and some Berklee College of Music magic under my belt, I’ve had the chance to learn from jazz legends and dive deep. Lately, I’ve swapped my drumsticks for dancing shoes, exploring the world of salsa with the same zeal. A decade in now, I’m passionate about sharing the joy of Latin music and keeping those infectious rhythms alive in our community.",
+      "bio": "Chris Webster’s salsa journey began many years ago, performing and recording with top musicians in Latin Jazz, including Grammy winners. With a music degree from Wesleyan University and additional training from Berklee College of Music, Chris had the opportunity to learn from jazz legends and immerse himself in the genre. Recently, he traded his drumsticks for dancing shoes, diving into the world of salsa with the same enthusiasm. Now, a decade into this new passion, Chris is dedicated to sharing the joy of Latin music and keeping its infectious rhythms alive in the community.",
       "shortBio": "",
       "facebook": "",
       "portrait": "christopher_webster"
@@ -412,6 +420,7 @@ export const modelInitStaticOverwrite =
       "artistLocation": "CHICAGO",
       "artistCompany": "",
       "insta": "chrisandalexus_official",
+      "bio": "Chris and Alexus are Bachata dance instructors from Chicago, IL",
       "shortBio": "",
       "facebook": "",
       "portrait": "chris_-_alexus"
@@ -430,6 +439,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Joseal",
       "artistLocation": "HOUSTON",
       "artistCompany": "",
+      "bio": "Jose Alberto De La Torre is a passionate Kizomba instructor based in Houston. He loves dancing, performing, and teaching Kizomba in all its forms, with a deep commitment to educating his students about the dance's rich history and evolution from its roots in Angola to the present day. His blend of cultural insight and dynamic teaching style makes him a key figure in the Kizomba and Afro-Latin dance scene.",
       "shortBio": "",
       "facebook": "",
       "portrait": "joseal"
@@ -439,6 +449,7 @@ export const modelInitStaticOverwrite =
       "artistLocation": "DENVER",
       "artistCompany": "",
       "insta": "sacred_and_fierce",
+      "bio": "Celeste has always been guided by a profound inquiry into the body, understanding that the connection between breath and movement is not just vital—it’s foundational to her philosophy. She is dedicated to creating a space that is both nurturing and supportive, allowing her students to access a deep, introspective dialogue within themselves. This dialogue is designed to be intimate, resonating with the truth of where they are in the present moment.\n\nCeleste’s passion for personal growth is unwavering, and she hopes to inspire that same commitment in others. Through her teachings, she masterfully weaves together elements of Vinyasa, Dharma, and yoga, crafting a practice that is coherent and nourishing for both the body and the soul. Her approach is holistic, ensuring that each movement, each breath, aligns with the inner journey of self-discovery and transformation.",
       "shortBio": "",
       "facebook": "",
       "portrait": "celeste_williamson"
@@ -447,7 +458,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Iroko",
       "artistLocation": "ORLANDO",
       "artistCompany": "",
-      "bio": "About IRÔKO. Founded in 2018 and directed by World Champions, Ernesto \nBulnes and Denisse Cambria, IRÔKO Dance Company currently holds The \nSummit Championship titles in the Small & Large Teams Divisions.",
+      "bio": "Founded in 2018 by World Champions Ernesto Bulnes and Denisse Cambria, IRÔKO Dance Company has quickly established itself as a powerhouse in the dance world. Currently, the company holds prestigious titles from The Summit Championship in both the Small and Large Teams Divisions. Under the expert direction of Ernesto and Denisse, IRÔKO continues to inspire with its dynamic performances and dedication to excellence in dance.",
       "shortBio": "",
       "facebook": "",
       "portrait": "iroko"
@@ -456,7 +467,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Eric & Marcela",
       "artistLocation": "BOULDER",
       "artistCompany": "",
-      "bio": "Marcela is originally from Chile and she is dance instructor in the \nBoulder/Denver area. She also produces Latin events like Havana Nights, \nSalsaTon and Guapea among others.\nMore information at www.MarcelaDance.com",
+      "bio": "Eric “El Cubanito” Freeman and Marcela are prominent figures in Colorado’s salsa scene. Eric is an internationally recognized salsa instructor and videographer, known for his unique blend of salsa styles, including N.Y. mambo, Cuban casino, and elements from L.A., Cumbia, and Puerto Rican salsa. After training in both New York and Cuba, Eric transitioned from electrical engineering to a full-time salsa career in 1999. He has produced 15 instructional videos, selling over 20,000 copies in 75 countries. His groundbreaking series, such as “Cool Moves Revealed” and “¡Salsa a la Cubana!,” have become best-sellers, making him a global expert on Cuban salsa and its fusion with other styles.\n\nMarcela, originally from Chile, is a salsa instructor based in the Boulder/Denver area. In addition to teaching, she produces popular Latin events, including Havana Nights, SalsaTon, and Guapea. Together, Eric and Marcela contribute significantly to Colorado's vibrant salsa community, offering both instruction and entertainment to dancers at all levels.",
       "shortBio": "",
       "facebook": "",
       "portrait": "eric_-_marcela"
@@ -474,7 +485,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Rna",
       "artistLocation": "HOUSTON",
       "artistCompany": "",
-      "bio": "DJ RENI G/ Owner of RNA Dance/ Bachata Artist / Entrepreneur /\n Performer/ Musician",
+      "bio": "Reni is a multi-faceted artist with a deep appreciation for the arts. In addition to his extensive study of bachata and salsa, he plays multiple instruments, including guitar, bass, and bongos, and is also skilled in drawing. Known as DJ Reni G, he has performed in cities such as Phoenix, Denver, Dallas, Houston, and the end of this year in Saigon in Vietnam. \n\nWith 20 years of experience in the dance scene and over 10 years as a dance instructor—7.5 of which were full-time—Reni believes that a well-rounded appreciation of arts and music fosters a healthy, creative environment that enhances both his craft and his voice in dance.\n\nHe has trained over 11,000 social dancer and over hundreds of performers. \n\nRNA Dance Company was founded by Reni Gongora in early 2017, blending his background as a chemist with his passion for dance. \n\nThe \"RNA\" in the company's name reflects Reni's scientific roots, as he brings an analytical approach to teaching the science behind dance and loves to teach outside of the conventional pattern based dance classes.",
       "shortBio": "",
       "facebook": "",
       "portrait": "rna"
@@ -484,6 +495,7 @@ export const modelInitStaticOverwrite =
       "artistLocation": "COLOMBIA",
       "artistCompany": "",
       "insta": "camdancecompany",
+      "bio": "C.A.M. Dance Company\n\nThis group revolutionized Cali-style salsa by dancing it on2 and incorporating Afro-Cuban elements with the rhythm, cadence, and style of New York mambo. They are six-time world champions in Orlando, Miami, and Las Vegas, and all their students have won championships in various global competitions across solo, duo, and partner categories!\n\nWith four years of experience, C.A.M. Dance Company brings its authenticity to every stage, dancing salsa in their unique style!",
       "shortBio": "",
       "facebook": "",
       "portrait": "cam"
@@ -492,7 +504,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Lorena Charry",
       "artistLocation": "DENVER",
       "artistCompany": "",
-      "bio": "Owner and dance instructor at Bsensual Dance in Colorado",
+      "bio": "Lorena Charry, originally from Colombia and now based in Denver, has been dancing since the age of 6. With a deep passion for the stage and teaching, Lorena is dedicated to empowering her students to become the best versions of themselves. Known for her technical precision and attention to detail, she combines a fun and engaging teaching style with a commitment to helping others excel.",
       "shortBio": "",
       "facebook": "",
       "portrait": "lorena_charry"
@@ -510,7 +522,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Karen Y Ricardo",
       "artistLocation": "ARG-CHILE",
       "artistCompany": "",
-      "bio": "Ricardo Vega y Karen Forcano son los bailarines latinos más conocidos a \nnivel global! Conforman la actual pareja Nonacampeona Mundial de Salsa\n estilo Cabaret. Con tan solo 28 y 29 años son la pareja latina poseedora \ncon más títulos mundiales y nacionales.\n\n\nEllos combinan elementos de baile acrobáticos con la danza latina, lo que hace que llame la atención del mundo entero. bailan juntos profesionalmente desde el año 2009.Karen fue motivada por su madre, quien era bailarina de ballet.\n\nKaren comenzó con ballet clásico a los 6 años y cuando tenía 7, su madre tomó clases de salsa y merengue, situación que a ella le gustó mucho más y fue así que desde entonces comenzó a prepararse profesionalmente en los bailes latinos en diferentes escuelas de argentina y con los mejores profesionales del estilo hasta la actualidad.\n\nRicardo, a su vez, comparte esta pasión con toda su familia, ya que fue inspirado por sus abuelos que eran bailarines de tango escenario; iniciándose a los 7 años en el ballet clásico en la mejor escuela del país (teatro municipal de Santiago), hasta los 15 años, también se desenvolvió adquiriendo clases en las reconocidas academias de danza contemporánea, jazz, hip hop y otros ritmos.\n\nKaren y Ricardo se conocen en Chile el 2003, en el 2004 comenzaron a bailar esporádicamente para diferentes concursos, eventos y programas televisivos. Pero desde el 2009 cuando Ricardo viaja con Karen a su primer congreso de salsa juntos; se hicieron pareja de baile definitiva y se enfocaron profesionalmente en la salsa y los ritmos latinos.\n\nActualmente Karen y Ricardo ya con más de 15 títulos nacionales e internacionales ganados, han viajado por todos los continentes compitiendo, enseñando y mostrando su arte en los diferentes congresos de baile alrededor del mundo.\n\nHan visitado países tan diferentes como Australia, Israel, Turquía, Francia, España, Nueva Zelanda, México, Japón, Singapur y EEUU. Actualmente tienen sus propios teams y compañía bailando sus coreografías, “Karen y Ricardo Enterteiment” en más de 12 países, escuela virtual para aprender a bailar salsa, y una tienda con merchandising que incluye: videos, camisetas, bolsas para zapatos de baile y cinta para pegar trajes de baile.\nSu destacada participación en el programa World Of Dance season 2, emitido por la cadena Norteamericana NBC, los ha llevado a consolidar su fama fuera del mundo del baile.\n\nEn 2019 fueron nominados a los reconocidos premios estadounidenses ‘Emmys Awards’ como mejores coreógrafos por tres de sus rutinas de danza. También ese mismo año, ganaron el reconocido premio a la mejor coreografía de TV Show en ‘World Chorography Awards’, LA. ¡Ellos se han convertido en personalidades destacadas a nivel mundial!",
+      "bio": "Ricardo Vega and Karen Forcano are internationally acclaimed Latin dancers and nine-time World Champions in Salsa Cabaret. Known for their unique blend of acrobatic and Latin dance, they have been dancing professionally together since 2009. \n\nKaren, inspired by her ballet-dancing mother, trained in various Latin dance styles in Argentina. Ricardo, influenced by his tango-dancing grandparents, studied ballet and other dance forms in Chile. \n\nThe duo, who met in 2003 and became a dance couple in 2009, have earned over 15 titles and performed in countries worldwide. They run \"Karen y Ricardo Entertainment,\" a virtual salsa school, and a merchandise store. Their notable appearance on *World of Dance* and accolades such as Emmy nominations and a World Choreography Award have cemented their global fame.",
       "shortBio": "",
       "facebook": "",
       "portrait": "karen_y_ricardo"
@@ -519,6 +531,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Saulo & Jasmin",
       "artistLocation": "BRAZIL",
       "artistCompany": "",
+      "bio": "Saulo and Yasmim are international Brazilian Zouk teachers, teaching Zouk for over 10 years. Currently, these are World champions winning the World Championship in Phoenix (USA). Together they develop a unique methodology and style of dancing, working on the versatility of movement, types of communication, respecting the tradition but adding modern elements from the urban dances, contemporary dance and other elements that only the duo has. They currently work traveling around the world teaching Brazilian zouk.",
       "shortBio": "",
       "facebook": "",
       "portrait": "saulo_-_jasmin"
@@ -528,6 +541,7 @@ export const modelInitStaticOverwrite =
       "artistLocation": "FLORIDA",
       "artistCompany": "",
       "insta": "adrianayjorgeandres",
+      "bio": "Adriana and Jorge are Salsa and Bachata instructors based in Orlando, FL.",
       "shortBio": "",
       "facebook": "",
       "portrait": "adriana_-_jorge"
@@ -546,6 +560,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Marc & Rose",
       "artistLocation": "DETROIT",
       "artistCompany": "",
+      "bio": "Marc Brewer is an internationally renowned Afro-Latin dance instructor, performer, choreographer, and judge from Michigan, USA. Featured on *America's Got Talent* and trained at NYC's Broadway Dance Center, Marc specializes in Afro-Latin genres like Salsa, Bachata, Brazilian Zouk, and Kizomba. He has won numerous championships, including first-place finishes at the International Bachata Fusion Championship and World Salsa Summit. Marc has performed globally and appeared alongside Janet Jackson in the \"Made For Now\" music video. He continues to teach and judge dance competitions worldwide.\n\nRose Turuka, originally from Zanzibar, Tanzania, is based in Michigan. Her love for dance spans multiple genres, with Afrobeats at the core. She has trained in Kizomba, Salsa, Bachata, Brazilian Zouk, and more, learning from instructors worldwide. For nearly four years, Rose has taught dance in Michigan, constantly growing as both a dancer and instructor.",
       "shortBio": "",
       "facebook": "",
       "portrait": "marc_-_rose"
@@ -554,7 +569,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Jessica Quiles",
       "artistLocation": "PUERTO RICO",
       "artistCompany": "",
-      "bio": "I was born in 1988, in beautiful Bayamón, Puerto Rico. I started ballet, jazz \nand bomba/plena in the Art School of Bayamón and Aguadilla, Puerto Rico. \nSalsa was also one of my passions in my early years. Some of my Salsa/Mambo\n teachers were Papito Jala Jala, Tito Ortos and Angel Martinez.\n\nSome of my greatest experiences has been the honor to dance in many salsa orchestras and famous singer’s concerts. For example, Sonora PonceNa, El Gran Combo, Gilberto Santa Rosa and Jerry Rivera to name a few.  I have also been selected as part of the cast in the movie Havana night (2004), among other productions and reality shows such as Quien Baila Mejor and Premio Los Nuestros.\n I hold a degree in Business Administration and Telecommunications from the University of Sacred Heart (Spanish) in Puerto Rico. I take great pride in obtaining higher education degrees as they have help me build my career as a solo artist who also does their own branding and marketing. \nTraveling the world has also been an integral part of my dance career. I lived in Italy for 11 years teaching in different dance schools such as the Sosa Academy. I also had the opportunity to around the world and perform at congresses as a couple performance duo with Marco Ferrigno, Jesus Aponte, and Julio Rojas. Traveling the world has opened so many doors and I am thankful to enjoy the beauty that the world has to offer through the art of dance. \n\n was recognized as a World Champion Soloist 3 times, and have taken my knowledge and skill and have created my own brand. \nI have been teaching the famous “Tito Ortos Method” for 4 years in the most important dance school of Bayamon and around the world, and have built women's teams all over the world.\n\nBuilding my own brand has been a dream come true, and I cannot wait to continue to do more here in Tampa, Florida.\n\nSo if you want to train with me and take classes, I invite you to join my little dance world",
+      "bio": "Jessica Quiles, born in 1988 in the beautiful city of Bayamón, Puerto Rico, began her dance journey studying ballet, jazz, and the traditional rhythms of bomba and plena at the Art School of Bayamón and Aguadilla. Salsa quickly captured her heart, leading her to train with distinguished instructors like Papito Jala Jala, Tito Ortos, and Angel Martinez. \n\nAs a three-time World Champion Soloist, Jessica has channeled her expertise and passion into building her own brand. For the past four years, she has been teaching the renowned “Tito Ortos Method” at the leading dance school in Bayamón and internationally. Jessica has also empowered women around the world, forming teams and sharing her love of dance on a global scale.",
       "shortBio": "",
       "facebook": "",
       "portrait": "jessica_quiles"
@@ -563,7 +578,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Jovan Casanova",
       "artistLocation": "BOSTON",
       "artistCompany": "",
-      "bio": "Jovan is a Boston Dance instructor who is heavily involved in the Kizomba \ncommunity. He has been teaching Kizomba for 5 years and has developed\n intricate teaching methods to ensure his students excel in any dance they do",
+      "bio": "Jovan “Casanova” Toussaint is a proud Boston native of Haitian descent and no stranger to the entertainment industry. He has been teaching and deejaying in the Kizomba scene for 13 years, and has worked to cultivate one of the strongest and most recognizable brands internationally. He continues to be hired as a premier artist across North America, representing the Golden Standard in deejaying, emceeing, instruction, event hosting, and more. Casanova has proven to be a top class artist both nationally and abroad.\nCasanova’s ability to captivate any audience through infectious charisma, an unyielding confidence in his craft, and an immense amount of knowledge do not go unnoticed. His expertise and spirit of excellence both on and off the dance floor are what make him one of the most dynamically creative artists in the industry. Casanova has become a pillar in the North American scene, and aims to bring a new Standard to the world.",
       "shortBio": "",
       "facebook": "",
       "portrait": "jovan_casanova"
@@ -591,7 +606,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Edwin & Ahtoy",
       "artistLocation": "NEW YORK",
       "artistCompany": "",
-      "bio": "Our website is www.bailasociety.com and here is our bio:\n\nAhtoy Juliana + Edwin Tolentino have been performing and teaching in the \nAfro-Latinx dance community for more than 20 years. Ahtoy is the founder \nand director of BAILA Society and a judge at The Summit, the largest salsa \nchampionship in the world. Edwin has danced with world salsa champions\n New York Movement and Huracán and is a soloist in the acclaimed Afro-Cuban\n dance company, Oyu Oro, directed by Danis “La Mora” Perez. They have \nmultiple championship titles in salsa, cabaret, and Latin Hustle. \nAhtoy + Edwin are dedicated to creating safer and braver spaces for fostering \nmeaningful connections and sharing Afro-Latinx culture and heritage.",
+      "bio": "Ahtoy Juliana + Edwin Tolentino have been performing and teaching in the \nAfro-Latinx dance community for more than 20 years. Ahtoy is the founder \nand director of BAILA Society and a judge at The Summit, the largest salsa \nchampionship in the world. Edwin has danced with world salsa champions\n New York Movement and Huracán and is a soloist in the acclaimed Afro-Cuban\n dance company, Oyu Oro, directed by Danis “La Mora” Perez. They have \nmultiple championship titles in salsa, cabaret, and Latin Hustle. \nAhtoy + Edwin are dedicated to creating safer and braver spaces for fostering \nmeaningful connections and sharing Afro-Latinx culture and heritage.",
       "shortBio": "",
       "facebook": "",
       "portrait": "edwin_-_ahtoy"
@@ -600,7 +615,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Lawrence & Jewel",
       "artistLocation": "PHOENIX",
       "artistCompany": "",
-      "bio": "He is an influential dance instructor and performer based in Phoenix and \nhe serves as Director of Con Clave Dance!",
+      "bio": "Lawrence and Jewel are the directors of Con Clave Dance Company based out of Phoenix Arizona. They have been teaching for over 10 years and have travelled both nationally and internationally teaching and performing. Moreover, they established the Phoenix Salsa Dance Academy to develop an academic-like approach to Salsa dance. Together they have trained hundreds of people how to dance Salsa socially.",
       "shortBio": "",
       "facebook": "",
       "portrait": "lawrence_-_jewel"
@@ -619,6 +634,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Marisol Blanco",
       "artistLocation": "CUBA",
       "artistCompany": "",
+      "bio": "Marisol Blanco is a renowned Master Teacher, Choreographer, and Performer of Afro-Cuban dance with over 35 years of experience. A graduate of Cuba’s Superior Institute of Arts (ISA) and The National School of Arts (ENA), she specializes in African Diaspora dances and is known for her popular Rumba classes and Afro-Cuban learning program, the \"HPS\" method. Marisol founded the Sikan Afrocuban Dance Project and has performed with The Cuban National Folkloric Company and Obini-Bata, the first female drumming and dance group in Cuba. Her teaching blends technical skill with cultural and historical depth.",
       "shortBio": "",
       "facebook": "",
       "portrait": "marisol_blanco"
@@ -647,6 +663,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Desi Caliente",
       "artistLocation": "DENVER",
       "artistCompany": "",
+      "bio": "“Desi” means someone of South Asian birth or descent living abroad, while “caliente” means “hot” in Spanish. Desi caliente is a dance company combining Bollywood, Bhangra and Latin dance forms into a hot fusion of distinct styles. \n\nFounded in 2010, Desi Caliente has been performing and teaching in the Boulder and Denver metro area. Notable performances at the Indian Dance Festival, the Taste of Colorado, the Denver Salsa and Bachata Congress and the annual South Asian Student Association cultural show. \n\n",
       "shortBio": "",
       "facebook": "",
       "portrait": "desi_caliente"
@@ -655,6 +672,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Bachatito",
       "artistLocation": "CHICAGO",
       "artistCompany": "",
+      "bio": "Marcos Ramos is a dance instructor and DJ based in Milwaukee, WI.",
       "shortBio": "",
       "facebook": "",
       "portrait": "bachatito"
@@ -663,6 +681,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Devon Near-hill",
       "artistLocation": "DENVER",
       "artistCompany": "",
+      "bio": "Devon Near-Hill is a dance instructor based in Colorado, known for their online and in-person program, Efficient Follow. They currently teach weekly classes and co-direct at the Denver School of Social Dance, while also being available for weekend workshops in cities across the country. Devon is passionate about spreading the joy of Brazilian Zouk Lambada and believes that social dance is not only a wonderful way to connect with others but also a space to practice authentic communication, express boundaries, and ask for consent. They are committed to making the dance floor a safe and inclusive space for everyone.",
       "shortBio": "",
       "facebook": "",
       "portrait": "devon_near-hill"
@@ -671,6 +690,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Daniel & Kathryn",
       "artistLocation": "DENVER",
       "artistCompany": "CNS",
+      "bio": "Daniel Rodrigo Cid Vera and Kathryn D. Warshaw, also known as KD, are both highly accomplished dancers and instructors at Colorado New Style Dance Studio.\n\nDaniel, originally from Santiago, Chile, moved to Murcia, Spain, in 2005. He discovered his passion for salsa dancing in 2007 and began his career at Murcia Fusion. He later joined Adrián y Anita's Amateur Dance Company in Barcelona, working with world-renowned dancers like Jhonny Vasquez, Adolfo Indacochea, and Eddie Torres. Daniel has performed across Europe and now brings his international expertise to Colorado through his studio, where he offers a fresh, world-class approach to salsa.\n\nKD, a former competitive gymnast and gymnastics coach, transitioned into salsa dancing in 2009. She has performed at numerous congresses, competed twice in the World Latin Dance Cup, and coached Gabriela Gonzalez, who won 3rd place at the World Salsa Summit. As director of the World Team Project teams at Colorado New Style, KD incorporates her knowledge of strength, flexibility, and technique to help dancers achieve their competitive and personal goals. Together, Daniel and KD combine their vast experience to elevate the salsa community in Colorado.",
       "shortBio": "",
       "facebook": "",
       "portrait": "daniel_-_kathryn"
@@ -697,7 +717,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Tito Garcia",
       "artistLocation": "BOULDER",
       "artistCompany": "",
-      "bio": "Dance Instructor and DJ in the Denver/Boulder area",
+      "bio": "Tito Garcia, a Cuban American dancer and DJ originally from Miami and now based in Boulder, Colorado, is dedicated to preserving and sharing his culture through dance and music. With a deep passion for Timba and Cuban salsa, Tito loves to teach Rueda de Casino and brings his expertise to the DJ booth, spinning a wide variety of salsa styles. His commitment to cultural preservation and education makes him a vital figure in the Afro-Latin dance community.",
       "shortBio": "",
       "facebook": "",
       "portrait": "tito_garcia"
@@ -706,6 +726,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Diego & Yurley",
       "artistLocation": "DENVER",
       "artistCompany": "",
+      "bio": "Diego and Yurley are Bachata instructors based in Denver, CO",
       "shortBio": "",
       "facebook": "",
       "portrait": "diego_-_yurley"
@@ -714,6 +735,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Ebonie Lee",
       "artistLocation": "DENVER",
       "artistCompany": "",
+      "bio": "Ebonie Lee is a Denver-based Brazilian Zouk Lambada dancer, performer, and instructor with a diverse dance background that includes Japanese Classical, African, Latin, Contemporary Indian, Modern, Salsa, Mambo, and Afro-Latin dance. She began her Zouk journey in 2010, training with Atoro Lopez and later assisting renowned instructors in NYC. Ebonie co-founded the Brooklyn-based dance school Zoukphoria and has taught at various festivals. Currently, she is the Director of Brazilian Zouk at Interfusion Festival IX 2024, blending Zouk with other African Diaspora dances and conscious movement techniques.",
       "shortBio": "",
       "facebook": "",
       "portrait": "ebonie_lee"
@@ -5582,7 +5604,7 @@ export const modelInitStaticOverwrite =
       "price": "0",
       "signup": "no",
       "artistNames": [
-        "Jared & Nicole"
+        "Sisy Ayala"
       ]
     },
     "Absolute Beginner Track - Bachata": {
@@ -5592,7 +5614,7 @@ export const modelInitStaticOverwrite =
       "price": "0",
       "signup": "no",
       "artistNames": [
-        "Sisy Ayala"
+        "Jared and Nicole"
       ]
     },
     "AnD Bachata Instructor - Certification Training": {
@@ -5618,5 +5640,42 @@ export const modelInitStaticOverwrite =
   },
   "dataStyles": {},
   "dataLocation": {},
-  "dataModelProgram": []
+  "dataModelProgram": [],
+  "dataComponents": {
+    "schedulerTabBar": [
+      {
+        "id": 0,
+        "itemText": "Main Fair ",
+        "associatedScreenName": "scheduleList0",
+        "imgSrc": null
+      },
+      {
+        "id": 1,
+        "itemText": "Sessions",
+        "associatedScreenName": "scheduleList1",
+        "imgSrc": null
+      },
+      {
+        "id": 2,
+        "itemText": "Massage",
+        "associatedScreenName": "scheduleList2",
+        "imgSrc": null
+      },
+      {
+        "id": 3,
+        "itemText": "Crafty Corners",
+        "associatedScreenName": "scheduleList3",
+        "imgSrc": null
+      }
+    ],
+    "schedulerTabDescriptions": [
+      "Welcome to the SF Wellbeing Fair. Below you can find the main program of the fair. The Opening starts 12:00 in the Main Fair Space. Closing will take place 4:45-5pm",
+      "Our breakout sessions start at 1:00pm and come in different flavors. 1) Group Classes 2) Conversation Circles 3) Outside. Feel free to browse the parallel sessions and mark the ones you would like to go to.",
+      "Massage Spaces - Open from 12:15-4:30pm",
+      "Crafty Corner - Open from 12:15-4:30pm"
+    ],
+    "navBar": [],
+    "artistStack": [],
+    "schedulerStack": []
+  }
 }
