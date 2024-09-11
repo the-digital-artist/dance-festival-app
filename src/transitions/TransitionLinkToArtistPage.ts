@@ -3,6 +3,7 @@ import LauncherController from "../LauncherController";
 import TransitionNavbarSelect from "../components/navbar/TransitionNavbarSelect";
 import TweenManager from "../core/LTweenManager";
 import TransitionArtistNavigateDown from "./TransitionArtistNavigateDown";
+import ArtistListComponent from "../components/artists/ArtistListComponent";
 
 const TransitionLinkToArtistPage = (artistData) => {
         console.log("TransitionLinkToArtistPage");
@@ -15,11 +16,8 @@ const TransitionLinkToArtistPage = (artistData) => {
         LauncherController.getInstance().context.artistFocusItem = artistData;
 
         TransitionNavbarSelect(2, false);
-
-        (context.artistListReference as FlatList).scrollToIndex(
-                { animated: true, index: artistData.index, viewOffset: 0, viewPosition: 0 }
-        );
-
+        (context.artistListReference as ArtistListComponent).scroll(LauncherController.getInstance().context.artistFocusItem);
+        
         TransitionArtistNavigateDown(artistData, 0); 
         TweenManager.tween().to("schedulerSelectionScreenContainer", 0, {
                 alpha: 1, delay: 600, onComplete:
