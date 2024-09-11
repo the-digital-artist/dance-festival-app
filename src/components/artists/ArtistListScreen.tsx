@@ -1,21 +1,21 @@
 import React, { PureComponent } from "react";
-import { Dimensions, FlatList, Image, View } from "react-native";
+import { Dimensions, Image, View } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import DataModel from "../../DataModel";
 import LauncherController from "../../LauncherController";
-import NavBar from "../navbar/NavBar";
-import ArtistListItemRenderer from "./ArtistListItemRenderer";
 import ScreenHeader from "../screens/ScreenHeader";
 import ScreenHomeButton from "../screens/ScreenHomeButton";
+import ArtistListComponent from "./ArtistListComponent";
 
 
 class ArtistListScreen extends PureComponent {
-    artistListRef: any = null;
+    listDataPreProcessed = []
+
     state = {
         modelUpdateState: 0, //0-not-initialized, 1-for updating, 2-ready
-        dataModelList: null,
         searchTextInput: ""
     }
+
 
     constructor(props) {
         super(props);
@@ -23,41 +23,54 @@ class ArtistListScreen extends PureComponent {
         LauncherController.getInstance().context.stackNavigator = props.navigation;
         LauncherController.getInstance().context.dataDependentComponentArtistScreen = this;
 
+        this.preProcessListData(DataModel.getInstance().dyn_dataArtistsList)
         this.state.modelUpdateState = 2;
-        this.state.dataModelList = DataModel.getInstance().dyn_dataArtistsList;
         this.state.searchTextInput = "";
+    }
 
+    startModelUpdate() {
+        this.preProcessListData(null)
+        this.setState({ modelUpdateState: 1 })
+    }
+
+    finishModelUpdate() {
+        this.preProcessListData(DataModel.getInstance().dyn_dataArtistsList)
+        this.setState({ modelUpdateState: 2 })
+    }
+
+    preProcessListData(rawData = null) {
+        this.listDataPreProcessed = [];
+        if (rawData == null || rawData == undefined) return;
+
+        //first filter by editions (current vs rest)
+        let dataCurrentEdition = rawData.filter((a) => {
+            if (a.editionData == undefined) return false;
+            for (let k = 0; k < a.editionData.length; k++) if (a.editionData[k] == '03-2024') return true;
+            return false;
+        });
+
+        let dataOtherEditions = rawData.filter((a) => {
+            if (a.editionData == undefined) return true;
+            let found = false;
+            for (let k = 0; k < a.editionData.length; k++) if (a.editionData[k] == '03-2024') found = true;
+            return !found;
+        });
+
+        //now sort
+        dataCurrentEdition.sort((a, b) => { return a.fullName.localeCompare(b.fullName, 'en-US'); });
+        dataOtherEditions.sort((a, b) => { return a.fullName.localeCompare(b.fullName, 'en-US'); });
+
+        dataCurrentEdition = dataCurrentEdition.filter((item) => { return ((item.fullName as string).search(this.state.searchTextInput) >= 0 ? true : false) });
+        dataOtherEditions = dataOtherEditions.filter((item) => { return ((item.fullName as string).search(this.state.searchTextInput) >= 0 ? true : false) });
+
+        this.listDataPreProcessed.push({ title: 'Current Edition "Autumn Abundance"', data: dataCurrentEdition })
+        this.listDataPreProcessed.push({ title: "Previous Editions", data: dataOtherEditions })
+
+        console.log("this.state.searchTextInput" + this.state.searchTextInput)
 
     }
 
     render() {
-        // console.log("___________ArtistListScreen render ")
-        // console.log("___________ArtistListScreen render - state dataModel: "+JSON.stringify(this.state.dataModelList, null, 2)); 
-        //add one empty artist item into the list for presentation reasons
-        // if (this.state.dataModelList != null && this.state.dataModelList != undefined &&
-        //     this.state.dataModelList[this.state.dataModelList.length - 1].key != "NONE") {
-        //     this.state.dataModelList.push(
-        //         {
-        //             "fullName": "", "insta": "", "bio": "", "facebook": "", "portrait": "", "imgSrc": -1, "shortBio": "",
-        //             "key": "NONE", "index": this.state.dataModelList.length, "sessionIds": []
-        //         }
-        //     );
-        // }
-        //sort list
-        if (this.state.dataModelList!=null && this.state.modelUpdateState == 2) {
-            this.state.dataModelList.sort((a, b) => {
-                // console.log("___________compare: "+a.fullName+" "+b.fullName+" "+(a.fullName>b.fullName?1:(a.fullName<b.fullName?-1:0)))
-                // console.log("___________compare: imgSrc b: "+b.imgSrc);
-                let returnValue = 0;
-                if (a.imgSrc == undefined && b.imgSrc != undefined) returnValue = 1;
-                if (a.imgSrc != undefined && b.imgSrc == undefined) returnValue = -1;
-                if (a.imgSrc == undefined && b.imgSrc == undefined || a.imgSrc != undefined && b.imgSrc != undefined) returnValue = (a.fullName > b.fullName) ? 1 : -1
-
-                return returnValue;
-            });
-        }
-
-
         return (
             <>
                 <Image
@@ -77,7 +90,7 @@ class ArtistListScreen extends PureComponent {
                     color='#f8f6d3'
                     imgSrc={require('../../../assets/header-artists-bg.png')} />
 
-                <ScreenHomeButton/>
+                <ScreenHomeButton />
 
                 <View
                     style={{
@@ -93,9 +106,9 @@ class ArtistListScreen extends PureComponent {
                         // borderBottomWidth: StyleSheet.hairlineWidth,
                         opacity: 0.1
                     }} />
+
                 {this.state.modelUpdateState == 2 &&
-                    <FlatList
-                        ref={(list) => { this.artistListRef = list }}
+                    <ArtistListComponent
                         style={{
                             position: 'absolute',
                             backgroundColor: 'transparent',
@@ -104,15 +117,7 @@ class ArtistListScreen extends PureComponent {
                             height: Dimensions.get('screen').height - 100,
                             opacity: 1
                         }}
-                        data={this.state.dataModelList}
-                        renderItem={ArtistListItemRenderer}
-                        keyExtractor={item => item.fullName}
-                        ListFooterComponent={() => (
-                            <View style={{ 
-                                marginTop:20,
-                                height:NavBar.navBarHeight+50}}/>
-                        )}
-                    />
+                        data={this.listDataPreProcessed} />
                 }
 
 
@@ -138,16 +143,12 @@ class ArtistListScreen extends PureComponent {
                     placeholder="SEARCH BY ARTIST NAME"
                     onChangeText={(searchText) => {
                         console.log("TextInput Change" + searchText)
-                        this.setState({
-                            searchTextInput: searchText,
-                            modelUpdateState: 2,
-                            dataModelList: DataModel.getInstance().dyn_dataArtistsList.filter((item) => { return ((item.fullName as string).search(searchText) >= 0 ? true : false) })
-                        })
+                        this.state.searchTextInput = searchText;
+                        this.preProcessListData(DataModel.getInstance().dyn_dataArtistsList)
+                        this.forceUpdate();
                     }}
                     defaultValue={""}
                 />
-
-
 
                 {this.state.modelUpdateState == 0 &&
 
@@ -158,25 +159,9 @@ class ArtistListScreen extends PureComponent {
                         height: Dimensions.get('screen').height,
                         opacity: 0.9
                     }} />
-
                 }
-
-
             </>
         );
-    }
-    componentDidMount(): void {
-        LauncherController.getInstance().context.artistListReference = this.artistListRef;
-    }
-
-
-    startModelUpdate() {
-        console.log("___________ArtistListScreen setting state 1");
-        this.setState({ modelUpdateState: 1, dataModelList: null })
-    }
-    finishModelUpdate() {
-        // console.log("___________ArtistListScreen finishModelUpdate -  update (state 2)"); 
-        this.setState({ modelUpdateState: 2, dataModelList: DataModel.getInstance().dyn_dataArtistsList })
     }
 }
 
