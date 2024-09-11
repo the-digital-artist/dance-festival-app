@@ -1,6 +1,6 @@
 export const modelInitStaticOverwrite =
 {
-  "modelVersion": 2000,
+  "modelVersion": 1185,
   "festivalName": "WELLBEING",
   "modelRemoteGetModelUrl": "https://5sw1zcun82.execute-api.us-west-1.amazonaws.com/wellbeingModelContent",
   "modelRemoteVersionCheckUrl": "https://5sw1zcun82.execute-api.us-west-1.amazonaws.com/wellbeingModelVersion",
@@ -10,6 +10,217 @@ export const modelInitStaticOverwrite =
     "earlyBirdStartTimeString": "2024-07-21T05:00:00.000"
   },
   "dataArtists": {
+    "Debbie Pacheco": {
+      "fullName": "Debbie Pacheco",
+      "pronouns": "",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "01-2024"
+      ],
+      "insta": "@__mysticwellness",
+      "web": "https://www.mystic-wellness.com",
+      "bio": "13 years ago, I walked into my first yoga studio with excruciating back pain and a desperate need for change. I was nervous about finding the right studio because I didn't fit the \"typical yoga image.\" But I stumbled upon a new studio in town and was welcomed with open arms into a loving and supportive community. This experience transformed me, and I finally felt like I was stepping into my truest form.\n\nDuring my yoga teacher training, I discovered my passion for creating a diverse and welcoming community. As a Latina (first generation Salvadoran), I often felt like I didn't belong in the wellness world, and I knew that I wanted to change that by giving everyone a space to practice as they are. With continued studies and the development of my own healing rituals, I created MYSTIC WELLNESS - a transformative space that is designed to revitalize you, no matter your background.\n\nMy teachings of sound meditation, Kundalini Yoga, and plant medicine guidance are all-inclusive, led from the heart, and infused with fun. Let me help you find your inner mystic and embark on a journey of finding your essence.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "debbie_pacheco",
+      "email": "debbie@mystic-wellness.com",
+      "phone": "415-818-7799"
+    },
+    "Gautam Mulchandani": {
+      "fullName": "Gautam Mulchandani",
+      "pronouns": "",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "01-2024",
+        "02-2024",
+        "03-2024"
+      ],
+      "insta": "@gemsofclaritysocial",
+      "web": "https://gemsofclarity.com",
+      "bio": "Gautam has been utilizing his intuitive skills since his late 20s - in the form of guidance & clarity with family and friends. In his 20's he found himself drawn to Astrology, Greek & Vedic mythology, and Egyptian history. He has taken seminars & workshops on Western psychology that cover emotion regulation, Enneagram, Soul Quest & Purpose Discovery, Shadow Integration, Archetypal Psychology, Trauma healing, \n\nThe Chakra system, and Intuitive medicine. He's been studying Advaita Vedanta, practicing Yoga & meditation, and is certified in Reiki Levels 1 & 2,  iRest Yoga Nidra Level 1, 200-hour yoga training, and Mindfulness Stress Reduction. He spent a year learning and practicing Ayurveda to cultivate an understanding of doshas (body type), self-nurturing, and our relationship to the Infinite.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "gautam_mulchandani",
+      "email": "gmulchandani@gmail.com",
+      "phone": "415-699-4263"
+    },
+    "Hannah Knapp": {
+      "fullName": "Hannah Knapp",
+      "pronouns": "",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "01-2024"
+      ],
+      "insta": "@within_meditation",
+      "web": "withinmeditation.com",
+      "bio": "Hannah has been meditating since 2012, when she dove in head-first with a 10-day Vipassana retreat. It was during that retreat that she realized she was ready for the adventure of pregnancy and parenting. Coming out of that experience, she knew she needed a community to practice with: there was just nothing like meditating with other people. Her passion for sharing the power of mindfulness has led her to launch (and lead) group meditations wherever she’s worked, and to start WITHIN Meditation.\n\nThrough mindfulness, she’s developed a deep resilience, focus, and capacity to love that she draws on every day, both as the mom of two young children and as a start-up founder. She’s delighted to be leading meditation sessions in our online studio and in companies throughout the San Francisco Bay Area and across the country, while building an amazing team of teachers at WITHIN.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "hannah_knapp",
+      "email": "hannah@withinmeditation.com",
+      "phone": "415-577-9765"
+    },
+    "Kinjal Shah": {
+      "fullName": "Kinjal Shah",
+      "pronouns": "",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "01-2024"
+      ],
+      "insta": "@kinjal.yoga",
+      "web": "https://www.kinjalyoga.com",
+      "bio": "Motivated by my own journey of healing from an autoimmune disorder, I started teaching yoga with the intention of sharing the practical benefits of yoga philosophy and its asana practice. My style of teaching is suitable for everyone, including beginners, dancers, seniors, as well as more advanced students. I incorporate props in my teaching and focus on alignment with the goal of helping the body be in a state of ease and optimum performance. \n\nI also teach breathwork, meditation, and mindfulness for busy professionals and am a wellness coach. My approach to teaching is nurturing, light-hearted, and soulful. In addition to group classes, I offer 1:1 (private) yoga sessions, corporate classes, workshops, and wellness coaching.\n\nI am also a certified Reiki practitioner and offer 1:1 reiki sessions for my clients. Occasionally, with permission, I also offer reiki to my yoga students in savasana.I believe that the human body is a highly sophisticated machine that is capable of healing itself, and by tuning in, one can heal their mind, body, and spirit. Imagine your physical, mental, and emotional wellbeing being transformed by listening to your body, and I can help guide you through your journey.\n\nI am passionate about the health and longevity of the planet and harmony among all of nature’s creations; I truly believe that solutions to most problems can be discovered by going on an inward journey. If one social group is unwell, society as a whole is unwell. Let’s raise the vibrations of humanity and our precious Earth! Let’s heal ourselves and the planet, one life at a time.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "kinjal_shah",
+      "email": "dreaminthenow@gmail.com",
+      "phone": "408-797-4889"
+    },
+    "Lars Kallman": {
+      "fullName": "Lars Kallman",
+      "pronouns": "",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "01-2024",
+        "02-2024",
+        "03-2024"
+      ],
+      "insta": "@41lassi",
+      "web": "https://rb.gy/m6900f",
+      "bio": "My massage practice is informed by 8 years of life and study at Esalen Institute, from 2008-2016. Long flowing integrating strokes combine with energy work and deep therapeutic touch. Gestalt process, mindfulness and parts work are also an option. LCMT since 2010.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "lars_kallman",
+      "email": "kallmanlars@gmail.com",
+      "phone": "650-200-9079"
+    },
+    "Laura Schadler": {
+      "fullName": "Laura Schadler",
+      "pronouns": "",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "01-2024"
+      ],
+      "insta": "@currents.yoga",
+      "web": "https://www.currents.yoga/",
+      "bio": "Laura grew up in the mountains of Virginia and now lives in San Francisco where she is a yoga, reiki, and tarot practitioner. When not working with clients, Laura is a fiction writer and writing teacher. \n\nWith over 500 hours of yoga training focused on vinyasa and alignment, Laura also holds certifications in restorative yoga and yoga for cancer survivors. Her classes are inspired by the idea of interdisciplinary movement that creates strength, connection, and spaciousness.   \n\nLaura is a reiki practitioner at the Reiki Master Teacher level and was attuned by Genevieve McClendon in 2019. After a long time of casual curiosity about the tarot, Laura began formally studying in 2020, and was intrigued to uncover the many ways tarot complements yoga and reiki.\n\nLaura currently teaches public yoga classes at Sunporch Yoga and BODY, offers group workshops, and is available for private individual or small group sessions focused on yoga, reiki, tarot, or a combination of the three. ",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "laura_schadler",
+      "email": "lauraschadler@gmail.com",
+      "phone": "415-290-8039"
+    },
+    "Michelle Emmanuelle": {
+      "fullName": "Michelle Emmanuelle",
+      "pronouns": "",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "01-2024"
+      ],
+      "insta": "@wellness8elle",
+      "web": "https://sustainablechangemaker.com",
+      "bio": "My philosophy and intention in all of my services (coaching, consulting, speaking, facilitating workshops) is that wellness must be embodied in order for it to be truly sustainable. Because our lived experience resides in our bodies, true transformation happens when we move from knowledge to embodying this knowledge in our daily habits and practices. This is why in all of my offerings I seek to get to the source of the issue, (especially in regards to burnout) and always include somatic (physical) practices to promote lasting change. Wellness is more than treating a symptom, it’s really about empowering oneself to live a life filled with more options, and that happens when capacity is available. \n\nI base my services from information received in trainings, on data from neuroscience, corporate surveys and the feedback from those who have experienced burnout due to systemic issues. This is often overlooked as a source of burnout and yet significantly contributes to the high levels of stress and anxiety that historically marginalized people experience. Constantly navigating “mirco” aggressions, assumptions and equity issues, to name a few, all have a direct impact on the nervous system.\n\nI am an avid learner and have attended over a thousand hours of training in various wellness modalities which have informed my own healing process. Here are some examples: burnout recovery and the nervous system, somatic release for stress and anxiety, trauma informed coaching, 500 hours of yoga certification, the neuroscience of healing, healing race-based trauma, meditation and mindfulness and nutrition.I have experienced all of practices and techniques offered in my coaching program and workshops, and I can confidently recommend these to my clients. I healed - now I help others heal. \n\nIn my signature coaching system of supporting women of color in their wellness goals, I include accountability (for support), creativity (to consistently challenge perspectives) and mindset (what we think literally creates our reality).  Because I love to nerd out on the brain, I always include some type of neuroscience as relevant data to support the healing process.\n\nI am naturally creative and curious, and I love being in community! It’s my joy to help women of color find their wings and empower them to soar in their wellness and resilience!",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "michelle_emmanuelle",
+      "email": "m8emmanuelle@gmail.com",
+      "phone": "(415) 653-9046"
+    },
+    "Nitin Garg": {
+      "fullName": "Nitin Garg",
+      "pronouns": "",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "01-2024"
+      ],
+      "insta": "@yogi.niting",
+      "web": "https://www.sunkulp.com/",
+      "bio": "Certified Integral Leadership Coach\n\nLed teams across finance, marketing & product management @ Intuit (Fortune 100 best Company)\n\nCertified Yoga & Meditation Teacher (Sri Yoga)\n\nKriya Yogi (Self-Realization Fellowship)\n\nI offer a comprehensive, systematized, and results-focused approach to personal transformation, In, 𝐓𝐡𝐫𝐞𝐞 𝐏𝐡𝐚𝐬𝐞𝐬, I help ambitious leaders unlock self-awareness, clarity and intentionality so they can realize their full potential without being held back by self-doubt and overwhelm.\n\n𝑷𝒉𝒂𝒔𝒆 𝟏: 𝑹𝒆-𝒊𝒈𝒏𝒊𝒕𝒆 𝑪𝒐𝒏𝒇𝒊𝒅𝒆𝒏𝒄𝒆 - I help you establish the foundation for success by boosting your self-command from saboteur to sage habits. We will break through old beliefs and behaviors and shift emotional triggers towards life-amplifying habits that lead to health, joy and a mindset of possibility.\n\n𝑷𝒉𝒂𝒔𝒆 𝟐: 𝑹𝒆-𝒈𝒂𝒊𝒏 𝑪𝒍𝒂𝒓𝒊𝒕𝒚 - Together, we go on a journey to discover and define what you really desire. I help you lay out and implement a short and long-term vision for the life you want to create grounded in your values and supported by new priorities and alignment in schedule. \n\n𝑷𝒉𝒂𝒔𝒆 𝟑: 𝑩𝒆-𝒄𝒐𝒎𝒆 𝑰𝒏𝒕𝒆𝒏𝒕𝒊𝒐𝒏𝒂𝒍 - I help you become a conscious director of your mindset so you imbue leadership presence, become highly effective, authentic and consistent to create the positive impact in the World that is your calling.\n\n​",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "nitin_garg",
+      "email": "nitin@sunkulp.com",
+      "phone": "510-709-6345"
+    },
+    "Shereel Washington": {
+      "fullName": "Shereel Washington",
+      "pronouns": "",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "01-2024"
+      ],
+      "insta": "@ixaltednaturalbody",
+      "web": "https://www.ixaltednaturalbody.com",
+      "bio": "Shereel Washington graduated from the California School of Herbal Studies, Forestville, CA in the Community Herbalist Program as a Clinical Herbalist, as well as certificates in Body Systems, and Herbal Crafting. She has completed over 1200 hours of herbal craft making training.\n\n\nAs an educator, Shereel teaches Black North American Herbalism and Medicine Making in various herbal certification programs in schools across Northern California, primarily, San Francisco Bay Area. As a herbal health, healing and nutrition practitioner and consultant, Shereel serves diverse ethnic communities in promoting natural health care and wellness through plant medicine. As an advocate of global cultural herbal traditions, Shereel is passionate about preserving the history, knowledge and expansion of the current practice of Black North American Herbalism.\n\nShereel is an instructor at the following institutions & annual events:\n\nLand of Verse  \n\nNorthern California Women’s Herbal Symposium. (NCWHS)\n\nBerkeley Herbal Center\n\nBuckeye Gathering\n\nShereel teaches online courses featured on Learning Herbs. \n\nShereel has been named a Community Leader by People Science and a Cultivator of Celebration by Cornell University Botanical Garden's Seeds of Survival and Celebration Exhibit. Shereel's dedication to research and collaboration is also evident in her work with Traditional Medicinals and People Science, where she provided valuable insights into the history of Black North American Herbalists.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "shereel_washington",
+      "email": "wholebody1@gmail.com ",
+      "phone": "510-932-5101"
+    },
+    "Shundo David Haye": {
+      "fullName": "Shundo David Haye",
+      "pronouns": "",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "01-2024"
+      ],
+      "insta": "@within_meditation",
+      "web": "withinmeditation.com",
+      "bio": "Here is a piece I wrote for Zen Center’s 50th anniversary Windbell in 2012, which tells one version of my story:\n\nI did not intend to study Buddhism, nor did I have the sense that I was drawn to it by my own suffering. My aim in life, from the onset of adolescence, was to try to live authentically, however that might mean. From the time I left college until I was thirty-five, I lived in London, with, eventually, a steady and rewarding career at the BBC, a nice apartment, a jazz band, a warm circle of friends and a wide range of cultural activities. Yet I always sensed there was more to come. From my particular karmic roots, some of whose proximate causes I knew then, I thought it had to do with love.\n\nI came to Zen Center having met someone who lived there. I was curious to know what part zen training played in making this person who they were. I knew some Buddhists in London, mostly practising in the Tibetan tradition, and had appreciated them as good people, saying to myself that I should investigate this one day, in the way that I also did about voice training, or salsa dancing. When the opportunity came to move to San Francisco, it seemed natural to take it.\n\nI don’t know why I found it fit my life so well. I didn’t especially enjoy zazen, but willingly followed the schedule. Two years at City Center were followed by two years of Tassajara, learning to get used to being cold, tired and hungry much of the time, and to having precious little unscheduled time where I could do what I wanted. But I loved it, and when I left, all I could think of was coming back. It took me two years, and a huge upheaval – since karma has a way of coming to trip you up – but I had the firm sense that being a priest was what I wanted to do with my life, and I couldn’t think of a better place to pursue that path.\n\nI feel very lucky to have been able to practice at Zen Center, where it is possible to follow something like traditional monastic training for many years, a deep learning that I hope will launch me on a teaching career in due time. I can’t say exactly why I want to teach, but I feel strongly that this is a way of living that presents great possibilities of peace and joy, and I want others to have the chance to experience this for themselves.  In the last year, I have been helping to run the new Young Urban Zen group, which has been an amazingly rewarding opportunity to put this desire into practice and to see the benefits of sharing the teachings.\n\nI take great comfort in knowing that there is no end to practice, no exam to pass, no time when you can consider yourself finished, but that you can keep the practice alive for as long as you stay committed to it. Although I have a different idea now of how it manifests in the world, I still think it has to do with love.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "shundo_david_haye",
+      "email": "shundo@gmail.com",
+      "phone": ""
+    },
+    "Sophia Lin": {
+      "fullName": "Sophia Lin",
+      "pronouns": "",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "01-2024",
+        "02-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "sophia_lin",
+      "email": "sophialin499@gmail.com ",
+      "phone": ""
+    },
+    "Marc Morozumi": {
+      "fullName": "Marc Morozumi",
+      "pronouns": "",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "01-2024",
+        "02-2024",
+        "03-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "Marc is a certified Integral Yoga Hatha, Raja, Meditation and stress management teacher with over 5000 teaching hours and a CMT in the state of California. \n\n His diverse career history, which has varied from a life in the arts to working in a high-paced event world, unifies in one voice today as a health and wellness entrepreneur. He is a Lead Trainer for Integral Yoga Institute (IYI) and Accessible Yoga's 200-hour Yoga teacher training programs and helped design the first BIPOC YTT with the SF IYI in 2021. He has staffed IYI's silent retreats since 2011 and teaches public, private and corporate Yoga classes every week. He opened M Spa Yoga by Yogamukunda, The Yoga Loft @ MX3 Fitness and in 2020, opened and turned all focus to Mukunda Studio - Yoga and well-being in SOMA, SF, CA. \n\nHe is dedicated to building conscious community where the natural state of compassion, kindness and empathy can rise as a valued power in society, naturally weakening supremacy and the illusion of separateness.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "marc_morozumi",
+      "email": "",
+      "phone": ""
+    },
     "Adrien Joyner": {
       "fullName": "Adrien Joyner",
       "pronouns": "they/them",
@@ -129,24 +340,6 @@ export const modelInitStaticOverwrite =
       "email": "djkorwani@gmail.com,",
       "phone": "415-351-8013"
     },
-    "Gautam Mulchandani": {
-      "fullName": "Gautam Mulchandani",
-      "pronouns": "he/him",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "02-2024",
-        "03-2024"
-      ],
-      "insta": "@gemsofclaritysocial",
-      "web": "https://gemsofclarity.com",
-      "bio": "Gautam Mulchandani is a San Francisco-based yoga teacher and intuitive reader, guiding individuals on their journey of self-discovery and spiritual growth. With a compassionate and empathetic approach, Gautam offers intuitive readings that provide insight, clarity, and guidance for navigating life's challenges.\n\nBlending his knowledge of yoga philosophy, energy healing, and intuitive wisdom, Gautam creates a safe and supportive space for individuals to explore their inner world, awaken their potential, and connect with their deepest selves.\n\nThrough his intuitive readings and yoga teachings, Gautam aims to empower others to live more authentic, meaningful, and fulfilling lives.",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "gautam_mulchandani",
-      "email": "gmulchandani@gmail.com",
-      "phone": "415-699-4263"
-    },
     "Jeanna Eichenbaum": {
       "fullName": "Jeanna Eichenbaum",
       "pronouns": "they/them/elle",
@@ -216,24 +409,6 @@ export const modelInitStaticOverwrite =
       "email": "kramer.dahl90@gmail.com",
       "phone": "650-200-9079"
     },
-    "Lars Kallman": {
-      "fullName": "Lars Kallman",
-      "pronouns": "he/him",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "02-2024",
-        "03-2024"
-      ],
-      "insta": "",
-      "web": "",
-      "bio": "Lars Kallman is a licensed massage therapist and Gestalt practitioner based in San Francisco, California, offering deep bodywork and transformative sessions. With a focus on holistic healing, Lars combines intuitive bodywork, breath awareness, and Gestalt principles to guide clients in releasing tension, awakening awareness, and integrating body, mind, and spirit.\n\nThrough his unique approach, Lars creates a safe and supportive environment for individuals to explore their inner world, process emotions, and cultivate greater self-awareness. His deep bodywork and Gestalt sessions invite clients to embark on a journey of self-discovery, empowerment, and profound transformation.",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "lars_kallman",
-      "email": "kallmanlars@gmail.com",
-      "phone": ""
-    },
     "Lydia Real": {
       "fullName": "Lydia Real",
       "pronouns": "she/her",
@@ -302,23 +477,6 @@ export const modelInitStaticOverwrite =
       "facebook": "",
       "portrait": "phil_deem",
       "email": "phil@spirit-treeapothecary.com",
-      "phone": ""
-    },
-    "Sophia Lin": {
-      "fullName": "Sophia Lin",
-      "pronouns": "she/her",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "02-2024"
-      ],
-      "insta": "",
-      "web": "",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "sophia_lin",
-      "email": "sophialin499@gmail.com",
       "phone": ""
     },
     "Susan Sullivan": {
@@ -467,7 +625,7 @@ export const modelInitStaticOverwrite =
       ],
       "insta": "@kamellemills",
       "web": "https://www.instagram.com/kamellemills",
-      "bio": "Producer, Performer, Writer, Coach + Senior Instructor at SoulCycle, Trainer at Barry’s Bootcamp + CEO & Founder enbeyes\nKamelle is a Texas boy who's taught in New York, San Francisco and you can find him bringing his Southern Charm and magnetic spirit to Northern California! His dynamic personality can be blamed on the fact that he's been singing, dancing and acting since he was a toddler! Kamelle’s newest stage is the SoulCycle podium where his high energy inspires the room. In class, Kamelle creates the magic, but so do YOU! Kamelle is a creative self-starter with a passion for people. As a trained actor and senior instructor at SoulCycle, he aspires to inspire others daily through a powerful mind-body experience.",
+      "bio": "Producer, Performer, Writer, Coach + Senior Instructor at SoulCycle, Trainer at Barry’s Bootcamp + CEO & Founder enbeyes.\n\nKamelle is a Texas boy who's taught in New York, San Francisco and you can find him bringing his Southern Charm and magnetic spirit to Northern California! His dynamic personality can be blamed on the fact that he's been singing, dancing and acting since he was a toddler! Kamelle’s newest stage is the SoulCycle podium where his high energy inspires the room. \n\nIn class, Kamelle creates the magic, but so do YOU! Kamelle is a creative self-starter with a passion for people. As a trained actor and senior instructor at SoulCycle, he aspires to inspire others daily through a powerful mind-body experience.",
       "shortBio": "",
       "facebook": "",
       "portrait": "kamelle_mills",
@@ -643,23 +801,6 @@ export const modelInitStaticOverwrite =
       "portrait": "nicola_bosco-alvarez",
       "email": "",
       "phone": ""
-    },
-    "Marc Morozumi": {
-      "fullName": "Marc Morozumi",
-      "pronouns": "",
-      "artistLocation": "",
-      "artistCompany": "",
-      "editionData": [
-        "03-2024"
-      ],
-      "insta": "",
-      "web": "",
-      "bio": "Marc is a certified Integral Yoga Hatha, Raja, Meditation and stress management teacher with over 5000 teaching hours and a CMT in the state of California.  His diverse career history, which has varied from a life in the arts to working in a high-paced event world, unifies in one voice today as a health and wellness entrepreneur. He is a Lead Trainer for Integral Yoga Institute (IYI) and Accessible Yoga's 200-hour Yoga teacher training programs and helped design the first BIPOC YTT with the SF IYI in 2021. He has staffed IYI's silent retreats since 2011 and teaches public, private and corporate Yoga classes every week. He opened M Spa Yoga by Yogamukunda, The Yoga Loft @ MX3 Fitness and in 2020, opened and turned all focus to Mukunda Studio - Yoga and well-being in SOMA, SF, CA. He is dedicated to building conscious community where the natural state of compassion, kindness and empathy can rise as a valued power in society, naturally weakening supremacy and the illusion of separateness.",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "marc_morozumi",
-      "email": "",
-      "phone": ""
     }
   },
   "dataScheduleRaw": [
@@ -758,6 +899,31 @@ export const modelInitStaticOverwrite =
       "sessionSubtitle": "",
       "sessionDescription": "",
       "artistOne": "Kamelle Mills",
+      "artistTwo": "",
+      "artistLocation": "",
+      "flag": false,
+      "flagIncludeInNow": false
+    },
+    {
+      "id": "83e1ba3aee81e82c376a571c2c3f7bf0",
+      "itemType": "type2",
+      "artistName": "Mirabai Warkulwiz",
+      "sessionMainTitle": "Yoga Kirtan (Call & Response Chanting)",
+      "time": "",
+      "room": "Main Fair Room",
+      "description": "",
+      "level": "",
+      "group": [],
+      "groupTitle": "Opening",
+      "groupSubtitle": "",
+      "shortMainTitle": "",
+      "dateString": "Sat, September 21, 2024",
+      "startTime": "",
+      "endTime": "",
+      "place": "",
+      "sessionSubtitle": "",
+      "sessionDescription": "",
+      "artistOne": "Mirabai Warkulwiz",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -1278,7 +1444,7 @@ export const modelInitStaticOverwrite =
       "sessionMainTitle": "Chair Massage - Japanese Acupressure Techniques",
       "time": "",
       "room": "Main Fair Room",
-      "description": "UnderMyHands massage by Jerry Cuffey is a San Francisco based private practice that addresses your individual massage needs. Jerry is trained in Shiatsu, Swedish, Deep Tissue, Thai, Tui Na, Energy, Reflexology, Trigger Point, Sports massages and Myofascial Therapy. He has a B.S. Psychology from Union College in Schenectady, N.Y. and Graduated with honors from the National Holistic Institute School of Massage in San Francisco, CA.",
+      "description": "15mins chair massage to help you relax and unwind any stress or tension.",
       "level": "",
       "group": [],
       "groupTitle": "Massage",
@@ -1577,7 +1743,7 @@ export const modelInitStaticOverwrite =
     "navBar": [
       {
         "id": 0,
-        "itemText": "Calm Space",
+        "itemText": "Home",
         "associatedScreenName": "homeScreenContainer",
         "imgSrc": null,
         "imgPath": "../assets/navbar/navbar_icon_home.png"
