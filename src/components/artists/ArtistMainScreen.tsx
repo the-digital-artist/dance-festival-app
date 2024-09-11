@@ -1,20 +1,42 @@
 import React, { PureComponent } from "react";
-import { Dimensions, Platform, View } from "react-native";
+import { Dimensions } from "react-native";
 import LComponent from "../../core/LComponent";
-import SchedulerListScreen from "./SchedulerListScreen";
-import SchedulerSessionDetailsScreen from "./SchedulerSessionDetailsScreen";
+import ArtistDetailsScreen from "./ArtistDetailsScreen";
+import ArtistListScreen from "./ArtistListScreen";
 
-class SchedulerMainScreen extends PureComponent {
+class ArtistMainScreen extends PureComponent {
 
     constructor(props) {
         super(props);
     }
 
     render() {
+
+        const stack = createNativeStackNavigator();
+        const headerOptions: any = {
+            // headerTitle: (props) => <HeaderNavigator {...props} />
+            // title: 'ARTIST PAGES',
+            headerBackVisible: true,
+            headerBackTitleVisible: false,
+            headerTransparent: true,
+            headerStyle: {
+                backgroundColor: '#EF4260',
+                fontFamily: "DINNeuzeitGroteskStd-Light",
+                fontWeight: 'bold',
+                fontSize: 26,
+            },
+            headerTintColor: '#ffffff',
+            headerTitleStyle: {
+                fontFamily: "DINNeuzeitGroteskStd-Light",
+                fontWeight: 'normal',
+                fontSize: 26,
+            },
+        }
+
         return (
             <>
                 <LComponent
-                    name='schedulerMainScreenContainer'
+                    name='artistsMainScreenContainer'
                     style={{
                         position: 'absolute',
                         backgroundColor: '#000000',
@@ -23,12 +45,12 @@ class SchedulerMainScreen extends PureComponent {
                     }}
                     visualProperties={{
                         alpha: 1,
-                        x: 0, y: 0, z: 0
+                        x: Dimensions.get('screen').width, y: 0, z: 0
                     }}
                 >
 
                     <LComponent
-                        name='schedulerSelectionScreenContainer'
+                        name='artistsSelectionScreenContainer'
                         style={{
                             position: 'absolute',
                             backgroundColor: '#000000',
@@ -40,10 +62,10 @@ class SchedulerMainScreen extends PureComponent {
                             x: 0, y: 0, z: 0
                         }}
                     >
-                        <SchedulerListScreen />
+                        <ArtistListScreen />
                     </LComponent>
                     <LComponent
-                        name='schedulerDetailsScreenContainer'
+                        name='artistsDetailsScreenContainer'
                         style={{
                             position: 'absolute',
                             backgroundColor: '#dd5163',
@@ -55,8 +77,17 @@ class SchedulerMainScreen extends PureComponent {
                             x: Dimensions.get('screen').width, y: 0, z: 0
                         }}
                     >
-                        <SchedulerSessionDetailsScreen />
+                        <ArtistDetailsScreen />
                     </LComponent>
+                    {/* <NavigationContainer>
+                        <stack.Navigator>
+                            <stack.Screen name="ARTIST PAGES" component={ArtistListScreen}
+                                options={headerOptions}
+                            />
+                            <stack.Screen name="ARTIST DETAILS" component={ArtistDetailsScreen}
+                                options={headerOptions} />
+                        </stack.Navigator>
+                    </NavigationContainer> */}
 
                     {/* {(Platform.OS == 'android') &&
                         <View
@@ -76,4 +107,4 @@ class SchedulerMainScreen extends PureComponent {
     componentDidMount(): void { }
 }
 
-export default SchedulerMainScreen;
+export default ArtistMainScreen;

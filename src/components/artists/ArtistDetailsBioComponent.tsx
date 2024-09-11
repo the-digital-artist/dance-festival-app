@@ -76,7 +76,7 @@ class ArtistDetailsBioComponent extends PureComponent<any, any> {
                             // height: (artistBiography as string).length / 1100 * 1.2 * Dimensions.get('screen').height,
                             fontFamily: 'Arcon-Regular',
                             letterSpacing: 1,
-                            textAlign: 'justify',
+                            textAlign: 'left',
                             // lineHeight:17,
                             // backgroundColor: 'indigo',
                             color: '#EFEFEF',

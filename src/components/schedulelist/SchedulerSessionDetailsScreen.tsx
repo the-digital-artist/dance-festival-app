@@ -1,15 +1,14 @@
 import React, { PureComponent } from "react";
-import { Dimensions, Image, Platform, ScrollView, StyleSheet, View } from "react-native";
+import { Dimensions, Image, Platform, ScrollView, View } from "react-native";
 import ActionHistoryBackButton from "../../actions/ActionHistoryBackButton";
 import LText from "../../core/LText";
 import DataModel from "../../DataModel";
 import LauncherController from "../../LauncherController";
-import ButtonSmall from "../ButtonSmall";
-import ScreenHeader from "./ScreenHeader";
-import ScreenHomeButton from "./ScreenHomeButton";
-import TabBar from "../tabbar/TabBar";
-import NavBar from "../navbar/NavBar";
 import TransitionLinkToArtistPage from "../../transitions/TransitionLinkToArtistPage";
+import ButtonSmall from "../ButtonSmall";
+import NavBar from "../navbar/NavBar";
+import ScreenHeader from "../screens/ScreenHeader";
+import ScreenHomeButton from "../screens/ScreenHomeButton";
 
 
 class SchedulerSessionDetailsScreen extends PureComponent {
@@ -425,6 +424,7 @@ class SchedulerSessionDetailsScreen extends PureComponent {
                     color='#f8f6d3'
                     textStyle={{ left: 50 }}
                     imgSrc={require('../../../assets/header-schedule-bg.png')} />
+                    
                 <ScreenHomeButton />
 
 

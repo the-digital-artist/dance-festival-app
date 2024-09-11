@@ -1,5 +1,7 @@
-import { Dimensions, Image, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, Image, StyleSheet, View } from 'react-native';
+import LauncherController from '../../LauncherController';
 import ActionArtistListOnDetailsBtn from '../../actions/ActionArtistListOnDetailsBtn';
+import LText from '../../core/LText';
 import LTouchableOpacity from '../../core/LTouchableOpacity';
 import ButtonSmall from '../ButtonSmall';
 

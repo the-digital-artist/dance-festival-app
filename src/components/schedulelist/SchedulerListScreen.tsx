@@ -7,9 +7,9 @@ import LComponent from "../../core/LComponent";
 import TransitionDataModelUpdate from "../../transitions/TransitionDataModelUpdate";
 import ScheduleListItem from "../schedulelist/ScheduleListItem";
 import TabBar from "../tabbar/TabBar";
-import ScreenHeader from "./ScreenHeader";
-import ScreenHomeButton from "./ScreenHomeButton";
 import NavBar from "../navbar/NavBar";
+import ScreenHeader from "../screens/ScreenHeader";
+import ScreenHomeButton from "../screens/ScreenHomeButton";
 
 
 
