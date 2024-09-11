@@ -8,6 +8,7 @@ import LVideoPlayback from "../../core/LVideoPlayback";
 import NavBar from "../navbar/NavBar";
 import EarlyPassesTile from "./EarlyPassesTile";
 import ScreenHeader from "./ScreenHeader";
+import MottoTile from "./MottoTile";
 // import { Skottie } from "react-native-skottie";
 // import LottieAnimationFile from '../../../assets/falling2.json';
 // import { ExecutionEnvironment } from "expo-constants";
@@ -166,6 +167,7 @@ class HomeScreen extends PureComponent<any, any> {
                     </ScrollView>
 
                     {/* <EarlyPassesTile offsetY={300} /> */}
+                    {/* <MottoTile offsetY={400} /> */}
 
                     {/* {(Platform.OS == 'android') &&
                         <View
