@@ -1,22 +1,21 @@
-import { FlashList } from "@shopify/flash-list";
 import React, { PureComponent } from "react";
 import { Dimensions, Image, View } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import DataModel from "../../DataModel";
 import LauncherController from "../../LauncherController";
-import NavBar from "../navbar/NavBar";
 import ScreenHeader from "../screens/ScreenHeader";
 import ScreenHomeButton from "../screens/ScreenHomeButton";
-import ArtistListItemRenderer from "./ArtistListItemRenderer";
+import ArtistListComponent from "./ArtistListComponent";
 
 
 class ArtistListScreen extends PureComponent {
-    artistListRef: any = null;
+    listDataPreProcessed = []
+
     state = {
         modelUpdateState: 0, //0-not-initialized, 1-for updating, 2-ready
-        dataModelList: null,
         searchTextInput: ""
     }
+
 
     constructor(props) {
         super(props);
@@ -24,11 +23,40 @@ class ArtistListScreen extends PureComponent {
         LauncherController.getInstance().context.stackNavigator = props.navigation;
         LauncherController.getInstance().context.dataDependentComponentArtistScreen = this;
 
+        this.preProcessListData(DataModel.getInstance().dyn_dataArtistsList)
+
         this.state.modelUpdateState = 2;
-        this.state.dataModelList = DataModel.getInstance().dyn_dataArtistsList;
         this.state.searchTextInput = "";
+    }
 
+    startModelUpdate() {
+        this.preProcessListData(null)
+        this.setState({ modelUpdateState: 1 })
+    }
 
+    finishModelUpdate() {
+        this.preProcessListData(DataModel.getInstance().dyn_dataArtistsList)
+        this.setState({ modelUpdateState: 2 })
+    }
+
+    preProcessListData(rawData = null) {
+        this.listDataPreProcessed = [];
+        if (rawData == null || rawData == undefined) return;
+
+        //first get the first letter
+        rawData.sort((a, b) => { return a.fullName.localeCompare(b.fullName, 'en-US'); });
+        let firstLetters = {}
+        for (let i = 0; i < rawData.length; i++)
+            firstLetters[rawData[i].fullName.slice(0, 1)] = 1
+
+        //sort alphabetically, filter by search string, sectionize by letter
+        for (let letter in firstLetters) {
+            let dataCurrentSection = rawData.filter((a) => { return (a.fullName as string).startsWith(letter) });
+            dataCurrentSection = dataCurrentSection.filter((item) => { return ((item.fullName as string).search(this.state.searchTextInput) >= 0 ? true : false) });
+            dataCurrentSection.sort((a, b) => { return a.fullName.localeCompare(b.fullName, 'en-US'); });
+            this.listDataPreProcessed.push({ title: letter, data: dataCurrentSection })
+        }
+        console.log("this.state.searchTextInput" + this.state.searchTextInput)
     }
 
     render() {
@@ -45,18 +73,18 @@ class ArtistListScreen extends PureComponent {
         //     );
         // }
         //sort list
-        if (this.state.dataModelList != null && this.state.modelUpdateState == 2) {
-            this.state.dataModelList.sort((a, b) => {
-                // console.log("___________compare: "+a.fullName+" "+b.fullName+" "+(a.fullName>b.fullName?1:(a.fullName<b.fullName?-1:0)))
-                // console.log("___________compare: imgSrc b: "+b.imgSrc);
-                let returnValue = 0;
-                if (a.imgSrc == undefined && b.imgSrc != undefined) returnValue = 1;
-                if (a.imgSrc != undefined && b.imgSrc == undefined) returnValue = -1;
-                if (a.imgSrc == undefined && b.imgSrc == undefined || a.imgSrc != undefined && b.imgSrc != undefined) returnValue = (a.fullName > b.fullName) ? 1 : -1
+        // if (this.state.dataModelList!=null && this.state.modelUpdateState == 2) {
+        //     this.state.dataModelList.sort((a, b) => {
+        //         // console.log("___________compare: "+a.fullName+" "+b.fullName+" "+(a.fullName>b.fullName?1:(a.fullName<b.fullName?-1:0)))
+        //         // console.log("___________compare: imgSrc b: "+b.imgSrc);
+        //         let returnValue = 0;
+        //         if (a.imgSrc == undefined && b.imgSrc != undefined) returnValue = 1;
+        //         if (a.imgSrc != undefined && b.imgSrc == undefined) returnValue = -1;
+        //         if (a.imgSrc == undefined && b.imgSrc == undefined || a.imgSrc != undefined && b.imgSrc != undefined) returnValue = (a.fullName > b.fullName) ? 1 : -1
 
-                return returnValue;
-            });
-        }
+        //         return returnValue;
+        //     });
+        // }
 
 
         return (
@@ -78,7 +106,7 @@ class ArtistListScreen extends PureComponent {
                     color='#f8f6d3'
                     imgSrc={require('../../../assets/header-artists-bg.png')} />
 
-                <ScreenHomeButton/>
+                <ScreenHomeButton />
 
                 <View
                     style={{
@@ -94,8 +122,9 @@ class ArtistListScreen extends PureComponent {
                         // borderBottomWidth: StyleSheet.hairlineWidth,
                         opacity: 0.1
                     }} />
+
                 {this.state.modelUpdateState == 2 &&
-                    <View
+                    <ArtistListComponent
                         style={{
                             position: 'absolute',
                             backgroundColor: 'transparent',
@@ -103,21 +132,8 @@ class ArtistListScreen extends PureComponent {
                             width: Dimensions.get('screen').width,
                             height: Dimensions.get('screen').height - 100,
                             opacity: 1
-                        }}> 
-                        <FlashList
-                            ref={(list) => { this.artistListRef = list }}
-                            data={this.state.dataModelList}
-                            renderItem={ArtistListItemRenderer}
-                            estimatedItemSize={130}
-                            ListFooterComponent={() => (
-                                <View style={{
-                                    marginTop: 20,
-                                    height: NavBar.navBarHeight + 50
-                                }} />
-                            )}
-                        />
-                    </View>
-
+                        }}
+                        data={this.listDataPreProcessed} />
                 }
 
 
@@ -143,16 +159,12 @@ class ArtistListScreen extends PureComponent {
                     placeholder="SEARCH BY ARTIST NAME"
                     onChangeText={(searchText) => {
                         console.log("TextInput Change" + searchText)
-                        this.setState({
-                            searchTextInput: searchText,
-                            modelUpdateState: 2,
-                            dataModelList: DataModel.getInstance().dyn_dataArtistsList.filter((item) => { return ((item.fullName as string).search(searchText) >= 0 ? true : false) })
-                        })
+                        this.state.searchTextInput = searchText;
+                        this.preProcessListData(DataModel.getInstance().dyn_dataArtistsList)
+                        this.forceUpdate();
                     }}
                     defaultValue={""}
                 />
-
-
 
                 {this.state.modelUpdateState == 0 &&
 
@@ -163,25 +175,9 @@ class ArtistListScreen extends PureComponent {
                         height: Dimensions.get('screen').height,
                         opacity: 0.9
                     }} />
-
                 }
-
-
             </>
         );
-    }
-    componentDidMount(): void {
-        LauncherController.getInstance().context.artistListReference = this.artistListRef;
-    }
-
-
-    startModelUpdate() {
-        console.log("___________ArtistListScreen setting state 1");
-        this.setState({ modelUpdateState: 1, dataModelList: null })
-    }
-    finishModelUpdate() {
-        // console.log("___________ArtistListScreen finishModelUpdate -  update (state 2)"); 
-        this.setState({ modelUpdateState: 2, dataModelList: DataModel.getInstance().dyn_dataArtistsList })
     }
 }
 

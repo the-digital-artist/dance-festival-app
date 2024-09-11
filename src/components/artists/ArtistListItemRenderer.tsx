@@ -1,9 +1,28 @@
 import { Dimensions, Image, Text, View } from 'react-native';
 import ActionArtistListOnDetailsBtn from '../../actions/ActionArtistListOnDetailsBtn';
 import ButtonSmall from '../ButtonSmall';
+import LTouchableOpacity from '../../core/LTouchableOpacity';
+
+//Data Item Example:
+// "Debbie Pacheco": {
+//     "fullName": "Debbie Pacheco",
+//     "pronouns": "",
+//     "artistLocation": "",
+//     "artistCompany": "",
+//     "editionData": [
+//       "01-2024"
+//     ],
+//     "insta": "@__mysticwellness",
+//     "web": "https://www.mystic-wellness.com",
+//     "bio": "13 years ago, I walked into my first yoga studio with excruciating back pain and a desperate need for change. I was nervous about finding the right studio because I didn't fit the \"typical yoga image.\" But I stumbled upon a new studio in town and was welcomed with open arms into a loving and supportive community. This experience transformed me, and I finally felt like I was stepping into my truest form.\n\nDuring my yoga teacher training, I discovered my passion for creating a diverse and welcoming community. As a Latina (first generation Salvadoran), I often felt like I didn't belong in the wellness world, and I knew that I wanted to change that by giving everyone a space to practice as they are. With continued studies and the development of my own healing rituals, I created MYSTIC WELLNESS - a transformative space that is designed to revitalize you, no matter your background.\n\nMy teachings of sound meditation, Kundalini Yoga, and plant medicine guidance are all-inclusive, led from the heart, and infused with fun. Let me help you find your inner mystic and embark on a journey of finding your essence.",
+//     "shortBio": "",
+//     "facebook": "",
+//     "portrait": "debbie_pacheco",
+//     "email": "debbie@mystic-wellness.com",
+//     "phone": "415-818-7799"
+//   },
 
 const ArtistListItemRenderer = ({ item, index }) => {
-  const centerPieceWidth = Dimensions.get('screen').width - (5 + 45 + 35 + 35 + 5)
   const paddingLeftAndRight = 5;
   const itemHeight = 130;
 
@@ -18,12 +37,10 @@ const ArtistListItemRenderer = ({ item, index }) => {
           backgroundColor: '#1a202e',
           left: -paddingLeftAndRight,
           height: itemHeight, width: Dimensions.get('screen').width,
-          // borderTopColor: '#edc36a',
           borderTopWidth: 0,
-          // borderBottomColor: 'black',
-          // borderBottomWidth: StyleSheet.hairlineWidth,
           opacity: 0.56
         }} />
+
       <Image
         source={item.imgSrc}
         style={{
@@ -48,7 +65,6 @@ const ArtistListItemRenderer = ({ item, index }) => {
       {item.fullName != '' &&
         <ButtonSmall
           name={("focusItemArtistButton" + index)}
-          source={null}
           style={{
             position: 'absolute',
             left: 140,

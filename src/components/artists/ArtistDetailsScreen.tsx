@@ -12,7 +12,7 @@ import ArtistDetailsBioComponent from "./ArtistDetailsBioComponent";
 
 
 class ArtistDetailsScreen extends PureComponent {
-    gestureRef: any = React.createRef();
+
     scrollRef: any = React.createRef();
 
     constructor(props) {
@@ -50,42 +50,6 @@ class ArtistDetailsScreen extends PureComponent {
         // let startX = ((((socialBarData.length - 1) * itemDistance) / 2) - iconSize / 2 - 40)
 
 
-        // const offsetXStart = useSharedValue(0);
-        const gestureObj = Gesture.Pan()
-        // .minDistance(30)
-        // .failOffsetY(10)
-        gestureObj
-            .simultaneousWithExternalGesture(this.scrollRef)
-            .onBegin((event) => {
-                console.log("pan start");
-                TweenManager.tween().to("artistImageOverlay" + item.fullName, 300, { alpha: 0 })
-            })
-            .onChange((event) => {
-                console.log("offset.value: " + (event.translationX));
-                // offset.value = event.translationX + offsetXStart.value;
-                // currentIndex.value = -event.translationX / tileDistance +currentIndexStart.value;
-            })
-            .onFinalize((event) => {
-                console.log("offset.value: " + (event.translationX));
-                // offset.value = event.translationX + offsetXStart.value;
-                // pressed.value = false;
-                // const potentialStopPoint = offset.value + 0.1 * event.velocityX;
-                // let targetValue = findClosestPoint(snapPoints, potentialStopPoint)
-                // offset.value = withSpring(targetValue,
-                //     {
-                //         velocity: event.velocityX,
-                //         mass: 1.2,
-                //         damping: 27,
-                //         stiffness: 383,
-                //         overshootClamping: false,
-                //         restDisplacementThreshold: 0.001,
-                //         restSpeedThreshold: 2,
-                //     }
-                // );
-                // newIndex.value = Math.round(currentIndex.value);
-            })
-            .withRef(this.gestureRef);
-
         return (
             <>
 
@@ -121,6 +85,7 @@ class ArtistDetailsScreen extends PureComponent {
                     }}>
                         {(item.fullName as string).toLocaleUpperCase()}
                     </Text>
+
                     {(item.insta != undefined && item.insta != '') &&
                         socialBarData.map((itemData, i) => {
                             return (
@@ -147,9 +112,7 @@ class ArtistDetailsScreen extends PureComponent {
                             );
                         })}
 
-
                     <ArtistDetailsBioComponent />
-
                 </View>
 
 

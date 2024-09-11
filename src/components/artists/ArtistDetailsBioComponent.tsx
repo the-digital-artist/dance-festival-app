@@ -32,21 +32,6 @@ class ArtistDetailsBioComponent extends PureComponent<any, any> {
         const artistImageOffsetBottom = ((Platform.OS == 'android') ? NavBar.navBarHeight + 50 : NavBar.navBarHeight - 20)
         const artistImageSize = Dimensions.get('screen').height-artistImageOffsetBottom-maskStart;
 
-        // const gestureObj = Gesture.Pan()
-        // gestureObj
-        //     .simultaneousWithExternalGesture(this.scrollRef)
-        //     .onBegin((event) => {
-        //         console.log("pan start");
-        //         // TweenManager.tween().to("artistImageOverlay" + item.fullName, 300, { alpha: 0 })
-        //     })
-        //     .onChange((event) => {
-        //         // console.log("offset.value: " + (event.translationX));
-        //     })
-        //     .onFinalize((event) => {
-        //         // console.log("offset.value: " + (event.translationX));
-        //     })
-        //     .withRef(this.gestureRef);
-
         return (
             <>
                 <ScrollView
@@ -62,9 +47,6 @@ class ArtistDetailsBioComponent extends PureComponent<any, any> {
                     onScroll={(e) => {
                         this.setState({ scrollPosY: e.nativeEvent.contentOffset.y })
                     }}
-                    onLayout={(e) => {
-                        // this.setState({ showMoreButton: (e.layout.height>=100)})
-                    }}
                 >
 
 
@@ -76,25 +58,15 @@ class ArtistDetailsBioComponent extends PureComponent<any, any> {
                             // height: (artistBiography as string).length / 1100 * 1.2 * Dimensions.get('screen').height,
                             fontFamily: 'Arcon-Regular',
                             letterSpacing: 1,
-                            textAlign: 'left',
-                            // lineHeight:17,
-                            // backgroundColor: 'indigo',
+                            textAlign: 'justify',
                             color: '#EFEFEF',
                             fontSize: 15,
                         }}
                         onLayout={(e: LayoutChangeEvent) => {
-                            // console.log("________________Text onLayout "+(e.nativeEvent.layout.height)+" "+Dimensions.get('screen').height);
-                            // this.setState({ showMoreButton: (e.layout.height>=100)})
-                            // console.log('maskStart: '+maskStart+'artistBioFocusText.height: '+e.nativeEvent.layout.height);
-                            
                             this.setState({
                                 scrollPosY: this.state.scrollPosY,
                                 heightThresholdPassed: (e.nativeEvent.layout.height+180>(maskStart))
                             })
-                        }}
-                        onTextLayout={(e: NativeSyntheticEvent<TextLayoutEventData>) => {
-                            // console.log("________________Text onTextLayout "+(e.nativeEvent.lines == undefined));
-                            // this.setState({ showMoreButton: (e.layout.height>=100)})
                         }}
                     >
                         {artistBiography}

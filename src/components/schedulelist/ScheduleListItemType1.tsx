@@ -2,15 +2,13 @@ import { PureComponent, ReactNode, createRef } from 'react';
 import { Image, Platform, Text, View } from 'react-native';
 import Animated from 'react-native-reanimated';
 import DataModel from '../../DataModel';
+import LauncherController from '../../LauncherController';
 import ActionItemFavToggleStateUpdate from '../../actions/ActionItemFavToggleStateUpdate';
 import LComponent from '../../core/LComponent';
 import TransitionLinkToArtistPage from '../../transitions/TransitionLinkToArtistPage';
 import TransitionScheduleItemFavSelect from '../../transitions/TransitionScheduleItemFavSelect';
 import ButtonSmall from '../ButtonSmall';
 import ScheduleItemToggle from './ScheduleItemToggle';
-import LauncherController from '../../LauncherController';
-import { GestureDetector } from 'react-native-gesture-handler';
-import { tapGestureHandlerProps } from 'react-native-gesture-handler/lib/typescript/handlers/TapGestureHandler';
 
 
 class ScheduleListItemType1 extends PureComponent<any, any> {
@@ -38,7 +36,6 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
 
     let item = this.state.dataItem;
     // if (item.itemType != 'type1') return;
-
 
     const levelData = [
       { src: require('../../../assets/schedule-levelicon-1.png'), text: "BEGINNER", textWidth: 52 },
@@ -163,11 +160,8 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
 
           <Animated.Text allowFontScaling={false} id='textLocation' style={[{
             position: 'absolute',
-            top: 5,
+            top: Platform.OS=='ios'?5:0,
             left: (this.props.tileWidth - 60) / 2,
-            // right: (item.orientation == 'right' ? undefined : 10),
-            // left: (item.orientation == 'left' ? undefined : 10),
-            height: 15,
             width: 70,
             fontFamily: 'DINCondensed-Regular',
             // backgroundColor: 'skyblue',

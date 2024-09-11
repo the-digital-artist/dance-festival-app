@@ -42,6 +42,7 @@ class ArtistMainScreen extends PureComponent {
                     >
                         <ArtistListScreen />
                     </LComponent>
+
                     <LComponent
                         name='artistsDetailsScreenContainer'
                         style={{
@@ -57,26 +58,6 @@ class ArtistMainScreen extends PureComponent {
                     >
                         <ArtistDetailsScreen />
                     </LComponent>
-                    {/* <NavigationContainer>
-                        <stack.Navigator>
-                            <stack.Screen name="ARTIST PAGES" component={ArtistListScreen}
-                                options={headerOptions}
-                            />
-                            <stack.Screen name="ARTIST DETAILS" component={ArtistDetailsScreen}
-                                options={headerOptions} />
-                        </stack.Navigator>
-                    </NavigationContainer> */}
-
-                    {/* {(Platform.OS == 'android') &&
-                        <View
-                            style={{
-                                backgroundColor: '#7d7974',
-                                bottom: (Dimensions.get('screen').width * (300 / 1290)) / 2 - 1, left: 0, position: 'absolute',
-                                width: Dimensions.get('screen').width,
-                                height: (Dimensions.get('screen').width * (300 / 1290)),
-                                opacity: 0.8
-                            }} />
-                    } */}
                 </LComponent>
 
             </>
