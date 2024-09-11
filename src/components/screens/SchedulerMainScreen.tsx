@@ -58,7 +58,7 @@ class SchedulerMainScreen extends PureComponent {
                         <SchedulerSessionDetailsScreen />
                     </LComponent>
 
-                    {(Platform.OS == 'android') &&
+                    {/* {(Platform.OS == 'android') &&
                         <View
                             style={{
                                 backgroundColor: '#7d7974',
@@ -67,7 +67,7 @@ class SchedulerMainScreen extends PureComponent {
                                 height: (Dimensions.get('screen').width * (300 / 1290)),
                                 opacity: 0.8
                             }} />
-                    }
+                    } */}
                 </LComponent>
 
             </>
