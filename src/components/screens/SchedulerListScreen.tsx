@@ -104,7 +104,6 @@ class SchedulerListScreen extends PureComponent {
                                         }}
                                     />
 
-                                    <GestureDetector gesture={scheduleList.nativeGestureObj}>
                                         <FlatList
                                             ref={(list) => { scheduleList.flatListRef = list; }}
                                             style={{
@@ -123,7 +122,6 @@ class SchedulerListScreen extends PureComponent {
                                                     height:NavBar.navBarHeight+50}}/>
                                             )}
                                         />
-                                    </GestureDetector>
                                 </LComponent>
                             );
                         })
@@ -171,7 +169,7 @@ class SchedulerListScreen extends PureComponent {
                         defaultValue={""}
                     /> */}
 
-                    {(Platform.OS == 'android') &&
+                    {/* {(Platform.OS == 'android') &&
                         <View
                             style={{
                                 backgroundColor: '#7d7974',
@@ -180,7 +178,7 @@ class SchedulerListScreen extends PureComponent {
                                 height: (Dimensions.get('screen').width * (300 / 1290)),
                                 opacity: 0.8
                             }} />
-                    }
+                    } */}
             </>
         );
     }
