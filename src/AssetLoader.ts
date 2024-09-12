@@ -5,10 +5,9 @@ class AssetLoader {
 
     public loadAssets(imageList: Array<{ fileName, imgSrc }>) {
         try {
-          
             console.log('trying to load: carlos_-_susan'); imageList.push({ fileName:'carlos_-_susan.png', imgSrc: require('../assets/portraits/carlos_-_susan.png')} ); 
             console.log('trying to load: brandon_-_michelle'); imageList.push({ fileName:'brandon_-_michelle.png', imgSrc: require('../assets/portraits/brandon_-_michelle.png')} ); 
-            console.log('trying to load: el_tiguere_y_bianca'); imageList.push({ fileName:'el_tiguere_y_bianca.png', imgSrc: require('../assets/portraits/el_tiguere_y_bianca.png')} ); 
+            console.log('trying to load: el_tiguere_-_bianca'); imageList.push({ fileName:'el_tiguere_-_bianca.png', imgSrc: require('../assets/portraits/el_tiguere_-_bianca.png')} ); 
             console.log('trying to load: diane_page'); imageList.push({ fileName:'diane_page.png', imgSrc: require('../assets/portraits/diane_page.png')} ); 
             console.log('trying to load: latisha_hardy'); imageList.push({ fileName:'latisha_hardy.png', imgSrc: require('../assets/portraits/latisha_hardy.png')} ); 
             console.log('trying to load: casino_stars'); imageList.push({ fileName:'casino_stars.png', imgSrc: require('../assets/portraits/casino_stars.png')} ); 
@@ -31,7 +30,7 @@ class AssetLoader {
             console.log('trying to load: natasha_tia'); imageList.push({ fileName:'natasha_tia.png', imgSrc: require('../assets/portraits/natasha_tia.png')} ); 
             console.log('trying to load: kebrina_dejesus'); imageList.push({ fileName:'kebrina_dejesus.png', imgSrc: require('../assets/portraits/kebrina_dejesus.png')} ); 
             console.log('trying to load: raul_-_delia'); imageList.push({ fileName:'raul_-_delia.png', imgSrc: require('../assets/portraits/raul_-_delia.png')} ); 
-            console.log('trying to load: ataca_y_alemana'); imageList.push({ fileName:'ataca_y_alemana.png', imgSrc: require('../assets/portraits/ataca_y_alemana.png')} ); 
+            console.log('trying to load: ataca_-_alemana'); imageList.push({ fileName:'ataca_-_alemana.png', imgSrc: require('../assets/portraits/ataca_-_alemana.png')} ); 
             console.log('trying to load: luisa_-_paulo'); imageList.push({ fileName:'luisa_-_paulo.png', imgSrc: require('../assets/portraits/luisa_-_paulo.png')} ); 
             console.log('trying to load: serena_spears'); imageList.push({ fileName:'serena_spears.png', imgSrc: require('../assets/portraits/serena_spears.png')} ); 
             console.log('trying to load: colorado_dancesport'); imageList.push({ fileName:'colorado_dancesport.png', imgSrc: require('../assets/portraits/colorado_dancesport.png')} ); 
@@ -50,7 +49,7 @@ class AssetLoader {
             console.log('trying to load: sandra_-_zack'); imageList.push({ fileName:'sandra_-_zack.png', imgSrc: require('../assets/portraits/sandra_-_zack.png')} ); 
             console.log('trying to load: christopher_webster'); imageList.push({ fileName:'christopher_webster.png', imgSrc: require('../assets/portraits/christopher_webster.png')} ); 
             console.log('trying to load: chris_-_alexus'); imageList.push({ fileName:'chris_-_alexus.png', imgSrc: require('../assets/portraits/chris_-_alexus.png')} ); 
-            console.log('trying to load: fuego_y_hielo'); imageList.push({ fileName:'fuego_y_hielo.png', imgSrc: require('../assets/portraits/fuego_y_hielo.png')} ); 
+            console.log('trying to load: fuego_-_hielo'); imageList.push({ fileName:'fuego_-_hielo.png', imgSrc: require('../assets/portraits/fuego_-_hielo.png')} ); 
             console.log('trying to load: joseal'); imageList.push({ fileName:'joseal.png', imgSrc: require('../assets/portraits/joseal.png')} ); 
             console.log('trying to load: celeste_williamson'); imageList.push({ fileName:'celeste_williamson.png', imgSrc: require('../assets/portraits/celeste_williamson.png')} ); 
             console.log('trying to load: iroko'); imageList.push({ fileName:'iroko.png', imgSrc: require('../assets/portraits/iroko.png')} ); 
@@ -60,7 +59,7 @@ class AssetLoader {
             console.log('trying to load: cam'); imageList.push({ fileName:'cam.png', imgSrc: require('../assets/portraits/cam.png')} ); 
             console.log('trying to load: lorena_charry'); imageList.push({ fileName:'lorena_charry.png', imgSrc: require('../assets/portraits/lorena_charry.png')} ); 
             console.log('trying to load: dejon_-_clo'); imageList.push({ fileName:'dejon_-_clo.png', imgSrc: require('../assets/portraits/dejon_-_clo.png')} ); 
-            console.log('trying to load: karen_y_ricardo'); imageList.push({ fileName:'karen_y_ricardo.png', imgSrc: require('../assets/portraits/karen_y_ricardo.png')} ); 
+            console.log('trying to load: karen_-_ricardo'); imageList.push({ fileName:'karen_-_ricardo.png', imgSrc: require('../assets/portraits/karen_-_ricardo.png')} ); 
             console.log('trying to load: saulo_-_jasmin'); imageList.push({ fileName:'saulo_-_jasmin.png', imgSrc: require('../assets/portraits/saulo_-_jasmin.png')} ); 
             console.log('trying to load: adriana_-_jorge'); imageList.push({ fileName:'adriana_-_jorge.png', imgSrc: require('../assets/portraits/adriana_-_jorge.png')} ); 
             console.log('trying to load: adrian_tenorio'); imageList.push({ fileName:'adrian_tenorio.png', imgSrc: require('../assets/portraits/adrian_tenorio.png')} ); 
@@ -84,8 +83,9 @@ class AssetLoader {
             console.log('trying to load: tito_garcia'); imageList.push({ fileName:'tito_garcia.png', imgSrc: require('../assets/portraits/tito_garcia.png')} ); 
             console.log('trying to load: diego_-_yurley'); imageList.push({ fileName:'diego_-_yurley.png', imgSrc: require('../assets/portraits/diego_-_yurley.png')} ); 
             console.log('trying to load: ebonie_lee'); imageList.push({ fileName:'ebonie_lee.png', imgSrc: require('../assets/portraits/ebonie_lee.png')} ); 
-            console.log('trying to load: aris_gingundo'); imageList.push({ fileName:'aris_gingundo.png', imgSrc: require('../assets/portraits/aris_gingundo.png')} ); 
-            
+            console.log('trying to load: aris_gingundo'); imageList.push({ fileName:'aris_gingundo.png', imgSrc: require('../assets/portraits/aris_gingundo.png')} );
+
+
         
         } catch (error) {
             console.log('Could not load asset: dr_brian_hernandez');
