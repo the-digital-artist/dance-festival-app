@@ -1,6 +1,6 @@
 export const modelInitStaticOverwrite =
 {
-  "modelVersion": 1503,
+  "modelVersion": 1505,
   "festivalName": "CALDAC",
   "modelRemoteGetModelUrl": "https://odwoytfhtf.execute-api.us-west-1.amazonaws.com/caldacModelContent",
   "modelRemoteVersionCheckUrl": "https://odwoytfhtf.execute-api.us-west-1.amazonaws.com/caldacModelVersion",
@@ -38,7 +38,7 @@ export const modelInitStaticOverwrite =
       "bio": "El Tiguere Del Mambo is a dynamic force in Bachata, blending roles as an MC, DJ, performer, and instructor. With a strong musical heritage from his Dominican musician father, his dance style radiates swag, sex appeal, and energy. Over 15 years, he's taught and DJed in 35+ countries, co-managing Island Touch Dance Academy, and amassing over 900,000 social media followers to promote Latin music and culture. Bianca Derival began her dance journey in Hip-Hop under Excel Garner, later embracing Latin dance at Island Touch Dance Academy. A key figure in the Latin Dance Community, Bianca co-leads PopiWa Queens. Together, El Tiguere and Bianca drive Bachata PopiWa, influencing the global Bachata scene with their combined talents and dedication to culture and dance.",
       "shortBio": "",
       "facebook": "",
-      "portrait": "el_tiguere_y_bianca"
+      "portrait": "el_tiguere_-_bianca"
     },
     "Diane Page": {
       "fullName": "Diane Page",
@@ -253,7 +253,7 @@ export const modelInitStaticOverwrite =
       "bio": "Jorge \"ATACA Jorgie\" Burgos and Tanja \"La Alemana\" Kensinger are celebrated figures in the Bachata dance community, renowned for their groundbreaking contributions and global impact. Together, they have amassed over 100,000,000 views on YouTube, making them the most-watched Latin dance artists on the platform.\n\nBorn in Humacao, Puerto Rico, Jorge \"ATACA Jorgie\" Burgos has a deep-rooted musical background that enriches his choreography. His innovative routines with La Alemana showcase their exceptional musicality, sensual chemistry, and detailed footwork. Ataca's classes are known for their technical precision, clarity, and fun, incorporating dance moves that are both practical and ready for social settings. He also made his mark as the male lead in the Salsa movie \"SHINE.\"\n\nTanja \"La Alemana\" Kensinger, originally from Germany and raised in the United States, brings a wealth of dance experience from her background in ballroom, jazz, ballet, and Latin styles. Her stage presence, sex appeal, and vibrant personality make her a standout performer and instructor. Beyond dance, La Alemana is committed to charity work, leading Island Touch's efforts in supporting women's and children's issues.\n\nTogether, Ataca and La Alemana choreograph for the Island Touch Pro team and global Island Touch Dance teams, captivating audiences worldwide with their dynamic performances and passionate connection to the music.",
       "shortBio": "",
       "facebook": "",
-      "portrait": "ataca_y_alemana"
+      "portrait": "ataca_-_alemana"
     },
     "Luisa & Paulo": {
       "fullName": "Luisa & Paulo",
@@ -433,7 +433,7 @@ export const modelInitStaticOverwrite =
       "bio": "Fuquan and Candace aka Fuego Y Hielo are Afro-Latin fusion dancers, coaches, and performers hailing from Atlanta. Combined they share over 50 years of knowledge and insight into the human body. From Afro, Latin, Classical dance and acrobatics, their unique performances will awe you. Their classes will inspire and educate. And their social dancing will always leave you jaw dropped and wanting more!",
       "shortBio": "",
       "facebook": "",
-      "portrait": "fuego_y_hielo"
+      "portrait": "fuego_-_hielo"
     },
     "Joseal": {
       "fullName": "Joseal",
@@ -525,7 +525,7 @@ export const modelInitStaticOverwrite =
       "bio": "Ricardo Vega and Karen Forcano are internationally acclaimed Latin dancers and nine-time World Champions in Salsa Cabaret. Known for their unique blend of acrobatic and Latin dance, they have been dancing professionally together since 2009. \n\nKaren, inspired by her ballet-dancing mother, trained in various Latin dance styles in Argentina. Ricardo, influenced by his tango-dancing grandparents, studied ballet and other dance forms in Chile. \n\nThe duo, who met in 2003 and became a dance couple in 2009, have earned over 15 titles and performed in countries worldwide. They run \"Karen y Ricardo Entertainment,\" a virtual salsa school, and a merchandise store. Their notable appearance on *World of Dance* and accolades such as Emmy nominations and a World Choreography Award have cemented their global fame.",
       "shortBio": "",
       "facebook": "",
-      "portrait": "karen_y_ricardo"
+      "portrait": "karen_-_ricardo"
     },
     "Saulo & Jasmin": {
       "fullName": "Saulo & Jasmin",
@@ -5641,41 +5641,5 @@ export const modelInitStaticOverwrite =
   "dataStyles": {},
   "dataLocation": {},
   "dataModelProgram": [],
-  "dataComponents": {
-    "schedulerTabBar": [
-      {
-        "id": 0,
-        "itemText": "Main Fair ",
-        "associatedScreenName": "scheduleList0",
-        "imgSrc": null
-      },
-      {
-        "id": 1,
-        "itemText": "Sessions",
-        "associatedScreenName": "scheduleList1",
-        "imgSrc": null
-      },
-      {
-        "id": 2,
-        "itemText": "Massage",
-        "associatedScreenName": "scheduleList2",
-        "imgSrc": null
-      },
-      {
-        "id": 3,
-        "itemText": "Crafty Corners",
-        "associatedScreenName": "scheduleList3",
-        "imgSrc": null
-      }
-    ],
-    "schedulerTabDescriptions": [
-      "Welcome to the SF Wellbeing Fair. Below you can find the main program of the fair. The Opening starts 12:00 in the Main Fair Space. Closing will take place 4:45-5pm",
-      "Our breakout sessions start at 1:00pm and come in different flavors. 1) Group Classes 2) Conversation Circles 3) Outside. Feel free to browse the parallel sessions and mark the ones you would like to go to.",
-      "Massage Spaces - Open from 12:15-4:30pm",
-      "Crafty Corner - Open from 12:15-4:30pm"
-    ],
-    "navBar": [],
-    "artistStack": [],
-    "schedulerStack": []
-  }
+  "dataComponents": {}
 }
