@@ -40,7 +40,7 @@ class Launcher extends PureComponent<any, any> {
     public render(): ReactNode {
         return (
             <GestureHandlerRootView style={{ flex: 1 }}>
-                <View style={{ position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, backgroundColor: 'transparent' }}>
+                <View style={{ position: 'absolute', left: 0, right: 0, top: 0, bottom: 0, backgroundColor: '#1e1d27' }}>
                     {this.state.appIsInitialized ?
                         <>
 

@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { memo, PureComponent } from "react";
 import { Dimensions, SectionList, View } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import NavBar from "../navbar/NavBar";
@@ -58,11 +58,14 @@ class ArtistListComponent extends PureComponent<any, any> {
             }
         }
 
+
         if (this.implementation == "FlatList") {
             this.listRef.scrollToIndex({ animated: true, index: itemIndex, viewOffset: 0, viewPosition: 0 })
         }
 
         if (this.implementation == "SectionList" && sectionIndex!=-1 && itemIndex!=-1) {
+            console.log("sectionIndex: "+sectionIndex+ " | itemIndex: "+itemIndex);
+            
             this.listRef.scrollToLocation({ animated: true, sectionIndex: sectionIndex, itemIndex: itemIndex+1, viewOffset: 0, viewPosition: 0 })
         }
     }
@@ -81,15 +84,18 @@ class ArtistListComponent extends PureComponent<any, any> {
                         ref={(list) => { this.listRef = list; }}
                         sections={this.structuredData}
                         keyExtractor={item => item.fullName}
-                        renderItem={ArtistListItemRenderer}
+                        renderItem={({ item, index }) => { return <ArtistListItemRenderer item={item} index={index} />}}
                         renderSectionHeader={ArtistListSectionRenderer}
                         stickySectionHeadersEnabled
+                        onScrollToIndexFailed={e => { console.log('onScrollToIndexFailed');
+                            setTimeout(() => {this.listRef.current?.scrollToIndex({ index: e.index, animated: true }); }, 500); }}
+                        // getItemLayout={(data,index) => ({length:130, offset:index*130, index: index})}
                         ListFooterComponent={() => (
                             <View style={{
-                                marginTop: 20,
-                                height: NavBar.navBarHeight + 50
+                                height: NavBar.navBarHeight
                             }} />
-                        )} />
+                        )} 
+                        />
                 }
 
                 {this.implementation == "FlashList" &&
@@ -121,7 +127,7 @@ class ArtistListComponent extends PureComponent<any, any> {
                         ref={(list) => { this.listRef = list; }}
                         style={this.props.style}
                         data={this.data}
-                        renderItem={ArtistListItemRenderer}
+                        renderItem={({ item, index }) => {return <ArtistListItemRenderer />}}
                         keyExtractor={item => item.fullName}
                         ListFooterComponent={() => (
                             <View style={{

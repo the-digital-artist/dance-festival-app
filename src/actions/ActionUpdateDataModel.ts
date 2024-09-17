@@ -67,7 +67,10 @@ const ActionUpdateDataModelWithRemote = async () => {
             console.log(":::::ActionUpdateDataModel -- Internet too slow - aborting request")
             return;
         }
-        console.error(error);
+        if (error.message == "Network request failed") {
+            console.log(":::::ActionUpdateDataModel -- Network request failed")
+            return;
+        }
     }
 }
 

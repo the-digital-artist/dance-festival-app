@@ -188,7 +188,7 @@ const ScheduleListItemType4 = ({ item }) => {
         visualProperties={{ alpha: 1 }}
         onSelect={() => {
           if (artistData1 == undefined) return;
-          LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage" });
+          LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage", data: {} });
           TransitionLinkToArtistPage(artistData1)
         }}
       />

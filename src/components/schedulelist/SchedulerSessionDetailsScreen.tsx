@@ -9,6 +9,7 @@ import ButtonSmall from "../ButtonSmall";
 import NavBar from "../navbar/NavBar";
 import ScreenHeader from "../screens/ScreenHeader";
 import ScreenHomeButton from "../screens/ScreenHomeButton";
+import TransitionSchedulerNavigateDown from "../../transitions/TransitionSchedulerNavigateDown";
 
 
 class SchedulerSessionDetailsScreen extends PureComponent {
@@ -277,7 +278,7 @@ class SchedulerSessionDetailsScreen extends PureComponent {
         visualProperties={{ alpha: 1 }}
         onSelect={() => {
           if (artistData1 == undefined) return;
-          LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage" });
+          LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage", data: {} });
           TransitionLinkToArtistPage(artistData1)
         }}
       />
@@ -323,8 +324,8 @@ class SchedulerSessionDetailsScreen extends PureComponent {
                                 marginTop: 10,
                                 top: 0, left: 30,
                                 width: 190,
-                                fontFamily: 'DINCondensed-Bold',
-                                letterSpacing: 1.2,
+                                fontFamily: 'Cabin-Regular',
+          letterSpacing: 2.0,
                                 //   backgroundColor: 'indigo',
                                 textAlign: 'left',
                                 color: '#e4a35e',
@@ -346,7 +347,7 @@ class SchedulerSessionDetailsScreen extends PureComponent {
                                     color: '#EFEFEF',
                                     fontSize: 14,
                                 }}>
-                                {artistData1.bio ? (artistData1.bio as string) : "Unfortunately, this artist did not provide any information."}
+                                {artistData1.bio ? (artistData1.bio as string).slice(0,90)+"..." : "Unfortunately, this artist did not provide any information."}
                             </LText>
 
 
@@ -381,7 +382,7 @@ class SchedulerSessionDetailsScreen extends PureComponent {
                                 visualProperties={{ alpha: 1 }}
                                 onSelect={() => {
                                     if (artistData1 == undefined) return;
-                                    LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerSessionDetailsScreen", transition: "TransitionLinkToArtistPage" });
+                                    LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerSessionDetailsScreen", transition: "TransitionLinkToArtistPage", data:{} });
                                     TransitionLinkToArtistPage(artistData1)
                                 }}
                             />
@@ -438,7 +439,10 @@ class SchedulerSessionDetailsScreen extends PureComponent {
                         opacity: 0.9
                     }}
                     visualProperties={{ alpha: 1, x: 0, y: 0, z: 0 }}
-                    onSelect={() => { ActionHistoryBackButton(); }}
+                    onSelect={() => { 
+                        context.navigationHistory.push({ out: "SchedulerDetailsScreen", transition: "TransitionSchedulerNavigateDown", data: {} });
+                        TransitionSchedulerNavigateDown(LauncherController.getInstance().context.schedulerFocusItem, 0)    
+                    }}
                     source={require('../../../assets/stack-backicon.png')}
                 />
             </>

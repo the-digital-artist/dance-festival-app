@@ -9,7 +9,6 @@ const TransitionNavbarSelect = (index, storeHistory=true) => {
         let oldIdx = LauncherController.getInstance().navBarIndex;
         if (index == oldIdx) return;
 
-
         //animate navbar
         TweenManager.tween().to("navBarHighlight", 134, { alpha: 1.0, x: (index * NavBar.navBarItemDistance + NavBar.navBarStartX) });
 
@@ -32,7 +31,7 @@ const TransitionNavbarSelect = (index, storeHistory=true) => {
 
         LauncherController.getInstance().navBarIndex = index;
 
-        if(storeHistory) LauncherController.getInstance().context.navigationHistory.push({out:screenNameOut, transition:'TransitionNavbarSelect' })
+        if(storeHistory) LauncherController.getInstance().context.navigationHistory.push({out:screenNameOut, transition:'TransitionNavbarSelect', data:{prevIndex: oldIdx, newIndex: index} })
 
 
 }

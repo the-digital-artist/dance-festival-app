@@ -49,7 +49,7 @@ class NavBar extends PureComponent<any, any> {
                         width: Dimensions.get('screen').width,
                         height: NavBar.navBarHeight,
                         resizeMode: "cover",
-                        opacity: ((Platform.OS == "ios")?0.6:1.0)
+                        opacity: ((Platform.OS == "ios")?0.6:0.95)
                     }}
                     source={require('../../../assets/navbar/navbar_bg.png')}
                 />

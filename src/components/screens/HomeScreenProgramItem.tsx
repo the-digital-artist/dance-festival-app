@@ -143,7 +143,7 @@ const HomeScreenProgramItem = ({ itemData, i }) => {
                             }}
                             visualProperties={{ alpha: 1 }}
                             onSelect={() => {
-                                LauncherController.getInstance().context.navigationHistory.push({ out: 'HomeScreen', transition: 'TransitionLinkToSchedule' })
+                                LauncherController.getInstance().context.navigationHistory.push({ out: 'HomeScreen', transition: 'TransitionLinkToSchedule', data:{} })
                                 TransitionLinkToSchedule();
                             }}
                         />

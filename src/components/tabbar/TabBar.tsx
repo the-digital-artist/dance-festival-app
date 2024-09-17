@@ -87,7 +87,7 @@ const TabBar = (props) => {
                                 width: itemWidth, height: itemHeight,
                             }}
                             onSelect={() => { 
-                                TransitionTabbarSelect(itemData, i, currentIndex)
+                                TransitionTabbarSelect(i, currentIndex, itemData)
                              } }
                             source={itemData.imgSrc}
                             text={(itemData.itemText as string).toLocaleUpperCase()}

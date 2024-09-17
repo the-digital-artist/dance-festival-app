@@ -1,6 +1,6 @@
 export const modelInitStaticOverwrite =
 {
-  "modelVersion": 1505,
+  "modelVersion": 2000,
   "festivalName": "CALDAC",
   "modelRemoteGetModelUrl": "https://odwoytfhtf.execute-api.us-west-1.amazonaws.com/caldacModelContent",
   "modelRemoteVersionCheckUrl": "https://odwoytfhtf.execute-api.us-west-1.amazonaws.com/caldacModelVersion",

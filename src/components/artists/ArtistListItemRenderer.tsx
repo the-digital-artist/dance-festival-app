@@ -2,6 +2,7 @@ import { Dimensions, Image, Text, View } from 'react-native';
 import ActionArtistListOnDetailsBtn from '../../actions/ActionArtistListOnDetailsBtn';
 import ButtonSmall from '../ButtonSmall';
 import LTouchableOpacity from '../../core/LTouchableOpacity';
+import { memo, PureComponent, ReactNode } from 'react';
 
 //Data Item Example:
 // "Debbie Pacheco": {
@@ -22,77 +23,84 @@ import LTouchableOpacity from '../../core/LTouchableOpacity';
 //     "phone": "415-818-7799"
 //   },
 
-const ArtistListItemRenderer = ({ item, index }) => {
-  const paddingLeftAndRight = 5;
-  const itemHeight = 130;
+class ArtistListItemRenderer extends PureComponent<any, any> {
+  constructor(props) {
+    super(props)
+  }
 
-  const imageSize = 100;
-  const imageOffsetY = (itemHeight - imageSize) / 2
+  render(): ReactNode {
+    
+    const paddingLeftAndRight = 5;
+    const itemHeight = 130;
+
+    const imageSize = 100;
+    const imageOffsetY = (itemHeight - imageSize) / 2
 
 
-  return (
-    <View>
-      <View
-        style={{
-          backgroundColor: '#1a202e',
-          left: -paddingLeftAndRight,
-          height: itemHeight, width: Dimensions.get('screen').width,
-          borderTopWidth: 0,
-          opacity: 0.56
-        }} />
-
-      <Image
-        source={item.imgSrc}
-        style={{
-          position: 'absolute', resizeMode: 'cover', opacity: 1.0,
-          left: 0, top: imageOffsetY, width: imageSize, height: imageSize,
-        }}
-      />
-
-      <Text allowFontScaling={false} id='textArtistName' style={{
-        position: 'absolute',
-        top: 30, left: 140,
-        width: 290, height: 19,
-        fontFamily: 'Cabin-Regular',
-        letterSpacing: 2.0,
-        // backgroundColor: 'indigo',
-        textAlign: 'left',
-        color: '#eda253',
-        fontSize: 14,
-      }}>{(item.fullName as string).toLocaleUpperCase()}
-      </Text>
-
-      {item.fullName != '' &&
-        <ButtonSmall
-          name={("focusItemArtistButton" + index)}
+    return (
+      <>
+        <View
           style={{
-            position: 'absolute',
-            left: 140,
-            top: 60,
-            height: 26, width: 120,
+            backgroundColor: '#1a202e',
+            left: -paddingLeftAndRight,
+            height: itemHeight, width: Dimensions.get('screen').width,
+            borderTopWidth: 0,
+            opacity: 0.56
+          }} />
+
+        <Image
+          source={this.props.item.imgSrc}
+          style={{
+            position: 'absolute', resizeMode: 'cover', opacity: 1.0,
+            left: 0, top: imageOffsetY, width: imageSize, height: imageSize,
           }}
-          text={"ARTIST DETAILS"}
-          bgBoxVisible={true}
-          bgBoxStyle={{
-            backgroundColor: '#d6c8cb',
-            height: 23, width: 120
-          }}
-          fontStyle={{
-            width: 120,
-            fontFamily: 'Cabin-Regular',
-            textAlign: 'center',
-            textAlignVertical: 'center',
-            letterSpacing: 2.0,
-            color: '#010101',
-            fontSize: 9,
-            top: 6
-          }}
-          visualProperties={{ alpha: 1 }}
-          onSelect={() => { ActionArtistListOnDetailsBtn(item) }}
         />
-      }
-    </View>
-  );
+
+        <Text allowFontScaling={false} id='textArtistName' style={{
+          position: 'absolute',
+          top: 30, left: 140,
+          width: 290, height: 19,
+          fontFamily: 'Cabin-Regular',
+          letterSpacing: 2.0,
+          // backgroundColor: 'indigo',
+          textAlign: 'left',
+          color: '#eda253',
+          fontSize: 14,
+        }}>{(this.props.item.fullName as string).toLocaleUpperCase()}
+        </Text>
+
+        {this.props.item.fullName != '' &&
+          <ButtonSmall
+            name={("focusItemArtistButton" + this.props.index)}
+            style={{
+              position: 'absolute',
+              left: 140,
+              top: 60,
+              height: 26, width: 120,
+            }}
+            text={"ARTIST DETAILS"}
+            bgBoxVisible={true}
+            bgBoxStyle={{
+              backgroundColor: '#d6c8cb',
+              height: 23, width: 120
+            }}
+            fontStyle={{
+              width: 120,
+              fontFamily: 'Cabin-Regular',
+              textAlign: 'center',
+              textAlignVertical: 'center',
+              letterSpacing: 2.0,
+              color: '#010101',
+              fontSize: 9,
+              top: 6
+            }}
+            visualProperties={{ alpha: 1 }}
+            onSelect={() => { ActionArtistListOnDetailsBtn(this.props.item) }}
+          />
+        }
+      </>
+    );
+  }
 }
 
 export default ArtistListItemRenderer;

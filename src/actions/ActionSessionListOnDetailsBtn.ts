@@ -4,7 +4,7 @@ import TransitionSchedulerNavigateDown from "../transitions/TransitionSchedulerN
 
 const ActionSessionListOnDetailsBtn = (item) => {
   console.log("ActionSessionListOnDetailsBtn ");
-  LauncherController.getInstance().context.navigationHistory.push({out:'SchedulerListScreen', transition:'TransitionScheduleNavigateDown' })
+  LauncherController.getInstance().context.navigationHistory.push({out:'SchedulerListScreen', transition:'TransitionScheduleNavigateDown', data:{} })
   TransitionSchedulerNavigateDown(item, 1) 
 
 }

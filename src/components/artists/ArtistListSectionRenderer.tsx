@@ -3,7 +3,7 @@ import { Dimensions, Image, Platform, Text, View } from "react-native";
 
 const ArtistListSectionRenderer = ({ section: { title } }) => {
 
-  let color = '#232323';
+  let color = '#2c2e35';
   let itemHeight = 20;
 
   return (

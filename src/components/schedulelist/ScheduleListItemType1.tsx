@@ -216,7 +216,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                 visualProperties={{ alpha: 1 }}
                 onSelect={() => {
                   if (artistData1 == undefined) return;
-                  LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage" });
+                  LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage", data: {} });
                   TransitionLinkToArtistPage(artistData2)
                 }}
               />
@@ -245,7 +245,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               visualProperties={{ alpha: 1 }}
               onSelect={() => {
                 if (artistData1 == undefined) return;
-                LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage" });
+                LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage", data: {} });
                 TransitionLinkToArtistPage(artistData1)
               }}
             />
@@ -375,7 +375,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                 visualProperties={{ alpha: 1 }}
                 onSelect={() => {
                   if (artistData1 == undefined) return;
-                  LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage" });
+                  LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage", data: {} });
                   TransitionLinkToArtistPage(artistData1)
                 }}
               />

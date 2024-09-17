@@ -9,6 +9,7 @@ import ButtonSmall from "../ButtonSmall";
 import ScreenHeader from "../screens/ScreenHeader";
 import ScreenHomeButton from "../screens/ScreenHomeButton";
 import ArtistDetailsBioComponent from "./ArtistDetailsBioComponent";
+import TransitionArtistNavigateDown from "../../transitions/TransitionArtistNavigateDown";
 
 
 class ArtistDetailsScreen extends PureComponent {
@@ -25,7 +26,7 @@ class ArtistDetailsScreen extends PureComponent {
     render() {
         const context = LauncherController.getInstance().context
         const item = LauncherController.getInstance().context.artistFocusItem
-        
+
         const logoScrollAlphaReductionDelta = 0.9
 
         // console.log("Setting Reference")
@@ -102,11 +103,11 @@ class ArtistDetailsScreen extends PureComponent {
                                         }}
                                         visualProperties={{ alpha: 0.7, x: 0, y: 0, z: 0 }}
                                         onSelect={() => {
-                                            context.navigationHistory.push({ out: "ArtistDetailsScreen", transition: "ActionOpenSocialMediaApp" });
+                                            context.navigationHistory.push({ out: "ArtistDetailsScreen", transition: "ActionOpenSocialMediaApp", data: {} });
                                             ActionOpenSocialMediaApp(itemData.provider, itemData.account)
                                         }}
                                         source={itemData.imgSrc}
-                                        // text={''}
+                                    // text={''}
                                     />
                                 </Fragment>
                             );
@@ -121,7 +122,7 @@ class ArtistDetailsScreen extends PureComponent {
                     color='#f8f6d3'
                     textStyle={{ left: 50 }}
                     imgSrc={require('../../../assets/header-artists-bg.png')} />
-                    
+
                 <ScreenHomeButton />
 
 
@@ -135,7 +136,22 @@ class ArtistDetailsScreen extends PureComponent {
                         opacity: 0.9
                     }}
                     visualProperties={{ alpha: 1, x: 0, y: 0, z: 0 }}
-                    onSelect={() => { ActionHistoryBackButton(); }}
+                    onSelect={() => {
+                        //what if this was a deeplink into this page from somewhere else outside of the stack
+                        let previousInteraction = context.navigationHistory[context.navigationHistory.length - 1];
+                        if (previousInteraction.out == 'ArtistListScreen') {
+                            //default case, we came from artist list screen, use history mechanism to go back
+                            ActionHistoryBackButton();
+                        } else if (previousInteraction.out == 'SchedulerScreen') {
+                            //deeplink
+                            //from the scheduler screen, use history back mechanism to undo deeplink
+                            ActionHistoryBackButton();
+                        } else {
+                            //probably navbar, we came here but dont want to go back. need to go one level up in stack.
+                            context.navigationHistory.push({ out: "ArtistDetailsScreen", transition: "TransitionArtistNavigateDown", data: {} });
+                            TransitionArtistNavigateDown(LauncherController.getInstance().context.artistFocusItem, 0)
+                        }
+                    }}
                     source={require('../../../assets/stack-backicon.png')}
                 />
             </>

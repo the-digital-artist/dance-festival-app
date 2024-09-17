@@ -1,11 +1,12 @@
 import React, { PureComponent } from "react";
-import { Dimensions, Image, View } from "react-native";
+import { Dimensions, Image, Platform, View } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import DataModel from "../../DataModel";
 import LauncherController from "../../LauncherController";
 import ScreenHeader from "../screens/ScreenHeader";
 import ScreenHomeButton from "../screens/ScreenHomeButton";
 import ArtistListComponent from "./ArtistListComponent";
+import NavBar from "../navbar/NavBar";
 
 
 class ArtistListScreen extends PureComponent {
@@ -127,44 +128,46 @@ class ArtistListScreen extends PureComponent {
                     <ArtistListComponent
                         style={{
                             position: 'absolute',
-                            backgroundColor: 'transparent',
-                            left: 0, top: 180,
+                            // backgroundColor: 'skyblue',
+                            left: 0, top: Platform.OS == 'ios' ? 180 : 125,
                             width: Dimensions.get('screen').width,
-                            height: Dimensions.get('screen').height - 100,
+                            height: Platform.OS == 'ios' ? (Dimensions.get('screen').height - 100) : (Dimensions.get('screen').height - 145),
                             opacity: 1
                         }}
                         data={this.listDataPreProcessed} />
                 }
 
 
-                <TextInput
-                    style={{
-                        top: 135,
-                        left: 25,
-                        height: 35,
-                        width: Dimensions.get('screen').width - 50,
-                        padding: 10,
-                        backgroundColor: '#1c1919',
-                        borderWidth: 1,
-                        borderColor: "#3f3b4a",
-                        color: '#FFFFFF',
-                        fontFamily: 'Cabin-Regular',
-                        textAlignVertical: 'center',
-                        letterSpacing: 2.0,
-                        fontSize: 12,
-                        opacity: 0.7
+                {Platform.OS != 'android' &&
+                    <TextInput
+                        style={{
+                            top: 135,
+                            left: 25,
+                            height: 35,
+                            width: Dimensions.get('screen').width - 50,
+                            padding: 10,
+                            backgroundColor: '#1c1919',
+                            borderWidth: 1,
+                            borderColor: "#3f3b4a",
+                            color: '#FFFFFF',
+                            fontFamily: 'Cabin-Regular',
+                            textAlignVertical: 'center',
+                            letterSpacing: 2.0,
+                            fontSize: 12,
+                            opacity: 0.7
 
-                    }}
-                    clearButtonMode={'while-editing'}
-                    placeholder="SEARCH BY ARTIST NAME"
-                    onChangeText={(searchText) => {
-                        console.log("TextInput Change" + searchText)
-                        this.state.searchTextInput = searchText;
-                        this.preProcessListData(DataModel.getInstance().dyn_dataArtistsList)
-                        this.forceUpdate();
-                    }}
-                    defaultValue={""}
-                />
+                        }}
+                        clearButtonMode={'while-editing'}
+                        placeholder="SEARCH BY ARTIST NAME"
+                        onChangeText={(searchText) => {
+                            console.log("TextInput Change" + searchText)
+                            this.state.searchTextInput = searchText;
+                            this.preProcessListData(DataModel.getInstance().dyn_dataArtistsList)
+                            this.forceUpdate();
+                        }}
+                        defaultValue={""}
+                    />
+                }
 
                 {this.state.modelUpdateState == 0 &&
 

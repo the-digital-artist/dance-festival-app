@@ -19,7 +19,7 @@ class LauncherController extends OperatorStates {
             state: "splash",
             sessionListCount: 0,
 
-            navigationHistory: [{ out: "HomeScreen", transition: "initial" }],
+            navigationHistory: [{ out: "HomeScreen", transition: "initial", data: {} }],
 
             artistListReference: null,
 
