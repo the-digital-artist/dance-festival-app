@@ -1,6 +1,6 @@
 export const modelInitStaticOverwrite =
 {
-  "modelVersion": 1185,
+  "modelVersion": 1189,
   "festivalName": "WELLBEING",
   "modelRemoteGetModelUrl": "https://5sw1zcun82.execute-api.us-west-1.amazonaws.com/wellbeingModelContent",
   "modelRemoteVersionCheckUrl": "https://5sw1zcun82.execute-api.us-west-1.amazonaws.com/wellbeingModelVersion",
@@ -801,6 +801,23 @@ export const modelInitStaticOverwrite =
       "portrait": "nicola_bosco-alvarez",
       "email": "",
       "phone": ""
+    },
+    "Nick Ward & Timothy Hampton": {
+      "fullName": "Nick Ward & Timothy Hampton",
+      "pronouns": "",
+      "artistLocation": "",
+      "artistCompany": "",
+      "editionData": [
+        "03-2024"
+      ],
+      "insta": "",
+      "web": "",
+      "bio": "was born.. ",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "nick_ward_-_timothy_hampton",
+      "email": "",
+      "phone": ""
     }
   },
   "dataScheduleRaw": [
@@ -998,6 +1015,7 @@ export const modelInitStaticOverwrite =
       "level": "",
       "group": [
         "c874cbe1d329de443aa4e160be462c0c",
+        "c58c6a30a77c1e870ef9ec4af0e598b9",
         "13b859bcec5e064aa8e79112a8f4ada8"
       ],
       "groupTitle": "Group Class",
@@ -1356,6 +1374,35 @@ export const modelInitStaticOverwrite =
       "flagIncludeInNow": false
     },
     {
+      "id": "c58c6a30a77c1e870ef9ec4af0e598b9",
+      "itemType": "type1",
+      "artistName": "Nick Ward & Timothy Hampton",
+      "sessionMainTitle": "Abundance",
+      "time": "2:30-3pm",
+      "room": "Main Fair Room",
+      "description": "",
+      "level": "",
+      "group": [
+        "c874cbe1d329de443aa4e160be462c0c",
+        "c58c6a30a77c1e870ef9ec4af0e598b9",
+        "13b859bcec5e064aa8e79112a8f4ada8"
+      ],
+      "groupTitle": "Conversation Circles",
+      "groupSubtitle": "",
+      "shortMainTitle": "",
+      "dateString": "Sat, September 21, 2024",
+      "startTime": "2:30pm",
+      "endTime": "3pm",
+      "place": "",
+      "sessionSubtitle": "",
+      "sessionDescription": "",
+      "artistOne": "Nick Ward & Timothy Hampton",
+      "artistTwo": "",
+      "artistLocation": "",
+      "flag": false,
+      "flagIncludeInNow": false
+    },
+    {
       "id": "1e1cb04b93d251864aebfad733966867",
       "itemType": "type1",
       "artistName": "Lydia Real",
@@ -1407,31 +1454,6 @@ export const modelInitStaticOverwrite =
       "sessionSubtitle": "",
       "sessionDescription": "",
       "artistOne": "Marc Morozumi",
-      "artistTwo": "",
-      "artistLocation": "",
-      "flag": false,
-      "flagIncludeInNow": false
-    },
-    {
-      "id": "cb16abf7018dc8e2281c57b3bb492e25",
-      "itemType": "type4",
-      "artistName": "Meghan Johnson",
-      "sessionMainTitle": "Chair Massage and Aromatherapy",
-      "time": "",
-      "room": "Main Fair Room",
-      "description": "To the care takers, worriers, workaholics, activists, and intuitives! Landscapers, executives, carpenters, artists, and self employed weirdos! Witches, bitches, teachers, and tech bros! Whether your day-to-day is filled with the physical strain of training for a marathon or sitting at a desk, your body is your tool that needs restoration and replenishment. Massage therapy is a powerful support for easing stress, relieving aches and pains, and establishing a new relationship to touch. From chronic pain to acute injuries, I have helped many of my clients find new neural and physical pathways to feeling better through manual therapy and brainstorming shifting daily habits that may be causing recurring pain. I offer holistic care that is trauma informed, pharmaceutical inclusive, and guided by my knowledge of anatomy and space holding skills.",
-      "level": "",
-      "group": [],
-      "groupTitle": "Massage",
-      "groupSubtitle": "",
-      "shortMainTitle": "",
-      "dateString": "Sat, September 21, 2024",
-      "startTime": "",
-      "endTime": "",
-      "place": "",
-      "sessionSubtitle": "",
-      "sessionDescription": "",
-      "artistOne": "Meghan Johnson",
       "artistTwo": "",
       "artistLocation": "",
       "flag": false,
@@ -1581,6 +1603,7 @@ export const modelInitStaticOverwrite =
       "level": "",
       "group": [
         "c874cbe1d329de443aa4e160be462c0c",
+        "c58c6a30a77c1e870ef9ec4af0e598b9",
         "13b859bcec5e064aa8e79112a8f4ada8"
       ],
       "groupTitle": "Outside",

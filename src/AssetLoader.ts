@@ -52,7 +52,7 @@ class AssetLoader {
             console.log('trying to load: tina_pham'); imageList.push({ fileName:'tina_pham.png', imgSrc: require('../assets/portraits/tina_pham.png')} ); 
             console.log('trying to load: andrea_stern'); imageList.push({ fileName:'andrea_stern.png', imgSrc: require('../assets/portraits/andrea_stern.png')} ); 
             console.log('trying to load: nicola_bosco-alvarez'); imageList.push({ fileName:'nicola_bosco-alvarez.png', imgSrc: require('../assets/portraits/nicola_bosco-alvarez.png')} );       
-  
+            console.log('trying to load: nick_ward_-_timothy_hampton'); imageList.push({ fileName:'nick_ward_-_timothy_hampton.png', imgSrc: require('../assets/portraits/nick_ward_-_timothy_hampton.png')} ); 
         } catch (error) {
             console.log('Could not load asset: dr_brian_hernandez');
         };

@@ -19,7 +19,7 @@ const ScheduleListItemType4 = ({ item, showDetailsButton = true }) => {
   const artistData1 = DataModel.getInstance().static.dataArtists[item.artistOne];
   const artistData2 = item.artistTwo ? DataModel.getInstance().static.dataArtists[item.artistTwo] : null;
   const verticalOffsetTitleLength = item.lineCount != undefined ? (item.lineCount * 19) : 19;
-  const preSignupRequired = ((item.sessionMainTitle as string).toLowerCase().indexOf("absolute beginner") == -1)
+  const preSignupRequired = (sessionCategoryName == 'Massage Zone')
 
   const artistImageSize = item.itemHeight - 52;
 
