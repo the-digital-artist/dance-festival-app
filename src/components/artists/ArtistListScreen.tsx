@@ -133,7 +133,7 @@ class ArtistListScreen extends PureComponent implements IDataDependentComponent 
                             // backgroundColor: 'skyblue',
                             left: 0, top: Platform.OS == 'ios' ? 180 : 125,
                             width: Dimensions.get('screen').width,
-                            height: Platform.OS == 'ios' ? (Dimensions.get('screen').height - 100) : (Dimensions.get('screen').height - 145),
+                            height: Platform.OS == 'ios' ? (Dimensions.get('screen').height - 180) : (Dimensions.get('screen').height - 145),
                             opacity: 1
                         }}
                         data={this.listDataPreProcessed} />
@@ -144,19 +144,19 @@ class ArtistListScreen extends PureComponent implements IDataDependentComponent 
                     <TextInput
                         style={{
                             top: 135,
-                            left: 25,
+                            left: 10,
                             height: 35,
-                            width: Dimensions.get('screen').width - 50,
+                            width: Dimensions.get('screen').width - 20,
                             padding: 10,
                             backgroundColor: '#1c1919',
                             borderWidth: 1,
-                            borderColor: "#3f3b4a",
+                            borderColor: "#4f4b5a",
                             color: '#FFFFFF',
                             fontFamily: 'Cabin-Regular',
                             textAlignVertical: 'center',
                             letterSpacing: 2.0,
                             fontSize: 12,
-                            opacity: 0.7
+                            opacity: 0.8
 
                         }}
                         clearButtonMode={'while-editing'}

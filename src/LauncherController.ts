@@ -315,7 +315,7 @@ class LauncherController extends OperatorStates {
             console.log('LauncherController - checking local models...');
 
             const value = await AsyncStorage.getItem('dataModel');
-            // console.log('LauncherController - value ' + value);
+            // console.log('LauncherController - value ' + value.substring(0,100));
             const localModelCopy = {};
             if (value == null) { //never used local storage - first time load
                 const modelAsString = JSON.stringify(DataModel.getInstance().static);
