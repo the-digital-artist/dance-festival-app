@@ -29,7 +29,7 @@ class LoginScreen extends LComponent {
                     backgroundColor: '#585d96',
                 }}
                 visualProperties={{
-                    alpha: 1.0, x: 0, y: 0, z: 0, w: "windowWidth", h: "windowHeight"
+                    alpha: 1.0, x:  "windowWidth", y: 0, z: 0, w: "windowWidth", h: "windowHeight"
                 }}>
 
 
