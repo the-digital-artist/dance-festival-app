@@ -3,7 +3,7 @@ import LauncherController from "../LauncherController";
 import TweenManager from "../core/LTweenManager";
 import { PureComponent } from "react";
 
-const TransitionArtistNavigateDown = (item, levelIndex) => {
+const TransitionArtistNavigateDown = (item, levelIndex, ) => {
         console.log("TransitionArtistNavigateDown");
 
         LauncherController.getInstance().context.artistFocusItem = item;
@@ -26,7 +26,7 @@ const TransitionArtistNavigateDown = (item, levelIndex) => {
         let screenNameIn = stackData[newIndex].associatedScreenName
         TweenManager.tween().to(screenNameIn, 0, { y: 0 });
         TweenManager.tween().to(screenNameIn, 200, { x: 0  });
-        TweenManager.tween().to(screenNameIn, 284, { alpha: 1, z: 0, delay: 137 });
+        TweenManager.tween().to(screenNameIn, 200, { alpha: 1, z: 0, delay: 137 });
 
         let screenNameOut = stackData[oldIndex].associatedScreenName
         TweenManager.tween().to(screenNameOut, 134, { alpha: 1, z: 0 });
