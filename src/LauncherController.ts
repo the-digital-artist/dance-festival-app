@@ -10,9 +10,11 @@ import OperatorStates from './core/LOperatorStates';
 import TransitionScreenL1toL2 from './transitions/TransitionScreenL1toL2';
 import TransitionScreenL2toL3 from './transitions/TransitionScreenL2toL3';
 import TransitionScreenSplashToLoading from './transitions/TransitionScreenSplashToLoading';
+import Eventl from './core/LEventl';
 
 
 class LauncherController extends OperatorStates {
+    staging = 'prod';
 
     context =
         {
@@ -133,8 +135,8 @@ class LauncherController extends OperatorStates {
 
             //components dependent on data model
             dataModelUpdateState: 0,
+            dataDependentComponents: [],
             dataDependentComponentSchedulerScreen: null,
-            dataDependentComponentArtistScreen: null,
         };
 
     flow =
@@ -267,23 +269,24 @@ class LauncherController extends OperatorStates {
         const uiManager = global?.nativeFabricUIManager ? 'Fabric' : 'Paper';
         console.log(`LauncherController - using ${uiManager}`);
 
+        //if we are on beta stage, fix the api URL
+        this.staging = process.env.EXPO_PUBLIC_STAGING!=undefined?process.env.EXPO_PUBLIC_STAGING:'prod';
+        dataModel.apiUrlBase =  this.staging !='prod'?(dataModel.apiUrlBase+"/"+this.staging) : dataModel.apiUrlBase;
+
         try {
             await this.checkForUpdate();
             await Font.loadAsync(this.customFonts);
             console.log("LauncherController - Fonts loaded.");
-            // await this.getLocallyStoredDataModel();
-            await this.getRemoteDataModel();
+            await this.getLocallyStoredDataModel();
+
+            await ActionUpdateDataModelWithRemote({noProcessing: true,  timeOut:800} )
             console.log('LauncherController - Model local/remote checks w/ potential update completed.');
             await this.prepareDataModel();
             console.log('LauncherController initialization done. Tutorial completed: ' + this.appTutorialCompleted);
 
-            const checkForModelUpdate = setInterval(() => { ActionUpdateDataModelWithRemote(); }, dataModel.modelRemoteUpdateInterval);
-            // ActionUpdateDataModelWithRemote();
+            const checkForModelUpdate = setInterval(() => { ActionUpdateDataModelWithRemote({noProcessing: false,  timeOut:dataModel.modelRemoteUpdateInterval-1000}); }, dataModel.modelRemoteUpdateInterval);
 
             BackHandler.addEventListener('hardwareBackPress', () => { ActionHistoryBackButton(); return true; })
-            // ActionUpdateHappeningNow();
-            // const checkHappeningNowFunction = setInterval(() => { ActionUpdateHappeningNow(); }, dataModel.happeningNowUpdateInterval);
-
         } catch (e) {
             console.warn(e);
         } finally { }
@@ -307,43 +310,26 @@ class LauncherController extends OperatorStates {
 
     async getLocallyStoredDataModel() {
         const dataModel = DataModel.getInstance().static;
-        // console.log('LauncherController - DataModel.getInstance().static==undefined: ' + (DataModel.getInstance().static==undefined));
-        // console.log('LauncherController - DataModel.getInstance().static.modelVersion==undefined: ' + (DataModel.getInstance().static.modelVersion==undefined));
-        // console.log('LauncherController - DataModel.getInstance().static: ' + JSON.stringify(DataModel.getInstance().static));
 
         try {
             console.log('LauncherController - checking local models...');
 
             const value = await AsyncStorage.getItem('dataModel');
-            console.log('LauncherController - value ' + value);
-
+            // console.log('LauncherController - value ' + value);
             const localModelCopy = {};
             if (value == null) { //never used local storage - first time load
                 const modelAsString = JSON.stringify(DataModel.getInstance().static);
                 console.log('LauncherController  - using initial model (and storing locally): ' + dataModel.modelVersion);
                 AsyncStorage.setItem('dataModel', modelAsString);
-                // for (const key in dataModel) {
-                //     if (key=='_instance' || key=='instance' || key.indexOf('dyn_')==0) {
-                //         console.log("LauncherController - fresh - skipping "+key)
-                //         continue;
-                //     }
-                //     console.log("LauncherController - fresh - building "+key)
-                //     localModelCopy[key] = dataModel[key];
-                // }
-                // const modelAsString = JSON.stringify(localModelCopy);
                 return;
             }
-            if (value !== null) {
+            if (value != null) {
                 console.log("LauncherController - retrieving local storage ")
                 const locallyStoredModel = JSON.parse(value);
+                console.log("LauncherController -  local storage version "+locallyStoredModel.modelVersion)
                 if (locallyStoredModel.modelVersion <= dataModel.modelVersion) return;
                 console.log('LauncherController - initial model version: ' + DataModel.getInstance().static.modelVersion);
                 DataModel.getInstance().static = locallyStoredModel;
-                // for (const key in locallyStoredModel) {
-                //     console.log("LauncherController - retrieving local storage "+key)
-                //     dataModel[key] = locallyStoredModel[key];
-                // }
-
                 console.log('LauncherController - after overwriting with locally stored model: ' + DataModel.getInstance().static.modelVersion);
                 return;
             }
@@ -352,41 +338,41 @@ class LauncherController extends OperatorStates {
         }
     };
 
-    async getRemoteDataModel() {
-        const dataModel = DataModel.getInstance().static;
+    // async getRemoteDataModel() {
+    //     const dataModel = DataModel.getInstance().static;
 
-        try {
-            console.log('LauncherController - checking remote models...');
-            const fetchController = new AbortController()
-            setTimeout(() => { fetchController.abort() }, 1500)
+    //     try {
+    //         console.log('LauncherController - checking remote models...');
+    //         const fetchController = new AbortController()
+    //         setTimeout(() => { fetchController.abort() }, 1500)
 
-            const response = await fetch(dataModel.modelRemoteGetModelUrl, { signal: fetchController.signal });
-            if (!response.ok) return;
+    //         const response = await fetch(dataModel.apiUrlBase + dataModel.apiModelUpdateVersion, { signal: fetchController.signal });
+    //         if (!response.ok) return;
 
-            const remoteModel = await response.json();
-            console.log('LauncherController - remote model with version: ' + remoteModel.modelVersion,);
+    //         const remoteModel = await response.json();
+    //         console.log('LauncherController - remote model with version: ' + remoteModel.modelVersion,);
 
-            if (remoteModel.modelVersion <= dataModel.modelVersion) return;
+    //         if (remoteModel.modelVersion <= dataModel.modelVersion) return;
 
-            // now sync all the keys in the remote model to the local model
-            for (const key in remoteModel) {
-                if (Object.prototype.hasOwnProperty.call(dataModel, key)) {
-                    console.log("LauncherController - syncing local key with remote key: " + key);
-                    dataModel[key] = remoteModel[key];
-                }
-            }
-            console.log('LauncherController - using remote model and storing locally.' + remoteModel.modelVersion,);
+    //         // now sync all the keys in the remote model to the local model
+    //         for (const key in remoteModel) {
+    //             if (Object.prototype.hasOwnProperty.call(dataModel, key)) {
+    //                 console.log("LauncherController - syncing local key with remote key: " + key);
+    //                 dataModel[key] = remoteModel[key];
+    //             }
+    //         }
+    //         console.log('LauncherController - using remote model and storing locally.' + remoteModel.modelVersion,);
 
-            AsyncStorage.setItem('dataModel', JSON.stringify({ dataModel }));
+    //         AsyncStorage.setItem('dataModel', JSON.stringify({ dataModel }));
 
-        } catch (error) {
-            if (error.message == "Aborted") {
-                console.log('LauncherController - Internet too slow to get remote model.');
-                return;
-            }
-            // console.error(error);
-        }
-    }
+    //     } catch (error) {
+    //         if (error.message == "Aborted") {
+    //             console.log('LauncherController - Internet too slow to get remote model.');
+    //             return;
+    //         }
+    //         // console.error(error);
+    //     }
+    // }
 
     async prepareDataModel() {
         const dataModel = DataModel.getInstance().static;
@@ -402,7 +388,7 @@ class LauncherController extends OperatorStates {
             // console.log('Assigning Images' +k)
             const artistItem = dataModel.dataArtists[k];
             const artistNameNorm = k.toLowerCase().replace(" y ", " & ");
-            console.log('Artist: ' + artistNameNorm)
+            // console.log('Artist: ' + artistNameNorm)
             const expectedFilename = artistNameNorm.toLowerCase().replace(/[.’]/g, "").replace(/[ ]/g, "_").replace(/[&]/g, "-").replace('é','e') + ".png"
             // ('&','-').replaceAll(' ','_').replaceAll('.','').replace(`’`,'');
 
@@ -411,7 +397,7 @@ class LauncherController extends OperatorStates {
                 // console.log(`   expectedFilename: ${expectedFilename} - checking asset name: ${this.staticImageList[j].fileName}` )
                 if (this.staticImageList[j].fileName == expectedFilename) {
                     artistItem['imgSrc'] = this.staticImageList[j].imgSrc;
-                    console.log('          ' + ' -> ' + this.staticImageList[j].fileName)
+                    // console.log('          ' + ' -> ' + this.staticImageList[j].fileName)
                     break;
                 }
             }

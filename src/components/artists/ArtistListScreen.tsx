@@ -7,9 +7,10 @@ import ScreenHeader from "../screens/ScreenHeader";
 import ScreenHomeButton from "../screens/ScreenHomeButton";
 import ArtistListComponent from "./ArtistListComponent";
 import NavBar from "../navbar/NavBar";
+import IDataDependentComponent from "../../IDataDependentComponent";
 
 
-class ArtistListScreen extends PureComponent {
+class ArtistListScreen extends PureComponent implements IDataDependentComponent {
     listDataPreProcessed = []
 
     state = {
@@ -22,7 +23,8 @@ class ArtistListScreen extends PureComponent {
         super(props);
 
         LauncherController.getInstance().context.stackNavigator = props.navigation;
-        LauncherController.getInstance().context.dataDependentComponentArtistScreen = this;
+        LauncherController.getInstance().context.dataDependentComponents.push(this);
+
 
         this.preProcessListData(DataModel.getInstance().dyn_dataArtistsList)
 

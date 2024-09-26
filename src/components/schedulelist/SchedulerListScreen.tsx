@@ -10,10 +10,11 @@ import TabBar from "../tabbar/TabBar";
 import NavBar from "../navbar/NavBar";
 import ScreenHeader from "../screens/ScreenHeader";
 import ScreenHomeButton from "../screens/ScreenHomeButton";
+import IDataDependentComponent from "../../IDataDependentComponent";
 
 
 
-class SchedulerListScreen extends PureComponent {
+class SchedulerListScreen extends PureComponent implements IDataDependentComponent{
     // scheduleListArray = [] //{flatListRef: reference, nativeGestureObj: native, data: dataModelList[0] }
 
     state = {
@@ -26,7 +27,7 @@ class SchedulerListScreen extends PureComponent {
     constructor(props) {
         super(props);
 
-        LauncherController.getInstance().context.dataDependentComponentSchedulerScreen = this;
+        LauncherController.getInstance().context.dataDependentComponents.push(this);
 
         this.state.modelUpdateState = 2;
         this.state.dataModelList = DataModel.getInstance().dyn_dataScheduleListsByDay;

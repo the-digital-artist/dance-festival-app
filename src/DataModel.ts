@@ -40,10 +40,11 @@ class DataModel {
 
 	//static properties (may be updated by remote model version)
 	static: any = {
-		modelRemoteGetModelUrl: 'https://wa1koeb029.execute-api.eu-central-1.amazonaws.com/caldacModelContent',
-		modelRemoteVersionCheckUrl: 'https://wa1koeb029.execute-api.eu-central-1.amazonaws.com/caldacModelVersion',
-		modelRemoteUpdateInterval: 55000,
+		apiUrlBase: 'https://odwoytfhtf.execute-api.us-west-1.amazonaws.com',
+		apiModelUpdateContent: '/content',
+		apiModelUpdateVersion: '/version',
 
+		modelRemoteUpdateInterval: 55000,
 		happeningNowUpdateInterval: 30000,
 
 		modelVersion: 1000,
