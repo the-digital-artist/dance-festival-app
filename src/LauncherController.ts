@@ -11,6 +11,7 @@ import TransitionScreenL1toL2 from './transitions/TransitionScreenL1toL2';
 import TransitionScreenL2toL3 from './transitions/TransitionScreenL2toL3';
 import TransitionScreenSplashToLoading from './transitions/TransitionScreenSplashToLoading';
 import Eventl from './core/LEventl';
+import ActionTimeBasedUpdates from './actions/ActionTimeBasedUpdates';
 
 
 class LauncherController extends OperatorStates {
@@ -212,7 +213,8 @@ class LauncherController extends OperatorStates {
 
     updateInfo = 'none';
 
-    tabBarIndex = 0
+    tabBarInitialIndex = 0;
+    tabBarIndex = 0;
     tabBarData =
         [
             { id: 0, itemText: "Thursday", associatedScreenName: "scheduleList0", imgSrc: null },
@@ -284,6 +286,7 @@ class LauncherController extends OperatorStates {
             await this.prepareDataModel();
             console.log('LauncherController initialization done. Tutorial completed: ' + this.appTutorialCompleted);
 
+            ActionTimeBasedUpdates();
             const checkForModelUpdate = setInterval(() => { ActionUpdateDataModelWithRemote({noProcessing: false,  timeOut:dataModel.modelRemoteUpdateInterval-1000}); }, dataModel.modelRemoteUpdateInterval);
 
             BackHandler.addEventListener('hardwareBackPress', () => { ActionHistoryBackButton(); return true; })

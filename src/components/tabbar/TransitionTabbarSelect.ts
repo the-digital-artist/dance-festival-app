@@ -3,7 +3,7 @@ import LauncherController from "../../LauncherController";
 import TweenManager from "../../core/LTweenManager";
 import { Easing, withTiming } from "react-native-reanimated";
 
-const TransitionTabbarSelect = (index, animCurrentIndex = null, itemData = null) => {
+const TransitionTabbarSelect = (index, animCurrentIndex = null, itemData = null, createHistory = true) => {
         console.log("TransitionTabbarSelect" + index);
 
         let maxAlpha: 1;
@@ -31,9 +31,10 @@ const TransitionTabbarSelect = (index, animCurrentIndex = null, itemData = null)
                         easing: Easing.inOut(Easing.quad),
                 })
         }
-        LauncherController.getInstance().context.navigationHistory.push({ out: screenNameOut, transition: 'TransitionTabbarSelect', data:{prevIndex: oldIdx, newIndex: index} })
 
-        return;
+        if(!createHistory) return;
+       
+        LauncherController.getInstance().context.navigationHistory.push({ out: screenNameOut, transition: 'TransitionTabbarSelect', data:{prevIndex: oldIdx, newIndex: index} })
 }
 
 export default TransitionTabbarSelect;
