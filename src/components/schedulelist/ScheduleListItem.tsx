@@ -4,6 +4,7 @@ import ScheduleItemGroupRe from './ScheduleItemGroupRe';
 import ScheduleListItemType2 from './ScheduleListItemType2';
 import ScheduleListItemType3 from './ScheduleListItemType3';
 import ScheduleListItemType4 from './ScheduleListItemType4';
+import LText from '../../core/LText';
 
 
 const ScheduleListItem = ({ item, index }) => {
@@ -37,8 +38,22 @@ const ScheduleListItem = ({ item, index }) => {
   if (item.itemType == 'type1' && item.dateString == "Thu, October 17, 2024") {
     itemHeight = 170;
   }
-   
-  // console.log("time value: "+item.time);
+
+  //if the time is in US format, we want sections with AM and PM being very small
+  const timeTextFields = []
+  const timeStringArray = item.time!=undefined?(item.time as string).toLowerCase().split('m'):[];
+  for (let k = 0; k < timeStringArray.length; k++) {
+    const s = timeStringArray[k]
+    const charAmOrPm = s.charAt(s.length - 1);
+    if (charAmOrPm != 'a' && charAmOrPm != 'p') {
+      timeTextFields.push({ type: 'normal', str: s });
+      continue;
+    }
+    timeTextFields.push({ type: 'normal', str: s.substring(0, s.length - 2) });
+    timeTextFields.push({ type: 'high', str: (" "+s.substring(s.length - 1) + 'm') });
+  }
+
+
 
   item['assignedListIndex'] = index;
   item['itemHeight'] = itemHeight;
@@ -50,9 +65,9 @@ const ScheduleListItem = ({ item, index }) => {
     orientation = (LauncherController.getInstance().context['sessionListCount']++) % 2 == 0 ? 'left' : 'right'
   }
 
-  const overwriteGroupTitles = true;
+  const overwriteGroupTitles = false;
   const groupMainTitle = overwriteGroupTitles ? ("Parallel Workshop Sessions" as string).toLocaleUpperCase() : (item.groupTitle)
-  const groupSubTitle = overwriteGroupTitles ? ("Swipe to Browse Rooms:" as string).toLocaleUpperCase() : (item.groupSubtitle as string).toLocaleUpperCase()
+  const groupSubTitle = overwriteGroupTitles ? ("Swipe to Browse Rooms:" as string).toLocaleUpperCase() :(item.groupSubtitle!=undefined?(item.groupSubtitle as string).toLocaleUpperCase():'')
 
 
   // const flatListRef = (LauncherController.getInstance().context.dataDependentComponentSchedulerScreen as SchedulerScreen).flatListRef[0];
@@ -67,7 +82,7 @@ const ScheduleListItem = ({ item, index }) => {
           height: itemHeight, width: Dimensions.get('screen').width - 2 * paddingLeftAndRight,
           borderTopColor: '#FFFFFF',
           borderTopWidth: 0,
-          borderBottomWidth: (item.itemType == "type5"?0:StyleSheet.hairlineWidth),
+          borderBottomWidth: (item.itemType == "type5" ? 0 : StyleSheet.hairlineWidth),
           borderBottomColor: '#EFEFEF',
         }}>
 
@@ -94,9 +109,9 @@ const ScheduleListItem = ({ item, index }) => {
         {item.itemType == "type3" ? <ScheduleListItemType3 item={item} /> : null}
         {item.itemType == "type4" ? <ScheduleListItemType4 item={item} /> : null}
 
-        {item.itemType == "type1" && item.group.length>1?
+        {item.itemType == "type1" && item.group.length > 1 ?
           <>
-            {index <= 1 && <Text allowFontScaling={false} id='textGroupTitle' style={{
+            {false && index <= 1 && <Text allowFontScaling={false} id='textGroupTitle' style={{
               position: 'absolute',
               top: 8,
               left: 90,
@@ -128,18 +143,38 @@ const ScheduleListItem = ({ item, index }) => {
           : null}
       </View>
 
-      <Text allowFontScaling={false} id='textTime' style={{
+
+      <LText id='textTime' style={{
         position: 'absolute',
-        top: 10, left: 6,
-        width: 70, height: 15,
+        top: 10, left: 20,
+        width: 100, height: 15,
         fontFamily: 'DINNeuzeitGroteskStd-Light',
         // backgroundColor: 'skyblue',
-        textAlign: 'right',
+        textAlign: 'left',
         color: '#ede8e3',
         fontSize: 12,
       }}>
-        {item.time}
-      </Text>
+        {
+          timeTextFields.map((item, i) => {
+            return (
+              <LText 
+                id={'textTime'+i}
+                key={`textTime`+i}
+                style={{
+                  top: item.type == 'high' ? 6 : 10, margin: 2,
+                  width: 70, height: 15,
+                  fontFamily: 'DINNeuzeitGroteskStd-Light',
+                  // backgroundColor: 'red',
+                  textAlign: 'left',
+                  color: '#ede8e3',
+                  fontSize: item.type == 'high' ? 8 : 12,
+                }}>
+                {item.str}
+              </LText>
+            )
+          })
+        }
+      </LText>
     </>
   );
 }

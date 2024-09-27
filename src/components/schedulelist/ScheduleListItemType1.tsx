@@ -66,7 +66,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     // const fontSizeMainTitle =20;
     const fontSizeArtistName =16;
 
-    const reduceInnerTileHeightBy = item.dateString != "Thu, October 17, 2024"?30:5;
+    const reduceInnerTileHeightBy = item.dateString != "Thu, October 17, 2024"?30:20;
 
     // console.log("ScheduleListItemType1 tileLength " + this.props.tileWidth + " artistImageWidth: "+ imageWidthArtistImage);
 

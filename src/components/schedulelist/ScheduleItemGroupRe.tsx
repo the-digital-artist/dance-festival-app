@@ -163,7 +163,7 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
                         position: 'absolute',
                         // backgroundColor: 'skyblue',
                         left: 0, 
-                        top: ((mainItem.dateString == "Thu, October 17, 2024")?30:45),
+                        top: ((mainItem.dateString == "Thu, October 17, 2024")?30:30),
                         height: 90, width: Dimensions.get("screen").width - 2 * paddingLeftAndRight,
                         opacity: 1
                     }]}>

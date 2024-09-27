@@ -26,8 +26,8 @@ const ScheduleListItemType4 = ({ item }) => {
     <>
       <View id='bg' style={{
         position: 'absolute',
-        top: 33, left: 0,
-        height: item.itemHeight - 50,
+        top: 30, left: 0,
+        height: item.itemHeight - 40,
         width: Dimensions.get('screen').width - 10,
         opacity: 0.2,
         padding: 0,
@@ -37,8 +37,8 @@ const ScheduleListItemType4 = ({ item }) => {
 
       <Text allowFontScaling={false} id='textSessionCategoryAndRoom' style={{
         position: 'absolute',
-        top: 7,
-        left: 85,
+        top: 35,
+        left: 82,
         fontFamily: 'Cabin-Regular',
         letterSpacing: 1.2,
         opacity: 0.8,
@@ -57,7 +57,7 @@ const ScheduleListItemType4 = ({ item }) => {
           // backgroundColor: 'skyblue',
           flex: 1, flexDirection: 'column',
           left: 85,
-          top: 43,
+          top: 60,
           width: Dimensions.get('screen').width / 2,
           height: 40
         }}>
@@ -129,7 +129,7 @@ const ScheduleListItemType4 = ({ item }) => {
         style={{
           position: 'absolute',
           left: 80,
-          top: item.itemHeight - 55,
+          top: item.itemHeight - 40,
           height: 23, width: 130,
         }}
         text={"SESSION INFO"}
@@ -163,8 +163,8 @@ const ScheduleListItemType4 = ({ item }) => {
         style={{
           position: 'absolute',
           // backgroundColor: 'skyblue',
-          top: 30,
-          left: Dimensions.get('screen').width - 150,
+          top: 43,
+          left: Dimensions.get('screen').width - 140,
           width: 135,
           height: 135,
         }}
