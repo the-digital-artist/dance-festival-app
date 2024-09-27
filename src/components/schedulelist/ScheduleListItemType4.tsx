@@ -91,9 +91,9 @@ const ScheduleListItemType4 = ({ item }) => {
           fontSize: 23,
         }}>
 
-          <Text>
+          <LText>
             {(item.sessionMainTitle ? (item.sessionMainTitle as string) : "") + "  "}
-          </Text>
+          </LText>
 
           <Text allowFontScaling={false} id='textSessionCount' style={{
             fontFamily: 'Cabin-Regular',

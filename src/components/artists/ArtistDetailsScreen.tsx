@@ -10,6 +10,7 @@ import ScreenHeader from "../screens/ScreenHeader";
 import ScreenHomeButton from "../screens/ScreenHomeButton";
 import ArtistDetailsBioComponent from "./ArtistDetailsBioComponent";
 import TransitionArtistNavigateDown from "../../transitions/TransitionArtistNavigateDown";
+import LText from "../../core/LText";
 
 
 class ArtistDetailsScreen extends PureComponent {
@@ -72,7 +73,7 @@ class ArtistDetailsScreen extends PureComponent {
                             opacity: 1.0
                         }}
                         source={require('../../../assets/screen-artists-bg.png')} />
-                    <Text allowFontScaling={false} id='textLabelArtist' style={{
+                    <LText id='textLabelArtist' style={{
                         position: 'absolute',
                         top: 130,
                         left: 35,
@@ -85,7 +86,7 @@ class ArtistDetailsScreen extends PureComponent {
                         fontSize: 17,
                     }}>
                         {(item.fullName as string).toLocaleUpperCase()}
-                    </Text>
+                    </LText>
 
                     {(item.insta != undefined && item.insta != '') &&
                         socialBarData.map((itemData, i) => {

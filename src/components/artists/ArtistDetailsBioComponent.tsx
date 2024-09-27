@@ -4,6 +4,7 @@ import { ScrollView } from "react-native-gesture-handler";
 import LauncherController from "../../LauncherController";
 import LComponent from "../../core/LComponent";
 import NavBar from "../navbar/NavBar";
+import LText from "../../core/LText";
 
 
 class ArtistDetailsBioComponent extends PureComponent<any, any> {
@@ -71,7 +72,7 @@ class ArtistDetailsBioComponent extends PureComponent<any, any> {
                     onScrollToTop={this.scrollHandler}
                 >
 
-                    <Text
+                    <LText
                         id='artistBioFocus'
                         style={{
                             top: 0, margin: 15,
@@ -95,7 +96,7 @@ class ArtistDetailsBioComponent extends PureComponent<any, any> {
                         }}
                     >
                         {artistBiography}
-                    </Text>
+                    </LText>
                     <View
                         style={{
                             width: Dimensions.get('screen').width - 40 - 25,
@@ -155,7 +156,7 @@ class ArtistDetailsBioComponent extends PureComponent<any, any> {
                             opacity: 1.0 - (1.0 * Math.min(1, Math.max(0, this.state.scrollPosY / 10)))
                         }}
                     >
-                        <Text
+                        <LText
                             id='artistBioFocus'
                             style={{
                                 width: Dimensions.get('screen').width - artistImageSize + 40,
@@ -169,7 +170,7 @@ class ArtistDetailsBioComponent extends PureComponent<any, any> {
                             }}
                         >
                             {"SCROLL TO READ MORE"}
-                        </Text>
+                        </LText>
                     </View>
                 }
             </>

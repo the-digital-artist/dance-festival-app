@@ -1,10 +1,11 @@
 import React from "react";
-import { Dimensions, Image, Text, TextInput } from "react-native";
+import { Dimensions, Image, TextInput } from "react-native";
 import DataModel from "../../DataModel";
+import ActionLoginCompleted from "../../actions/ActionLoginCompleted";
 import LComponent from "../../core/LComponent";
+import LText from "../../core/LText";
 import ButtonSmall from "../ButtonSmall";
 import Subheader from "../TCSubheader";
-import ActionLoginCompleted from "../../actions/ActionLoginCompleted";
 
 class LoginScreen extends LComponent {
 
@@ -33,7 +34,7 @@ class LoginScreen extends LComponent {
                 }}>
 
 
-                <Text id='Headline Small' style={[{
+                <LText id='Headline Small' style={[{
                     position: 'absolute',
                     top: 170,
                     left: 30,
@@ -44,9 +45,9 @@ class LoginScreen extends LComponent {
                     fontSize: 18,
                 }, this.props.textStyle]}>
                     WELCOME TO CALDAC
-                </Text>
+                </LText>
 
-                <Text id='Headline Small' style={[{
+                <LText id='Headline Small' style={[{
                     position: 'absolute',
                     top: 200,
                     left: 30,
@@ -57,10 +58,10 @@ class LoginScreen extends LComponent {
                     fontSize: 12,
                 }, this.props.textStyle]}>
                     Colorado Afro-Latin Dance & Art Collective
-                </Text>
+                </LText>
 
 
-                <Text id='Headline Small' style={[{
+                <LText id='Headline Small' style={[{
                     position: 'absolute',
                     top: 300,
                     left: 150,
@@ -72,7 +73,7 @@ class LoginScreen extends LComponent {
                     width: Dimensions.get('screen').width - 150 - 60
                 }, this.props.textStyle]}>
                     Please sign into your account. During the closed beta phase, just select yourself below (no password).
-                </Text>
+                </LText>
 
                 <Subheader
                     text="SIGN IN"

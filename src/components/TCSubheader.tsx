@@ -1,5 +1,6 @@
-import { Dimensions, StyleSheet, Text, View } from "react-native";
+import { Dimensions, StyleSheet, View } from "react-native";
 import LComponent from "../core/LComponent";
+import LText from "../core/LText";
 
 class Subheader extends LComponent {
 
@@ -15,7 +16,7 @@ class Subheader extends LComponent {
         const y = this.props.y?this.props.y:0;
         return (
             <>
-               <Text id='Headline Small' style={[{
+               <LText id='Headline Small' style={[{
                 position: 'absolute', 
                 top: this.props.y, 
                 left: x,
@@ -26,7 +27,7 @@ class Subheader extends LComponent {
                 fontSize: 16,
             },this.props.textStyle]}>
                {this.props.text}
-            </Text>
+            </LText>
 
             <View
                 style={{

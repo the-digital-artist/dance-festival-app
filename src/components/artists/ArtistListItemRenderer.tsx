@@ -3,6 +3,7 @@ import ActionArtistListOnDetailsBtn from '../../actions/ActionArtistListOnDetail
 import ButtonSmall from '../ButtonSmall';
 import LTouchableOpacity from '../../core/LTouchableOpacity';
 import { memo, PureComponent, ReactNode } from 'react';
+import LText from '../../core/LText';
 
 //Data Item Example:
 // "Debbie Pacheco": {
@@ -56,7 +57,7 @@ class ArtistListItemRenderer extends PureComponent<any, any> {
           }}
         />
 
-        <Text allowFontScaling={false} id='textArtistName' style={{
+        <LText id='textArtistName' style={{
           position: 'absolute',
           top: 30, left: 140,
           width: 290, height: 19,
@@ -67,7 +68,7 @@ class ArtistListItemRenderer extends PureComponent<any, any> {
           color: '#eda253',
           fontSize: 14,
         }}>{(this.props.item.fullName as string).toLocaleUpperCase()}
-        </Text>
+        </LText>
 
         {this.props.item.fullName != '' &&
           <ButtonSmall
