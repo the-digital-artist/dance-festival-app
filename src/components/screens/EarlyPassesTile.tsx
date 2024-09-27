@@ -86,7 +86,7 @@ const EarlyPassesTile = (props) => {
                                 fontSize: 24,
                                 opacity: 0.9
                             }}>
-                                {("2024 Festival Passes").toLocaleUpperCase()}
+                                {("2024 Convention Passes").toLocaleUpperCase()}
                             </Text>
 
                             <Text allowFontScaling={false} id='textEarlyBird1' style={{
