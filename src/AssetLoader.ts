@@ -94,8 +94,8 @@ class AssetLoader {
         //now load companies
         try {
             
-        //     console.log('trying to load: and_academic_network_of_dance'); imageList.push({ fileName:'../assets/logos/and_academic_network_of_dance.png', imgSrc: require('../assets/logos/and_academic_network_of_dance.png')} );
-        //     console.log('trying to load: somos_dance_studio'); imageList.push({ fileName:'somos_dance_studio.png', imgSrc: require('../assets/logos/somos_dance_studio.png')} );
+            console.log('trying to load: and_academic_network_of_dance'); imageList.push({ fileName:'../assets/logos/and_academic_network_of_dance.png', imgSrc: require('../assets/logos/and_academic_network_of_dance.png')} );
+            console.log('trying to load: somos_dance_studio'); imageList.push({ fileName:'somos_dance_studio.png', imgSrc: require('../assets/logos/somos_dance_studio.png')} );
         } catch (error) {
             console.log('Could not load asset: dr_brian_hernandez');
         };
