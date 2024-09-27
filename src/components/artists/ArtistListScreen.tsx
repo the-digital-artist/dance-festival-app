@@ -105,7 +105,7 @@ class ArtistListScreen extends PureComponent implements IDataDependentComponent 
                 />
 
                 <ScreenHeader
-                    text={"ARTISTS & DJs"}
+                    text={"ARTISTS"}
                     color='#f8f6d3'
                     imgSrc={require('../../../assets/header-artists-bg.png')} />
 
