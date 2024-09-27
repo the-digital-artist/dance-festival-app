@@ -133,7 +133,7 @@ class SchedulerListScreen extends PureComponent implements IDataDependentCompone
 
 
                     <ScreenHeader
-                        text={"FESTIVAL PROGRAM"}
+                        text={"SCHEDULE"}
                         textStyle={{ top: 65 }}
                         color='#FFFFFF'
                         imgSrc={require('../../../assets/header-schedule-bg.png')} />
