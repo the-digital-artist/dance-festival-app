@@ -1,8 +1,8 @@
 export const modelInitStaticOverwrite =
 {
-  "modelVersion": 1000000,
+  "modelVersion": 2000000,
   "festivalName": "CALDAC",
-  "apiUrlBase": "https://odwoytfhtf.execute-api.us-west-1.amazonaws.com/beta",
+  "apiUrlBase": "https://odwoytfhtf.execute-api.us-west-1.amazonaws.com",
   "apiModelUpdateContent": "/content",
   "apiModelUpdateVersion": "/version",
   "modelRemoteUpdateInterval": 10000,
@@ -82,7 +82,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Eder & Milton",
       "artistLocation": "LOS ANGELES",
       "artistCompany": "",
-      "bio": "Here is the merged bio for Eder Avila and Milton Martinez:\n\nEder Avila and Milton Martinez are accomplished Salsa dancers with impressive careers spanning multiple international stages.\n\nBorn in Trujillo, Peru, Eder Avila began his dance journey after moving to the United States at age 15. He quickly mastered Salsa, creating a unique style that led him to found On2ourage in 2015, one of Southern California’s premier Salsa On2 dance companies. Eder has earned several prestigious awards, including LA’s Top Social Salsa Dancer in 2019 and 2020, and 1st Place in Salsa Same Gender Couples with Milton Martinez at Euroson Latino 2022. In 2023, he also secured 1st Place at SalsaNaMa USA in Las Vegas.\n\nMilton Martinez, born in Veracruz, is a multi-time World Salsa Champion, excelling in the Male Professional Solo and Same Gender Couples Salsa categories. He has also achieved international success in Jazz and Contemporary disciplines. Milton has studied abroad, earning scholarships in Holland and Norway, and training at renowned institutions like Broadway Dance Center and Millennium Dance Complex in New York, Salt Lake City, and Los Angeles. As a choreographer and instructor, Milton works with ME Sabor's adult and kids' teams. Together, Eder and Milton make a dynamic duo, pushing the boundaries of Salsa with their combined expertise.\n\nLet me know if you'd like any changes!",
+      "bio": "Eder Avila and Milton Martinez are accomplished Salsa dancers with impressive careers spanning multiple international stages.\n\nBorn in Trujillo, Peru, Eder Avila began his dance journey after moving to the United States at age 15. He quickly mastered Salsa, creating a unique style that led him to found On2ourage in 2015, one of Southern California’s premier Salsa On2 dance companies. Eder has earned several prestigious awards, including LA’s Top Social Salsa Dancer in 2019 and 2020, and 1st Place in Salsa Same Gender Couples with Milton Martinez at Euroson Latino 2022. In 2023, he also secured 1st Place at SalsaNaMa USA in Las Vegas.\n\nMilton Martinez, born in Veracruz, is a multi-time World Salsa Champion, excelling in the Male Professional Solo and Same Gender Couples Salsa categories. He has also achieved international success in Jazz and Contemporary disciplines. Milton has studied abroad, earning scholarships in Holland and Norway, and training at renowned institutions like Broadway Dance Center and Millennium Dance Complex in New York, Salt Lake City, and Los Angeles. As a choreographer and instructor, Milton works with ME Sabor's adult and kids' teams. Together, Eder and Milton make a dynamic duo, pushing the boundaries of Salsa with their combined expertise.\n\nLet me know if you'd like any changes!",
       "shortBio": "",
       "facebook": "",
       "portrait": "eder_-_milton"
@@ -151,15 +151,14 @@ export const modelInitStaticOverwrite =
       "facebook": "",
       "portrait": "jenny_pham"
     },
-    "Natasha Tia": {
-      "fullName": "Natasha Tia",
-      "artistLocation": "San Francisco",
+    "Johan & Alyssa": {
+      "fullName": "Johan & Alyssa",
+      "artistLocation": "Dallas",
       "artistCompany": "",
-      "insta": "natasha.tia",
-      "bio": "Natasha Tia has trained extensively in dance styles across many genres for over 30 years. In her 20 year mambo dancing career Miss Tia’s reputation of professionalism, strong technique, and energetic quality has enabled her to teach and perform with world class artists all over the world. In June 2020 Natasha founded 'Movewise Wellness,' a hybrid, on zoom + in person + on demand, platform specializing in Ayurvedic Sports Nutrition for dancers and athletes. A platform centered around teaching dancers how to tap into their unique self expression, deepen their mind-body-spirit connection, and ultimately gain confidence to feel freedom while dancing. Current offerings include weekly drop-in classes, monthly seminars, 1:1 tailored mentorship programs, performance and training projects, and private consulting.",
+      "bio": "They have established their salsa school Timba Tumbao in Dallas in 2011.\nThey have trained with world known teachers such as Rodrigo Cortazar & \nSelene Tovar , Grisselle Ponce, Jayson Molina, Marisol Blanco and Ranses \nShango from Cuba. \nThey currently train dancers for social dance, competition and performances.\nThey teach salsa classes on1, on2 , foundation of Afrocuban dance, Salsa, \nSon and Rumba Fusion, Boogaloo, Pachanga, Cha cha cha , Freestyle and \nMusicality Classes.\n\nWebsite: \n\nhttps://timbatumbaodallas.square.site/",
       "shortBio": "",
       "facebook": "",
-      "portrait": "natasha_tia"
+      "portrait": "johan_-_alyssa"
     },
     "Jorge & Indira": {
       "fullName": "Jorge & Indira",
@@ -268,19 +267,20 @@ export const modelInitStaticOverwrite =
       "fullName": "Jk Dance Company",
       "artistLocation": "los angeles",
       "artistCompany": "",
-      "bio": "Javier and\nKatya,\nprofessional\ndancer\ns\n,\nperformers and choreographers, actors.\nFor the last 10 years\nJavier and Katya have\nbeen working\ntogether pursuing careers in the Latin\ndance industry. T\nhey have numerous stage experiences performing at some of the biggest events\nand grand festivals.\nJavier and his\npartner\nKatya\nhave\nbeen involved in Latin dance community teaching, performing\nand trainin\ng Dance\nteams specializing in Salsa and B\nachata\nDance\nstyles.\nTogether they have\nbeen travell\ning nationally and internationally teaching and performing\nat\nsome of the biggest\nSalsa & Bachata\nevents like\nDenver\n,\nLas Vegas, San Francisco,\nReno, Seattle\n, Los Angeles\n,\nAtlanta Salsa Bachata Festivals & Cong\nresses\n,\nHawaii Bachata Expo\n,\nParamount Concern\nBenefit\nevent\ns\n,\nAventura Dance Cruise (Dominican Republic, Bahamas\n, M\nexico),\nCancun Mexico, Cali Colombia\n,\nTrinidad and Tobago Dance Festival\netc.\nThey won USA National Championship and got invited to repres\nent the United States\nat The\nOly\nmpic Games in Cali Colombia, they also\nmade it to\nthe\ntop\n4\nfinalists competing\nat\nfamous\nWorld Competitions like Euroson Latino\nSalsa Championship\nand\nWorld Latin Dance Cup\n.\nJavier and Katya\nused to\nhost S\nalsa\nand B\nachata\nS\nocials in Los Angeles \"JK Social\" that have\nbecome one of the largest and most popular bi\n-\nmonthly dance events in Los Angeles.\nFor the love of the dance\ncommunity\nthey\nhave put to\ngeth\ner and organized the event called\nJK Fest\nAnnual Los Angeles Salsa Bach\nata Festiva\nl.\nT\nhey have founded JK Dance Company\ngrowing together as dancers, teachers and performers\naround the world.\nThis\nyear they’ve been\nputting all the energy together and working really hard to accomplish to\nopen a JK Dance Co. Studio offering opp\nortunities to learn for a new generation of dancers.",
+      "bio": "Javier and Katya are accomplished professional dancers, choreographers, and performers who have dedicated the past decade to building their careers in the Latin dance industry. Specializing in Salsa and Bachata, they have gained extensive experience performing at major festivals and prestigious events worldwide. Their passion for teaching and performing has led them to train dance teams and actively contribute to the Latin dance community.\n\nThey have traveled nationally and internationally, performing at renowned events such as the Denver, Las Vegas, San Francisco, and Los Angeles Salsa and Bachata Festivals, the Aventura Dance Cruise, and the Trinidad and Tobago Dance Festival. Their achievements include winning the USA National Championship and representing the U.S. at the Olympic Games in Cali, Colombia, as well as securing top-four finishes in competitions like the Euroson Latino Salsa Championship and World Latin Dance Cup.\n\nIn addition to performing, Javier and Katya have made a significant impact on the Los Angeles dance scene through their popular \"JK Social\" events and the creation of the \"JK Fest Annual Los Angeles Salsa Bachata Festival.\" Their latest endeavor is the opening of JK Dance Co. Studio, where they continue to inspire and educate a new generation of dancers.",
       "shortBio": "",
       "facebook": "",
       "portrait": "jk_dance_company"
     },
-    "Johan & Alyssa": {
-      "fullName": "Johan & Alyssa",
-      "artistLocation": "Dallas",
+    "Natasha Tia": {
+      "fullName": "Natasha Tia",
+      "artistLocation": "San Francisco",
       "artistCompany": "",
-      "bio": "They have established their salsa school Timba Tumbao in Dallas in 2011.\nThey have trained with world known teachers such as Rodrigo Cortazar & \nSelene Tovar , Grisselle Ponce, Jayson Molina, Marisol Blanco and Ranses \nShango from Cuba. \nThey currently train dancers for social dance, competition and performances.\nThey teach salsa classes on1, on2 , foundation of Afrocuban dance, Salsa, \nSon and Rumba Fusion, Boogaloo, Pachanga, Cha cha cha , Freestyle and \nMusicality Classes.\n\nWebsite: \n\nhttps://timbatumbaodallas.square.site/",
+      "insta": "natasha.tia",
+      "bio": "Natasha Tia has trained extensively in dance styles across many genres for over 30 years. In her 20 year mambo dancing career Miss Tia’s reputation of professionalism, strong technique, and energetic quality has enabled her to teach and perform with world class artists all over the world. In June 2020 Natasha founded 'Movewise Wellness,' a hybrid, on zoom + in person + on demand, platform specializing in Ayurvedic Sports Nutrition for dancers and athletes. A platform centered around teaching dancers how to tap into their unique self expression, deepen their mind-body-spirit connection, and ultimately gain confidence to feel freedom while dancing. Current offerings include weekly drop-in classes, monthly seminars, 1:1 tailored mentorship programs, performance and training projects, and private consulting.",
       "shortBio": "",
       "facebook": "",
-      "portrait": "johan_-_alyssa"
+      "portrait": "natasha_tia"
     },
     "Bianca Chapman": {
       "fullName": "Bianca Chapman",
@@ -387,14 +387,14 @@ export const modelInitStaticOverwrite =
       "facebook": "",
       "portrait": "kingsmen"
     },
-    "Sandra & Zack": {
-      "fullName": "Sandra & Zack",
+    "Sandra & Zach": {
+      "fullName": "Sandra & Zach",
       "artistLocation": "DENVER",
       "artistCompany": "",
       "bio": "Sandra Milena and Zach Fivgas are passionate salsa and bachata instructors based in Denver, known for their regular classes at Blue Ice. Their love for these dance styles shines through in their teaching, as they are dedicated to sharing the joy and vibrant energy of salsa and bachata with their students. Sandra and Zach create a welcoming and dynamic learning environment, inspiring dancers of all levels to embrace the rhythms and excitement of Latin dance.",
       "shortBio": "",
       "facebook": "",
-      "portrait": "sandra_-_zack"
+      "portrait": "sandra_-_zach"
     },
     "Christopher Webster": {
       "fullName": "Christopher Webster",
@@ -465,8 +465,7 @@ export const modelInitStaticOverwrite =
       "fullName": "Rna Dance Company",
       "artistLocation": "HOUSTON",
       "artistCompany": "",
-      "insta": "",
-      "bio": "",
+      "bio": "Reni is a multi-faceted artist with a deep appreciation for the arts. In addition to his extensive study of bachata and salsa, he plays multiple instruments, including guitar, bass, and bongos, and is also skilled in drawing. Known as DJ Reni G, he has performed in cities such as Phoenix, Denver, Dallas, Houston, and the end of this year in Saigon in Vietnam. \n\nWith 20 years of experience in the dance scene and over 10 years as a dance instructor—7.5 of which were full-time—Reni believes that a well-rounded appreciation of arts and music fosters a healthy, creative environment that enhances both his craft and his voice in dance.\n\nHe has trained over 11,000 social dancer and over hundreds of performers. \n\nRNA Dance Company was founded by Reni Gongora in early 2017, blending his background as a chemist with his passion for dance. \n\nThe \"RNA\" in the company's name reflects Reni's scientific roots, as he brings an analytical approach to teaching the science behind dance and loves to teach outside of the conventional pattern based dance classes.",
       "shortBio": "",
       "facebook": "",
       "portrait": "rna_dance_company"
@@ -480,6 +479,16 @@ export const modelInitStaticOverwrite =
       "shortBio": "",
       "facebook": "",
       "portrait": "cam"
+    },
+    "Adrian Tenorio": {
+      "fullName": "Adrian Tenorio",
+      "artistLocation": "CHICAGO",
+      "artistCompany": "",
+      "insta": "movesbyadrian",
+      "bio": "A born dancer, Adrian has a natural flavor combined with various styles and technique that he has merged to call his own. As a part of the world-renowned Descarga Caribe Dance Company, Adrian trained and developed under internationally acclaimed dancer and choreographer Sekou Mcmiller. After gaining a wealth of knowledge and experience, Adrian went on to travel the globe with notable dance partners Cristina Zavala, Kimberly Rivera, and Daniela Leon. He has performed and conducted workshops in countries such as Angola, Canada, Curacao, England, France, Hungary, Ireland, Japan, Mexico, Poland, Spain, Turkey, and countless cities in the U.S.  ",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "adrian_tenorio"
     },
     "Sebastian & Jocelyn": {
       "fullName": "Sebastian & Jocelyn",
@@ -517,15 +526,15 @@ export const modelInitStaticOverwrite =
       "facebook": "",
       "portrait": "saulo_-_jasmin"
     },
-    "Adrian Tenorio": {
-      "fullName": "Adrian Tenorio",
-      "artistLocation": "CHICAGO",
+    "Oscar Martinez": {
+      "fullName": "Oscar Martinez",
+      "artistLocation": "Houston",
       "artistCompany": "",
-      "insta": "movesbyadrian",
-      "bio": "A born dancer, Adrian has a natural flavor combined with various styles and technique that he has merged to call his own. As a part of the world-renowned Descarga Caribe Dance Company, Adrian trained and developed under internationally acclaimed dancer and choreographer Sekou Mcmiller. After gaining a wealth of knowledge and experience, Adrian went on to travel the globe with notable dance partners Cristina Zavala, Kimberly Rivera, and Daniela Leon. He has performed and conducted workshops in countries such as Angola, Canada, Curacao, England, France, Hungary, Ireland, Japan, Mexico, Poland, Spain, Turkey, and countless cities in the U.S.  ",
+      "insta": "",
+      "bio": "",
       "shortBio": "",
       "facebook": "",
-      "portrait": "adrian_tenorio"
+      "portrait": "oscar_martinez"
     },
     "Adriana & Jorge": {
       "fullName": "Adriana & Jorge",
@@ -661,15 +670,6 @@ export const modelInitStaticOverwrite =
       "facebook": "",
       "portrait": "bachatito"
     },
-    "Rna": {
-      "fullName": "Rna",
-      "artistLocation": "HOUSTON",
-      "artistCompany": "",
-      "bio": "Reni is a multi-faceted artist with a deep appreciation for the arts. In addition to his extensive study of bachata and salsa, he plays multiple instruments, including guitar, bass, and bongos, and is also skilled in drawing. Known as DJ Reni G, he has performed in cities such as Phoenix, Denver, Dallas, Houston, and the end of this year in Saigon in Vietnam. \n\nWith 20 years of experience in the dance scene and over 10 years as a dance instructor—7.5 of which were full-time—Reni believes that a well-rounded appreciation of arts and music fosters a healthy, creative environment that enhances both his craft and his voice in dance.\n\nHe has trained over 11,000 social dancer and over hundreds of performers. \n\nRNA Dance Company was founded by Reni Gongora in early 2017, blending his background as a chemist with his passion for dance. \n\nThe \"RNA\" in the company's name reflects Reni's scientific roots, as he brings an analytical approach to teaching the science behind dance and loves to teach outside of the conventional pattern based dance classes.",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "rna"
-    },
     "Devon Near-hill": {
       "fullName": "Devon Near-hill",
       "artistLocation": "DENVER",
@@ -707,6 +707,15 @@ export const modelInitStaticOverwrite =
       "facebook": "",
       "portrait": "alemana"
     },
+    "Tito Garcia": {
+      "fullName": "Tito Garcia",
+      "artistLocation": "BOULDER",
+      "artistCompany": "",
+      "bio": "Tito Garcia, a Cuban American dancer and DJ originally from Miami and now based in Boulder, Colorado, is dedicated to preserving and sharing his culture through dance and music. With a deep passion for Timba and Cuban salsa, Tito loves to teach Rueda de Casino and brings his expertise to the DJ booth, spinning a wide variety of salsa styles. His commitment to cultural preservation and education makes him a vital figure in the Afro-Latin dance community.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "tito_garcia"
+    },
     "Colorado Ballet": {
       "fullName": "Colorado Ballet",
       "artistLocation": "DENVER",
@@ -725,15 +734,6 @@ export const modelInitStaticOverwrite =
       "shortBio": "",
       "facebook": "",
       "portrait": "rachel_-_hunter"
-    },
-    "Tito Garcia": {
-      "fullName": "Tito Garcia",
-      "artistLocation": "BOULDER",
-      "artistCompany": "",
-      "bio": "Tito Garcia, a Cuban American dancer and DJ originally from Miami and now based in Boulder, Colorado, is dedicated to preserving and sharing his culture through dance and music. With a deep passion for Timba and Cuban salsa, Tito loves to teach Rueda de Casino and brings his expertise to the DJ booth, spinning a wide variety of salsa styles. His commitment to cultural preservation and education makes him a vital figure in the Afro-Latin dance community.",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "tito_garcia"
     },
     "Diego & Yurley": {
       "fullName": "Diego & Yurley",
@@ -769,7 +769,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Carlos & Susan",
       "sessionMainTitle": "Bachata Partnerwork",
-      "time": "18:00 - 19:00",
+      "time": "6:00 PM - 7:00 PM",
       "room": "AURORA 1",
       "level": "0",
       "group": [
@@ -797,7 +797,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Brandon & Michelle",
       "sessionMainTitle": "Salsa On2 Partnerwork",
-      "time": "19:00 - 20:00",
+      "time": "7:00 PM - 8:00 PM",
       "room": "AURORA 1",
       "level": "0",
       "group": [
@@ -825,7 +825,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "El Tiguere Y Bianca",
       "sessionMainTitle": "Bachata Shines/Partner",
-      "time": "20:00 - 21:00",
+      "time": "8:00 PM - 9:00 PM",
       "room": "AURORA 1",
       "level": "0",
       "group": [
@@ -853,7 +853,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Diane Page",
       "sessionMainTitle": "Ballet",
-      "time": "11:00 - 12:00",
+      "time": "11:00 AM - 12:00 PM",
       "room": "AURORA 1",
       "level": "0",
       "group": [
@@ -884,7 +884,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Latisha Hardy",
       "sessionMainTitle": "Intro to Pachanga",
-      "time": "11:00 - 12:00",
+      "time": "11:00 AM - 12:00 PM",
       "room": "AURORA 2",
       "level": "0",
       "group": [
@@ -915,7 +915,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Nathan Hook",
       "sessionMainTitle": "Rueda 101",
-      "time": "11:00 - 12:00",
+      "time": "11:00 AM - 12:00 PM",
       "room": "ROOM  1",
       "level": "0",
       "group": [
@@ -946,7 +946,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Daniel Agosto",
       "sessionMainTitle": "Bachata Partnerwork",
-      "time": "11:00 - 12:00",
+      "time": "11:00 AM - 12:00 PM",
       "room": "ROOM  2",
       "level": "0",
       "group": [
@@ -977,7 +977,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Eder & Milton",
       "sessionMainTitle": "Salsa On2 Partnerwork",
-      "time": "12:00 - 1:00",
+      "time": "12:00 PM - 1:00 PM",
       "room": "AURORA 1",
       "level": "0",
       "group": [
@@ -995,7 +995,7 @@ export const modelInitStaticOverwrite =
       "shortMainTitle": "",
       "dateString": "Fri, October 18, 2024",
       "startTime": "2024-10-18T12:00:00.000Z",
-      "endTime": "2024-10-18T01:00:00.000Z",
+      "endTime": "2024-10-18T13:00:00.000Z",
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
@@ -1012,7 +1012,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Eddie Peligro",
       "sessionMainTitle": "Bachata Footwork",
-      "time": "12:00 - 1:00",
+      "time": "12:00 PM - 1:00 PM",
       "room": "AURORA 2",
       "level": "1",
       "group": [
@@ -1030,7 +1030,7 @@ export const modelInitStaticOverwrite =
       "shortMainTitle": "",
       "dateString": "Fri, October 18, 2024",
       "startTime": "2024-10-18T12:00:00.000Z",
-      "endTime": "2024-10-18T01:00:00.000Z",
+      "endTime": "2024-10-18T13:00:00.000Z",
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
@@ -1047,7 +1047,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Jesica Cutler",
       "sessionMainTitle": "Intro to Tango",
-      "time": "12:00 - 1:00",
+      "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  1",
       "level": "0",
       "group": [
@@ -1065,7 +1065,7 @@ export const modelInitStaticOverwrite =
       "shortMainTitle": "",
       "dateString": "Fri, October 18, 2024",
       "startTime": "2024-10-18T12:00:00.000Z",
-      "endTime": "2024-10-18T01:00:00.000Z",
+      "endTime": "2024-10-18T13:00:00.000Z",
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
@@ -1081,8 +1081,8 @@ export const modelInitStaticOverwrite =
       "id": 10104,
       "itemType": "type1",
       "artistName": "Yayita & Carlos",
-      "sessionMainTitle": "Salsa On2 Follows' Styling",
-      "time": "12:00 - 1:00",
+      "sessionMainTitle": "Salsa On2 Footwork",
+      "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  2",
       "level": "0",
       "group": [
@@ -1100,7 +1100,7 @@ export const modelInitStaticOverwrite =
       "shortMainTitle": "",
       "dateString": "Fri, October 18, 2024",
       "startTime": "2024-10-18T12:00:00.000Z",
-      "endTime": "2024-10-18T01:00:00.000Z",
+      "endTime": "2024-10-18T13:00:00.000Z",
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
@@ -1117,7 +1117,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type4",
       "artistName": "Jared & Nicole",
       "sessionMainTitle": "Absolute Beginner Track - Bachata",
-      "time": "12:00 - 1:00",
+      "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  4",
       "level": "-1",
       "group": [
@@ -1135,7 +1135,7 @@ export const modelInitStaticOverwrite =
       "shortMainTitle": "",
       "dateString": "Fri, October 18, 2024",
       "startTime": "2024-10-18T12:00:00.000Z",
-      "endTime": "2024-10-18T01:00:00.000Z",
+      "endTime": "2024-10-18T13:00:00.000Z",
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
@@ -1152,7 +1152,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Damilola Elegbede",
       "sessionMainTitle": "Cuban Salsa Partnerwork",
-      "time": "12:00 - 1:00",
+      "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  5",
       "level": "0",
       "group": [
@@ -1170,7 +1170,7 @@ export const modelInitStaticOverwrite =
       "shortMainTitle": "",
       "dateString": "Fri, October 18, 2024",
       "startTime": "2024-10-18T12:00:00.000Z",
-      "endTime": "2024-10-18T01:00:00.000Z",
+      "endTime": "2024-10-18T13:00:00.000Z",
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
@@ -1187,7 +1187,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Watson Saintsulne",
       "sessionMainTitle": "Timing Switch! On1 to On2",
-      "time": "12:00 - 1:00",
+      "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  6",
       "level": "0",
       "group": [
@@ -1205,7 +1205,7 @@ export const modelInitStaticOverwrite =
       "shortMainTitle": "",
       "dateString": "Fri, October 18, 2024",
       "startTime": "2024-10-18T12:00:00.000Z",
-      "endTime": "2024-10-18T01:00:00.000Z",
+      "endTime": "2024-10-18T13:00:00.000Z",
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
@@ -1222,7 +1222,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Jenny Pham",
       "sessionMainTitle": "Urban Kiz Partnerwork",
-      "time": "12:00 - 1:00",
+      "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  7",
       "level": "0",
       "group": [
@@ -1240,7 +1240,7 @@ export const modelInitStaticOverwrite =
       "shortMainTitle": "",
       "dateString": "Fri, October 18, 2024",
       "startTime": "2024-10-18T12:00:00.000Z",
-      "endTime": "2024-10-18T01:00:00.000Z",
+      "endTime": "2024-10-18T13:00:00.000Z",
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
@@ -1255,9 +1255,9 @@ export const modelInitStaticOverwrite =
     {
       "id": 10201,
       "itemType": "type1",
-      "artistName": "Natasha Tia",
-      "sessionMainTitle": "Salsa On2 Shines",
-      "time": "13:00 - 14:00",
+      "artistName": "Johan & Alyssa",
+      "sessionMainTitle": "Salsa On2 Partnerwork",
+      "time": "1:00 PM - 2:00 PM",
       "room": "AURORA 1",
       "level": "0",
       "group": [
@@ -1279,9 +1279,9 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Natasha Tia",
+      "artistOne": "Johan & Alyssa",
       "artistTwo": "",
-      "artistLocation": "San Francisco",
+      "artistLocation": "Dallas",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -1292,7 +1292,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Jorge & Indira",
       "sessionMainTitle": "Cubaton (Salsa/Reggaeton)",
-      "time": "13:00 - 14:00",
+      "time": "1:00 PM - 2:00 PM",
       "room": "AURORA 2",
       "level": "0",
       "group": [
@@ -1327,7 +1327,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Luan & Adriana",
       "sessionMainTitle": "Zouk Drama",
-      "time": "13:00 - 14:00",
+      "time": "1:00 PM - 2:00 PM",
       "room": "ROOM  1",
       "level": "1",
       "group": [
@@ -1362,7 +1362,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Maissaa Bachir",
       "sessionMainTitle": "Belly Dancing",
-      "time": "13:00 - 14:00",
+      "time": "1:00 PM - 2:00 PM",
       "room": "ROOM  2",
       "level": "0",
       "group": [
@@ -1397,7 +1397,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type4",
       "artistName": "Sisy Ayala",
       "sessionMainTitle": "Absolute Beginner Track - Salsa",
-      "time": "13:00 - 14:00",
+      "time": "1:00 PM - 2:00 PM",
       "room": "ROOM  4",
       "level": "-1",
       "group": [
@@ -1432,7 +1432,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type4",
       "artistName": "Rafa Gonzalez",
       "sessionMainTitle": "Heels Challenge",
-      "time": "13:00 - 14:00",
+      "time": "1:00 PM - 2:00 PM",
       "room": "ROOM  5",
       "level": "-1",
       "group": [
@@ -1467,7 +1467,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Bachata Denver",
       "sessionMainTitle": "Sensual Bachata Partnerwork",
-      "time": "13:00 - 14:00",
+      "time": "1:00 PM - 2:00 PM",
       "room": "ROOM  6",
       "level": "0",
       "group": [
@@ -1502,7 +1502,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Kebrina Dejesus",
       "sessionMainTitle": "Intro to Afro-Brazilian Dance",
-      "time": "13:00 - 14:00",
+      "time": "1:00 PM - 2:00 PM",
       "room": "ROOM  7",
       "level": "0",
       "group": [
@@ -1536,8 +1536,8 @@ export const modelInitStaticOverwrite =
       "id": 10301,
       "itemType": "type1",
       "artistName": "Raul & Delia",
-      "sessionMainTitle": "SalsaOn2 footwork/partnerwork",
-      "time": "14:00 - 15:00",
+      "sessionMainTitle": "SalsaOn2 footwork",
+      "time": "2:00 PM - 3:00 PM",
       "room": "AURORA 1",
       "level": "0",
       "group": [
@@ -1572,7 +1572,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Carlos & Susan",
       "sessionMainTitle": "Bachata Partnerwork",
-      "time": "14:00 - 15:00",
+      "time": "2:00 PM - 3:00 PM",
       "room": "AURORA 2",
       "level": "1",
       "group": [
@@ -1607,7 +1607,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Luisa & Paulo",
       "sessionMainTitle": "Circular Movements Zouk",
-      "time": "14:00 - 15:00",
+      "time": "2:00 PM - 3:00 PM",
       "room": "ROOM  1",
       "level": "1",
       "group": [
@@ -1642,7 +1642,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Serena Spears",
       "sessionMainTitle": "Latin Dance Body Movements",
-      "time": "14:00 - 15:00",
+      "time": "2:00 PM - 3:00 PM",
       "room": "ROOM  2",
       "level": "0",
       "group": [
@@ -1677,7 +1677,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Colorado Dancesport",
       "sessionMainTitle": "Intro to Ballroom",
-      "time": "14:00 - 15:00",
+      "time": "2:00 PM - 3:00 PM",
       "room": "ROOM  4",
       "level": "0",
       "group": [
@@ -1712,7 +1712,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Jk Dance Company",
       "sessionMainTitle": "Salsa On1 Partnerwork",
-      "time": "14:00 - 15:00",
+      "time": "2:00 PM - 3:00 PM",
       "room": "ROOM  5",
       "level": "0",
       "group": [
@@ -1745,9 +1745,9 @@ export const modelInitStaticOverwrite =
     {
       "id": 10307,
       "itemType": "type1",
-      "artistName": "Johan & Alyssa",
-      "sessionMainTitle": "Salsa On2 Partnerwork",
-      "time": "14:00 - 15:00",
+      "artistName": "Natasha Tia",
+      "sessionMainTitle": "Salsa On2 Shines",
+      "time": "2:00 PM - 3:00 PM",
       "room": "ROOM  6",
       "level": "0",
       "group": [
@@ -1769,9 +1769,9 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Johan & Alyssa",
+      "artistOne": "Natasha Tia",
       "artistTwo": "",
-      "artistLocation": "Dallas",
+      "artistLocation": "San Francisco",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -1782,7 +1782,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Bianca Chapman",
       "sessionMainTitle": "Bachata Follows' Styling",
-      "time": "14:00 - 15:00",
+      "time": "2:00 PM - 3:00 PM",
       "room": "ROOM  7",
       "level": "1",
       "group": [
@@ -1817,7 +1817,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type4",
       "artistName": "Alex & Desiree",
       "sessionMainTitle": "AnD Bachata Instructor - Certification Training",
-      "time": "15:00 - 17:00",
+      "time": "3:00 PM - 5:00 PM",
       "room": "ROOM  4",
       "level": "-1",
       "group": [
@@ -1845,9 +1845,9 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Jsquared",
       "sessionMainTitle": "Bachata Partnerwork",
-      "time": "15:00 - 16:00",
+      "time": "3:00 PM - 4:00 PM",
       "room": "AURORA 1",
-      "level": "-1",
+      "level": "1",
       "group": [
         10501,
         10502,
@@ -1879,7 +1879,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Tania Cannarsa",
       "sessionMainTitle": "Salsa On2 Shines",
-      "time": "15:00 - 16:00",
+      "time": "3:00 PM - 4:00 PM",
       "room": "AURORA 2",
       "level": "1",
       "group": [
@@ -1913,7 +1913,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Gustavo & Ayane",
       "sessionMainTitle": "DIVES ZOUK",
-      "time": "15:00 - 16:00",
+      "time": "3:00 PM - 4:00 PM",
       "room": "ROOM  1",
       "level": "0",
       "group": [
@@ -1947,7 +1947,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Casino Stars",
       "sessionMainTitle": "Cuban Salsa (Casino) Partnerwork",
-      "time": "15:00 - 16:00",
+      "time": "3:00 PM - 4:00 PM",
       "room": "ROOM  2",
       "level": "0",
       "group": [
@@ -1981,7 +1981,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Jahaira & Angelica",
       "sessionMainTitle": "Traditional Bachata Footwork",
-      "time": "15:00 - 16:00",
+      "time": "3:00 PM - 4:00 PM",
       "room": "ROOM  5",
       "level": "0",
       "group": [
@@ -2015,7 +2015,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Lawrence & Jewel",
       "sessionMainTitle": "Salsa On2 partnerwork",
-      "time": "15:00 - 16:00",
+      "time": "3:00 PM - 4:00 PM",
       "room": "ROOM  6",
       "level": "0",
       "group": [
@@ -2049,7 +2049,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Kiki Elsilencio",
       "sessionMainTitle": "Semba Fundamentals",
-      "time": "15:00 - 16:00",
+      "time": "3:00 PM - 4:00 PM",
       "room": "ROOM  7",
       "level": "0",
       "group": [
@@ -2083,7 +2083,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Benny & Ashley",
       "sessionMainTitle": "Salsa On2 Partnerwork",
-      "time": "16:00 - 17:00",
+      "time": "4:00 PM - 5:00 PM",
       "room": "AURORA 1",
       "level": "1",
       "group": [
@@ -2117,7 +2117,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Kingsmen",
       "sessionMainTitle": "Bachata Shines",
-      "time": "16:00 - 17:00",
+      "time": "4:00 PM - 5:00 PM",
       "room": "AURORA 2",
       "level": "1",
       "group": [
@@ -2149,9 +2149,9 @@ export const modelInitStaticOverwrite =
     {
       "id": 10603,
       "itemType": "type1",
-      "artistName": "Sandra & Zack",
+      "artistName": "Sandra & Zach",
       "sessionMainTitle": "SALSA on1 Partnerwork",
-      "time": "16:00 - 17:00",
+      "time": "4:00 PM - 5:00 PM",
       "room": "ROOM  1",
       "level": "0",
       "group": [
@@ -2172,7 +2172,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Sandra & Zack",
+      "artistOne": "Sandra & Zach",
       "artistTwo": "",
       "artistLocation": "DENVER",
       "flag": false,
@@ -2185,7 +2185,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Christopher Webster",
       "sessionMainTitle": "Salsa Musicality",
-      "time": "16:00 - 17:00",
+      "time": "4:00 PM - 5:00 PM",
       "room": "ROOM  2",
       "level": "0",
       "group": [
@@ -2219,7 +2219,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Edwin & Ahtoy",
       "sessionMainTitle": "Hustle Partnerwork",
-      "time": "16:00 - 17:00",
+      "time": "4:00 PM - 5:00 PM",
       "room": "ROOM  5",
       "level": "0",
       "group": [
@@ -2253,7 +2253,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Rafa Gonzalez",
       "sessionMainTitle": "Heels",
-      "time": "16:00 - 17:00",
+      "time": "4:00 PM - 5:00 PM",
       "room": "ROOM  6",
       "level": "0",
       "group": [
@@ -2287,7 +2287,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Joseal",
       "sessionMainTitle": "Urban Kiz",
-      "time": "16:00 - 17:00",
+      "time": "4:00 PM - 5:00 PM",
       "room": "ROOM  7",
       "level": "0",
       "group": [
@@ -2321,7 +2321,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Celeste Williamson",
       "sessionMainTitle": "YOGA",
-      "time": "9:00 - 10:00",
+      "time": "9:00 AM - 10:00 AM",
       "room": "AURORA 1",
       "level": "0",
       "group": [
@@ -2349,7 +2349,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Jsquared",
       "sessionMainTitle": "Bachata Partner/Footwork",
-      "time": "10:00 - 11:00",
+      "time": "10:00 AM - 11:00 AM",
       "room": "AURORA 1",
       "level": "1",
       "group": [
@@ -2384,7 +2384,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Iroko",
       "sessionMainTitle": "Salsa On2 Parterwork",
-      "time": "10:00 - 11:00",
+      "time": "10:00 AM - 11:00 AM",
       "room": "AURORA 2",
       "level": "1",
       "group": [
@@ -2419,7 +2419,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Eric & Marcela",
       "sessionMainTitle": "Intro to Cuban Salsa (Casino)",
-      "time": "10:00 - 11:00",
+      "time": "10:00 AM - 11:00 AM",
       "room": "ROOM  1",
       "level": "0",
       "group": [
@@ -2454,7 +2454,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Yayita & Carlos",
       "sessionMainTitle": "Salsa On2 Footwork",
-      "time": "10:00 - 11:00",
+      "time": "10:00 AM - 11:00 AM",
       "room": "ROOM  2",
       "level": "0",
       "group": [
@@ -2489,7 +2489,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type4",
       "artistName": "Jared & Nicole",
       "sessionMainTitle": "Absolute Beginner Track - Bachata",
-      "time": "10:00 - 11:00",
+      "time": "10:00 AM - 11:00 AM",
       "room": "ROOM  4",
       "level": "-1",
       "group": [
@@ -2524,7 +2524,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Daniel Agosto",
       "sessionMainTitle": "Bachata Partnerwork",
-      "time": "10:00 - 11:00",
+      "time": "10:00 AM - 11:00 AM",
       "room": "ROOM  5",
       "level": "0",
       "group": [
@@ -2559,7 +2559,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Gio & Gaby",
       "sessionMainTitle": "Salsa On1 Shines/Partner",
-      "time": "10:00 - 11:00",
+      "time": "10:00 AM - 11:00 AM",
       "room": "ROOM  6",
       "level": "0",
       "group": [
@@ -2594,7 +2594,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Rna Dance Company",
       "sessionMainTitle": "Bachata Shines",
-      "time": "10:00 - 11:00",
+      "time": "10:00 AM - 11:00 AM",
       "room": "ROOM  7",
       "level": "0",
       "group": [
@@ -2629,7 +2629,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Rafa Gonzalez",
       "sessionMainTitle": "Heels",
-      "time": "11:00 - 12:00",
+      "time": "11:00 AM - 12:00 PM",
       "room": "AURORA 1",
       "level": "0",
       "group": [
@@ -2638,7 +2638,8 @@ export const modelInitStaticOverwrite =
         20203,
         20204,
         20205,
-        20206
+        20206,
+        20207
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -2662,7 +2663,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Raul & Delia",
       "sessionMainTitle": "Salsa On 2 Partnerwork",
-      "time": "11:00 - 12:00",
+      "time": "11:00 AM - 12:00 PM",
       "room": "AURORA 2",
       "level": "1",
       "group": [
@@ -2671,7 +2672,8 @@ export const modelInitStaticOverwrite =
         20203,
         20204,
         20205,
-        20206
+        20206,
+        20207
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -2695,7 +2697,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Alex & Desiree",
       "sessionMainTitle": "Traditional Bachata Footwork",
-      "time": "11:00 - 12:00",
+      "time": "11:00 AM - 12:00 PM",
       "room": "ROOM  1",
       "level": "1",
       "group": [
@@ -2704,7 +2706,8 @@ export const modelInitStaticOverwrite =
         20203,
         20204,
         20205,
-        20206
+        20206,
+        20207
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -2728,7 +2731,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "C.a.m.",
       "sessionMainTitle": "Salsa Caleña Footwork",
-      "time": "11:00 - 12:00",
+      "time": "11:00 AM - 12:00 PM",
       "room": "ROOM  2",
       "level": "0",
       "group": [
@@ -2737,7 +2740,8 @@ export const modelInitStaticOverwrite =
         20203,
         20204,
         20205,
-        20206
+        20206,
+        20207
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -2759,9 +2763,43 @@ export const modelInitStaticOverwrite =
     {
       "id": 20205,
       "itemType": "type1",
+      "artistName": "Adrian Tenorio",
+      "sessionMainTitle": "Cha-Cha-Cha Partnerwork",
+      "time": "11:00 AM - 12:00 PM",
+      "room": "ROOM  5",
+      "level": "0",
+      "group": [
+        20201,
+        20202,
+        20203,
+        20204,
+        20205,
+        20206,
+        20207
+      ],
+      "groupTitle": "Workshops",
+      "groupSubtitle": "",
+      "shortMainTitle": "",
+      "dateString": "Sat, October 19, 2024",
+      "startTime": "2024-10-19T11:00:00.000Z",
+      "endTime": "2024-10-19T12:00:00.000Z",
+      "place": "",
+      "sessionSubtitle": "",
+      "sessionDescription": "",
+      "artistOne": "Adrian Tenorio",
+      "artistTwo": "",
+      "artistLocation": "CHICAGO",
+      "flag": false,
+      "flagIncludeInNow": false,
+      "artistCompany": "",
+      "sessionSpecialTrackCount": "(2 of 2)"
+    },
+    {
+      "id": 20206,
+      "itemType": "type1",
       "artistName": "Eder & Milton",
       "sessionMainTitle": "Salsa On2 Shines",
-      "time": "11:00 - 12:00",
+      "time": "11:00 AM - 12:00 PM",
       "room": "ROOM  6",
       "level": "0",
       "group": [
@@ -2770,7 +2808,8 @@ export const modelInitStaticOverwrite =
         20203,
         20204,
         20205,
-        20206
+        20206,
+        20207
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -2790,11 +2829,11 @@ export const modelInitStaticOverwrite =
       "sessionSpecialTrackCount": "(2 of 2)"
     },
     {
-      "id": 20206,
+      "id": 20207,
       "itemType": "type1",
       "artistName": "Sebastian & Jocelyn",
       "sessionMainTitle": "Bachata Partnerwork",
-      "time": "11:00 - 12:00",
+      "time": "11:00 AM - 12:00 PM",
       "room": "ROOM  7",
       "level": "1",
       "group": [
@@ -2803,7 +2842,8 @@ export const modelInitStaticOverwrite =
         20203,
         20204,
         20205,
-        20206
+        20206,
+        20207
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -2827,7 +2867,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "De’jon & Clo",
       "sessionMainTitle": "Salsa On 2 partnerwork",
-      "time": "12:00 - 1:00",
+      "time": "12:00 PM - 1:00 PM",
       "room": "AURORA 1",
       "level": "1",
       "group": [
@@ -2845,7 +2885,7 @@ export const modelInitStaticOverwrite =
       "shortMainTitle": "",
       "dateString": "Sat, October 19, 2024",
       "startTime": "2024-10-19T12:00:00.000Z",
-      "endTime": "2024-10-19T01:00:00.000Z",
+      "endTime": "2024-10-19T13:00:00.000Z",
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
@@ -2862,7 +2902,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Karen Y Ricardo",
       "sessionMainTitle": "Salsa on1 partnerwork",
-      "time": "12:00 - 1:00",
+      "time": "12:00 PM - 1:00 PM",
       "room": "AURORA 2",
       "level": "2",
       "group": [
@@ -2880,7 +2920,7 @@ export const modelInitStaticOverwrite =
       "shortMainTitle": "",
       "dateString": "Sat, October 19, 2024",
       "startTime": "2024-10-19T12:00:00.000Z",
-      "endTime": "2024-10-19T01:00:00.000Z",
+      "endTime": "2024-10-19T13:00:00.000Z",
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
@@ -2897,7 +2937,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Saulo & Jasmin",
       "sessionMainTitle": "Zouk(need a new one)",
-      "time": "12:00 - 1:00",
+      "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  1",
       "level": "1",
       "group": [
@@ -2915,7 +2955,7 @@ export const modelInitStaticOverwrite =
       "shortMainTitle": "",
       "dateString": "Sat, October 19, 2024",
       "startTime": "2024-10-19T12:00:00.000Z",
-      "endTime": "2024-10-19T01:00:00.000Z",
+      "endTime": "2024-10-19T13:00:00.000Z",
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
@@ -2930,9 +2970,9 @@ export const modelInitStaticOverwrite =
     {
       "id": 20304,
       "itemType": "type1",
-      "artistName": "Adrian Tenorio",
-      "sessionMainTitle": "Cha-Cha-Cha Partnerwork",
-      "time": "12:00 - 1:00",
+      "artistName": "Oscar Martinez",
+      "sessionMainTitle": "Salsa On2 Shines",
+      "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  2",
       "level": "0",
       "group": [
@@ -2950,13 +2990,13 @@ export const modelInitStaticOverwrite =
       "shortMainTitle": "",
       "dateString": "Sat, October 19, 2024",
       "startTime": "2024-10-19T12:00:00.000Z",
-      "endTime": "2024-10-19T01:00:00.000Z",
+      "endTime": "2024-10-19T13:00:00.000Z",
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Adrian Tenorio",
+      "artistOne": "Oscar Martinez",
       "artistTwo": "",
-      "artistLocation": "CHICAGO",
+      "artistLocation": "Houston",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -2967,7 +3007,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Adriana & Jorge",
       "sessionMainTitle": "Bachata Partnerwork",
-      "time": "12:00 - 1:00",
+      "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  4",
       "level": "0",
       "group": [
@@ -2985,7 +3025,7 @@ export const modelInitStaticOverwrite =
       "shortMainTitle": "",
       "dateString": "Sat, October 19, 2024",
       "startTime": "2024-10-19T12:00:00.000Z",
-      "endTime": "2024-10-19T01:00:00.000Z",
+      "endTime": "2024-10-19T13:00:00.000Z",
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
@@ -3002,7 +3042,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Chris & Alexus",
       "sessionMainTitle": "Bachata Partnerwork",
-      "time": "12:00 - 1:00",
+      "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  5",
       "level": "1",
       "group": [
@@ -3020,7 +3060,7 @@ export const modelInitStaticOverwrite =
       "shortMainTitle": "",
       "dateString": "Sat, October 19, 2024",
       "startTime": "2024-10-19T12:00:00.000Z",
-      "endTime": "2024-10-19T01:00:00.000Z",
+      "endTime": "2024-10-19T13:00:00.000Z",
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
@@ -3037,7 +3077,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Jorge & Indira",
       "sessionMainTitle": "Rumba Guaguanco",
-      "time": "12:00 - 1:00",
+      "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  6",
       "level": "0",
       "group": [
@@ -3055,7 +3095,7 @@ export const modelInitStaticOverwrite =
       "shortMainTitle": "",
       "dateString": "Sat, October 19, 2024",
       "startTime": "2024-10-19T12:00:00.000Z",
-      "endTime": "2024-10-19T01:00:00.000Z",
+      "endTime": "2024-10-19T13:00:00.000Z",
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
@@ -3072,7 +3112,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Marc & Rose",
       "sessionMainTitle": "Urban Kiz Partnerwork",
-      "time": "12:00 - 1:00",
+      "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  7",
       "level": "0",
       "group": [
@@ -3090,7 +3130,7 @@ export const modelInitStaticOverwrite =
       "shortMainTitle": "",
       "dateString": "Sat, October 19, 2024",
       "startTime": "2024-10-19T12:00:00.000Z",
-      "endTime": "2024-10-19T01:00:00.000Z",
+      "endTime": "2024-10-19T13:00:00.000Z",
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
@@ -3107,7 +3147,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Ataca Y Alemana",
       "sessionMainTitle": "Bachata Partnerwork",
-      "time": "13:00 - 14:00",
+      "time": "1:00 PM - 2:00 PM",
       "room": "AURORA 1",
       "level": "0",
       "group": [
@@ -3142,7 +3182,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Brandon & Michelle",
       "sessionMainTitle": "Salsa On2 Partnerwork",
-      "time": "13:00 - 14:00",
+      "time": "1:00 PM - 2:00 PM",
       "room": "AURORA 2",
       "level": "0",
       "group": [
@@ -3177,7 +3217,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Luan & Adriana",
       "sessionMainTitle": "Zouk",
-      "time": "13:00 - 14:00",
+      "time": "1:00 PM - 2:00 PM",
       "room": "ROOM  1",
       "level": "1",
       "group": [
@@ -3212,7 +3252,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Jessica Quiles",
       "sessionMainTitle": "Salsa On2 Shines",
-      "time": "13:00 - 14:00",
+      "time": "1:00 PM - 2:00 PM",
       "room": "ROOM  2",
       "level": "1",
       "group": [
@@ -3247,7 +3287,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Bianca Chapman",
       "sessionMainTitle": "Bachata Shines",
-      "time": "13:00 - 14:00",
+      "time": "1:00 PM - 2:00 PM",
       "room": "ROOM  4",
       "level": "1",
       "group": [
@@ -3282,7 +3322,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Casino Stars",
       "sessionMainTitle": "Salsa On 1 Shines",
-      "time": "13:00 - 14:00",
+      "time": "1:00 PM - 2:00 PM",
       "room": "ROOM  5",
       "level": "0",
       "group": [
@@ -3317,7 +3357,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Johan & Alyssa",
       "sessionMainTitle": "Boogaloo Footwork",
-      "time": "13:00 - 14:00",
+      "time": "1:00 PM - 2:00 PM",
       "room": "ROOM  6",
       "level": "0",
       "group": [
@@ -3352,7 +3392,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Jovan Casanova",
       "sessionMainTitle": "Tarraxo Fundamentals",
-      "time": "13:00 - 14:00",
+      "time": "1:00 PM - 2:00 PM",
       "room": "ROOM  7",
       "level": "0",
       "group": [
@@ -3387,7 +3427,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Fuego Y Hielo",
       "sessionMainTitle": "Salsa On 2 Partnerwork",
-      "time": "14:00 - 15:00",
+      "time": "2:00 PM - 3:00 PM",
       "room": "AURORA 1",
       "level": "1",
       "group": [
@@ -3421,7 +3461,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Rafael & Carine",
       "sessionMainTitle": "Spinning Technique",
-      "time": "14:00 - 15:00",
+      "time": "2:00 PM - 3:00 PM",
       "room": "AURORA 2",
       "level": "1",
       "group": [
@@ -3455,7 +3495,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Gustavo & Ayane",
       "sessionMainTitle": "Zouk Partnerwork",
-      "time": "14:00 - 15:00",
+      "time": "2:00 PM - 3:00 PM",
       "room": "ROOM  1",
       "level": "0",
       "group": [
@@ -3489,7 +3529,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "El Tiguere Y Bianca",
       "sessionMainTitle": "Bachata: Culture, History& Music",
-      "time": "14:00 - 15:00",
+      "time": "2:00 PM - 3:00 PM",
       "room": "ROOM  2",
       "level": "1",
       "group": [
@@ -3523,7 +3563,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Edwin & Ahtoy",
       "sessionMainTitle": "Intro to Hustle",
-      "time": "14:00 - 15:00",
+      "time": "2:00 PM - 3:00 PM",
       "room": "ROOM  4",
       "level": "0",
       "group": [
@@ -3557,7 +3597,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Kate Rodriguez",
       "sessionMainTitle": "Bachata Vibez (Footwork)",
-      "time": "14:00 - 15:00",
+      "time": "2:00 PM - 3:00 PM",
       "room": "ROOM  6",
       "level": "1",
       "group": [
@@ -3591,7 +3631,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Joseal",
       "sessionMainTitle": "URBAN KIZ",
-      "time": "14:00 - 15:00",
+      "time": "2:00 PM - 3:00 PM",
       "room": "ROOM  7",
       "level": "1",
       "group": [
@@ -3625,7 +3665,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Marisol Blanco",
       "sessionMainTitle": "Afro Cuban Orishas - Ochosi/Oshun",
-      "time": "15:00 - 16:00",
+      "time": "3:00 PM - 4:00 PM",
       "room": "AURORA 1",
       "level": "0",
       "group": [
@@ -3658,7 +3698,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Adolfo & Tania",
       "sessionMainTitle": "Salsa On2 Partnerwork",
-      "time": "15:00 - 16:00",
+      "time": "3:00 PM - 4:00 PM",
       "room": "AURORA 2",
       "level": "0",
       "group": [
@@ -3691,7 +3731,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Luisa & Paulo",
       "sessionMainTitle": "Zouk Head Movement Variations",
-      "time": "15:00 - 16:00",
+      "time": "3:00 PM - 4:00 PM",
       "room": "ROOM  1",
       "level": "1",
       "group": [
@@ -3724,7 +3764,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Chelsey Owen",
       "sessionMainTitle": "Salsa On1 Shines/Partner",
-      "time": "15:00 - 16:00",
+      "time": "3:00 PM - 4:00 PM",
       "room": "ROOM  2",
       "level": "0",
       "group": [
@@ -3757,7 +3797,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Jk Dance Company",
       "sessionMainTitle": "Bachata Partnerwork",
-      "time": "15:00 - 16:00",
+      "time": "3:00 PM - 4:00 PM",
       "room": "ROOM  6",
       "level": "0",
       "group": [
@@ -3790,7 +3830,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Marc & Rose",
       "sessionMainTitle": "Urban Kiz Partnerwork",
-      "time": "15:00 - 16:00",
+      "time": "3:00 PM - 4:00 PM",
       "room": "ROOM  7",
       "level": "0",
       "group": [
@@ -3823,7 +3863,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type4",
       "artistName": "Alex & Desiree",
       "sessionMainTitle": "AnD Bachata Instructor - Certification Training",
-      "time": "15:00 - 17:00",
+      "time": "3:00 PM - 5:00 PM",
       "room": "ROOM  4",
       "level": "-1",
       "group": [
@@ -3852,7 +3892,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type4",
       "artistName": "Rafa Gonzalez",
       "sessionMainTitle": "Heels Challenge",
-      "time": "15:00 - 17:00",
+      "time": "3:00 PM - 5:00 PM",
       "room": "ROOM  5",
       "level": "-1",
       "group": [
@@ -3881,7 +3921,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Iroko",
       "sessionMainTitle": "Salsa On2 Parterwork",
-      "time": "10:00 - 11:00",
+      "time": "10:00 AM - 11:00 AM",
       "room": "AURORA 1",
       "level": "1",
       "group": [
@@ -3916,7 +3956,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Desi Caliente",
       "sessionMainTitle": "Bollywood",
-      "time": "10:00 - 11:00",
+      "time": "10:00 AM - 11:00 AM",
       "room": "AURORA 2",
       "level": "0",
       "group": [
@@ -3951,7 +3991,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Gustavo & Ayane",
       "sessionMainTitle": "Zouk Soltinho Variations",
-      "time": "10:00 - 11:00",
+      "time": "10:00 AM - 11:00 AM",
       "room": "ROOM  1",
       "level": "1",
       "group": [
@@ -3986,7 +4026,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Bachatito",
       "sessionMainTitle": "Bachata Partnerwork",
-      "time": "10:00 - 11:00",
+      "time": "10:00 AM - 11:00 AM",
       "room": "ROOM  2",
       "level": "0",
       "group": [
@@ -4019,9 +4059,9 @@ export const modelInitStaticOverwrite =
     {
       "id": 30005,
       "itemType": "type1",
-      "artistName": "Rna",
+      "artistName": "Rna Dance Company",
       "sessionMainTitle": "Bachata Partnerwork",
-      "time": "10:00 - 11:00",
+      "time": "10:00 AM - 11:00 AM",
       "room": "ROOM  4",
       "level": "0",
       "group": [
@@ -4043,7 +4083,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Rna",
+      "artistOne": "Rna Dance Company",
       "artistTwo": "",
       "artistLocation": "HOUSTON",
       "flag": false,
@@ -4056,7 +4096,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Gio & Gaby",
       "sessionMainTitle": "Salsa On1 Shines/Partner",
-      "time": "10:00 - 11:00",
+      "time": "10:00 AM - 11:00 AM",
       "room": "ROOM  5",
       "level": "0",
       "group": [
@@ -4091,7 +4131,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Kate Rodriguez",
       "sessionMainTitle": "Bachata Vibez (Footwork)",
-      "time": "10:00 - 11:00",
+      "time": "10:00 AM - 11:00 AM",
       "room": "ROOM  6",
       "level": "1",
       "group": [
@@ -4126,7 +4166,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Joseal",
       "sessionMainTitle": "URBAN KIZ",
-      "time": "10:00 - 11:00",
+      "time": "10:00 AM - 11:00 AM",
       "room": "ROOM  7",
       "level": "0",
       "group": [
@@ -4161,7 +4201,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Adolfo & Tania",
       "sessionMainTitle": "Salsa On2 Partnerwork",
-      "time": "11:00 - 12:00",
+      "time": "11:00 AM - 12:00 PM",
       "room": "AURORA 1",
       "level": "0",
       "group": [
@@ -4196,7 +4236,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Rafael & Carine",
       "sessionMainTitle": "Salsa On1 Partnerwork",
-      "time": "11:00 - 12:00",
+      "time": "11:00 AM - 12:00 PM",
       "room": "AURORA 2",
       "level": "0",
       "group": [
@@ -4231,7 +4271,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Devon Near-hill",
       "sessionMainTitle": "Zouk Wifi",
-      "time": "11:00 - 12:00",
+      "time": "11:00 AM - 12:00 PM",
       "room": "ROOM  1",
       "level": "0",
       "group": [
@@ -4266,7 +4306,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Daniel & Kathryn",
       "sessionMainTitle": "Salsa On1 Partnerwork",
-      "time": "11:00 - 12:00",
+      "time": "11:00 AM - 12:00 PM",
       "room": "ROOM  2",
       "level": "0",
       "group": [
@@ -4301,7 +4341,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Natasha Tia",
       "sessionMainTitle": "Salsa On2 Footwork",
-      "time": "11:00 - 12:00",
+      "time": "11:00 AM - 12:00 PM",
       "room": "ROOM  4",
       "level": "0",
       "group": [
@@ -4336,7 +4376,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Carlos & Susan",
       "sessionMainTitle": "Traditional Bachata Footwork",
-      "time": "11:00 - 12:00",
+      "time": "11:00 AM - 12:00 PM",
       "room": "ROOM  5",
       "level": "1",
       "group": [
@@ -4371,7 +4411,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Jorge & Indira",
       "sessionMainTitle": "Timba Musicality",
-      "time": "11:00 - 12:00",
+      "time": "11:00 AM - 12:00 PM",
       "room": "ROOM  6",
       "level": "0",
       "group": [
@@ -4406,7 +4446,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Rose Turuka",
       "sessionMainTitle": "Afro House",
-      "time": "11:00 - 12:00",
+      "time": "11:00 AM - 12:00 PM",
       "room": "ROOM  7",
       "level": "0",
       "group": [
@@ -4441,7 +4481,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "De’jon & Clo",
       "sessionMainTitle": "Salsa On 2 partnerwork",
-      "time": "12:00 - 13:00",
+      "time": "12:00 PM - 1:00 PM",
       "room": "AURORA 1",
       "level": "0",
       "group": [
@@ -4451,7 +4491,8 @@ export const modelInitStaticOverwrite =
         30204,
         30205,
         30206,
-        30207
+        30207,
+        30208
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -4475,7 +4516,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Alemana",
       "sessionMainTitle": "Follows' Styling",
-      "time": "12:00 - 13:00",
+      "time": "12:00 PM - 1:00 PM",
       "room": "AURORA 2",
       "level": "1",
       "group": [
@@ -4485,7 +4526,8 @@ export const modelInitStaticOverwrite =
         30204,
         30205,
         30206,
-        30207
+        30207,
+        30208
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -4509,7 +4551,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Eddie Peligro",
       "sessionMainTitle": "Bachata Partnerwork",
-      "time": "12:00 - 13:00",
+      "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  1",
       "level": "0",
       "group": [
@@ -4519,7 +4561,8 @@ export const modelInitStaticOverwrite =
         30204,
         30205,
         30206,
-        30207
+        30207,
+        30208
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -4541,9 +4584,44 @@ export const modelInitStaticOverwrite =
     {
       "id": 30204,
       "itemType": "type1",
+      "artistName": "Tito Garcia",
+      "sessionMainTitle": "Casino Rueda",
+      "time": "12:00 PM - 1:00 PM",
+      "room": "ROOM  2",
+      "level": "0",
+      "group": [
+        30201,
+        30202,
+        30203,
+        30204,
+        30205,
+        30206,
+        30207,
+        30208
+      ],
+      "groupTitle": "Workshops",
+      "groupSubtitle": "",
+      "shortMainTitle": "",
+      "dateString": "Sun, October 20, 2024",
+      "startTime": "2024-10-20T12:00:00.000Z",
+      "endTime": "2024-10-20T13:00:00.000Z",
+      "place": "",
+      "sessionSubtitle": "",
+      "sessionDescription": "",
+      "artistOne": "Tito Garcia",
+      "artistTwo": "",
+      "artistLocation": "BOULDER",
+      "flag": false,
+      "flagIncludeInNow": false,
+      "artistCompany": "",
+      "sessionSpecialTrackCount": ""
+    },
+    {
+      "id": 30205,
+      "itemType": "type1",
       "artistName": "Fuego Y Hielo",
       "sessionMainTitle": "Salsa On2 Partnerwork",
-      "time": "12:00 - 13:00",
+      "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  4",
       "level": "0",
       "group": [
@@ -4553,7 +4631,8 @@ export const modelInitStaticOverwrite =
         30204,
         30205,
         30206,
-        30207
+        30207,
+        30208
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -4573,11 +4652,11 @@ export const modelInitStaticOverwrite =
       "sessionSpecialTrackCount": ""
     },
     {
-      "id": 30205,
+      "id": 30206,
       "itemType": "type1",
       "artistName": "Alex & Desiree",
       "sessionMainTitle": "Traditional Bachata Footwork/Partner",
-      "time": "12:00 - 13:00",
+      "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  5",
       "level": "0",
       "group": [
@@ -4587,7 +4666,8 @@ export const modelInitStaticOverwrite =
         30204,
         30205,
         30206,
-        30207
+        30207,
+        30208
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -4607,11 +4687,11 @@ export const modelInitStaticOverwrite =
       "sessionSpecialTrackCount": ""
     },
     {
-      "id": 30206,
+      "id": 30207,
       "itemType": "type1",
       "artistName": "Colorado Ballet",
       "sessionMainTitle": "Intro to Ballet",
-      "time": "12:00 - 13:00",
+      "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  6",
       "level": "0",
       "group": [
@@ -4621,7 +4701,8 @@ export const modelInitStaticOverwrite =
         30204,
         30205,
         30206,
-        30207
+        30207,
+        30208
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -4641,11 +4722,11 @@ export const modelInitStaticOverwrite =
       "sessionSpecialTrackCount": ""
     },
     {
-      "id": 30207,
+      "id": 30208,
       "itemType": "type1",
       "artistName": "Jovan Casanova",
       "sessionMainTitle": "Kizomba Musicality",
-      "time": "12:00 - 13:00",
+      "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  7",
       "level": "0",
       "group": [
@@ -4655,7 +4736,8 @@ export const modelInitStaticOverwrite =
         30204,
         30205,
         30206,
-        30207
+        30207,
+        30208
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -4679,7 +4761,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Karen Y Ricardo",
       "sessionMainTitle": "Salsa On1 Shines/Partner",
-      "time": "13:00 - 14:00",
+      "time": "1:00 PM - 2:00 PM",
       "room": "AURORA 1",
       "level": "1",
       "group": [
@@ -4714,7 +4796,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Ataca Y Alemana",
       "sessionMainTitle": "Bachata Partnerwork",
-      "time": "13:00 - 14:00",
+      "time": "1:00 PM - 2:00 PM",
       "room": "AURORA 2",
       "level": "1",
       "group": [
@@ -4749,7 +4831,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Rachel & Hunter",
       "sessionMainTitle": "Zouk Embrace",
-      "time": "13:00 - 14:00",
+      "time": "1:00 PM - 2:00 PM",
       "room": "ROOM  1",
       "level": "0",
       "group": [
@@ -4784,7 +4866,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Jahaira & Angelica",
       "sessionMainTitle": "Traditional Bachata Partnerwork",
-      "time": "13:00 - 14:00",
+      "time": "1:00 PM - 2:00 PM",
       "room": "ROOM  2",
       "level": "0",
       "group": [
@@ -4819,7 +4901,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Kiki Elsilencio",
       "sessionMainTitle": "Kizomba Fancy Footwork",
-      "time": "13:00 - 14:00",
+      "time": "1:00 PM - 2:00 PM",
       "room": "ROOM  4",
       "level": "1",
       "group": [
@@ -4852,9 +4934,9 @@ export const modelInitStaticOverwrite =
     {
       "id": 30306,
       "itemType": "type1",
-      "artistName": "Tito Garcia",
-      "sessionMainTitle": "Casino Rueda",
-      "time": "13:00 - 14:00",
+      "artistName": "Oscar Martinez",
+      "sessionMainTitle": "Salsa On2 Partnerwork",
+      "time": "1:00 PM - 2:00 PM",
       "room": "ROOM  5",
       "level": "0",
       "group": [
@@ -4876,9 +4958,9 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Tito Garcia",
+      "artistOne": "Oscar Martinez",
       "artistTwo": "",
-      "artistLocation": "BOULDER",
+      "artistLocation": "Houston",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -4888,8 +4970,8 @@ export const modelInitStaticOverwrite =
       "id": 30307,
       "itemType": "type1",
       "artistName": "Lawrence & Jewel",
-      "sessionMainTitle": "Afro Cuban Fusion Partnerwork",
-      "time": "13:00 - 14:00",
+      "sessionMainTitle": "Afro Cuban Fusion Shines",
+      "time": "1:00 PM - 2:00 PM",
       "room": "ROOM  6",
       "level": "1",
       "group": [
@@ -4924,7 +5006,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Diego & Yurley",
       "sessionMainTitle": "Sensual Bachata Partnerwork",
-      "time": "13:00 - 14:00",
+      "time": "1:00 PM - 2:00 PM",
       "room": "ROOM  7",
       "level": "0",
       "group": [
@@ -4959,7 +5041,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Kingsmen",
       "sessionMainTitle": "Bachata Shines",
-      "time": "14:00 - 15:00",
+      "time": "2:00 PM - 3:00 PM",
       "room": "AURORA 1",
       "level": "1",
       "group": [
@@ -4994,7 +5076,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Benny & Ashley",
       "sessionMainTitle": "Salsa On2 Partnerwork",
-      "time": "14:00 - 15:00",
+      "time": "2:00 PM - 3:00 PM",
       "room": "AURORA 2",
       "level": "1",
       "group": [
@@ -5029,7 +5111,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Ebonie Lee",
       "sessionMainTitle": "History of Brazillian Zouk (Dance + Music)",
-      "time": "14:00 - 15:00",
+      "time": "2:00 PM - 3:00 PM",
       "room": "ROOM  1",
       "level": "0",
       "group": [
@@ -5064,7 +5146,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Adriana & Jorge",
       "sessionMainTitle": "Bachata Partnerwork",
-      "time": "14:00 - 15:00",
+      "time": "2:00 PM - 3:00 PM",
       "room": "ROOM  2",
       "level": "0",
       "group": [
@@ -5099,7 +5181,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Aris Gingundo",
       "sessionMainTitle": "Kizomba Partnerwork",
-      "time": "14:00 - 15:00",
+      "time": "2:00 PM - 3:00 PM",
       "room": "ROOM  4",
       "level": "0",
       "group": [
@@ -5134,7 +5216,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Adrian Tenorio",
       "sessionMainTitle": "Salsa On2 Shines",
-      "time": "14:00 - 15:00",
+      "time": "2:00 PM - 3:00 PM",
       "room": "ROOM  5",
       "level": "0",
       "group": [
@@ -5169,7 +5251,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Damilola Elegbede",
       "sessionMainTitle": "Cuban Salsa Footwork",
-      "time": "14:00 - 15:00",
+      "time": "2:00 PM - 3:00 PM",
       "room": "ROOM  6",
       "level": "0",
       "group": [
@@ -5204,7 +5286,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Serena Spears",
       "sessionMainTitle": "Afro Latin House Footwork",
-      "time": "14:00 - 15:00",
+      "time": "2:00 PM - 3:00 PM",
       "room": "ROOM  7",
       "level": "0",
       "group": [
@@ -5239,7 +5321,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Brandon & Michelle",
       "sessionMainTitle": "Salsa On2 Partnerwork",
-      "time": "15:00 - 16:00",
+      "time": "3:00 PM - 4:00 PM",
       "room": "AURORA 1",
       "level": "0",
       "group": [
@@ -5272,7 +5354,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Jessica Quiles",
       "sessionMainTitle": "follows styling",
-      "time": "15:00 - 16:00",
+      "time": "3:00 PM - 4:00 PM",
       "room": "AURORA 2",
       "level": "0",
       "group": [
@@ -5305,7 +5387,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Devon Near-hill",
       "sessionMainTitle": "Zouk Wifi",
-      "time": "15:00 - 16:00",
+      "time": "3:00 PM - 4:00 PM",
       "room": "ROOM  1",
       "level": "1",
       "group": [
@@ -5338,7 +5420,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "C.a.m.",
       "sessionMainTitle": "Salsa Caleña Partnerwork",
-      "time": "15:00 - 16:00",
+      "time": "3:00 PM - 4:00 PM",
       "room": "ROOM  2",
       "level": "0",
       "group": [
@@ -5371,7 +5453,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Chris & Alexus",
       "sessionMainTitle": "Bachata Partnerwork",
-      "time": "15:00 - 16:00",
+      "time": "3:00 PM - 4:00 PM",
       "room": "ROOM  6",
       "level": "1",
       "group": [
@@ -5404,7 +5486,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type1",
       "artistName": "Marisol Blanco",
       "sessionMainTitle": "Makuta/Yuka/Palo",
-      "time": "15:00 - 16:00",
+      "time": "3:00 PM - 4:00 PM",
       "room": "ROOM  7",
       "level": "0",
       "group": [
@@ -5437,7 +5519,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type4",
       "artistName": "Alex & Desiree",
       "sessionMainTitle": "AnD Bachata Instructor - Certification Training",
-      "time": "15:00 - 17:00",
+      "time": "3:00 PM - 5:00 PM",
       "room": "ROOM  4",
       "level": "-1",
       "group": [
@@ -5466,7 +5548,7 @@ export const modelInitStaticOverwrite =
       "itemType": "type4",
       "artistName": "Rafa Gonzalez",
       "sessionMainTitle": "Heels Challenge",
-      "time": "15:00 - 17:00",
+      "time": "3:00 PM - 5:00 PM",
       "room": "ROOM  5",
       "level": "-1",
       "group": [
