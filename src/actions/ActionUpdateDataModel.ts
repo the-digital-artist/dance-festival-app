@@ -1,92 +1,80 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import DataModel from "../DataModel";
 import LauncherController from "../LauncherController";
-import ArtistListScreen from "../components/screens/ArtistListScreen";
-import SchedulerScreen from "../components/screens/SchedulerScreen";
 
 
-const ActionUpdateDataModelWithRemote = async () => {
-    console.log("ActionUpdateDataModelWithRemote ");
+const ActionUpdateDataModelWithRemote = async (params = {noProcessing: false,  timeOut:1500}) => {
+    console.log("ActionUpdateDataModel ");
     //set the list into update mode
     const c = LauncherController.getInstance().context;
-    if (c.dataDependentComponentSchedulerScreen == null || c.dataDependentComponentArtistScreen == null) return;
+    const dataModel = DataModel.getInstance().static
 
     //first perform a request to the predefined URL
     try {
-        const fetchController = new AbortController()
-        // setTimeout(() => { fetchController.abort() }, 1500)
+        const fetchController1 = new AbortController()
+        setTimeout(() => { fetchController1.abort() }, params.timeOut)
+        const urlVersion = `${dataModel.apiUrlBase}${dataModel.apiModelUpdateVersion}`;
+        const urlContent = `${dataModel.apiUrlBase}${dataModel.apiModelUpdateContent}`;
 
+        console.log("ActionUpdateDataModel -- fetch(dataModel.modelRemoteVersionCheckUrl: " + urlVersion);
 
-        const response1 = await fetch(DataModel.modelRemoteVersionCheckUrl, { signal: fetchController.signal });
+        const response1 = await fetch(urlVersion, { signal: fetchController1.signal });
         if (!response1.ok) return;
 
+        //first we check with a small version check API (only returns the version, not the content)
         const version = await response1.json();
         console.log("ActionUpdateDataModel -- API - got version: " + version);
+        if (version <= dataModel.modelVersion) { return };
 
 
-        if (version <= DataModel.modelVersion) { return };
-        // console.log(":::::ActionUpdateDataModel -- querying full model");
-
-        const response2 = await fetch(DataModel.modelRemoteGetModelUrl, { signal: fetchController.signal });
+          //now we query the full model
+        console.log(":::::ActionUpdateDataModel -- querying full model from: "+urlContent);
+        const fetchController2 = new AbortController()
+        setTimeout(() => { fetchController2.abort() }, params.timeOut)
+        const response2 = await fetch(urlContent, { signal: fetchController2.signal });
         if (!response2.ok) return;
-
-        // console.log(":::::ActionUpdateDataModel -- got ok response");
-
+        console.log(":::::ActionUpdateDataModel -- got ok response");
         const remoteModel = await response2.json();
+        console.log(":::::ActionUpdateDataModel -- object created");
+        console.log(":::::ActionUpdateDataModel -- remote model version: " + remoteModel.modelVersion);
+        if (remoteModel.modelVersion <= dataModel.modelVersion) return;
 
-        // console.log(":::::ActionUpdateDataModel -- object created");
-        // console.log(":::::ActionUpdateDataModel -- remote model version: " + remoteModel.modelVersion);
+        if(params.noProcessing) { 
+            DataModel.getInstance().static = remoteModel; 
+            await AsyncStorage.setItem('dataModel', JSON.stringify(remoteModel));
+            return;
+        };
 
-        if (remoteModel.modelVersion <= DataModel.modelVersion) return;
-        // console.log(":::::ActionUpdateDataModel -- modelVersion is greater than Local");
 
+        //now star the actual update (first set all components into update state, then update model)
+        console.log(":::::ActionUpdateDataModel -- modelVersion is greater than Local");
+        for (let i = 0; i < c.dataDependentComponents.length; i++) c.dataDependentComponents[i].startModelUpdate();
 
-        (c.dataDependentComponentArtistScreen as ArtistListScreen).startModelUpdate();
-        (c.dataDependentComponentSchedulerScreen as SchedulerScreen).startModelUpdate();
-
-        // console.log(":::::ActionUpdateDataModel -- after SchedulerScreen).startModelUpdate");
         console.log(":::::ActionUpdateDataModel -- updating in-memory model with remote model: " + remoteModel.modelVersion);
-
-        //now update in memory model
-        // now sync all the keys in the remote model to the local model
-        for (const key in remoteModel) {
-            if (Object.prototype.hasOwnProperty.call(DataModel, key)) {
-                console.log(":::::ActionUpdateDataModel - syncing local key with remote key: " + key);
-                DataModel[key] = remoteModel[key];
-            }
-        }
-
+        DataModel.getInstance().static = remoteModel;
+        console.log(":::::ActionUpdateDataModel -- storing new datamodel locally "+remoteModel.modelVersion);
+        AsyncStorage.setItem('dataModel', JSON.stringify(remoteModel));
         console.log(":::::ActionUpdateDataModel -- process data model");
         await LauncherController.getInstance().prepareDataModel();
 
-        //inform components
-        (c.dataDependentComponentArtistScreen as ArtistListScreen).finishModelUpdate();
-        (c.dataDependentComponentSchedulerScreen as SchedulerScreen).finishModelUpdate();
+        for (let i = 0; i < c.dataDependentComponents.length; i++) c.dataDependentComponents[i].finishModelUpdate();
 
-        //store the list into phone storage
-        console.log(":::::ActionUpdateDataModel -- latest model asynchroneously stored local: " + remoteModel.modelVersion);
+        // finally store the new model into local storage so it can be retrieved on next app startup
 
-        const localModelCopy = {};
-        for (const key in DataModel) {
-            if (key == '_instance' || key == 'instance' || key.indexOf('dyn_') == 0)
-                continue;
-            localModelCopy[key] = DataModel[key];
-        }
-        const modelAsString = JSON.stringify(localModelCopy);
-        AsyncStorage.setItem('dataModel', modelAsString);
 
         globalThis.gc(); //this feels strange but apparently necessary with fetch
         //https://github.com/facebook/hermes/issues/1147
         //https://github.com/facebook/react-native/issues/39441
-
-
-
     } catch (error) {
         if (error.message == "Aborted") {
             console.log(":::::ActionUpdateDataModel -- Internet too slow - aborting request")
             return;
         }
-        // console.error(error);
+        if (error.message == "Network request failed") {
+            console.log(":::::ActionUpdateDataModel -- Network request failed")
+            return;
+        }
+        console.log(":::::ActionUpdateDataModel -- Unkown Error: "+error.message)
     }
 }
 

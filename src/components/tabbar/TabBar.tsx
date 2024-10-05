@@ -1,9 +1,9 @@
-import React, { Fragment } from "react";
-import { Dimensions, Image, StyleSheet, View } from "react-native";
-import LauncherController from "../../LauncherController";
-import TransitionTabbarSelect from "./TransitionTabbarSelect";
-import ButtonSmall from "../ButtonSmall";
+import React, { Fragment, useEffect } from "react";
+import { Dimensions, View } from "react-native";
 import { useAnimatedStyle, useDerivedValue, useSharedValue } from "react-native-reanimated";
+import LauncherController from "../../LauncherController";
+import ButtonSmall from "../ButtonSmall";
+import TransitionTabbarSelect from "./TransitionTabbarSelect";
 
 const TabBar = (props) => {
     let tabBarData = LauncherController.getInstance().tabBarData;
@@ -13,15 +13,20 @@ const TabBar = (props) => {
     //     { id: 2, itemText: "Sunday", associatedScreenName: "scheduleList2", imgSrc: null }
     // ]
 
-    let offsetY = 130;
-    let itemWidth = Dimensions.get('screen').width / 2-20;
-    let itemSpread = Dimensions.get('screen').width / 2-30
+    let offsetY = props.offsetY == undefined ? 130 : props.offsetY;
+
+    let itemWidth = (Dimensions.get('screen').width / tabBarData.length);
     let itemHeight = 32;
     let itemHeightSelectedOffset = 10;
+    let itemSpread = (Dimensions.get('screen').width / tabBarData.length)
     let startX = (Dimensions.get('screen').width / 2 - ((tabBarData.length - 1) * itemSpread) / 2) - itemWidth / 2
 
     const currentIndex = useSharedValue(0);
-    const selectedIndex = useSharedValue(0);
+
+    useEffect(() => {
+        console.log('useeffect')
+        TransitionTabbarSelect(LauncherController.getInstance().tabBarInitialIndex, currentIndex, null, false);
+    }, [currentIndex]);
 
     const animValuesHighlight = []
     const animValuesText = []
@@ -89,7 +94,9 @@ const TabBar = (props) => {
                                 borderTopWidth: 4,
                                 borderBottomWidth: 0,
                             }}
-                            onSelect={() => { TransitionTabbarSelect(itemData, i, currentIndex) }}
+                            onSelect={() => {
+                                TransitionTabbarSelect(i, currentIndex, itemData)
+                            }}
                             source={itemData.imgSrc}
                             text={(itemData.itemText as string).toLocaleUpperCase()}
                             fontStyle={{
@@ -99,7 +106,7 @@ const TabBar = (props) => {
                                 color: '#FFFFFF',
                                 fontSize: 11,
                                 opacity: 1.0, 
-                                top: (30/2-11/2+4)
+                                top: (18)
                             }}
                         />
 

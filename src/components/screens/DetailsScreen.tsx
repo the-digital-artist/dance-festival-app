@@ -18,7 +18,7 @@ class DetailsScreen extends PureComponent<any,any> {
     render() {
         let item = this.state.dataItem;
         if(item==null) return;
-        const artistData = DataModel.dataArtists[item.artistOne];
+        const artistData = DataModel.getInstance().static.dataArtists[item.artistOne];
         
         return (
             <>

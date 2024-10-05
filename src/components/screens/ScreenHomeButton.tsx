@@ -17,12 +17,15 @@ const ScreenHomeButton = (props) => {
         source={require('../../../assets/header_logo_small.png')}
         style={{
           position: 'absolute',
-          width: 100, height: 32
+          top: 50, right: 15,
+          width: 45,
+          height: 45,
         }}
         imageStyle={[{
           position: 'absolute',
-          right: 0, left: undefined,
-          width: 100, height: 32,
+          right: undefined, left: undefined,
+          width: 45,
+          height: 45,
           resizeMode: "contain",
           opacity: 0.9,
         }]}

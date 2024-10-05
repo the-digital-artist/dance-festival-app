@@ -1,22 +1,20 @@
 import React, { PureComponent } from "react";
-import { Dimensions, Platform, View } from "react-native";
+import { Dimensions } from "react-native";
 import LComponent from "../../core/LComponent";
-import ArtistDetailsScreen from "./ArtistDetailsScreen";
-import ArtistListScreen from "./ArtistListScreen";
+import SchedulerListScreen from "./SchedulerListScreen";
+import SchedulerSessionDetailsScreen from "./SchedulerSessionDetailsScreen";
 
-
-class ArtistMainScreen extends PureComponent {
+class SchedulerMainScreen extends PureComponent {
 
     constructor(props) {
         super(props);
     }
 
     render() {
-
         return (
             <>
                 <LComponent
-                    name='artistsMainScreenContainer'
+                    name='schedulerMainScreenContainer'
                     style={{
                         position: 'absolute',
                         backgroundColor: '#000000',
@@ -25,12 +23,12 @@ class ArtistMainScreen extends PureComponent {
                     }}
                     visualProperties={{
                         alpha: 1,
-                        x: Dimensions.get('screen').width, y: 0, z: 0
+                        x: 0, y: 0, z: 0
                     }}
                 >
 
                     <LComponent
-                        name='artistsSelectionScreenContainer'
+                        name='schedulerSelectionScreenContainer'
                         style={{
                             position: 'absolute',
                             backgroundColor: '#000000',
@@ -42,10 +40,10 @@ class ArtistMainScreen extends PureComponent {
                             x: 0, y: 0, z: 0
                         }}
                     >
-                        <ArtistListScreen />
+                        <SchedulerListScreen />
                     </LComponent>
                     <LComponent
-                        name='artistsDetailsScreenContainer'
+                        name='schedulerDetailsScreenContainer'
                         style={{
                             position: 'absolute',
                             backgroundColor: '#dd5163',
@@ -57,10 +55,10 @@ class ArtistMainScreen extends PureComponent {
                             x: Dimensions.get('screen').width, y: 0, z: 0
                         }}
                     >
-                        <ArtistDetailsScreen />
+                        <SchedulerSessionDetailsScreen />
                     </LComponent>
 
-                    {(Platform.OS == 'android') &&
+                    {/* {(Platform.OS == 'android') &&
                         <View
                             style={{
                                 backgroundColor: '#7d7974',
@@ -69,7 +67,7 @@ class ArtistMainScreen extends PureComponent {
                                 height: (Dimensions.get('screen').width * (300 / 1290)),
                                 opacity: 0.8
                             }} />
-                    }
+                    } */}
                 </LComponent>
 
             </>
@@ -78,4 +76,4 @@ class ArtistMainScreen extends PureComponent {
     componentDidMount(): void { }
 }
 
-export default ArtistMainScreen;
+export default SchedulerMainScreen;

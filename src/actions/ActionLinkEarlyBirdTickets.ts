@@ -1,11 +1,11 @@
 import { Linking } from "react-native";
 
 
-const ActionMoreDownloadPdf = () => {
-    console.log('ActionMoreDownloadPdf');
+const ActionLinkEarlyBirdTickets = () => {
+    console.log('ActionLinkEarlyBirdTickets');
 
 
-        let account = 'https://patifestival.com/tickets/'
+        let account = 'https://www.eventbrite.com/e/2024-caldac-convention-formerly-denver-salsa-bachata-congress-tickets-716510380837?aff=oddtdtcreator'
         Linking.canOpenURL(account).then(supported => {
                 console.log("supported" + supported);
                 if (!supported) return;
@@ -30,4 +30,4 @@ const ActionMoreDownloadPdf = () => {
 //   saveFile(result.uri, filename, result.headers["Content-Type"]);
 // }
 
-export default ActionMoreDownloadPdf;
+export default ActionLinkEarlyBirdTickets;

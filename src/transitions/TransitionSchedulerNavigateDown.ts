@@ -3,17 +3,15 @@ import LauncherController from "../LauncherController";
 import TweenManager from "../core/LTweenManager";
 import { PureComponent } from "react";
 
-const TransitionArtistNavigateDown = (item, levelIndex, ) => {
-        console.log("TransitionArtistNavigateDown");
+const TransitionSchedulerNavigateDown = (item, levelIndex) => {
+        console.log("TransitionSchedulerNavigateDown");
 
-        LauncherController.getInstance().context.artistFocusItem = item;
-        let listeners = LauncherController.getInstance().context.artistFocusItemUpdateListeners
-        for (let i = 0; i < listeners.length; i++) listeners[i]();
-                
+        LauncherController.getInstance().context.schedulerFocusItem = item;
 
-        // LauncherController.getInstance().context.stackNavigator.navigate("ARTIST DETAILS")
-        const stackData = LauncherController.getInstance().artistStackData;
-        const oldIndex =  LauncherController.getInstance().artistStackIndex;
+
+     //now animate screens
+        const stackData = LauncherController.getInstance().schedulerStackData;
+        const oldIndex =  LauncherController.getInstance().schedulerStackIndex;
         const newIndex = levelIndex;
         if(newIndex == oldIndex) return;
 
@@ -26,7 +24,7 @@ const TransitionArtistNavigateDown = (item, levelIndex, ) => {
         let screenNameIn = stackData[newIndex].associatedScreenName
         TweenManager.tween().to(screenNameIn, 0, { y: 0 });
         TweenManager.tween().to(screenNameIn, 200, { x: 0  });
-        TweenManager.tween().to(screenNameIn, 200, { alpha: 1, z: 0, delay: 137 });
+        TweenManager.tween().to(screenNameIn, 284, { alpha: 1, z: 0, delay: 137 });
 
         let screenNameOut = stackData[oldIndex].associatedScreenName
         TweenManager.tween().to(screenNameOut, 134, { alpha: 1, z: 0 });
@@ -37,8 +35,8 @@ const TransitionArtistNavigateDown = (item, levelIndex, ) => {
                 } });
 
    
-        LauncherController.getInstance().artistStackIndex = newIndex
+        LauncherController.getInstance().schedulerStackIndex = newIndex
 }
 
-export default TransitionArtistNavigateDown;
+export default TransitionSchedulerNavigateDown;
 

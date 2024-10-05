@@ -35,6 +35,23 @@ const HappeningNowTileItem = ({ item }) => {
           }}/> 
         }
 
+{   item.itemType != "type0" &&
+      <Text allowFontScaling={false} id='textTimeWhatsHappening' style={{
+        position: 'absolute',
+        top: 15, left: 5,
+        width: 80, height: 15,
+        fontFamily: 'Cabin-Regular',
+        opacity: 0.6,
+        // backgroundColor: 'skyblue',
+        textAlign: 'right',
+        letterSpacing:0.6,
+        color: '#232323',
+        fontSize: 9,
+      }}>
+        {item.time}
+      </Text>
+}
+
       <Text allowFontScaling={false} id='textLocation' style={{
         position: 'absolute',
         top: 14,
@@ -60,7 +77,7 @@ const HappeningNowTileItem = ({ item }) => {
           left: (80 + 5 +10),
           width: Dimensions.get('screen').width-60-(80 + 5 +10+10), 
           height: 28,
-          fontFamily: item.itemType != "type2" ? 'LuckiestGuy-Regular' : 'Antonio-Regular',
+          fontFamily: item.itemType != "type2" ? 'DINCondensed-Bold' : 'DINNeuzeitGroteskStd-Light',
           // backgroundColor: 'skyblue',
           textAlign: 'left',
           textAlignVertical: 'bottom',

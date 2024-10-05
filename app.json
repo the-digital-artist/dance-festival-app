@@ -1,45 +1,60 @@
 {
   "expo": {
-    "name": "PaTi Festival",
-    "slug": "pati-festival-berlin",
-    "version": "1.0.2",
+    "name": "Fiesta Elegante Berlin",
+    "slug": "fiesta-elegante-berlin",
+    "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "cover",
-      "backgroundColor": "#000000"
+      "backgroundColor": "#567f9e"
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.thedigitalartist.patiberlin",
-      "buildNumber": "25",
+      "bundleIdentifier": "com.thedigitalartist.fiestaelegante.app",
+      "buildNumber": "21",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "LSApplicationQueriesSchemes": [
           "instagram",
           "fb",
           "vnd.youtube"
-        ]
+        ],
+        "NSCameraUsageDescription": "This app uses the camera to scan barcodes during the event."
       }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#000000"
+        "backgroundImage": "./assets/adaptive-icon-bg.png",
+        "backgroundColor": "#567f9e"
       },
-      "package": "com.thedigitalartist.patiberlin",
-      "versionCode": 16
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
+      "package": "com.thedigitalartist.fiestaelegante.festivalapp",
+      "versionCode": 17
     },
     "extra": {
       "eas": {
-        "projectId": "da5d6a70-3783-4f6a-b8b7-1a4bbed8869b"
+        "projectId": "b27cb11f-8899-42c2-89b8-4a6d767f739d"
       }
     },
-    "owner": "the.digital.artist"
+    "owner": "the.digital.artist",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "newArchEnabled": false
+          },
+          "android": {
+            "newArchEnabled": false
+          }
+        }
+      ]
+    ]
   }
 }

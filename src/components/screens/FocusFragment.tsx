@@ -18,7 +18,7 @@ class FocusFragment extends PureComponent {
 
         const item:any = LauncherController.getInstance().context.focusedItemData;
         const centerPieceWidth = Dimensions.get('screen').width - (5 + 45 + 35 + 35 + 5)
-        const artistData = DataModel.dataArtists[item.artistOne];
+        const artistData = DataModel.getInstance().static.dataArtists[item.artistOne];
         LauncherController.getInstance().context.focusedItemComponent = this;
         const verticalOffsetTitleLength = item.lineCount != undefined ? (item.lineCount * 19) : 19;
 
@@ -76,7 +76,7 @@ class FocusFragment extends PureComponent {
                                 right: (item.orientation == 'right' ? undefined : (4 + 35)),
                                 left: (item.orientation == 'left' ? undefined : (4 + 35)),
                                 width: 170,
-                                fontFamily: 'LuckiestGuy-Regular',
+                                fontFamily: 'DINCondensed-Bold',
                                 // backgroundColor: 'indigo',
                                 textAlign: (item.orientation == 'right' ? 'left' : 'right'),
                                 color: '#58503e',
@@ -148,7 +148,7 @@ class FocusFragment extends PureComponent {
                             top: 195,
                             left: 100,
                             height: 15,
-                            fontFamily: 'RobotoCondensed-Medium',
+                            fontFamily: 'DINNeuzeitGroteskStd-Light',
                             // backgroundColor: 'indigo'
                             textAlign: 'right',
                             color: '#6b4688',
@@ -163,7 +163,7 @@ class FocusFragment extends PureComponent {
                             top: 195,
                             left: 200,
                             height: 15,
-                            fontFamily: 'RobotoCondensed-Medium',
+                            fontFamily: 'DINNeuzeitGroteskStd-Light',
                             // backgroundColor: 'indigo'
                             textAlign: 'right',
                             color: '#6b4688',
@@ -198,7 +198,7 @@ class FocusFragment extends PureComponent {
                             top: 245,
                             left: 100,
                             height: 15,
-                            fontFamily: 'RobotoCondensed-Medium',
+                            fontFamily: 'DINNeuzeitGroteskStd-Light',
                             // backgroundColor: 'indigo'
                             textAlign: 'right',
                             color: '#6b4688',
@@ -228,7 +228,7 @@ class FocusFragment extends PureComponent {
                             top: 295,
                             left: 100,
                             height: 15,
-                            fontFamily: 'RobotoCondensed-Medium',
+                            fontFamily: 'DINNeuzeitGroteskStd-Light',
                             // backgroundColor: 'indigo'
                             textAlign: 'right',
                             color: '#6b4688',

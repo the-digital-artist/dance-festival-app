@@ -4,7 +4,7 @@ import TransitionArtistNavigateDown from "../transitions/TransitionArtistNavigat
 
 const ActionArtistListOnDetailsBtn = (item) => {
   console.log("ActionArtistListOnDetailsBtn ");
-  LauncherController.getInstance().context.navigationHistory.push({out:'ArtistListScreen', transition:'TransitionArtistNavigateDown' })
+  LauncherController.getInstance().context.navigationHistory.push({out:'ArtistListScreen', transition:'TransitionArtistNavigateDown', data: {} })
   TransitionArtistNavigateDown(item, 1) 
 
 }

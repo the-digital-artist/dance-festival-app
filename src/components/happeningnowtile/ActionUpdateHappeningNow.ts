@@ -44,8 +44,8 @@ const ActionUpdateHappeningNow = () => {
     // let sessionStartTime = new Date(currentTime);
     // let sessionEndTime = new Date(currentTime);
 
-    // for (let i = 0; i < DataModel.dyn_dataModelProgram.length; i++) {
-    //     const d = DataModel.dyn_dataModelProgram[i]
+    // for (let i = 0; i < DataModel.getInstance().dyn_dataModelProgram.length; i++) {
+    //     const d = DataModel.getInstance().dyn_dataModelProgram[i]
     //     console.log(d.startTime);
     //     if (d.startTime == '' || d.endTime == '') continue;
 
