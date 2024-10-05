@@ -34,7 +34,7 @@ class SchedulerListScreen extends PureComponent implements IDataDependentCompone
     }
 
     render() {
-        // console.log("___________SchedulerScreen render ")
+        console.log("___________SchedulerScreen render ")
         let scheduleListArray = []
         if (this.state.dataModelList != null && this.state.modelUpdateState == 2) {
             //{flatListRef: reference, nativeGestureObj: native, data: dataModelList[0] }

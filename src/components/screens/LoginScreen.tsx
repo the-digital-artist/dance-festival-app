@@ -5,7 +5,6 @@ import ActionLoginCompleted from "../../actions/ActionLoginCompleted";
 import LComponent from "../../core/LComponent";
 import LText from "../../core/LText";
 import ButtonSmall from "../ButtonSmall";
-import Subheader from "../TCSubheader";
 
 class LoginScreen extends LComponent {
 
@@ -74,11 +73,11 @@ class LoginScreen extends LComponent {
                 }, this.props.textStyle]}>
                     Please sign into your account. During the closed beta phase, just select yourself below (no password).
                 </LText>
-
+{/* 
                 <Subheader
                     text="SIGN IN"
                     x={30} y={263}
-                />
+                /> */}
 
                 <Image
                     style={{

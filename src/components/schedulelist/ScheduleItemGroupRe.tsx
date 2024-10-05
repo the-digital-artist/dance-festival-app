@@ -202,7 +202,7 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
             <Animated.View style={
                 [{
                     position: 'absolute',
-                    left: (15), top: 115,
+                    left: (0), top: 10,
                     width: 32, height: 28,
                     // backgroundColor: 'skyblue'
                 }, animValueLeftButtonAlpha]
@@ -214,7 +214,7 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
                         position: 'absolute',
                         left: (0), top: 0,
                         width: 32, height: 28,
-                        opacity: 0.3
+                        opacity: 1.0
                     }}
                     visualProperties={{ x: 0, y: 0, z: 0 }}
                     onSelect={() => { changeSelectedIndex(-1) }}
@@ -227,7 +227,7 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
             <Animated.View style={
                 [{
                     position: 'absolute',
-                    left: (55 + 25 + tileWidth), top: 115,
+                    left: Dimensions.get('screen').width-32, top: 10,
                     width: 32, height: 28,
                     // backgroundColor: 'skyblue'
                 }, animValueRightButtonAlpha]
@@ -238,7 +238,7 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
                     style={{
                         position: 'absolute',
                         width: 32, height: 28 ,
-                        opacity: 0.3
+                        opacity: 1.0
                     }}
                     visualProperties={{ x: 0, y: 0, z: 0 }}
                     onSelect={() => { changeSelectedIndex(1) }}

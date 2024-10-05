@@ -3,8 +3,9 @@ import React, { PureComponent, ReactNode } from "react";
 import * as SplashScreen from 'expo-splash-screen';
 import LauncherController from "./LauncherController";
 
-import { SafeAreaView, View } from "react-native";
+import { View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import ArtistMainScreen from "./components/artists/ArtistMainScreen";
 import NavBar from "./components/navbar/NavBar";
 import NavBarHighlight from "./components/navbar/NavBarHighlight";
 import HomeScreen from "./components/screens/HomeScreen";
@@ -13,9 +14,8 @@ import SettingsScreen from "./components/screens/SettingsScreen";
 import UpdateOverlayFragement from "./components/screens/UpdateOverlayFragement";
 import Eventl from "./core/LEventl";
 import StateDependentComponent from "./core/LStateDependentComponent";
-import LoginScreen from "./components/screens/LoginScreen";
+import SchedulerScreen from "./components/screens/SchedulerScreen";
 import SchedulerMainScreen from "./components/schedulelist/SchedulerMainScreen";
-import ArtistMainScreen from "./components/artists/ArtistMainScreen";
 
 
 class Launcher extends PureComponent<any, any> {
@@ -59,11 +59,11 @@ class Launcher extends PureComponent<any, any> {
 
 
                             <StateDependentComponent states={['splash', 'loading']} controller={this.controller}>
-                                <LoadingScreen />
+                                {/* <LoadingScreen /> */}
                             </StateDependentComponent>
                         </>
                         : null}
-                </SafeAreaView>
+                </View>
             </GestureHandlerRootView>
 
         );

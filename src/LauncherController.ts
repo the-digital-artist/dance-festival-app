@@ -67,9 +67,9 @@ class LauncherController extends OperatorStates {
             artistFocusItemUpdateListeners: [],
 
             schedulerFocusItem: {
-                "id": 10205,
+                "id": 0,
                 "itemType": "type4",
-                "artistName": "Sisy Ayala",
+                "artistName": "Yosinel",
                 "sessionMainTitle": "Absolute Beginner Track - Salsa",
                 "time": "13:00 - 14:00",
                 "room": "ROOM  4",
@@ -93,7 +93,7 @@ class LauncherController extends OperatorStates {
                 "place": "",
                 "sessionSubtitle": "",
                 "sessionDescription": "",
-                "artistOne": "Sisy Ayala",
+                "artistOne": "",
                 "artistTwo": "",
                 "artistLocation": "Aurora",
                 "flag": false,

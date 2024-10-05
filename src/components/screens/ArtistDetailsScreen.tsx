@@ -120,7 +120,7 @@ class ArtistDetailsScreen extends PureComponent {
                                         }}
                                         visualProperties={{ alpha: 0.7, x: 0, y: 0, z: 0 }}
                                         onSelect={() => {
-                                            context.navigationHistory.push({ out: "ArtistDetailsScreen", transition: "ActionOpenSocialMediaApp" });
+                                            context.navigationHistory.push({ out: "ArtistDetailsScreen", transition: "ActionOpenSocialMediaApp", data: {} });
                                             ActionOpenSocialMediaApp(itemData.provider, itemData.account)
                                         }}
                                         source={itemData.imgSrc}

@@ -48,8 +48,8 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     const levelId = item.level != undefined ? item.level : -1;
     const levelImageSize = 8;
     //get data of artists
-    const artistData1 = DataModel.dataArtists[item.artistOne];
-    const artistData2 = item.artistTwo ? DataModel.dataArtists[item.artistTwo] : null;
+    const artistData1 = DataModel.getInstance().dyn_dataArtistsList[item.artistOne];
+    const artistData2 = item.artistTwo ? DataModel.getInstance().dyn_dataArtistsList[item.artistTwo] : null;
 
     const itemHeight = item.rowHeight != undefined ? item.rowHeight : 100;
     const roomBoxOffsetY = 20
@@ -147,9 +147,17 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
           <LComponent
             name={"ScheduleItemHighlight" + item.id}
             style={{
-              backgroundColor: '#4dabe9',
+              backgroundColor: 'transparent',
+              borderTopWidth: 1,
+              // borderBottomWidth: 1,
+              borderRightWidth: (item.orientation == 'left' ? 30 : 0),
+              borderLeftWidth: (item.orientation == 'right' ? 30 : 0),
+              borderColor: '#232423'
             }}
-            visualProperties={{ alpha: 0, x: 3, y: 0, h: (itemHeight - 30 - 3), w: this.props.tileWidth - 6 }}
+            visualProperties={{
+              alpha: 0, x: 3, y: -8,
+              h: (itemHeight - 30 - 3), w: this.props.tileWidth - 6
+            }}
           />
 
           <Animated.Text allowFontScaling={false} id='textLocation' style={[{
@@ -174,7 +182,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
 
           <Animated.View
             style={this.props.dynamicVisualProperties1}>
-{/* 
+            {/* 
             {artistData2 != null &&
 
               <ButtonSmall
@@ -265,7 +273,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               // backgroundColor: 'indigo',
               textAlign: (item.orientation == 'right' ? 'left' : 'right'),
               color: '#ffffff',
-            
+
             }}>
               {item.artistName ? (item.artistName as string) : ""}
             </Text >
@@ -275,28 +283,22 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
 
 
             {levelData[levelId] != undefined &&
-              <>
-                <Image
-                  source={levelData[levelId].src}
-                  style={{
-                    // backgroundColor: 'greenyellow',
-                    position: 'absolute',
-                    top: (25),
-                    right: (item.orientation == 'right' ? undefined : (38)),
-                    left: (item.orientation == 'left' ? undefined : (38)),
-                    width: levelImageSize * 105 / 33,
-                    height: levelImageSize,
-                    resizeMode: 'cover'
-                  }}>
-                </Image>
-
-                <Text allowFontScaling={false} id='textSessionLevel' style={{
+              <LComponent
+                style={{
+                  // backgroundColor: 'skyblue',
                   position: 'absolute',
                   top: (25),
-                  right: (item.orientation == 'left' ? undefined : (4 + 35)),
-                  left: (item.orientation == 'right' ? undefined : (4 + 35)),
+                  right: (item.orientation == 'right' ? undefined : (4+35)),
+                  left: (item.orientation == 'left' ? undefined : (4+35)),
+                  flexDirection: item.orientation == 'left' ? 'row-reverse' : 'row',
+                  // width: (200),
+                  height: levelImageSize,
+                  resizeMode: 'cover'
+                }}>
+                <Text allowFontScaling={false} id='textSessionLevel' style={{
+                  // right: (item.orientation == 'right' ? undefined : (4)),
+                  // left: (item.orientation == 'left' ? undefined : (4)),
                   // height: levelImageSize,
-                  width: (100 - 15),
                   fontFamily: 'AktivGrotesk-Regular',
                   letterSpacing: 1.2,
                   // opacity: 0.5,
@@ -307,10 +309,25 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                 }}>
                   {levelData[levelId].text}
                 </Text >
-              </>
+                <Image
+                  source={levelData[levelId].src}
+                  style={{
+                    // backgroundColor: 'greenyellow',
+                    marginLeft: 5,
+                    marginRight: 5,
+                    // right: (item.orientation == 'right' ? undefined : (75)),
+                    // left: (item.orientation == 'left' ? undefined : (75)),
+                    width: levelImageSize * 105 / 33,
+                    height: levelImageSize,
+                    resizeMode: 'cover'
+                  }}>
+                </Image>
+
+
+              </LComponent>
             }
 
-            {item.levelSpecial != undefined && item.levelSpecial == '1' && levelData[levelId] != undefined &&
+            {/* {item.levelSpecial != undefined && item.levelSpecial == '1' && levelData[levelId] != undefined &&
               <>
                 <Image
                   source={require('../../../assets/scheduler-levelicon-specialdrums.png')}
@@ -345,9 +362,9 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                 </Text >
               </>
 
-            }
+            } */}
 
-            {item.levelSpecial != undefined && item.levelSpecial == '3' &&
+            {/* {item.levelSpecial != undefined && item.levelSpecial == '3' &&
               <>
                 <Image
                   source={require('../../../assets/scheduler-levelicon-specialtheory.png')}
@@ -382,7 +399,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                 </Text >
               </>
 
-            }
+            } */}
 
             <ScheduleItemToggle
               ref={(r) => { this.toggleButtonReference = r }}
@@ -406,7 +423,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
             {(item.id != 'focus') &&
 
               <ButtonSmall
-                name={("ScheduleListArtistDetailsButton"+item.id)}
+                name={("ScheduleListArtistDetailsButton" + item.id)}
                 source={null}
                 style={{
                   position: 'absolute',
@@ -422,7 +439,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                   height: 20, width: 120
                 }}
                 fontStyle={{
-                  top: ((Platform.OS == 'android'))?-2:5,
+                  top: ((Platform.OS == 'android')) ? -2 : 5,
                   width: 120,
                   color: '#ffffff',
                   fontFamily: 'AktivGrotesk-Regular',
@@ -435,7 +452,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                 visualProperties={{ alpha: 1 }}
                 onSelect={() => {
                   if (artistData1 == undefined) return;
-                  LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage" });
+                  LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage", data: {} });
                   TransitionLinkToArtistPage(artistData1)
                 }}
               />

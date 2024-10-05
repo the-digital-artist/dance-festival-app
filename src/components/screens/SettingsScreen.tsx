@@ -36,10 +36,9 @@ class SettingsScreen extends PureComponent {
     render() {
 
         let socialBarData = [
-            { id: 0, itemText: "Instagram", account: "caldac_con", imgSrc: require('../../../assets/icon-social-insta.png') },
-            { id: 2, itemText: "Youtube", account: "UCxRKiakhperjgBCZxrrUlZw",  imgSrc: require('../../../assets/icon-social-youtube.png') },
-            { id: 3, itemText: "Facebook", account: "230103017070827",  imgSrc: require('../../../assets/icon-social-facebook.png') },
-            { id: 4, itemText: "Web", account: "https://www.caldacon.org", imgSrc: require('../../../assets/icon-social-web.png') }
+            { id: 0, itemText: "Instagram", account: "fiesta_elegante", imgSrc: require('../../../assets/icon-social-insta.png') },
+            { id: 1, itemText: "Facebook", account: "100090149059629",  imgSrc: require('../../../assets/icon-social-facebook.png') },
+            { id: 2, itemText: "Web", account: "https://www.berlinsalsafestival.com", imgSrc: require('../../../assets/icon-social-web.png') }
         ]
 
         let iconSize = 35;

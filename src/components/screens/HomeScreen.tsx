@@ -84,31 +84,7 @@ class HomeScreen extends PureComponent<any, any> {
                             this.setState({ activeItems: this.state.activeItems, scrollPosY: e.nativeEvent.contentOffset.y })
                         }}
                     >
-                        {(Date.now() > Date.parse(DataModel.dataTicketSales.earlyBirdStartTimeString)) &&
-                            <View
-                                style={{
-                                    top: Dimensions.get("screen").height > 800 ? 240 : 40,
-                                    // backgroundColor:'red',
-                                    width: Dimensions.get("screen").width,
-                                    height: 190,
-                                }}>
-                                {Platform.OS == "ios" && <BlurView
-                                    intensity={17}
-                                    style={{
-                                        // backgroundColor:'skyblue',
-                                        position: 'absolute',
-                                        opacity: 1.0,
-                                        left: 0,
-                                        top: 0,
-                                        width: Dimensions.get("screen").width,
-                                        height: (HomeScreen.homeProgramItemHeight + HomeScreen.homeProgramItemSpacingY) * DataModel.dataModelProgram.length - 5,
-
-                                    }} />
-                                }
-                                {/* <EarlyPassesTile offsetY={0} /> */}
-                            </View>
-
-                        }
+                        
 
                         {/* {(LauncherController.getInstance().context.happeningNowItems.length > 0) &&
                             <View

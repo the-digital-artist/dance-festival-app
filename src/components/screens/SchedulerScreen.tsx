@@ -29,7 +29,7 @@ class SchedulerScreen extends PureComponent {
         LauncherController.getInstance().context.dataDependentComponentSchedulerScreen = this;
 
         this.state.modelUpdateState = 2;
-        this.state.dataModelList = DataModel.dyn_dataScheduleListsByDay;
+        this.state.dataModelList = DataModel.getInstance().dyn_dataScheduleListsByDay;
     }
 
     render() {
@@ -142,7 +142,7 @@ class SchedulerScreen extends PureComponent {
     }
     finishModelUpdate() {
         // console.log("___________SchedulerScreen finishModelUpdate -  update (state 2)");
-        this.setState({ modelUpdateState: 2, dataModelList: DataModel.dyn_dataScheduleListsByDay })
+        this.setState({ modelUpdateState: 2, dataModelList: DataModel.getInstance().dyn_dataScheduleListsByDay })
     }
 }
 

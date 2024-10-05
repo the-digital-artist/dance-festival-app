@@ -18,10 +18,10 @@ class ArtistListScreen extends PureComponent {
         super(props);
 
         LauncherController.getInstance().context.stackNavigator = props.navigation;
-        LauncherController.getInstance().context.dataDependentComponentArtistScreen = this;
+        LauncherController.getInstance().context.dataDependentComponents.push(this);
 
         this.state.modelUpdateState = 2;
-        this.state.dataModelList = DataModel.dyn_dataArtistsList;
+        this.state.dataModelList = DataModel.getInstance().dyn_dataArtistsList;
     }
 
     render() {
@@ -101,7 +101,7 @@ class ArtistListScreen extends PureComponent {
     }
     finishModelUpdate() {
         console.log("___________ArtistListScreen finishModelUpdate -  update (state 2)"); 
-        this.setState({ modelUpdateState: 2, dataModelList: DataModel.dyn_dataArtistsList })
+        this.setState({ modelUpdateState: 2, dataModelList: DataModel.getInstance().dyn_dataArtistsList })
     }
 }
 

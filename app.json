@@ -9,12 +9,12 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "cover",
-      "backgroundColor": "#567f9e"
+      "backgroundColor": "#000000"
     },
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.thedigitalartist.fiestaelegante.app",
-      "buildNumber": "21",
+      "buildNumber": "1",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "LSApplicationQueriesSchemes": [
@@ -29,10 +29,10 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundImage": "./assets/adaptive-icon-bg.png",
-        "backgroundColor": "#567f9e"
+        "backgroundColor": "#000000"
       },
       "package": "com.thedigitalartist.fiestaelegante.festivalapp",
-      "versionCode": 17
+      "versionCode": 1
     },
     "extra": {
       "eas": {
