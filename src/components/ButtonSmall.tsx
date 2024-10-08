@@ -51,7 +51,7 @@ const ButtonSmall = (props) => {
                             // backgroundColor: 'skyblue',
                             top: textCenterPosY, left: 0, position: 'absolute',
                             width: props.style.width,
-                            fontFamily: 'RobotoCondensed-Medium',
+                            fontFamily: 'AktivGrotesk-Regular',
                             textDecorationLine: props.textDecorationLine,
                             textAlign: 'center',
                             textAlignVertical: 'center',

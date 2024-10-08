@@ -16,8 +16,10 @@ class ArtistDetailsBioComponent extends PureComponent<any, any> {
     opacity: number = 1.0;
     scrollHandler = (e) => {
         this.opacity = 
-            1.0 - Math.min(
-                1 * Math.min(1, Math.max(0, (this.maxScrollValue - e.nativeEvent.contentOffset.y) / 80)),
+            1.0 - 
+            // Math.min
+            (
+                // 1 * Math.min(1, Math.max(0, (this.maxScrollValue - e.nativeEvent.contentOffset.y) / 80)),
                 1 * Math.min(1, Math.max(0, e.nativeEvent.contentOffset.y / 30))
             )
         // console.log("this.opacity "+this.opacity+ " ");

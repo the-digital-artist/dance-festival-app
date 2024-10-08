@@ -14,7 +14,7 @@ const ScheduleListItemType2 = ({ item }) => {
         position: 'absolute',
         top: 7, left: 90,
         width: Dimensions.get('screen').width-90-30,
-        fontFamily: 'RobotoCondensed-Medium',
+        fontFamily: 'AktivGrotesk-Regular',
         // backgroundColor: 'indigo',
         textAlign: 'left',
         color: '#000000',

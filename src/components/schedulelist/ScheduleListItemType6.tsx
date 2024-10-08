@@ -113,7 +113,7 @@ class ScheduleListItemType6 extends PureComponent<any, any> {
             // left: (item.orientation == 'left' ? undefined : 10),
             height: 15,
             width: 60,
-            fontFamily: 'RobotoCondensed-Medium',
+            fontFamily: 'AktivGrotesk-Regular',
             // backgroundColor: 'skyblue',
             textAlign: 'center',
             color: '#FFFFFF',

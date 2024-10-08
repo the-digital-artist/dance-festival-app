@@ -126,7 +126,7 @@ const ScheduleListItem = ({ item, index }) => {
         position: 'absolute',
         top: 10, left: 6,
         width: Dimensions.get('screen').width,
-        fontFamily: 'RobotoCondensed-Medium',
+        fontFamily: 'AktivGrotesk-Regular',
         // backgroundColor: 'skyblue',
         textAlign: 'center',
         color: (item.itemType=='type1' || item.itemType=='type4')? '#f6f4eb':'#232323',
