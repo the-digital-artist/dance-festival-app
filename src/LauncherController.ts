@@ -250,7 +250,7 @@ class LauncherController extends OperatorStates {
 
     customFonts = {
         // 'Antonio-Regular': require('../assets/fonts/Antonio-Regular.ttf'),
-        // 'Arcon-Regular': require('../assets/fonts/Arcon-Regular.otf'),
+        'Arcon-Regular': require('../assets/fonts/Arcon-Regular.otf'),
         // 'Arcon-Rounded-Regular': require('../assets/fonts/Arcon-Regular.otf'),
         // 'LuckiestGuy-Regular': require('../assets/fonts/LuckiestGuy-Regular.ttf'),
         'RamaGothicEW01-Regular': require('../assets/fonts/RamaGothicEW01-Regular.ttf'),
