@@ -82,7 +82,7 @@ class ArtistDetailsScreen extends PureComponent {
                         textAlign: 'center',
                         letterSpacing: 2.1,
                         color: '#FFFFFF',
-                        fontSize: 24,
+                        fontSize: 26,
                     }}>
                         {(item.fullName as string).toLocaleUpperCase()}
                     </LText>
