@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Fiesta Elegante Berlin",
-    "slug": "fiesta-elegante-berlin",
-    "version": "1.0.0",
+    "name": "Berlin Salsa Festival",
+    "slug": "berlin-salsa-festival-fiesta-elegante",
+    "version": "2.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
@@ -13,7 +13,7 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.thedigitalartist.fiestaelegante.app",
+      "bundleIdentifier": "com.fiestaelegante.planner",
       "buildNumber": "1",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
