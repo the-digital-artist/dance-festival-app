@@ -1,8 +1,8 @@
 export const modelInitStaticOverwrite =
 {
-  "modelVersion": 2000000,
+  "modelVersion": 1000014,
   "festivalName": "CALDAC",
-  "apiUrlBase": "https://odwoytfhtf.execute-api.us-west-1.amazonaws.com",
+  "apiUrlBase": "https://odwoytfhtf.execute-api.us-west-1.amazonaws.com/beta",
   "apiModelUpdateContent": "/content",
   "apiModelUpdateVersion": "/version",
   "modelRemoteUpdateInterval": 10000,
