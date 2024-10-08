@@ -58,8 +58,9 @@ const ScheduleListItem = ({ item, index }) => {
       <View
         style={{
           // backgroundColor: '#FBB03A',
-          left: 0,
-          height: itemHeight, width: Dimensions.get('screen').width - 2 * paddingLeftAndRight,
+          left: paddingLeftAndRight,
+          height: itemHeight, 
+          width: Dimensions.get('screen').width - 2 * paddingLeftAndRight,
           borderTopColor: '#FFFFFF',
           borderTopWidth: 0,
           borderBottomColor: 'white',

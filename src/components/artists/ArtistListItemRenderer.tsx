@@ -1,4 +1,4 @@
-import { Dimensions, Image, Text, View } from 'react-native';
+import { Dimensions, Image, Platform, Text, View } from 'react-native';
 import ActionArtistListOnDetailsBtn from '../../actions/ActionArtistListOnDetailsBtn';
 import ButtonSmall from '../ButtonSmall';
 import LTouchableOpacity from '../../core/LTouchableOpacity';
@@ -85,7 +85,7 @@ class ArtistListItemRenderer extends PureComponent<any, any> {
             text={"ARTIST DETAILS"}
             bgBoxVisible={true}
             bgBoxStyle={{
-              backgroundColor: '#f5c245',
+              backgroundColor: '#f2aa3e',
               height: 23, width: 120
             }}
             fontStyle={{
@@ -96,7 +96,7 @@ class ArtistListItemRenderer extends PureComponent<any, any> {
               letterSpacing: 2.0,
               color: '#232323',
               fontSize: 10,
-              top: 5
+              top: Platform.OS=='android'?4:5
             }}
             visualProperties={{ alpha: 1 }}
             onSelect={() => { ActionArtistListOnDetailsBtn(this.props.item) }}

@@ -52,7 +52,7 @@ class SettingsScreen extends PureComponent {
                 name='settingsScreenContainer'
                 style={{
                     position: 'absolute',
-                    backgroundColor: '#edad12',
+                    backgroundColor: '#f1ac42',
                     width: Dimensions.get('screen').width,
                     height: Dimensions.get('screen').height,
                 }}

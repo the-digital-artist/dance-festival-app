@@ -54,6 +54,7 @@ const SettingsItemRenderer = ({ item, index }) => {
             text={(item.title as string).toLocaleUpperCase()}
             bgBoxVisible={false}
             bgBoxStyle={{
+              // backgroundColor: '#edad12',
               backgroundColor: '#EF4260',
               height: 30, width: Dimensions.get('screen').width - (2 * 30)
             }}

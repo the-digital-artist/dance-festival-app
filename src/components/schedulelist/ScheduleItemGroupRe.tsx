@@ -10,8 +10,7 @@ import LauncherController from "../../LauncherController";
 const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
     // console.log('ScheduleItemGroupRe render')
     const paddingLeftAndRight = 5;
-
-    const tileWidth = Dimensions.get('screen').width/2
+    const tileWidth = Dimensions.get('screen').width/2-paddingLeftAndRight;
     const tileDistance = tileWidth+1;
     const tileHeight = rowHeight != undefined ? rowHeight : 100;
 
