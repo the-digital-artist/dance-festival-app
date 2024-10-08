@@ -51,7 +51,7 @@ class SchedulerListScreen extends PureComponent implements IDataDependentCompone
 
         let offsetX = 0;
         // let offsetY = 181;
-        let offsetY = 155;
+        let offsetY = 132;
 
 
         // let focusItem = LauncherController.getInstance().context.focusedItemData;
@@ -63,7 +63,7 @@ class SchedulerListScreen extends PureComponent implements IDataDependentCompone
         return (
             <>
            
-                    <Image
+                    {/* <Image
                         style={{
                             // backgroundColor: 'skyblue',
                             top: 0, left: 0, position: 'absolute',
@@ -73,7 +73,7 @@ class SchedulerListScreen extends PureComponent implements IDataDependentCompone
                             opacity: 1.0
                         }}
                         source={require('../../../assets/screen-scheduler-bg.png')}
-                    />
+                    /> */}
 
                     {this.state.modelUpdateState == 2 &&
                         scheduleListArray.map((scheduleList, i) => {
@@ -85,8 +85,8 @@ class SchedulerListScreen extends PureComponent implements IDataDependentCompone
                                     name={'scheduleList' + i}
                                     style={{
                                         position: 'absolute',
-                                        // backgroundColor: '#25649a',
-                                        opacity: 0.5
+                                        backgroundColor: '#000000',
+                                        opacity: 1.0,
                                     }}
                                     visualProperties={{
                                         alpha: 1 - Math.max(Math.min(1, i - selectedDayIndex), 0) / 2,
@@ -100,7 +100,7 @@ class SchedulerListScreen extends PureComponent implements IDataDependentCompone
                                         style={{
                                             width: Dimensions.get('screen').width - offsetX,
                                             height: Dimensions.get('screen').height - offsetY,
-                                            backgroundColor: '#25649a',
+                                            // backgroundColor: '#25649a',
                                             opacity: 0.7
                                         }}
                                     />
@@ -110,7 +110,7 @@ class SchedulerListScreen extends PureComponent implements IDataDependentCompone
                                             style={{
                                                 position: 'absolute',
                                                 // backgroundColor: '#25649a',
-                                                left: 0, top: 20,
+                                                left: 0, top: 40,
                                                 width: Dimensions.get('screen').width - offsetX,
                                                 height: Dimensions.get('screen').height - offsetY - 10,
                                                 opacity: 1

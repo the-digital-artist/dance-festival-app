@@ -47,7 +47,7 @@ class Launcher extends PureComponent<any, any> {
 
                             <StateDependentComponent states={['loading', 'main']} controller={this.controller}>
                                 <SchedulerMainScreen />
-                                <HomeScreen />
+                                {/* <HomeScreen /> */}
                                 <ArtistMainScreen />
                                 <SettingsScreen />
 
@@ -59,7 +59,7 @@ class Launcher extends PureComponent<any, any> {
 
 
                             <StateDependentComponent states={['splash', 'loading']} controller={this.controller}>
-                                {/* <LoadingScreen /> */}
+                                <LoadingScreen />
                             </StateDependentComponent>
                         </>
                         : null}

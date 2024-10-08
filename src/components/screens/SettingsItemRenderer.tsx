@@ -9,7 +9,7 @@ const SettingsItemRenderer = ({ item, index }) => {
 
   return (
     <>
-      <Image
+      {/* <Image
         style={{
           // backgroundColor: 'skyblue',
           top: 0, left: 0, position: 'absolute',
@@ -19,17 +19,17 @@ const SettingsItemRenderer = ({ item, index }) => {
           opacity: 0.02
         }}
         source={require('../../../assets/tabbar/tabbar_bg.png')}
-      />
+      /> */}
       <View
         style={{
           backgroundColor: 'transparent',
           left: paddingLeftAndRight,
           height: SettingsScreen.settingsItemRendererHeight,
           width: Dimensions.get('screen').width - 2 * paddingLeftAndRight,
-          borderTopColor: '#edc36a',
+          borderTopColor: 'white',
           borderTopWidth: 0,
-          borderBottomColor: 'black',
-          borderBottomWidth: StyleSheet.hairlineWidth,
+          borderBottomColor: 'white',
+          borderBottomWidth: index>=2?0:StyleSheet.hairlineWidth,
         }}>
 
         <>
@@ -47,23 +47,25 @@ const SettingsItemRenderer = ({ item, index }) => {
             source={null}
             style={{
               position: 'absolute',
-              left: paddingLeftAndRight,
+              left: 0,
               top: 10,
-              height: 30, width: Dimensions.get('screen').width - (2 * 30),
+              height: 30, width: Dimensions.get('screen').width,
             }}
             text={(item.title as string).toLocaleUpperCase()}
-            bgBoxVisible={true}
+            bgBoxVisible={false}
             bgBoxStyle={{
-              // backgroundColor: '#EF4260',
+              backgroundColor: '#EF4260',
               height: 30, width: Dimensions.get('screen').width - (2 * 30)
             }}
             fontStyle={{
+              left: 30,
               width: Dimensions.get('screen').width - (2 * 30),
               fontFamily: 'Cabin-Regular',
               textAlign: 'left',
               textAlignVertical: 'center',
               letterSpacing: 2.0,
-              color: '#FFFFFF',
+              color: '#281a05',
+              opacity: 0.7,
               fontSize: 12,
             }}
             visualProperties={{ alpha: 1 }}

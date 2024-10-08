@@ -114,7 +114,7 @@ class ArtistListScreen extends PureComponent implements IDataDependentComponent 
                 <View
                     style={{
                         position: 'absolute',
-                        backgroundColor: '#3f5168',
+                        backgroundColor: '#000000',
                         top: 125,
                         left: 0,
                         height: 55,
@@ -143,7 +143,7 @@ class ArtistListScreen extends PureComponent implements IDataDependentComponent 
                 {Platform.OS != 'android' &&
                     <TextInput
                         style={{
-                            top: 135,
+                            top: 50,
                             left: 10,
                             height: 35,
                             width: Dimensions.get('screen').width - 20,

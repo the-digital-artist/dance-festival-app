@@ -77,13 +77,12 @@ class ArtistDetailsScreen extends PureComponent {
                         position: 'absolute',
                         top: 130,
                         left: 35,
-                        height: 20,
                         // backgroundColor: 'indigo'
-                        fontFamily: 'Arcon-Regular',
+                        fontFamily: 'RamaGothicEW01-Regular',
                         textAlign: 'center',
-                        letterSpacing: 1.7,
-                        color: '#eda253',
-                        fontSize: 17,
+                        letterSpacing: 2.1,
+                        color: '#FFFFFF',
+                        fontSize: 24,
                     }}>
                         {(item.fullName as string).toLocaleUpperCase()}
                     </LText>

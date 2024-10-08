@@ -4,7 +4,7 @@ import { Linking } from "react-native";
 const ActionMoreContactFestival = () => {
     console.log('ActionMoreContactFestival');
 
-        let account = 'https://www.berlinsalsafestival.com/contact'
+        let account = 'https://www.berlinsalsafestival.com/contact#block-bcb4ef95c8e6d9ae769a'
         Linking.canOpenURL(account).then(supported => {
                 console.log("supported" + supported);
                 if (!supported) return;

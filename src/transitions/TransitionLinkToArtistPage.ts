@@ -40,7 +40,7 @@ const TransitionLinkToArtistPage = (artistData) => {
 
         LauncherController.getInstance().artistStackIndex = newIndex
 
-        TransitionNavbarSelect(2, false);
+        TransitionNavbarSelect(1, false);
 
 
         // TransitionArtistNavigateDown(LauncherController.getInstance().context.artistFocusItem, 1);

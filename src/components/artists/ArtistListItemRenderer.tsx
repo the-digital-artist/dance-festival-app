@@ -34,7 +34,7 @@ class ArtistListItemRenderer extends PureComponent<any, any> {
     const paddingLeftAndRight = 5;
     const itemHeight = 130;
 
-    const imageSize = 100;
+    const imageSize = 125;
     const imageOffsetY = (itemHeight - imageSize) / 2
 
 
@@ -42,11 +42,14 @@ class ArtistListItemRenderer extends PureComponent<any, any> {
       <>
         <View
           style={{
-            backgroundColor: '#1a202e',
+            backgroundColor: '#000000',
             left: -paddingLeftAndRight,
             height: itemHeight, width: Dimensions.get('screen').width,
-            borderTopWidth: 0,
-            opacity: 0.56
+            borderTopWidth: 1,
+            borderTopColor: '#454545',
+            // borderBottomWidth: 1,
+            // borderBottomColor: '#CDCDCD',
+            opacity: 1.0
           }} />
 
         <Image
@@ -61,12 +64,12 @@ class ArtistListItemRenderer extends PureComponent<any, any> {
           position: 'absolute',
           top: 30, left: 140,
           width: 290, height: 19,
-          fontFamily: 'Cabin-Regular',
-          letterSpacing: 2.0,
+          fontFamily: 'RamaGothicEW01-Regular',
+          letterSpacing: 1.8,
           // backgroundColor: 'indigo',
           textAlign: 'left',
-          color: '#eda253',
-          fontSize: 14,
+          color: '#ebe6d7',
+          fontSize: 19,
         }}>{(this.props.item.fullName as string).toLocaleUpperCase()}
         </LText>
 
@@ -82,7 +85,7 @@ class ArtistListItemRenderer extends PureComponent<any, any> {
             text={"ARTIST DETAILS"}
             bgBoxVisible={true}
             bgBoxStyle={{
-              backgroundColor: '#d6c8cb',
+              backgroundColor: '#f5c245',
               height: 23, width: 120
             }}
             fontStyle={{
@@ -91,9 +94,9 @@ class ArtistListItemRenderer extends PureComponent<any, any> {
               textAlign: 'center',
               textAlignVertical: 'center',
               letterSpacing: 2.0,
-              color: '#010101',
-              fontSize: 9,
-              top: 6
+              color: '#232323',
+              fontSize: 10,
+              top: 5
             }}
             visualProperties={{ alpha: 1 }}
             onSelect={() => { ActionArtistListOnDetailsBtn(this.props.item) }}

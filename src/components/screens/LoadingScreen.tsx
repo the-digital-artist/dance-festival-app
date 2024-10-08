@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { Dimensions, Image, Platform } from "react-native";
+import { Dimensions, Image, Platform, View } from "react-native";
 import LComponent from "../../core/LComponent";
 
 
@@ -18,10 +18,18 @@ class LoadingScreen extends PureComponent<any, any> {
                 style={{ position: 'absolute' }}
                 visualProperties={{ alpha: 1, x: 0, y: 0, z: 0, w: "windowWidth", h: "windowHeight" }}>
 
+                <View
+                    style={{
+                        backgroundColor: 'black',
+                        position: 'absolute', top: 0,
+                        width: Dimensions.get('screen').width,
+                        height: Dimensions.get('screen').height,
+                    }}
+                />
 
                 <Image
                     style={{
-                        position: 'absolute', top:  Platform.OS == "ios"?0:-12,
+                        position: 'absolute', top: Platform.OS == "ios" ? 0 : -12,
                         width: Dimensions.get('screen').width,
                         height: Dimensions.get('screen').height,
                         opacity: 0,
@@ -41,7 +49,7 @@ class LoadingScreen extends PureComponent<any, any> {
                 >
                     <Image
                         style={{
-                            position: 'absolute', top: Platform.OS == "ios"?0:-12,
+                            position: 'absolute', top: Platform.OS == "ios" ? 0 : -12,
                             width: Dimensions.get('screen').width, height: Dimensions.get('screen').height,
                             resizeMode: "cover",
                         }}

@@ -13,6 +13,7 @@ const ScheduleListItem = ({ item, index }) => {
   if (item.itemType == "type1" && item.flag == true) return null;
   if (item.flagIncludeInNow == true) return null;
 
+  const centerPieceWidth = Dimensions.get('screen').width - (5 + 45 + 35 + 35 + 5)
   const paddingLeftAndRight = 5;
 
   let itemHeight = 110;
@@ -24,16 +25,20 @@ const ScheduleListItem = ({ item, index }) => {
   else if (item.itemType == 'type2')
     itemHeight = (item.room == "" ? 50 : 65);
   else if (item.itemType == 'type3') {
-    itemHeight = 40
-    if ((item.sessionMainTitle as string).length > 20) itemHeight += 30;
-    if ((item.artistName as string).length > 20) itemHeight += 30;
+    itemHeight = 60
+    // if ((item.sessionMainTitle as string).length > 20) itemHeight += 30;
+    // if ((item.artistName as string).length > 20) itemHeight += 30;
   }
   else if (item.itemType == 'type4')
-    itemHeight = (item.sessionMainTitle as string).length > 20 ? 164 : 138;
+    itemHeight = (item.sessionMainTitle as string).length > 20 ? 180 : 180;
   else if (item.itemType == 'type5')
-    itemHeight = 200;
+    itemHeight = 100;
+
+  
 
   item['assignedListIndex'] = index;
+  item['itemHeight'] = itemHeight;
+
 
   let orientation = 'left';
   // if (item.itemType == 'type1') {
@@ -120,11 +125,11 @@ const ScheduleListItem = ({ item, index }) => {
       <Text allowFontScaling={false} id='textTime' style={{
         position: 'absolute',
         top: 10, left: 6,
-        width: Dimensions.get('screen').width, height: 15,
+        width: Dimensions.get('screen').width,
         fontFamily: 'RobotoCondensed-Medium',
         // backgroundColor: 'skyblue',
         textAlign: 'center',
-        color: '#FFFFFF',
+        color: (item.itemType=='type1' || item.itemType=='type4')? '#f6f4eb':'#232323',
         fontSize: 13,
       }}>
         {item.time}

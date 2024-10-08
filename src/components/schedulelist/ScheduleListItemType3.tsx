@@ -1,4 +1,4 @@
-import { Dimensions, Text } from 'react-native';
+import { Dimensions, StyleSheet, Text, View } from 'react-native';
 
 
 
@@ -11,62 +11,36 @@ const ScheduleListItemType3 = ({ item }) => {
   return (
     <>
 
-      {/* time line  centered (small)
-      <Text allowFontScaling={false} id='textTime' style={{
+      <View id='bg' style={{
         position: 'absolute',
-        top: 15, left: 2,
-        width: 70, height: 15,
-        fontFamily: 'RobotoCondensed-Medium',
-        // backgroundColor: 'skyblue',
-        textAlign: 'right',
-        color: '#58503e',
-        fontSize: 11,
-      }}>
-        {item.time}
-      </Text> */}
+        top: 0, left: 0,
+        height: item.itemHeight,
+        width: Dimensions.get('screen').width - 10,
+        borderBottomColor: 'white',
+        borderBottomWidth: StyleSheet.hairlineWidth,
+        opacity: 1.9,
+        padding: 0,
+        backgroundColor: '#f2aa3e',
+      }}
+      />
 
-      <Text allowFontScaling={false} id='textSessionMainTitle' style={{
-        position: 'absolute',
-        top: 10, left: 90,
-        width: Dimensions.get('screen').width-90-30,
-        fontFamily: 'LuckiestGuy-Regular',
+      <Text allowFontScaling={false} id='textPreSignup' style={{
+        top: 30,
+        left: 0,
+        width: Dimensions.get('screen').width,
+        fontFamily: 'RamaGothicEW01-Regular',
+        letterSpacing: 1.9,
+        // opacity: 0.5,
         // backgroundColor: 'indigo',
-        textAlign: 'left',
-        color: '#312816',
-        fontSize: 25,
-        opacity:0.7
+        textAlign: 'center',
+        color: '#232323',
+        fontSize: 18,
       }}>
-        {item.sessionMainTitle ? (item.sessionMainTitle as string) : ""}
-      </Text>
+        {item.sessionMainTitle ? (item.sessionMainTitle as string).toLocaleUpperCase() : ""}
+      </Text >
 
 
-      <Text allowFontScaling={false} id='textLocation' style={{
-        position: 'absolute',
-        bottom: (item.artistName.length>20?49:29), left: 90,
-        width: 290, height: 16,
-        fontFamily: 'Cabin-Regular',
-        letterSpacing: 2.0,
-        // backgroundColor: 'indigo',
-        textAlign: 'left',
-        color: '#312816',
-        fontSize: 12,
-      }}>
-        {item.room ? (item.room as string).toLocaleUpperCase() : ""}
-      </Text>
 
-      <Text allowFontScaling={false} id='textDJLineUp' style={{
-        position: 'absolute',
-        bottom: (item.artistName.length>20?10:-5), left: 90,
-        width: 290,  height: 32,
-        fontFamily: 'Cabin-Regular',
-        letterSpacing: 1.5,
-        // backgroundColor: 'indigo',
-        textAlign: 'left',
-        color: '#312816',
-        fontSize: 12,
-      }}>
-        {item.artistName ? (item.artistName as string).toLocaleUpperCase() : ""}
-      </Text>
     </>
   );
 }

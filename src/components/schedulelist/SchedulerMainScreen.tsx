@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { Dimensions } from "react-native";
+import { Dimensions, View } from "react-native";
 import LComponent from "../../core/LComponent";
 import SchedulerListScreen from "./SchedulerListScreen";
 import SchedulerSessionDetailsScreen from "./SchedulerSessionDetailsScreen";
@@ -46,7 +46,7 @@ class SchedulerMainScreen extends PureComponent {
                         name='schedulerDetailsScreenContainer'
                         style={{
                             position: 'absolute',
-                            backgroundColor: '#dd5163',
+                            backgroundColor: '#000000',
                             width: Dimensions.get('screen').width,
                             height: Dimensions.get('screen').height,
                         }}
@@ -58,16 +58,16 @@ class SchedulerMainScreen extends PureComponent {
                         <SchedulerSessionDetailsScreen />
                     </LComponent>
 
-                    {/* {(Platform.OS == 'android') &&
+                    {true &&
                         <View
                             style={{
-                                backgroundColor: '#7d7974',
-                                bottom: (Dimensions.get('screen').width * (300 / 1290)) / 2 - 1, left: 0, position: 'absolute',
+                                backgroundColor: '#000000',
+                                bottom: 0, left: 0, position: 'absolute',
                                 width: Dimensions.get('screen').width,
                                 height: (Dimensions.get('screen').width * (300 / 1290)),
                                 opacity: 0.8
                             }} />
-                    } */}
+                    } 
                 </LComponent>
 
             </>

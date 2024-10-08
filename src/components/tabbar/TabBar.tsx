@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect } from "react";
-import { Dimensions, View } from "react-native";
+import { Dimensions, StyleSheet, View } from "react-native";
 import { useAnimatedStyle, useDerivedValue, useSharedValue } from "react-native-reanimated";
 import LauncherController from "../../LauncherController";
 import ButtonSmall from "../ButtonSmall";
@@ -17,7 +17,7 @@ const TabBar = (props) => {
 
     let itemWidth = (Dimensions.get('screen').width / tabBarData.length);
     let itemHeight = 32;
-    let itemHeightSelectedOffset = 10;
+    let itemHeightSelectedOffset = 8;
     let itemSpread = (Dimensions.get('screen').width / tabBarData.length)
     let startX = (Dimensions.get('screen').width / 2 - ((tabBarData.length - 1) * itemSpread) / 2) - itemWidth / 2
 
@@ -48,13 +48,15 @@ const TabBar = (props) => {
 
             <View style={{
                 pointerEvents: 'none',
-                backgroundColor: '#FFFFFF',
+                backgroundColor: '#262626',
                 top: offsetY + itemHeightSelectedOffset, left: 0, position: 'absolute',
                 width: Dimensions.get('screen').width,
                 height: itemHeight - itemHeightSelectedOffset,
-                //  borderTopColor: 'white',
-                //  borderTopWidth: StyleSheet.hairlineWidth,
-                opacity: 0.1
+                 borderTopColor: '#343434',
+                 borderTopWidth: 1,
+                 borderBottomColor: '#454545',
+                 borderBottomWidth: 1,
+                opacity: 1.0
             }}>
                 {/* <Image
                     style={{
@@ -104,9 +106,9 @@ const TabBar = (props) => {
                                 letterSpacing: 1.7,
                                 textAlign:'center',
                                 color: '#FFFFFF',
-                                fontSize: 11,
+                                fontSize: 10,
                                 opacity: 1.0, 
-                                top: (14)
+                                top: (13)
                             }}
                         />
 

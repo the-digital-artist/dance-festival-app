@@ -1,16 +1,14 @@
 import { PureComponent, ReactNode, createRef } from 'react';
-import { Image, Platform, Text, View } from 'react-native';
+import { Dimensions, Image, Platform, Text, View } from 'react-native';
 import Animated from 'react-native-reanimated';
 import DataModel from '../../DataModel';
+import LauncherController from '../../LauncherController';
 import ActionItemFavToggleStateUpdate from '../../actions/ActionItemFavToggleStateUpdate';
 import LComponent from '../../core/LComponent';
 import TransitionLinkToArtistPage from '../../transitions/TransitionLinkToArtistPage';
 import TransitionScheduleItemFavSelect from '../../transitions/TransitionScheduleItemFavSelect';
 import ButtonSmall from '../ButtonSmall';
 import ScheduleItemToggle from './ScheduleItemToggle';
-import LauncherController from '../../LauncherController';
-import { GestureDetector } from 'react-native-gesture-handler';
-import { tapGestureHandlerProps } from 'react-native-gesture-handler/lib/typescript/handlers/TapGestureHandler';
 
 
 class ScheduleListItemType1 extends PureComponent<any, any> {
@@ -34,7 +32,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
 
 
   render(): ReactNode {
-    // console.log("ScheduleListItemType1 Render Function Called: " + this.state.dataItem.id);
+
 
     let item = this.state.dataItem;
     if (item.itemType != 'type1') return;
@@ -43,12 +41,15 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     const levelData = [
       { src: require('../../../assets/schedule-levelicon-1.png'), text: "BEGINNER", textWidth: 54 },
       { src: require('../../../assets/schedule-levelicon-2.png'), text: "INTERMEDIATE", textWidth: 72 },
+      { src: require('../../../assets/schedule-levelicon-25.png'), text: "INTERM./ADV.", textWidth: 72 },
       { src: require('../../../assets/schedule-levelicon-3.png'), text: "ADVANCED", textWidth: 56 }
     ]
     const levelId = item.level != undefined ? item.level : -1;
-    const levelImageSize = 8;
+    const levelImageSize = 12;
+    const levelStr = item.levelString != undefined ? item.levelString : '';
+    console.log("ScheduleListItemType1 levelStr: " +levelStr+" | levelID: "+levelId+" | artistOne: "+item.artistOne);
     //get data of artists
-    const artistData1 = DataModel.getInstance().dyn_dataArtistsList[item.artistOne];
+    const artistData1 = DataModel.getInstance().static.dataArtists[item.artistOne];
     const artistData2 = item.artistTwo ? DataModel.getInstance().dyn_dataArtistsList[item.artistTwo] : null;
 
     const itemHeight = item.rowHeight != undefined ? item.rowHeight : 100;
@@ -62,8 +63,8 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     const imageOffsetYArtistImage = 30 + ((305 - this.props.tileWidth) / (305 - 245)) * 10
     const imageOffsetXRArtistImage = 10;
     const imageOffsetXLArtistImage = 10;
-    const fontSizeMainTitle = this.props.tileWidth * (15 / 240);
-    const fontSizeArtistName = this.props.tileWidth * (26 / 280)
+    const fontSizeMainTitle = 13.5//this.props.tileWidth * (16 / 240);
+    const fontSizeArtistName = 20//this.props.tileWidth * (26 / 280)
 
     // console.log("ScheduleListItemType1 tileLength " + this.props.tileWidth + " artistImageWidth: "+ imageWidthArtistImage);
 
@@ -74,7 +75,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
           left: this.props.tileOffsetLeft, top: this.props.tileOffsetTop,
           height: itemHeight, width: this.props.tileWidth,
           opacity: 1,
-          // backgroundColor:'red',
+          // backgroundColor: 'red',
         }, this.props.dynamicVisualProperties0]}
       >
 
@@ -82,7 +83,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
           //  name={"ScheduleItemFrame1_" + item.id}
           style={{
             position: 'absolute',
-            backgroundColor: '#000000',
+            // backgroundColor: '#000000',
             borderColor: '#9F509F',
             // borderLeftWidth: 3,
             // borderRightWidth: 3,
@@ -149,14 +150,14 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
             style={{
               backgroundColor: 'transparent',
               borderTopWidth: 1,
-              // borderBottomWidth: 1,
+              borderBottomWidth: 1,
               borderRightWidth: (item.orientation == 'left' ? 30 : 0),
               borderLeftWidth: (item.orientation == 'right' ? 30 : 0),
-              borderColor: '#232423'
+              borderColor: '#f2aa3e'
             }}
             visualProperties={{
-              alpha: 0, x: 3, y: -8,
-              h: (itemHeight - 30 - 3), w: this.props.tileWidth - 6
+              alpha: item.favoriteState?1.0:0.0, x: 3, y: -8,
+              h: (itemHeight - 14), w: this.props.tileWidth - 6
             }}
           />
 
@@ -181,153 +182,112 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
 
 
           <Animated.View
-            style={this.props.dynamicVisualProperties1}>
-            {/* 
-            {artistData2 != null &&
+            style={this.props.dynamicVisualProperties1}
 
-              <ButtonSmall
-                name={("artistImageButton2" + item.id)}
-                source={artistData2 ? artistData2.imgSrc : null}
-                style={{
-                  position: 'absolute',
-                  top: 2 + imageOffsetYArtistImage + (imageWidthArtistImagex1 - imageWidthArtistImagex2) / 2,
-                  right: (item.orientation == 'right' ? (imageWidthArtistImagex2 + imageOffsetXRArtistImage - 10) : undefined),
-                  left: (item.orientation == 'left' ? (imageWidthArtistImagex2 + imageOffsetXLArtistImage - 10) : undefined),
-                  width: imageWidthArtistImagex2,
-                  height: imageWidthArtistImagex2,
 
-                }}
-                imageStyle={[{
-                  position: 'absolute',
-                  right: undefined, left: undefined,
-                  width: imageWidthArtistImagex2,
-                  height: imageWidthArtistImagex2,
-                  resizeMode: 'cover',
-                  opacity: 0.9,
-                }]}
-                bgBoxVisible={false}
-                visualProperties={{ alpha: 1 }}
-                onSelect={() => {
-                  if (artistData1 == undefined) return;
-                  LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage" });
-                  TransitionLinkToArtistPage(artistData2)
-                }}
-              />
-            } */}
+          >
 
-            {/* <ButtonSmall
-              name={("artistImageButton1" + item.id)}
-              source={artistData1 ? artistData1.imgSrc : null}
+            <View
               style={{
                 position: 'absolute',
-                top: 2 + (artistData2 ? imageOffsetYArtistImage + (imageWidthArtistImagex1 - imageWidthArtistImagex2) / 2 : imageOffsetYArtistImage),
-                right: (item.orientation == 'right' ? imageOffsetXRArtistImage : undefined),
-                left: (item.orientation == 'left' ? imageOffsetXLArtistImage : undefined),
-                width: (artistData2 ? imageWidthArtistImagex2 : imageWidthArtistImagex1),
-                height: (artistData2 ? imageWidthArtistImagex2 : imageWidthArtistImagex1),
-              }}
-              imageStyle={[{
-                position: 'absolute',
-                right: undefined, left: undefined,
-                width: (artistData2 ? imageWidthArtistImagex2 : imageWidthArtistImagex1),
-                height: (artistData2 ? imageWidthArtistImagex2 : imageWidthArtistImagex1),
-                resizeMode: 'cover',
-                opacity: 0.9,
-              }]}
-              bgBoxVisible={false}
-              visualProperties={{ alpha: 1 }}
-              onSelect={() => {
-                if (artistData1 == undefined) return;
-                LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage" });
-                TransitionLinkToArtistPage(artistData1)
-              }}
-            /> */}
+                // backgroundColor: 'skyblue',
+                // right: (item.orientation == 'right' ? undefined : (-4)),
+                left: (item.orientation == 'right' ? 40 : 5),
+                width: Dimensions.get('screen').width / 2 - 45,
+                top: 25,
+                flex: 1, flexDirection: 'column',
+                opacity: 1.0
+              }}>
+
+              <Animated.Text allowFontScaling={false} id='textSessionMainTitle' style={{
+                marginBottom: 2,
+                fontFamily: 'AktivGrotesk-Regular',
+                fontSize: fontSizeMainTitle,
+                // backgroundColor: 'indigo',
+                textAlign: (item.orientation == 'right' ? 'left' : 'right'),
+                color: '#f2aa3e',
+              }}>
+                {item.sessionMainTitle}
+              </Animated.Text>
 
 
-            <Animated.Text allowFontScaling={false} id='textSessionMainTitle' style={{
-              position: 'absolute',
-              top: 40,
-              right: (item.orientation == 'right' ? undefined : (4 + 35)),
-              left: (item.orientation == 'left' ? undefined : (4 + 35)),
-              width: 210,
-              fontFamily: 'AktivGrotesk-Regular',
-              fontSize: fontSizeMainTitle,
-              // backgroundColor: 'indigo',
-              textAlign: (item.orientation == 'right' ? 'left' : 'right'),
-              color: '#f2aa3e',
-            }}>
-              {item.sessionMainTitle}
-            </Animated.Text>
+              <Text allowFontScaling={false} id='textSessionArtistName' style={{
+                marginBottom: 5, marginTop: 5,
+                fontFamily: 'RamaGothicEW01-Regular',
+                fontSize: (fontSizeArtistName),
+                letterSpacing: -0.1,
+                // backgroundColor: 'indigo',
+                textAlign: (item.orientation == 'right' ? 'left' : 'right'),
+                color: '#ffffff',
 
+              }}>
+                {item.artistName ? (item.artistName as string) : ""}
+              </Text >
 
-            <Text allowFontScaling={false} id='textSessionArtistName' style={{
-              position: 'absolute',
-              top: (55 + verticalOffsetTitleLength),
-              right: (item.orientation == 'right' ? undefined : (4 + 35)),
-              left: (item.orientation == 'left' ? undefined : (4 + 35)),
-              height: fontSizeArtistName * 2.5,
-              width: this.props.tileWidth - 35 - 4 - 10 - imageWidthArtistImagex1,
-              fontFamily: 'RamaGothicEW01-Regular',
-              fontSize: (fontSizeArtistName),
-              letterSpacing: -0.1,
-              // backgroundColor: 'indigo',
-              textAlign: (item.orientation == 'right' ? 'left' : 'right'),
-              color: '#ffffff',
-
-            }}>
-              {item.artistName ? (item.artistName as string) : ""}
-            </Text >
-
-
-
-
-
-            {levelData[levelId] != undefined &&
-              <LComponent
-                style={{
-                  // backgroundColor: 'skyblue',
-                  position: 'absolute',
-                  top: (25),
-                  right: (item.orientation == 'right' ? undefined : (4+35)),
-                  left: (item.orientation == 'left' ? undefined : (4+35)),
-                  flexDirection: item.orientation == 'left' ? 'row-reverse' : 'row',
-                  // width: (200),
-                  height: levelImageSize,
-                  resizeMode: 'cover'
-                }}>
-                <Text allowFontScaling={false} id='textSessionLevel' style={{
-                  // right: (item.orientation == 'right' ? undefined : (4)),
-                  // left: (item.orientation == 'left' ? undefined : (4)),
-                  // height: levelImageSize,
-                  fontFamily: 'AktivGrotesk-Regular',
-                  letterSpacing: 1.2,
-                  // opacity: 0.5,
-                  // backgroundColor: 'indigo',
-                  textAlign: (item.orientation == 'right' ? 'left' : 'right'),
-                  color: '#e5e4cf',
-                  fontSize: 8,
-                }}>
-                  {levelData[levelId].text}
-                </Text >
-                <Image
-                  source={levelData[levelId].src}
+              {(levelStr != '' || levelData[levelId] != undefined) &&
+                <View
                   style={{
-                    // backgroundColor: 'greenyellow',
-                    marginLeft: 5,
-                    marginRight: 5,
-                    // right: (item.orientation == 'right' ? undefined : (75)),
-                    // left: (item.orientation == 'left' ? undefined : (75)),
-                    width: levelImageSize * 105 / 33,
+                    // backgroundColor: 'lemonchiffon',
                     height: levelImageSize,
-                    resizeMode: 'cover'
-                  }}>
-                </Image>
+                    alignContent: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <LComponent
+                    style={{
+                      // backgroundColor: 'green',
+                      right: (item.orientation == 'right' ? undefined : 0),
+                      left: (item.orientation == 'left' ? undefined : 0),
+                      flexDirection: item.orientation == 'left' ? 'row-reverse' : 'row',
+                      // width: (200),
+                      height: levelImageSize,
+                      alignContent: 'center',
+                      justifyContent: 'center',
+                      resizeMode: 'cover'
+                    }}>
 
 
-              </LComponent>
-            }
+                    {(levelStr != '' || levelData[levelId] != undefined) &&
+                      <Text allowFontScaling={false} id='textSessionLevel' style={{
+                        // right: (item.orientation == 'right' ? undefined : (4)),
+                        // left: (item.orientation == 'left' ? undefined : (4)),
+                        // height: levelImageSize-3,
+                        fontFamily: 'AktivGrotesk-Regular',
+                        letterSpacing: 1.2,
+                        // opacity: 0.5,
+                        // backgroundColor: 'indigo',
+                        marginTop: 'auto',
+                        marginBottom: 'auto',
+                        textAlign: (item.orientation == 'right' ? 'left' : 'right'),
+                        color: '#e5e4cf',
+                        fontSize: 8,
+                      }}>
+                        {(levelData[levelId] != undefined ?  levelData[levelId].text:levelStr).toLocaleUpperCase()}
+                      </Text >
+                    }
 
-            {/* {item.levelSpecial != undefined && item.levelSpecial == '1' && levelData[levelId] != undefined &&
+                    {levelData[levelId] != undefined &&
+                      <Image
+                        source={levelData[levelId].src}
+                        style={{
+                          // backgroundColor: 'greenyellow',
+                          marginLeft: 5,
+                          marginRight: 5,
+                          // right: (item.orientation == 'right' ? undefined : (75)),
+                          // left: (item.orientation == 'left' ? undefined : (75)),
+                          width: levelImageSize * 120 / 60,
+                          height: levelImageSize,
+                          resizeMode: 'cover'
+                        }}>
+                      </Image>
+                    }
+
+
+                  </LComponent>
+                </View>
+              }
+
+              {/* {item.levelSpecial != undefined && item.levelSpecial == '1' && levelData[levelId] != undefined &&
               <>
                 <Image
                   source={require('../../../assets/scheduler-levelicon-specialdrums.png')}
@@ -364,7 +324,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
 
             } */}
 
-            {/* {item.levelSpecial != undefined && item.levelSpecial == '3' &&
+              {/* {item.levelSpecial != undefined && item.levelSpecial == '3' &&
               <>
                 <Image
                   source={require('../../../assets/scheduler-levelicon-specialtheory.png')}
@@ -401,15 +361,31 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
 
             } */}
 
+              {(item.id != 'focus') &&
+
+                <View style={{
+                  marginTop: 20,
+                  // backgroundColor: 'lightpink',
+                  borderColor: '#FFFFFF',
+                  flexDirection: item.orientation == 'left' ? 'row-reverse' : 'row',
+                  height: 20,
+                }}
+                >
+
+                </View>
+              }
+
+            </View>
+
             <ScheduleItemToggle
               ref={(r) => { this.toggleButtonReference = r }}
               name={("ImageToggle" + item.id)}
               style={{
                 // backgroundColor: 'indigo',
                 position: 'absolute',
-                right: (item.orientation == 'left' ? 8 : undefined),
-                left: (item.orientation == 'right' ? (8) : undefined),
-                top: (20),
+                right: (item.orientation == 'left' ? 10 : undefined),
+                left: (item.orientation == 'right' ? 8 : undefined),
+                top: (3),
                 width: 20, height: 20,
               }}
               initialCheckedState={this.state.dataItem.favoriteState}
@@ -420,49 +396,49 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               sourceOff={require('../../../assets/icon_fav_inactive.png')}
             />
 
-            {(item.id != 'focus') &&
-
-              <ButtonSmall
-                name={("ScheduleListArtistDetailsButton" + item.id)}
-                source={null}
-                style={{
-                  position: 'absolute',
-                  right: (item.orientation == 'right' ? undefined : (4 + 29)),
-                  left: (item.orientation == 'left' ? undefined : (4 + 29)),
-                  top: (83 + verticalOffsetTitleLength + verticalOffsetLevel),
-                  height: 20, width: 120,
-                }}
-                text={"SESSION DETAILS"}
-                bgBoxVisible={true}
-                bgBoxStyle={{
-                  backgroundColor: '#36373a',
-                  height: 20, width: 120
-                }}
-                fontStyle={{
-                  top: ((Platform.OS == 'android')) ? -2 : 5,
-                  width: 120,
-                  color: '#ffffff',
-                  fontFamily: 'AktivGrotesk-Regular',
-                  textAlign: 'center',
-                  textAlignVertical: 'center',
-                  letterSpacing: 2.0,
-                  height: 20,
-                  fontSize: 9,
-                }}
-                visualProperties={{ alpha: 1 }}
-                onSelect={() => {
-                  if (artistData1 == undefined) return;
-                  LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage", data: {} });
-                  TransitionLinkToArtistPage(artistData1)
-                }}
-              />
-            }
-
+            <ButtonSmall
+              name={("ScheduleListArtistDetailsButton" + item.id)}
+              source={null}
+              style={{
+                position: 'absolute',
+                right: (item.orientation == 'right' ? undefined : 40),
+                left: (item.orientation == 'left' ? undefined : 40),
+                top: itemHeight - 20 - 30,
+                height: 20, width: 120,
+              }}
+              text={"ARTIST DETAILS"}
+              bgBoxVisible={true}
+              bgBoxStyle={{
+                // backgroundColor: '#36373a',
+                borderColor: '#FFFFFF',
+                borderWidth: 1,
+                height: 20, width: 120
+              }}
+              fontStyle={{
+                top: ((Platform.OS == 'android')) ? -2 : 5,
+                width: 120,
+                color: '#ffffff',
+                fontFamily: 'AktivGrotesk-Regular',
+                textAlign: 'center',
+                textAlignVertical: 'center',
+                letterSpacing: 2.0,
+                height: 20,
+                fontSize: 9,
+              }}
+              visualProperties={{ alpha: 1 }}
+              onSelect={() => {
+                if (artistData1 == undefined) return;
+                LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage", data: {} });
+                TransitionLinkToArtistPage(artistData1)
+              }}
+            />
 
 
           </Animated.View>
 
         </View>
+
+
 
       </Animated.View>
     );

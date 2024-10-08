@@ -5,7 +5,7 @@ const ActionLinkEarlyBirdTickets = () => {
     console.log('ActionLinkEarlyBirdTickets');
 
 
-        let account = 'https://www.eventbrite.com/e/2024-caldac-convention-formerly-denver-salsa-bachata-congress-tickets-716510380837?aff=oddtdtcreator'
+        let account = 'https://www.tickettailor.com/events/fiestaelegante/1156944'
         Linking.canOpenURL(account).then(supported => {
                 console.log("supported" + supported);
                 if (!supported) return;

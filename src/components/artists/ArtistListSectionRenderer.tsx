@@ -30,7 +30,6 @@ const ArtistListSectionRenderer = ({ section: { title } }) => {
         style={{
           position: 'absolute',
           width: Dimensions.get('screen').width,
-          top: 0,
           height: itemHeight,
           opacity: 0.95,
           backgroundColor: color,

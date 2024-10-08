@@ -52,7 +52,7 @@ class SettingsScreen extends PureComponent {
                 name='settingsScreenContainer'
                 style={{
                     position: 'absolute',
-                    backgroundColor: '#232323',
+                    backgroundColor: '#edad12',
                     width: Dimensions.get('screen').width,
                     height: Dimensions.get('screen').height,
                 }}
@@ -61,7 +61,7 @@ class SettingsScreen extends PureComponent {
                     x: Dimensions.get('screen').width, y: 0, z: 0
                 }}
             >
-                <Image
+                {/* <Image
                     style={{
                         // backgroundColor: 'skyblue',
                         top: 0, left: 0, position: 'absolute',
@@ -70,17 +70,17 @@ class SettingsScreen extends PureComponent {
                         opacity: 1
                     }}
                     source={require('../../../assets/screen-settings-bg.png')}
-                />
+                /> */}
 
-                {/* <Image
-                    source={require('../../../assets/logo-full.png')}
+                <Image
+                    source={require('../../../assets/logo-white.png')}
                     style={{
                         position: 'absolute', resizeMode: 'contain', opacity: 1.0,
-                        left: (Dimensions.get('screen').width - 150) / 2, top: 100,
-                        width: 150,
-                        height: 150 * 800 / 768,
+                        left: (Dimensions.get('screen').width - 90) / 2, top: 120,
+                        width: 90,
+                        height: 90 * 800 / 768,
                     }}
-                /> */}
+                />
 
 
                 {/* <ScreenHeader text="SETTINGS" color='#eeecdf' /> */}
@@ -91,10 +91,10 @@ class SettingsScreen extends PureComponent {
 
                 <View style={{
                     position: 'absolute',
-                    backgroundColor: '#1c1919',
+                    backgroundColor: 'white',
                     left: 0, top: 290,
                     width: Dimensions.get('screen').width - 0,
-                    height: (SettingsScreen.settingsItemRendererHeight * SettingsScreen.settingsListData.length + 2 * 5),
+                    height: (SettingsScreen.settingsItemRendererHeight * SettingsScreen.settingsListData.length + (1 * 5)),
                     opacity: 0.4,
                 }}
                 />
@@ -125,7 +125,7 @@ class SettingsScreen extends PureComponent {
                     fontFamily: 'Cabin-Regular',
                     letterSpacing: 2.0,
                     fontSize: 12,
-                    color: '#e9e3de',
+                    color: '#FFFFFF',
                     // backgroundColor: 'skyblue',
                     textAlign: 'center',
                 }]}>
@@ -160,9 +160,9 @@ class SettingsScreen extends PureComponent {
                                     top: 40, width: iconSize + 18,
                                     fontFamily: 'Arcon-Regular',
                                     textAlign: 'center',
-                                    letterSpacing: 1.0,
-                                    color: '#c2b6ad',
-                                    fontSize: 7,
+                                    letterSpacing: 0.8,
+                                    color: '#FFFFFF',
+                                    fontSize: 7.5,
                                 }}
                             />
                         </Fragment>
@@ -178,7 +178,7 @@ class SettingsScreen extends PureComponent {
                     fontFamily: 'Cabin-Regular',
                     letterSpacing: 2.0,
                     fontSize: 7,
-                    opacity:0.5,
+                    opacity:0.2,
                     color: '#5c5c5c',
                     // backgroundColor: 'skyblue',
                     textAlign: 'center',

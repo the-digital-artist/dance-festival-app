@@ -46,7 +46,7 @@ class ArtistDetailsBioComponent extends PureComponent<any, any> {
         const maskStart = Dimensions.get('screen').height * (1590 / 2796)
         const maskStart2 = Dimensions.get('screen').height * (1736 / 2796)
         const artistImageOffsetBottom = ((Platform.OS == 'android') ? NavBar.navBarHeight : NavBar.navBarHeight - 20)
-        const artistImageSize = Dimensions.get('screen').height - artistImageOffsetBottom - maskStart;
+        const artistImageSize = Dimensions.get('screen').width/2;
         // this.opacity = 
         // 1.0 - Math.min(
         //     1 * Math.min(1, Math.max(0, (this.maxScrollValue - this.state.scrollPosY) / 30)),
@@ -60,9 +60,9 @@ class ArtistDetailsBioComponent extends PureComponent<any, any> {
                     ref={this.scrollViewRef}
                     style={{
                         // backgroundColor: 'red',
-                        top: 180, left: 20, position: 'absolute',
+                        top: 160, left: 20, position: 'absolute',
                         width: Dimensions.get('screen').width - 40,
-                        height: Dimensions.get('screen').height - 180 - NavBar.navBarHeight - 20,
+                        height: Dimensions.get('screen').height - 160 - NavBar.navBarHeight,
                         opacity: 1
                     }}
                     onScroll={this.scrollHandler}
@@ -72,17 +72,32 @@ class ArtistDetailsBioComponent extends PureComponent<any, any> {
                     onScrollToTop={this.scrollHandler}
                 >
 
+{item.imgSrc != null && <Image
+                        // name={("ScheduleListArtistDetailsButton" + item.fullName)}
+                        source={item.imgSrc}
+                        style={{
+                            // backgroundColor:'skyblue',
+                            // position: 'absolute',
+                            top: 0, margin: 15,
+                            width: artistImageSize,
+                            height: artistImageSize,
+                            opacity: this.opacity
+
+                        }}
+                    />
+                    }
                     <LText
                         id='artistBioFocus'
                         style={{
                             top: 0, margin: 15,
                             width: Dimensions.get('screen').width - 40 - 25,
                             // height: (artistBiography as string).length / 1100 * 1.2 * Dimensions.get('screen').height,
-                            fontFamily: 'Arcon-Regular',
+                            fontFamily: 'AktivGrotesk-Regular',
                             letterSpacing: 1,
+                            lineHeight: 17,
                             textAlign: 'justify',
                             color: '#EFEFEF',
-                            fontSize: 15,
+                            fontSize: 13,
                         }}
                         onLayout={(e: LayoutChangeEvent) => {
                             let totalContentHeight = (30 + e.nativeEvent.layout.height + Dimensions.get('screen').height * (900 / 2796))
@@ -115,7 +130,7 @@ class ArtistDetailsBioComponent extends PureComponent<any, any> {
                         width: Dimensions.get('screen').width,
                         height: Dimensions.get('screen').height,
                     }}>
-                    <Image
+                    {/* <Image
 
                         style={{
                             // backgroundColor: 'skyblue',
@@ -125,26 +140,12 @@ class ArtistDetailsBioComponent extends PureComponent<any, any> {
                             resizeMode: "stretch",
                             opacity: this.opacity
                         }}
-                        source={require('../../../assets/screen-artists-bg-masked.png')} />
+                        source={require('../../../assets/screen-artists-bg-masked.png')} /> */}
 
-                    {item.imgSrc != null && <Image
-                        // name={("ScheduleListArtistDetailsButton" + item.fullName)}
-                        source={item.imgSrc}
-                        style={{
-                            // backgroundColor:'skyblue',
-                            position: 'absolute',
-                            right: -40,
-                            bottom: artistImageOffsetBottom,
-                            width: artistImageSize,
-                            height: artistImageSize,
-                            opacity: this.opacity
-
-                        }}
-                    />
-                    }
+                  
                 </LComponent>
 
-                {this.state.heightThresholdPassed &&
+                {/* {this.state.heightThresholdPassed &&
                     <View
                         style={{
                             position: 'absolute',
@@ -172,7 +173,7 @@ class ArtistDetailsBioComponent extends PureComponent<any, any> {
                             {"SCROLL TO READ MORE"}
                         </LText>
                     </View>
-                }
+                } */}
             </>
         );
     }

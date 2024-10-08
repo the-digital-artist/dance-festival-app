@@ -11,7 +11,7 @@ const ScreenHeader = (props) => {
     <>
       <View style={{
         // backgroundColor: '#100505',
-        top: statusBarHeight,
+        // top: statusBarHeight,
 
         width: Dimensions.get('window').width, height: 80
       }}>

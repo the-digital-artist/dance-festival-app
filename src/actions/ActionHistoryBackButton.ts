@@ -27,7 +27,7 @@ const ActionHistoryBackButton = () => {
   if (historyItem.out == 'SchedulerScreen') {
     context.navigationHistory.push({ out: "ArtistDetailsScreen", transition: "TransitionNavbarSelect", data: {} });
     TransitionArtistNavigateDown(LauncherController.getInstance().context.artistFocusItem, 0)
-    TransitionNavbarSelect(1, false);
+    TransitionNavbarSelect(0, false);
     return;
 
   } else if (historyItem.out == 'ArtistListScreen') {
@@ -42,7 +42,7 @@ const ActionHistoryBackButton = () => {
     // context.navigationHistory.push({ out: "ArtistDetailsScreen", transition: "TransitionSchedulerNavigateDown" });
     TransitionArtistNavigateDown(LauncherController.getInstance().context.artistFocusItem, 0)
     TransitionSchedulerNavigateDown(LauncherController.getInstance().context.schedulerFocusItem, 1)
-    TransitionNavbarSelect(1, false);
+    TransitionNavbarSelect(0, false);
     return;
   } else 
   // if (historyItem.transition == 'TransitionTabbarSelect') {

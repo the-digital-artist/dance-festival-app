@@ -217,10 +217,9 @@ class LauncherController extends OperatorStates {
     tabBarIndex = 0;
     tabBarData =
         [
-            // { id: 0, itemText: "Thursday", associatedScreenName: "scheduleList0", imgSrc: null },
-            // { id: 1, itemText: "Friday", associatedScreenName: "scheduleList1", imgSrc: null },
-            { id: 2, itemText: "Saturday", associatedScreenName: "scheduleList0", imgSrc: null },
-            { id: 3, itemText: "Sunday", associatedScreenName: "scheduleList1", imgSrc: null }
+            { id: 0, itemText: "Friday", associatedScreenName: "scheduleList0", imgSrc: null },
+            { id: 1, itemText: "Saturday", associatedScreenName: "scheduleList1", imgSrc: null },
+            { id: 2, itemText: "Sunday", associatedScreenName: "scheduleList2", imgSrc: null }
         ]
 
 
@@ -228,10 +227,10 @@ class LauncherController extends OperatorStates {
         navBarIndex = 0
         navBarData =
             [
-                { id: 0, itemText: "Program", associatedScreenName: "homeScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_home.png') },
-                { id: 1, itemText: "Workshops", associatedScreenName: "sessionScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_planner.png') },
-                { id: 3, itemText: "Artists", associatedScreenName: "artistsMainScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_artists.png') },
-                { id: 4, itemText: "More", associatedScreenName: "settingsScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_settings.png') }
+                // { id: 0, itemText: "Program", associatedScreenName: "homeScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_home.png') },
+                { id: 0, itemText: "Schedule", associatedScreenName: "schedulerMainScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_planner.png') },
+                { id: 1, itemText: "Artists", associatedScreenName: "artistsMainScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_artists.png') },
+                { id: 2, itemText: "More", associatedScreenName: "settingsScreenContainer", imgSrc: require('../assets/navbar/navbar_icon_settings.png') }
             ]
 
     artistStackIndex = 0
@@ -395,13 +394,14 @@ class LauncherController extends OperatorStates {
             const artistItem = dataModel.dataArtists[k];
             const artistNameNorm = k.toLowerCase().replace(" y ", " & ");
             // console.log('Artist: ' + artistNameNorm)
-            const expectedFilename = artistNameNorm.toLowerCase().replace(/[.’]/g, "").replace(/[ ]/g, "_").replace(/[&]/g, "-").replace('é','e') + ".png"
+            let expectedFilename = artistNameNorm.toLowerCase().replace(/[.’]/g, "").replace(/[ ]/g, "_").replace(/[&]/g, "-").replace('é','e') + ".png"
             // ('&','-').replaceAll(' ','_').replaceAll('.','').replace(`’`,'');
+            let specifiedFilename = artistItem.portrait;
 
             for (let j = 0; j < this.staticImageList.length; j++) {
                 // const namefile = this.staticImageList[j].fileName.replaceAll('_', ' ').replace('-', '&').replace(`’`,'').replace('.png', '');
                 // console.log(`   expectedFilename: ${expectedFilename} - checking asset name: ${this.staticImageList[j].fileName}` )
-                if (this.staticImageList[j].fileName == expectedFilename) {
+                if (this.staticImageList[j].fileName == specifiedFilename) {
                     artistItem['imgSrc'] = this.staticImageList[j].imgSrc;
                     // console.log('          ' + ' -> ' + this.staticImageList[j].fileName)
                     break;

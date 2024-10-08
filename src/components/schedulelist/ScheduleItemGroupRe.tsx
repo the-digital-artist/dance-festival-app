@@ -158,7 +158,7 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
 
     return (
         <>
-            <GestureDetector gesture={gestureObj}>
+            {/* <GestureDetector gesture={gestureObj}> */}
                 <Animated.View 
                 id="touchCaptureArea"
                     style={[{
@@ -186,8 +186,8 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
                                     tileOffsetLeft={0}
                                     tileOffsetTop={-46}
                                     dynamicVisualProperties0={animValues[i]}
-                                    dynamicVisualProperties1={animValuesAlpha[i]}
-                                    dynamicVisualProperties2={animValuesDeltaX[i]}
+                                    // dynamicVisualProperties1={animValuesAlpha[i]}
+                                    // dynamicVisualProperties2={animValuesDeltaX[i]}
                                     tileTapGestureHandler={tileTapGestureHandler[i]}
                                     tileTapVisualPropertyUpdate={tileTapVisualPropertyUpdate[i]}
                                 />
@@ -197,12 +197,13 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
                     }
 
                 </Animated.View>
-            </GestureDetector>
+            {/* </GestureDetector> */}
 
-            <Animated.View style={
+
+            {/* <Animated.View style={
                 [{
                     position: 'absolute',
-                    left: (0), top: 10,
+                    left: (0), top: 37,
                     width: 32, height: 28,
                     // backgroundColor: 'skyblue'
                 }, animValueLeftButtonAlpha]
@@ -217,7 +218,10 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
                         opacity: 1.0
                     }}
                     visualProperties={{ x: 0, y: 0, z: 0 }}
-                    onSelect={() => { changeSelectedIndex(-1) }}
+                    onSelect={() => { 
+                       console.log('  changeSelectedIndex(-1) | currentIndex.value: '+currentIndex.value);
+                        changeSelectedIndex(-1) 
+                    }}
                     source={require('../../../assets/button-prev.png')}
                 />
 
@@ -227,7 +231,7 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
             <Animated.View style={
                 [{
                     position: 'absolute',
-                    left: Dimensions.get('screen').width-32, top: 10,
+                    left: Dimensions.get('screen').width-32, top: 37,
                     width: 32, height: 28,
                     // backgroundColor: 'skyblue'
                 }, animValueRightButtonAlpha]
@@ -241,10 +245,13 @@ const ScheduleItemGroupRe = ({ mainItem, group, orientation, rowHeight }) => {
                         opacity: 1.0
                     }}
                     visualProperties={{ x: 0, y: 0, z: 0 }}
-                    onSelect={() => { changeSelectedIndex(1) }}
+                    onSelect={() => { 
+                        console.log('  changeSelectedIndex(-1) | currentIndex.value: '+currentIndex.value);
+                        changeSelectedIndex(1) 
+                    }}
                     source={require('../../../assets/button-next.png')}
                 />
-            </Animated.View>
+            </Animated.View> */}
         </>
     );
 
