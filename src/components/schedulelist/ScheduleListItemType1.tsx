@@ -26,8 +26,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     props.item['renderer'] = this;
     props.item['assignedListIndex'] = props.assignedListIndex
 
-    this.state = { dataItem: props.item };
-
+    this.state = { dataItem: props.item, favState: props.item.favoriteState };
   }
 
 
@@ -39,15 +38,15 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
 
 
     const levelData = [
-      { src: require('../../../assets/schedule-levelicon-1.png'), text: "BEGINNER", textWidth: 54 },
-      { src: require('../../../assets/schedule-levelicon-2.png'), text: "INTERMEDIATE", textWidth: 72 },
-      { src: require('../../../assets/schedule-levelicon-25.png'), text: "INTERM./ADV.", textWidth: 72 },
-      { src: require('../../../assets/schedule-levelicon-3.png'), text: "ADVANCED", textWidth: 56 }
+      { src: require('../../../assets/schedule-levelicon-1.png'), srcBlack: require('../../../assets/schedule-levelicon-1-black.png'), text: "BEGINNER", textWidth: 54 },
+      { src: require('../../../assets/schedule-levelicon-2.png'), srcBlack: require('../../../assets/schedule-levelicon-2-black.png'), text: "INTERMEDIATE", textWidth: 72 },
+      { src: require('../../../assets/schedule-levelicon-25.png'), srcBlack: require('../../../assets/schedule-levelicon-25-black.png'), text: "INTERM./ADV.", textWidth: 72 },
+      { src: require('../../../assets/schedule-levelicon-3.png'), srcBlack: require('../../../assets/schedule-levelicon-3-black.png'), text: "ADVANCED", textWidth: 56 }
     ]
     const levelId = item.level != undefined ? item.level : -1;
     const levelImageSize = 12;
     const levelStr = item.levelString != undefined ? item.levelString : '';
-    console.log("ScheduleListItemType1 levelStr: " +levelStr+" | levelID: "+levelId+" | artistOne: "+item.artistOne);
+    console.log("ScheduleListItemType1 tileWidth: " + this.props.tileWidth);
     //get data of artists
     const artistData1 = DataModel.getInstance().static.dataArtists[item.artistOne];
     const artistData2 = item.artistTwo ? DataModel.getInstance().dyn_dataArtistsList[item.artistTwo] : null;
@@ -63,8 +62,8 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     const imageOffsetYArtistImage = 30 + ((305 - this.props.tileWidth) / (305 - 245)) * 10
     const imageOffsetXRArtistImage = 10;
     const imageOffsetXLArtistImage = 10;
-    const fontSizeMainTitle = 13.5//this.props.tileWidth * (16 / 240);
-    const fontSizeArtistName = 20//this.props.tileWidth * (26 / 280)
+    const fontSizeMainTitle = this.props.tileWidth * (15/ 200);
+    const fontSizeArtistName = this.props.tileWidth * (23 / 200)
 
     // console.log("ScheduleListItemType1 tileLength " + this.props.tileWidth + " artistImageWidth: "+ imageWidthArtistImage);
 
@@ -148,16 +147,16 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
           <LComponent
             name={"ScheduleItemHighlight" + item.id}
             style={{
-              backgroundColor: 'transparent',
-              borderTopWidth: 1,
+              backgroundColor: '#f2aa3e',
+              // borderTopWidth: 1,
               borderBottomWidth: 1,
-              borderRightWidth: (item.orientation == 'left' ? 30 : 0),
-              borderLeftWidth: (item.orientation == 'right' ? 30 : 0),
-              borderColor: '#f2aa3e'
+              // borderRightWidth: (item.orientation == 'left' ? 30 : 0),
+              // borderLeftWidth: (item.orientation == 'right' ? 30 : 0),
+              borderColor: '#efc787'
             }}
             visualProperties={{
-              alpha: item.favoriteState?1.0:0.0, x: 3, y: -8,
-              h: (itemHeight - 14), w: this.props.tileWidth - 6
+              alpha: item.favoriteState ? 1.0 : 0.0, x: 0, y: -13,
+              h: (itemHeight + 4), w: this.props.tileWidth - 1
             }}
           />
 
@@ -205,7 +204,8 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                 fontSize: fontSizeMainTitle,
                 // backgroundColor: 'indigo',
                 textAlign: (item.orientation == 'right' ? 'left' : 'right'),
-                color: '#f2aa3e',
+                color: this.state.favState ? '#2a1d08' : '#f2aa3e',
+                // color: this.state.favState?'#f2aa3e':'#2a1d08',
               }}>
                 {item.sessionMainTitle}
               </Animated.Text>
@@ -218,7 +218,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                 letterSpacing: -0.1,
                 // backgroundColor: 'indigo',
                 textAlign: (item.orientation == 'right' ? 'left' : 'right'),
-                color: '#ffffff',
+                color: this.state.favState ? '#2a1d08' : '#ffffff',
 
               }}>
                 {item.artistName ? (item.artistName as string) : ""}
@@ -259,16 +259,16 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                         marginTop: 'auto',
                         marginBottom: 'auto',
                         textAlign: (item.orientation == 'right' ? 'left' : 'right'),
-                        color: '#e5e4cf',
-                        fontSize: 8,
+                        color: this.state.favState ? '#2a1d08' : '#e5e4cf',
+                        fontSize: 10,
                       }}>
-                        {(levelData[levelId] != undefined ?  levelData[levelId].text:levelStr).toLocaleUpperCase()}
+                        {(levelData[levelId] != undefined ? levelData[levelId].text : levelStr).toLocaleUpperCase()}
                       </Text >
                     }
 
                     {levelData[levelId] != undefined &&
                       <Image
-                        source={levelData[levelId].src}
+                        source={this.state.favState ? levelData[levelId].srcBlack : levelData[levelId].src}
                         style={{
                           // backgroundColor: 'greenyellow',
                           marginLeft: 5,
@@ -385,10 +385,10 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                 position: 'absolute',
                 right: (item.orientation == 'left' ? 10 : undefined),
                 left: (item.orientation == 'right' ? 8 : undefined),
-                top: (3),
+                top: (-3),
                 width: 20, height: 20,
               }}
-              initialCheckedState={this.state.dataItem.favoriteState}
+              initialCheckedState={this.state.favState}
               onSelect={(newState) => {
                 ActionItemFavToggleStateUpdate(this, newState)
               }}
@@ -410,19 +410,21 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               bgBoxVisible={true}
               bgBoxStyle={{
                 // backgroundColor: '#36373a',
-                borderColor: '#FFFFFF',
+                borderColor: this.state.favState ? '#ffffff' : '#e5e4cf',
+                // borderColor: '#FFFFFF',
                 borderWidth: 1,
                 height: 20, width: 120
               }}
               fontStyle={{
-                top: ((Platform.OS == 'android')) ? -2 : 5,
+                top: ((Platform.OS == 'android')) ? -1 : 5,
                 width: 120,
-                color: '#ffffff',
+                color: this.state.favState ? '#ffffff' : '#ffffff',
+                // color: '#ffffff',
                 fontFamily: 'AktivGrotesk-Regular',
                 textAlign: 'center',
                 textAlignVertical: 'center',
                 letterSpacing: 2.0,
-                height: 20,
+                height: 21,
                 fontSize: 9,
               }}
               visualProperties={{ alpha: 1 }}
@@ -449,8 +451,9 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
   }
 
   setFavoriteState(value: boolean) {
+    console.log('setFavoriteState');
     this.state.dataItem.favoriteState = value;
-    this.setState({ dataItem: this.state.dataItem });
+    this.setState({ dataItem: this.state.dataItem, favState: value });
     TransitionScheduleItemFavSelect(this.state.dataItem)
   }
 }

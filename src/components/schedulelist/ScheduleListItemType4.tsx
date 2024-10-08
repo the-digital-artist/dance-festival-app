@@ -18,8 +18,11 @@ const ScheduleListItemType4 = ({ item }) => {
   const artistData2 = item.artistTwo ? DataModel.getInstance().static.dataArtists[item.artistTwo] : null;
   const verticalOffsetTitleLength = item.lineCount != undefined ? (item.lineCount * 19) : 19;
   const preSignupRequired = ((item.sessionMainTitle as string).toLowerCase().indexOf("absolute beginner") == -1)
-  const fontSizeMainTitle = 13.5//this.props.tileWidth * (16 / 240);
-  const fontSizeArtistName = 20//this.props.tileWidth * (26 / 280)
+  
+  const paddingLeftAndRight = 5;
+  const tileWidth = Dimensions.get('screen').width/2-paddingLeftAndRight;
+  const fontSizeMainTitle = tileWidth * (15/ 200);
+  const fontSizeArtistName = tileWidth * (23 / 200)
 
 
   const companyString = (artistData1!=undefined && artistData1.artistCompany != undefined) ? artistData1.artistCompany : '';
@@ -29,10 +32,10 @@ const ScheduleListItemType4 = ({ item }) => {
         position: 'absolute',
         top: 30, left: 0,
         height: item.itemHeight - 30,
-        width: Dimensions.get('screen').width - 10,
-        opacity: 0.2,
+        width: Dimensions.get('screen').width,
+        // opacity: 0,
         padding: 0,
-        // backgroundColor: 'red',
+        // backgroundColor: '#efc787',
       }}
       />
 
@@ -45,7 +48,7 @@ const ScheduleListItemType4 = ({ item }) => {
         letterSpacing: 1.2,
         opacity: 1.0,
         padding: 2,
-        backgroundColor: '#f2aa3e',
+        backgroundColor: '#e4d5bd',
         // backgroundColor: '#600f2c',
         textAlign: 'center',
         color: '#232323',
@@ -141,7 +144,7 @@ const ScheduleListItemType4 = ({ item }) => {
           height: 20, width: 120
         }}
         fontStyle={{
-          top: ((Platform.OS == 'android')) ? -2 : 5,
+          top: ((Platform.OS == 'android')) ? 0 : 5,
           width: 120,
           color: '#ffffff',
           fontFamily: 'AktivGrotesk-Regular',
