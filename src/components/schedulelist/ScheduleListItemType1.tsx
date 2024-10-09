@@ -9,6 +9,8 @@ import TransitionLinkToArtistPage from '../../transitions/TransitionLinkToArtist
 import TransitionScheduleItemFavSelect from '../../transitions/TransitionScheduleItemFavSelect';
 import ButtonSmall from '../ButtonSmall';
 import ScheduleItemToggle from './ScheduleItemToggle';
+import LTouchableOpacity from '../../core/LTouchableOpacity';
+import ButtonText from '../ButtonText';
 
 
 class ScheduleListItemType1 extends PureComponent<any, any> {
@@ -46,7 +48,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     const levelId = item.level != undefined ? item.level : -1;
     const levelImageSize = 12;
     const levelStr = item.levelString != undefined ? item.levelString : '';
-    console.log("ScheduleListItemType1 tileWidth: " + this.props.tileWidth);
+    // console.log("ScheduleListItemType1 tileWidth: " + this.props.tileWidth);
     //get data of artists
     const artistData1 = DataModel.getInstance().static.dataArtists[item.artistOne];
     const artistData2 = item.artistTwo ? DataModel.getInstance().dyn_dataArtistsList[item.artistTwo] : null;
@@ -62,7 +64,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     const imageOffsetYArtistImage = 30 + ((305 - this.props.tileWidth) / (305 - 245)) * 10
     const imageOffsetXRArtistImage = 10;
     const imageOffsetXLArtistImage = 10;
-    const fontSizeMainTitle = this.props.tileWidth * (15/ 200);
+    const fontSizeMainTitle = this.props.tileWidth * (15 / 200);
     const fontSizeArtistName = this.props.tileWidth * (23 / 200)
 
     // console.log("ScheduleListItemType1 tileLength " + this.props.tileWidth + " artistImageWidth: "+ imageWidthArtistImage);
@@ -160,7 +162,31 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
             }}
           />
 
-          <Animated.Text allowFontScaling={false} id='textLocation' style={[{
+          <ButtonText
+            name={("ItemRendererLabelRoom" + item.id)}
+            style={{
+              position: 'absolute',
+              top: 3,
+              right: (item.orientation == 'right' ? undefined : 40),
+              left: (item.orientation == 'left' ? undefined : 40),
+              height: 15,
+            }}
+            fontStyle={{
+              fontFamily: 'AktivGrotesk-Regular',
+              // backgroundColor: 'skyblue',
+              textAlign: 'center',
+              color: '#FFFFFF',
+              fontSize: 11,
+              letterSpacing: 1.2
+            }}
+            onPress={() => {
+              (this.toggleButtonReference as ScheduleItemToggle).updateToggleState(true);
+              ActionItemFavToggleStateUpdate(this, true)
+            }}
+            text={(item.room as string).toLocaleUpperCase()}
+          />
+
+          {/* <Animated.Text allowFontScaling={false} id='textLocation' style={[{
             position: 'absolute',
             top: 3,
             // left: 0,
@@ -176,7 +202,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
             letterSpacing: 1.2
           }]}>
             {(item.room as string).toLocaleUpperCase()}
-          </Animated.Text>
+          </Animated.Text> */}
 
 
 
@@ -190,39 +216,63 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               style={{
                 position: 'absolute',
                 // backgroundColor: 'skyblue',
-                // right: (item.orientation == 'right' ? undefined : (-4)),
-                left: (item.orientation == 'right' ? 40 : 5),
-                width: Dimensions.get('screen').width / 2 - 45,
+                right: (item.orientation == 'left' ? undefined : this.props.tileWidth * 0.07),
+                left: (item.orientation == 'right' ? undefined : this.props.tileWidth * 0.07),
+                // left: (item.orientation == 'right' ? 40 : 5),
+                width: this.props.tileWidth - 40 - (this.props.tileWidth * 0.07),
                 top: 25,
                 flex: 1, flexDirection: 'column',
                 opacity: 1.0
               }}>
 
-              <Animated.Text allowFontScaling={false} id='textSessionMainTitle' style={{
-                marginBottom: 2,
-                fontFamily: 'AktivGrotesk-Regular',
-                fontSize: fontSizeMainTitle,
-                // backgroundColor: 'indigo',
-                textAlign: (item.orientation == 'right' ? 'left' : 'right'),
-                color: this.state.favState ? '#2a1d08' : '#f2aa3e',
-                // color: this.state.favState?'#f2aa3e':'#2a1d08',
-              }}>
-                {item.sessionMainTitle}
-              </Animated.Text>
+
+              <ButtonText
+                name={("ItemRendererLabelMainTitle" + item.id)}
+                style={{
+                  position: 'relative',
+                  marginBottom: 2,
+                }}
+                fontStyle={{
+                  fontFamily: 'AktivGrotesk-Regular',
+                  fontSize: fontSizeMainTitle,
+                  textAlign: (item.orientation == 'right' ? 'left' : 'right'),
+                  color: this.state.favState ? '#2a1d08' : '#f2aa3e',
+                }}
+                onPress={() => {
+                  if (artistData1 == undefined) return;
+                  LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage", data: {} });
+                  TransitionLinkToArtistPage(artistData1)
+                }}
+                text={item.sessionMainTitle}
+              />
+
+              <ButtonText
+                name={("ItemRendererLabelArtist" + item.id)}
+                style={{
+                  position: 'relative',
+                  marginBottom: 5, marginTop: 5,
+                }}
+                fontStyle={{
+                  fontFamily: 'RamaGothicEW01-Regular',
+                  fontSize: (fontSizeArtistName),
+                  letterSpacing: -0.1,
+                  // backgroundColor: 'indigo',
+                  textAlign: (item.orientation == 'right' ? 'left' : 'right'),
+                  color: this.state.favState ? '#2a1d08' : '#ffffff',
+
+                }}
+                onPress={() => {
+                  if (artistData1 == undefined) return;
+                  LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage", data: {} });
+                  TransitionLinkToArtistPage(artistData1)
+                }}
+                text={item.artistName ? (item.artistName as string) : ""}
+              />
 
 
-              <Text allowFontScaling={false} id='textSessionArtistName' style={{
-                marginBottom: 5, marginTop: 5,
-                fontFamily: 'RamaGothicEW01-Regular',
-                fontSize: (fontSizeArtistName),
-                letterSpacing: -0.1,
-                // backgroundColor: 'indigo',
-                textAlign: (item.orientation == 'right' ? 'left' : 'right'),
-                color: this.state.favState ? '#2a1d08' : '#ffffff',
-
-              }}>
-                {item.artistName ? (item.artistName as string) : ""}
-              </Text >
+              {/* <Text allowFontScaling={false} id='textSessionArtistName' 
+                
+                </Text > */}
 
               {(levelStr != '' || levelData[levelId] != undefined) &&
                 <View
@@ -287,79 +337,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                 </View>
               }
 
-              {/* {item.levelSpecial != undefined && item.levelSpecial == '1' && levelData[levelId] != undefined &&
-              <>
-                <Image
-                  source={require('../../../assets/scheduler-levelicon-specialdrums.png')}
-                  style={{
-                    // backgroundColor: 'greenyellow',
-                    position: 'absolute',
-                    top: (40 + verticalOffsetTitleLength),
-                    right: (item.orientation == 'right' ? undefined : (levelData[levelId].textWidth + 47)),
-                    left: (item.orientation == 'left' ? undefined : (levelData[levelId].textWidth + 47)),
-                    width: levelImageSize * 1.4,
-                    height: levelImageSize * 1.4,
-                    resizeMode: 'cover'
-                  }}>
-                </Image>
-
-                <Text allowFontScaling={false} id='textSessionLevel' style={{
-                  position: 'absolute',
-                  top: (40 + verticalOffsetTitleLength),
-                  right: (item.orientation == 'right' ? undefined : (4 + 35)),
-                  left: (item.orientation == 'left' ? undefined : (4 + 35)),
-                  // height: levelImageSize,
-                  width: (100 - 15),
-                    fontFamily: 'AktivGrotesk-Regular',
-                  letterSpacing: 1.2,
-                  // opacity: 0.5,
-                  // backgroundColor: 'indigo',
-                  textAlign: (item.orientation == 'right' ? 'left' : 'right'),
-                  color: '#e5e4cf',
-                  fontSize: 9,
-                }}>
-                  {'PERCUSSION'}
-                </Text >
-              </>
-
-            } */}
-
-              {/* {item.levelSpecial != undefined && item.levelSpecial == '3' &&
-              <>
-                <Image
-                  source={require('../../../assets/scheduler-levelicon-specialtheory.png')}
-                  style={{
-                    // backgroundColor: 'greenyellow',
-                    position: 'absolute',
-                    top: (25 + verticalOffsetTitleLength),
-                    right: (item.orientation == 'right' ? undefined : (35 + 47)),
-                    left: (item.orientation == 'left' ? undefined : (30 + 47)),
-                    width: levelImageSize * 1.4,
-                    height: levelImageSize * 1.4,
-                    resizeMode: 'cover'
-                  }}>
-                </Image>
-
-                <Text allowFontScaling={false} id='textSessionLevel' style={{
-                  position: 'absolute',
-                  top: (25 + verticalOffsetTitleLength),
-                  right: (item.orientation == 'right' ? undefined : (4 + 35)),
-                  left: (item.orientation == 'left' ? undefined : (4 + 35)),
-                  // height: levelImageSize,
-                  width: (100 - 15),
-                  fontFamily: 'AktivGrotesk-Regular',
-                  letterSpacing: 1.2,
-                  // opacity: 0.5,
-                  // backgroundColor: 'indigo',
-                  textAlign: (item.orientation == 'right' ? 'left' : 'right'),
-                  color: '#e5e4cf',
-                  fontSize: 9,
-                }}>
-                  {'THEORY'}
-                </Text >
-              </>
-
-            } */}
+         
 
               {(item.id != 'focus') &&
 
@@ -383,9 +361,13 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               style={{
                 // backgroundColor: 'indigo',
                 position: 'absolute',
-                right: (item.orientation == 'left' ? 10 : undefined),
-                left: (item.orientation == 'right' ? 8 : undefined),
-                top: (-3),
+                right: (item.orientation == 'left' ? 0 : undefined),
+                left: (item.orientation == 'right' ? 0 : undefined),
+                top: -20,
+                width: (40), height: itemHeight,
+              }}
+              imgStyle={{
+                top: 17,
                 width: 20, height: 20,
               }}
               initialCheckedState={this.state.favState}

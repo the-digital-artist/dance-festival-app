@@ -30,7 +30,7 @@ const ScheduleListItem = ({ item, index }) => {
     // if ((item.artistName as string).length > 20) itemHeight += 30;
   }
   else if (item.itemType == 'type4')
-    itemHeight = (item.sessionMainTitle as string).length > 20 ? 180 : 180;
+    itemHeight = (item.sessionMainTitle as string).length > 20 ? 220 : 220;
   else if (item.itemType == 'type5')
     itemHeight = 100;
 
@@ -125,7 +125,7 @@ const ScheduleListItem = ({ item, index }) => {
 
       <Text allowFontScaling={false} id='textTime' style={{
         position: 'absolute',
-        top: 10, left: 6,
+        top: 7, left: 6,
         width: Dimensions.get('screen').width,
         fontFamily: 'AktivGrotesk-Regular',
         // backgroundColor: 'skyblue',
