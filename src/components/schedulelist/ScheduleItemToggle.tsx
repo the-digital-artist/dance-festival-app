@@ -23,6 +23,7 @@ class ScheduleItemToggle extends PureComponent<any, any> {
     }
 
     render() {
+        const imgCenterX = (this.props.style.width-this.props.imgStyle.width)/2;
         return (
             <>
                 <LTouchableOpacity
@@ -33,8 +34,10 @@ class ScheduleItemToggle extends PureComponent<any, any> {
                 >
                     <Image
                         style={{
-                            top: 0, left: 0, position: 'absolute',
-                            width: this.props.style.width, height: this.props.style.height,
+                            position: 'absolute',
+                            top: this.props.imgStyle.top, 
+                            left: imgCenterX, 
+                            width: this.props.imgStyle.width, height: this.props.imgStyle.height,
                             resizeMode: "contain",
                             opacity: 1
                         }}
