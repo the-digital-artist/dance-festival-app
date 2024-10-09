@@ -24,6 +24,7 @@ class LComponent extends PureComponent<any, any> {
             if (this.props.style == undefined) return;
             if (this.props.style['transform'] == undefined) this.props.style['transform'] = [];
             // if (this.props.visualProperties == undefined) this.props[visualProperties = {};
+            if (this.props.style['position'] == undefined) this.props.style['position'] = 'absolute'
 
             for (let key in this.props.visualProperties) {
                 // console.log("LComponent " + this.props.name + " - visualProperties.................................." + key)
@@ -76,8 +77,12 @@ class LComponent extends PureComponent<any, any> {
 
         return (
             <Animated.View
+                onStartShouldSetResponder={this.props.onStartShouldSetResponder}
+                onResponderGrant={this.props.onResponderGrant}
+                onResponderRelease={this.props.onResponderRelease}
+                onResponderTerminate={this.props.onResponderTerminate}
                 pointerEvents={this.props.pointerEvents}
-                style={[this._processedStyle, { position: 'absolute' }]}>
+                style={this._processedStyle}>
                 {this.props.children}
             </Animated.View>
         );
