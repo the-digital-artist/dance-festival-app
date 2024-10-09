@@ -5,7 +5,7 @@ const ActionLinkEarlyBirdTickets = () => {
     console.log('ActionLinkEarlyBirdTickets');
 
 
-        let account = 'https://www.tickettailor.com/events/fiestaelegante/1156944'
+        let account = 'https://www.tickettailor.com/events/fiestaelegante/1398255'
         Linking.canOpenURL(account).then(supported => {
                 console.log("supported" + supported);
                 if (!supported) return;

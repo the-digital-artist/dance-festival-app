@@ -18,7 +18,7 @@ class SettingsScreen extends PureComponent {
 
     static settingsItemRendererHeight = 50;
     static settingsListData = [
-        { title: "Get Your Ticket", action: ActionLinkEarlyBirdTickets },
+        { title: "Get Early Bird Pass 2025", action: ActionLinkEarlyBirdTickets },
         { title: "Contact Festival Organizers", action: ActionMoreContactFestival},
         { title: "Sign-up for our Newsletter", action: ActionMoreNewsletterSignup},
         // { title: `Contact App Creator`, action: ActionMoreContactAppDev },
