@@ -1,6 +1,6 @@
 export const modelInitStaticOverwrite =
 {
-  "modelVersion": 1046,
+  "modelVersion": 1047,
   "festivalName": "FIESTA ELEGANTE",
   "apiUrlBase": "https://coaxoawep7.execute-api.eu-central-1.amazonaws.com/beta",
   "apiModelUpdateContent": "/content",
@@ -423,18 +423,6 @@ export const modelInitStaticOverwrite =
           "sessions": []
         }
       ]
-    },
-    "Seo Fernandez": {
-      "fullName": "Seo Fernandez",
-      "artistCompany": "",
-      "insta": "seofernandez_official",
-      "bio": "SEO FERNANDEZ (Havana, Cuba) is considered one of the most talented salsa dancers that has a deep knowledge and style of their own. He was born in Cuba where he started dancing as a young boy, whether on the street or in school. He studied at the school for variety and shows where om 1989 he received the title of professional dancer. His capabilities range from Hio Hop to folklore, from Classical to Salsa, and from Chachacha to Rumba.\n\nHe worked with at various varieties and theatres in Havana and in 1992 became a member of the famous group for turism and shows, Cubanacan. His role here was choreographer and he created shows that went on tour through South America and Europe. His goal since 1995 has been to spread Latin American music and dances in Italy and thanks to his charisma he is extremely well-known as a club representative and for his extreordinary artistic capabilities as a dancer.\n\nHe has worked as a dancer for many TV programmes at MTV. But he went even further! His artistic potential also spreads to other areas: he is known for his singing talents. In 2008 he released his first album Atacando with the famous song \"Remena\". He decided to create new shows for which he combined and merged a mix of Afro rhythms, Hip hop and jazz with salsa. Singing the basis for their show himself, which has become a huge success.\n\nSeo with his dance partner Alessia and his group Latin Black, thanks to the very famous event Cubamemucho and their hard work and their incredible talent, are worldwide known. They are taking part in internationally renowned Salsa Congresses. For 7 years Seo is organizing his big international event in Italy - REMENEATE",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "seo_fernandez.png",
-      "edition": "Autumn 2024",
-      "rank": "3",
-      "sessions": []
     },
     "Yusimi Moya": {
       "fullName": "Yusimi Moya",
