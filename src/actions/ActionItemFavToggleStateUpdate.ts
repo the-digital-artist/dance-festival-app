@@ -2,7 +2,7 @@ import LauncherController from "../LauncherController";
 import ScheduleListItemType1 from "../components/schedulelist/ScheduleListItemType1";
 
 
-const ActionItemFavToggleStateUpdate = (renderer: ScheduleListItemType1, newState: boolean) => {
+const ActionItemFavToggleStateUpdate = (renderer: any, newState: boolean) => {
   console.log("ActionItemFavToggleStateUpdate ");
 
   let item = renderer.state.dataItem;
@@ -13,8 +13,8 @@ const ActionItemFavToggleStateUpdate = (renderer: ScheduleListItemType1, newStat
       if(e.id == item.id) continue;
       console.log("index: "+i);
       LauncherController.getInstance().storeData(e.id, false);
-      (e.obj.renderer as ScheduleListItemType1).toggleButtonReference.updateToggleState(false);
-      (e.obj.renderer as ScheduleListItemType1).setFavoriteState(false);
+      (e.obj.renderer).toggleButtonReference.updateToggleState(false);
+      (e.obj.renderer).setFavoriteState(false);
     }
   }
 
