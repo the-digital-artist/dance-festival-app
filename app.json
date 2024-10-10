@@ -2,7 +2,7 @@
   "expo": {
     "name": "Berlin Salsa Festival",
     "slug": "berlin-salsa-festival-fiesta-elegante",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",

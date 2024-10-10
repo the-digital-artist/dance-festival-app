@@ -120,7 +120,7 @@ class SchedulerListScreen extends PureComponent implements IDataDependentCompone
                                             keyExtractor={item => item.id}
                                             ListFooterComponent={() => (
                                                 <View style={{ 
-                                                    height:NavBar.navBarHeight+50}}/>
+                                                    height:Platform.OS=='android'?NavBar.navBarHeight+100:(NavBar.navBarHeight+50)}}/>
                                             )}
                                         />
                                 </LComponent>
