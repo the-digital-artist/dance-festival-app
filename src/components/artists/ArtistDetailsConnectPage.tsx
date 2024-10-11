@@ -157,45 +157,6 @@ class ArtistDetailsConnectPage extends PureComponent<any, any> {
                         flex: 1, flexDirection: 'column',
                     }}>
 
-                        <SubHeadline
-                            text={"ALL SESSIONS"}
-                            style={{ position: 'relative', marginTop: 30, marginBottom: 15 }}
-                        />
-
-                        <View
-                            style={{
-                                //    marginTop: 15,
-                                // top: 210, left: padding, 
-                                width: Dimensions.get('screen').width - 2 * padding,
-                                marginTop: 15, marginBottom: 30,
-                                height: 150,
-                                opacity: 1.0
-                            }}>
-                            <Image
-                                source={require('../../../assets/hometile-overlay-shine.png')}
-                                style={{
-                                    position: 'absolute',
-                                    resizeMode: 'cover', opacity: 0.15,
-                                    left: 0,
-                                    top: -20,
-                                    width: (Dimensions.get('screen').width - 2 * 30),
-                                    height: 195,
-                                }}
-                            />
-                            <ArtistDetailsScheduleItem
-                                item={this.items[0]}
-                                rowHeight={75}
-                                tileWidth={Dimensions.get('screen').width - 60}
-                                tileOffsetTop={0}
-                                tileOffsetLeft={0} />
-                            <ArtistDetailsScheduleItem
-                                item={this.items[1]}
-                                rowHeight={75}
-                                tileWidth={Dimensions.get('screen').width - 60}
-                                tileOffsetTop={100}
-                                tileOffsetLeft={0} />
-
-                        </View>
 
                         {/* <Image
                             style={{
@@ -266,7 +227,7 @@ class ArtistDetailsConnectPage extends PureComponent<any, any> {
                                 top: -55,
                                 left: Dimensions.get('screen').width / 2 - padding - (offerValid ? 155 : 120) / 2,
                                 height: 30, width: (offerValid ? 155 : 120),
-                               
+
                             }}
                             text={offerValid ? "LEARN MORE..." : "ALREADY CLAIMED"}
                             bgBoxVisible={true}
@@ -323,7 +284,7 @@ class ArtistDetailsConnectPage extends PureComponent<any, any> {
                         <LText
                             id='artistBioFocus'
                             style={{
-                                top: 0, margin: 0, marginBottom: 200,
+                                top: 0, margin: 0, marginBottom: 15,
                                 width: Dimensions.get('screen').width - 2 * padding,
                                 // height: (artistBiography as string).length / 1100 * 1.2 * Dimensions.get('screen').height,
                                 fontFamily: 'Arcon-Regular',
@@ -346,7 +307,57 @@ class ArtistDetailsConnectPage extends PureComponent<any, any> {
                         >
                             {artistBiography}
                         </LText>
+
+
+
+
+                        <SubHeadline
+                            text={"ALL SESSIONS"}
+                            style={{ position: 'relative', marginTop: 30, marginBottom: 15 }}
+                        />
+
+                        <View
+                            style={{
+                                //    marginTop: 15,
+                                // top: 210, left: padding, 
+                                width: Dimensions.get('screen').width - 2 * padding,
+                                marginTop: 15, marginBottom: 30,
+                                height: 150,
+                                opacity: 1.0
+                            }}>
+                            <View
+                                style={{
+                                    width: Dimensions.get('screen').width - 2 * padding,
+                                    marginTop: 0, marginBottom: 30,
+                                    height: 75,
+                                }}>
+
+                                <ArtistDetailsScheduleItem
+                                    item={this.items[0]}
+                                    rowHeight={75}
+                                    tileWidth={Dimensions.get('screen').width - 2 * padding}
+                                    tileOffsetTop={0}
+                                    tileOffsetLeft={0} />
+                            </View>
+
+
+                            <View
+                                style={{
+                                    width: Dimensions.get('screen').width - 2 * padding,
+                                    marginTop: 0, marginBottom: 30,
+                                    height: 75,
+                                }}>
+                                <ArtistDetailsScheduleItem
+                                    item={this.items[1]}
+                                    rowHeight={75}
+                                    tileWidth={Dimensions.get('screen').width - 2 * padding}
+                                    tileOffsetTop={0}
+                                    tileOffsetLeft={0} />
+                            </View>
+
+                        </View>
                     </View>
+
                 </ScrollView>
 
                 <LComponent

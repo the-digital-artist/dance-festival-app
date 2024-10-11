@@ -1,5 +1,5 @@
 import { PureComponent, ReactNode, createRef } from 'react';
-import { Image, Platform, Text, View } from 'react-native';
+import { Dimensions, Image, Platform, Text, View } from 'react-native';
 import Animated from 'react-native-reanimated';
 import DataModel from '../../DataModel';
 import LauncherController from '../../LauncherController';
@@ -9,6 +9,7 @@ import TransitionLinkToArtistPage from '../../transitions/TransitionLinkToArtist
 import TransitionScheduleItemFavSelect from '../../transitions/TransitionScheduleItemFavSelect';
 import ButtonSmall from '../ButtonSmall';
 import ScheduleItemToggle from './ScheduleItemToggle';
+import LText from '../../core/LText';
 
 
 class ScheduleListItemType1 extends PureComponent<any, any> {
@@ -36,6 +37,8 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
 
     let item = this.state.dataItem;
     // if (item.itemType != 'type1') return;
+   
+
 
     const levelData = [
       { src: require('../../../assets/schedule-levelicon-1.png'), text: "BEGINNER", textWidth: 52 },
@@ -67,6 +70,9 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
     const fontSizeArtistName =16;
 
     const reduceInnerTileHeightBy = item.dateString != "Thu, October 17, 2024"?30:20;
+
+    const artistConnect = ((artistData1.artistconnect as string)!=undefined && artistData1.artistconnect.length>0)?true:false;
+
 
     // console.log("ScheduleListItemType1 tileLength " + this.props.tileWidth + " artistImageWidth: "+ imageWidthArtistImage);
 
@@ -251,6 +257,7 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
             />
 
 
+
             <Animated.Text allowFontScaling={false} id='textSessionMainTitle' style={{
               position: 'absolute',
               top: 30,
@@ -342,6 +349,41 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
               sourceOff={require('../../../assets/button-fav-off.png')}
             />
 
+
+{
+        (artistConnect) &&
+
+        <Image
+          source={LauncherController.getInstance().staticImageList[artistData1.companyImage].imgSrc}
+          style={{
+            position: 'absolute',
+            opacity: 0.8,
+            top: 83, 
+            right: (item.orientation == 'right' ? undefined : (4 + 0)),
+            left: (item.orientation == 'left' ? undefined : (4 + 0)),
+            width: 30,
+            height: 30,
+          }}
+        >
+        </Image>
+      }
+        {/* {artistConnect &&
+          <LText id='textArtistConnectDeal' style={{
+            position: 'absolute',
+            top: 85, 
+            right: (item.orientation == 'right' ? undefined : (4 + 33+40)),
+            left: (item.orientation == 'left' ? undefined : (4 + 33+40)),
+            width: Dimensions.get('screen').width-210, 
+            fontFamily: 'Cabin-Regular',
+            letterSpacing: 1.5,
+            // backgroundColor: 'indigo',
+            textAlign: 'left',
+            color: '#ffffff',
+            fontSize: 12,
+          }}>{(artistData1.artistconnect as string)}
+          </LText>
+        } */}
+
             {(item.id != 'focus') &&
 
               <ButtonSmall
@@ -354,16 +396,16 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                   top: (67 + verticalOffsetTitleLength),
                   height: 23, width: 120,
                 }}
-                text={"ARTIST DETAILS"}
+                text={artistConnect?'ARTIST CONNECT':"ARTIST DETAILS"}
                 bgBoxVisible={true}
                 bgBoxStyle={{
-                  backgroundColor: '#1d1c24',
+                  backgroundColor: (artistConnect?'#663848':'#1d1c24'),
                   height: 23, width: 120
                 }}
                 fontStyle={{
                   width: 120,
                   top: ((Platform.OS == 'android'))?-2:5,
-                  color: '#FFFFFF',
+                  color: (artistConnect?'#FFFFFF':'#FFFFFF'),
                   fontFamily: 'Cabin-Regular',
                   textAlign: 'center',
                   textAlignVertical: 'center',

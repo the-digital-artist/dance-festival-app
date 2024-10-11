@@ -62,7 +62,7 @@ class ArtistDetailsScheduleItem extends PureComponent<any, any> {
     const imageOffsetYArtistImage = 10 + ((305 - this.props.tileWidth) / (305 - 245)) * 10
     const imageOffsetXRArtistImage = -17;
     const imageOffsetXLArtistImage = -17;
-    const fontSizeMainTitle = this.props.tileWidth * (12 / 305);
+    const fontSizeMainTitle = this.props.tileWidth * (14 / 305);
     // const fontSizeArtistName = this.props.tileWidth * (13 / 305)
     // const fontSizeMainTitle =20;
     const fontSizeArtistName =16;
@@ -95,6 +95,17 @@ class ArtistDetailsScheduleItem extends PureComponent<any, any> {
         }]}
       >
 
+<Image
+                                source={require('../../../assets/hometile-overlay-shine.png')}
+                                style={{
+                                    position: 'absolute',
+                                    resizeMode: 'cover', opacity: 0.15,
+                                    left: 0,
+                                    top: -20,
+                                    width: (this.props.tileWidth - 2 * 30),
+                                    height: 95,
+                                }}
+                            />
         <View
           //  name={"ScheduleItemFrame1_" + item.id}
           style={{
@@ -216,11 +227,11 @@ class ArtistDetailsScheduleItem extends PureComponent<any, any> {
           <Animated.Text allowFontScaling={false} id='textLocation' style={[{
             position: 'absolute',
             top: Platform.OS=='ios'?5:0,
-            left: 200,
+            left: 0,
             width: this.props.tileWidth,
             fontFamily: 'DINCondensed-Regular',
             // backgroundColor: 'skyblue',
-            textAlign: 'left',
+            textAlign: 'center',
             // fontFamily: 'DINNeuzeitGroteskStd-Light',
             // backgroundColor: 'red',
             color: '#ede8e3',
@@ -290,7 +301,7 @@ class ArtistDetailsScheduleItem extends PureComponent<any, any> {
                   style={{
                     // backgroundColor: 'greenyellow',
                     position: 'absolute',
-                    top: (34 + verticalOffsetTitleLength),
+                    top: (29 + verticalOffsetTitleLength),
                     right: (item.orientation == 'right' ? undefined : (levelData[levelId].textWidth + 40)),
                     left: (item.orientation == 'left' ? undefined : (levelData[levelId].textWidth + 38)),
                     width: levelImageSize*(105/33),
@@ -301,7 +312,7 @@ class ArtistDetailsScheduleItem extends PureComponent<any, any> {
 
                 <Text allowFontScaling={false} id='textSessionLevel' style={{
                   position: 'absolute',
-                  top: (35 + verticalOffsetTitleLength - 1),
+                  top: (30 + verticalOffsetTitleLength - 1),
                   right: (item.orientation == 'right' ? undefined : (4 + 35)),
                   left: (item.orientation == 'left' ? undefined : (4 + 35)),
                   // height: levelImageSize,
