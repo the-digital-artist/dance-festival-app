@@ -1,6 +1,6 @@
 export const modelInitStaticOverwrite =
 {
-  "modelVersion": 1000014,
+  "modelVersion": 1000029,
   "festivalName": "CALDAC",
   "apiUrlBase": "https://odwoytfhtf.execute-api.us-west-1.amazonaws.com/beta",
   "apiModelUpdateContent": "/content",
@@ -59,14 +59,14 @@ export const modelInitStaticOverwrite =
       "facebook": "",
       "portrait": "latisha_hardy"
     },
-    "Nathan Hook": {
-      "fullName": "Nathan Hook",
-      "artistLocation": "Boulder",
+    "Devon Near-hill": {
+      "fullName": "Devon Near-hill",
+      "artistLocation": "DENVER",
       "artistCompany": "",
-      "bio": "Nathan Hook, head instructor of Boulder Rueda, is an established\ninstructor with over 16 years experience teaching and over 20 years\ndancing salsa, casino, and rueda de casino.  His classes focus on fun,\nengaging, informative, movements that emphasize the cooperative and\ndynamic aspects of rueda de casino.",
+      "bio": "Devon Near-Hill is a dance instructor based in Colorado, known for their online and in-person program, Efficient Follow. They currently teach weekly classes and co-direct at the Denver School of Social Dance, while also being available for weekend workshops in cities across the country. Devon is passionate about spreading the joy of Brazilian Zouk Lambada and believes that social dance is not only a wonderful way to connect with others but also a space to practice authentic communication, express boundaries, and ask for consent. They are committed to making the dance floor a safe and inclusive space for everyone.",
       "shortBio": "",
       "facebook": "",
-      "portrait": "nathan_hook"
+      "portrait": "devon_near-hill"
     },
     "Daniel Agosto": {
       "fullName": "Daniel Agosto",
@@ -78,11 +78,47 @@ export const modelInitStaticOverwrite =
       "facebook": "",
       "portrait": "daniel_agosto"
     },
+    "Watson Saintsulne": {
+      "fullName": "Watson Saintsulne",
+      "artistLocation": "Philadelphia",
+      "artistCompany": "",
+      "bio": "Watson Saintsulne is a professional Latin dance instructor and fitness \nenthusiast based in Philadelphia, Pennsylvania specializing in\n Salsa and Bachata.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "watson_saintsulne"
+    },
+    "Jesica Cutler": {
+      "fullName": "Jesica Cutler",
+      "artistLocation": "Denver",
+      "artistCompany": "",
+      "bio": "John Miller and Jesica Cutler are Argentine Tango teachers and performers based in Denver, Colorado. They are well-known for their expertise in Argentine Tango and their dedication to growing the local tango community. In addition to teaching, they organize the annual \"Tango on the Rocks Festival,\" which attracts tango enthusiasts from across the region. Their passion for the art form and commitment to excellence make them prominent figures in Denver's dance scene.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "jesica_cutler"
+    },
+    "Nathan Hook": {
+      "fullName": "Nathan Hook",
+      "artistLocation": "Boulder",
+      "artistCompany": "",
+      "bio": "Nathan Hook, head instructor of Boulder Rueda, is an established\ninstructor with over 16 years experience teaching and over 20 years\ndancing salsa, casino, and rueda de casino.  His classes focus on fun,\nengaging, informative, movements that emphasize the cooperative and\ndynamic aspects of rueda de casino.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "nathan_hook"
+    },
+    "Sebastian & Jocelyn": {
+      "fullName": "Sebastian & Jocelyn",
+      "artistLocation": "CHICAGO",
+      "artistCompany": "",
+      "bio": "Jocelyn and Sebastian A.K.A JDiva and Mr. Smooth both having 10+ \ncombined of dance experience training in various dance styles such as \nballet, hip hop, modern, heels, salsa and bachata! They’ve competed and \nwon at the world summit! They love sharing their knowledge and \nconnecting with so many people along the way! Always doing everything \nwith love!",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "sebastian_-_jocelyn"
+    },
     "Eder & Milton": {
       "fullName": "Eder & Milton",
       "artistLocation": "LOS ANGELES",
       "artistCompany": "",
-      "bio": "Eder Avila and Milton Martinez are accomplished Salsa dancers with impressive careers spanning multiple international stages.\n\nBorn in Trujillo, Peru, Eder Avila began his dance journey after moving to the United States at age 15. He quickly mastered Salsa, creating a unique style that led him to found On2ourage in 2015, one of Southern California’s premier Salsa On2 dance companies. Eder has earned several prestigious awards, including LA’s Top Social Salsa Dancer in 2019 and 2020, and 1st Place in Salsa Same Gender Couples with Milton Martinez at Euroson Latino 2022. In 2023, he also secured 1st Place at SalsaNaMa USA in Las Vegas.\n\nMilton Martinez, born in Veracruz, is a multi-time World Salsa Champion, excelling in the Male Professional Solo and Same Gender Couples Salsa categories. He has also achieved international success in Jazz and Contemporary disciplines. Milton has studied abroad, earning scholarships in Holland and Norway, and training at renowned institutions like Broadway Dance Center and Millennium Dance Complex in New York, Salt Lake City, and Los Angeles. As a choreographer and instructor, Milton works with ME Sabor's adult and kids' teams. Together, Eder and Milton make a dynamic duo, pushing the boundaries of Salsa with their combined expertise.\n\nLet me know if you'd like any changes!",
+      "bio": "Eder Avila and Milton Martinez are accomplished Salsa dancers with impressive careers spanning multiple international stages.\n\nBorn in Trujillo, Peru, Eder Avila began his dance journey after moving to the United States at age 15. He quickly mastered Salsa, creating a unique style that led him to found On2ourage in 2015, one of Southern California’s premier Salsa On2 dance companies. Eder has earned several prestigious awards, including LA’s Top Social Salsa Dancer in 2019 and 2020, and 1st Place in Salsa Same Gender Couples with Milton Martinez at Euroson Latino 2022. In 2023, he also secured 1st Place at SalsaNaMa USA in Las Vegas.\n\nMilton Martinez, born in Veracruz, is a multi-time World Salsa Champion, excelling in the Male Professional Solo and Same Gender Couples Salsa categories. He has also achieved international success in Jazz and Contemporary disciplines. Milton has studied abroad, earning scholarships in Holland and Norway, and training at renowned institutions like Broadway Dance Center and Millennium Dance Complex in New York, Salt Lake City, and Los Angeles. As a choreographer and instructor, Milton works with ME Sabor's adult and kids' teams. Together, Eder and Milton make a dynamic duo, pushing the boundaries of Salsa with their combined expertise.",
       "shortBio": "",
       "facebook": "",
       "portrait": "eder_-_milton"
@@ -96,14 +132,14 @@ export const modelInitStaticOverwrite =
       "facebook": "",
       "portrait": "eddie_peligro"
     },
-    "Jesica Cutler": {
-      "fullName": "Jesica Cutler",
-      "artistLocation": "Denver",
+    "Rachel & Hunter": {
+      "fullName": "Rachel & Hunter",
+      "artistLocation": "DENVER",
       "artistCompany": "",
-      "bio": "John Miller and Jesica Cutler are Argentine Tango teachers and performers based in Denver, Colorado. They are well-known for their expertise in Argentine Tango and their dedication to growing the local tango community. In addition to teaching, they organize the annual \"Tango on the Rocks Festival,\" which attracts tango enthusiasts from across the region. Their passion for the art form and commitment to excellence make them prominent figures in Denver's dance scene.",
+      "bio": "Rachel Leigh Farley is a progressive educator, school leader, and dancer. \nSpecializing in social dances including Brazilian Zouk and Lindy Hop, she \nguides young people and adults through workshops that leave students \nmore self-aware, creative, and collaborative. As Director of the Denver Zouk \nSchool and organizer of the Denver Zouk Marathon, Rachel has invested\nin her community by providing access and opportunity to experience the\n transformative power of social dance.\n\nWebsite: RachelLeighDance.com",
       "shortBio": "",
       "facebook": "",
-      "portrait": "jesica_cutler"
+      "portrait": "rachel_-_hunter"
     },
     "Yayita & Carlos": {
       "fullName": "Yayita & Carlos",
@@ -121,7 +157,8 @@ export const modelInitStaticOverwrite =
       "bio": "Nicole Jamshidi and Jared both began their dance journeys with the RastaSalsa Dance Company in 2021, where they quickly excelled and became instructors at Somos Dance Studio. Nicole, known for her empathy, focuses on ensuring that every student understands and connects with the dance, whether it's with their partner, the music, or themselves. She is passionate about making dance accessible and empowering for beginners. Jared, a testament to humility and dedication, progressed rapidly through his training, advancing from apprentice to independent instructor. His success reflects his attention to detail and relentless practice, embodying the transformative energy at Somos Dance Studio.",
       "shortBio": "",
       "facebook": "",
-      "portrait": "jared_-_nicole"
+      "portrait": "jared_-_nicole",
+      "companyImage": "logo_and_academic_network_of_dance"
     },
     "Damilola Elegbede": {
       "fullName": "Damilola Elegbede",
@@ -133,14 +170,17 @@ export const modelInitStaticOverwrite =
       "facebook": "",
       "portrait": "damilola_elegbede"
     },
-    "Watson Saintsulne": {
-      "fullName": "Watson Saintsulne",
-      "artistLocation": "Philadelphia",
+    "Bachata Denver": {
+      "fullName": "Bachata Denver",
+      "artistLocation": "Denver",
       "artistCompany": "",
-      "bio": "Watson Saintsulne is a professional Latin dance instructor and fitness \nenthusiast based in Philadelphia, Pennsylvania specializing in\n Salsa and Bachata.",
+      "insta": "",
+      "bio": "",
       "shortBio": "",
       "facebook": "",
-      "portrait": "watson_saintsulne"
+      "portrait": "bachata_denver",
+      "artistconnect": "",
+      "companyImage": ""
     },
     "Jenny Pham": {
       "fullName": "Jenny Pham",
@@ -207,15 +247,14 @@ export const modelInitStaticOverwrite =
       "facebook": "",
       "portrait": "rafa_gonzalez"
     },
-    "Bachata Denver": {
-      "fullName": "Bachata Denver",
+    "Lorena Charry": {
+      "fullName": "Lorena Charry",
       "artistLocation": "Denver",
       "artistCompany": "",
-      "insta": "",
-      "bio": "",
+      "bio": "Lorena Charry, originally from Colombia and now based in Denver, has been dancing since the age of 6. With a deep passion for the stage and teaching, Lorena is dedicated to empowering her students to become the best versions of themselves. Known for her technical precision and attention to detail, she combines a fun and engaging teaching style with a commitment to helping others excel.",
       "shortBio": "",
       "facebook": "",
-      "portrait": "bachata_denver"
+      "portrait": "lorena_charry"
     },
     "Kebrina Dejesus": {
       "fullName": "Kebrina Dejesus",
@@ -272,15 +311,14 @@ export const modelInitStaticOverwrite =
       "facebook": "",
       "portrait": "jk_dance_company"
     },
-    "Natasha Tia": {
-      "fullName": "Natasha Tia",
-      "artistLocation": "San Francisco",
+    "Lawrence & Jewel": {
+      "fullName": "Lawrence & Jewel",
+      "artistLocation": "PHOENIX",
       "artistCompany": "",
-      "insta": "natasha.tia",
-      "bio": "Natasha Tia has trained extensively in dance styles across many genres for over 30 years. In her 20 year mambo dancing career Miss Tia’s reputation of professionalism, strong technique, and energetic quality has enabled her to teach and perform with world class artists all over the world. In June 2020 Natasha founded 'Movewise Wellness,' a hybrid, on zoom + in person + on demand, platform specializing in Ayurvedic Sports Nutrition for dancers and athletes. A platform centered around teaching dancers how to tap into their unique self expression, deepen their mind-body-spirit connection, and ultimately gain confidence to feel freedom while dancing. Current offerings include weekly drop-in classes, monthly seminars, 1:1 tailored mentorship programs, performance and training projects, and private consulting.",
+      "bio": "Lawrence and Jewel are the directors of Con Clave Dance Company based out of Phoenix Arizona. They have been teaching for over 10 years and have travelled both nationally and internationally teaching and performing. Moreover, they established the Phoenix Salsa Dance Academy to develop an academic-like approach to Salsa dance. Together they have trained hundreds of people how to dance Salsa socially.",
       "shortBio": "",
       "facebook": "",
-      "portrait": "natasha_tia"
+      "portrait": "lawrence_-_jewel"
     },
     "Bianca Chapman": {
       "fullName": "Bianca Chapman",
@@ -300,11 +338,12 @@ export const modelInitStaticOverwrite =
       "bio": "Specializing in Latin-style dancing, Alex and Desiree are professional dancers who partnered in 2015 to share their passion with the world. Whether it’s teaching at the world’s premier dance festivals or bringing exciting-energetic showcases to stages across the globe, they are currently among the most sought out artists today. While both Alex and Desiree are well rounded in many forms of dance the world has really embraced their interpretation of Bachata. They have undoubtedly become the leading couple representing Bachata Clasica also known as Traditional or Dominican Style Bachata. \n\nTheir trajectory includes winning world coveted titles and recognition for their signature choreography and their abundant contributions to the Latin dance scene. You may have also seen Alex AnD Desiree on television shows, music videos, and all over social-media platforms. Despite their popularity, however, their focus continues to be the spread of joy and passion through the growth of dance communities everywhere. Apart from coaching and training dancers from across the globe, Alex and Desiree are also part of the official judging panel at two of the world's most prestigious Dance Championships such as the World Salsa Summit and Bachatea World Masters.",
       "shortBio": "",
       "facebook": "",
-      "portrait": "alex_-_desiree"
+      "portrait": "alex_-_desiree",
+      "companyImage": "logo_and_academic_network_of_dance"
     },
     "Jsquared": {
       "fullName": "Jsquared",
-      "artistLocation": "TEXAS",
+      "artistLocation": "San Antonio",
       "artistCompany": "",
       "bio": "Jonathan and Jennifer Isabel also known as JSquared are 5x Just Bachata \nPro Champions and directors of Esta Noche Dance Company. ",
       "shortBio": "",
@@ -313,7 +352,7 @@ export const modelInitStaticOverwrite =
     },
     "Tania Cannarsa": {
       "fullName": "Tania Cannarsa",
-      "artistLocation": "Italy",
+      "artistLocation": "Italy /NY",
       "artistCompany": "",
       "bio": "Born in Sri Lanka, but raised in Italy, Tania Cannarsa is a great star in the \nsalsa world known for her natural smoothness and mambo style dancing.\nTania began studying dance when was only 10 years old. She started \ntaking classical ballet classes, eventually adding jazz and lyrical dance to\n her repertoire.\nGaining experiences and improving skills, she spent the following five \nyears with “Latin Black”. After this Tania continued with Marco Beretta´s\n Company “Flamboyant Dancers” with which she progressively acquired \nNew York Style dancing skills. Hereafter, Tania started her career as a \nprofessional dance instructor with her dancing partner Jonathan Somoza\n before going on to become principle dancer with Adolfo Indacochea’s\n Latin Soul Dancers.\nNow, Tania is one of the most sucessful and sought Latin dancer in\n world of salsa and mambo.",
       "shortBio": "",
@@ -331,7 +370,7 @@ export const modelInitStaticOverwrite =
     },
     "Casino Stars": {
       "fullName": "Casino Stars",
-      "artistLocation": "CUBA",
+      "artistLocation": "Houston",
       "artistCompany": "",
       "insta": "thecasinostars",
       "bio": "Casino Stars of Venezuela was founded in January 2006, with the intention of creating a unique and innovative style.\n\nThe foundation is responsible for teaching people of all ages, gender and capacity to learn the art of dance. \n\nAs director of this team of Venezuelan dancers, Jorge Melo has had great fortune in molding the troop with extensive coaching from instructors with world class experience. The implementation of Ballroom dancing and in other areas of dance such as Ballet, Jazz, Hip Hop, Salsa, Bachata, Latin Hustle, West Coast Swing, Kizomba and Traditional Folkloric dance has formed his team to be proficient and sought after globally.\n\nThey have presented shows in over 200 festivals throughout Venezuela and in many different countries/territories which include: Aruba, Curacao, Dominican Republic, \nGuatemala, Italy,Portugal, Puerto Rico, Spain and in U.S.A states such as: Florida, New York and Texas.",
@@ -348,14 +387,14 @@ export const modelInitStaticOverwrite =
       "facebook": "",
       "portrait": "jahaira_-_angelica"
     },
-    "Lawrence & Jewel": {
-      "fullName": "Lawrence & Jewel",
-      "artistLocation": "PHOENIX",
+    "Gio & Gaby": {
+      "fullName": "Gio & Gaby",
+      "artistLocation": "BOSTON",
       "artistCompany": "",
-      "bio": "Lawrence and Jewel are the directors of Con Clave Dance Company based out of Phoenix Arizona. They have been teaching for over 10 years and have travelled both nationally and internationally teaching and performing. Moreover, they established the Phoenix Salsa Dance Academy to develop an academic-like approach to Salsa dance. Together they have trained hundreds of people how to dance Salsa socially.",
+      "bio": "This young brother and sister duo has recently attracted attention as guest \ndancers in Los Angeles BKS, Houston Congress, Washington Bachata \nCongress and more. Gio & Gaby provide powerful and consecutive\nacrobatics, high-speed rotations and give dynamic performances.\n\nGio & Gaby Ochoa – Couple \n1st Place: Panamá Salsa Fest 2016: Salsa Professional Couples\n3rd Place: Euroson Latino 2016: Salsa Professional Couples: Feel the Rhythms Salsa Open\n2nd Place: Oaxaca Salsa & Bachata Festival 2017: Salsa Professional Couples\n1st Place: Festival Salsa Fest Oaxaca 2017: Salsa Professional Couples\n4th Place: Euroson Latino 2017: Salsa Professional Couples: Feel the Rhythms Salsa open\n3rd Place: Wolrd Salsa Summit 2017: Salsa Cabaret Professional Couples\n1st Place Euroson Latino 2016: Salsa Groups Representing Panamá",
       "shortBio": "",
       "facebook": "",
-      "portrait": "lawrence_-_jewel"
+      "portrait": "gio_-_gaby"
     },
     "Kiki Elsilencio": {
       "fullName": "Kiki Elsilencio",
@@ -369,7 +408,7 @@ export const modelInitStaticOverwrite =
     },
     "Benny & Ashley": {
       "fullName": "Benny & Ashley",
-      "artistLocation": "PORTLAND",
+      "artistLocation": "SEATTLE",
       "artistCompany": "",
       "insta": "bennyandashley",
       "bio": "Benny and Ashley are dance instructors based in Seattle WA",
@@ -434,32 +473,17 @@ export const modelInitStaticOverwrite =
       "facebook": "",
       "portrait": "celeste_williamson"
     },
-    "Iroko": {
-      "fullName": "Iroko",
-      "artistLocation": "ORLANDO",
-      "artistCompany": "",
-      "bio": "Founded in 2018 by World Champions Ernesto Bulnes and Denisse Cambria, IRÔKO Dance Company has quickly established itself as a powerhouse in the dance world. Currently, the company holds prestigious titles from The Summit Championship in both the Small and Large Teams Divisions. Under the expert direction of Ernesto and Denisse, IRÔKO continues to inspire with its dynamic performances and dedication to excellence in dance.",
+    "Yvonne & Rudy": {
+      "fullName": "Yvonne & Rudy",
+      "artistLocation": "Aurora",
+      "artistCompany": "Somos Dance Studio",
+      "insta": "",
+      "bio": "",
       "shortBio": "",
       "facebook": "",
-      "portrait": "iroko"
-    },
-    "Eric & Marcela": {
-      "fullName": "Eric & Marcela",
-      "artistLocation": "BOULDER",
-      "artistCompany": "",
-      "bio": "Eric “El Cubanito” Freeman and Marcela are prominent figures in Colorado’s salsa scene. Eric is an internationally recognized salsa instructor and videographer, known for his unique blend of salsa styles, including N.Y. mambo, Cuban casino, and elements from L.A., Cumbia, and Puerto Rican salsa. After training in both New York and Cuba, Eric transitioned from electrical engineering to a full-time salsa career in 1999. He has produced 15 instructional videos, selling over 20,000 copies in 75 countries. His groundbreaking series, such as “Cool Moves Revealed” and “¡Salsa a la Cubana!,” have become best-sellers, making him a global expert on Cuban salsa and its fusion with other styles.\n\nMarcela, originally from Chile, is a salsa instructor based in the Boulder/Denver area. In addition to teaching, she produces popular Latin events, including Havana Nights, SalsaTon, and Guapea. Together, Eric and Marcela contribute significantly to Colorado's vibrant salsa community, offering both instruction and entertainment to dancers at all levels.",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "eric_-_marcela"
-    },
-    "Gio & Gaby": {
-      "fullName": "Gio & Gaby",
-      "artistLocation": "BOSTON",
-      "artistCompany": "",
-      "bio": "This young brother and sister duo has recently attracted attention as guest \ndancers in Los Angeles BKS, Houston Congress, Washington Bachata \nCongress and more. Gio & Gaby provide powerful and consecutive\nacrobatics, high-speed rotations and give dynamic performances.\n\nGio & Gaby Ochoa – Couple \n1st Place: Panamá Salsa Fest 2016: Salsa Professional Couples\n3rd Place: Euroson Latino 2016: Salsa Professional Couples: Feel the Rhythms Salsa Open\n2nd Place: Oaxaca Salsa & Bachata Festival 2017: Salsa Professional Couples\n1st Place: Festival Salsa Fest Oaxaca 2017: Salsa Professional Couples\n4th Place: Euroson Latino 2017: Salsa Professional Couples: Feel the Rhythms Salsa open\n3rd Place: Wolrd Salsa Summit 2017: Salsa Cabaret Professional Couples\n1st Place Euroson Latino 2016: Salsa Groups Representing Panamá",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "gio_-_gaby"
+      "portrait": "yvonne_-_rudy",
+      "artistconnect": "",
+      "companyImage": ""
     },
     "Rna Dance Company": {
       "fullName": "Rna Dance Company",
@@ -469,6 +493,18 @@ export const modelInitStaticOverwrite =
       "shortBio": "",
       "facebook": "",
       "portrait": "rna_dance_company"
+    },
+    "Ernesto & Denisse": {
+      "fullName": "Ernesto & Denisse",
+      "artistLocation": "Tampa",
+      "artistCompany": "",
+      "insta": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "ernesto_-_denisse",
+      "artistconnect": "",
+      "companyImage": ""
     },
     "C.a.m.": {
       "fullName": "C.a.m.",
@@ -490,15 +526,6 @@ export const modelInitStaticOverwrite =
       "facebook": "",
       "portrait": "adrian_tenorio"
     },
-    "Sebastian & Jocelyn": {
-      "fullName": "Sebastian & Jocelyn",
-      "artistLocation": "CHICAGO",
-      "artistCompany": "",
-      "bio": "Jocelyn and Sebastian A.K.A JDiva and Mr. Smooth both having 10+ \ncombined of dance experience training in various dance styles such as \nballet, hip hop, modern, heels, salsa and bachata! They’ve competed and \nwon at the world summit! They love sharing their knowledge and \nconnecting with so many people along the way! Always doing everything \nwith love!",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "sebastian_-_jocelyn"
-    },
     "De’jon & Clo": {
       "fullName": "De’jon & Clo",
       "artistLocation": "DALLAS",
@@ -506,7 +533,9 @@ export const modelInitStaticOverwrite =
       "bio": "De’Jon Polanski is an international Afro-Latin dance instructor and U.S. Air Force Veteran born in New Orleans, Louisiana. He is the founder and director of Tropik Vybe Dance Company and is known as one of the most diverse and distinguished bachata/salsa dancers in the world for his ability to teach, perform, and social dance many styles.\n\nHis dance foundation began at the age of 8 years old with New Orleans Bounce and Second Line Mardi Gras traditional dance, as well as street-style bachata and salsa until the age of 16 when he took his first formal salsa lesson. He later connected with Cuban master Aurelio Gonzales & Ana Grietal in New Orleans where he trained in son/Cuban folklore and performed rueda de casino, as well as many other Cuban-rooted genres of dance. \n\nIn addition to taking private lessons, master bootcamps, and general lessons with salsa/bachata masters such as Raymond Armant, Eddie Torres, Tomas Guerrero, Jorjet Alcocer, Troy Anthony, Sergio Jasso, Korke Escalona & Judith Cordero, Carlos Cinta, and many others, De’Jon has also trained at one of the world’s most intense salsa on 2/mambo certification programs held in Mexico, Cuerpos Creativos. He has danced live onstage with legendary Dominican bachata recording artists Kiko Rodriguez, Raulin Rodriguez, Frank Reyes, and Joan Soriano, and he has also taught at one of the Dominican Republic’s most prestigious bachata immersion programs, Bachata Paradise.\n\nIn 2018, De’Jon partnered with Clo Ferreira to form one of the most dynamic power couples in the Afro-Latin dance scene. Together they continue to train under Afro-Cuban master Marisol Blanco and principal ballet dancer, master teacher, & salsa/bachata cabaret coach Jose Serrano, frequently touring the world and spreading their passion for Afro-Latin dance.\n\nClo Ferreira was born in Isla Margarita, Venezuela and raised in Princeton, New Jersey since the age of 5. She fell in love with dance at the early age of 8 years old because of her brother, Ry’El Zen Zouk, who is also a professional dancer and became her dance partner and mentor. Her brother enrolled her in training across all styles including classical ballet, modern/contemporary, hip-hop, American & Latin ballroom, and Afro-Latin social dance such as salsa, multiple styles of bachata, and Brazilian zouk.\n\nShe has taken class, trained under, and been coached by an extensive list of masters and dance legends such as Eddie Torres, Griselle Ponce, Braz Dos Santos, Risa Kaplowitz, Sekou McMiller, Liz Lira, Jose Serrano, Eli Torres and many more.\n\nShe has won various competitions, performed at different venues worldwide, taught numerous workshops in multiple styles at dance congresses internationally, and has won titles such as International Choreographer.\n\nSince 2018, Clo has been traveling the world capturing the attention and acclaim of dance enthusiasts through performance, training, coaching, and social dancing alongside her dance partner, De’Jon Polanski. Together they have taken the dance scene by storm and quickly become one of the most dynamic and versatile dance couples in the world of Afro-Latin dance.",
       "shortBio": "",
       "facebook": "",
-      "portrait": "dejon_-_clo"
+      "portrait": "dejon_-_clo",
+      "artistconnect": "Special VIP 3-Day-Trial For All-Access Subscription - De'Jon & Clo Online",
+      "companyImage": "logo_dejon_clo"
     },
     "Karen Y Ricardo": {
       "fullName": "Karen Y Ricardo",
@@ -534,11 +563,13 @@ export const modelInitStaticOverwrite =
       "bio": "",
       "shortBio": "",
       "facebook": "",
-      "portrait": "oscar_martinez"
+      "portrait": "oscar_martinez",
+      "artistconnect": "",
+      "companyImage": ""
     },
     "Adriana & Jorge": {
       "fullName": "Adriana & Jorge",
-      "artistLocation": "FLORIDA",
+      "artistLocation": "ORLANDO",
       "artistCompany": "",
       "insta": "adrianayjorgeandres",
       "bio": "Adriana and Jorge are Salsa and Bachata instructors based in Orlando, FL.",
@@ -613,6 +644,16 @@ export const modelInitStaticOverwrite =
       "facebook": "",
       "portrait": "rafael_-_carine"
     },
+    "Natasha Tia": {
+      "fullName": "Natasha Tia",
+      "artistLocation": "Bay Area, CA",
+      "artistCompany": "",
+      "insta": "natasha.tia",
+      "bio": "Natasha Tia has trained extensively in dance styles across many genres for over 30 years. In her 20 year mambo dancing career Miss Tia’s reputation of professionalism, strong technique, and energetic quality has enabled her to teach and perform with world class artists all over the world. In June 2020 Natasha founded 'Movewise Wellness,' a hybrid, on zoom + in person + on demand, platform specializing in Ayurvedic Sports Nutrition for dancers and athletes. A platform centered around teaching dancers how to tap into their unique self expression, deepen their mind-body-spirit connection, and ultimately gain confidence to feel freedom while dancing. Current offerings include weekly drop-in classes, monthly seminars, 1:1 tailored mentorship programs, performance and training projects, and private consulting.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "natasha_tia"
+    },
     "Kate Rodriguez": {
       "fullName": "Kate Rodriguez",
       "artistLocation": "NEW YORK",
@@ -640,7 +681,9 @@ export const modelInitStaticOverwrite =
       "bio": "Adolfo Indacochea, a world-renowned dancer with over 23 years of international experience, is celebrated for his explosive and unique mambo style. Born in Lima, Peru, he mastered salsa in Mexico before conquering the New York Mambo scene. Adolfo’s journey includes performing at prestigious venues like Lincoln Center, sharing the stage with music icons, and partnering with acclaimed dancers.Tania Cannarsa, born in Sri Lanka and raised in Italy, brings a distinctive mambo style with a background in classical dance. As a principal dancer in Adolfo Indacochea’s Latin Soul Dancers, she has crafted mesmerizing mambo pieces.Their passion for mambo extends to teaching, with Adolfo’s expertise covering timing, styling, shines, and more. Together with Tania, they’ve traveled the world, captivating audiences and imparting the joy and tradition of mambo. Join them on a journey of rhythm, style, and pure dance magic!#AdolfoIndacochea #TaniaCannarsa #MamboLegends #DanceMagic #LatinSoulDancers\n\nIs an explosive and energetic dancer who is known all around the world for his smooth and unique style. This unique style combines traditional mambo with elements of jazz/modern, flamenco, and ballroom dances. His sense of musicality and flow is evident through his choreography and improvisations…\n\nBorn and raised in Lima, Peru, Adolfo moved to Monterrey, Mexico when he was 19 to study Industrial Engineering and began taking salsa classes “On 1″ as a hobby in 2001. In less than two months, his talent was quickly recognized by Adrian Arellano, a well-known performer and instructor in Mexico, and was asked to be one of the founding members of Salzumba Dance Company, he later formed his first dance company named “Mamboss,” which is now recognized as one of the biggest salsa companies and schools in Mexico. In search of developing his talent, Adolfo moved to San Antonio, Texas in January of 2004 and was invited to join and teach with Semeneya Dance Company as well as work independently with his former partner Claudia Vazques. It wasn’t until 2003 that his passion for dancing “On 2″ developed after seeing Eddie Torres and his Dancers perform at the New York Salsa Congress that year. He taught himself how to dance “On 2,” New York Style, with the dream of becoming an Eddie Torres Dancer within the next few years.\n\nAdolfo moved to New York City in September of 2004 and was invited to be the exclusive partner of Amanda Estilo in addition to training with Karisma Dancers, directed by his friend Victor Mayovanex. It wasn’t until December 2004 that his dream of becoming an Eddie Torres Dancer was fulfilled. His mentor Eddie Torres discovered his talent and potential instantly and invited Adolfo to join one of the most prestigious teams in the world. After 8 months, Adolfo began to perform exclusively with Jessica Ortiz at the same time becoming one of the elite dancers in the Eddie Torres Company and rising to be one of the newest stars in the New York Mambo scene. After 2 years, his mentor Eddie Torres gave him his blessing to move on and to strive to be one of the top mambo dancers in the world.",
       "shortBio": "",
       "facebook": "",
-      "portrait": "adolfo_-_tania"
+      "portrait": "adolfo_-_tania",
+      "artistconnect": "Special VIP 3-Day-Trial For EM Virtual",
+      "companyImage": "logo_em_virtual"
     },
     "Chelsey Owen": {
       "fullName": "Chelsey Owen",
@@ -652,6 +695,15 @@ export const modelInitStaticOverwrite =
       "facebook": "",
       "portrait": "chelsey_owen"
     },
+    "Aris Gingundo": {
+      "fullName": "Aris Gingundo",
+      "artistLocation": "DENVER",
+      "artistCompany": "",
+      "bio": "Originated from Chad in central Africa, Aris Gindungo grew up listeningand dancing to Kizomba music along with many other music genres. He moved to Denver, Colorado in 2006 and embarked on a journey in2014 to study the dance. He started sharing his passion for Kizomba inDenver that same year and has travelled the world learning more and more about the dance, but also the music. As a kizomba instructor, Gindungo brings a unique flavor based on his cultural backgrounds.\n\nAris is also a Kizomba DJ, a 3rd degree black belt in Ninjutsu, a business owner, a husband and a father.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "aris_gingundo"
+    },
     "Desi Caliente": {
       "fullName": "Desi Caliente",
       "artistLocation": "DENVER",
@@ -660,52 +712,6 @@ export const modelInitStaticOverwrite =
       "shortBio": "",
       "facebook": "",
       "portrait": "desi_caliente"
-    },
-    "Bachatito": {
-      "fullName": "Bachatito",
-      "artistLocation": "CHICAGO",
-      "artistCompany": "",
-      "bio": "DJ Bachatito has been DJing, Dancing, and Organizing in the Midwest Salsa/Bachata community for over 13 years. He organizes, hosts, and DJs some of the largest events in the region. He also regularly travels to events outside the Midwest and country to share the love of Bachata and Salsa with a larger community.",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "bachatito"
-    },
-    "Devon Near-hill": {
-      "fullName": "Devon Near-hill",
-      "artistLocation": "DENVER",
-      "artistCompany": "",
-      "bio": "Devon Near-Hill is a dance instructor based in Colorado, known for their online and in-person program, Efficient Follow. They currently teach weekly classes and co-direct at the Denver School of Social Dance, while also being available for weekend workshops in cities across the country. Devon is passionate about spreading the joy of Brazilian Zouk Lambada and believes that social dance is not only a wonderful way to connect with others but also a space to practice authentic communication, express boundaries, and ask for consent. They are committed to making the dance floor a safe and inclusive space for everyone.",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "devon_near-hill"
-    },
-    "Daniel & Kathryn": {
-      "fullName": "Daniel & Kathryn",
-      "artistLocation": "DENVER",
-      "artistCompany": "CNS",
-      "bio": "Daniel Rodrigo Cid Vera and Kathryn D. Warshaw, also known as KD, are both highly accomplished dancers and instructors at Colorado New Style Dance Studio.\n\nDaniel, originally from Santiago, Chile, moved to Murcia, Spain, in 2005. He discovered his passion for salsa dancing in 2007 and began his career at Murcia Fusion. He later joined Adrián y Anita's Amateur Dance Company in Barcelona, working with world-renowned dancers like Jhonny Vasquez, Adolfo Indacochea, and Eddie Torres. Daniel has performed across Europe and now brings his international expertise to Colorado through his studio, where he offers a fresh, world-class approach to salsa.\n\nKD, a former competitive gymnast and gymnastics coach, transitioned into salsa dancing in 2009. She has performed at numerous congresses, competed twice in the World Latin Dance Cup, and coached Gabriela Gonzalez, who won 3rd place at the World Salsa Summit. As director of the World Team Project teams at Colorado New Style, KD incorporates her knowledge of strength, flexibility, and technique to help dancers achieve their competitive and personal goals. Together, Daniel and KD combine their vast experience to elevate the salsa community in Colorado.",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "daniel_-_kathryn"
-    },
-    "Rose Turuka": {
-      "fullName": "Rose Turuka",
-      "artistLocation": "DETROIT",
-      "artistCompany": "",
-      "bio": "Rose Turuka aka RoseLov3 originates from Zanzibar, Tanzania but currently \nresides in Michigan. Her passion and love for dance is undeniable! With \nAfrobeats at the core, she has explored and continued to learn various\n dance styles such as Kizomba, Salsa, Bachata, Zouk, Swing and the list \ngoes on.\n\nShe has learned from instructors all over the world and continues to evolve\n as a dancer and teacher. She has now been teaching in Michigan for \nalmost two years and continues to discover different ways to be a better \ndancer and guide to others.",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "rose_turuka"
-    },
-    "Alemana": {
-      "fullName": "Alemana",
-      "artistLocation": "FLORIDA",
-      "artistCompany": "",
-      "insta": "",
-      "bio": "",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "alemana"
     },
     "Tito Garcia": {
       "fullName": "Tito Garcia",
@@ -716,6 +722,57 @@ export const modelInitStaticOverwrite =
       "facebook": "",
       "portrait": "tito_garcia"
     },
+    "Rose Turuka": {
+      "fullName": "Rose Turuka",
+      "artistLocation": "DETROIT",
+      "artistCompany": "",
+      "bio": "Rose Turuka aka RoseLov3 originates from Zanzibar, Tanzania but currently \nresides in Michigan. Her passion and love for dance is undeniable! With \nAfrobeats at the core, she has explored and continued to learn various\n dance styles such as Kizomba, Salsa, Bachata, Zouk, Swing and the list \ngoes on.\n\nShe has learned from instructors all over the world and continues to evolve\n as a dancer and teacher. She has now been teaching in Michigan for \nalmost two years and continues to discover different ways to be a better \ndancer and guide to others.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "rose_turuka"
+    },
+    "Jazmyne Lewis": {
+      "fullName": "Jazmyne Lewis",
+      "artistLocation": "Denver",
+      "artistCompany": "",
+      "insta": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "jazmyne_lewis",
+      "artistconnect": "",
+      "companyImage": ""
+    },
+    "Bachatito": {
+      "fullName": "Bachatito",
+      "artistLocation": "MILWAUKEE",
+      "artistCompany": "",
+      "bio": "DJ Bachatito has been DJing, Dancing, and Organizing in the Midwest Salsa/Bachata community for over 13 years. He organizes, hosts, and DJs some of the largest events in the region. He also regularly travels to events outside the Midwest and country to share the love of Bachata and Salsa with a larger community.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "bachatito"
+    },
+    "Alemana": {
+      "fullName": "Alemana",
+      "artistLocation": "FLORIDA",
+      "artistCompany": "",
+      "insta": "",
+      "bio": "",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "alemana",
+      "artistconnect": "",
+      "companyImage": ""
+    },
+    "Daniel & Kathryn": {
+      "fullName": "Daniel & Kathryn",
+      "artistLocation": "DENVER",
+      "artistCompany": "CNS",
+      "bio": "Daniel Rodrigo Cid Vera and Kathryn D. Warshaw, also known as KD, are both highly accomplished dancers and instructors at Colorado New Style Dance Studio.\n\nDaniel, originally from Santiago, Chile, moved to Murcia, Spain, in 2005. He discovered his passion for salsa dancing in 2007 and began his career at Murcia Fusion. He later joined Adrián y Anita's Amateur Dance Company in Barcelona, working with world-renowned dancers like Jhonny Vasquez, Adolfo Indacochea, and Eddie Torres. Daniel has performed across Europe and now brings his international expertise to Colorado through his studio, where he offers a fresh, world-class approach to salsa.\n\nKD, a former competitive gymnast and gymnastics coach, transitioned into salsa dancing in 2009. She has performed at numerous congresses, competed twice in the World Latin Dance Cup, and coached Gabriela Gonzalez, who won 3rd place at the World Salsa Summit. As director of the World Team Project teams at Colorado New Style, KD incorporates her knowledge of strength, flexibility, and technique to help dancers achieve their competitive and personal goals. Together, Daniel and KD combine their vast experience to elevate the salsa community in Colorado.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "daniel_-_kathryn"
+    },
     "Colorado Ballet": {
       "fullName": "Colorado Ballet",
       "artistLocation": "DENVER",
@@ -724,16 +781,9 @@ export const modelInitStaticOverwrite =
       "bio": "",
       "shortBio": "",
       "facebook": "",
-      "portrait": "colorado_ballet"
-    },
-    "Rachel & Hunter": {
-      "fullName": "Rachel & Hunter",
-      "artistLocation": "DENVER",
-      "artistCompany": "",
-      "bio": "Rachel Leigh Farley is a progressive educator, school leader, and dancer. \nSpecializing in social dances including Brazilian Zouk and Lindy Hop, she \nguides young people and adults through workshops that leave students \nmore self-aware, creative, and collaborative. As Director of the Denver Zouk \nSchool and organizer of the Denver Zouk Marathon, Rachel has invested\nin her community by providing access and opportunity to experience the\n transformative power of social dance.\n\nWebsite: RachelLeighDance.com",
-      "shortBio": "",
-      "facebook": "",
-      "portrait": "rachel_-_hunter"
+      "portrait": "colorado_ballet",
+      "artistconnect": "",
+      "companyImage": ""
     },
     "Diego & Yurley": {
       "fullName": "Diego & Yurley",
@@ -753,14 +803,14 @@ export const modelInitStaticOverwrite =
       "facebook": "",
       "portrait": "ebonie_lee"
     },
-    "Aris Gingundo": {
-      "fullName": "Aris Gingundo",
-      "artistLocation": "DENVER",
+    "Eric & Marcela": {
+      "fullName": "Eric & Marcela",
+      "artistLocation": "BOULDER",
       "artistCompany": "",
-      "bio": "Originated from Chad in central Africa, Aris Gindungo grew up listeningand dancing to Kizomba music along with many other music genres. He moved to Denver, Colorado in 2006 and embarked on a journey in2014 to study the dance. He started sharing his passion for Kizomba inDenver that same year and has travelled the world learning more and more about the dance, but also the music. As a kizomba instructor, Gindungo brings a unique flavor based on his cultural backgrounds.\n\nAris is also a Kizomba DJ, a 3rd degree black belt in Ninjutsu, a business owner, a husband and a father.",
+      "bio": "Eric “El Cubanito” Freeman and Marcela are prominent figures in Colorado’s salsa scene. Eric is an internationally recognized salsa instructor and videographer, known for his unique blend of salsa styles, including N.Y. mambo, Cuban casino, and elements from L.A., Cumbia, and Puerto Rican salsa. After training in both New York and Cuba, Eric transitioned from electrical engineering to a full-time salsa career in 1999. He has produced 15 instructional videos, selling over 20,000 copies in 75 countries. His groundbreaking series, such as “Cool Moves Revealed” and “¡Salsa a la Cubana!,” have become best-sellers, making him a global expert on Cuban salsa and its fusion with other styles.\n\nMarcela, originally from Chile, is a salsa instructor based in the Boulder/Denver area. In addition to teaching, she produces popular Latin events, including Havana Nights, SalsaTon, and Guapea. Together, Eric and Marcela contribute significantly to Colorado's vibrant salsa community, offering both instruction and entertainment to dancers at all levels.",
       "shortBio": "",
       "facebook": "",
-      "portrait": "aris_gingundo"
+      "portrait": "eric_-_marcela"
     }
   },
   "dataScheduleRaw": [
@@ -860,7 +910,11 @@ export const modelInitStaticOverwrite =
         10001,
         10002,
         10003,
-        10004
+        10004,
+        10005,
+        10006,
+        10007,
+        10008
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -891,7 +945,11 @@ export const modelInitStaticOverwrite =
         10001,
         10002,
         10003,
-        10004
+        10004,
+        10005,
+        10006,
+        10007,
+        10008
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -913,8 +971,8 @@ export const modelInitStaticOverwrite =
     {
       "id": 10003,
       "itemType": "type1",
-      "artistName": "Nathan Hook",
-      "sessionMainTitle": "Rueda 101",
+      "artistName": "Devon Near-hill",
+      "sessionMainTitle": "Zouk Wifi",
       "time": "11:00 AM - 12:00 PM",
       "room": "ROOM  1",
       "level": "0",
@@ -922,7 +980,151 @@ export const modelInitStaticOverwrite =
         10001,
         10002,
         10003,
-        10004
+        10004,
+        10005,
+        10006,
+        10007,
+        10008
+      ],
+      "groupTitle": "Workshops",
+      "groupSubtitle": "",
+      "shortMainTitle": "",
+      "dateString": "Fri, October 18, 2024",
+      "startTime": "2024-10-18T11:00:00.000Z",
+      "endTime": "2024-10-18T12:00:00.000Z",
+      "place": "",
+      "sessionSubtitle": "",
+      "sessionDescription": "",
+      "artistOne": "Devon Near-hill",
+      "artistTwo": "",
+      "artistLocation": "DENVER",
+      "flag": false,
+      "flagIncludeInNow": false,
+      "artistCompany": "",
+      "sessionSpecialTrackCount": ""
+    },
+    {
+      "id": 10004,
+      "itemType": "type1",
+      "artistName": "Daniel Agosto",
+      "sessionMainTitle": "Bachata Footwork",
+      "time": "11:00 AM - 12:00 PM",
+      "room": "ROOM  2",
+      "level": "0",
+      "group": [
+        10001,
+        10002,
+        10003,
+        10004,
+        10005,
+        10006,
+        10007,
+        10008
+      ],
+      "groupTitle": "Workshops",
+      "groupSubtitle": "",
+      "shortMainTitle": "",
+      "dateString": "Fri, October 18, 2024",
+      "startTime": "2024-10-18T11:00:00.000Z",
+      "endTime": "2024-10-18T12:00:00.000Z",
+      "place": "",
+      "sessionSubtitle": "",
+      "sessionDescription": "",
+      "artistOne": "Daniel Agosto",
+      "artistTwo": "",
+      "artistLocation": "TEXAS",
+      "flag": false,
+      "flagIncludeInNow": false,
+      "artistCompany": "",
+      "sessionSpecialTrackCount": ""
+    },
+    {
+      "id": 10005,
+      "itemType": "type1",
+      "artistName": "Watson Saintsulne",
+      "sessionMainTitle": "Timing Switch! On1 to On2",
+      "time": "11:00 AM - 12:00 PM",
+      "room": "ROOM  4",
+      "level": "0",
+      "group": [
+        10001,
+        10002,
+        10003,
+        10004,
+        10005,
+        10006,
+        10007,
+        10008
+      ],
+      "groupTitle": "Workshops",
+      "groupSubtitle": "",
+      "shortMainTitle": "",
+      "dateString": "Fri, October 18, 2024",
+      "startTime": "2024-10-18T11:00:00.000Z",
+      "endTime": "2024-10-18T12:00:00.000Z",
+      "place": "",
+      "sessionSubtitle": "",
+      "sessionDescription": "",
+      "artistOne": "Watson Saintsulne",
+      "artistTwo": "",
+      "artistLocation": "Philadelphia",
+      "flag": false,
+      "flagIncludeInNow": false,
+      "artistCompany": "",
+      "sessionSpecialTrackCount": ""
+    },
+    {
+      "id": 10006,
+      "itemType": "type1",
+      "artistName": "Jesica Cutler",
+      "sessionMainTitle": "Intro to Tango",
+      "time": "11:00 AM - 12:00 PM",
+      "room": "ROOM  5",
+      "level": "0",
+      "group": [
+        10001,
+        10002,
+        10003,
+        10004,
+        10005,
+        10006,
+        10007,
+        10008
+      ],
+      "groupTitle": "Workshops",
+      "groupSubtitle": "",
+      "shortMainTitle": "",
+      "dateString": "Fri, October 18, 2024",
+      "startTime": "2024-10-18T11:00:00.000Z",
+      "endTime": "2024-10-18T12:00:00.000Z",
+      "place": "",
+      "sessionSubtitle": "",
+      "sessionDescription": "",
+      "artistOne": "Jesica Cutler",
+      "artistTwo": "",
+      "artistLocation": "Denver",
+      "flag": false,
+      "flagIncludeInNow": false,
+      "artistCompany": "",
+      "sessionSpecialTrackCount": ""
+    },
+    {
+      "id": 10007,
+      "itemType": "type1",
+      "artistName": "Nathan Hook",
+      "sessionMainTitle": "Rueda 101",
+      "time": "11:00 AM - 12:00 PM",
+      "room": "ROOM  6",
+      "level": "0",
+      "group": [
+        10001,
+        10002,
+        10003,
+        10004,
+        10005,
+        10006,
+        10007,
+        10008
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -942,18 +1144,22 @@ export const modelInitStaticOverwrite =
       "sessionSpecialTrackCount": ""
     },
     {
-      "id": 10004,
+      "id": 10008,
       "itemType": "type1",
-      "artistName": "Daniel Agosto",
+      "artistName": "Sebastian & Jocelyn",
       "sessionMainTitle": "Bachata Partnerwork",
       "time": "11:00 AM - 12:00 PM",
-      "room": "ROOM  2",
+      "room": "ROOM  7",
       "level": "0",
       "group": [
         10001,
         10002,
         10003,
-        10004
+        10004,
+        10005,
+        10006,
+        10007,
+        10008
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -964,9 +1170,9 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Daniel Agosto",
+      "artistOne": "Sebastian & Jocelyn",
       "artistTwo": "",
-      "artistLocation": "TEXAS",
+      "artistLocation": "CHICAGO",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -1045,8 +1251,8 @@ export const modelInitStaticOverwrite =
     {
       "id": 10103,
       "itemType": "type1",
-      "artistName": "Jesica Cutler",
-      "sessionMainTitle": "Intro to Tango",
+      "artistName": "Rachel & Hunter",
+      "sessionMainTitle": "Intro to Zouk",
       "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  1",
       "level": "0",
@@ -1069,9 +1275,9 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Jesica Cutler",
+      "artistOne": "Rachel & Hunter",
       "artistTwo": "",
-      "artistLocation": "Denver",
+      "artistLocation": "DENVER",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -1185,8 +1391,8 @@ export const modelInitStaticOverwrite =
     {
       "id": 10107,
       "itemType": "type1",
-      "artistName": "Watson Saintsulne",
-      "sessionMainTitle": "Timing Switch! On1 to On2",
+      "artistName": "Bachata Denver",
+      "sessionMainTitle": "Sensual Bachata Partnerwork",
       "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  6",
       "level": "0",
@@ -1209,9 +1415,9 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Watson Saintsulne",
+      "artistOne": "Bachata Denver",
       "artistTwo": "",
-      "artistLocation": "Philadelphia",
+      "artistLocation": "Denver",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -1465,8 +1671,8 @@ export const modelInitStaticOverwrite =
     {
       "id": 10207,
       "itemType": "type1",
-      "artistName": "Bachata Denver",
-      "sessionMainTitle": "Sensual Bachata Partnerwork",
+      "artistName": "Lorena Charry",
+      "sessionMainTitle": "Sensual Bachata Follows' Styling",
       "time": "1:00 PM - 2:00 PM",
       "room": "ROOM  6",
       "level": "0",
@@ -1489,7 +1695,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Bachata Denver",
+      "artistOne": "Lorena Charry",
       "artistTwo": "",
       "artistLocation": "Denver",
       "flag": false,
@@ -1536,7 +1742,7 @@ export const modelInitStaticOverwrite =
       "id": 10301,
       "itemType": "type1",
       "artistName": "Raul & Delia",
-      "sessionMainTitle": "SalsaOn2 footwork",
+      "sessionMainTitle": "SalsaOn2 Footwork",
       "time": "2:00 PM - 3:00 PM",
       "room": "AURORA 1",
       "level": "0",
@@ -1745,8 +1951,8 @@ export const modelInitStaticOverwrite =
     {
       "id": 10307,
       "itemType": "type1",
-      "artistName": "Natasha Tia",
-      "sessionMainTitle": "Salsa On2 Shines",
+      "artistName": "Lawrence & Jewel",
+      "sessionMainTitle": "Salsa On2 partnerwork",
       "time": "2:00 PM - 3:00 PM",
       "room": "ROOM  6",
       "level": "0",
@@ -1769,9 +1975,9 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Natasha Tia",
+      "artistOne": "Lawrence & Jewel",
       "artistTwo": "",
-      "artistLocation": "San Francisco",
+      "artistLocation": "PHOENIX",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -1868,7 +2074,7 @@ export const modelInitStaticOverwrite =
       "sessionDescription": "",
       "artistOne": "Jsquared",
       "artistTwo": "",
-      "artistLocation": "TEXAS",
+      "artistLocation": "San Antonio",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -1902,7 +2108,7 @@ export const modelInitStaticOverwrite =
       "sessionDescription": "",
       "artistOne": "Tania Cannarsa",
       "artistTwo": "",
-      "artistLocation": "Italy",
+      "artistLocation": "Italy /NY",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -1970,7 +2176,7 @@ export const modelInitStaticOverwrite =
       "sessionDescription": "",
       "artistOne": "Casino Stars",
       "artistTwo": "",
-      "artistLocation": "CUBA",
+      "artistLocation": "Houston",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -2013,8 +2219,8 @@ export const modelInitStaticOverwrite =
     {
       "id": 10506,
       "itemType": "type1",
-      "artistName": "Lawrence & Jewel",
-      "sessionMainTitle": "Salsa On2 partnerwork",
+      "artistName": "Gio & Gaby",
+      "sessionMainTitle": "Salsa On1 Partner/Footwork",
       "time": "3:00 PM - 4:00 PM",
       "room": "ROOM  6",
       "level": "0",
@@ -2036,9 +2242,9 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Lawrence & Jewel",
+      "artistOne": "Gio & Gaby",
       "artistTwo": "",
-      "artistLocation": "PHOENIX",
+      "artistLocation": "BOSTON",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -2085,7 +2291,7 @@ export const modelInitStaticOverwrite =
       "sessionMainTitle": "Salsa On2 Partnerwork",
       "time": "4:00 PM - 5:00 PM",
       "room": "AURORA 1",
-      "level": "1",
+      "level": "0",
       "group": [
         10601,
         10602,
@@ -2106,7 +2312,7 @@ export const modelInitStaticOverwrite =
       "sessionDescription": "",
       "artistOne": "Benny & Ashley",
       "artistTwo": "",
-      "artistLocation": "PORTLAND",
+      "artistLocation": "SEATTLE",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -2359,8 +2565,7 @@ export const modelInitStaticOverwrite =
         20104,
         20105,
         20106,
-        20107,
-        20108
+        20107
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -2373,7 +2578,7 @@ export const modelInitStaticOverwrite =
       "sessionDescription": "",
       "artistOne": "Jsquared",
       "artistTwo": "",
-      "artistLocation": "TEXAS",
+      "artistLocation": "SAN ANTONIO",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -2382,8 +2587,8 @@ export const modelInitStaticOverwrite =
     {
       "id": 20102,
       "itemType": "type1",
-      "artistName": "Iroko",
-      "sessionMainTitle": "Salsa On2 Parterwork",
+      "artistName": "Raul & Delia",
+      "sessionMainTitle": "Salsa On 2 Partnerwork",
       "time": "10:00 AM - 11:00 AM",
       "room": "AURORA 2",
       "level": "1",
@@ -2394,8 +2599,7 @@ export const modelInitStaticOverwrite =
         20104,
         20105,
         20106,
-        20107,
-        20108
+        20107
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -2406,7 +2610,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Iroko",
+      "artistOne": "Raul & Delia",
       "artistTwo": "",
       "artistLocation": "ORLANDO",
       "flag": false,
@@ -2416,41 +2620,6 @@ export const modelInitStaticOverwrite =
     },
     {
       "id": 20103,
-      "itemType": "type1",
-      "artistName": "Eric & Marcela",
-      "sessionMainTitle": "Intro to Cuban Salsa (Casino)",
-      "time": "10:00 AM - 11:00 AM",
-      "room": "ROOM  1",
-      "level": "0",
-      "group": [
-        20101,
-        20102,
-        20103,
-        20104,
-        20105,
-        20106,
-        20107,
-        20108
-      ],
-      "groupTitle": "Workshops",
-      "groupSubtitle": "",
-      "shortMainTitle": "",
-      "dateString": "Sat, October 19, 2024",
-      "startTime": "2024-10-19T10:00:00.000Z",
-      "endTime": "2024-10-19T11:00:00.000Z",
-      "place": "",
-      "sessionSubtitle": "",
-      "sessionDescription": "",
-      "artistOne": "Eric & Marcela",
-      "artistTwo": "",
-      "artistLocation": "BOULDER",
-      "flag": false,
-      "flagIncludeInNow": false,
-      "artistCompany": "",
-      "sessionSpecialTrackCount": ""
-    },
-    {
-      "id": 20104,
       "itemType": "type1",
       "artistName": "Yayita & Carlos",
       "sessionMainTitle": "Salsa On2 Footwork",
@@ -2464,8 +2633,7 @@ export const modelInitStaticOverwrite =
         20104,
         20105,
         20106,
-        20107,
-        20108
+        20107
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -2485,9 +2653,9 @@ export const modelInitStaticOverwrite =
       "sessionSpecialTrackCount": ""
     },
     {
-      "id": 20105,
+      "id": 20104,
       "itemType": "type4",
-      "artistName": "Jared & Nicole",
+      "artistName": "Yvonne & Rudy",
       "sessionMainTitle": "Absolute Beginner Track - Bachata",
       "time": "10:00 AM - 11:00 AM",
       "room": "ROOM  4",
@@ -2499,8 +2667,7 @@ export const modelInitStaticOverwrite =
         20104,
         20105,
         20106,
-        20107,
-        20108
+        20107
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -2511,7 +2678,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Jared & Nicole",
+      "artistOne": "Yvonne & Rudy",
       "artistTwo": "",
       "artistLocation": "Aurora",
       "flag": false,
@@ -2520,7 +2687,7 @@ export const modelInitStaticOverwrite =
       "sessionSpecialTrackCount": "(2 of 2)"
     },
     {
-      "id": 20106,
+      "id": 20105,
       "itemType": "type1",
       "artistName": "Daniel Agosto",
       "sessionMainTitle": "Bachata Partnerwork",
@@ -2534,8 +2701,7 @@ export const modelInitStaticOverwrite =
         20104,
         20105,
         20106,
-        20107,
-        20108
+        20107
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -2548,17 +2714,17 @@ export const modelInitStaticOverwrite =
       "sessionDescription": "",
       "artistOne": "Daniel Agosto",
       "artistTwo": "",
-      "artistLocation": "TEXAS",
+      "artistLocation": "HOUSTON",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
       "sessionSpecialTrackCount": "(2 of 2)"
     },
     {
-      "id": 20107,
+      "id": 20106,
       "itemType": "type1",
-      "artistName": "Gio & Gaby",
-      "sessionMainTitle": "Salsa On1 Shines/Partner",
+      "artistName": "Rna Dance Company",
+      "sessionMainTitle": "Bachata Shines",
       "time": "10:00 AM - 11:00 AM",
       "room": "ROOM  6",
       "level": "0",
@@ -2569,43 +2735,7 @@ export const modelInitStaticOverwrite =
         20104,
         20105,
         20106,
-        20107,
-        20108
-      ],
-      "groupTitle": "Workshops",
-      "groupSubtitle": "",
-      "shortMainTitle": "",
-      "dateString": "Sat, October 19, 2024",
-      "startTime": "2024-10-19T10:00:00.000Z",
-      "endTime": "2024-10-19T11:00:00.000Z",
-      "place": "",
-      "sessionSubtitle": "",
-      "sessionDescription": "",
-      "artistOne": "Gio & Gaby",
-      "artistTwo": "",
-      "artistLocation": "BOSTON",
-      "flag": false,
-      "flagIncludeInNow": false,
-      "artistCompany": "",
-      "sessionSpecialTrackCount": "(2 of 2)"
-    },
-    {
-      "id": 20108,
-      "itemType": "type1",
-      "artistName": "Rna Dance Company",
-      "sessionMainTitle": "Bachata Shines",
-      "time": "10:00 AM - 11:00 AM",
-      "room": "ROOM  7",
-      "level": "0",
-      "group": [
-        20101,
-        20102,
-        20103,
-        20104,
-        20105,
-        20106,
-        20107,
-        20108
+        20107
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -2619,6 +2749,40 @@ export const modelInitStaticOverwrite =
       "artistOne": "Rna Dance Company",
       "artistTwo": "",
       "artistLocation": "HOUSTON",
+      "flag": false,
+      "flagIncludeInNow": false,
+      "artistCompany": "",
+      "sessionSpecialTrackCount": "(2 of 2)"
+    },
+    {
+      "id": 20107,
+      "itemType": "type1",
+      "artistName": "Damilola Elegbede",
+      "sessionMainTitle": "Cuban Salsa Partner/ Footwork",
+      "time": "10:00 AM - 11:00 AM",
+      "room": "ROOM  7",
+      "level": "0",
+      "group": [
+        20101,
+        20102,
+        20103,
+        20104,
+        20105,
+        20106,
+        20107
+      ],
+      "groupTitle": "Workshops",
+      "groupSubtitle": "",
+      "shortMainTitle": "",
+      "dateString": "Sat, October 19, 2024",
+      "startTime": "2024-10-19T10:00:00.000Z",
+      "endTime": "2024-10-19T11:00:00.000Z",
+      "place": "",
+      "sessionSubtitle": "",
+      "sessionDescription": "",
+      "artistOne": "Damilola Elegbede",
+      "artistTwo": "",
+      "artistLocation": "Boulder",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -2639,7 +2803,8 @@ export const modelInitStaticOverwrite =
         20204,
         20205,
         20206,
-        20207
+        20207,
+        20208
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -2661,11 +2826,11 @@ export const modelInitStaticOverwrite =
     {
       "id": 20202,
       "itemType": "type1",
-      "artistName": "Raul & Delia",
-      "sessionMainTitle": "Salsa On 2 Partnerwork",
+      "artistName": "Ernesto & Denisse",
+      "sessionMainTitle": "Salsa On2 Parterwork",
       "time": "11:00 AM - 12:00 PM",
       "room": "AURORA 2",
-      "level": "1",
+      "level": "2",
       "group": [
         20201,
         20202,
@@ -2673,7 +2838,8 @@ export const modelInitStaticOverwrite =
         20204,
         20205,
         20206,
-        20207
+        20207,
+        20208
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -2684,9 +2850,9 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Raul & Delia",
+      "artistOne": "Ernesto & Denisse",
       "artistTwo": "",
-      "artistLocation": "ORLANDO",
+      "artistLocation": "Tampa",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -2707,7 +2873,8 @@ export const modelInitStaticOverwrite =
         20204,
         20205,
         20206,
-        20207
+        20207,
+        20208
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -2741,7 +2908,8 @@ export const modelInitStaticOverwrite =
         20204,
         20205,
         20206,
-        20207
+        20207,
+        20208
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -2762,6 +2930,41 @@ export const modelInitStaticOverwrite =
     },
     {
       "id": 20205,
+      "itemType": "type4",
+      "artistName": "Sisy Ayala",
+      "sessionMainTitle": "Absolute Beginner Track - Salsa",
+      "time": "11:00 AM - 12:00 PM",
+      "room": "ROOM  4",
+      "level": "-1",
+      "group": [
+        20201,
+        20202,
+        20203,
+        20204,
+        20205,
+        20206,
+        20207,
+        20208
+      ],
+      "groupTitle": "Workshops",
+      "groupSubtitle": "",
+      "shortMainTitle": "",
+      "dateString": "Sat, October 19, 2024",
+      "startTime": "2024-10-19T11:00:00.000Z",
+      "endTime": "2024-10-19T12:00:00.000Z",
+      "place": "",
+      "sessionSubtitle": "",
+      "sessionDescription": "",
+      "artistOne": "Sisy Ayala",
+      "artistTwo": "",
+      "artistLocation": "Aurora",
+      "flag": false,
+      "flagIncludeInNow": false,
+      "artistCompany": "Somos Dance Studio",
+      "sessionSpecialTrackCount": "(2 of 2)"
+    },
+    {
+      "id": 20206,
       "itemType": "type1",
       "artistName": "Adrian Tenorio",
       "sessionMainTitle": "Cha-Cha-Cha Partnerwork",
@@ -2775,7 +2978,8 @@ export const modelInitStaticOverwrite =
         20204,
         20205,
         20206,
-        20207
+        20207,
+        20208
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -2795,10 +2999,10 @@ export const modelInitStaticOverwrite =
       "sessionSpecialTrackCount": "(2 of 2)"
     },
     {
-      "id": 20206,
+      "id": 20207,
       "itemType": "type1",
       "artistName": "Eder & Milton",
-      "sessionMainTitle": "Salsa On2 Shines",
+      "sessionMainTitle": "Salsa On2 Footwork",
       "time": "11:00 AM - 12:00 PM",
       "room": "ROOM  6",
       "level": "0",
@@ -2809,7 +3013,8 @@ export const modelInitStaticOverwrite =
         20204,
         20205,
         20206,
-        20207
+        20207,
+        20208
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -2829,13 +3034,13 @@ export const modelInitStaticOverwrite =
       "sessionSpecialTrackCount": "(2 of 2)"
     },
     {
-      "id": 20207,
+      "id": 20208,
       "itemType": "type1",
-      "artistName": "Sebastian & Jocelyn",
+      "artistName": "Eddie Peligro",
       "sessionMainTitle": "Bachata Partnerwork",
       "time": "11:00 AM - 12:00 PM",
       "room": "ROOM  7",
-      "level": "1",
+      "level": "0",
       "group": [
         20201,
         20202,
@@ -2843,7 +3048,8 @@ export const modelInitStaticOverwrite =
         20204,
         20205,
         20206,
-        20207
+        20207,
+        20208
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -2854,9 +3060,9 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Sebastian & Jocelyn",
+      "artistOne": "Eddie Peligro",
       "artistTwo": "",
-      "artistLocation": "CHICAGO",
+      "artistLocation": "PHOENIX",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -2936,10 +3142,10 @@ export const modelInitStaticOverwrite =
       "id": 20303,
       "itemType": "type1",
       "artistName": "Saulo & Jasmin",
-      "sessionMainTitle": "Zouk(need a new one)",
+      "sessionMainTitle": "Zouk Partnerwork",
       "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  1",
-      "level": "1",
+      "level": "2",
       "group": [
         20301,
         20302,
@@ -2971,7 +3177,7 @@ export const modelInitStaticOverwrite =
       "id": 20304,
       "itemType": "type1",
       "artistName": "Oscar Martinez",
-      "sessionMainTitle": "Salsa On2 Shines",
+      "sessionMainTitle": "Salsa On2 footwork",
       "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  2",
       "level": "0",
@@ -3031,7 +3237,7 @@ export const modelInitStaticOverwrite =
       "sessionDescription": "",
       "artistOne": "Adriana & Jorge",
       "artistTwo": "",
-      "artistLocation": "FLORIDA",
+      "artistLocation": "ORLANDO",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -3075,8 +3281,8 @@ export const modelInitStaticOverwrite =
     {
       "id": 20307,
       "itemType": "type1",
-      "artistName": "Jorge & Indira",
-      "sessionMainTitle": "Rumba Guaguanco",
+      "artistName": "Johan & Alyssa",
+      "sessionMainTitle": "Boogaloo Footwork",
       "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  6",
       "level": "0",
@@ -3099,9 +3305,9 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Jorge & Indira",
+      "artistOne": "Johan & Alyssa",
       "artistTwo": "",
-      "artistLocation": "CUBA",
+      "artistLocation": "DALLAS",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -3206,7 +3412,7 @@ export const modelInitStaticOverwrite =
       "sessionDescription": "",
       "artistOne": "Brandon & Michelle",
       "artistTwo": "",
-      "artistLocation": "Portland",
+      "artistLocation": "Portland/New York",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -3216,7 +3422,7 @@ export const modelInitStaticOverwrite =
       "id": 20403,
       "itemType": "type1",
       "artistName": "Luan & Adriana",
-      "sessionMainTitle": "Zouk",
+      "sessionMainTitle": "Zouk Partnerwork",
       "time": "1:00 PM - 2:00 PM",
       "room": "ROOM  1",
       "level": "1",
@@ -3289,7 +3495,7 @@ export const modelInitStaticOverwrite =
       "sessionMainTitle": "Bachata Shines",
       "time": "1:00 PM - 2:00 PM",
       "room": "ROOM  4",
-      "level": "1",
+      "level": "0",
       "group": [
         20401,
         20402,
@@ -3321,7 +3527,7 @@ export const modelInitStaticOverwrite =
       "id": 20406,
       "itemType": "type1",
       "artistName": "Casino Stars",
-      "sessionMainTitle": "Salsa On 1 Shines",
+      "sessionMainTitle": "Salsa On 1 Footwork",
       "time": "1:00 PM - 2:00 PM",
       "room": "ROOM  5",
       "level": "0",
@@ -3355,8 +3561,8 @@ export const modelInitStaticOverwrite =
     {
       "id": 20407,
       "itemType": "type1",
-      "artistName": "Johan & Alyssa",
-      "sessionMainTitle": "Boogaloo Footwork",
+      "artistName": "Jorge & Indira",
+      "sessionMainTitle": "Rumba Guaguanco",
       "time": "1:00 PM - 2:00 PM",
       "room": "ROOM  6",
       "level": "0",
@@ -3379,9 +3585,9 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Johan & Alyssa",
+      "artistOne": "Jorge & Indira",
       "artistTwo": "",
-      "artistLocation": "DALLAS",
+      "artistLocation": "CUBA",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -3426,10 +3632,10 @@ export const modelInitStaticOverwrite =
       "id": 20501,
       "itemType": "type1",
       "artistName": "Fuego Y Hielo",
-      "sessionMainTitle": "Salsa On 2 Partnerwork",
+      "sessionMainTitle": "Lifts and Tricks",
       "time": "2:00 PM - 3:00 PM",
       "room": "AURORA 1",
-      "level": "1",
+      "level": "0",
       "group": [
         20501,
         20502,
@@ -3437,7 +3643,8 @@ export const modelInitStaticOverwrite =
         20504,
         20505,
         20506,
-        20507
+        20507,
+        20508
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -3471,7 +3678,8 @@ export const modelInitStaticOverwrite =
         20504,
         20505,
         20506,
-        20507
+        20507,
+        20508
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -3505,7 +3713,8 @@ export const modelInitStaticOverwrite =
         20504,
         20505,
         20506,
-        20507
+        20507,
+        20508
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -3528,10 +3737,10 @@ export const modelInitStaticOverwrite =
       "id": 20504,
       "itemType": "type1",
       "artistName": "El Tiguere Y Bianca",
-      "sessionMainTitle": "Bachata: Culture, History& Music",
+      "sessionMainTitle": "Bachata: Culture, History & Music",
       "time": "2:00 PM - 3:00 PM",
       "room": "ROOM  2",
-      "level": "1",
+      "level": "0",
       "group": [
         20501,
         20502,
@@ -3539,7 +3748,8 @@ export const modelInitStaticOverwrite =
         20504,
         20505,
         20506,
-        20507
+        20507,
+        20508
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -3573,7 +3783,8 @@ export const modelInitStaticOverwrite =
         20504,
         20505,
         20506,
-        20507
+        20507,
+        20508
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -3595,6 +3806,41 @@ export const modelInitStaticOverwrite =
     {
       "id": 20506,
       "itemType": "type1",
+      "artistName": "Natasha Tia",
+      "sessionMainTitle": "Salsa On2 Shines",
+      "time": "2:00 PM - 3:00 PM",
+      "room": "ROOM  5",
+      "level": "0",
+      "group": [
+        20501,
+        20502,
+        20503,
+        20504,
+        20505,
+        20506,
+        20507,
+        20508
+      ],
+      "groupTitle": "Workshops",
+      "groupSubtitle": "",
+      "shortMainTitle": "",
+      "dateString": "Sat, October 19, 2024",
+      "startTime": "2024-10-19T14:00:00.000Z",
+      "endTime": "2024-10-19T15:00:00.000Z",
+      "place": "",
+      "sessionSubtitle": "",
+      "sessionDescription": "",
+      "artistOne": "Natasha Tia",
+      "artistTwo": "",
+      "artistLocation": "Bay Area, CA",
+      "flag": false,
+      "flagIncludeInNow": false,
+      "artistCompany": "",
+      "sessionSpecialTrackCount": "(2 of 2)"
+    },
+    {
+      "id": 20507,
+      "itemType": "type1",
       "artistName": "Kate Rodriguez",
       "sessionMainTitle": "Bachata Vibez (Footwork)",
       "time": "2:00 PM - 3:00 PM",
@@ -3607,7 +3853,8 @@ export const modelInitStaticOverwrite =
         20504,
         20505,
         20506,
-        20507
+        20507,
+        20508
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -3627,7 +3874,7 @@ export const modelInitStaticOverwrite =
       "sessionSpecialTrackCount": "(2 of 2)"
     },
     {
-      "id": 20507,
+      "id": 20508,
       "itemType": "type1",
       "artistName": "Joseal",
       "sessionMainTitle": "URBAN KIZ",
@@ -3641,7 +3888,8 @@ export const modelInitStaticOverwrite =
         20504,
         20505,
         20506,
-        20507
+        20507,
+        20508
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -3700,7 +3948,7 @@ export const modelInitStaticOverwrite =
       "sessionMainTitle": "Salsa On2 Partnerwork",
       "time": "3:00 PM - 4:00 PM",
       "room": "AURORA 2",
-      "level": "0",
+      "level": "2",
       "group": [
         20601,
         20602,
@@ -3763,7 +4011,7 @@ export const modelInitStaticOverwrite =
       "id": 20604,
       "itemType": "type1",
       "artistName": "Chelsey Owen",
-      "sessionMainTitle": "Salsa On1 Shines/Partner",
+      "sessionMainTitle": "Salsa On1 Partner/Footwork",
       "time": "3:00 PM - 4:00 PM",
       "room": "ROOM  2",
       "level": "0",
@@ -3796,7 +4044,7 @@ export const modelInitStaticOverwrite =
       "id": 20605,
       "itemType": "type1",
       "artistName": "Jk Dance Company",
-      "sessionMainTitle": "Bachata Partnerwork",
+      "sessionMainTitle": "Bachata Partner/Footwork",
       "time": "3:00 PM - 4:00 PM",
       "room": "ROOM  6",
       "level": "0",
@@ -3828,8 +4076,8 @@ export const modelInitStaticOverwrite =
     {
       "id": 20606,
       "itemType": "type1",
-      "artistName": "Marc & Rose",
-      "sessionMainTitle": "Urban Kiz Partnerwork",
+      "artistName": "Aris Gingundo",
+      "sessionMainTitle": "Kizomba Partnerwork",
       "time": "3:00 PM - 4:00 PM",
       "room": "ROOM  7",
       "level": "0",
@@ -3850,9 +4098,9 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Marc & Rose",
+      "artistOne": "Aris Gingundo",
       "artistTwo": "",
-      "artistLocation": "DETROIT",
+      "artistLocation": "DENVER",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -3919,11 +4167,11 @@ export const modelInitStaticOverwrite =
     {
       "id": 30001,
       "itemType": "type1",
-      "artistName": "Iroko",
-      "sessionMainTitle": "Salsa On2 Parterwork",
+      "artistName": "Ernesto & Denisse",
+      "sessionMainTitle": "Salsa On2 Footwork",
       "time": "10:00 AM - 11:00 AM",
       "room": "AURORA 1",
-      "level": "1",
+      "level": "-1",
       "group": [
         30001,
         30002,
@@ -3943,7 +4191,7 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Iroko",
+      "artistOne": "Ernesto & Denisse",
       "artistTwo": "",
       "artistLocation": "ORLANDO",
       "flag": false,
@@ -4024,8 +4272,8 @@ export const modelInitStaticOverwrite =
     {
       "id": 30004,
       "itemType": "type1",
-      "artistName": "Bachatito",
-      "sessionMainTitle": "Bachata Partnerwork",
+      "artistName": "Tito Garcia",
+      "sessionMainTitle": "Casino Rueda",
       "time": "10:00 AM - 11:00 AM",
       "room": "ROOM  2",
       "level": "0",
@@ -4048,9 +4296,9 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Bachatito",
+      "artistOne": "Tito Garcia",
       "artistTwo": "",
-      "artistLocation": "CHICAGO",
+      "artistLocation": "BOULDER",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -4095,7 +4343,7 @@ export const modelInitStaticOverwrite =
       "id": 30006,
       "itemType": "type1",
       "artistName": "Gio & Gaby",
-      "sessionMainTitle": "Salsa On1 Shines/Partner",
+      "sessionMainTitle": "Salsa On1 Partner/Footwork",
       "time": "10:00 AM - 11:00 AM",
       "room": "ROOM  5",
       "level": "0",
@@ -4120,7 +4368,7 @@ export const modelInitStaticOverwrite =
       "sessionDescription": "",
       "artistOne": "Gio & Gaby",
       "artistTwo": "",
-      "artistLocation": "TEXAS",
+      "artistLocation": "BOSTON",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -4269,8 +4517,8 @@ export const modelInitStaticOverwrite =
     {
       "id": 30103,
       "itemType": "type1",
-      "artistName": "Devon Near-hill",
-      "sessionMainTitle": "Zouk Wifi",
+      "artistName": "Jorge & Indira",
+      "sessionMainTitle": "Timba Musicality",
       "time": "11:00 AM - 12:00 PM",
       "room": "ROOM  1",
       "level": "0",
@@ -4293,9 +4541,9 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Devon Near-hill",
+      "artistOne": "Jorge & Indira",
       "artistTwo": "",
-      "artistLocation": "DENVER",
+      "artistLocation": "CUBA",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -4304,8 +4552,8 @@ export const modelInitStaticOverwrite =
     {
       "id": 30104,
       "itemType": "type1",
-      "artistName": "Daniel & Kathryn",
-      "sessionMainTitle": "Salsa On1 Partnerwork",
+      "artistName": "Rose Turuka",
+      "sessionMainTitle": "Afro House",
       "time": "11:00 AM - 12:00 PM",
       "room": "ROOM  2",
       "level": "0",
@@ -4328,19 +4576,19 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Daniel & Kathryn",
+      "artistOne": "Rose Turuka",
       "artistTwo": "",
-      "artistLocation": "DENVER",
+      "artistLocation": "DETROIT",
       "flag": false,
       "flagIncludeInNow": false,
-      "artistCompany": "CNS",
+      "artistCompany": "",
       "sessionSpecialTrackCount": ""
     },
     {
       "id": 30105,
       "itemType": "type1",
       "artistName": "Natasha Tia",
-      "sessionMainTitle": "Salsa On2 Footwork",
+      "sessionMainTitle": "Salsa On2 Follows' Styling/Shines",
       "time": "11:00 AM - 12:00 PM",
       "room": "ROOM  4",
       "level": "0",
@@ -4365,7 +4613,7 @@ export const modelInitStaticOverwrite =
       "sessionDescription": "",
       "artistOne": "Natasha Tia",
       "artistTwo": "",
-      "artistLocation": "BAY AREA",
+      "artistLocation": "Bay Area, CA",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -4409,8 +4657,8 @@ export const modelInitStaticOverwrite =
     {
       "id": 30107,
       "itemType": "type1",
-      "artistName": "Jorge & Indira",
-      "sessionMainTitle": "Timba Musicality",
+      "artistName": "Jazmyne Lewis",
+      "sessionMainTitle": "Intro to Lambada",
       "time": "11:00 AM - 12:00 PM",
       "room": "ROOM  6",
       "level": "0",
@@ -4433,9 +4681,9 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Jorge & Indira",
+      "artistOne": "Jazmyne Lewis",
       "artistTwo": "",
-      "artistLocation": "CUBA",
+      "artistLocation": "Denver",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -4444,8 +4692,8 @@ export const modelInitStaticOverwrite =
     {
       "id": 30108,
       "itemType": "type1",
-      "artistName": "Rose Turuka",
-      "sessionMainTitle": "Afro House",
+      "artistName": "Bachatito",
+      "sessionMainTitle": "Bachata Partnerwork",
       "time": "11:00 AM - 12:00 PM",
       "room": "ROOM  7",
       "level": "0",
@@ -4468,9 +4716,9 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Rose Turuka",
+      "artistOne": "Bachatito",
       "artistTwo": "",
-      "artistLocation": "DETROIT",
+      "artistLocation": "MILWAUKEE",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -4480,10 +4728,10 @@ export const modelInitStaticOverwrite =
       "id": 30201,
       "itemType": "type1",
       "artistName": "De’jon & Clo",
-      "sessionMainTitle": "Salsa On 2 partnerwork",
+      "sessionMainTitle": "Salsa On 2 Partnerwork",
       "time": "12:00 PM - 1:00 PM",
       "room": "AURORA 1",
-      "level": "0",
+      "level": "1",
       "group": [
         30201,
         30202,
@@ -4549,11 +4797,11 @@ export const modelInitStaticOverwrite =
     {
       "id": 30203,
       "itemType": "type1",
-      "artistName": "Eddie Peligro",
-      "sessionMainTitle": "Bachata Partnerwork",
+      "artistName": "Saulo & Jasmin",
+      "sessionMainTitle": "Zouk Partnerwork",
       "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  1",
-      "level": "0",
+      "level": "1",
       "group": [
         30201,
         30202,
@@ -4573,9 +4821,9 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Eddie Peligro",
+      "artistOne": "Saulo & Jasmin",
       "artistTwo": "",
-      "artistLocation": "PHOENIX",
+      "artistLocation": "BRAZIL",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -4584,8 +4832,8 @@ export const modelInitStaticOverwrite =
     {
       "id": 30204,
       "itemType": "type1",
-      "artistName": "Tito Garcia",
-      "sessionMainTitle": "Casino Rueda",
+      "artistName": "Daniel & Kathryn",
+      "sessionMainTitle": "Salsa On1 Partnerwork",
       "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  2",
       "level": "0",
@@ -4608,22 +4856,22 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Tito Garcia",
+      "artistOne": "Daniel & Kathryn",
       "artistTwo": "",
-      "artistLocation": "BOULDER",
+      "artistLocation": "DENVER",
       "flag": false,
       "flagIncludeInNow": false,
-      "artistCompany": "",
+      "artistCompany": "CNS",
       "sessionSpecialTrackCount": ""
     },
     {
       "id": 30205,
       "itemType": "type1",
       "artistName": "Fuego Y Hielo",
-      "sessionMainTitle": "Salsa On2 Partnerwork",
+      "sessionMainTitle": "Cha-Cha-Cha partner/footwork",
       "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  4",
-      "level": "0",
+      "level": "1",
       "group": [
         30201,
         30202,
@@ -4655,10 +4903,10 @@ export const modelInitStaticOverwrite =
       "id": 30206,
       "itemType": "type1",
       "artistName": "Alex & Desiree",
-      "sessionMainTitle": "Traditional Bachata Footwork/Partner",
+      "sessionMainTitle": "Traditional Bachata Partner/Footwork",
       "time": "12:00 PM - 1:00 PM",
       "room": "ROOM  5",
-      "level": "0",
+      "level": "1",
       "group": [
         30201,
         30202,
@@ -4760,10 +5008,10 @@ export const modelInitStaticOverwrite =
       "id": 30301,
       "itemType": "type1",
       "artistName": "Karen Y Ricardo",
-      "sessionMainTitle": "Salsa On1 Shines/Partner",
+      "sessionMainTitle": "Salsa On1 Partner/Footwork",
       "time": "1:00 PM - 2:00 PM",
       "room": "AURORA 1",
-      "level": "1",
+      "level": "2",
       "group": [
         30301,
         30302,
@@ -4798,7 +5046,7 @@ export const modelInitStaticOverwrite =
       "sessionMainTitle": "Bachata Partnerwork",
       "time": "1:00 PM - 2:00 PM",
       "room": "AURORA 2",
-      "level": "1",
+      "level": "2",
       "group": [
         30301,
         30302,
@@ -5100,7 +5348,7 @@ export const modelInitStaticOverwrite =
       "sessionDescription": "",
       "artistOne": "Benny & Ashley",
       "artistTwo": "",
-      "artistLocation": "PORTLAND",
+      "artistLocation": "SEATTLE",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -5170,7 +5418,7 @@ export const modelInitStaticOverwrite =
       "sessionDescription": "",
       "artistOne": "Adriana & Jorge",
       "artistTwo": "",
-      "artistLocation": "FLORIDA",
+      "artistLocation": "ORLANDO",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -5179,8 +5427,8 @@ export const modelInitStaticOverwrite =
     {
       "id": 30405,
       "itemType": "type1",
-      "artistName": "Aris Gingundo",
-      "sessionMainTitle": "Kizomba Partnerwork",
+      "artistName": "Marc & Rose",
+      "sessionMainTitle": "Urban Kiz Partnerwork",
       "time": "2:00 PM - 3:00 PM",
       "room": "ROOM  4",
       "level": "0",
@@ -5203,9 +5451,9 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Aris Gingundo",
+      "artistOne": "Marc & Rose",
       "artistTwo": "",
-      "artistLocation": "DENVER",
+      "artistLocation": "DETROIT",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -5215,7 +5463,7 @@ export const modelInitStaticOverwrite =
       "id": 30406,
       "itemType": "type1",
       "artistName": "Adrian Tenorio",
-      "sessionMainTitle": "Salsa On2 Shines",
+      "sessionMainTitle": "Salsa On2 footwork",
       "time": "2:00 PM - 3:00 PM",
       "room": "ROOM  5",
       "level": "0",
@@ -5249,11 +5497,11 @@ export const modelInitStaticOverwrite =
     {
       "id": 30407,
       "itemType": "type1",
-      "artistName": "Damilola Elegbede",
-      "sessionMainTitle": "Cuban Salsa Footwork",
+      "artistName": "Eric & Marcela",
+      "sessionMainTitle": "Cuban Salsa (Casino) Partnerwork",
       "time": "2:00 PM - 3:00 PM",
       "room": "ROOM  6",
-      "level": "0",
+      "level": "1",
       "group": [
         30401,
         30402,
@@ -5273,9 +5521,9 @@ export const modelInitStaticOverwrite =
       "place": "",
       "sessionSubtitle": "",
       "sessionDescription": "",
-      "artistOne": "Damilola Elegbede",
+      "artistOne": "Eric & Marcela",
       "artistTwo": "",
-      "artistLocation": "Boulder",
+      "artistLocation": "BOULDER",
       "flag": false,
       "flagIncludeInNow": false,
       "artistCompany": "",
@@ -5329,8 +5577,7 @@ export const modelInitStaticOverwrite =
         30502,
         30503,
         30504,
-        30505,
-        30506
+        30505
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -5356,14 +5603,13 @@ export const modelInitStaticOverwrite =
       "sessionMainTitle": "follows styling",
       "time": "3:00 PM - 4:00 PM",
       "room": "AURORA 2",
-      "level": "0",
+      "level": "1",
       "group": [
         30501,
         30502,
         30503,
         30504,
-        30505,
-        30506
+        30505
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -5385,39 +5631,6 @@ export const modelInitStaticOverwrite =
     {
       "id": 30503,
       "itemType": "type1",
-      "artistName": "Devon Near-hill",
-      "sessionMainTitle": "Zouk Wifi",
-      "time": "3:00 PM - 4:00 PM",
-      "room": "ROOM  1",
-      "level": "1",
-      "group": [
-        30501,
-        30502,
-        30503,
-        30504,
-        30505,
-        30506
-      ],
-      "groupTitle": "Workshops",
-      "groupSubtitle": "",
-      "shortMainTitle": "",
-      "dateString": "Sun, October 20, 2024",
-      "startTime": "2024-10-20T15:00:00.000Z",
-      "endTime": "2024-10-20T16:00:00.000Z",
-      "place": "",
-      "sessionSubtitle": "",
-      "sessionDescription": "",
-      "artistOne": "Devon Near-hill",
-      "artistTwo": "",
-      "artistLocation": "DENVER",
-      "flag": false,
-      "flagIncludeInNow": false,
-      "artistCompany": "",
-      "sessionSpecialTrackCount": ""
-    },
-    {
-      "id": 30504,
-      "itemType": "type1",
       "artistName": "C.a.m.",
       "sessionMainTitle": "Salsa Caleña Partnerwork",
       "time": "3:00 PM - 4:00 PM",
@@ -5428,8 +5641,7 @@ export const modelInitStaticOverwrite =
         30502,
         30503,
         30504,
-        30505,
-        30506
+        30505
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -5449,53 +5661,19 @@ export const modelInitStaticOverwrite =
       "sessionSpecialTrackCount": ""
     },
     {
-      "id": 30505,
-      "itemType": "type1",
-      "artistName": "Chris & Alexus",
-      "sessionMainTitle": "Bachata Partnerwork",
-      "time": "3:00 PM - 4:00 PM",
-      "room": "ROOM  6",
-      "level": "1",
-      "group": [
-        30501,
-        30502,
-        30503,
-        30504,
-        30505,
-        30506
-      ],
-      "groupTitle": "Workshops",
-      "groupSubtitle": "",
-      "shortMainTitle": "",
-      "dateString": "Sun, October 20, 2024",
-      "startTime": "2024-10-20T15:00:00.000Z",
-      "endTime": "2024-10-20T16:00:00.000Z",
-      "place": "",
-      "sessionSubtitle": "",
-      "sessionDescription": "",
-      "artistOne": "Chris & Alexus",
-      "artistTwo": "",
-      "artistLocation": "CHICAGO",
-      "flag": false,
-      "flagIncludeInNow": false,
-      "artistCompany": "",
-      "sessionSpecialTrackCount": ""
-    },
-    {
-      "id": 30506,
+      "id": 30504,
       "itemType": "type1",
       "artistName": "Marisol Blanco",
       "sessionMainTitle": "Makuta/Yuka/Palo",
       "time": "3:00 PM - 4:00 PM",
-      "room": "ROOM  7",
+      "room": "ROOM  6",
       "level": "0",
       "group": [
         30501,
         30502,
         30503,
         30504,
-        30505,
-        30506
+        30505
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -5515,7 +5693,69 @@ export const modelInitStaticOverwrite =
       "sessionSpecialTrackCount": ""
     },
     {
+      "id": 30505,
+      "itemType": "type1",
+      "artistName": "Chris & Alexus",
+      "sessionMainTitle": "Bachata Partnerwork",
+      "time": "3:00 PM - 4:00 PM",
+      "room": "ROOM  7",
+      "level": "0",
+      "group": [
+        30501,
+        30502,
+        30503,
+        30504,
+        30505
+      ],
+      "groupTitle": "Workshops",
+      "groupSubtitle": "",
+      "shortMainTitle": "",
+      "dateString": "Sun, October 20, 2024",
+      "startTime": "2024-10-20T15:00:00.000Z",
+      "endTime": "2024-10-20T16:00:00.000Z",
+      "place": "",
+      "sessionSubtitle": "",
+      "sessionDescription": "",
+      "artistOne": "Chris & Alexus",
+      "artistTwo": "",
+      "artistLocation": "CHICAGO",
+      "flag": false,
+      "flagIncludeInNow": false,
+      "artistCompany": "",
+      "sessionSpecialTrackCount": ""
+    },
+    {
       "id": 30601,
+      "itemType": "type4",
+      "artistName": "Karen Y Ricardo",
+      "sessionMainTitle": "MASTERCLASS - Salsa On1",
+      "time": "3:00 PM - 5:00 PM",
+      "room": "ROOM  1",
+      "level": "-1",
+      "group": [
+        30601,
+        30602,
+        30603
+      ],
+      "groupTitle": "Workshops",
+      "groupSubtitle": "",
+      "shortMainTitle": "",
+      "dateString": "Sun, October 20, 2024",
+      "startTime": "2024-10-20T15:00:00.000Z",
+      "endTime": "2024-10-20T17:00:00.000Z",
+      "place": "",
+      "sessionSubtitle": "",
+      "sessionDescription": "",
+      "artistOne": "Karen Y Ricardo",
+      "artistTwo": "",
+      "artistLocation": "CHILE & ARGENTINA",
+      "flag": false,
+      "flagIncludeInNow": false,
+      "artistCompany": "",
+      "sessionSpecialTrackCount": "(Advanced)"
+    },
+    {
+      "id": 30602,
       "itemType": "type4",
       "artistName": "Alex & Desiree",
       "sessionMainTitle": "AnD Bachata Instructor - Certification Training",
@@ -5524,7 +5764,8 @@ export const modelInitStaticOverwrite =
       "level": "-1",
       "group": [
         30601,
-        30602
+        30602,
+        30603
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -5544,7 +5785,7 @@ export const modelInitStaticOverwrite =
       "sessionSpecialTrackCount": "(3 of 3)"
     },
     {
-      "id": 30602,
+      "id": 30603,
       "itemType": "type4",
       "artistName": "Rafa Gonzalez",
       "sessionMainTitle": "Heels Challenge",
@@ -5553,7 +5794,8 @@ export const modelInitStaticOverwrite =
       "level": "-1",
       "group": [
         30601,
-        30602
+        30602,
+        30603
       ],
       "groupTitle": "Workshops",
       "groupSubtitle": "",
@@ -5576,7 +5818,7 @@ export const modelInitStaticOverwrite =
   "dataSpecialSessions": {
     "Absolute Beginner Track - Salsa": {
       "company": "Somos Dance Studio",
-      "description": "Discover the joy of dance at the CALDAC convention with our Absolute Beginner Track workshops! Perfect for those new to Salsa or Bachata, these workshops are designed to welcome you into the world of dance with no prior experience required. Separate classes for Salsa and Bachata ensure that you get the focused attention you need to start your dance journey. Best of all, these workshops are free with the purchase of a full pass or VIP pass—just be sure to sign up in advance to secure your spot. It’s all about fun, no judgments, and a fantastic way to get involved in the weekend’s festivities. Come join us and take your first steps in dance!",
+      "description": "Come join us and take your first steps in dance - no sign-up required!\n\nDiscover the joy of dance at the CALDAC convention with our Absolute Beginner Track workshops! Perfect for those new to Salsa or Bachata, these workshops are designed to welcome you into the world of dance with no prior experience required. Separate classes for Salsa and Bachata ensure that you get the focused attention you need to start your dance journey. Best of all, these workshops are free with the purchase of a full pass or VIP pass—just be sure to sign up in advance to secure your spot. It’s all about fun, no judgments, and a fantastic way to get involved in the weekend’s festivities. ",
       "title": "Absolute Beginner Track - Salsa",
       "price": "0",
       "signup": "no",
@@ -5586,7 +5828,7 @@ export const modelInitStaticOverwrite =
     },
     "Absolute Beginner Track - Bachata": {
       "company": "Somos Dance Studio",
-      "description": "Discover the joy of dance at the CALDAC convention with our Absolute Beginner Track workshops! Perfect for those new to Salsa or Bachata, these workshops are designed to welcome you into the world of dance with no prior experience required. Separate classes for Salsa and Bachata ensure that you get the focused attention you need to start your dance journey. Best of all, these workshops are free with the purchase of a full pass or VIP pass—just be sure to sign up in advance to secure your spot. It’s all about fun, no judgments, and a fantastic way to get involved in the weekend’s festivities. Come join us and take your first steps in dance!",
+      "description": "Come join us and take your first steps in dance - no sign-up required!\n\nDiscover the joy of dance at the CALDAC convention with our Absolute Beginner Track workshops! Perfect for those new to Salsa or Bachata, these workshops are designed to welcome you into the world of dance with no prior experience required. Separate classes for Salsa and Bachata ensure that you get the focused attention you need to start your dance journey. Best of all, these workshops are free with the purchase of a full pass or VIP pass—just be sure to sign up in advance to secure your spot. It’s all about fun, no judgments, and a fantastic way to get involved in the weekend’s festivities. Come join us and take your first steps in dance!",
       "title": "Absolute Beginner Track - Bachata",
       "price": "0",
       "signup": "no",
@@ -5596,7 +5838,7 @@ export const modelInitStaticOverwrite =
     },
     "AnD Bachata Instructor - Certification Training": {
       "company": "AnD Academic Network of Dance",
-      "description": "- Open to intermediate-advanced dancers\n- Open to (but not limited to) instructors\n- End-of-Course assessment for certification is optional\n\nThis certification course is designed with the ultimate goal of helping the intermediate-advanced dancers and instructors with delivering quality instruction to their students on the AnD Bachata style and technique. \n\nComprised of 4 Modules:\n1. Bachata History & Evolution (Dance and Musical Instrumentation)\n2. Detailed AnD Technique and Fundamental Basic Movements\n3. Partnering Principles to Lead and Follow the Basics\n4. Recommendations and Best Practices for Instructors\n\nCourse Length: approx ~5-6 hours\n\n** To successfully complete the course and receive your official AnD Certificate of Completion you will need to follow instructions provided to coordinate your end of course assessment. PLEASE NOTE certificate is not automatically issued. We reserve the right to deny a certificate of completion if you are not able to successfully demonstrate sufficient understanding of the content. You are generally only allowed to schedule the assessment once.",
+      "description": "Please go to the registration desk to sign up.\n\n- Open to intermediate-advanced dancers\n- Open to (but not limited to) instructors\n- End-of-Course assessment for certification is optional\n\nThis certification course is designed with the ultimate goal of helping the intermediate-advanced dancers and instructors with delivering quality instruction to their students on the AnD Bachata style and technique. \n\nComprised of 4 Modules:\n1. Bachata History & Evolution (Dance and Musical Instrumentation)\n2. Detailed AnD Technique and Fundamental Basic Movements\n3. Partnering Principles to Lead and Follow the Basics\n4. Recommendations and Best Practices for Instructors\n\nCourse Length: approx ~5-6 hours\n\n** To successfully complete the course and receive your official AnD Certificate of Completion you will need to follow instructions provided to coordinate your end of course assessment. PLEASE NOTE certificate is not automatically issued. We reserve the right to deny a certificate of completion if you are not able to successfully demonstrate sufficient understanding of the content. You are generally only allowed to schedule the assessment once.",
       "title": "AnD Bachata Instructor - Certification Training",
       "price": "200",
       "signup": "yes",
@@ -5606,12 +5848,22 @@ export const modelInitStaticOverwrite =
     },
     "Heels Challenge": {
       "company": "Creations by Rafa",
-      "description": "Join us at the CALDAC convention for the Rafa Heels Bootcamp, a unique experience designed to boost your self-confidence and help you feel great in your own skin! Whether you're a seasoned dancer or a complete beginner, no prior experience is necessary, and wearing heels is entirely optional. From Friday, October 18th, to Sunday, October 20th, 2024, you'll work closely with Rafa, refining your skills and building your confidence. As a special highlight, participants have the option to perform with Rafa on Sunday night—though it's entirely up to you! Please note that this bootcamp requires a separate purchase in addition to your full or VIP pass. Don't miss this chance to elevate your dance journey!",
+      "description": "Please go to the registration desk to sign up.\n\nJoin us at the CALDAC convention for the Rafa Heels Bootcamp, a unique experience designed to boost your self-confidence and help you feel great in your own skin! Whether you're a seasoned dancer or a complete beginner, no prior experience is necessary, and wearing heels is entirely optional. From Friday, October 18th, to Sunday, October 20th, 2024, you'll work closely with Rafa, refining your skills and building your confidence. As a special highlight, participants have the option to perform with Rafa on Sunday night—though it's entirely up to you! Please note that this bootcamp requires a separate purchase in addition to your full or VIP pass. Don't miss this chance to elevate your dance journey!",
       "title": "Heels Challenge",
       "price": "50",
       "signup": "yes",
       "artistNames": [
         "Rafa Gonzalez"
+      ]
+    },
+    "MASTERCLASS - Salsa On1": {
+      "company": "Karen y Ricardo",
+      "description": "Please go to the registration desk to sign up.\n\nJoin Karen and Ricardo, world-renowned Salsa champions, for an exclusive 2-hour Salsa On1 Masterclass designed for advanced dancers. This high-energy workshop will push your skills to the next level, focusing on intricate footwork, precise partner work, and powerful styling techniques. Known for their electrifying performances and unparalleled technique, Karen and Ricardo will guide you through a masterclass that challenges your speed, timing, and creativity on the dance floor.  This workshop is an add-on priced at $50 and requires participants to already hold a Full Pass, VIP Pass, or Sunday All Day Pass. If you're ready to elevate your Salsa On1 game and learn from the best, this masterclass is for you!",
+      "title": "MASTERCLASS - Salsa On1",
+      "price": "50",
+      "signup": "yes",
+      "artistNames": [
+        "Karen y Ricardo"
       ]
     }
   },
