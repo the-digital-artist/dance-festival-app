@@ -4,6 +4,7 @@ import ButtonSmall from '../ButtonSmall';
 import LTouchableOpacity from '../../core/LTouchableOpacity';
 import { memo, PureComponent, ReactNode } from 'react';
 import LText from '../../core/LText';
+import LauncherController from '../../LauncherController';
 
 //Data Item Example:
 // "Debbie Pacheco": {
@@ -30,12 +31,15 @@ class ArtistListItemRenderer extends PureComponent<any, any> {
   }
 
   render(): ReactNode {
-    
+    const artistItem = this.props.item;
+
     const paddingLeftAndRight = 5;
     const itemHeight = 130;
 
     const imageSize = 100;
     const imageOffsetY = (itemHeight - imageSize) / 2
+
+    const artistConnect = ((artistItem.artistconnect as string)!=undefined && artistItem.artistconnect.length>0)?true:false;
 
 
     return (
@@ -70,28 +74,58 @@ class ArtistListItemRenderer extends PureComponent<any, any> {
         }}>{(this.props.item.fullName as string).toLocaleUpperCase()}
         </LText>
 
+        {
+        (artistConnect) &&
+
+        <Image
+          source={LauncherController.getInstance().staticImageList[artistItem.companyImage].imgSrc}
+          style={{
+            position: 'absolute',
+            opacity: 0.8,
+            top: 85, left: 140,
+            width: 35,
+            height: 35,
+          }}
+        >
+        </Image>
+      }
+        {artistConnect &&
+          <LText id='textArtistConnectDeal' style={{
+            position: 'absolute',
+            top: 85, left: 180,
+            width: Dimensions.get('screen').width-210, 
+            fontFamily: 'Cabin-Regular',
+            letterSpacing: 1.5,
+            // backgroundColor: 'indigo',
+            textAlign: 'left',
+            color: '#ffffff',
+            fontSize: 12,
+          }}>{(artistItem.artistconnect as string)}
+          </LText>
+        }
+
         {this.props.item.fullName != '' &&
           <ButtonSmall
             name={("focusItemArtistButton" + this.props.index)}
             style={{
               position: 'absolute',
               left: 140,
-              top: 60,
-              height: 26, width: 120,
+              top: 55,
+              height: 26, width: (artistConnect?155:120),
             }}
-            text={"ARTIST DETAILS"}
+            text={artistConnect?"CONNECT WITH ARTIST":"ARTIST DETAILS"}
             bgBoxVisible={true}
             bgBoxStyle={{
-              backgroundColor: '#d6c8cb',
-              height: 23, width: 120
+              backgroundColor: (artistConnect?'#663848':'#d6c8cb'),
+              height: 23, width: (artistConnect?155:120)
             }}
             fontStyle={{
-              width: 120,
+              width: (artistConnect?155:120),
               fontFamily: 'Cabin-Regular',
               textAlign: 'center',
               textAlignVertical: 'center',
               letterSpacing: 2.0,
-              color: '#010101',
+              color: (artistConnect?'#FFFFFF':'#010101'),
               fontSize: 9,
               top: 6
             }}

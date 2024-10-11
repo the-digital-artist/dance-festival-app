@@ -11,6 +11,7 @@ import ScreenHomeButton from "../screens/ScreenHomeButton";
 import ArtistDetailsBioComponent from "./ArtistDetailsBioComponent";
 import TransitionArtistNavigateDown from "../../transitions/TransitionArtistNavigateDown";
 import LText from "../../core/LText";
+import ArtistDetailsConnectPage from "./ArtistDetailsConnectPage";
 
 
 class ArtistDetailsScreen extends PureComponent {
@@ -50,6 +51,8 @@ class ArtistDetailsScreen extends PureComponent {
         let itemDistance = 40
         let startX = Dimensions.get('screen').width - (20 + 5 + 30 + 30) - ((socialBarData.length - 1) * itemDistance + iconSize / 2);
         // let startX = ((((socialBarData.length - 1) * itemDistance) / 2) - iconSize / 2 - 40)
+
+        const artistConnect = ((item.artistconnect as string) != undefined && item.artistconnect.length > 0) ? true : false;
 
 
         return (
@@ -113,8 +116,13 @@ class ArtistDetailsScreen extends PureComponent {
                                 </Fragment>
                             );
                         })}
+                    {artistConnect &&
+                        <ArtistDetailsConnectPage />
+                    }
 
-                    <ArtistDetailsBioComponent />
+                    {!artistConnect &&
+                        <ArtistDetailsBioComponent />
+                    }
                 </View>
 
 

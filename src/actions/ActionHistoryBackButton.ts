@@ -34,6 +34,10 @@ const ActionHistoryBackButton = () => {
     context.navigationHistory.push({ out: "ArtistDetailsScreen", transition: "TransitionArtistNavigateDown", data: {} });
     TransitionArtistNavigateDown(LauncherController.getInstance().context.artistFocusItem, 0)
     return;
+  } else if (historyItem.out == 'ArtistConnectPage') {
+    context.navigationHistory.push({ out: "ArtistOfferScreen", transition: "TransitionArtistNavigateDown", data: {} });
+    TransitionArtistNavigateDown(LauncherController.getInstance().context.artistFocusItem, 1)
+    return;
   } else if (historyItem.out == 'SchedulerListScreen') {
     context.navigationHistory.push({ out: "SchedulerDetailsScreen", transition: "TransitionSchedulerNavigateDown", data: {} });
     TransitionSchedulerNavigateDown(LauncherController.getInstance().context.schedulerFocusItem, 0)

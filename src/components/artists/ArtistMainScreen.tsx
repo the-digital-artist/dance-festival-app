@@ -3,6 +3,7 @@ import { Dimensions } from "react-native";
 import LComponent from "../../core/LComponent";
 import ArtistDetailsScreen from "./ArtistDetailsScreen";
 import ArtistListScreen from "./ArtistListScreen";
+import ArtistOfferScreen from "./ArtistOfferScreen";
 
 class ArtistMainScreen extends PureComponent {
 
@@ -57,6 +58,22 @@ class ArtistMainScreen extends PureComponent {
                         }}
                     >
                         <ArtistDetailsScreen />
+                    </LComponent>
+
+                    <LComponent
+                        name='artistsOfferScreenContainer'
+                        style={{
+                            position: 'absolute',
+                            backgroundColor: '#dd5163',
+                            width: Dimensions.get('screen').width,
+                            height: Dimensions.get('screen').height,
+                        }}
+                        visualProperties={{
+                            alpha: 0,
+                            x: Dimensions.get('screen').width, y: 0, z: 0
+                        }}
+                    >
+                        <ArtistOfferScreen />
                     </LComponent>
                 </LComponent>
 
