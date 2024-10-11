@@ -56,13 +56,14 @@ class LauncherController extends OperatorStates {
 
             //focus item on artist screen
             artistFocusItem: {
-                fullName: 'Susana Arenas',
+                fullName: '',
                 portrait: "_0023_SUSANA-ARENAS.png",
                 imgSrc: null,
                 shortBio: ``,
-                bio: `Susana Arenas Pedroso is `,
+                bio: ``,
                 facebook: ``,
                 insta: '',
+                artistconnect: ''
             },
             artistFocusItemUpdateListeners: [],
 
@@ -239,6 +240,7 @@ class LauncherController extends OperatorStates {
         [
             { id: 0, itemText: "Artists & DJs", associatedScreenName: "artistsSelectionScreenContainer", imgSrc: null, screenComponentRef: null },
             { id: 1, itemText: "Artist Details", associatedScreenName: "artistsDetailsScreenContainer", imgSrc: null, screenComponentRef: null },
+            { id: 2, itemText: "Offer Screen", associatedScreenName: "artistsOfferScreenContainer", imgSrc: null, screenComponentRef: null },
         ]
 
     schedulerStackIndex = 0
@@ -260,7 +262,7 @@ class LauncherController extends OperatorStates {
         // 'RobotoCondensed-Medium': require('../assets/fonts/RobotoCondensed-Medium.ttf'),
     };
 
-    staticImageList = [];
+    staticImageList = {};
 
     constructor() {
         super();
@@ -395,12 +397,12 @@ class LauncherController extends OperatorStates {
             const expectedFilename = artistNameNorm.toLowerCase().replace(/[.’]/g, "").replace(/[ ]/g, "_").replace(/[&]/g, "-").replace('é','e') + ".png"
             // ('&','-').replaceAll(' ','_').replaceAll('.','').replace(`’`,'');
 
-            for (let j = 0; j < this.staticImageList.length; j++) {
+            for (let i in this.staticImageList) {
                 // const namefile = this.staticImageList[j].fileName.replaceAll('_', ' ').replace('-', '&').replace(`’`,'').replace('.png', '');
                 // console.log(`   expectedFilename: ${expectedFilename} - checking asset name: ${this.staticImageList[j].fileName}` )
-                if (this.staticImageList[j].fileName == expectedFilename) {
-                    artistItem['imgSrc'] = this.staticImageList[j].imgSrc;
-                    // console.log('          ' + ' -> ' + this.staticImageList[j].fileName)
+                if (this.staticImageList[i].fileName == expectedFilename) {
+                    artistItem['imgSrc'] = this.staticImageList[i].imgSrc;
+                    console.log('          ' + ' -> ' + this.staticImageList[i].fileName)
                     break;
                 }
             }

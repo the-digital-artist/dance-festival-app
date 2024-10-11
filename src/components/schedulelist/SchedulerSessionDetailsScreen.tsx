@@ -10,6 +10,7 @@ import NavBar from "../navbar/NavBar";
 import ScreenHeader from "../screens/ScreenHeader";
 import ScreenHomeButton from "../screens/ScreenHomeButton";
 import TransitionSchedulerNavigateDown from "../../transitions/TransitionSchedulerNavigateDown";
+import SubHeadline from "../SubHeadline";
 
 
 class SchedulerSessionDetailsScreen extends PureComponent {
@@ -30,7 +31,12 @@ class SchedulerSessionDetailsScreen extends PureComponent {
         const preSignupRequired = ((item.sessionMainTitle as string).toLowerCase().indexOf("absolute beginner") == -1)
 
         const specialTrackData = DataModel.getInstance().static.dataSpecialSessions[item.sessionMainTitle];
-        const companyString = artistData1.artistCompany != undefined ? artistData1.artistCompany : '';
+
+        let companyImage = null;
+        if ((artistData1.artistCompany != undefined && artistData1.companyImage != undefined && artistData1.companyImage != '')) {
+            console.log("ScheduleListItem: artistData1" + artistData1.companyImage);
+            companyImage = LauncherController.getInstance().staticImageList[artistData1.companyImage].imgSrc
+        }
 
         // const scrollViewContent =
         //     Platform.OS == 'ios' ?
@@ -84,19 +90,7 @@ class SchedulerSessionDetailsScreen extends PureComponent {
                     }}
                     />
 
-                    <LText id='headerSessionDetails' style={{
-                        position: 'absolute',
-                        top: 150, left: 26,
-                        fontFamily: 'Cabin-Regular',
-                        // backgroundColor: 'skyblue',
-                        textAlign: 'left',
-                        letterSpacing: 1.0,
-                        opacity: 0.5,
-                        color: '#FFFFFF',
-                        fontSize: 9,
-                    }}>
-                        {"SESSION DETAILS"}
-                    </LText>
+                    <SubHeadline text={"SESSION DETAILS"} style={{ top: 150, left: 26 }} />
 
                     <Image
                         // name={("ScheduleListArtistDetailsButton" + item.fullName)}
@@ -155,22 +149,22 @@ class SchedulerSessionDetailsScreen extends PureComponent {
                                 {"PRE-SIGNUP REQUIRED"}
                             </LText >
                         }
-                          {
-        (!preSignupRequired) &&
+                        {
+                            (companyImage != null) &&
 
-        <Image
-          source={LauncherController.getInstance().staticImageList[LauncherController.getInstance().staticImageList.length - 1].imgSrc}
-          style={{
-            position: 'absolute',
-            opacity: 0.5,
-            top: 10,
-            left: Dimensions.get('screen').width -145,
-            width: 50,
-            height: 50,
-          }}
-        >
-        </Image>
-      }
+                            <Image
+                                source={companyImage}
+                                style={{
+                                    position: 'absolute',
+                                    opacity: 0.5,
+                                    top: 10,
+                                    left: Dimensions.get('screen').width - 145,
+                                    width: 50,
+                                    height: 50,
+                                }}
+                            >
+                            </Image>
+                        }
 
 
                         <LText allowFontScaling={false} id='textSessionMainTitle' style={{
@@ -246,42 +240,42 @@ class SchedulerSessionDetailsScreen extends PureComponent {
                 </LText>
 
                 <ButtonSmall
-        name={("artistScheduleDetailsButton" + item.id)
-        }
-        source={artistData1 ? artistData1.imgSrc : null}
-        style={{
-          position: 'absolute',
-          // backgroundColor: 'skyblue',
-          top: 210,
-          right:  45,
-          width: 80,
-          height: 80,
-        }}
-        imageStyle={
-          [{
-            position: 'absolute',
-            right: undefined, left: undefined,
-            width: 80,
-            height: 80,
-            resizeMode: 'cover',
-            opacity: 0.9,
-          }]}
-        bgBoxVisible={true}
-        bgBoxStyle={{
-          backgroundColor: '#232323',
-          opacity: 0.1,
-          left:-10,
-          top:-10,
-          width: 100,
-          height: 100,
-        }}
-        visualProperties={{ alpha: 1 }}
-        onSelect={() => {
-          if (artistData1 == undefined) return;
-          LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage", data: {} });
-          TransitionLinkToArtistPage(artistData1)
-        }}
-      />
+                    name={("artistScheduleDetailsButton" + item.id)
+                    }
+                    source={artistData1 ? artistData1.imgSrc : null}
+                    style={{
+                        position: 'absolute',
+                        // backgroundColor: 'skyblue',
+                        top: 210,
+                        right: 45,
+                        width: 80,
+                        height: 80,
+                    }}
+                    imageStyle={
+                        [{
+                            position: 'absolute',
+                            right: undefined, left: undefined,
+                            width: 80,
+                            height: 80,
+                            resizeMode: 'cover',
+                            opacity: 0.9,
+                        }]}
+                    bgBoxVisible={true}
+                    bgBoxStyle={{
+                        backgroundColor: '#232323',
+                        opacity: 0.1,
+                        left: -10,
+                        top: -10,
+                        width: 100,
+                        height: 100,
+                    }}
+                    visualProperties={{ alpha: 1 }}
+                    onSelect={() => {
+                        if (artistData1 == undefined) return;
+                        LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage", data: {} });
+                        TransitionLinkToArtistPage(artistData1)
+                    }}
+                />
 
                 {specialTrackData != undefined &&
                     <ScrollView
@@ -294,7 +288,7 @@ class SchedulerSessionDetailsScreen extends PureComponent {
                         }}>
 
 
-                         
+
 
                         <View
                             style={{
@@ -306,7 +300,7 @@ class SchedulerSessionDetailsScreen extends PureComponent {
                             }}>
 
 
-
+                            <SubHeadline text={"INSTRUCTORS / ARTISTS"} />
                             <LText id='headlineArtistInfo' style={{
                                 top: 0, left: 0,
                                 fontFamily: 'Cabin-Regular',
@@ -317,7 +311,7 @@ class SchedulerSessionDetailsScreen extends PureComponent {
                                 color: '#FFFFFF',
                                 fontSize: 9,
                             }}>
-                                {"INSTRUCTORS / ARTISTS"}
+                                {""}
                             </LText>
 
                             <LText id='textSessionArtistName' style={{
@@ -325,7 +319,7 @@ class SchedulerSessionDetailsScreen extends PureComponent {
                                 top: 0, left: 30,
                                 width: 190,
                                 fontFamily: 'Cabin-Regular',
-          letterSpacing: 2.0,
+                                letterSpacing: 2.0,
                                 //   backgroundColor: 'indigo',
                                 textAlign: 'left',
                                 color: '#e4a35e',
@@ -347,7 +341,7 @@ class SchedulerSessionDetailsScreen extends PureComponent {
                                     color: '#EFEFEF',
                                     fontSize: 14,
                                 }}>
-                                {artistData1.bio ? (artistData1.bio as string).slice(0,90)+"..." : "Unfortunately, this artist did not provide any information."}
+                                {artistData1.bio ? (artistData1.bio as string).slice(0, 90) + "..." : "Unfortunately, this artist did not provide any information."}
                             </LText>
 
 
@@ -382,25 +376,16 @@ class SchedulerSessionDetailsScreen extends PureComponent {
                                 visualProperties={{ alpha: 1 }}
                                 onSelect={() => {
                                     if (artistData1 == undefined) return;
-                                    LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerSessionDetailsScreen", transition: "TransitionLinkToArtistPage", data:{} });
+                                    LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerSessionDetailsScreen", transition: "TransitionLinkToArtistPage", data: {} });
                                     TransitionLinkToArtistPage(artistData1)
                                 }}
                             />
 
-                            <LText id='headlineDescription' style={{
-                                marginTop: 30,
-                                left: 0,
-                                top: 0,
-                                fontFamily: 'Cabin-Regular',
-                                // backgroundColor: 'skyblue',
-                                textAlign: 'left',
-                                letterSpacing: 1.0,
-                                opacity: 0.5,
-                                color: '#FFFFFF',
-                                fontSize: 9,
-                            }}>
-                                {"DESCRIPTION"}
-                            </LText>
+                            <SubHeadline
+                                text={"DESCRIPTION"}
+                                style={{ position: 'relative', marginTop: 20 }} />
+
+
                             <LText id='specialTrackFocusDescription' style={{
                                 marginTop: 10,
                                 top: 0, left: 30,
@@ -425,7 +410,7 @@ class SchedulerSessionDetailsScreen extends PureComponent {
                     color='#f8f6d3'
                     textStyle={{ left: 50 }}
                     imgSrc={require('../../../assets/header-schedule-bg.png')} />
-                    
+
                 <ScreenHomeButton />
 
 
@@ -439,9 +424,9 @@ class SchedulerSessionDetailsScreen extends PureComponent {
                         opacity: 0.9
                     }}
                     visualProperties={{ alpha: 1, x: 0, y: 0, z: 0 }}
-                    onSelect={() => { 
+                    onSelect={() => {
                         context.navigationHistory.push({ out: "SchedulerDetailsScreen", transition: "TransitionSchedulerNavigateDown", data: {} });
-                        TransitionSchedulerNavigateDown(LauncherController.getInstance().context.schedulerFocusItem, 0)    
+                        TransitionSchedulerNavigateDown(LauncherController.getInstance().context.schedulerFocusItem, 0)
                     }}
                     source={require('../../../assets/stack-backicon.png')}
                 />

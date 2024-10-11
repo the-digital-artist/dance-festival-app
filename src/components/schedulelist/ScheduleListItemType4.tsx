@@ -10,18 +10,22 @@ import ActionSessionListOnDetailsBtn from '../../actions/ActionSessionListOnDeta
 
 const ScheduleListItemType4 = ({ item }) => {
 
-  // console.log("ScheduleListItem: " + JSON.stringify(item, null, 2));
+  console.log("ScheduleListItem4: "+"| artistName: " + item.artistName+"| artistOne: " + item.artistOne+"| companyImage: " +DataModel.getInstance().static.dataArtists[item.artistOne].companyImage);
   if (item.itemType != 'type4') return;
 
   const sessionCategoryName = (item.level != undefined && item.level == 'M') ? " Masterclass " : " Special Track "
   const artistData1 = DataModel.getInstance().static.dataArtists[item.artistOne];
-  const artistData2 = item.artistTwo ? DataModel.getInstance().static.dataArtists[item.artistTwo] : null;
+  // const artistData2 = item.artistTwo ? DataModel.getInstance().static.dataArtists[item.artistTwo] : null;
   const verticalOffsetTitleLength = item.lineCount != undefined ? (item.lineCount * 19) : 19;
   const preSignupRequired = ((item.sessionMainTitle as string).toLowerCase().indexOf("absolute beginner") == -1)
 
+  let companyImage = null;
+  if((artistData1.artistCompany!=undefined && artistData1.companyImage != undefined && artistData1.companyImage!='') &&
+  LauncherController.getInstance().staticImageList[artistData1.companyImage]!=undefined) {
+    console.log("------ScheduleListItem4: "+"| companyImage: " + artistData1.companyImage);
+    companyImage = LauncherController.getInstance().staticImageList[artistData1.companyImage].imgSrc
+  }
 
-
-  const companyString = artistData1.artistCompany != undefined ? artistData1.artistCompany : '';
   return (
     <>
       <View id='bg' style={{
@@ -195,10 +199,10 @@ const ScheduleListItemType4 = ({ item }) => {
 
 
       {
-        (!preSignupRequired) &&
+        (companyImage!=null) &&
 
         <Image
-          source={LauncherController.getInstance().staticImageList[LauncherController.getInstance().staticImageList.length - 1].imgSrc}
+          source={companyImage}
           style={{
             position: 'absolute',
             opacity: 0.8,
