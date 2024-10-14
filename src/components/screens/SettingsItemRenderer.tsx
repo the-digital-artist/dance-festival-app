@@ -9,17 +9,6 @@ const SettingsItemRenderer = ({ item, index }) => {
 
   return (
     <>
-      <Image
-        style={{
-          // backgroundColor: 'skyblue',
-          top: 0, left: 0, position: 'absolute',
-          width: Dimensions.get('screen').width,
-          height: SettingsScreen.settingsItemRendererHeight,
-          resizeMode: "repeat",
-          opacity: 0.02
-        }}
-        source={require('../../../assets/tabbar/tabbar_bg.png')}
-      />
       <View
         style={{
           backgroundColor: 'transparent',
@@ -29,41 +18,30 @@ const SettingsItemRenderer = ({ item, index }) => {
           borderTopColor: '#edc36a',
           borderTopWidth: 0,
           borderBottomColor: 'black',
-          borderBottomWidth: StyleSheet.hairlineWidth,
+          borderBottomWidth: index>=SettingsScreen.settingsListData.length-1?0:StyleSheet.hairlineWidth,
         }}>
 
         <>
-          {/* <Image
-            source={item.imgSrc}
-            style={{
-              position: 'absolute', resizeMode: 'cover', opacity: 1.0,
-              left: 0, top: 0, width: 130, height: 130,
-            }}
-          /> */}
-
-
           <ButtonSmall
             name={("moreScreenListItemAction"+index)}
             source={null}
             style={{
               position: 'absolute',
-              left: paddingLeftAndRight,
+              left: 0,
               top: 10,
-              height: 30, width: Dimensions.get('screen').width - (2 * 30),
+              height: 30, width: Dimensions.get('screen').width,
             }}
             text={(item.title as string).toLocaleUpperCase()}
-            bgBoxVisible={true}
-            bgBoxStyle={{
-              // backgroundColor: '#EF4260',
-              height: 30, width: Dimensions.get('screen').width - (2 * 30)
-            }}
+            bgBoxVisible={false}
             fontStyle={{
+              left: 30,
               width: Dimensions.get('screen').width - (2 * 30),
               fontFamily: 'Cabin-Regular',
               textAlign: 'left',
               textAlignVertical: 'center',
               letterSpacing: 2.0,
               color: '#FFFFFF',
+              opacity: 0.7,
               fontSize: 12,
             }}
             visualProperties={{ alpha: 1 }}
