@@ -394,16 +394,16 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
                   right: (item.orientation == 'right' ? undefined : (4 + 33)),
                   left: (item.orientation == 'left' ? undefined : (4 + 33)),
                   top: (67 + verticalOffsetTitleLength),
-                  height: 23, width: 120,
+                  height: 23, width: artistConnect?170:120,
                 }}
-                text={artistConnect?'ARTIST CONNECT':"ARTIST DETAILS"}
+                text={artistConnect?'CONNECT WITH ARTIST':"ARTIST DETAILS"}
                 bgBoxVisible={true}
                 bgBoxStyle={{
-                  backgroundColor: (artistConnect?'#663848':'#1d1c24'),
-                  height: 23, width: 120
+                  backgroundColor: (artistConnect?'#984055':'#1d1c24'),
+                  height: 23, width: artistConnect?170:120,
                 }}
                 fontStyle={{
-                  width: 120,
+                  width: artistConnect?170:120,
                   top: ((Platform.OS == 'android'))?-2:5,
                   color: (artistConnect?'#FFFFFF':'#FFFFFF'),
                   fontFamily: 'Cabin-Regular',
