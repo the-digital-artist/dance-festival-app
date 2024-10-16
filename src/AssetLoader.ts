@@ -30,7 +30,7 @@ class AssetLoader {
             imageList['maissaa_bachir'] = { fileName:'maissaa_bachir.png', imgSrc: require('../assets/portraits/maissaa_bachir.png')}; 
             imageList['sisy_ayala'] = { fileName:'sisy_ayala.png', imgSrc: require('../assets/portraits/sisy_ayala.png')}; 
             imageList['rafa_gonzalez'] = { fileName:'rafa_gonzalez.png', imgSrc: require('../assets/portraits/rafa_gonzalez.png')}; 
-            // imageList['lorena_charry'] = { fileName:'lorena_charry.png', imgSrc: require('../assets/portraits/lorena_charry.png')}; 
+            imageList['lorena_charry'] = { fileName:'lorena_charry.png', imgSrc: require('../assets/portraits/lorena_charry.png')}; 
             imageList['kebrina_dejesus'] = { fileName:'kebrina_dejesus.png', imgSrc: require('../assets/portraits/kebrina_dejesus.png')}; 
             imageList['raul_-_delia'] = { fileName:'raul_-_delia.png', imgSrc: require('../assets/portraits/raul_-_delia.png')}; 
             imageList['luisa_-_paulo'] = { fileName:'luisa_-_paulo.png', imgSrc: require('../assets/portraits/luisa_-_paulo.png')}; 
@@ -54,9 +54,10 @@ class AssetLoader {
             imageList['edwin_-_ahtoy'] = { fileName:'edwin_-_ahtoy.png', imgSrc: require('../assets/portraits/edwin_-_ahtoy.png')}; 
             imageList['joseal'] = { fileName:'joseal.png', imgSrc: require('../assets/portraits/joseal.png')}; 
             imageList['celeste_williamson'] = { fileName:'celeste_williamson.png', imgSrc: require('../assets/portraits/celeste_williamson.png')}; 
-            // imageList['yvonne_-_rudy'] = { fileName:'yvonne_-_rudy.png', imgSrc: require('../assets/portraits/yvonne_-_rudy.png')}; 
+            imageList['jessica_quiles'] = { fileName:'jessica_quiles.png', imgSrc: require('../assets/portraits/jessica_quiles.png')}; 
+            imageList['yvonne_-_rudy'] = { fileName:'yvonne_-_rudy.png', imgSrc: require('../assets/portraits/yvonne_-_rudy.png')}; 
             imageList['rna_dance_company'] = { fileName:'rna_dance_company.png', imgSrc: require('../assets/portraits/rna_dance_company.png')}; 
-            // imageList['ernesto_-_denisse'] = { fileName:'ernesto_-_denisse.png', imgSrc: require('../assets/portraits/ernesto_-_denisse.png')}; 
+            imageList['ernesto_-_denisse'] = { fileName:'ernesto_-_denisse.png', imgSrc: require('../assets/portraits/ernesto_-_denisse.png')}; 
             imageList['cam'] = { fileName:'cam.png', imgSrc: require('../assets/portraits/cam.png')}; 
             imageList['adrian_tenorio'] = { fileName:'adrian_tenorio.png', imgSrc: require('../assets/portraits/adrian_tenorio.png')}; 
             imageList['dejon_-_clo'] = { fileName:'dejon_-_clo.png', imgSrc: require('../assets/portraits/dejon_-_clo.png')}; 
@@ -67,7 +68,6 @@ class AssetLoader {
             imageList['chris_-_alexus'] = { fileName:'chris_-_alexus.png', imgSrc: require('../assets/portraits/chris_-_alexus.png')}; 
             imageList['marc_-_rose'] = { fileName:'marc_-_rose.png', imgSrc: require('../assets/portraits/marc_-_rose.png')}; 
             imageList['ataca_-_alemana'] = { fileName:'ataca_-_alemana.png', imgSrc: require('../assets/portraits/ataca_-_alemana.png')}; 
-            imageList['jessica_quiles'] = { fileName:'jessica_quiles.png', imgSrc: require('../assets/portraits/jessica_quiles.png')}; 
             imageList['jovan_casanova'] = { fileName:'jovan_casanova.png', imgSrc: require('../assets/portraits/jovan_casanova.png')}; 
             imageList['fuego_-_hielo'] = { fileName:'fuego_-_hielo.png', imgSrc: require('../assets/portraits/fuego_-_hielo.png')}; 
             imageList['rafael_-_carine'] = { fileName:'rafael_-_carine.png', imgSrc: require('../assets/portraits/rafael_-_carine.png')}; 
@@ -80,7 +80,7 @@ class AssetLoader {
             imageList['desi_caliente'] = { fileName:'desi_caliente.png', imgSrc: require('../assets/portraits/desi_caliente.png')}; 
             imageList['tito_garcia'] = { fileName:'tito_garcia.png', imgSrc: require('../assets/portraits/tito_garcia.png')}; 
             imageList['rose_turuka'] = { fileName:'rose_turuka.png', imgSrc: require('../assets/portraits/rose_turuka.png')}; 
-            // imageList['jazmyne_lewis'] = { fileName:'jazmyne_lewis.png', imgSrc: require('../assets/portraits/jazmyne_lewis.png')}; 
+            imageList['jazmyne_lewis'] = { fileName:'jazmyne_lewis.png', imgSrc: require('../assets/portraits/jazmyne_lewis.png')}; 
             imageList['bachatito'] = { fileName:'bachatito.png', imgSrc: require('../assets/portraits/bachatito.png')}; 
             imageList['alemana'] = { fileName:'alemana.png', imgSrc: require('../assets/portraits/alemana.png')}; 
             imageList['daniel_-_kathryn'] = { fileName:'daniel_-_kathryn.png', imgSrc: require('../assets/portraits/daniel_-_kathryn.png')}; 
@@ -88,6 +88,8 @@ class AssetLoader {
             imageList['diego_-_yurley'] = { fileName:'diego_-_yurley.png', imgSrc: require('../assets/portraits/diego_-_yurley.png')}; 
             imageList['ebonie_lee'] = { fileName:'ebonie_lee.png', imgSrc: require('../assets/portraits/ebonie_lee.png')}; 
             imageList['eric_-_marcela'] = { fileName:'eric_-_marcela.png', imgSrc: require('../assets/portraits/eric_-_marcela.png')}; 
+            
+     
         } catch (error) {
             console.log('Could not load asset');
         };
