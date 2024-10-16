@@ -5,6 +5,7 @@ import ScheduleListItemType2 from './ScheduleListItemType2';
 import ScheduleListItemType3 from './ScheduleListItemType3';
 import ScheduleListItemType4 from './ScheduleListItemType4';
 import LText from '../../core/LText';
+import ScheduleListItemType7 from './ScheduleListItemType7';
 
 
 const ScheduleListItem = ({ item, index }) => {
@@ -34,6 +35,8 @@ const ScheduleListItem = ({ item, index }) => {
     itemHeight = (item.sessionMainTitle as string).length > 20 ? 200 : 185;
   else if (item.itemType == 'type5')
     itemHeight = 100;
+  else if (item.itemType == 'type7')
+    itemHeight = (item.sessionSubtitle == "" ? 80 : 120);
 
   if (item.itemType == 'type1' && item.dateString == "Thu, October 17, 2024") {
     itemHeight = 170;
@@ -108,13 +111,14 @@ const ScheduleListItem = ({ item, index }) => {
         {item.itemType == "type2" ? <ScheduleListItemType2 item={item} /> : null}
         {item.itemType == "type3" ? <ScheduleListItemType3 item={item} /> : null}
         {item.itemType == "type4" ? <ScheduleListItemType4 item={item} /> : null}
+        {item.itemType == "type7" ? <ScheduleListItemType7 item={item} /> : null}
 
         {item.itemType == "type1" && item.group.length > 1 ?
           <>
-            {false && index <= 1 && <Text allowFontScaling={false} id='textGroupTitle' style={{
+            {false && <Text allowFontScaling={false} id='textGroupTitle' style={{
               position: 'absolute',
               top: 8,
-              left: 90,
+              left: 120,
               width: 300,
               fontFamily: 'Cabin-Regular',
               letterSpacing: 1.0,
@@ -122,7 +126,7 @@ const ScheduleListItem = ({ item, index }) => {
               color: '#90a0b9',
               fontSize: 12,
             }}>
-              {("Browse Sessions In Different Rooms" as string).toLocaleUpperCase()}
+              {("Workshops" as string).toLocaleUpperCase()}
             </Text>
             }
 
