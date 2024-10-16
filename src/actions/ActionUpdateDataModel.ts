@@ -16,11 +16,12 @@ const ActionUpdateDataModelWithRemote = async (params = {noProcessing: false,  t
         setTimeout(() => { fetchController1.abort() }, params.timeOut)
 
         const buildParam = `${Application.nativeBuildVersion}`;
+        const osParam = `${Application.nativeBuildVersion}`;
         const modelParam = `${ DataModel.getInstance().static.modelVersion}`;
         const updateParam = `${ LauncherController.getInstance().updateInfo}`;
 
         const urlVersion = `${dataModel.apiUrlBase}${dataModel.apiModelUpdateVersion}`;
-        const urlContent = `${dataModel.apiUrlBase}${dataModel.apiModelUpdateContent}`;
+        const urlContent = `${dataModel.apiUrlBase}${dataModel.apiModelUpdateContent}?nativeBuildVersion=${buildParam}`;
 
 
         console.log("ActionUpdateDataModel -- fetch(dataModel.modelRemoteVersionCheckUrl: " + urlVersion);

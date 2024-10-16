@@ -5,7 +5,7 @@ export const modelInitStaticOverwrite =
   "apiUrlBase": "https://odwoytfhtf.execute-api.us-west-1.amazonaws.com",
   "apiModelUpdateContent": "/content",
   "apiModelUpdateVersion": "/version",
-  "modelRemoteUpdateInterval": 20000,
+  "modelRemoteUpdateInterval": 10000,
   "happeningNowUpdateInterval": 30000,
   "dataTicketSales": {
     "earlyBirdStartTimeString": "2024-07-21T05:00:00.000"
