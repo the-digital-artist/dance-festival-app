@@ -71,8 +71,9 @@ class ScheduleListItemType1 extends PureComponent<any, any> {
 
     const reduceInnerTileHeightBy = item.dateString != "Thu, October 17, 2024"?30:20;
 
-    const artistConnect = ((artistData1.artistconnect as string)!=undefined && artistData1.artistconnect.length>0)?true:false;
+    // const artistConnect = ((artistData1.artistconnect as string)!=undefined && artistData1.artistconnect.length>0)?true:false;
 
+    const artistConnect = false;
 
     // console.log("ScheduleListItemType1 tileLength " + this.props.tileWidth + " artistImageWidth: "+ imageWidthArtistImage);
 

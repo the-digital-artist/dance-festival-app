@@ -39,8 +39,8 @@ class ArtistListItemRenderer extends PureComponent<any, any> {
     const imageSize = 100;
     const imageOffsetY = (itemHeight - imageSize) / 2
 
-    const artistConnect = ((artistItem.artistconnect as string)!=undefined && artistItem.artistconnect.length>0)?true:false;
-
+    // const artistConnect = ((artistItem.artistconnect as string)!=undefined && artistItem.artistconnect.length>0)?true:false;
+    const artistConnect = false;
 
     return (
       <>
