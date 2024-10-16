@@ -14,7 +14,7 @@
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "com.thedigitalartist.caldac.festivalapp",
-      "buildNumber": "41",
+      "buildNumber": "44",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "LSApplicationQueriesSchemes": [
@@ -31,8 +31,8 @@
         "backgroundImage": "./assets/adaptive-icon-bg.png",
         "backgroundColor": "#567f9e"
       },
-      "package": "com.thedigitalartist.caldac.festivalapp",
-      "versionCode": 17
+      "package": "org.caldac.festivalplanner",
+      "versionCode": 21
     },
     "extra": {
       "eas": {
