@@ -34,7 +34,7 @@ class SchedulerSessionDetailsScreen extends PureComponent {
 
         let companyImage = null;
         if ((artistData1.artistCompany != undefined && artistData1.companyImage != undefined && artistData1.companyImage != '')) {
-            console.log("ScheduleListItem: artistData1" + artistData1.companyImage);
+            // console.log("ScheduleListItem: artistData1" + artistData1.companyImage);
             companyImage = LauncherController.getInstance().staticImageList[artistData1.companyImage].imgSrc
         }
 

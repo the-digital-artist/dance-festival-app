@@ -149,14 +149,12 @@ class ArtistDetailsConnectPage extends PureComponent<any, any> {
                     onScrollEndDrag={this.scrollHandler}
                     onScrollToTop={this.scrollHandler}
                 >
-
                     <View style={{
                         //  backgroundColor: 'skyblue',
                         top: 0, left: padding,
                         width: Dimensions.get('screen').width - 2 * padding,
                         flex: 1, flexDirection: 'column',
                     }}>
-
 
                         {/* <Image
                             style={{
@@ -173,7 +171,10 @@ class ArtistDetailsConnectPage extends PureComponent<any, any> {
 
                         <SubHeadline
                             text={"CONNECT WITH ARTIST"}
-                            style={{ position: 'relative', marginTop: 30, marginBottom: 15 }}
+                            style={{ position: 'relative', 
+                                marginTop: 30, 
+                                marginBottom: 15
+                             }}
                         />
                         <LText
                             id='academyoffer'
@@ -192,8 +193,8 @@ class ArtistDetailsConnectPage extends PureComponent<any, any> {
                         <View
                             style={{
                                 //  backgroundColor: 'skyblue',
-                                width: (Dimensions.get('screen').width - 2 * 30),
-                                height: 130,
+                                width: (Dimensions.get('screen').width - 2 * padding),
+                                height: (Dimensions.get('screen').width - 2 * padding) * (400 / 1200),
                                 opacity: 1.0
                             }}
                         >
@@ -217,14 +218,17 @@ class ArtistDetailsConnectPage extends PureComponent<any, any> {
                                     resizeMode: "contain",
                                     opacity: 1.0
                                 }}
-                                source={require('../../../assets/artistconnect/dejon-clo-banner.png')} />
+                                source={{
+                                    uri: `https://the-artist.digital/artistconnect/${item.portrait}-banner.png`,
+                                  }}
+                                />
 
 
                         </View>
                         <ButtonSmall
                             name={("claimOfferButton" + 129467)}
                             style={{
-                                top: -55,
+                                top: -40,
                                 left: Dimensions.get('screen').width / 2 - padding - (offerValid ? 155 : 120) / 2,
                                 height: 30, width: (offerValid ? 155 : 120),
 
@@ -256,7 +260,7 @@ class ArtistDetailsConnectPage extends PureComponent<any, any> {
 
 
 
-                        <SubHeadline
+                        {/* <SubHeadline
                             text={"GALLERY"}
                             style={{ position: 'relative', marginTop: 5, marginBottom: 15 }}
                         />
@@ -272,13 +276,63 @@ class ArtistDetailsConnectPage extends PureComponent<any, any> {
                                 opacity: 1.0
                             }}
                             source={require('../../../assets/artistconnect/dejon-clo-gallerythumb.png')} />
+ */}
+
+                        {item.portrait == 'dejon_-_clo' && <>
+                            <SubHeadline
+                                text={"ALL SESSIONS"}
+                                style={{ position: 'relative', 
+                                    // marginTop: 30, 
+                                    marginBottom: 15
+                                }}
+                            />
+
+                            <View
+                                style={{
+                                    //    marginTop: 15,
+                                    // top: 210, left: padding, 
+                                    width: Dimensions.get('screen').width - 2 * padding,
+                                    marginTop: 15, marginBottom: 30,
+                                    height: 150,
+                                    opacity: 1.0
+                                }}>
+                                <View
+                                    style={{
+                                        width: Dimensions.get('screen').width - 2 * padding,
+                                        marginTop: 0, marginBottom: 30,
+                                        height: 75,
+                                    }}>
+
+                                    <ArtistDetailsScheduleItem
+                                        item={this.items[0]}
+                                        rowHeight={75}
+                                        tileWidth={Dimensions.get('screen').width - 2 * padding}
+                                        tileOffsetTop={0}
+                                        tileOffsetLeft={0} />
+                                </View>
 
 
+                                <View
+                                    style={{
+                                        width: Dimensions.get('screen').width - 2 * padding,
+                                        marginTop: 0, marginBottom: 30,
+                                        height: 75,
+                                    }}>
+                                    <ArtistDetailsScheduleItem
+                                        item={this.items[1]}
+                                        rowHeight={75}
+                                        tileWidth={Dimensions.get('screen').width - 2 * padding}
+                                        tileOffsetTop={0}
+                                        tileOffsetLeft={0} />
+                                </View>
 
+                            </View>
+                        </>
 
+                        }
                         <SubHeadline
                             text={"BIOGRAPHIES"}
-                            style={{ position: 'relative', marginTop: 30, marginBottom: 15 }}
+                            style={{ position: 'relative', marginTop: 10, marginBottom: 15 }}
                         />
 
                         <LText
@@ -311,51 +365,6 @@ class ArtistDetailsConnectPage extends PureComponent<any, any> {
 
 
 
-                        <SubHeadline
-                            text={"ALL SESSIONS"}
-                            style={{ position: 'relative', marginTop: 30, marginBottom: 15 }}
-                        />
-
-                        <View
-                            style={{
-                                //    marginTop: 15,
-                                // top: 210, left: padding, 
-                                width: Dimensions.get('screen').width - 2 * padding,
-                                marginTop: 15, marginBottom: 30,
-                                height: 150,
-                                opacity: 1.0
-                            }}>
-                            <View
-                                style={{
-                                    width: Dimensions.get('screen').width - 2 * padding,
-                                    marginTop: 0, marginBottom: 30,
-                                    height: 75,
-                                }}>
-
-                                <ArtistDetailsScheduleItem
-                                    item={this.items[0]}
-                                    rowHeight={75}
-                                    tileWidth={Dimensions.get('screen').width - 2 * padding}
-                                    tileOffsetTop={0}
-                                    tileOffsetLeft={0} />
-                            </View>
-
-
-                            <View
-                                style={{
-                                    width: Dimensions.get('screen').width - 2 * padding,
-                                    marginTop: 0, marginBottom: 30,
-                                    height: 75,
-                                }}>
-                                <ArtistDetailsScheduleItem
-                                    item={this.items[1]}
-                                    rowHeight={75}
-                                    tileWidth={Dimensions.get('screen').width - 2 * padding}
-                                    tileOffsetTop={0}
-                                    tileOffsetLeft={0} />
-                            </View>
-
-                        </View>
                     </View>
 
                 </ScrollView>

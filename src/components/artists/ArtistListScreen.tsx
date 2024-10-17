@@ -59,7 +59,7 @@ class ArtistListScreen extends PureComponent implements IDataDependentComponent 
             dataCurrentSection.sort((a, b) => { return a.fullName.localeCompare(b.fullName, 'en-US'); });
             this.listDataPreProcessed.push({ title: letter, data: dataCurrentSection })
         }
-        console.log("this.state.searchTextInput" + this.state.searchTextInput)
+        // console.log("this.state.searchTextInput" + this.state.searchTextInput)
     }
 
     render() {

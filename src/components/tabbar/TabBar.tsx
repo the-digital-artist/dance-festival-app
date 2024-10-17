@@ -24,7 +24,7 @@ const TabBar = (props) => {
     const currentIndex = useSharedValue(0);
 
     useEffect(() => {
-        console.log('useeffect')
+        // console.log('useeffect')
         TransitionTabbarSelect(LauncherController.getInstance().tabBarInitialIndex, currentIndex, null, false);
     }, [currentIndex]);
 

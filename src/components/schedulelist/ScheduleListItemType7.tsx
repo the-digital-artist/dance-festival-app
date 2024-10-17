@@ -5,10 +5,12 @@ import LText from '../../core/LText';
 
 const ScheduleListItemType7 = ({ item }) => {
 
-  // console.log("ScheduleListItem: " + JSON.stringify(item, null, 2));
+  // console.log("ScheduleListItem7: ");
   if (item.itemType != 'type7') return;
 
-  const fontSizeMainTitle = 20;
+  let mainTitleColor = '#e1e7ac';
+  if (item.sessionMainTitle.toLowerCase() == 'registration')
+    mainTitleColor = '#8989BB'
 
   return (
     <>
@@ -24,14 +26,14 @@ const ScheduleListItemType7 = ({ item }) => {
       />
       <LText allowFontScaling={false} id='textSessionMainTitle' style={{
         position: 'absolute',
-        top: 40,
+        top: 35,
         left: 70,
         width: Dimensions.get('screen').width - 60-35,
         fontFamily: 'DINCondensed-Bold',
         // backgroundColor: 'indigo',
-        letterSpacing: 0.7,
+        letterSpacing: 0.5,
         textAlign: 'left',
-        color: '#e1e7ac',
+        color: mainTitleColor,
         fontSize: 22,
         opacity: 1.0
       }}>
@@ -59,14 +61,18 @@ const ScheduleListItemType7 = ({ item }) => {
         position: 'absolute',
         top: 10,
         right: 10,
+        
         fontFamily: 'Cabin-Regular',
         letterSpacing: 1.2,
         opacity: 0.8,
         padding: 2,
-        backgroundColor: '#e7e7e2',
-        // backgroundColor: '#600f2c',
+        backgroundColor: '#382b38',
         textAlign: 'left',
-        color: '#232323',
+        color: '#bcd4ee',
+
+        // backgroundColor: '#e7e7e2',
+        // backgroundColor: '#600f2c',
+        // color: '#232323',
         fontSize: 11,
       }}>
         {(item.room ? " "+(item.room as string).toLocaleUpperCase() + " " : "")}

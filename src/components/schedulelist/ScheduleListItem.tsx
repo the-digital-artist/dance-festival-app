@@ -6,10 +6,11 @@ import ScheduleListItemType3 from './ScheduleListItemType3';
 import ScheduleListItemType4 from './ScheduleListItemType4';
 import LText from '../../core/LText';
 import ScheduleListItemType7 from './ScheduleListItemType7';
+import ScheduleListItemType9 from './ScheduleListItemType9';
 
 
 const ScheduleListItem = ({ item, index }) => {
-  // console.log('ScheduleListItem ' + item.id)
+  // console.log('ScheduleListItem ' + item.id + " | itemType: +"+item.itemType)
 
   if (item == undefined || item == null) return null;
   if (item.itemType == "type1" && item.flag == true) return null;
@@ -37,6 +38,8 @@ const ScheduleListItem = ({ item, index }) => {
     itemHeight = 100;
   else if (item.itemType == 'type7')
     itemHeight = (item.sessionSubtitle == "" ? 80 : 120);
+  else if (item.itemType == 'type9')
+    itemHeight = 220
 
   if (item.itemType == 'type1' && item.dateString == "Thu, October 17, 2024") {
     itemHeight = 170;
@@ -112,6 +115,7 @@ const ScheduleListItem = ({ item, index }) => {
         {item.itemType == "type3" ? <ScheduleListItemType3 item={item} /> : null}
         {item.itemType == "type4" ? <ScheduleListItemType4 item={item} /> : null}
         {item.itemType == "type7" ? <ScheduleListItemType7 item={item} /> : null}
+        {item.itemType == "type9" ? <ScheduleListItemType9 item={item} /> : null}
 
         {item.itemType == "type1" && item.group.length > 1 ?
           <>

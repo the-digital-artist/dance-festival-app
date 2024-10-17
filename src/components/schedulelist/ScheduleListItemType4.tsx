@@ -10,7 +10,7 @@ import ActionSessionListOnDetailsBtn from '../../actions/ActionSessionListOnDeta
 
 const ScheduleListItemType4 = ({ item }) => {
 
-  console.log("ScheduleListItem4: "+"| artistName: " + item.artistName+"| artistOne: " + item.artistOne+"| companyImage: " +DataModel.getInstance().static.dataArtists[item.artistOne].companyImage);
+  // console.log("ScheduleListItem4: "+"| artistName: " + item.artistName+"| artistOne: " + item.artistOne+"| companyImage: " +DataModel.getInstance().static.dataArtists[item.artistOne].companyImage);
   if (item.itemType != 'type4') return;
 
   const sessionCategoryName = (item.level != undefined && item.level == 'M') ? " Masterclass " : " Special Track "
@@ -22,7 +22,7 @@ const ScheduleListItemType4 = ({ item }) => {
   let companyImage = null;
   if((artistData1.artistCompany!=undefined && artistData1.companyImage != undefined && artistData1.companyImage!='') &&
   LauncherController.getInstance().staticImageList[artistData1.companyImage]!=undefined) {
-    console.log("------ScheduleListItem4: "+"| companyImage: " + artistData1.companyImage);
+    // console.log("------ScheduleListItem4: "+"| companyImage: " + artistData1.companyImage);
     companyImage = LauncherController.getInstance().staticImageList[artistData1.companyImage].imgSrc
   }
 

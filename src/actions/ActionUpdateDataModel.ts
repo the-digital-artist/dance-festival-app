@@ -2,6 +2,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import DataModel from "../DataModel";
 import LauncherController from "../LauncherController";
 import * as Application from 'expo-application';
+import { Platform } from "react-native";
 
 
 const ActionUpdateDataModelWithRemote = async (params = {noProcessing: false,  timeOut:1500}) => {
@@ -16,12 +17,13 @@ const ActionUpdateDataModelWithRemote = async (params = {noProcessing: false,  t
         setTimeout(() => { fetchController1.abort() }, params.timeOut)
 
         const buildParam = `${Application.nativeBuildVersion}`;
-        const osParam = `${Application.nativeBuildVersion}`;
+        const osParam = `${Platform.OS}`;
         const modelParam = `${ DataModel.getInstance().static.modelVersion}`;
         const updateParam = `${ LauncherController.getInstance().updateInfo}`;
+        const paramString = `?nativeBuildVersion=${buildParam}&osParam=${osParam}&modelParam=${modelParam}&updateParam=${updateParam}`
 
-        const urlVersion = `${dataModel.apiUrlBase}${dataModel.apiModelUpdateVersion}`;
-        const urlContent = `${dataModel.apiUrlBase}${dataModel.apiModelUpdateContent}?nativeBuildVersion=${buildParam}`;
+        const urlVersion = `${dataModel.apiUrlBase}${dataModel.apiModelUpdateVersion}${[paramString]}`;
+        const urlContent = `${dataModel.apiUrlBase}${dataModel.apiModelUpdateContent}${[paramString]}`;
 
 
         console.log("ActionUpdateDataModel -- fetch(dataModel.modelRemoteVersionCheckUrl: " + urlVersion);
