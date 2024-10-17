@@ -119,7 +119,7 @@ class ArtistDetailsConnectPage extends PureComponent<any, any> {
         // console.log("render update "+this.opacity);
         const item = LauncherController.getInstance().context.artistFocusItem
         const artistBiography = (item != undefined && item.bio != undefined && item.bio.length > 0) ? (item.bio as string) : "Stay tuned - more information coming soon"
-
+const artistDescription = (item != undefined && item.acdescription != undefined && item.acdescription.length > 0) ? (item.acdescription as string) : "Special Convention Online Offer:"
 
         const maskStart = Dimensions.get('screen').height * (1590 / 2796)
         const maskStart2 = Dimensions.get('screen').height * (1736 / 2796)
@@ -130,6 +130,7 @@ class ArtistDetailsConnectPage extends PureComponent<any, any> {
         const padding = 35;
 
         const offerValid = true;
+
 
         return (
             <>
@@ -187,7 +188,7 @@ class ArtistDetailsConnectPage extends PureComponent<any, any> {
                                 fontSize: 14,
                             }}
                         >
-                            {"De’Jon & Clo VIP All Access offers online classes for Salsa On2, Bachata Fusion & Dominicana, Turn & Spin Drills, Ladies Styling, Pachanga & Stretching & Warm-Up Routines with a fresh class every month."}
+                            {item.portrait != 'dejon_-_clo'?artistDescription:"De’Jon & Clo VIP All Access offers online classes for Salsa On2, Bachata Fusion & Dominicana, Turn & Spin Drills, Ladies Styling, Pachanga & Stretching & Warm-Up Routines with a fresh class every month."}
                         </LText>
 
                         <View

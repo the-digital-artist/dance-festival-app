@@ -63,7 +63,8 @@ class LauncherController extends OperatorStates {
                 bio: ``,
                 facebook: ``,
                 insta: '',
-                artistconnect: ''
+                artistconnect: '',
+                acdescription: ``
             },
             artistFocusItemUpdateListeners: [],
 
