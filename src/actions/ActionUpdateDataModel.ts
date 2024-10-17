@@ -33,7 +33,7 @@ const ActionUpdateDataModelWithRemote = async (params = {noProcessing: false,  t
 
         //first we check with a small version check API (only returns the version, not the content)
         const version = await response1.json();
-        console.log("ActionUpdateDataModel -- API - got version: " + version);
+        console.log("ActionUpdateDataModel -- API - got version: " + version + "local modelVersion: "+dataModel.modelVersion);
         if (version <= dataModel.modelVersion) { return };
 
 
