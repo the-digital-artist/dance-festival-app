@@ -22,13 +22,22 @@ const ActionUpdateDataModelWithRemote = async (params = {noProcessing: false,  t
         const updateParam = `${ LauncherController.getInstance().updateInfo}`;
         const paramString = `?nativeBuildVersion=${buildParam}&osParam=${osParam}&modelParam=${modelParam}&updateParam=${updateParam}`
 
-        const urlVersion = `${dataModel.apiUrlBase}${dataModel.apiModelUpdateVersion}${[paramString]}`;
-        const urlContent = `${dataModel.apiUrlBase}${dataModel.apiModelUpdateContent}${[paramString]}`;
+        let urlVersion = ``;
+        let urlContent = ``
 
+        if (dataModel.apiUrlBase != undefined && dataModel.apiModelUpdateVersion!= undefined &&
+            dataModel.apiUrlBase != undefined && dataModel.apiModelUpdateContent!= undefined) {
+            urlVersion = `${dataModel.apiUrlBase}${dataModel.apiModelUpdateVersion}`;
+            urlContent = `${dataModel.apiUrlBase}${dataModel.apiModelUpdateContent}`;
 
-        console.log("ActionUpdateDataModel -- fetch(dataModel.modelRemoteVersionCheckUrl: " + urlVersion);
+        } else {
+            urlVersion = `https://odwoytfhtf.execute-api.us-west-1.amazonaws.com/version`;
+            urlContent = `https://odwoytfhtf.execute-api.us-west-1.amazonaws.com/content`;
+        }
 
-        const response1 = await fetch(urlVersion, { signal: fetchController1.signal });
+        console.log("ActionUpdateDataModel -- fetch(dataModel.modelRemoteVersionCheckUrl: " + urlVersion+paramString);
+
+        const response1 = await fetch(urlVersion+paramString, { signal: fetchController1.signal });
         if (!response1.ok) return;
 
         //first we check with a small version check API (only returns the version, not the content)
@@ -38,10 +47,10 @@ const ActionUpdateDataModelWithRemote = async (params = {noProcessing: false,  t
 
 
           //now we query the full model
-        console.log(":::::ActionUpdateDataModel -- querying full model from: "+urlContent);
+        console.log(":::::ActionUpdateDataModel -- querying full model from: "+urlContent+paramString);
         const fetchController2 = new AbortController()
         setTimeout(() => { fetchController2.abort() }, params.timeOut)
-        const response2 = await fetch(urlContent, { signal: fetchController2.signal });
+        const response2 = await fetch(urlContent+paramString, { signal: fetchController2.signal });
         if (!response2.ok) return;
         console.log(":::::ActionUpdateDataModel -- got ok response");
         const remoteModel = await response2.json();

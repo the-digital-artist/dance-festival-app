@@ -333,7 +333,7 @@ class LauncherController extends OperatorStates {
                 console.log("LauncherController - retrieving local storage ")
                 const locallyStoredModel = JSON.parse(value);
                 console.log("LauncherController -  local storage version "+locallyStoredModel.modelVersion)
-                if (locallyStoredModel.modelVersion <= dataModel.modelVersion) return;
+                if (locallyStoredModel.modelVersion == undefined || locallyStoredModel.modelVersion <= dataModel.modelVersion) return;
                 console.log('LauncherController - initial model version: ' + DataModel.getInstance().static.modelVersion);
                 DataModel.getInstance().static = locallyStoredModel;
                 console.log('LauncherController - after overwriting with locally stored model: ' + DataModel.getInstance().static.modelVersion);

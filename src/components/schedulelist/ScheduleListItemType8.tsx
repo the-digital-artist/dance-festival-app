@@ -1,4 +1,4 @@
-import { Dimensions, Image, Text, View } from 'react-native';
+import { Dimensions, Image, Platform, Text, View } from 'react-native';
 import LText from '../../core/LText';
 import Animated from 'react-native-reanimated';
 
@@ -41,7 +41,7 @@ const ScheduleListItemType8 = ({
             backgroundColor: 'greenyellow',
             position: 'absolute',
             left: 0, top: 0,
-            opacity: 0.2,
+            opacity: Platform.OS=='android'?0.05: 0.2,
             width: tileWidth,
             height: tileHeight - 30,
             resizeMode: 'cover'

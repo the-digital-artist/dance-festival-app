@@ -283,7 +283,9 @@ class SchedulerSessionDetailsScreen extends PureComponent {
                             // backgroundColor: 'skyblue',
                             top: 330, left: 20, position: 'absolute',
                             width: Dimensions.get('screen').width - 40,
-                            height: Dimensions.get('screen').height - 330 - NavBar.navBarHeight,
+                            height: (Platform.OS=='android'?
+                            Dimensions.get('screen').height - 330 - NavBar.navBarHeight-50:
+                            Dimensions.get('screen').height - 330 - NavBar.navBarHeight-10),
                             opacity: 1
                         }}>
 
