@@ -1,6 +1,6 @@
 export const modelInitStaticOverwrite =
 {
-  "modelVersion": 3000000,
+  "modelVersion": 3000001,
   "festivalName": "CALDAC",
   "apiUrlBase": "https://odwoytfhtf.execute-api.us-west-1.amazonaws.com",
   "apiModelUpdateContent": "/content",
@@ -186,13 +186,11 @@ export const modelInitStaticOverwrite =
       "fullName": "Bachata Denver",
       "artistLocation": "Denver",
       "artistCompany": "",
-      "insta": "",
-      "bio": "",
+      "insta": "bachatadenver",
+      "bio": "Bachata Denver is an academy based in Denver, CO that teaches primarily Bachata.",
       "shortBio": "",
       "facebook": "",
-      "portrait": "bachata_denver",
-      "artistconnect": "",
-      "companyImage": ""
+      "portrait": "bachata_denver"
     },
     "Jenny Pham": {
       "fullName": "Jenny Pham",
@@ -855,6 +853,15 @@ export const modelInitStaticOverwrite =
       "shortBio": "",
       "facebook": "",
       "portrait": "eric_-_marcela"
+    },
+    "Clifton Stennett": {
+      "fullName": "Clifton Stennett",
+      "artistCompany": "",
+      "insta": "",
+      "bio": "Clifton is the Owner/Director of Cadence Dance Academy, a Toronto based dance school known for their creativity, charisma, explosive routines, and unique style. He has trained in many genres of dance but mainly specializes in Salsa, Bachata, Cha Cha Cha and Dancehall. In 2004 Clifton studied hard and trained intensely under the supervision of well-known instructors in the local Toronto dance scene and abroad. He quickly ramped up his skills and joined a professional team which gave him the experience and opportunity to share the stage with other professionals. \n\nIn 2009 Clifton partnered up with long time friend and fellow dance advocate Patrick Danquah and formed Cadence Dance Academy. Since then Clifton has created his own niche and original style that has been very well received worldwide. Over the years Clifton has been very busy performing, teaching and competing at various Latin dance events across Europe, Asia and North America. Clifton’s work ethic, positive mindset, and approachable demeanor make him a perfect fit for the stage and dance community as a whole. Presently, Clifton continues to instruct, perform, and train very hard in hopes of reaching his next pinnacle in dance. As a trained professional he vows to continue spreading his skills, knowledge, experiences and joy of dance to others as it was done for him.",
+      "shortBio": "",
+      "facebook": "",
+      "portrait": "clifton_stennett"
     }
   },
   "dataScheduleRaw": [
@@ -5186,7 +5193,7 @@ export const modelInitStaticOverwrite =
             {
               "id": 102300,
               "itemType": "type8",
-              "artistName": "JIMMY BOSCH",
+              "artistName": "JIMMY BOSCH CONCERT",
               "sessionMainTitle": "",
               "time": "",
               "room": "Aurora 2 | SALSA",
@@ -5203,7 +5210,7 @@ export const modelInitStaticOverwrite =
               "sessionDescription": "",
               "artistOne": "",
               "artistTwo": "",
-              "artistLocation": "CONCERT",
+              "artistLocation": "",
               "flag": false,
               "flagIncludeInNow": false,
               "djData": []

@@ -88,7 +88,7 @@ class AssetLoader {
             imageList['diego_-_yurley'] = { fileName:'diego_-_yurley.png', imgSrc: require('../assets/portraits/diego_-_yurley.png')}; 
             imageList['ebonie_lee'] = { fileName:'ebonie_lee.png', imgSrc: require('../assets/portraits/ebonie_lee.png')}; 
             imageList['eric_-_marcela'] = { fileName:'eric_-_marcela.png', imgSrc: require('../assets/portraits/eric_-_marcela.png')}; 
-            
+            imageList['clifton_stennett'] = { fileName:'clifton_stennett.png', imgSrc: require('../assets/portraits/clifton_stennett.png')}; 
      
         } catch (error) {
             console.log('Could not load asset');

@@ -1,5 +1,9 @@
 import { Dimensions, Text, View } from 'react-native';
 import LText from '../../core/LText';
+import ButtonSmall from '../ButtonSmall';
+import LauncherController from '../../LauncherController';
+import TransitionLinkToArtistPage from '../../transitions/TransitionLinkToArtistPage';
+import DataModel from '../../DataModel';
 
 
 
@@ -11,6 +15,10 @@ const ScheduleListItemType7 = ({ item }) => {
   let mainTitleColor = '#e1e7ac';
   if (item.sessionMainTitle.toLowerCase() == 'registration')
     mainTitleColor = '#8989BB'
+
+  const imageWidthArtistImagex1 = item.itemHeight;
+
+  const isPerformance = (item.sessionMainTitle.toLowerCase().indexOf('performances') != -1)
 
   return (
     <>
@@ -28,7 +36,7 @@ const ScheduleListItemType7 = ({ item }) => {
         position: 'absolute',
         top: 35,
         left: 70,
-        width: Dimensions.get('screen').width - 60-35,
+        width: Dimensions.get('screen').width - 60 - 35,
         fontFamily: 'DINCondensed-Bold',
         // backgroundColor: 'indigo',
         letterSpacing: 0.5,
@@ -44,7 +52,7 @@ const ScheduleListItemType7 = ({ item }) => {
         position: 'absolute',
         top: 65,
         left: 70,
-        width: Dimensions.get('screen').width - 60-35,
+        width: Dimensions.get('screen').width - 60 - 35-50,
         fontFamily: 'Arcon-Regular',
         // backgroundColor: 'indigo',
         letterSpacing: 2.7,
@@ -56,29 +64,56 @@ const ScheduleListItemType7 = ({ item }) => {
         {(item.sessionSubtitle as string).toLocaleUpperCase()}
       </LText>
 
-{item.room !=undefined && item.room!='' &&
-      <Text allowFontScaling={false} id='textSessionCategoryAndRoom' style={{
-        position: 'absolute',
-        top: 10,
-        right: 10,
-        
-        fontFamily: 'Cabin-Regular',
-        letterSpacing: 1.2,
-        opacity: 0.8,
-        padding: 2,
-        backgroundColor: '#382b38',
-        textAlign: 'left',
-        color: '#bcd4ee',
+      {item.room != undefined && item.room != '' &&
+        <Text allowFontScaling={false} id='textSessionCategoryAndRoom' style={{
+          position: 'absolute',
+          top: 5,
+          left: 120,
 
-        // backgroundColor: '#e7e7e2',
-        // backgroundColor: '#600f2c',
-        // color: '#232323',
-        fontSize: 11,
-      }}>
-        {(item.room ? " "+(item.room as string).toLocaleUpperCase() + " " : "")}
-      </Text >
-}
-        </>
+          fontFamily: 'Cabin-Regular',
+          letterSpacing: 1.2,
+          opacity: 0.9,
+          padding: 2,
+          textAlign: 'left',
+          color: '#FFFFFF',
+
+          // backgroundColor: '#e7e7e2',
+          backgroundColor: '#5f7a9b',
+          // color: '#232323',
+          fontSize: 11,
+        }}>
+          {(item.room ? " " + (item.room as string).toLocaleUpperCase() + " " : "")}
+        </Text >
+      }
+
+      {isPerformance &&
+        <ButtonSmall
+          name={("artistImageButton1" + item.id)}
+          source={LauncherController.getInstance().staticImageList['clifton_stennett'].imgSrc}
+          style={{
+            position: 'absolute',
+            top: -10,
+            right: 0,
+            width: imageWidthArtistImagex1,
+            height: imageWidthArtistImagex1,
+          }}
+          imageStyle={[{
+            position: 'absolute',
+            right: undefined, left: undefined,
+            width: imageWidthArtistImagex1,
+            height: imageWidthArtistImagex1,
+            resizeMode: 'cover',
+            opacity: 0.9,
+          }]}
+          bgBoxVisible={false}
+          visualProperties={{ alpha: 1 }}
+          onSelect={() => {
+            LauncherController.getInstance().context.navigationHistory.push({ out: "SchedulerScreen", transition: "TransitionLinkToArtistPage", data: {} });
+            TransitionLinkToArtistPage(DataModel.getInstance().static.dataArtists['Clifton Stennett'])
+          }}
+        />
+      }
+    </>
   );
 }
 
