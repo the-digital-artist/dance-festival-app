@@ -14,7 +14,7 @@ const ScheduleListItemType7 = ({ item }) => {
 
   let mainTitleColor = '#e1e7ac';
   if (item.sessionMainTitle.toLowerCase() == 'registration')
-    mainTitleColor = '#8989BB'
+    mainTitleColor = '#bcbed4'
 
   const imageWidthArtistImagex1 = item.itemHeight;
 
@@ -92,7 +92,7 @@ const ScheduleListItemType7 = ({ item }) => {
           source={LauncherController.getInstance().staticImageList['clifton_stennett'].imgSrc}
           style={{
             position: 'absolute',
-            top: -10,
+            bottom: 5,
             right: 0,
             width: imageWidthArtistImagex1,
             height: imageWidthArtistImagex1,
